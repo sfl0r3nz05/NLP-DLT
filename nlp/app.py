@@ -20,7 +20,8 @@ updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "a
 entity = stringFinder(txtParsedToStr, ')And', ',')
 updateFile('./output/Roaming Agreements Output Template.json',"operators", 1, "name", entity)
 
-entity = applyModel(txtParsedToNLP)
+entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
+updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
 
 print(a)
 
