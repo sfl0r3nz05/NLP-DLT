@@ -1,103 +1,125 @@
 {
-    "metadata":{
-        "company":{
-            "name":"operatorA",
-            "cif":"A78923125",
+    "metadata": {
+        "company": {
+            "name": "",
+            "cif": "",
             "proof": {
-                "type": "RsaSignature2018",
-                "created": "2017-06-18T21:19:10Z",
-                "verificationMethod": "https://example.edu/issuers/keys/1",
-                "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
+                "type": "",
+                "created": "",
+                "verificationMethod": "",
+                "jws": ""
             }
         }
     },
-    "file":[{
-        "key":"1054358",
-        "source":"JVBERi0xLjUKJeLjz9MKMyAwIG9iago8PC9MZ",
-        "fileName":"roaming_agreement.pdf",
-        "mimeType":"application/pdf"
-    }],
-    "operators":[
+    "file": [
         {
-            "name": "operador A",
-            "address": "",
-            "alias":"A"
-        },
-        {
-            "name": "operador B",
-            "address": "",
-            "alias": "B"
+            "key": "",
+            "source": "",
+            "fileName": "",
+            "mimeType": ""
         }
     ],
-    "introduction":[{
-        "deviation_index":"0",
-        "description":""
-    },
-    {
-        "deviation_index":"1",
-        "description":""
-    },
-    {
-        "deviation_index":"2",
-        "description":""
-    },
-    {
-        "deviation_index":"3",
-        "description":""
-    },
-    {
-        "deviation_index":"4",
-        "description":""
-    }],
-    "agreement_date":"2017-06-18T21:19:10Z",
-    "confidentiality":"ten (10) years",
-    "Liability of the parties":"two hundred and fifty thousand (250,000) SDR",
-    "Duration of the Agreement":"six (6)",
-    "Termination of the Agreement":"two hundred and fifty thousand (250,000) SDR",
-    "information on billing data":[{
-        "billing data exchanged": "tap",
-        "operator":["A","B"],
-        "traffic type":"data",
-        "aggregation type": "IMSI",
-        "aggregated chargeable unit types": "GB"
-    },
-    {
-        "billing data exchanged": "bce",
-        "operator":["A","B"],
-        "traffic type bce":"lte-m"
-    }],
-    "settlement procedure":[{
-        "direct payment":"true",
-        "operator":["A","B"],
-        "commercial_date":"2017-06-18T21:19:10Z",
-        "include bce usage on tap roaming invoice" : "true",
-        "day of month to send invoice":"15th",
-        "sent the invoice with zero monetary amount": "true",
-        "currency conversion":"false",
-        "threshold for settling the debt":"5 SDR",
-        "interest":"10%"
-    },
-    {
-        "netting procedure":"true",
-        "operator":["A","B"],
-        "commercial_date":"2017-06-18T21:19:10Z",
-        "include bce usage on tap roaming invoice" : "true",
-        "day of month to send invoice":"15th",
-        "sent the invoice with zero monetary amount": "true",
-        "currency conversion":"false",
-        "threshold for settling the debt":"5 SDR",
-        "interest":"10%"
-    }],
-    "test during commercial roaming phase":[{
-        "operator":"A",
-        "non-chargeable per sim":"true",
-        "non-chargeable for total test":"false",
-        "non-chargeable montly value":"100 SDR"
-    },
-    {
-        "operator":"B",
-        "non-chargeable per sim":"true",
-        "non-chargeable for total test":"false",
-        "non-chargeable montly value":"100 SDR"
-    }]
+    "operators": [
+        {
+            "name": "Proximus",
+            "address": "",
+            "alias": "Proximus"
+        },
+        {
+            "name": "<<Operator>>",
+            "address": "",
+            "alias": ""
+        }
+    ],
+    "introduction": [
+        {
+            "deviation_index": "0",
+            "description": ""
+        },
+        {
+            "deviation_index": "1",
+            "description": ""
+        },
+        {
+            "deviation_index": "2",
+            "description": ""
+        },
+        {
+            "deviation_index": "3",
+            "description": ""
+        },
+        {
+            "deviation_index": "4",
+            "description": ""
+        }
+    ],
+    "agreement_date": "",
+    "confidentiality": "",
+    "Liability of the parties": "",
+    "Duration of the Agreement": "",
+    "Termination of the Agreement": "",
+    "information on billing data": [
+        {
+            "billing data exchanged": "",
+            "operator": [
+                "",
+                ""
+            ],
+            "traffic type": "",
+            "aggregation type": "",
+            "aggregated chargeable unit types": ""
+        },
+        {
+            "billing data exchanged": "",
+            "operator": [
+                "",
+                ""
+            ],
+            "traffic type bce": ""
+        }
+    ],
+    "settlement procedure": [
+        {
+            "direct payment": "",
+            "operator": [
+                "",
+                ""
+            ],
+            "commercial_date": "",
+            "include bce usage on tap roaming invoice": "",
+            "day of month to send invoice": "",
+            "sent the invoice with zero monetary amount": "",
+            "currency conversion": "",
+            "threshold for settling the debt": "",
+            "interest": ""
+        },
+        {
+            "netting procedure": "",
+            "operator": [
+                "",
+                ""
+            ],
+            "commercial_date": "",
+            "include bce usage on tap roaming invoice": "",
+            "day of month to send invoice": "",
+            "sent the invoice with zero monetary amount": "",
+            "currency conversion": "",
+            "threshold for settling the debt": "",
+            "interest": ""
+        }
+    ],
+    "test during commercial roaming phase": [
+        {
+            "operator": "",
+            "non-chargeable per sim": "",
+            "non-chargeable for total test": "",
+            "non-chargeable montly value": ""
+        },
+        {
+            "operator": "",
+            "non-chargeable per sim": "",
+            "non-chargeable for total test": "",
+            "non-chargeable montly value": ""
+        }
+    ]
 }
