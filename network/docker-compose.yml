@@ -12,5 +12,10 @@ services:
       - ./../nlp/library/src/library:/administrator/library
       - ./../nlp/app.py:/administrator/app.py
     command: sh -c "python3 -m flask run --host=0.0.0.0"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
+      REGION_NAME: "${REGION_NAME}"
     ports:
       - 5000:5000
