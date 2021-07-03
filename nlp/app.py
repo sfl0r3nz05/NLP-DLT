@@ -6,9 +6,10 @@ from library.ParseToNLP import parseToNLP
 from library.ApplyModel import applyModel
 from library.StringFinder import stringFinder
 from library.ParseToString import parseToString
-from library.AmzComprehend import amzComprehend
+from library.RecovEntAndPhr import recoverPhrases
+from library.RecovEntAndPhr import recoverEntities
 from library.PdfToString import convert_pdf_to_string
-from library.ParseToAmzComprehend import parseToAmzCompreh
+from library.ParseToAmzComph import parseToAmzCompreh
 app = Flask(__name__)
 
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache.pdf')
@@ -19,13 +20,9 @@ txtParsedToNLP = parseToNLP(text)
 
 readyToComprh = parseToAmzCompreh(txtParsedToNLP)
 
-for x in readyToComprh:
-    entities = amzComprehend(x)
-    #print(entities)
-    value = json.loads(entities)
-    #print(value['Entities'])
-    #data = json.load(entities)
-    #temp_did = data['Entities']
+entitiesList = recoverEntities(readyToComprh)
+
+phrasesList = recoverPhrases(readyToComprh)
 
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
@@ -38,6 +35,7 @@ for x in readyToComprh:
 
 #   entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
 #   updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
+
 #print(a)
 
 @app.route('/')
