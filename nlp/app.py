@@ -1,3 +1,4 @@
+import json
 from flask import Flask
 from dotenv import load_dotenv
 from library.UpdateFile import updateFile
@@ -12,13 +13,19 @@ app = Flask(__name__)
 
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache.pdf')
 
-#   txtParsedToStr = parseToString(text)
+txtParsedToStr = parseToString(text)
+
 txtParsedToNLP = parseToNLP(text)
 
-readyToComprh = parseToAmzCompreh(txtParsedToNLP, 150)
+readyToComprh = parseToAmzCompreh(txtParsedToNLP)
 
-entities = amzComprehend(readyToComprh)
-print(entities)
+for x in readyToComprh:
+    entities = amzComprehend(x)
+    #print(entities)
+    value = json.loads(entities)
+    #print(value['Entities'])
+    #data = json.load(entities)
+    #temp_did = data['Entities']
 
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
@@ -31,8 +38,7 @@ print(entities)
 
 #   entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
 #   updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
-
-print(a)
+#print(a)
 
 @app.route('/')
 def hello_world():
