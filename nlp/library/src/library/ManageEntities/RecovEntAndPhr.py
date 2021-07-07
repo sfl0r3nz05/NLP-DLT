@@ -1,6 +1,6 @@
 import json
-from library.AmzComprehend import amzComprehendPhrases
-from library.AmzComprehend import amzComprehendEntities
+from library.AmazonComprehend.AmzComprehend import amzComprehendPhrases
+from library.AmazonComprehend.AmzComprehend import amzComprehendEntities
 
 def recoverEntities(readyToComprh):
     entity_list = []

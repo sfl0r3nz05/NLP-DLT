@@ -1,14 +1,16 @@
 import json
 from flask import Flask
 from dotenv import load_dotenv
-from library.UpdateFileV2 import updateFile
-from library.ParseToNLP import parseToNLP
-from library.DateFinder import dateFinder
-from library.ParseToString import parseToString
-from library.RecovEntAndPhr import recoverPhrases
-from library.RecovEntAndPhr import recoverEntities
-from library.PdfToString import convert_pdf_to_string
-from library.ParseToAmzComph import parseToAmzCompreh
+from library.Parsing.ParseToNLP import parseToNLP
+from library.ManageJSON.UpdateFileV2 import updateFile
+from library.Parsing.ParseToString import parseToString
+from library.ManageEntities.DateFinder import dateFinder
+from library.Parsing.ParseToAmzComph import parseToAmzCompreh
+from library.ManagePDF.PdfToString import convert_pdf_to_string
+from library.ManageEntities.RecovEntAndPhr import recoverPhrases
+from library.ManageEntities.RecovEntAndPhr import recoverEntities
+from library.ManageEntities.OrganizationFinder import organizationFinder
+
 app = Flask(__name__)
 
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache.pdf')
@@ -27,6 +29,7 @@ phrasesList = recoverPhrases(readyToComprh)
 date = dateFinder(entitiesList)
 updateFile('./output/Roaming Agreements Output Template.json',"date",0,"hint", date)
 
+# POPULATE ORGANIZATIONS
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
 
@@ -39,7 +42,7 @@ updateFile('./output/Roaming Agreements Output Template.json',"date",0,"hint", d
 #   entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
 #   updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
 
-print(a)
+#print(a)
 
 @app.route('/')
 def hello_world():
