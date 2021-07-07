@@ -1,125 +1,46 @@
 {
-    "metadata": {
-        "company": {
-            "name": "",
-            "cif": "",
-            "proof": {
-                "type": "",
-                "created": "",
-                "verificationMethod": "",
-                "jws": ""
-            }
-        }
-    },
-    "file": [
-        {
-            "key": "",
-            "source": "",
-            "fileName": "",
-            "mimeType": ""
-        }
-    ],
-    "operators": [
-        {
-            "name": "Proximus",
-            "address": "",
-            "alias": "Proximus"
-        },
-        {
-            "name": "<<Operator>>",
-            "address": "",
-            "alias": ""
-        }
-    ],
-    "introduction": [
-        {
-            "deviation_index": "0",
-            "description": ""
-        },
-        {
-            "deviation_index": "1",
-            "description": ""
-        },
-        {
-            "deviation_index": "2",
-            "description": ""
-        },
-        {
-            "deviation_index": "3",
-            "description": ""
-        },
-        {
-            "deviation_index": "4",
-            "description": ""
-        }
-    ],
-    "agreement_date": "29/05/2017",
-    "confidentiality": "",
-    "Liability of the parties": "",
-    "Duration of the Agreement": "",
-    "Termination of the Agreement": "",
-    "information on billing data": [
-        {
-            "billing data exchanged": "",
-            "operator": [
-                "",
-                ""
-            ],
-            "traffic type": "",
-            "aggregation type": "",
-            "aggregated chargeable unit types": ""
-        },
-        {
-            "billing data exchanged": "",
-            "operator": [
-                "",
-                ""
-            ],
-            "traffic type bce": ""
-        }
-    ],
-    "settlement procedure": [
-        {
-            "direct payment": "",
-            "operator": [
-                "",
-                ""
-            ],
-            "commercial_date": "",
-            "include bce usage on tap roaming invoice": "",
-            "day of month to send invoice": "",
-            "sent the invoice with zero monetary amount": "",
-            "currency conversion": "",
-            "threshold for settling the debt": "",
-            "interest": ""
-        },
-        {
-            "netting procedure": "",
-            "operator": [
-                "",
-                ""
-            ],
-            "commercial_date": "",
-            "include bce usage on tap roaming invoice": "",
-            "day of month to send invoice": "",
-            "sent the invoice with zero monetary amount": "",
-            "currency conversion": "",
-            "threshold for settling the debt": "",
-            "interest": ""
-        }
-    ],
-    "test during commercial roaming phase": [
-        {
-            "operator": "",
-            "non-chargeable per sim": "",
-            "non-chargeable for total test": "",
-            "non-chargeable montly value": ""
-        },
-        {
-            "operator": "",
-            "non-chargeable per sim": "",
-            "non-chargeable for total test": "",
-            "non-chargeable montly value": ""
-        }
-    ]
+	"date":{
+		"uid":"",
+		"type": "text",
+		"verify": "date",
+		"hint":[
+			"{specify date}"
+		]
+	},
+	"organization":[
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador A",
+			"hint":[
+				"{specify operator A}"
+			]
+		},
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador B",
+			"hint":[
+				"{specify operator B}"
+			]
+		}
+	],
+	"location":[
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador A",
+			"hint":[
+				"{specify location}"
+			]
+		},
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador B",
+			"hint":[
+				"{specify location}"
+			]
+		}
+	],
 }

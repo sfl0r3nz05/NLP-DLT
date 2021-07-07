@@ -6,18 +6,16 @@ def recoverEntities(readyToComprh):
     entity_list = []
     for x in readyToComprh:
         entities = amzComprehendEntities(x)
-        #print(entities)
         value = json.loads(entities)
-        dictionary_copy = value.copy()
-        entity_list.append(dictionary_copy)
+        for entity in value['Entities']:
+            entity_list.append(entity)
     return entity_list
 
 def recoverPhrases(readyToComprh):
     phrase_list = []
     for x in readyToComprh:
         phrase = amzComprehendPhrases(x)
-        #print(phrase)
         value = json.loads(phrase)
-        dictionary_copy = value.copy()
-        phrase_list.append(dictionary_copy)
+        for phrase in value['KeyPhrases']:
+            phrase_list.append(phrase)
     return phrase_list

@@ -24,6 +24,10 @@ entitiesList = recoverEntities(readyToComprh)
 
 phrasesList = recoverPhrases(readyToComprh)
 
+# POPULATE DATE
+date = dateFinder(entitiesList)
+updateFileV2('./output/Roaming Agreements Output Template.json',"date", "hint", date)
+
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
 
@@ -36,7 +40,7 @@ phrasesList = recoverPhrases(readyToComprh)
 #   entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
 #   updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
 
-#print(a)
+print(a)
 
 @app.route('/')
 def hello_world():
