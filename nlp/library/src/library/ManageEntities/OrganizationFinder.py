@@ -3,7 +3,7 @@ from operator import itemgetter
 The organizationFilter method receives as input a list of entities following the format returned by amazon comprehend 
 (e.g.:{'BeginOffset': 28, 'EndOffset': 38, 'Score': 0. 9668462872505188, 'Text': '29/05/2017', 'Type': 'organization'}) 
 and returns a list of dictionaries where each dictionary contains the organization, the number of times that organization is repeated (frequency) 
-and the maximum score associated with that organization (e.g.: {'organization': '29/05/2017', 'score': 0.9966247081756592, 'count': 28})
+and the maximum score associated with that organization (e.g.: {'organization': 'Proximus', 'beginoffset':'5' 'score': 0.9966247081756592, 'count': 28})
 """
 def orgFilter(entitiesList):
     organization_list = []
@@ -25,9 +25,9 @@ def orgFilter(entitiesList):
                 organization_list.append({"organization":str(entity["Text"]), "beginoffset":str(entity["BeginOffset"]), "score":str(entity["Score"]), "freq":1})
     return organization_list
 """
-The organizationSelection method receives as input a list of dictionaries (e.g.: {'organization': '29/05/2017', 'score': 0.9966247081756592, 'count': 28}) 
-and returns a string (e.g., '29/05/2017') which represents the selected organization. To do this, it selects the highest score and the highest frequency, if both match, 
-the organization associated with these two is returned, otherwise the frequency is given priority.
+The organizationSelection method receives as input a list of dictionaries (e.g.: {'organization': 'Proximus', 'beginoffset':'5' 'score': 0.9966247081756592, 'count': 28}) 
+and returns a list (e.g., ['Proximus']) which represents the selected organizations. To do this, it sorts the dictionaries based on frequency. To select organizactions the 
+the minor 'beginoffset' is used as criteria.
 """
 def organizationSelection(organization_list):
     organizations = []
@@ -45,5 +45,5 @@ The organizationFinder method calls and integrates both methods organizationFilt
 """
 def organizationFinder(entitiesList):
     organization_list = orgFilter(entitiesList)
-    organization = organizationSelection(organization_list)
-    return organization
+    organizations = organizationSelection(organization_list)
+    return organizations

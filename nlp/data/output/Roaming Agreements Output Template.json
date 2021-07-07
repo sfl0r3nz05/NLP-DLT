@@ -24,13 +24,13 @@
             "uid": "",
             "type": "text",
             "verify": "operador A",
-            "hint": "{specify location}"
+            "hint": ""
         },
         {
             "uid": "",
             "type": "text",
             "verify": "operador B",
-            "hint": "{specify location}"
+            "hint": ""
         }
     ]
 }

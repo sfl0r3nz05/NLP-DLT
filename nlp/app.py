@@ -8,6 +8,7 @@ from library.ManageEntities.DateFinder import dateFinder
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
 from library.ManagePDF.PdfToString import convert_pdf_to_string
 from library.ManageEntities.RecovEntAndPhr import recoverPhrases
+from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.OrganizationFinder import organizationFinder
 
@@ -32,6 +33,10 @@ updateFile('./output/Roaming Agreements Output Template.json',"date",0,"hint", d
 # POPULATE ORGANIZATIONS
 organizations = organizationFinder(entitiesList)
 updateFile('./output/Roaming Agreements Output Template.json',"organization",1,"hint", organizations)
+
+# POPULATE LOCATIONS
+locations = locationFinder(entitiesList)
+updateFile('./output/Roaming Agreements Output Template.json',"location",1,"hint", locations)
 
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
