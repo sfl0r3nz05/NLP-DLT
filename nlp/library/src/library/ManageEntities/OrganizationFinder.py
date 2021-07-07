@@ -1,50 +1,49 @@
+from operator import itemgetter
 """
-The dateFilter method receives as input a list of entities following the format returned by amazon comprehend 
-(e.g.:{'BeginOffset': 28, 'EndOffset': 38, 'Score': 0. 9668462872505188, 'Text': '29/05/2017', 'Type': 'DATE'}) 
-and returns a list of dictionaries where each dictionary contains the date, the number of times that date is repeated (frequency) 
-and the maximum score associated with that date (e.g.: {'date': '29/05/2017', 'score': 0.9966247081756592, 'count': 28})
+The organizationFilter method receives as input a list of entities following the format returned by amazon comprehend 
+(e.g.:{'BeginOffset': 28, 'EndOffset': 38, 'Score': 0. 9668462872505188, 'Text': '29/05/2017', 'Type': 'organization'}) 
+and returns a list of dictionaries where each dictionary contains the organization, the number of times that organization is repeated (frequency) 
+and the maximum score associated with that organization (e.g.: {'organization': '29/05/2017', 'score': 0.9966247081756592, 'count': 28})
 """
-def dateFilter(entitiesList):
-    date_list = []
+def orgFilter(entitiesList):
+    organization_list = []
+    dict_organization = {"organization":"","beginoffset":500, "score":"", "freq":1}
     for entity in entitiesList:
-        if entity["Type"] == 'DATE':
+        if (entity["Type"] == 'ORGANIZATION') or (entity["Type"] == 'PERSON'):
             flag = 0
-            for dict_date in date_list:
-                if (str(entity["Text"]) == str(dict_date["date"])) and (float(entity["Score"]) > float(dict_date["score"])):
-                    dict_date["score"] = str(entity["Score"])
-                    dict_date["freq"] += 1
+            for dict_organization in organization_list:
+                if (str(entity["Text"]) == str(dict_organization["organization"])) and (float(entity["Score"]) > float(dict_organization["score"])):
+                    dict_organization["score"] = str(entity["Score"])
+                    dict_organization["freq"] += 1
+                    if ((int(dict_organization["beginoffset"])) > (int(entity["BeginOffset"]))):
+                        dict_organization["beginoffset"] = int(entity["BeginOffset"])
                     flag = 1
-                elif (str(entity["Text"]) == str(dict_date["date"])) and (float(entity["Score"]) <= float(dict_date["score"])):
-                    dict_date["freq"] += 1
+                elif (str(entity["Text"]) == str(dict_organization["organization"])) and (float(entity["Score"]) <= float(dict_organization["score"])):
+                    dict_organization["freq"] += 1
                     flag = 1
             if flag == 0:
-                date_list.append({"date":str(entity["Text"]), "score":str(entity["Score"]), "freq":1})
-    return date_list
+                organization_list.append({"organization":str(entity["Text"]), "beginoffset":str(entity["BeginOffset"]), "score":str(entity["Score"]), "freq":1})
+    return organization_list
 """
-The dateSelection method receives as input a list of dictionaries (e.g.: {'date': '29/05/2017', 'score': 0.9966247081756592, 'count': 28}) 
-and returns a string (e.g., '29/05/2017') which represents the selected date. To do this, it selects the highest score and the highest frequency, if both match, 
-the date associated with these two is returned, otherwise the frequency is given priority.
+The organizationSelection method receives as input a list of dictionaries (e.g.: {'organization': '29/05/2017', 'score': 0.9966247081756592, 'count': 28}) 
+and returns a string (e.g., '29/05/2017') which represents the selected organization. To do this, it selects the highest score and the highest frequency, if both match, 
+the organization associated with these two is returned, otherwise the frequency is given priority.
 """
-def dateSelection(date_list):
-    temp1 = 0
-    temp2 = 0
-    temp3 = ""
-    temp4 = ""
-    for date in date_list:
-        if (temp1 < float(date["score"])):
-            temp1 = float(date["score"])
-            temp3 = str(date["date"])
-        if (temp1 < int(date["freq"])):
-            temp1 = int(date["freq"])
-            temp4 = str(date["date"])
-    if (temp3 == temp4):
-        return temp3
+def organizationSelection(organization_list):
+    organizations = []
+    newlist = sorted(organization_list, key=lambda k: k['freq'], reverse = True)
+    if(int(newlist[0]['beginoffset']) < int(newlist[1]['beginoffset'])):
+        organizations.append(newlist[0]['organization'])
+        organizations.append(newlist[1]['organization'])
     else:
-        return temp4
+        organizations.append(newlist[1]['organization'])
+        organizations.append(newlist[0]['organization'])
+    return organizations
+
 """
-The dateFinder method calls and integrates both methods dateFilter and dateSelection.
+The organizationFinder method calls and integrates both methods organizationFilter and organizationSelection.
 """
 def organizationFinder(entitiesList):
-    date_list = dateFilter(entitiesList)
-    date = dateSelection(date_list)
-    return date
+    organization_list = orgFilter(entitiesList)
+    organization = organizationSelection(organization_list)
+    return organization

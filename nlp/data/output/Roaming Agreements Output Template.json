@@ -10,17 +10,13 @@
             "uid": "",
             "type": "text",
             "verify": "operador A",
-            "hint": [
-                "{specify operator A}"
-            ]
+            "hint": ""
         },
         {
             "uid": "",
             "type": "text",
             "verify": "operador B",
-            "hint": [
-                "{specify operator B}"
-            ]
+            "hint": ""
         }
     ],
     "location": [
@@ -28,17 +24,13 @@
             "uid": "",
             "type": "text",
             "verify": "operador A",
-            "hint": [
-                "{specify location}"
-            ]
+            "hint": "{specify location}"
         },
         {
             "uid": "",
             "type": "text",
             "verify": "operador B",
-            "hint": [
-                "{specify location}"
-            ]
+            "hint": "{specify location}"
         }
     ]
 }
