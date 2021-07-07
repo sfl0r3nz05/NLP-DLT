@@ -1,46 +1,44 @@
 {
-	"date":{
-		"uid":"",
-		"type": "text",
-		"verify": "date",
-		"hint":[
-			"{specify date}"
-		]
-	},
-	"organization":[
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador A",
-			"hint":[
-				"{specify operator A}"
-			]
-		},
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador B",
-			"hint":[
-				"{specify operator B}"
-			]
-		}
-	],
-	"location":[
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador A",
-			"hint":[
-				"{specify location}"
-			]
-		},
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador B",
-			"hint":[
-				"{specify location}"
-			]
-		}
-	],
+    "date": {
+        "uid": "89b6aece-df34-11eb-9ea2-0242ac120002",
+        "type": "text",
+        "verify": "date",
+        "hint": "29/05/2017"
+    },
+    "organization": [
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador A",
+            "hint": [
+                "{specify operator A}"
+            ]
+        },
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador B",
+            "hint": [
+                "{specify operator B}"
+            ]
+        }
+    ],
+    "location": [
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador A",
+            "hint": [
+                "{specify location}"
+            ]
+        },
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador B",
+            "hint": [
+                "{specify location}"
+            ]
+        }
+    ]
 }

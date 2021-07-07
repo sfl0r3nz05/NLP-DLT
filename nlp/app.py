@@ -1,10 +1,9 @@
 import json
 from flask import Flask
 from dotenv import load_dotenv
-from library.UpdateFile import updateFile
+from library.UpdateFileV2 import updateFile
 from library.ParseToNLP import parseToNLP
-from library.ApplyModel import applyModel
-from library.StringFinder import stringFinder
+from library.DateFinder import dateFinder
 from library.ParseToString import parseToString
 from library.RecovEntAndPhr import recoverPhrases
 from library.RecovEntAndPhr import recoverEntities
@@ -14,7 +13,7 @@ app = Flask(__name__)
 
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache.pdf')
 
-txtParsedToStr = parseToString(text)
+#txtParsedToStr = parseToString(text)
 
 txtParsedToNLP = parseToNLP(text)
 
@@ -26,7 +25,7 @@ phrasesList = recoverPhrases(readyToComprh)
 
 # POPULATE DATE
 date = dateFinder(entitiesList)
-updateFileV2('./output/Roaming Agreements Output Template.json',"date", "hint", date)
+updateFile('./output/Roaming Agreements Output Template.json',"date",0,"hint", date)
 
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
 #   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
