@@ -1,6 +1,7 @@
 import json
 from library.AmazonComprehend.AmzComprehend import amzComprehendPhrases
 from library.AmazonComprehend.AmzComprehend import amzComprehendEntities
+from library.AmazonComprehend.AmzComprehend import amzComprehendSyntax
 
 def recoverEntities(readyToComprh):
     entity_list = []
@@ -19,3 +20,12 @@ def recoverPhrases(readyToComprh):
         for phrase in value['KeyPhrases']:
             phrase_list.append(phrase)
     return phrase_list
+
+def recoverSyntax(readyToComprh):
+    tokens_list = []
+    for x in readyToComprh:
+        tokens = amzComprehendSyntax(x)
+        value = json.loads(tokens)
+        for tokens in value['SyntaxTokens']:
+            tokens_list.append(tokens)
+    return tokens_list

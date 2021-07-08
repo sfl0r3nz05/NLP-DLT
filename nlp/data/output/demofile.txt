@@ -1,0 +1,1429 @@
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+  
+ 
+ 
+Direct Wholesale Roaming Access Agreement :  
+Main terms & conditions 
+ 
+ 
+Between 
+ 
+Proximus, 
+ Having its registered address at 27, Bld roi Albert II, B-1030 Brussels 
+ 
+..................................................... 
+(Hereinafter referred to as "Proximus") 
+ 
+And 
+ 
+<<Operator>>, 
+having its registered address: 
+..................................................... 
+(Hereinafter referred to as "Operator") 
+ 
+Both Proximus and Operator being jointly referred to as the Parties. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+1. Introduction and scope 
+ 
+1.1. This a unilateral agreement for International Roaming for the provision by 
+Proximus of Direct Wholesale Roaming Access Services, in order to enable 
+Roaming Customers of Operator to gain access to mobile telecommunications 
+services in the geographic areas where Proximus operates as a VPMN. This 
+agreement is for Direct Roaming Wholesale Access (“agreement”), as defined 
+below. 
+ 
+1.2. The Operator is either (i) a MNO constituting a Roaming Provider or (ii) a full 
+MVNO which operates as an MNO in relation to international roaming and which 
+equally constitutes a Roaming Provider.  This reference offer is intended for 
+EU/EEA MNO’s and full MVNO’s having obtained a License and/or Authorization 
+for offering mobile services by the authorities in their EU/EEA country of origin, 
+excluding Belgium. 
+1.3. This Direct Wholesale Roaming Access Agreement contains the basic principles 
+applicable to the Services provided by Proximus to Operator. 
+1.4. The Services and the technical terms and conditions offered by Proximus to 
+Operator shall not differ substantially from those provided by Proximus to other 
+Operators who request a similar service upon similar technical, qualitative and 
+pricing conditions, however subject to technical availability. Without prejudice to 
+the foregoing, the Parties may alternatively directly amend the terms and 
+conditions of this Agreement, or otherwise include deviations.  
+1.5. The Annexes, including the Overview of the Annex Structure, constitute an 
+integral part of the Agreement. In case of discrepancy between different parts of 
+the Agreement the following order of interpretation shall be applied:  
+1. the main body of this Agreement; and  
+2. the Annexes 
+1.6. In case of additional requirements, exceptions and/or contradictions between the 
+Agreement and any Technical Specifications or GSM Association Permanent 
+Reference Documents, the provisions of the Agreement shall prevail. 
+1.7. Subject to applicable laws, the Parties agree to be bound by GSMA Permanent 
+Reference documents relevant to International Roaming for example but not 
+limited to: 
+1. GSMA PRDs related to Quality of Service; 
+2. GSMA PRDs related to Fraud Detection; and 
+3. GSMA PRDs relating to Billing between the parties including Invoicing, 
+Settlement and dispute resolution. 
+1.8 The conclusion of the Agreement is subject to the respect of the procedure for 
+access requests, as described on Proximus website.  Moreover, as a condition 
+precedent for the signature of the present Agreement, such Agreement may not 
+be signed (or renewed) if during the 12 months preceding the envisaged date of 
+signature/renewal, the Operator has been subject to a notice of termination sent 
+by Proximus in the context of Direct Wholesale Roaming Access services or to 
+penalties for abusive use of the then ongoing Wholesale Roaming Access 
+Agreement. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+2. Starting Date 
+2.1. The actual commercial starting date for International Roaming shall be the date 
+as agreed by both Parties in written form after successful completion of all 
+necessary network and billing test procedures. 
+ 
+3. Definitions 
+For the purpose of the Agreement the following terms shall have the meanings set forth 
+in their respective definitions below, unless a different meaning is called for in the context 
+of another provision in the Agreement: 
+ 
+3.1.  "Affiliated Company" of a Party means any other legal entity: 
+1. directly or indirectly owning or controlling the Party, or 
+2. under the direct or indirect ownership or control of the same legal 
+entity directly or indirectly owning or controlling the Party, or 
+3. directly or indirectly owned or controlled by the Party, for so long as 
+such ownership or control lasts. 
+ 
+Ownership or control shall exist through the direct or indirect ownership of more 
+than 50 % of the nominal value of the issued equity share capital or of more 
+than 50 % of the shares entitling the holders to vote for the election of directors 
+or persons performing similar functions. 
+3.2. 
+3.3. 
+"Agreement" shall mean this Direct Wholesale Roaming 
+Access Agreement together with the Annexes attached 
+hereto. 
+"Date of the Agreement" shall mean the date as of which 
+both Parties have signed the Agreement by their duly 
+authorized representatives. 
+3.4. Direct Wholesale Roaming Access shall have the 
+meaning as defined in Article 2 (2) (p) of the Roaming 
+Regulation, with the exception of wholesale roaming resale 
+access as defined in Article 2 (2) (q) of the Roaming 
+Regulation. 
+3.5. 
+3.6. 
+3.7. 
+"GSM Association General Assembly" shall mean that 
+body of the GSM Association formed by the Members and 
+Associate Members. 
+"GSM Association Permanent Reference Documents" 
+means a document noted as such by the PSMC to the 
+General Assembly and listed as such by Headquarters on 
+the list of Permanent Reference Documents. 
+“International Roaming” or “IR” shall mean the provision 
+of Services by Proximus in respect of which access is 
+granted by Roaming Customers of Operator through 
+Proximus’ s PMN. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+3.8. 
+3.9. 
+"Public Mobile Network“ or "PMN" shall mean a network 
+that complies with the definition of a GSM network as set 
+out in the Articles of Association of the GSM Association 
+(AA.16).1 
+ 
+"Roaming Customer" shall have the meaning as defined 
+in Article 2 (2) (g) of the Roaming Regulation and shall in 
+practice mean a person or entity with a valid legal 
+relationship with Operator using a GSM SIM (Subscriber 
+Identity Module) and/or a GSM USIM 
+(Universal 
+Subscriber Identity Module) for use by that person or entity 
+of the Services while roaming on Proximus’s PMN in 
+accordance with 
+this 
+Agreement. 
+terms and conditions of 
+the 
+3.10. Roaming Provider shall have the meaning as defined in 
+Article 2 (2) (a) of the Roaming Regulation. 
+3.11. Roaming Regulation shall mean the Regulation (EU) No. 
+2015/2120 of the European Parliament and of the Council 
+of 25 November 2015 amending Regulation (EU) No 
+531/2012 on roaming on public mobile communications 
+networks within the Union, O.J., L 310/1 of 26 November 
+2015. 
+3.12. "Services" shall mean the services of Direct Wholesale 
+Roaming Access provided under this Agreement, as 
+specified in Annexes 2 and 10, as the same may be 
+amended from time to time by Proximus. 
+3.13. “Session” shall mean the time between PDP Context 
+Activation until PDP Context deactivation. 
+3.14. "TAP" shall mean Transferred Account Procedure as 
+defined and described in GSM Association Permanent 
+Reference Documents. 
+3.15. "Technical Specifications" shall mean the technical 
+specifications defined and adopted by 3GPP (Third 
+Generation Partnership Project), 
+the ETSI 
+technical specifications defined and adopted by 3GPP. 
+including 
+3.16. The 
+terms 
+"Member", 
+"Associate Member", and 
+"Headquarters" shall bear the meanings ascribed to them 
+in the Articles of Association of the GSM Association 
+(AA16). 
+ 
+ 
+ 
+ 
+1 Please note that in AA16 GSM network refers to the family of GSM mobile communications 
+systems and future evolutions thereof, e.g. GSM, DCS, PCS, UMTS or its equivalent.  
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+4. Annexes 
+ 
+4.1.  The Annexes are divided as set out in the Overview of the Annex Structure. 
+ 
+ 
+ 
+ 
+ 
+ 
+5. Technical Framework 
+5.1. In respect of and subject to their licenses or rights and other national binding 
+regulations to establish and operate Public Mobile Networks, the Parties to the 
+Agreement agree, subject to Article 5.2, to establish IR in accordance with: 
+1. relevant Technical Specifications;  
+2. all binding GSM Association Permanent Reference Documents; and  
+3. those non-binding GSM Association Permanent Reference Documents 
+which are agreed by the Parties and specifically set out in the 
+Annexes; including in each case all the commercial aspects, as defined 
+in the Agreement, including the Annexes hereto. 
+5.2. Additional requirements and exceptions to the Technical Specifications and GSM 
+Association Permanent Reference Documents, as agreed between the Parties, 
+are detailed in the Agreement and/or Annexes to the Agreement.  
+ 
+6. Management of Modifications to the Services 
+6.1. Following notice of change served by Proximus to implement new Services or 
+changes to any existing Services in accordance with Article 19.2, section 2 
+both Parties shall discuss the impact of any such change for Roaming 
+Customers (including Roaming Customers’ access to these Services) and in 
+relation to:  
+1. network and billing test procedures as set out in the Technical 
+Specifications and the GSM Association Permanent Reference 
+Documents, as requested by either Party;  
+2. administrative activities; and 
+3. 
+the targeted starting date for the changed services. 
+6.2 The Roaming provider is entitled to ask the Direct Wholesale Operator, prior to 
+the launch, a forecast of all voice, SMS and data traffic for the coming 12 
+months after commercial launch. These forecasts will enable Proximus to 
+make the Services available in the best possible conditions. Consequently, 
+such forecasts shall be based on reliable data and Operator undertakes to 
+update them at the end of each calendar semester starting from the semester 
+following the commercial starting date, by consistently maintaining a 12-month 
+anticipation. In case of inaccurate forecasts, Proximus will not be liable for any 
+default in the provision of the Services. 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+7. Charging, Billing & Accounting 
+7.1  When a Roaming Customer uses the Services made available hereunder by 
+Proximus, Operator shall be responsible for payment of charges for the said 
+Services so used in accordance with the tariff of Proximus.  
+7.2 The Roaming provider is entitled to ask the Wholesale Operator, prior to the 
+commercial launch, to provide a bank guarantee based on the traffic forecast 
+for the coming twelve months. If traffic volumes change the roaming provider 
+may request the bank guarantee to be changed accordingly.  
+ 
+ 
+8. Implementation of TAP 
+8.1. The Parties shall implement TAP according to the GSM Association 
+Permanent Reference Documents and the provisions set out in the Annex 
+3.1. 
+ 
+9. Billing and Accounting 
+9.1. The Parties shall implement billing and accounting according to the GSM 
+Association Permanent Reference Documents and the provisions set out in 
+Annex 3. 
+ 
+10. Customer Care 
+10.1. The responsibilities of each Party concerning Customer Care are described in 
+Annex 4. 
+ 
+11. Confidentiality 
+11.1. The Parties agree that all aspects of the contents of the Agreement shall be 
+treated as Information (as defined below) and no information in respect to the 
+content of the Agreement shall be disclosed without the prior written consent 
+of the Parties except as reasonably necessary to implement the Agreement  
+them 
+referred 
+(hereinafter 
+11.2. In addition to Article 11.1 hereof, the Parties hereby agree to treat all 
+information exchanged between 
+to as 
+"Information") as confidential and agree not to disclose such Information in 
+any manner whatsoever, in whole or in part except as provided in this Article 
+11. The Parties shall not use any Information other than in connection with the 
+discussions between them and any transactions resulting therefrom, or for the 
+provision of the Services as contemplated herein. The Parties are also entitled 
+to disclose Information to third parties in the context of a possible bona fide 
+acquisition or sale of its operations in support of reasonably related due 
+diligence activities in respect thereof, or for the borrowing of funds or obtaining 
+of insurance, in which case any third parties (including lenders or insurance 
+companies) involved in such activities shall be  obliged to enter into 
+confidentiality agreements which have the equivalent content as this Article 
+11 before receiving the Information. In addition to the foregoing, the Parties 
+shall also be entitled to share information with Affiliated Companies, directors, 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+agents, professional advisers, contractors, employees or resellers on a need 
+to know basis provided that such Affiliated Companies, agents, contractors, 
+employees or resellers have entered into confidentiality agreements in a form 
+substantially equivalent to and on terms and conditions no less stringent than 
+the terms and conditions set out in this Article 11. Subject to Article 11.3, each 
+Party shall be liable in accordance with Article 14 (subject to Article 11.3) 
+towards the other Party in respect of any unauthorized disclosure of 
+Information made by any other authorized recipients. 
+ 
+11.3. Notwithstanding Article 14, each Party shall be liable under this Agreement to 
+the other Party in respect of any proven damage or loss to the other Party 
+caused by its unauthorised use or disclosure of such information only up to 
+the sum of five hundred thousand (500,000) SDR.  
+11.4. Notwithstanding Article 11.1 above, Information and the contents of this 
+Agreement may be transmitted to governmental, judicial or regulatory 
+authorities, as may be required by any governmental, judicial or regulatory 
+authority. 
+11.5.  For the purposes of the Agreement, Information and the contents of this 
+Agreement shall not be considered to be confidential if such Information is: 
+1. 
+in or passed into the public domain other than by breach of this Article; 
+or 
+2. known to a receiving Party prior to the disclosure by a disclosing Party; 
+or 
+3. disclosed to a receiving Party without restriction by a third party having 
+4. 
+the full right to disclose; or 
+independently developed by a receiving Party to whom no disclosure 
+of confidential Information relevant to such Information has been 
+made. 
+11.6. Each Party agrees that in the event of a breach or threatened breach of Article 
+11, the harm suffered by the other Party would not be compensable by 
+monetary damages alone and, accordingly, in addition to other available legal 
+or equitable remedies, the other Party shall be entitled to apply for an 
+injunction or specific performance with respect to such breach or threatened 
+breach, without proof of actual damages (and without the requirement of 
+posting a bond or other security) and each Party agrees not to plead 
+sufficiency of damages as a defence.  
+11.7. Article 11 shall survive the termination of the Agreement for a period of ten 
+(10) years but shall not in any way limit or restrict a disclosing Party's use of 
+its own confidential Information. 
+ 
+12. Data Privacy  
+12.1. Each Party’s obligations hereunder to transfer information to the other Party 
+shall not apply to the extent that a Party is prohibited from doing so by the 
+regulations and laws of its own country applicable to IR and/or data protection.  
+12.2.  Each Party shall inform its customers that during roaming, the storage, 
+treatment and transfer of their personal data may be subject to regulation 
+different from the regulation in their own country. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+12.3.  The Parties confirm that they shall comply with the Data Privacy 
+Regulations/Laws applicable in their respective countries.  
+ 
+ 
+13. Fraud Prevention 
+13.1. The Parties shall comply with the procedures and provisions concerning 
+fraudulent or unauthorised use by Roaming Customers set out in the GSM 
+Association Permanent Reference Documents. The Parties shall implement 
+fraud prevention procedures as specified by the GSM Association Binding 
+PRD BA.20. 
+13.2  Are considered as an “acceptable periodical travel presence” on the Proximus 
+network the presence of maximum 15 % of the Roaming- In subscribers of 
+the EU operator for maximum 30 days in a 4 months period and 5% of the 
+Roaming-In subscribers for maximum 90 days in a 4 months period. 
+Notwithstanding any clause to the contrary in any other document, if more 
+than 15% of the Roaming-In subscribers of the EU operator are detected by 
+the Proximus network for more than 30 days in a 4 months period or more 
+than 5% of the Roaming-In subscribers are detected for more than 90 days in 
+a 4 months period, the corresponding usage that exceeds the above 
+mentioned parameters will be considered as a “Suspected fraudulent or 
+unauthorised use” of Proximus network. When this suspected fraudulent or 
+unauthorised use is observed by Proximus, a monthly penalty for voice, SMS 
+messages and data will be invoiced in accordance with the traffic volume 
+generated as specified in annex 9 of the Agreement, without prejudice to 
+Proximus’ right to suspend the service according to clause 15.1 (and notably 
+15.1.3). 
+Notwithstanding any clause to the contrary, in the event penalties have been 
+invoiced for a total period of six months during a contractual year, Proximus 
+reserves the right to terminate the present Agreement in accordance with the 
+procedure described in Art 3 of the Regulation n°531/2012 amended by 
+Regulation 2017/920 on roaming on public mobile communication networks 
+within the European Union. During this procedure, the penalties remain due 
+(if applicable) 
+Proximus reserves the right to review the parameters indicated in the present 
+regulated offer to define what is considered as an “acceptable periodical travel 
+presence” after having notified the BIPT of the objective grounds based on 
+which Proximus considers that the current parameters are no more 
+appropriate. 
+The present Article 13.2 only applies to EU/EEA traffic. 
+ 
+ 
+ 
+ 
+14. Liability of the Parties 
+14.1. Neither Party shall be liable to the other Party under or in connection with the 
+Agreement except: 
+1. in respect of charges to be paid to Proximus pursuant to Article 7; 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+2. to the extent of its negligence where such negligence results in proven 
+damages or loss to the other Party, in which event the liability of the 
+negligent Party shall be limited to and shall in no event exceed two 
+hundred and fifty thousand (250,000) SDR in respect of any one 
+incident or series of incidents arising from the same cause; 
+3. in respect of charges arising from non-compliance with binding GSM 
+Association Permanent Reference Documents pursuant to Article 13. 
+ 
+14.2. Furthermore, in no event shall either Party be liable for any consequential 
+damage or loss of whatsoever nature, including but not limited to, loss of 
+profit or loss of business, even if such Party has been advised of the 
+possibility of such loss or damage. 
+14.3. 
+In no event shall any employee of either Party or of an Affiliated Company 
+be liable to the other Party for any act of negligence or intent under or in 
+connection with the Agreement. Save for the limitations in Articles 14.1 and 
+14.2 nothing in the foregoing shall in any way restrict the liability of either 
+Party for the actions of its employees. 
+14.4. Limitation of liability as described in this Article shall not apply if damage or 
+loss is caused by a Party's wilful misconduct (including fraud) or gross 
+negligence. 
+ 
+15. Suspension of Services 
+15.1. Notwithstanding anything in the Agreement to the contrary, Proximus may 
+without liability suspend or terminate all or any of its Services to Roaming 
+Customer(s) in circumstances where it would suspend or terminate those 
+Services to its own customers, including but not limited to: 
+1. Roaming Customers using equipment which is defective or illegal; or 
+2. Roaming Customers causing any technical or other problems on 
+Proximus’s Public Mobile Network; or 
+3. Suspected fraudulent or unauthorised use; or 
+4. Authentication of the legal relationship not being possible; or 
+5. Traffic volumes which significantly differ from predicted volumes; or 
+6. Maintenance or enhancement of its Public Mobile Network; or 
+7. Suspension by non-payment exceeding 3 months. 
+15.2. In case of a proposed suspension of Services to all Roaming Customers, 
+Proximus shall use commercially reasonable efforts to give four (4) weeks 
+written notice (shorter notice may apply given the circumstances related to the 
+suspension) to Operator prior to the suspension taking effect.  If the 
+suspension continues for more than six (6) months, Operator shall have the 
+right to terminate the Agreement with immediate effect by written notice. 
+15.3. Operator has the right at any time, for technical reasons, without liability but 
+upon detailed written notice to Proximus, to suspend access to the Services 
+to its Roaming Customers. Alternatively, if it is technically more practicable, 
+Operator may require Proximus to suspend all of its Services to Roaming 
+Customers of Operator. Proximus shall use commercially reasonable efforts 
+to comply with such requirement within seven (7) calendar days after receipt 
+of the said notice. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+15.4. The Parties agree that the suspension described in Article 15.3 shall be 
+removed as soon as the technical reason for the suspension has been 
+overcome by Proximus or Operator as the case may be.  
+ 
+ 
+16. Force Majeure 
+16.1. Non-performance of either Party’s obligations pursuant to the Agreement or 
+delay in performing same (except with respect to the payment of charges 
+applicable hereunder) shall not constitute a breach of the Agreement if, and 
+for as long as, it is due to a force majeure event, including, but not being 
+limited to, governmental action, or requirement of regulatory authority, 
+lockouts, strikes, shortage of transportation, war, rebellion or other military 
+action, fire, flood, natural catastrophes, or any other unforeseeable obstacles 
+that a Party is not able to overcome with reasonable efforts, or non-
+performance of obligations by a sub-contractor to a Party pursuant to any of 
+the aforementioned reasons.  The Party prevented from fulfilling its 
+obligations shall on becoming aware of such event inform the other Party in 
+writing of such force majeure event as soon as possible. If the force majeure 
+event continues for more than six (6) months, either Party shall have the right 
+to terminate the Agreement with immediate effect by written notice. 
+16.2. If the affected Party fails to inform the other Party of the occurrence of a force 
+majeure event as set forth in Article 16.1 above, then such Party thereafter 
+shall not be entitled to refer such events to force majeure as a reason for 
+non-fulfilment. This obligation does not apply if the force majeure event is 
+known by both Parties or the affected Party is unable to inform the other 
+Party due to the force majeure event.  
+ 
+17. Duration of the Agreement 
+17.1. The Agreement comes into force on the Date of the Agreement Without 
+prejudice to the conditions of Articles 15.2, 16.1 and 18, the Agreement shall 
+have a duration of one (1) year as from the Date of the Agreement and shall 
+be subject to tacit yearly renewals unless one of the Parties receives a 
+termination notice 3 months prior to the end of the then current term. 
+The present Article 17.1 is without prejudice to the termination rules as 
+detailed in article 18 below. 
+ 
+18. Termination of the Agreement 
+18.1. In addition to the conditions of Articles 15.2, 16.1 and 17 the Agreement may 
+be terminated as follows: 
+1. by mutual agreement of the Parties in writing subject to a prior notice of 
+six (6) months; or 
+2. by one of the Parties, with immediate effect, when the other Party is in 
+material breach of the Agreement and does not or is not capable of 
+remedying such breach within thirty (30) days of receipt of a written notice 
+to such effect; 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+3. by one of the Parties, with immediate effect, if the other Party becomes 
+bankrupt or insolvent or if that other Party enters into any composition or 
+arrangement with its creditors and that other Party is not able to ensure 
+performance of its obligations under the Agreement by a guarantee from 
+a first class bank, payable on first written demand; 
+4. by written notice of either Party to the other in the event that IR becomes 
+technically or commercially impracticable on Proximus’s Public Mobile 
+Network and the provisions set out in Article 15 are not sufficient to solve 
+the problem or if an unacceptable level of unauthorized use occurs and 
+the other Party is not capable of remedying such unauthorized use within 
+sixty (60) days of receipt of a written notice to such effect; or 
+5. subject to Article 14.1 immediately in the event a final order by the relevant 
+governmental authority revoking or denying renewal of the license(s) or 
+permission to operate a Public Mobile Network(s) granted to either Party, 
+or any other license necessary to operate the Service(s), takes effect. 
+18.2. In the event of termination on the grounds of a breach of the Agreement under 
+the Article 18.1.2, the Party in breach shall, notwithstanding Article 14.2, be 
+liable to the other Party (in addition to charges properly due and payable to 
+Proximus) for proven direct damage or loss (excluding indirect or consequential 
+damage or loss) arising as a consequence of such breach up to a maximum 
+aggregate liability of two hundred and fifty thousand (250,000) SDR, provided, 
+however, that such limitation of liability shall not apply if a damage or loss is 
+caused by a Party’s wilful misconduct or gross negligence. 
+ 
+19. Changes to the Agreement, Annexes and Addenda 
+19.1. Any amendments and/or additions to the Agreement and/or Annexes and/or 
+Addenda shall be valid only if made in writing and signed by duly authorized 
+representatives of both Parties hereto. 
+19.2. Notwithstanding Article 19.1 Proximus shall be entitled to:  
+1. implement new Services or change existing Services as it sees fit subject 
+to the successful completion of all network and billing test procedures as 
+set out in the Technical Specifications and the GSM Association 
+Permanent Reference Documents and as requested by either Party. 
+Proximus shall give Operator at least thirty (30) days’ prior written notice 
+of any implementation of Services for the first time. Proximus also agrees 
+to use its reasonable efforts to give the other Party at least thirty (30) days 
+prior written notice of any other proposed implementation of new Services 
+or change of existing Services which is a major change which has an 
+impact on IR;  
+ 
+2. terminate all or any existing Services offered by or to a roaming partner. 
+Proximus agrees to use its reasonable efforts to give Operator at least 
+sixty (60) days prior written notice of any termination of existing Services 
+which is a major change which has an impact on IR; or 
+ 
+3. subject to the constraints of the Roaming Regulation, vary its tariff stated 
+in the Annex 8 or subsequent variation thereof. In the case of scheduled 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+changes (as described in BA.27) Proximus shall give sixty (60) days 
+written notice of any variation to its tariff and the new change shall take 
+effect on the first day of the month following the expiration of the sixty (60) 
+day notice period. In the case of unscheduled changes Proximus shall use 
+all reasonable endeavours to give adequate notice of such changes and 
+the new change shall take effect on the first day following the expiration of 
+the notice period given. Any variation in the tariff shall be deemed to be 
+incorporated into the Agreement. Any challenges to changes to the Tariff 
+shall be made in accordance with Article 23.22.2; 
+ 
+19.3. The references to Technical Specifications and binding GSM Association 
+Permanent Reference Documents in Article 5.1 (1) and (2) shall be deemed to 
+include references to these documents as amended by GSM Association from 
+time to time.  However the reference to non-binding GSM Association 
+Permanent Reference Documents in Article 5.1(3) shall not be deemed to 
+include a reference to such non-binding documents as amended by GSM 
+Association from time to time unless and to the extent that this is expressly 
+agreed by the Parties and detailed in the Agreement, including the Annexes. 
+This Article 19.23 shall be subject to Article 5.2.  
+19.4. It is also recognised by the Parties that it may be appropriate to seek changes 
+to the Agreement in the light of experience and development in the GSM 
+Association and the establishment of IR between the Parties. Accordingly, the 
+Parties shall enter into good faith discussions with a view to agreeing mutually 
+acceptable modifications to the Agreement. 
+ 
+20. Miscellaneous 
+ 
+20.1. 
+Successors and Assigns 
+The Agreement and the rights and obligations specified herein shall be 
+binding upon the Parties hereto and their respective legal successors and 
+neither Party shall sell, transfer or assign the Agreement or any part, interest, 
+right or obligation hereunder, except that a Party shall have the right to 
+transfer or assign the Agreement in whole (but not in part) to an Affiliated 
+Company who is also a Member of the GSM Association or to an assignee of 
+its license or right to operate a Public Mobile Network(s) provided that such 
+assignee expressly assumes, by written instrument approved by the Parties, 
+all of the obligations of such Party hereunder and thereby becomes a Party 
+hereunder, it being understood that such assignment shall not release the 
+assigning Party of its obligations under Article 11 of this Agreement.  No 
+person other than a Party to the Agreement shall acquire any rights hereunder 
+as a third-party beneficiary or otherwise by virtue of the Agreement. 
+ 
+ 
+20.2. 
+Headings 
+The headings of the Agreement are for the convenience of reference only 
+and shall in no way limit or affect the meaning or interpretation of the 
+provisions of the Agreement. 
+20.3. 
+No waiver 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+Failure by any Party at any time or times to require performance of any 
+provisions of the Agreement shall in no manner affect its rights to enforce the 
+same, and the waiver by any Party of any breach of any provisions of the 
+Agreement shall not be construed to be a waiver by such Party of any 
+succeeding breach of such provision or waiver by such Party of any breach of 
+any other provision hereof. 
+ 
+ 
+ 
+ 
+ 
+20.4. 
+Provisions severable 
+If any part of the Agreement or any Annex hereto is held to be invalid or 
+unenforceable, such determination shall not invalidate any other provision of 
+the Agreement or Annexes hereto; and the Parties shall attempt, through 
+negotiations in good faith, to replace any part of the Agreement or Annexes 
+hereto so held to be invalid or unenforceable.  The failure of the Parties to 
+agree on such replacement shall not affect the validity of the remaining parts 
+of the Agreement. 
+20.5. 
+Notices 
+All notices, information and communications required under the Agreement 
+shall be given as described in Annex 1: Agreement Management Principles. 
+20.6. 
+Compliance with Laws and Regulatory requirements  
+The commitment of the Parties hereto shall be subject to all applicable laws 
+and/or regulatory requirements, present and future, of any governmental or 
+regulatory authority having jurisdiction over the Parties hereto, as well as any 
+valid order of a court of competent jurisdiction. 
+20.7. 
+Anti-bribery compliance 
+The Parties hereby acknowledge the importance of combating and preventing 
+bribery and to that end both Parties agree to comply fully with all applicable 
+laws, regulations and sanctions relating to anti-bribery and anti-corruption. 
+ 
+21. Choice of Law 
+21.1. The Agreement and any matters relating hereto shall be governed by and construed 
+in accordance with Swiss law. 
+ 
+22. Dispute Resolution & Arbitration 
+22.1. The Parties agree to seek to resolve any dispute arising out of the Agreement in 
+accordance with the following escalation procedures before commencing the 
+arbitration procedures described below. 
+The Contact Persons of both Parties shall work in good faith to try to resolve the 
+dispute within thirty days from the date that a Party first gives notice that a dispute 
+has occurred. 
+If the Contact Persons fail to reach an agreement on the dispute within thirty days, 
+the dispute shall be referred to more senior persons within the respective 
+companies who shall try to resolve the dispute within a further thirty-day period. If 
+no resolution is found each Party is entitled to commence the arbitration 
+proceedings described below. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+Parties agree that all disputes in connection with the Agreement shall be settled 
+under the Rules of Conciliation and Arbitration of the International Chamber of 
+Commerce (ICC) by three (3) arbitrators appointed in accordance with the said 
+Rules.  
+22.2. However disputes with respect to a change of Proximus’s Tariff shall be governed 
+by the procedure set out below: 
+ 
+Where there is a challenge by Operator (the “Challenging Party”) to a scheduled 
+or an unscheduled change of Proximus Tariff the following procedure shall apply; 
+The Challenging Party shall receive notice of a change of the Tariff in accordance 
+with the procedure outlined in Annex 1. Within fourteen (14) days from the date of 
+the notice given in accordance with the procedure in Annex 1 the Challenging 
+Party shall notify the other Party by email or fax and registered mail that it intends 
+to lodge a challenge to the change of the Tariff and shall provide a reason to justify 
+the challenge.  
+The Contact Persons of both Parties shall then have up until and including day 
+thirty-five (35) to try and resolve the dispute. If after day thirty-five (35) no resolution 
+is found the matter will be escalated to a more senior person in each organisation. 
+Such person will then have a further twenty-one (21) days to try and reach a 
+settlement, that is up to and including day fifty-six (56). 
+If after the expiration of day fifty-six (56) the parties are still in dispute then the 
+Challenging Party must decide if it wishes to launch arbitration proceedings. The 
+Challenging Party must inform the other Party in writing that it intends to initiate 
+arbitration proceedings and must commence formal procedures with the 
+International Chamber of Commerce in Geneva before the expiration of day sixty 
+(60).  
+Thereafter the dispute in connection with the change of the Tariff shall be finally 
+settled under the Rules of Conciliation and Arbitration of the International Chamber 
+of Commerce (ICC) by three (3) arbitrators appointed in accordance with the said 
+Rules. 
+Both Parties agree that the decision of the arbitrator shall not be treated as 
+confidential by either Party.  
+22.3. The place of arbitration shall be Geneva, Switzerland and the proceedings shall be 
+conducted in the English language. 
+22.4. The award shall be final and binding and the Parties hereby waive all means of 
+recourse to the courts of any country except for the purpose of enforcement 
+procedures.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+ 
+23. Signatures 
+ 
+ 
+Place …................................... 
+ 
+Place …................................... 
+ 
+ 
+Date …...................................  
+ 
+Date …................................... 
+ 
+ 
+…...........................................  
+ 
+For Proximus  
+ 
+…........................................... 
+ 
+  For Operator  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+24. Overview of the Annex Structure 
+ 
+Annex number 
+Annex name 
+Agreement Management Principles 
+Services 
+Billing and Accounting 
+Information on Billing Data 
+Settlement Procedure 
+Customer Care Principles 
+Technical Aspects 
+Testing 
+Security 
+Information on Signalling Interconnection and / or IP Connectivity 
+Data Privacy, General Principles 
+Roaming Service Level Agreement 
+Roaming Provider Services, Tariffs and other Information 
+Penalties suspected fraudulent or unauthorised use 
+ANNEX 1 
+ANNEX 2 
+ANNEX 3 
+ ANNEX 3.1 
+ ANNEX 3.2 
+ANNEX 4 
+ANNEX 5 
+ ANNEX 5.1 
+ ANNEX 5.2 
+ ANNEX 5.3 
+ANNEX 6 
+ANNEX 7 
+ANNEX 8 
+ANNEX 9 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+Annex 1 AGREEMENT MANAGEMENT PRINCIPLES 
+1. Notices 
+ Each Party specifies only one contact point for exchange of updates to the 
+Agreement 
+ 
+Proximus  
+ Yves Moraine, Roaming Manager 
+ Avenue roi Albert II, 27 
+1030 Brussels 
+Belgium 
+ 
+ 
+Operator 
+[ ]  
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+Annex 2 SERVICES 
+ 
+The implementation of Services shall be in accordance with the Technical Specifications 
+with the exception of Public Mobile Network specific deviations and/or chosen options 
+agreed by both Parties during the testing phase.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ 
+Annex 3 BILLING AND ACCOUNTING 
+ 
+ 
+Annex 3.1 INFORMATION ON BILLING DATA 
+ 
+3.1.1 INFORMATION ON TAP 
+The implementation of the TAP necessary to provide Services shall be in accordance with 
+the GSM Association Permanent Reference Documents.  
+ 
+ 
+ANNEX 3.2 SETTLEMENT PROCEDURE  
+Proximus will prepare a monthly invoice for calls registered during the invoice period made 
+by the visiting subscribers in the visited PMN Operator. 
+. 
+The invoice period shall in general be a calendar month. However, a single transfer 
+covering a month end shall not be divided between two invoices. The invoice has to be 
+sent by the 15th of the following month at latest. A fax can serve as the first information. 
+The invoice should adequately enable the Operator to identify the TAP records. 
+Each invoice amount will be expressed both in SDR as well as in Euros 
+Proximus will issue as appropriate credit notes and correction invoices to compensate for 
+agreed changes to or agreed errors in the basic inter PMN Operator invoices. The 
+threshold amount for issuing the Credit Note is 50 SDR. In any case, a Credit Note shall 
+be issued at least once a year before the year-end. 
+Payment shall be made in the creditors national currency calculated from the net SDR 
+balance obtained by the netting process. Conversion from SDR into the currency of payment 
+shall be made at the pegged rate quoted by the IMF on the 23rd of the month preceding the 
+invoice period. If this is a public holiday and the exchange rate is not quoted the currency is 
+pegged using the previous day. In the event that no exchange rate is quoted for the previous 
+day as well, the first available quoted rate should be taken, but not exceeding 5 calendar 
+days prior to the 23rd of the month as defined in Permanent Reference Document BA.11. 
+Payment by the debtor shall be made within 30 days from the date of the invoice with the 
+later date. 
+If the debtor does not pay the net balance by the due date for payment then the creditor 
+shall have the right to charge its normal interest rate on the overdue amount from the due 
+date for payment until payment is made. 
+The normal interest rate for the Party concerned is: 
+8% above Euribor three-monthly rate base lending rate (from time to time in force) in the 
+case where Proximus is the creditor; 
+Changes in time schedules concerning the exchange of invoices and settlement periods shall 
+be fixed three months before implementation at the latest. 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+All enquiries and complaints concerning international invoicing shall be done through points 
+of contact as defined in Annex I. 
+The Operator shall pay any Value Added Tax (VAT) or other similar tax in accordance with 
+the laws of the Proximus's country.  
+The invoice amount has to include and specify all taxes and duties levied in the 
+country of the Proximus. 
+In case the VAT recovery is possible in the country of the Proximus, the VAT 
+registration number has to be shown on the invoice and the address of the VAT office 
+which deals with enquiries and claims referring to VAT refunding has to be exchanged 
+bilaterally. 
+Where bank fees occur, any such expenses imposed in the debtor country shall be borne 
+by the debtor and expenses imposed in the creditor country, including payment expenses 
+imposed by intermediate banks in third countries, shall be borne by the creditor. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ANNEX 4 CUSTOMER CARE PRINCIPLES 
+General 
+A Roaming Customer should contact the Customer Care Services of his home contract 
+partner (Customer Care Services of Operator) while roaming in the Public Mobile Network 
+of Proximus. This home Customer Care Services will provide the first point of contact but 
+may refer the Roaming Customer to Proximus’s Customer Care Services if appropriate. 
+The Roaming Customer is free to contact Proximus’s Customer Care Services directly. 
+However, the primary responsibility for customer care remains with Operator. 
+Each Party will ensure that there is, at least during office hours, an English speaking operator 
+on duty, to whom a Roaming Customer can be referred.  
+Customer care contact numbers are defined in the standard AA14 documents.  
+Public Mobile Network Faults 
+In the event of a perceived Public Mobile Network fault a Roaming Customer should 
+contact the home Customer Care Services while roaming in the Public Mobile Network of 
+Proximus. The home Customer Care Services will provide the first point of contact but may 
+refer the Roaming Customer to Proximus’s Customer Care Services if appropriate. 
+In the event that the Customer Care Services of one Party has a query concerning potential 
+faults of the other Party’s Public Mobile Network, then the Customer Care Services shall 
+contact the contact point defined in Annex 1. 
+In addition, it may be necessary that technical experts of one Party get into direct contact 
+with the other Party’s technical experts (e.g. to establish trouble shooting). In such cases 
+additional contact points shall be provided. These contact points are defined below. 
+Frequently arising faults in the Public Mobile Network or Services of Proximus experienced 
+by Roaming Customers and indicated to Operator shall be reported to the other Party’s 
+contact point defined in Annex 1. 
+Lost/Stolen SIM and/or USIM-Cards 
+In the event that a SIM and/or USIM-card is lost or stolen, the Roaming Customer shall be 
+asked to contact his home Customer Care Services. If the Roaming Customer contacts 
+Proximus’s Customer Care Services, Proximus’s Customer Care Services will provide the 
+Roaming Customer with the contact number of his home Customer Care Services. 
+Lost/stolen or Faulty Mobile Equipment 
+In the event that mobile equipment is lost, stolen, or faulty, the Roaming Customer shall be 
+asked to contact his home Customer Care Services. If the Roaming Customer contacts 
+Proximus’s Customer Care Services he will be referred to his home Customer Care 
+Services. 
+Billing Enquiries 
+In the event that a Roaming Customer has an enquiry relating to the amount billed during 
+roaming, the Roaming Customer shall resolve this query with his home Customer Care 
+Services. Any contact with Proximus will be achieved through his home Customer Care 
+Services. 
+Customer Service Numbers 
+Reference is made to standard AA14 documents. 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+Customer Service Numbers (Public Domain) 
+Reference is made to standard AA14 documents. 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ANNEX 5 TECHNICAL ASPECTS 
+Technical aspects concerning both the pre-commercial and commercial phases of 
+International Roaming are dealt with in the Annexes to follow. 
+ 
+ 
+ANNEX 5.1 TESTING 
+ 
+Certification of testing 
+The Operator shall send Completion Certificates confirming the successful execution of 
+IREG tests which includes testing of the TAP procedures according to the Test 
+Specifications of GSM Association Permanent Reference Documents.  
+Testing of Service availability 
+Proximus agrees to perform relevant tests of service availability, according to the IREG and 
+TADIG Test Specifications, every time a major change which has an impact on 
+International Roaming 
+Testing SIM and/or USIM-Cards General 
+Operator will make the bilaterally agreed number of test SIM and/or USIM-cards available to 
+Proximus under the following conditions: 
+Send test SIM and/or USIM-card(s) as agreed bilaterally in a written notice without any 
+activation fee or any subscription fee. 
+All necessary information concerning the SIM and/or USIM-card(s), i.e. IMSI, MSISDN, PIN, 
+PUK, shall be forwarded to Proximus as well. 
+The SIM and/or USIM-card(s) remain in the property of the Wholesale Roaming Access 
+Provider. 
+The test SIM and/or USIM-card(s) shall only be used in Proximus’s Public Mobile Network 
+for the purpose of testing of International Roaming functions. 
+TAP-data for traffic generated by these test SIM and/or USIM-card(s) shall be included in the 
+normal billing and accounting procedures and thereby also invoiced by Proximus. 
+None of the above shall be construed to allow reselling the SIM and/or USIM-card(s) or in 
+any other way forward the SIM and/or USIM-card on conditions that could be negative for 
+the Wholesale Roaming Access Provider.  
+Tests before the commercial start of roaming services (pre-commercial roaming 
+phase) 
+As a general principle, it is agreed that Proximus using test-SIM and/or USIM-card(s) will 
+not receive a payable bill from the issuing Operator for the test calls made in the Public 
+Mobile Network under test. TAP-data and bills will only be sent for test purposes. 
+Unless otherwise agreed, it is the sole responsibility of Operator to block Roaming 
+Customers of Operator during the pre-commercial phase and in no case the Proximus has 
+to bear the costs incurred by its customers roaming in Proximus’s Public Mobile Network. 
+Tests during the commercial roaming phase 
+As a general principle it is agreed that during the commercial roaming phase the usage of 
+these SIM and/or USIM-card(s) is fully chargeable for traffic charges. The Operator shall 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+therefore have the right to send a (single) bill to Proximus for the traffic generated by the 
+exchanged SIM and/or USIM-card(s), however, only if the amount exceeds the bilaterally 
+agreed non chargeable value. The amount charged is only the amount exceeding the non-
+chargeable value calculated on a monthly basis.  
+The non-chargeable monthly value per test SIM/for the total of test SIMs is 50 Euro.  
+The tariff used will be either the Tariff of Proximus or the Wholesale Roaming Acces 
+Requester retail tariff. In case the retail tariff is used, the Operator will attach an itemised 
+bill to the invoice for control purposes. The payment shall be done according to the 
+provisions set out in Annex 3.2. The invoice regarding test SIM and/or USIM-card(s) shall 
+be sent to the address indicated for that purpose in Annex 1. 
+In the event that Proximus has a query concerning the Operator test SIM and/or USIMcard(s), 
+then Proximus shall contact: 
+CONTACT NAME & DETAILS: 
+Calls made outside Proximus during pre-commercial or commercial roaming phase 
+All costs occurring for calls made with test SIM and/or USIM cards issued to Proximus 
+outside Proximus’s network will be charged by the Operator. The Operator has the right to 
+decide how to charge this usage of test SIM and/or USIM cards.  
+The tariff used will be the Operator retail tariff. The Operator will attach an itemised bill to 
+the invoice for control purposes. The payment shall be done according to the provisions set 
+out in Annex 3.2. The invoice regarding test SIM and/or USIM-card(s) shall be sent to the 
+address indicated for that purpose in Annex 1.Using best endeavours, the Operator will 
+inform Proximus and bar the test SIM and/or USIM card(s) being used outside Proximus’s 
+Network. 
+Proximus is fully liable for all call costs as detailed above, damages and costs (as limited by 
+this agreement) incurred by misuse of test SIM and/or USIM cards outside Proximus for the 
+first 180 calendar days or until it is informed by the Operator, whichever is the smaller: 
+Lost or stolen test SIM and/or USIM cards 
+In the event that Proximus determines it is no longer in possession of the Operator Test 
+SIM and/or USIM cards, Proximus must immediately notify the Operator in written form and 
+request that the missing card(s) be deactivated. Once sufficient notification has been 
+delivered to the Operator, the liability of Proximus ceases for all further usage on the 
+missing cards(s) which occurs beyond the date of notification. However, the burden is on 
+Proximus to provide sufficient proof that adequate notification was given to the Operator. 
+ 
+ANNEX 5.2 SECURITY 
+Security functions of the individual Parties are specified in here and any other PRD 
+documents. 
+Authentication 
+The Parties agree to implement Customer Identity Authentication for Roamers on their 
+network. The purpose and mechanism for authentication are described in GSM 02.09 and 
+in GSMA PRD SG.15.  
+The Parties agree that authentication shall be performed as specified below: 
+For roamed customers (at the commencement of GSM service or 3G service) authentication 
+is to be performed at every occasion of: • Network access using IMSI 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+• Location updating involving VLR change 
+• Network access for at least 1 in 9 mobile originated and terminated call set-ups 
+• Supplementary service operation outside call 
+• Cipher key sequence number mismatch 
+If GPRS is supported, authentication is also to be performed at every occasion of: 
+• GPRS attach 
+• routing area updating involving SGSN change 
+• PDP context activation 
+• P-TIMSI (P- Temporary IMSI) signature mismatch, if P-TMSI signature is used 
+• P-TMSI signature not inserted in a Attach Request or Routing Area Update Request 
+Authentication during a malfunction of the network 
+The Parties agree that if an MS is registered and has been successfully authenticated, 
+whether active or not active on a call, calls are permitted (including continuation and 
+handover).Operator will receive the charge. 
+If an MS attempts to register or re-register and cannot be successfully authenticated due to 
+the network malfunction, calls are not permitted. 
+If an MS has already been registered on the network, and has already been authenticated, 
+and cannot be successfully re-authenticated due to network malfunction (e.g. the Operator 
+was not able to provide authentication pairs RAND, SRES), the Parties agree that calls are 
+not permitted and that the Operator will not receive any charges. 
+ 
+ 
+ 
+ANNEX 5.3 INFORMATION ON SIGNALLING INTERCONNECTION 
+AND/OR IP CONNECTIVITY 
+The implementation of the Signalling Protocols and/or Inter-PLMN backbone (as defined in 
+IREG PRDs) shall be in accordance with the Technical Specifications and relevant GSM 
+Association Permanent Reference Documents with the exception of Public Mobile Network 
+specific deviations and/or chosen options agreed by both Parties during the testing phase. 
+The technical information relevant for International Roaming shall be exchanged between 
+the Parties as part of IREG testing procedures and IREG PRDs. 
+Each Party agrees to adhere to the processes set out in PRD IR.21, Article 4: Procedures 
+for Updating the Database, when making changes in the numbering and addressing 
+information with an impact on International Roaming or SMS Interworking. 
+  
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ANNEX 6 DATA PRIVACY. GENERAL PRINCIPLES 
+In addition to Article 12 of the Agreement, Parties may agree on further Data Privacy 
+requirements. 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ 
+ANNEX 7 Roaming Service Level Agreement 
+ 
+Roaming service shall be offered on a reasonable effort basis and no party shall be liable to 
+the other in the event of failure of service after activation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+Annex 8 Roaming Provider Services, Tariffs and other Information 
+ 
+ 
+ 
+Tariffs1 
+Cfr. max caps in  
+Article 72, Article 9 and Article 12 of 
+EU/EEA 
+the Roaming Regulation 
+ 
+ 
+Other locations non 
+EU/EEA 
+On request 
+It is expected that Proximus will send to the Operator a PDF version of their RAEX AA.14 as 
+agreed between the Parties. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 In EURO and excl. VAT. 
+2 Billing step voice = 30 sec + 1 sec 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+Proximus reference offer of 29/05/2017 
+ 
+Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 
+ANNEX 9 Penalties suspected fraudulent or unauthorised use 
+ 
+In case suspected fraudulent or unauthorised use is observed by Proximus in line with the 
+provisions of article 13.2 of the Agreement, a monthly penalty in addition to the monthly 
+invoice will be applied for all services (voice, SMS messages and data) in accordance with 
+the traffic volume generated on a monthly basis.  
+ 
+ 
+ Tariffs excl. VAT 
+ 
+ 
+In case suspected fraudulent or unauthorised use is observed after a 4 months observation 
+period, Proximus will send a notification to the Operator within 15 days with the penalty that 
+is due. For invoicing and payment the provisions of annex 3.2 of the Agreement will apply. 
+The penalty will be applied retro-actively for the first 4 months of the observation period. After 
+this, Proximus will continue to apply a penalty on a monthly basis as long as the suspected 
+fraudulent or unauthorised use is observed based on a rolling 4 months observation period. 
+In the event penalties have been invoiced for a total period of six months during one 
+contractual year, Proximus reserves the right to terminate the present Agreement in 
+accordance with the procedure described in Art 3 of the Regulation n°531/2012 amended by 
+Regulation 2017/ 920 on roaming on public mobile communication networks within the 
+European Union. During this procedure, the penalties remain due (if applicable). 
+ 
+ 
+ 
+ 
+ 
+This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by 
+Proximus.  
+ 
+This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  
+Sensitivity: Confidential 
+<1.000 GB/month30.000,0 €<1.000.000 min/month40.000,0 €<1.000.000 SMS/month15.000,0 €≥1.000 and <10.000 GB/month150.000,0 €≥1.000.000 and <10.000.000 min/month200.000,0 €≥1.000.000 and <10.000.000 SMS/month75.000,0 €≥10.000 and <100.000 GB/month1.500.000,0 €≥10.000.000 and <100.000.000 min/month2.000.000,0 €≥10.000.000 and <100.000.000 SMS/month750.000,0 €≥100.000 GB/month4.500.000,0 €≥100.000.000 min/month6.000.000,0 €≥100.000.000 SMS/month2.000.000,0 €DataVoiceSMS

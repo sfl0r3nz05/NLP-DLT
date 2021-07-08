@@ -46,5 +46,4 @@ The locationFinder method calls and integrates both methods locationFilter and l
 def locationFinder(entitiesList):
     location_list = orgFilter(entitiesList)
     locations = locationSelection(location_list)
-    print(locations)
     return locations
