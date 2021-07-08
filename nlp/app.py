@@ -13,7 +13,6 @@ from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.OrganizationFinder import organizationFinder
-
 app = Flask(__name__)
 
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache_.pdf')
