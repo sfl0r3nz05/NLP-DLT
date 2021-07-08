@@ -31,14 +31,18 @@ the minor 'beginoffset' is used as criteria.
 """
 def organizationSelection(organization_list):
     organizations = []
-    newlist = sorted(organization_list, key=lambda k: k['freq'], reverse = True)
-    if(int(newlist[0]['beginoffset']) < int(newlist[1]['beginoffset'])):
-        organizations.append(newlist[0]['organization'])
-        organizations.append(newlist[1]['organization'])
+    if (len(organization_list)) == 1:
+        organizations.append(organization_list[0]['organization'])
+        return organizations
     else:
-        organizations.append(newlist[1]['organization'])
-        organizations.append(newlist[0]['organization'])
-    return organizations
+        newlist = sorted(organization_list, key=lambda k: k['freq'], reverse = True)
+        if(int(newlist[0]['beginoffset']) < int(newlist[1]['beginoffset'])):
+            organizations.append(newlist[0]['organization'])
+            organizations.append(newlist[1]['organization'])
+        else:
+            organizations.append(newlist[1]['organization'])
+            organizations.append(newlist[0]['organization'])
+        return organizations
 
 """
 The organizationFinder method calls and integrates both methods organizationFilter and organizationSelection.

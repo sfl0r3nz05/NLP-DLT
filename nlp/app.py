@@ -1,7 +1,8 @@
 import json
 from flask import Flask
 from dotenv import load_dotenv
-from library.ManageJSON.UpdateFileV2 import updateFile
+from library.ManageJSON.UpdateFile import updateFileV1
+from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
@@ -15,54 +16,53 @@ from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.OrganizationFinder import organizationFinder
 app = Flask(__name__)
 
+# PDF TO TEXT
 text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache_.pdf')
+
+#########################################################################################################
+
+# VARIABLES COLLECTION
 
 txtParsedToVariab = parseToVariab(text)
 
 readyToComprh = parseToAmzCompreh(txtParsedToVariab)
 
 entitiesList = recoverEntities(readyToComprh)
-#phrasesList = recoverPhrases(readyToComprh)
-#tokenList = recoverSyntax(readyToComprh)
+### phrasesList = recoverPhrases(readyToComprh)
+### tokenList = recoverSyntax(readyToComprh)
 
 # POPULATE DATE
-date = dateFinder(entitiesList)
-updateFile('./output/Roaming Agreements Output Template.json',"date",0,"hint", date)
+### date = dateFinder(entitiesList)
+### updateFileV1('./output/Roaming Agreements Output Template.json',"date",0,"hint", date)
 
 # POPULATE ORGANIZATIONS
 organizations = organizationFinder(entitiesList)
-updateFile('./output/Roaming Agreements Output Template.json',"organization",1,"hint", organizations)
+### updateFileV1('./output/Roaming Agreements Output Template.json',"organization",1,"hint", organizations)
 
 # POPULATE LOCATIONS
-locations = locationFinder(entitiesList)
-updateFile('./output/Roaming Agreements Output Template.json',"location",1,"hint", locations)
+### locations = locationFinder(entitiesList)
+### updateFileV1('./output/Roaming Agreements Output Template.json',"location",1,"hint", locations)
 
-# VARIATIONS
+#########################################################################################################
+
+# VARIATIONS COLLECTION
 txtParsedToVariat = parseToVariat(text)
 
-articleRaw = textToArticle(txtParsedToVariat, './output/Roaming Agreements Output Template.json', "charging billing accounting")
+articleRaw = textToArticle(txtParsedToVariat,'./output/Roaming Agreements Output Template.json', "charging billing accounting")
 
 entitiesList = recoverEntities(articleRaw)
-print(entitiesList)
 
-phrasesList = recoverPhrases(articleRaw)
-print(phrasesList)
+orgs = organizationFinder(entitiesList)
+if (len(orgs) == 1):
+    orgs = organizations
+updateFileV2('./output/Roaming Agreements Output Template.json',"charging billing accounting",0,"payment of charges","stdClause", orgs)
+#phrasesList = recoverPhrases(articleRaw)
+#print(phrasesList)
 
-tokenList = recoverSyntax(articleRaw)
-print(tokenList)
+#tokenList = recoverSyntax(articleRaw)
+#print(tokenList)
 
 ######################################################################################################
-#   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
-#   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "name", entity)
-
-#   entity = stringFinder(txtParsedToStr, 'Hereinafterreferredtoas"', '"')
-#   updateFile('./output/Roaming Agreements Output Template.json',"operators", 0, "alias", entity)
-
-#   entity = stringFinder(txtParsedToStr, ')And', ',')
-#   updateFile('./output/Roaming Agreements Output Template.json',"operators", 1, "name", entity)
-
-#   entity = applyModel(txtParsedToNLP, 'CARDINAL', '/', 2)
-#   updateFile('./output/Roaming Agreements Output Template.json',"agreement_date", 0, "0", entity)
 
 print(a)
 

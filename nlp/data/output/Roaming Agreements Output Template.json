@@ -1,51 +1,70 @@
 {
-	"date":{
-		"uid":"",
-		"type": "text",
-		"verify": "date",
-		"hint":""
-	},
-	"organization":[
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador A",
-			"hint":""
-		},
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador B",
-			"hint":""
-		}
-	],
-	"location":[
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador A",
-			"hint":""
-		},
-		{
-			"uid": "",
-			"type": "text",
-			"verify": "operador B",
-			"hint":""
-		}
-	],
-	"charging billing accounting":{
-		"uid":"",
-		"article":"7. Charging, Billing & Accounting",
-		"clauseVariants":[{
-			"id":"7.1",
-			"title":"Payment of charges"
-		}],
-		"payment of charges": {
-			"id":"7.1",
-			"article":"7. Charging, Billing & Accounting",
-			"description":"",
-			"uid":"",
-			"stdClause":"The two parties [ORGANIZATION]1 and [ORGANIZATION]2 agree that [ORGANIZATION]2 is responsible for payment of charges of charges for used services in accordance with the tariff of [ORGANIZATION]1"
-		}
-	}
+    "date": {
+        "uid": "",
+        "type": "text",
+        "verify": "date",
+        "hint": ""
+    },
+    "organization": [
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador A",
+            "hint": ""
+        },
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador B",
+            "hint": ""
+        }
+    ],
+    "location": [
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador A",
+            "hint": ""
+        },
+        {
+            "uid": "",
+            "type": "text",
+            "verify": "operador B",
+            "hint": ""
+        }
+    ],
+    "charging billing accounting": {
+        "uid": "",
+        "article": "7. Charging, Billing & Accounting",
+        "clauseVariants": [
+            {
+                "id": "7.1",
+                "title": "Payment of charges"
+            }
+        ],
+        "payment of charges": {
+            "id": "7.1",
+            "article": "7. Charging, Billing & Accounting",
+            "description": "Charging associated with the organizations",
+            "uid": "",
+            "stdClause":"The two parties [ORGANIZATION0] and [ORGANIZATION1] agree that [ORGANIZATION1] is [AUX] responsible for payment of charges of charges for used services in accordance with the tariff of [ORGANIZATION0]"
+        }
+    },
+    "TAP implementation": {
+        "uid": "",
+        "article": "8. Implementation of TAP",
+        "clauseVariants": [
+            {
+                "id": "8.1",
+                "title": "TAP implementation"
+            }
+        ],
+        "payment of charges": {
+            "id": "8.1",
+            "article": "8. Implementation of TAP",
+            "description": "Determine the TAP implementation",
+            "uid": "",
+            "stdClause": "The two parties [ORGANIZATION1] and [ORGANIZATION2] agree that [OTHER] is [AUX] used"
+        }
+    }
 }
