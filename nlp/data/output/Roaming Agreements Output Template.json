@@ -1,36 +1,51 @@
 {
-    "date": {
-        "uid": "",
-        "type": "text",
-        "verify": "date",
-        "hint": ""
-    },
-    "organization": [
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador A",
-            "hint": ""
-        },
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador B",
-            "hint": ""
-        }
-    ],
-    "location": [
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador A",
-            "hint": ""
-        },
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador B",
-            "hint": ""
-        }
-    ]
+	"date":{
+		"uid":"",
+		"type": "text",
+		"verify": "date",
+		"hint":""
+	},
+	"organization":[
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador A",
+			"hint":""
+		},
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador B",
+			"hint":""
+		}
+	],
+	"location":[
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador A",
+			"hint":""
+		},
+		{
+			"uid": "",
+			"type": "text",
+			"verify": "operador B",
+			"hint":""
+		}
+	],
+	"charging billing accounting":{
+		"uid":"",
+		"article":"7. Charging, Billing & Accounting",
+		"clauseVariants":[{
+			"id":"7.1",
+			"title":"Payment of charges"
+		}],
+		"payment of charges": {
+			"id":"7.1",
+			"article":"7. Charging, Billing & Accounting",
+			"description":"",
+			"uid":"",
+			"stdClause":"The two parties [ORGANIZATION]1 and [ORGANIZATION]2 agree that [ORGANIZATION]2 is responsible for payment of charges of charges for used services in accordance with the tariff of [ORGANIZATION]1"
+		}
+	}
 }

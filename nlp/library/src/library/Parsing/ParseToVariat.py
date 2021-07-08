@@ -41,13 +41,10 @@ def parseToVariat(raw_text):
     raw_text = raw_text.replace('                ',' ')
     raw_text = raw_text.replace('                 ',' ')
     raw_text = raw_text.replace('                  ',' ')
+    raw_text = raw_text.replace('                   ',' ')
+    raw_text = raw_text.replace('                    ',' ')
+    raw_text = raw_text.replace('                     ',' ')
+    raw_text = raw_text.replace('                      ',' ')
+    raw_text = raw_text.replace('                       ',' ')
     raw_text = raw_text.replace('\x0c','')
-    #raw_text = raw_text.replace(' ','')
-    #raw_text = raw_text.replace('.','')
-    #regex = r"^\d+(?:\.\d+)* .*(?:\r?\n(?!\d+(?:\.\d+)* ).*)*"
-    #print(re.findall(regex,raw_text, re.M))
-    #matches = re.search(r'Starting Date(.+?)Definitions',raw_text)
-    f = open("./output/demofile.txt", "w")
-    f.write(str(raw_text))
-    f.close()
     return raw_text

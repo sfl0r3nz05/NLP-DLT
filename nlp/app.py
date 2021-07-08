@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from library.ManageJSON.UpdateFileV2 import updateFile
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
+from library.Parsing.TextToArticle import textToArticle
 from library.ManageEntities.DateFinder import dateFinder
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
 from library.ManagePDF.PdfToString import convert_pdf_to_string
@@ -19,18 +20,11 @@ text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_A
 
 txtParsedToVariab = parseToVariab(text)
 
-txtParsedToVariat = parseToVariat(text)
-
 readyToComprh = parseToAmzCompreh(txtParsedToVariab)
 
 entitiesList = recoverEntities(readyToComprh)
-
-phrasesList = recoverPhrases(readyToComprh)
-
-tokenList = recoverSyntax(readyToComprh)
-#   f = open("./output/demofile.txt", "w")
-#   f.write(str(tokenList))
-#   f.close()
+#phrasesList = recoverPhrases(readyToComprh)
+#tokenList = recoverSyntax(readyToComprh)
 
 # POPULATE DATE
 date = dateFinder(entitiesList)
@@ -43,6 +37,20 @@ updateFile('./output/Roaming Agreements Output Template.json',"organization",1,"
 # POPULATE LOCATIONS
 locations = locationFinder(entitiesList)
 updateFile('./output/Roaming Agreements Output Template.json',"location",1,"hint", locations)
+
+# VARIATIONS
+txtParsedToVariat = parseToVariat(text)
+
+articleRaw = textToArticle(txtParsedToVariat, './output/Roaming Agreements Output Template.json', "charging billing accounting")
+
+entitiesList = recoverEntities(articleRaw)
+print(entitiesList)
+
+phrasesList = recoverPhrases(articleRaw)
+print(phrasesList)
+
+tokenList = recoverSyntax(articleRaw)
+print(tokenList)
 
 ######################################################################################################
 #   entity = stringFinder(txtParsedToStr, "Mainterms&conditionsBetween", ',')
