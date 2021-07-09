@@ -1,13 +1,18 @@
 import os
 import json
-import boto3
+import boto3 #Amazon base library to use different services
+
+"""
+This lybrary constitutes the entrypoint to integrate Amazon Comprehend funtionalities
+"""
 
 def amzComprehendEntities(text):
+    """ Method created  to output entities from an input"""
     comprehend = boto3.Session(
-        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-        aws_session_token=os.environ.get("AWS_SESSION_TOKEN"),
-        region_name=os.environ.get("REGION_NAME")).client('comprehend')
+        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"), #Recover access key from env variables
+        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"), #Recover secret access key from env variables
+        aws_session_token=os.environ.get("AWS_SESSION_TOKEN"), #Recover session token from env variables
+        region_name=os.environ.get("REGION_NAME")).client('comprehend')  #Recover region name from env variables
     comprehend = boto3.client(service_name='comprehend', region_name=os.environ.get("REGION_NAME"))
     entities = json.dumps(comprehend.detect_entities(Text=text, LanguageCode='en'), sort_keys=True, indent=4)
     return entities

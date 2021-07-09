@@ -1,6 +1,6 @@
+import os
 import json
 from flask import Flask
-from dotenv import load_dotenv
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
@@ -16,55 +16,60 @@ from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.OrganizationFinder import organizationFinder
 app = Flask(__name__)
 
-# PDF TO TEXT
-text = convert_pdf_to_string('./input/Proximus_Direct_Wholesale_Roaming_access_Agreement--2020_08_01_2020-08-31-12-53-17_cache_.pdf')
+"""
+The Path to files is via env
+"""
+from pathlib import Path
+from dotenv import load_dotenv
+dotenv_path = Path('~/NLP-DLT/network/.env')
+load_dotenv(dotenv_path=dotenv_path)
+pdfFilePath = os.getenv("PATH_TO_PDF_FILE")
+jsonFilePath = os.getenv("PATH_TO_JSON_FILE")
 
-#########################################################################################################
+"""
+App.py constitutes an entrypoint to call library methods
+"""
+#Method to convert PDF to Text
+text = convert_pdf_to_string(pdfFilePath)
 
-# VARIABLES COLLECTION
-
-txtParsedToVariab = parseToVariab(text)
-
-readyToComprh = parseToAmzCompreh(txtParsedToVariab)
-
-entitiesList = recoverEntities(readyToComprh)
-### phrasesList = recoverPhrases(readyToComprh)
-### tokenList = recoverSyntax(readyToComprh)
+"""
+VARIABLE COLLECTION
+"""
+txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in collection of variables
+readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
+entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
 
 # POPULATE DATE
-### date = dateFinder(entitiesList)
-### updateFileV1('./output/Roaming Agreements Output Template.json',"date",0,"hint", date)
+date = dateFinder(entitiesList) #Method to find the date
+updateFileV1(jsonFilePath,"date",0,"hint", date) #Populate variable of date
 
 # POPULATE ORGANIZATIONS
-organizations = organizationFinder(entitiesList)
-### updateFileV1('./output/Roaming Agreements Output Template.json',"organization",1,"hint", organizations)
+organizations = organizationFinder(entitiesList) #Method to find organizations
+updateFileV1(jsonFilePath,"organization",1,"hint", organizations) #Populate variable of organizations
 
 # POPULATE LOCATIONS
-### locations = locationFinder(entitiesList)
-### updateFileV1('./output/Roaming Agreements Output Template.json',"location",1,"hint", locations)
+locations = locationFinder(entitiesList)    #Method to find locations
+updateFileV1(jsonFilePath,"location",1,"hint", locations) #Populate variable of locations
 
-#########################################################################################################
+"""
+VARIATIONS COLLECTION
+"""
+txtParsedToVariat = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
 
-# VARIATIONS COLLECTION
-txtParsedToVariat = parseToVariat(text)
+# ARTICLE: Charging Billing Accounting
+articleRaw = textToArticle(txtParsedToVariat,jsonFilePath,"charging billing accounting") #Second layer of parsing to divide text as articles
+tokenList = recoverSyntax(articleRaw)   #Recover tokens as part of Part of Speech using as base the text of the article
+phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
+updateFileV2(jsonFilePath,"charging billing accounting",0,"payment of charges","stdClause", 
+    organizations, tokenList, phrasesList)  #Populate variation of charging billing accounting
 
-articleRaw = textToArticle(txtParsedToVariat,'./output/Roaming Agreements Output Template.json', "charging billing accounting")
-
-entitiesList = recoverEntities(articleRaw)
-
-orgs = organizationFinder(entitiesList)
-if (len(orgs) == 1):
-    orgs = organizations
-tokenList = recoverSyntax(articleRaw)
-updateFileV2('./output/Roaming Agreements Output Template.json',"charging billing accounting",0,"payment of charges","stdClause", orgs, tokenList)
-#phrasesList = recoverPhrases(articleRaw)
-#print(phrasesList)
-#print(tokenList)
-
-######################################################################################################
-
-print(a)
+# ARTICLE: TAP implementation
+articleRaw = textToArticle(txtParsedToVariat,jsonFilePath, "TAP implementation") #Second layer of parsing to divide text as articles
+tokenList = recoverSyntax(articleRaw) #Recover tokens as part of Part of Speech using as base the text of the article
+phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
+updateFileV2(jsonFilePath,"TAP implementation",0,"implementation of tap","stdClause", 
+    organizations, tokenList, phrasesList) #Populate variation of TAP implementation
 
 @app.route('/')
-def hello_world():
+def server():
     return

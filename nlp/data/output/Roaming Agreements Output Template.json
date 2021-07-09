@@ -59,12 +59,12 @@
                 "title": "TAP implementation"
             }
         ],
-        "payment of charges": {
+        "implementation of tap": {
             "id": "8.1",
             "article": "8. Implementation of TAP",
             "description": "Determine the TAP implementation",
             "uid": "",
-            "stdClause": "The two parties [ORGANIZATION1] and [ORGANIZATION2] agree that [OTHER] is [AUX] used"
+            "stdClause": "The two parties [ORGANIZATION0] and [ORGANIZATION1] agree that TAP is [AUX] used"
         }
     }
 }
