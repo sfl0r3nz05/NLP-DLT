@@ -1,6 +1,9 @@
 import re
 
 def parseToVariat(raw_text):
+    """
+    Method used to parse the text previous to send to Amazon Comprehend. This method is used only by variations
+    """
     raw_text = raw_text.replace('\n\n','\n')
     raw_text = raw_text.replace('\n\n\n','\n')
     raw_text = raw_text.replace('\n\n\n\n','\n')

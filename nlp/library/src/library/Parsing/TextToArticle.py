@@ -1,6 +1,9 @@
 import json
 
 def textToArticle(raw_text, filePath, variation):
+    """
+    Method used to parse the text previous to send to Amazon Comprehend dividing it by articles. This method is used only by variations
+    """
     articleRaw = []
     with open(filePath, 'r') as ra:
         data = json.load(ra)

@@ -36,7 +36,7 @@ text = convert_pdf_to_string(pdfFilePath)
 """
 VARIABLE COLLECTION
 """
-txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in collection of variables
+txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
 readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
 entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
 

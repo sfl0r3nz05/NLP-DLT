@@ -1,4 +1,7 @@
 def stdClauseParsingPoS(raw_text, tokenList, list_pos):
+    """
+    Method used to parse a field of variations previous to populate teh JSON file. This method is used with tokens tagged.
+    """
     for pos in list_pos:
         for token in tokenList:
             if(token['PartOfSpeech']['Tag'] == pos and token['Text'] == 'shall'):

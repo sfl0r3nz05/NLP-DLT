@@ -5,6 +5,9 @@ from library.Parsing.StdClauseParsingEnt import stdClauseParsingEnt
 from library.Parsing.StdClauseParsingPoS import stdClauseParsingPoS
 
 def updateFileV1(filePath, key1, index, key2, entity):
+    """
+    Method used by variables to populate JSON file.
+    """
     with open(filePath, 'r') as ra:
         data = json.load(ra)
         if key2 != "0" and index == 0:
@@ -19,6 +22,9 @@ def updateFileV1(filePath, key1, index, key2, entity):
         json.dump(data, ra, indent=4)
 
 def updateFileV2(filePath, key1, index, key2, key3, organizations, tokenList, phrasesList):
+    """
+    Method used by variations to populate JSON file.
+    """
     list_ent = ['ORGANIZATION', 'OTHER']
     list_pos = ['AUX']
     temp = ""

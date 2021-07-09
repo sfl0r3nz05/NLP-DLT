@@ -1,4 +1,7 @@
 def stdClauseParsingEnt(raw_text, count, values, organizations):
+    """
+    Method used to parse a field of variations previous to populate teh JSON file. This method is used with entitites.
+    """
     while(count>0):
         position = raw_text.find(values)
         end = position + len(values)

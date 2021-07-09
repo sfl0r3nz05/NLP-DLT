@@ -7,6 +7,9 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
 def convert_pdf_to_string(file_path):
+    """
+    Method used to convert pdf to string.
+    """
     output_string = StringIO()
     with open(file_path, 'rb') as in_file:
         parser = PDFParser(in_file)
