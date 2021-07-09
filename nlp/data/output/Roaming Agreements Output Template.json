@@ -47,7 +47,7 @@
             "article": "7. Charging, Billing & Accounting",
             "description": "Charging associated with the organizations",
             "uid": "",
-            "stdClause":"The two parties [ORGANIZATION0] and [ORGANIZATION1] agree that [ORGANIZATION1] is [AUX] responsible for payment of charges of charges for used services in accordance with the tariff of [ORGANIZATION0]"
+            "stdClause": "The two parties [ORGANIZATION0] and [ORGANIZATION1] agree that [ORGANIZATION1] is [AUX] responsible for payment of charges of charges for used services in accordance with the tariff of [ORGANIZATION0]"
         }
     },
     "TAP implementation": {

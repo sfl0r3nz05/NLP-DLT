@@ -55,11 +55,10 @@ entitiesList = recoverEntities(articleRaw)
 orgs = organizationFinder(entitiesList)
 if (len(orgs) == 1):
     orgs = organizations
-updateFileV2('./output/Roaming Agreements Output Template.json',"charging billing accounting",0,"payment of charges","stdClause", orgs)
+tokenList = recoverSyntax(articleRaw)
+updateFileV2('./output/Roaming Agreements Output Template.json',"charging billing accounting",0,"payment of charges","stdClause", orgs, tokenList)
 #phrasesList = recoverPhrases(articleRaw)
 #print(phrasesList)
-
-#tokenList = recoverSyntax(articleRaw)
 #print(tokenList)
 
 ######################################################################################################
