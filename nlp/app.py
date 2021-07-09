@@ -17,7 +17,8 @@ from library.ManageEntities.OrganizationFinder import organizationFinder
 app = Flask(__name__)
 
 """
-The Path to files is via env
+The Path to files is via env 
+Guidelines: https://dev.to/jakewitcher/using-env-files-for-environment-variables-in-python-applications-55a1
 """
 from pathlib import Path
 from dotenv import load_dotenv
@@ -27,7 +28,7 @@ pdfFilePath = os.getenv("PATH_TO_PDF_FILE")
 jsonFilePath = os.getenv("PATH_TO_JSON_FILE")
 
 """
-App.py constitutes an entrypoint to call library methods
+APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
 """
 #Method to convert PDF to Text
 text = convert_pdf_to_string(pdfFilePath)
