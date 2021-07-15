@@ -15,6 +15,8 @@
     - A. Find documents (100%)
     - B. Cycle per document (100%)
     - C. Filter by Title (100%)
+    - D. Append variables to the Json object (100%)
+    - E. Append Json object to Json File (100%)
 2. Divide each document per articles
     - A. Search by sub articles
 3. Comparison of subarticles RAstandard with RAarticles   

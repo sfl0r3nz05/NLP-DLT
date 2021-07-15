@@ -9,6 +9,7 @@ from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
 from library.ManageEntities.DateFinder import dateFinder
+from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
 from library.ManageJSON.UpdateJsonObject import updateJSONObj
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
@@ -55,22 +56,24 @@ for document in pdfs:
     readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
     entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
     
-    # POPULATE NAME
-    jsonObject = updateJSONObj(jsonObject,'document name','hint', file_name) #Populate variable of date
+    # POPULATE NAME ON THE OBJECT
+    jsonObject = updateJSONObj(jsonObject,'document name','hint',file_name) #Populate variable of date
     
-    # POPULATE DATE
+    # POPULATE DATE  ON THE OBJECT
     date = dateFinder(entitiesList) #Method to find the date
-    jsonObject = updateJSONObj(jsonObject, 'date','hint', date) #Populate variable of date
+    jsonObject = updateJSONObj(jsonObject,'date','hint',date) #Populate variable of date
     
-    # POPULATE ORGANIZATIONS
+    # POPULATE ORGANIZATIONS ON THE OBJECT
     organizations = organizationFinder(entitiesList) #Method to find organizations
-    jsonObject = updateJSONObj(jsonObject,'organization','hint', organizations) #Populate variable of organizations
-    print(jsonObject)
+    jsonObject = updateJSONObj(jsonObject,'organization','hint',organizations) #Populate variable of organizations
     
-    # POPULATE LOCATIONS
-#    locations = locationFinder(entitiesList)    #Method to find locations
-#    updateFileV1(jsonFilePath,"location",1,"hint", locations) #Populate variable of locations
-    
+    # POPULATE LOCATIONS ON THE OBJECT
+    locations = locationFinder(entitiesList)    #Method to find locations
+    jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
+
+    # POPULATE ROAMING AGREEMENTS JSON FILE
+    var = appendObject(jsonFilePath, jsonObject)
+
     """
     VARIATIONS COLLECTION
     """
@@ -90,7 +93,6 @@ for document in pdfs:
 #    updateFileV2(jsonFilePath,"TAP implementation",0,"implementation of tap","stdClause", 
 #        organizations, tokenList, phrasesList) #Populate variation of TAP implementation
 
-print(a)
 @app.route('/')
 def server():
     return
