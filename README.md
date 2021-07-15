@@ -12,8 +12,9 @@
 ## To Do
 ![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/StepByStep.png)
 1. Search RA documents as part input folder
-    - A. Cycle per document
-    - B. Filter by Title
+    - A. Find documents (100%)
+    - B. Cycle per document
+    - C. Filter by Title
 2. Divide each document per articles
     - A. Search by sub articles
 3. Comparison of subarticles RAstandard with RAarticles   

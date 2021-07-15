@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask
+from library.ManagePDF.SearchPdf import find_ext
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
@@ -26,10 +27,14 @@ dotenv_path = Path('~/NLP-DLT/network/.env')
 load_dotenv(dotenv_path=dotenv_path)
 pdfFilePath = os.getenv("PATH_TO_PDF_FILE")
 jsonFilePath = os.getenv("PATH_TO_JSON_FILE")
+defaultFilePath = os.getenv("PATH_TO_DEFAULT_FILE")
 
 """
 APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
 """
+#Search PDF files
+output = find_ext(pdfFilePath,"pdf")
+
 #Method to convert PDF to Text
 text = convert_pdf_to_string(pdfFilePath)
 
@@ -70,6 +75,7 @@ tokenList = recoverSyntax(articleRaw) #Recover tokens as part of Part of Speech 
 phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
 updateFileV2(jsonFilePath,"TAP implementation",0,"implementation of tap","stdClause", 
     organizations, tokenList, phrasesList) #Populate variation of TAP implementation
+
 
 @app.route('/')
 def server():

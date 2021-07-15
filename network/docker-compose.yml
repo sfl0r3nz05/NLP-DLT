@@ -19,5 +19,6 @@ services:
       REGION_NAME: "${REGION_NAME}"
       PATH_TO_PDF_FILE: "${PATH_TO_PDF_FILE}"
       PATH_TO_JSON_FILE: "${PATH_TO_JSON_FILE}"
+      PATH_TO_DEFAULT_FILE: "${PATH_TO_DEFAULT_FILE}"
     ports:
       - 5000:5000
