@@ -8,3 +8,6 @@
 3. Deploy docker-compose:
     - cd ~/NLP-DLT/network
     - docker-compose up -d
+
+## To Do
+![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/imges/StepByStep.png)
