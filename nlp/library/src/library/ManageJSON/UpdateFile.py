@@ -4,13 +4,13 @@ from library.Parsing.uuid import uuidV1
 from library.Parsing.StdClauseParsingEnt import stdClauseParsingEnt
 from library.Parsing.StdClauseParsingPoS import stdClauseParsingPoS
 
-def updateFileV1(filePath, key1, index, key2, entity):
+def updateFileV1(defaultFilePath, filePath, key1, key2, entity):
     """
     Method used by variables to populate JSON file.
     """
-    with open(filePath, 'r') as ra:
+    with open(defaultFilePath, 'r') as ra:
         data = json.load(ra)
-        if key2 != "0" and index == 0:
+        if len(entity) == 1:
             data[key1]['uid'] = str(uuidV1())  # make a UUID based on the host ID and current time (https://docs.python.org/3/library/uuid.html#example)
             data[key1][key2] = entity
         elif key2 != "0" and index == 1:

@@ -1,3 +1,19 @@
+def monthToNum(shortMonth):
+    return {
+            'January': '01',
+            'February': '02',
+            'March': '03',
+            'April': '04',
+            'May': '05',
+            'June': '06',
+            'July': '07',
+            'August': '08',
+            'September': '09', 
+            'October': '10',
+            'November': '11',
+            'December': '12'
+    }[shortMonth]
+
 def dateFilter(entitiesList):
     """
     The dateFilter method receives as input a list of entities following the format returned by amazon comprehend 
@@ -47,6 +63,16 @@ def dateFinder(entitiesList):
     """
     The dateFinder method calls and integrates both methods dateFilter and dateSelection.
     """
+    datelst = []
     date_list = dateFilter(entitiesList)
     date = dateSelection(date_list)
-    return date
+    if (date.find(' ') != -1):
+        dateList = date.split()
+        num = monthToNum(dateList[1])
+        date = date.replace(' ', '/')
+        date = date.replace(dateList[1], num)
+        datelst.append(date)
+        return datelst
+    else:
+        datelst.append(date)
+        return datelst
