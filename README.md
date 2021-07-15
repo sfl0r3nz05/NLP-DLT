@@ -10,4 +10,4 @@
     - docker-compose up -d
 
 ## To Do
-![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/imges/StepByStep.png)
+![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/StepByStep.png)
