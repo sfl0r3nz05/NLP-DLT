@@ -1,4 +1,10 @@
 {
+    "document name": {
+        "uid": "",
+        "type": "text",
+        "verify": "Document Name",
+        "hint": ""
+    },
     "date": {
         "uid": "",
         "type": "text",

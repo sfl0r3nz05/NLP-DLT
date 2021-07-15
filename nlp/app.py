@@ -36,6 +36,7 @@ APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
 #Search PDF files
 pdfs = find_ext(pdfFilePath,"pdf")
 
+#Find each document
 for document in pdfs:
     file_name = find_between(document)
 
