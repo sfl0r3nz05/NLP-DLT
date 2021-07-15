@@ -14,7 +14,7 @@
 1. Search RA documents as part input folder
     - A. Find documents (100%)
     - B. Cycle per document (100%)
-    - C. Filter by Title
+    - C. Filter by Title (100%)
 2. Divide each document per articles
     - A. Search by sub articles
 3. Comparison of subarticles RAstandard with RAarticles   
