@@ -11,3 +11,15 @@
 
 ## To Do
 ![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/StepByStep.png)
+1. Search RA documents as part input folder
+    A. Cycle per document
+    B. Filter by Title
+2. Divide each document per articles
+    A. Search by sub articles
+3. Comparison of subarticles RAstandard with RAarticles   
+    A. Similarity 0 - 5% []
+    B. Similarity 5 – 30%  [Custom Text]
+    C. Similarity 30 – 85% [Variation]
+    D. Similarity 90 - 100%  [Standard Clause]
+4. Append default object to RA.json
+5. Fix variable code
