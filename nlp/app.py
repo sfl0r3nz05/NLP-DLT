@@ -33,7 +33,10 @@ defaultFilePath = os.getenv("PATH_TO_DEFAULT_FILE")
 APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
 """
 #Search PDF files
-output = find_ext(pdfFilePath,"pdf")
+pdfs = find_ext(pdfFilePath,"pdf")
+
+for document in pdfs:
+    #print(document)
 
 #Method to convert PDF to Text
 text = convert_pdf_to_string(pdfFilePath)
@@ -75,7 +78,6 @@ tokenList = recoverSyntax(articleRaw) #Recover tokens as part of Part of Speech 
 phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
 updateFileV2(jsonFilePath,"TAP implementation",0,"implementation of tap","stdClause", 
     organizations, tokenList, phrasesList) #Populate variation of TAP implementation
-
 
 @app.route('/')
 def server():
