@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
+from library.Parsing.FindArticles import findArticles
 from library.ManagePDF.ReturnTitle import find_between
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
@@ -32,6 +33,7 @@ load_dotenv(dotenv_path=dotenv_path)
 pdfFilePath = os.getenv("PATH_TO_PDF_FILE")
 jsonFilePath = os.getenv("PATH_TO_JSON_FILE")
 defaultFilePath = os.getenv("PATH_TO_DEFAULT_FILE")
+articlesTemplate = os.getenv("PATH_TO_ARTICLE_TEMPLATE")
 
 """
 APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
@@ -77,8 +79,10 @@ for document in pdfs:
     """
     VARIATIONS COLLECTION
     """
-    txtParsedToVariat = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
-    print(txtParsedToVariat)
+    raw_text = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
+
+    # FIND ARTICLES
+    list_articles = findArticles(raw_text, articlesTemplate)
     
     # ARTICLE: Charging Billing Accounting
 #    articleRaw = textToArticle(txtParsedToVariat,jsonFilePath,"charging billing accounting") #Second layer of parsing to divide text as articles
