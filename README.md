@@ -18,7 +18,11 @@
     - D. Append variables to the Json object (100%)
     - E. Append Json object to Json File (100%)
 2. Divide each document per articles
-    - A. Search by sub articles
+    - A. Divide per articles
+        - Sorting list of articles
+        - Creating a Json file with articles
+    - B. Search by sub articles
+        - Updating the Json file with sub-articles
 3. Comparison of subarticles RAstandard with RAarticles   
     - A. Similarity  0 - 5%   [Deleted ]
     - B. Similarity  5 – 30%  [Custom Text]

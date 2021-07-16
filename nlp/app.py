@@ -77,7 +77,8 @@ for document in pdfs:
     """
     VARIATIONS COLLECTION
     """
-#    txtParsedToVariat = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
+    txtParsedToVariat = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
+    print(txtParsedToVariat)
     
     # ARTICLE: Charging Billing Accounting
 #    articleRaw = textToArticle(txtParsedToVariat,jsonFilePath,"charging billing accounting") #Second layer of parsing to divide text as articles
