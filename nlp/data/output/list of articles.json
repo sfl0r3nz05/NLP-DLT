@@ -1,440 +1,549 @@
 {
 	"list_of_articles": [
 		{
+			"number": 1,
 			"name": [
 				"Introduction",
-				"Introduction and scope",
 				"INTRODUCTION"
 			],
 			"content": [
 				{
-					"1.1": "This a unilateral agreement for International Roaming for the provision by\\nProximus of Direct Wholesale Roaming Access Services, in order to enable\\nRoaming Customers of Operator to gain access to mobile telecommunications\\nservices in the geographic areas where Proximus operates as a VPMN. This\\nagreement is for Direct Roaming Wholesale Access (“agreement”), as defined\\nbelow."
+					"sub": "1.1",
+					"content": "This a unilateral agreement for International Roaming for the provision by\\nProximus of Direct Wholesale Roaming Access Services, in order to enable\\nRoaming Customers of Operator to gain access to mobile telecommunications\\nservices in the geographic areas where Proximus operates as a VPMN. This\\nagreement is for Direct Roaming Wholesale Access (“agreement”), as defined\\nbelow."
 				},
 				{
-					"1.2": "Subject to Article 3 of the Regulation (EU) 531/2012 as amended by Regulation (EU)\\n2015/2120 and by Regulation (EU) 2017/920, the Parties shall enter into this\\nunilateral Agreement for International Roaming for the provision by <A> of Services\\nin order to enable Roaming Customers of <B> to gain access to mobile\\ntelecommunications services in the geographic areas where <A> operates a\\nPMN."
+					"sub": "1.2",
+					"content": "Subject to Article 3 of the Regulation (EU) 531/2012 as amended by Regulation (EU)\\n2015/2120 and by Regulation (EU) 2017/920, the Parties shall enter into this\\nunilateral Agreement for International Roaming for the provision by <A> of Services\\nin order to enable Roaming Customers of <B> to gain access to mobile\\ntelecommunications services in the geographic areas where <A> operates a\\nPMN."
 				},
 				{
-					"1.3": "This Wholesale Roaming Access Agreement contains the following deviations and\\namendments to the terms set out below:"
+					"sub": "1.3",
+					"content": "This Wholesale Roaming Access Agreement contains the following deviations and\\namendments to the terms set out below:"
 				},
 				{
-					"1.4": "The Annexes, including the Overview of the Annex Structure, constitute an integral\\npart of the Agreement. In case of discrepancy between different parts of the\\nAgreement the following order of interpretation shall be applied:\\n1. the main body of this Agreement; and\\n2. the Annexes"
+					"sub": "1.4",
+					"content": "The Annexes, including the Overview of the Annex Structure, constitute an integral\\npart of the Agreement. In case of discrepancy between different parts of the\\nAgreement the following order of interpretation shall be applied:\\n1. the main body of this Agreement; and\\n2. the Annexes"
 				},
 				{
-					"1.5": "In case of additional requirements, exceptions and/or contradictions between the\\nAgreement and any Technical Specifications or GSM Association Permanent\\nReference Documents, the provisions of the Agreement shall prevail."
+					"sub": "1.5",
+					"content": "In case of additional requirements, exceptions and/or contradictions between the\\nAgreement and any Technical Specifications or GSM Association Permanent\\nReference Documents, the provisions of the Agreement shall prevail."
 				},
 				{
-					"1.6": "Subject to applicable laws, the Parties agree to be bound by GSMA Permanent\\nReference documents relevant to International Roaming provided by A from time to\\ntime, for example:\\n1. GSMA PRDs related to Quality of Service;\\n2. GSMA PRDs related to Fraud Detection; and\\n3. GSMA PRDs relating to Billing between the Parties including Invoicing\\nand Settlement."
+					"sub": "1.6",
+					"content": "Subject to applicable laws, the Parties agree to be bound by GSMA Permanent\\nReference documents relevant to International Roaming provided by A from time to\\ntime, for example:\\n1. GSMA PRDs related to Quality of Service;\\n2. GSMA PRDs related to Fraud Detection; and\\n3. GSMA PRDs relating to Billing between the Parties including Invoicing\\nand Settlement."
 				},
 				{
-					"1.7": "The Parties agree that the sole purpose of the Agreement is the provision of regulated\\ninternational roaming access to customers of <B> on <A>’s mobile network in\\naccordance with the EU Roaming Regulation (EU) 531/2012 as amended by\\nRegulation (EU) 2015/2120 and by Regulation (EU) 2017/920 as updated by (EU).\\nThe Parties acknowledge that the wholesale roaming access as provided to <B>\\nunder this Agreement is solely intended to enable Roaming Customers of <B> to use\\nmobile communication services while temporarily travelling in <A>’s licensed area.\\nThe wholesale roaming access as set forth under this Agreement is not intended to\\nsubstitute domestic wholesale offerings for the provision of domestic services on\\n<A>’s network."
+					"sub": "1.7",
+					"content": "The Parties agree that the sole purpose of the Agreement is the provision of regulated\\ninternational roaming access to customers of <B> on <A>’s mobile network in\\naccordance with the EU Roaming Regulation (EU) 531/2012 as amended by\\nRegulation (EU) 2015/2120 and by Regulation (EU) 2017/920 as updated by (EU).\\nThe Parties acknowledge that the wholesale roaming access as provided to <B>\\nunder this Agreement is solely intended to enable Roaming Customers of <B> to use\\nmobile communication services while temporarily travelling in <A>’s licensed area.\\nThe wholesale roaming access as set forth under this Agreement is not intended to\\nsubstitute domestic wholesale offerings for the provision of domestic services on\\n<A>’s network."
 				},
 				{
-					"1.8": "Any use of wholesale roaming access for purposes other than provision of regulated\\nroaming services to <B>´s Roaming Customers while they are periodically travelling\\nwithin the Union as described in 1.7 - such as but not limited to permanent or\\npredominant usage in <A>’s home country - is not part of this Agreement. This\\nAgreement has provisions to prevent permanent roaming or anomalous or abusive use\\nof wholesale roaming access."
+					"sub": "1.8",
+					"content": "Any use of wholesale roaming access for purposes other than provision of regulated\\nroaming services to <B>´s Roaming Customers while they are periodically travelling\\nwithin the Union as described in 1.7 - such as but not limited to permanent or\\npredominant usage in <A>’s home country - is not part of this Agreement. This\\nAgreement has provisions to prevent permanent roaming or anomalous or abusive use\\nof wholesale roaming access."
 				},
 				{
-					"1.9": "The Parties acknowledge that the Clauses 1.7 and 1.8 are material to the Agreement.\\nAny breach of these Clauses shall be deemed to constitute negligence under Clause\\n15 – Liability of the Parties, and accordingly the non-defaulting Party reserves the right\\nto claim damages as set out in that Clause. Such breach shall additionally be deemed\\nan event of permanent, anomalous and abusive usage of wholsale romaing access\\nand the non-defaulting Party reserved the right to take necessary measures\\naccordingly pursuant to applicable EU legislation."
+					"sub": "1.9",
+					"content": "The Parties acknowledge that the Clauses 1.7 and 1.8 are material to the Agreement.\\nAny breach of these Clauses shall be deemed to constitute negligence under Clause\\n15 – Liability of the Parties, and accordingly the non-defaulting Party reserves the right\\nto claim damages as set out in that Clause. Such breach shall additionally be deemed\\nan event of permanent, anomalous and abusive usage of wholsale romaing access\\nand the non-defaulting Party reserved the right to take necessary measures\\naccordingly pursuant to applicable EU legislation."
 				}
 			]
 		},
 		{
+			"number": 2,
 			"name": [
 				"Starting Date",
 				"STARTING DATE"
 			],
 			"content": [
 				{
-					"2.1": "The actual commercial starting date for Direct Wholesale Roaming Access shall be the\\ndate as agreed by both Parties in written form after successful completion of all\\nnecessary network and billing test procedures."
+					"sub": "2.1",
+					"content": "The actual commercial starting date for Direct Wholesale Roaming Access shall be the\\ndate as agreed by both Parties in written form after successful completion of all\\nnecessary network and billing test procedures."
 				}
 			]
 		},
 		{
+			"number": 3,
 			"name": [
 				"Definitions"
 			],
 			"content": [
 				{
-					"3.0": "For the purpose of the Agreement the following terms shall have the meanings set forth in\\ntheir respective definitions below, unless a different meaning is called for in the context of\\nanother provision in the Agreement:"
+					"sub": "3.0",
+					"content": "For the purpose of the Agreement the following terms shall have the meanings set forth in\\ntheir respective definitions below, unless a different meaning is called for in the context of\\nanother provision in the Agreement:"
 				},
 				{
-					"3.1": "\"Affiliated Company\" of a Party means any other legal entity:\\n1. directly or indirectly owning or controlling the Party, or\\n2. under the direct or indirect ownership or control of the same legal entity\\ndirectly or indirectly owning or controlling the Party, or\\n3. directly or indirectly owned or controlled by the Party,\\nfor so long as such ownership or control lasts.\\nOwnership or control shall exist through the direct or indirect ownership of more than 50 %\\nof the nominal value of the issued equity share capital or of more than 50 % of the shares\\nentitling the holders to vote for the election of directors or persons performing similar\\nfunctions."
+					"sub": "3.1",
+					"content": "\"Affiliated Company\" of a Party means any other legal entity:\\n1. directly or indirectly owning or controlling the Party, or\\n2. under the direct or indirect ownership or control of the same legal entity\\ndirectly or indirectly owning or controlling the Party, or\\n3. directly or indirectly owned or controlled by the Party,\\nfor so long as such ownership or control lasts.\\nOwnership or control shall exist through the direct or indirect ownership of more than 50 %\\nof the nominal value of the issued equity share capital or of more than 50 % of the shares\\nentitling the holders to vote for the election of directors or persons performing similar\\nfunctions."
 				},
 				{
-					"3.2": "\"Agreement\" shall mean this Wholesale Roaming Access Agreement together\\nwith the Annexes attached hereto."
+					"sub": "3.2",
+					"content": "\"Agreement\" shall mean this Wholesale Roaming Access Agreement together\\nwith the Annexes attached hereto."
 				},
 				{
-					"3.3": "\"Date of the Agreement\" shall mean the date as of which both Parties have\\nsigned the Agreement by their duly authorized representatives."
+					"sub": "3.3",
+					"content": "\"Date of the Agreement\" shall mean the date as of which both Parties have\\nsigned the Agreement by their duly authorized representatives."
 				},
 				{
-					"3.4": "‘Direct Wholesale Roaming Access‘ means the making available of facilities\\nand/or services by a mobile network operator to another undertaking, under\\nRegulation (EU) 531/2012 defined conditions, for the purpose of that other\\nundertaking providing regulated roaming services to roaming customers;"
+					"sub": "3.4",
+					"content": "\"Direct Wholesale Roaming Access\" means the making available of facilities\\nand/or services by a mobile network operator to another undertaking, under\\nRegulation (EU) 531/2012 defined conditions, for the purpose of that other\\nundertaking providing regulated roaming services to roaming customers;"
 				},
 				{
-					"3.5": "\"GSM Association Permanent Reference Documents\" means a document\\nnoted as such by the GSMA and listed as such by the GSMA on the list of\\nPermanent Reference Documents."
+					"sub": "3.5",
+					"content": "\"GSM Association Permanent Reference Documents\" means a document\\nnoted as such by the GSMA and listed as such by the GSMA on the list of\\nPermanent Reference Documents."
 				},
 				{
-					"3.6": "\"International Roaming\" or \"IR\" shall mean the temporary provision of Services\\nby <A> in respect of which access is granted to Roaming Customers of <B>\\nresident in a geographical area outside the licensed area served through <A>’s\\nPMN."
+					"sub": "3.6",
+					"content": "\"International Roaming\" or \"IR\" shall mean the temporary provision of Services\\nby <A> in respect of which access is granted to Roaming Customers of <B>\\nresident in a geographical area outside the licensed area served through <A>’s\\nPMN."
 				},
 				{
-					"3.7": "\"Public Mobile Network\" or \"PMN\" shall mean a network that complies with the\\ndefinition of a GSM network as set out in the Articles of Association of the GSM\\nAssociation (AA.16)."
+					"sub": "3.7",
+					"content": "\"Public Mobile Network\" or \"PMN\" shall mean a network that complies with the\\ndefinition of a GSM network as set out in the Articles of Association of the GSM\\nAssociation (AA.16)."
 				},
 				{
-					"3.8": "\"Roaming Customer\" shall mean a person or entity resident in a geographical\\narea outside the licensed area served through <A>’s PMN with a valid legal\\nrelationship with <B> using a GSM SIM (Subscriber Identity Module) and/or a\\nGSM USIM (Universal Subscriber Identity Module) for use by that person or\\nentity of the Services while temporarily roaming on <A>’s PMN in accordance\\nwith the terms and conditions of this Agreement."
+					"sub": "3.8",
+					"content": "\"Roaming Customer\" shall mean a person or entity resident in a geographical\\narea outside the licensed area served through <A>’s PMN with a valid legal\\nrelationship with <B> using a GSM SIM (Subscriber Identity Module) and/or a\\nGSM USIM (Universal Subscriber Identity Module) for use by that person or\\nentity of the Services while temporarily roaming on <A>’s PMN in accordance\\nwith the terms and conditions of this Agreement."
 				},
 				{
-					"3.9": "\"Services\" shall mean the services as specified by <A> in Annex 8, which may\\nbe amended from time to time by <A>."
+					"sub": "3.9",
+					"content": "\"Services\" shall mean the services as specified by <A> in Annex 8, which may\\nbe amended from time to time by <A>."
 				},
 				{
-					"3.10": "\"Session\" shall mean the time between PDP Context Activation until PDP\\nContext deactivation."
+					"sub": "3.10",
+					"content": "\"Session\" shall mean the time between PDP Context Activation until PDP\\nContext deactivation."
 				},
 				{
-					"3.11": "\"TAP\" shall mean Transferred Account Procedure as defined and described in\\nGSM Association Permanent Reference Documents."
+					"sub": "3.11",
+					"content": "\"TAP\" shall mean Transferred Account Procedure as defined and described in\\nGSM Association Permanent Reference Documents."
 				},
 				{
-					"3.12": "\"Technical Specifications\" shall mean the technical specifications defined and\\nadopted by 3GPP (Third Generation Partnership Project), including the ETSI\\ntechnical specifications defined and adopted by 3GPP."
+					"sub": "3.12",
+					"content": "\"Technical Specifications\" shall mean the technical specifications defined and\\nadopted by 3GPP (Third Generation Partnership Project), including the ETSI\\ntechnical specifications defined and adopted by 3GPP."
 				},
 				{
-					"3.13": "\"Permanent Roaming\" shall mean a cumulative use of roaming Services by\\nthe same IMSI for 91 days (accumulated) or more per 4 months period on the\\nnetwork of <A>. Furthermore, Permanent Roaming shall also include scenarios\\nwhere by means of intelligent traffic steering across several national mobile\\nnetworks a permanent usage of Services in <A’s> home country shall be\\nestablished in order to provide domestic offerings."
+					"sub": "3.13",
+					"content": "\"Permanent Roaming\" shall mean a cumulative use of roaming Services by\\nthe same IMSI for 91 days (accumulated) or more per 4 months period on the\\nnetwork of <A>. Furthermore, Permanent Roaming shall also include scenarios\\nwhere by means of intelligent traffic steering across several national mobile\\nnetworks a permanent usage of Services in <A’s> home country shall be\\nestablished in order to provide domestic offerings."
 				},
 				{
-					"3.14": "\"Anomalous or Abusive Use\" shall mean any use of wholesale roaming\\naccess that is contrary to the purpose of this Agreement. For example, where\\nsignificant volumes are generated from a number of SIM cards that are sold to\\npersons not effectively residing or having stable links in the Member State of\\n<B> for other purposes than periodic travel."
+					"sub": "3.14",
+					"content": "\"Anomalous or Abusive Use\" shall mean any use of wholesale roaming\\naccess that is contrary to the purpose of this Agreement. For example, where\\nsignificant volumes are generated from a number of SIM cards that are sold to\\npersons not effectively residing or having stable links in the Member State of\\n<B> for other purposes than periodic travel."
 				}
 			]
 		},
 		{
+			"number": 4,
 			"name": [
 				"Annexes"
 			],
 			"content": [
 				{
-					"4.1": "The Annexes are divided as set out in the Overview of the Annex Structure."
+					"sub": "4.1",
+					"content": "The Annexes are divided as set out in the Overview of the Annex Structure."
 				}
 			]
 		},
 		{
+			"number": 5,
 			"name": [
 				"Scope of the Agreement",
 				"Technical Framework"
 			],
 			"content": [
 				{
-					"5.1": "In respect of and subject to their licenses or rights and other national binding\\nregulations to establish and operate Public Mobile Networks or to offer services to the\\npublic, A agrees to offer Services and B agrees to pay for Services, subject to Article\\n5.2,5.2 in accordance with:\\n1. relevant Technical Specifications;\\n2. all binding GSM Association Permanent Reference Documents as\\nprovided by A to B; and\\n3. those non-binding GSM Association Permanent Reference Documents\\nwhich are agreed by the Parties and specifically set out in the\\nAnnexes;\\nincluding in each case all the commercial aspects, as defined in the Agreement, including\\nthe Annexes hereto."
+					"sub": "5.1",
+					"content": "In respect of and subject to their licenses or rights and other national binding\\nregulations to establish and operate Public Mobile Networks or to offer services to the\\npublic, A agrees to offer Services and B agrees to pay for Services, subject to Article\\n5.2,5.2 in accordance with:\\n1. relevant Technical Specifications;\\n2. all binding GSM Association Permanent Reference Documents as\\nprovided by A to B; and\\n3. those non-binding GSM Association Permanent Reference Documents\\nwhich are agreed by the Parties and specifically set out in the\\nAnnexes;\\nincluding in each case all the commercial aspects, as defined in the Agreement, including\\nthe Annexes hereto."
 				},
 				{
-					"5.2": "Additional requirements and exceptions to the Technical Specifications and GSM\\nAssociation Permanent Reference Documents, as agreed between the Parties, are\\ndetailed in the Agreement and/or Annexes to the Agreement."
+					"sub": "5.2",
+					"content": "Additional requirements and exceptions to the Technical Specifications and GSM\\nAssociation Permanent Reference Documents, as agreed between the Parties, are\\ndetailed in the Agreement and/or Annexes to the Agreement."
 				}
 			]
 		},
 		{
+			"number": 6,
 			"name": [
 				"Implementation of the Network and Services"
 			],
 			"content": [
 				{
-					"6.1": "The Services provided by <A> are defined in Annex 8 as may be amended from time\\nto time by <A>. In addition:\\n1. the Services shall only be made available to individual Roaming\\nCustomers having valid legal relationships with <B>;\\n2. The availability of Services may depend on the availability of\\nappropriate functionality; and\\n3. Roaming Customers, during roaming, shall experience conditions of\\nservice that do not differ substantially from those provided to other\\nparties requesting the Services of <A>.\\n4. Services are provided based on the precondition that Roaming\\nCustomers are expected to have a usage pattern that does not differ\\nsubstantially from other EU roaming customers on A’s network."
+					"sub": "6.1",
+					"content": "The Services provided by <A> are defined in Annex 8 as may be amended from time\\nto time by <A>. In addition:\\n1. the Services shall only be made available to individual Roaming\\nCustomers having valid legal relationships with <B>;\\n2. The availability of Services may depend on the availability of\\nappropriate functionality; and\\n3. Roaming Customers, during roaming, shall experience conditions of\\nservice that do not differ substantially from those provided to other\\nparties requesting the Services of <A>.\\n4. Services are provided based on the precondition that Roaming\\nCustomers are expected to have a usage pattern that does not differ\\nsubstantially from other EU roaming customers on A’s network."
 				}
 			]
 		},
 		{
+			"number": 7,
 			"name": [
 				"Management of Modifications to the Services"
 			],
 			"content": [
 				{
-					"7.1": "Following notice of change served by <A> to implement new Services or changes\\nto any existing Services in accordance with Article 17.2 both Parties shall\\ndiscuss the impact of any such change for Roaming Customers (including Roaming\\nCustomers access to these Services). including without limitation, in relation to:\\n1. network and billing test procedures as set out in the Technical\\nSpecifications and the GSM Association Permanent Reference\\nDocuments, as requested by either Party;\\n2. administrative activities; and\\n3. the targeted starting date for the changed services."
+					"sub": "7.1",
+					"content": "Following notice of change served by <A> to implement new Services or changes\\nto any existing Services in accordance with Article 17.2 both Parties shall\\ndiscuss the impact of any such change for Roaming Customers (including Roaming\\nCustomers access to these Services). including without limitation, in relation to:\\n1. network and billing test procedures as set out in the Technical\\nSpecifications and the GSM Association Permanent Reference\\nDocuments, as requested by either Party;\\n2. administrative activities; and\\n3. the targeted starting date for the changed services."
 				}
 			]
 		},
 		{
+			"number": 8,
 			"name": [
 				"Forecasting"
 			],
 			"content": [
 				{
-					"8.1": "A is entitled to ask B and B must provide , prior to the launch, a forecast of all voice,\\nSMS and data traffic for the 12 months after commercial launch and such a request\\nmay be made and must be replied to annually thereafter."
+					"sub": "8.1",
+					"content": "A is entitled to ask B and B must provide , prior to the launch, a forecast of all voice,\\nSMS and data traffic for the 12 months after commercial launch and such a request\\nmay be made and must be replied to annually thereafter."
 				}
 			]
 		},
 		{
+			"number": 9,
 			"name": [
 				"Charging, Billing & Accounting"
 			],
 			"content": [
 				{
-					"9.1": "A is entitled to ask B and B must provide, prior to the commercial launch, a bank\\nguarantee based on the traffic forecast for the coming twelve months. If traffic volumes\\nchange the roaming provider may require the bank guarantee to be changed\\naccordingly."
+					"sub": "9.1",
+					"content": "A is entitled to ask B and B must provide, prior to the commercial launch, a bank\\nguarantee based on the traffic forecast for the coming twelve months. If traffic volumes\\nchange the roaming provider may require the bank guarantee to be changed\\naccordingly."
 				},
 				{
-					"9.2": "When a Roaming Customer uses the Services made available hereunder by <A>, <B>\\nshall be responsible for payment of charges for the said Services so used in\\naccordance with the tariff of <A>."
+					"sub": "9.2",
+					"content": "When a Roaming Customer uses the Services made available hereunder by <A>, <B>\\nshall be responsible for payment of charges for the said Services so used in\\naccordance with the tariff of <A>."
 				},
 				{
-					"9.3": "<B> shall not be liable for the payment of charges for chargeable Services provided by\\n<A>without Subscriber Identity Authentication as defined in GSM Association\\nPermanent Reference Documents, except to the extent that <B> actually recovers all\\ncharges due in relation to the Roaming Customer. In the case of re-authentication\\nmalfunction, procedures are further detailed in Annex 3."
+					"sub": "9.3",
+					"content": "<B> shall not be liable for the payment of charges for chargeable Services provided by\\n<A>without Subscriber Identity Authentication as defined in GSM Association\\nPermanent Reference Documents, except to the extent that <B> actually recovers all\\ncharges due in relation to the Roaming Customer. In the case of re-authentication\\nmalfunction, procedures are further detailed in Annex 3."
 				}
 			]
 		},
 		{
+			"number": 10,
 			"name": [
 				"Implementation of TAP"
 			],
 			"content": [
 				{
-					"10.1": "The Parties shall implement TAP according to the GSM Association Permanent\\nReference Documents and the provisions set out in the Annex 3.1."
+					"sub": "10.1",
+					"content": "The Parties shall implement TAP according to the GSM Association Permanent\\nReference Documents and the provisions set out in the Annex 3.1."
 				}
 			]
 		},
 		{
+			"number": 11,
 			"name": [
 				"Billing and Accounting"
 			],
 			"content": [
 				{
-					"11.1": "The Parties shall implement billing and accounting according to the GSM Association\\nPermanent Reference Documents and the provisions set out in Annex 3.2."
+					"sub": "11.1",
+					"content": "The Parties shall implement billing and accounting according to the GSM Association\\nPermanent Reference Documents and the provisions set out in Annex 3.2."
 				}
 			]
 		},
 		{
+			"number": 12,
 			"name": [
 				"Customer Care"
 			],
 			"content": [
 				{
-					"12.1": "The responsibilities of each Party concerning Customer Care are described in Annex\\n4."
+					"sub": "12.1",
+					"content": "The responsibilities of each Party concerning Customer Care are described in Annex\\n4."
 				}
 			]
 		},
 		{
+			"number": 13,
 			"name": [
 				"Confidentiality"
 			],
 			"content": [
 				{
-					"13.1": "The Parties agree that all aspects of the contents of the Agreement shall be treated as\\nInformation (as defined below) and no information in respect to the content of the\\nAgreement shall be disclosed without the prior written consent of the Parties except as\\nreasonably necessary to implement the Agreement"
+					"sub": "13.1",
+					"content": "The Parties agree that all aspects of the contents of the Agreement shall be treated as\\nInformation (as defined below) and no information in respect to the content of the\\nAgreement shall be disclosed without the prior written consent of the Parties except as\\nreasonably necessary to implement the Agreement"
 				},
 				{
-					"13.2": "In addition to Article 13.1 hereof, the Parties hereby agree to treat all information\\nexchanged between them (hereinafter referred to as \"Information\") as confidential and\\nagree not to disclose such Information in any manner whatsoever, in whole or in part\\nexcept as provided in this Article 13. The Parties shall not use any Information other\\nthan in connection with the discussions between them and any transactions resulting\\ntherefrom, or for the provision of the Services as contemplated herein. The Parties are\\nalso entitled to disclose Information to third parties in the context of a possible bona\\nfide acquisition or sale of its operations in support of reasonably related due diligence\\nactivities in respect thereof, or for the borrowing of funds or obtaining of insurance, in\\nwhich case any third parties (including lenders or insurance companies) involved in\\nsuch activities shall be obliged to enter into confidentiality agreements which have the\\nequivalent content as this Article 133 before receiving the Information. In addition to\\nthe foregoing, the Parties shall also be entitled to share information with Affiliated\\nCompanies, directors, agents, professional advisers, contractors, employees or\\nresellers on a need to know basis provided that such Affiliated Companies, agents,\\ncontractors, employees or resellers have entered into confidentiality agreements in a\\nform substantially equivalent to and on terms and conditions no less stringent than the\\nterms and conditions set out in this Article 13. Subject to Article 13 hereof, each Party\\nshall be liable in accordance with Article 16 toward the other Party(ies) in respect of\\nany unauthorized disclosure of Information made by any other authorized recipients."
+					"sub": "13.2",
+					"content": "In addition to Article 13.1 hereof, the Parties hereby agree to treat all information\\nexchanged between them (hereinafter referred to as \"Information\") as confidential and\\nagree not to disclose such Information in any manner whatsoever, in whole or in part\\nexcept as provided in this Article 13. The Parties shall not use any Information other\\nthan in connection with the discussions between them and any transactions resulting\\ntherefrom, or for the provision of the Services as contemplated herein. The Parties are\\nalso entitled to disclose Information to third parties in the context of a possible bona\\nfide acquisition or sale of its operations in support of reasonably related due diligence\\nactivities in respect thereof, or for the borrowing of funds or obtaining of insurance, in\\nwhich case any third parties (including lenders or insurance companies) involved in\\nsuch activities shall be obliged to enter into confidentiality agreements which have the\\nequivalent content as this Article 133 before receiving the Information. In addition to\\nthe foregoing, the Parties shall also be entitled to share information with Affiliated\\nCompanies, directors, agents, professional advisers, contractors, employees or\\nresellers on a need to know basis provided that such Affiliated Companies, agents,\\ncontractors, employees or resellers have entered into confidentiality agreements in a\\nform substantially equivalent to and on terms and conditions no less stringent than the\\nterms and conditions set out in this Article 13. Subject to Article 13 hereof, each Party\\nshall be liable in accordance with Article 16 toward the other Party(ies) in respect of\\nany unauthorized disclosure of Information made by any other authorized recipients."
 				},
 				{
-					"13.3": "Notwithstanding Article 16 each Party shall be liable under this Agreement to the other\\nParty in respect of any proven damage or loss to the other Party caused by its\\nunauthorised use or disclosure of such information only up to the sum of five hundred\\nthousand (500,000) SDR."
+					"sub": "13.3",
+					"content": "Notwithstanding Article 16 each Party shall be liable under this Agreement to the other\\nParty in respect of any proven damage or loss to the other Party caused by its\\nunauthorised use or disclosure of such information only up to the sum of five hundred\\nthousand (500,000) SDR."
 				},
 				{
-					"13.4": "Notwithstanding Article 13.1 above, Information and the contents of this Agreement\\nmay be transmitted to governmental, judicial or regulatory authorities, as may be\\nrequired by any governmental, judicial or regulatory authority."
+					"sub": "13.4",
+					"content": "Notwithstanding Article 13.1 above, Information and the contents of this Agreement\\nmay be transmitted to governmental, judicial or regulatory authorities, as may be\\nrequired by any governmental, judicial or regulatory authority."
 				},
 				{
-					"13.5": "For the purposes of the Agreement, Information and the contents of this Agreement\\nshall not be considered to be confidential if such Information is:\\n1. in or passed into the public domain other than by breach of this\\nArticle; or\\n2. known to a receiving Party prior to the disclosure by a disclosing\\nParty; or\\n3. disclosed to a receiving Party without restriction by a third party\\nhaving the full right to disclose; or\\n4. independently developed by a receiving Party to whom no disclosure\\nof confidential Information relevant to such Information has been\\nmade."
+					"sub": "13.5",
+					"content": "For the purposes of the Agreement, Information and the contents of this Agreement\\nshall not be considered to be confidential if such Information is:\\n1. in or passed into the public domain other than by breach of this\\nArticle; or\\n2. known to a receiving Party prior to the disclosure by a disclosing\\nParty; or\\n3. disclosed to a receiving Party without restriction by a third party\\nhaving the full right to disclose; or\\n4. independently developed by a receiving Party to whom no disclosure\\nof confidential Information relevant to such Information has been\\nmade."
 				},
 				{
-					"13.6": "Each Party agrees that in the event of a breach or threatened breach of Article 13, the\\nharm suffered by the other Party would not be compensable by monetary damages\\nalone and, accordingly, in addition to other available legal or equitable remedies, the\\nother Party shall be entitled to apply for an injunction or specific performance with\\nrespect to such breach or threatened breach, without proof of actual damages (and\\nwithout the requirement of posting a bond or other security) and each Party agrees not\\nto plead sufficiency of damages as a defence."
+					"sub": "13.6",
+					"content": "Each Party agrees that in the event of a breach or threatened breach of Article 13, the\\nharm suffered by the other Party would not be compensable by monetary damages\\nalone and, accordingly, in addition to other available legal or equitable remedies, the\\nother Party shall be entitled to apply for an injunction or specific performance with\\nrespect to such breach or threatened breach, without proof of actual damages (and\\nwithout the requirement of posting a bond or other security) and each Party agrees not\\nto plead sufficiency of damages as a defence."
 				},
 				{
-					"13.7": "Article 13 shall survive the termination of the Agreement for a period of ten (10) years\\nbut shall not in any way limit or restrict a disclosing Party's use of its own confidential\\nInformation."
+					"sub": "13.7",
+					"content": "Article 13 shall survive the termination of the Agreement for a period of ten (10) years\\nbut shall not in any way limit or restrict a disclosing Party's use of its own confidential\\nInformation."
 				}
 			]
 		},
 		{
+			"number": 14,
 			"name": [
 				"Data Privacy"
 			],
 			"content": [
 				{
-					"14.1": "Each Party’s obligations hereunder to transfer information to the other Party shall not\\napply to the extent that a Party is prohibited from doing so by the regulations and laws\\nof its own country applicable to IR and/or data protection."
+					"sub": "14.1",
+					"content": "Each Party’s obligations hereunder to transfer information to the other Party shall not\\napply to the extent that a Party is prohibited from doing so by the regulations and laws\\nof its own country applicable to IR and/or data protection."
 				},
 				{
-					"14.2": "Party B shall inform its customers that during roaming, the storage, treatment and\\ntransfer of their personal data may be subject to regulation different from the regulation\\nin their own country."
+					"sub": "14.2",
+					"content": "Party B shall inform its customers that during roaming, the storage, treatment and\\ntransfer of their personal data may be subject to regulation different from the regulation\\nin their own country."
 				},
 				{
-					"14.3": "The Parties confirm that they shall comply with the Data Privacy Regulations/Laws\\napplicable in their respective countries."
+					"sub": "14.3",
+					"content": "The Parties confirm that they shall comply with the Data Privacy Regulations/Laws\\napplicable in their respective countries."
 				}
 			]
 		},
 		{
+			"number": 15,
 			"name": [
 				"Fraud Prevention"
 			],
 			"content": [
 				{
-					"15.1": "The Parties shall comply with the procedures and provisions concerning fraudulent or\\nunauthorised use by Roaming Customers set out in the GSM Association Permanent\\nReference Documents and in Annex 6."
+					"sub": "15.1",
+					"content": "The Parties shall comply with the procedures and provisions concerning fraudulent or\\nunauthorised use by Roaming Customers set out in the GSM Association Permanent\\nReference Documents and in Annex 6."
 				}
 			]
 		},
 		{
+			"number": 16,
 			"name": [
 				"Liability of the Parties"
 			],
 			"content": [
 				{
-					"16.1": "Neither Party shall be liable to the other Party under or in connection with the\\nAgreement except:\\n1. in respect of charges to be paid to <A> pursuant to Article 8;\\n2. to the extent of its negligence where such negligence results in proven\\ndamages or loss to the other Party, in which event the liability of the\\nnegligent Party shall be limited to and shall in no event exceed two\\nhundred and fifty thousand (250,000) SDR in respect of any one\\nincident or series of incidents arising from the same cause;\\n3. in respect of charges arising from non-compliance with binding GSM\\nAssociation Permanent Reference Documents pursuant to Article 15."
+					"sub": "16.1",
+					"content": "Neither Party shall be liable to the other Party under or in connection with the\\nAgreement except:\\n1. in respect of charges to be paid to <A> pursuant to Article 8;\\n2. to the extent of its negligence where such negligence results in proven\\ndamages or loss to the other Party, in which event the liability of the\\nnegligent Party shall be limited to and shall in no event exceed two\\nhundred and fifty thousand (250,000) SDR in respect of any one\\nincident or series of incidents arising from the same cause;\\n3. in respect of charges arising from non-compliance with binding GSM\\nAssociation Permanent Reference Documents pursuant to Article 15."
 				},
 				{
-					"16.2": "Furthermore, in no event shall either Party be liable for any consequential damage or\\nloss of whatsoever nature, including but not limited to, loss of profit or loss of business,\\neven if such Party has been advised of the possibility of such loss or damage."
+					"sub": "16.2",
+					"content": "Furthermore, in no event shall either Party be liable for any consequential damage or\\nloss of whatsoever nature, including but not limited to, loss of profit or loss of business,\\neven if such Party has been advised of the possibility of such loss or damage."
 				},
 				{
-					"16.3": "In no event shall any employee of either Party or of an Affiliated Company be liable to\\nthe other Party for any act of negligence or intent under or in connection with the\\nAgreement. Save for the limitations in Articles 16.1 and 16.2 nothing in the foregoing\\nshall in any way restrict the liability of either Party for the actions of its employees."
+					"sub": "16.3",
+					"content": "In no event shall any employee of either Party or of an Affiliated Company be liable to\\nthe other Party for any act of negligence or intent under or in connection with the\\nAgreement. Save for the limitations in Articles 16.1 and 16.2 nothing in the foregoing\\nshall in any way restrict the liability of either Party for the actions of its employees."
 				},
 				{
-					"16.4": "Limitation of liability as described in this Article shall not apply if damage or loss is\\ncaused by a Party's wilful misconduct (including fraud) or gross negligence."
+					"sub": "16.4",
+					"content": "Limitation of liability as described in this Article shall not apply if damage or loss is\\ncaused by a Party's wilful misconduct (including fraud) or gross negligence."
 				}
 			]
 		},
 		{
+			"number": 17,
 			"name": [
 				"Suspension of Services"
 			],
 			"content": [
 				{
-					"17.1": "Notwithstanding anything in the Agreement to the contrary, <A> may without liability\\nsuspend or terminate all or any of its Services to Roaming Customer(s) in\\ncircumstances where it would suspend or terminate those Services to its own\\ncustomers, including but not limited to:\\n1. Roaming Customers using equipment which is defective or illegal; or\\n2. Roaming Customers causing any technical or other problems on <A>’s\\nPublic Mobile Network; or\\n3. suspected fraudulent or unauthorised use; or\\n4. authentication of the legal relationship not being possible; or\\n5. maintenance or enhancement of its Public Mobile Network or\\n6. Suspension for non payment in excess of 3 months."
+					"sub": "17.1",
+					"content": "Notwithstanding anything in the Agreement to the contrary, <A> may without liability\\nsuspend or terminate all or any of its Services to Roaming Customer(s) in\\ncircumstances where it would suspend or terminate those Services to its own\\ncustomers, including but not limited to:\\n1. Roaming Customers using equipment which is defective or illegal; or\\n2. Roaming Customers causing any technical or other problems on <A>’s\\nPublic Mobile Network; or\\n3. suspected fraudulent or unauthorised use; or\\n4. authentication of the legal relationship not being possible; or\\n5. maintenance or enhancement of its Public Mobile Network or\\n6. Suspension for non payment in excess of 3 months."
 				},
 				{
-					"17.2": "In case of a proposed suspension of Services to all Roaming Customers, <A> shall\\nuse commercially reasonable efforts to give four (4) weeks written notice (shorter\\nnotice may apply given the circumstances related to the suspension) to <B> prior to\\nthe suspension taking effect. If the suspension continues for more than six (6)\\nmonths, <B> shall have the right to terminate the Agreement with immediate effect by\\nwritten notice."
+					"sub": "17.2",
+					"content": "In case of a proposed suspension of Services to all Roaming Customers, <A> shall\\nuse commercially reasonable efforts to give four (4) weeks written notice (shorter\\nnotice may apply given the circumstances related to the suspension) to <B> prior to\\nthe suspension taking effect. If the suspension continues for more than six (6)\\nmonths, <B> shall have the right to terminate the Agreement with immediate effect by\\nwritten notice."
 				},
 				{
-					"17.3": "Notwithstanding the provisions of Article 6, <B> has the right at any time, for technical\\nreasons, without liability but upon detailed written notice to <A>, to suspend access to\\nthe Services to its Roaming Customers. Alternatively, if in the opinion of <A> it is\\ntechnically more practicable <B> may request that <A> suspend all of its Services to\\nRoaming Customers of <B>. <A> shall use commercially reasonable efforts to comply\\nwith such requirement within seven (7) calendar days after receipt of the said notice."
+					"sub": "17.3",
+					"content": "Notwithstanding the provisions of Article 6, <B> has the right at any time, for technical\\nreasons, without liability but upon detailed written notice to <A>, to suspend access to\\nthe Services to its Roaming Customers. Alternatively, if in the opinion of <A> it is\\ntechnically more practicable <B> may request that <A> suspend all of its Services to\\nRoaming Customers of <B>. <A> shall use commercially reasonable efforts to comply\\nwith such requirement within seven (7) calendar days after receipt of the said notice."
 				},
 				{
-					"17.4": "The Parties agree that the suspension shall be removed as soon as the technical\\nreason for the suspension has been overcome by <A> or <B> as the case may be."
+					"sub": "17.4",
+					"content": "The Parties agree that the suspension shall be removed as soon as the technical\\nreason for the suspension has been overcome by <A> or <B> as the case may be."
 				},
 				{
-					"17.5": "In case of any use of wholesale roaming access that is not in accordance with this\\nAgreement – such as but not limited to permanent or predominant usage in <A>´s\\nhome country, <A> may without liability forthwith suspend all or any of its Services to\\nRoaming Customer(s). If <B> does not provide written proof that the reasons leading\\nto the suspension have been remedied within a period of 4 weeks after being notified\\nby <A> of said reasons, <A> shall have the right to terminate the Agreement with\\nimmediate effect by written notice."
+					"sub": "17.5",
+					"content": "In case of any use of wholesale roaming access that is not in accordance with this\\nAgreement – such as but not limited to permanent or predominant usage in <A>´s\\nhome country, <A> may without liability forthwith suspend all or any of its Services to\\nRoaming Customer(s). If <B> does not provide written proof that the reasons leading\\nto the suspension have been remedied within a period of 4 weeks after being notified\\nby <A> of said reasons, <A> shall have the right to terminate the Agreement with\\nimmediate effect by written notice."
 				}
 			]
 		},
 		{
+			"number": 18,
 			"name": [
 				"Permanent Roaming and Anomalous or Abusive Use"
 			],
 			"content": [
 				{
-					"18.1": "Where <A> , according to objective indicators, has the suspicion that Permanent\\nRoaming and/or Anomalous or Abusive Use is taking place <A> may request <B> to\\nprovide information (such as but not limited to IMSIs and volume).This information\\nhelps to establish if <B’s> customers are in a situation of Permanent Roaming and/or\\nAnomalous or Abusive Use on the network of <A>. Upon A’s request <B> shall provide\\nthe respective information within 4 (four) calendar weeks."
+					"sub": "18.1",
+					"content": "Where <A> , according to objective indicators, has the suspicion that Permanent\\nRoaming and/or Anomalous or Abusive Use is taking place <A> may request <B> to\\nprovide information (such as but not limited to IMSIs and volume).This information\\nhelps to establish if <B’s> customers are in a situation of Permanent Roaming and/or\\nAnomalous or Abusive Use on the network of <A>. Upon A’s request <B> shall provide\\nthe respective information within 4 (four) calendar weeks."
 				},
 				{
-					"18.2": "The provision of this information is without prejudice to EU and national data protection\\nrequirements,"
+					"sub": "18.2",
+					"content": "The provision of this information is without prejudice to EU and national data protection\\nrequirements,"
 				},
 				{
-					"18.3": "In case <B> fails to provide any or sufficient information in due time, Permanent\\nRoaming and/or Anomalous or Abusive Use se is deemed to be established."
+					"sub": "18.3",
+					"content": "In case <B> fails to provide any or sufficient information in due time, Permanent\\nRoaming and/or Anomalous or Abusive Use se is deemed to be established."
 				},
 				{
-					"18.4": "Where <A> has established that Permanent Roaming and/or Anomalous or Abusive\\nUse of <B’s> customers is taking place or such situation is deemed to be established,\\n<A>may notify <B> respectively and may request <B> to cease such Permanent\\nRoaming and/or Anomalous or Abusive Use within 14 (fourteen) days.."
+					"sub": "18.4",
+					"content": "Where <A> has established that Permanent Roaming and/or Anomalous or Abusive\\nUse of <B’s> customers is taking place or such situation is deemed to be established,\\n<A>may notify <B> respectively and may request <B> to cease such Permanent\\nRoaming and/or Anomalous or Abusive Use within 14 (fourteen) days.."
 				},
 				{
-					"18.5": "Where <B> does not cease Permanent Roaming <A> may according to Recital 12 of\\nthe Regulation (EU) 2017/920 apply wholesale charges provided in the Regulation\\n(EU) 2017/920 related to the traffic for the faultyabusive Roaming Customer, upon\\nnotification of <B>."
+					"sub": "18.5",
+					"content": "Where <B> does not cease Permanent Roaming <A> may according to Recital 12 of\\nthe Regulation (EU) 2017/920 apply wholesale charges provided in the Regulation\\n(EU) 2017/920 related to the traffic for the faultyabusive Roaming Customer, upon\\nnotification of <B>."
 				},
 				{
-					"18.6": "Where <B> does not cease Anomalous or Abusive Use, <A> may without liability\\nsuspend all or any of its Services to the abusive <B’s> Roaming Customer(s) until\\nreceipt of a written confirmation of <B> to cease such Anomalous or Abusive Use. <A>\\nmay also without liability suspend all or any of its Services to <B’s> Roaming\\nCustomer(s) where measures listed above are not deemed appropriate or sufficient."
+					"sub": "18.6",
+					"content": "Where <B> does not cease Anomalous or Abusive Use, <A> may without liability\\nsuspend all or any of its Services to the abusive <B’s> Roaming Customer(s) until\\nreceipt of a written confirmation of <B> to cease such Anomalous or Abusive Use. <A>\\nmay also without liability suspend all or any of its Services to <B’s> Roaming\\nCustomer(s) where measures listed above are not deemed appropriate or sufficient."
 				},
 				{
-					"18.7": "If <B> does not provide written proof to <A> within a period of eight [8] calendar weeks\\nafter the start of the notification that the reasons leading to the Permanent Roaming by\\na significant share of the Roaming Customers have been remedied, <A> shall have\\nthe right to terminate the Agreement. Termination of the agreement will be by written\\nnotice and follow prior authorisation of the national regulatory authority."
+					"sub": "18.7",
+					"content": "If <B> does not provide written proof to <A> within a period of eight [8] calendar weeks\\nafter the start of the notification that the reasons leading to the Permanent Roaming by\\na significant share of the Roaming Customers have been remedied, <A> shall have\\nthe right to terminate the Agreement. Termination of the agreement will be by written\\nnotice and follow prior authorisation of the national regulatory authority."
 				}
 			]
 		},
 		{
+			"number": 19,
 			"name": [
 				"Force Majeure"
 			],
 			"content": [
 				{
-					"19.1": "Non-performance of either Party’s obligations pursuant to the Agreement or delay in\\nperforming same (except with respect to the payment of charges applicable\\nhereunder) shall not constitute a breach of the Agreement if, and for as long as, it is\\ndue to a force majeure event, including, but not being limited to, governmental action,\\nor requirement of regulatory authority, lockouts, strikes, shortage of transportation,\\nwar, rebellion or other military action, fire, flood, natural catastrophes, or any other\\nunforeseeable obstacles that a Party is not able to overcome with reasonable efforts,\\nor non-performance of obligations by a sub-contractor to a Party pursuant to any of the\\naforementioned reasons. The Party prevented from fulfilling its obligations shall on\\nbecoming aware of such event inform the other Party in writing of such force majeure\\nevent as soon as possible. If the force majeure event continues for more than six (6)\\nmonths, either Party shall have the right to terminate the Agreement with immediate\\neffect by written notice."
+					"sub": "19.1",
+					"content": "Non-performance of either Party’s obligations pursuant to the Agreement or delay in\\nperforming same (except with respect to the payment of charges applicable\\nhereunder) shall not constitute a breach of the Agreement if, and for as long as, it is\\ndue to a force majeure event, including, but not being limited to, governmental action,\\nor requirement of regulatory authority, lockouts, strikes, shortage of transportation,\\nwar, rebellion or other military action, fire, flood, natural catastrophes, or any other\\nunforeseeable obstacles that a Party is not able to overcome with reasonable efforts,\\nor non-performance of obligations by a sub-contractor to a Party pursuant to any of the\\naforementioned reasons. The Party prevented from fulfilling its obligations shall on\\nbecoming aware of such event inform the other Party in writing of such force majeure\\nevent as soon as possible. If the force majeure event continues for more than six (6)\\nmonths, either Party shall have the right to terminate the Agreement with immediate\\neffect by written notice."
 				},
 				{
-					"19.2": "If the affected Party fails to inform the other Party of the occurrence of a force majeure\\nevent as set forth in Article 17.1 above, then such Party thereafter shall not be entitled\\nto refer such events to force majeure as a reason for non-fulfilment. This obligation\\ndoes not apply if the force majeure event is known by both Parties or the affected\\nParty is unable to inform the other Party due to the force majeure event."
+					"sub": "19.2",
+					"content": "If the affected Party fails to inform the other Party of the occurrence of a force majeure\\nevent as set forth in Article 17.1 above, then such Party thereafter shall not be entitled\\nto refer such events to force majeure as a reason for non-fulfilment. This obligation\\ndoes not apply if the force majeure event is known by both Parties or the affected\\nParty is unable to inform the other Party due to the force majeure event."
 				}
 			]
 		},
 		{
+			"number": 20,
 			"name": [
 				"Duration of the Agreement"
 			],
 			"content": [
 				{
-					"20.1": "The Agreement comes into force on the Date of the Agreement and subject to the\\nconditions of Articles 17, 19.1 and 21 shall remain in force unless terminated by one of\\nthe Parties in writing subject to a period of notice of six (6) months."
+					"sub": "20.1",
+					"content": "The Agreement comes into force on the Date of the Agreement and subject to the\\nconditions of Articles 17, 19.1 and 21 shall remain in force unless terminated by one of\\nthe Parties in writing subject to a period of notice of six (6) months."
 				}
 			]
 		},
 		{
+			"number": 21,
 			"name": [
 				"Termination of the Agreement"
 			],
 			"content": [
 				{
-					"21.1": "In addition to the conditions of Articles17,19.1 and 20 the Agreement may be\\nterminated as follows:\\n1. by mutual agreement of the Parties; or\\n2. by one of the Parties, with immediate effect, when the other Party is in\\nmaterial breach of the Agreement and does not or is not capable of\\nremedying such breach within sixty (60) days of receipt of a written notice\\nto such effect;\\n3. by one of the Parties, with immediate effect, if the other Party becomes\\nbankrupt or insolvent or if that other Party enters into any composition or\\narrangement with its creditors and that other Party is not able to ensure\\nperformance of its obligations under the Agreement by a guarantee from a\\nfirst class bank, payable on first written demand;\\n4. by written notice of either Party to the other in the event that IR becomes\\ntechnically or commercially impracticable on <A>'s Public Mobile Network\\nand the provisions set out in Article 16 are not sufficient to solve the problem\\nor if an unacceptable level of unauthorized use occurs and the other Party\\nis not capable of remedying such unauthorized use within sixty (60) days of\\nreceipt of a written notice to such effect; or\\n5. subject to Article 23.1 immediately in the event a final order by the relevant\\ngovernmental authority revoking or denying renewal of the license(s) or\\npermission to operate a Public Mobile Network(s) granted to either Party,\\nor any other license necessary to operate the Service(s), takes effect."
+					"sub": "21.1",
+					"content": "In addition to the conditions of Articles17,19.1 and 20 the Agreement may be\\nterminated as follows:\\n1. by mutual agreement of the Parties; or\\n2. by one of the Parties, with immediate effect, when the other Party is in\\nmaterial breach of the Agreement and does not or is not capable of\\nremedying such breach within sixty (60) days of receipt of a written notice\\nto such effect;\\n3. by one of the Parties, with immediate effect, if the other Party becomes\\nbankrupt or insolvent or if that other Party enters into any composition or\\narrangement with its creditors and that other Party is not able to ensure\\nperformance of its obligations under the Agreement by a guarantee from a\\nfirst class bank, payable on first written demand;\\n4. by written notice of either Party to the other in the event that IR becomes\\ntechnically or commercially impracticable on <A>'s Public Mobile Network\\nand the provisions set out in Article 16 are not sufficient to solve the problem\\nor if an unacceptable level of unauthorized use occurs and the other Party\\nis not capable of remedying such unauthorized use within sixty (60) days of\\nreceipt of a written notice to such effect; or\\n5. subject to Article 23.1 immediately in the event a final order by the relevant\\ngovernmental authority revoking or denying renewal of the license(s) or\\npermission to operate a Public Mobile Network(s) granted to either Party,\\nor any other license necessary to operate the Service(s), takes effect."
 				},
 				{
-					"21.2": "In the event of termination on the grounds of a breach of the Agreement under the\\nArticle 21.1.2, the Party in breach shall, notwithstanding Article 16.2, be liable to the\\nother Party (in addition to charges properly due and payable to <A>) for proven direct\\ndamage or loss (excluding indirect or consequential damage or loss) arising as a\\nconsequence of such breach up to a maximum aggregate liability of two hundred and\\nfifty thousand (250,000) SDR, provided, however, that such limitation of liability shall\\nnot apply if a damage or loss is caused by a Party's wilful misconduct or gross\\nnegligence."
+					"sub": "21.2",
+					"content": "In the event of termination on the grounds of a breach of the Agreement under the\\nArticle 21.1.2, the Party in breach shall, notwithstanding Article 16.2, be liable to the\\nother Party (in addition to charges properly due and payable to <A>) for proven direct\\ndamage or loss (excluding indirect or consequential damage or loss) arising as a\\nconsequence of such breach up to a maximum aggregate liability of two hundred and\\nfifty thousand (250,000) SDR, provided, however, that such limitation of liability shall\\nnot apply if a damage or loss is caused by a Party's wilful misconduct or gross\\nnegligence."
 				}
 			]
 		},
 		{
+			"number": 22,
 			"name": [
-				"Changes to the Agreement",
-				"Changes to the Agreement, Annexes and Addenda"
+				"Changes to the Agreement"
 			],
 			"content": [
 				{
-					"22.1": "Any amendments and/or additions to the Agreement and/or Annexes and/or Addenda\\nshall be valid only if made in writing and signed or e-signed by duly authorized\\nrepresentatives of both Parties hereto."
+					"sub": "22.1",
+					"content": "Any amendments and/or additions to the Agreement and/or Annexes and/or Addenda\\nshall be valid only if made in writing and signed or e-signed by duly authorized\\nrepresentatives of both Parties hereto."
 				},
 				{
-					"22.2": "Notwithstanding Article 22.1 <A> shall be entitled to:\\n1. implement new Services or change existing Services as it sees fit subject\\nto the successful completion of all network and billing test procedures as\\nset out in the Technical Specifications and the GSM Association Permanent\\nReference Documents, as requested by either Party. <A> shall give <B> at\\nleast thirty (30) days' prior written notice of any implementation of Services\\nfor the first time. <A> also agrees to use its reasonable efforts to give the\\nother Party at least thirty (30) days prior written notice of any other proposed\\nimplementation of new Services or change of existing Services which is a\\nmajor change which has an impact on IR;\\n2. terminate all or any existing Services offered by or to a roaming partner as\\nit sees fit. <A> agrees to use its reasonable efforts to give <B> at least sixty\\n(60) days prior written notice of any termination of existing Services which\\nis a major change which has an impact on IR; or\\n3. vary its tariff stated in the Annex 8 or subsequent variation thereof;"
+					"sub": "22.2",
+					"content": "Notwithstanding Article 22.1 <A> shall be entitled to:\\n1. implement new Services or change existing Services as it sees fit subject\\nto the successful completion of all network and billing test procedures as\\nset out in the Technical Specifications and the GSM Association Permanent\\nReference Documents, as requested by either Party. <A> shall give <B> at\\nleast thirty (30) days' prior written notice of any implementation of Services\\nfor the first time. <A> also agrees to use its reasonable efforts to give the\\nother Party at least thirty (30) days prior written notice of any other proposed\\nimplementation of new Services or change of existing Services which is a\\nmajor change which has an impact on IR;\\n2. terminate all or any existing Services offered by or to a roaming partner as\\nit sees fit. <A> agrees to use its reasonable efforts to give <B> at least sixty\\n(60) days prior written notice of any termination of existing Services which\\nis a major change which has an impact on IR; or\\n3. vary its tariff stated in the Annex 8 or subsequent variation thereof;"
 				},
 				{
-					"22.3": "The references to Technical Specifications and binding GSM Association Permanent\\nReference Documents in Article 5.1 (1)and (2) shall be deemed to include references\\nto these documents as amended by GSM Association from time to time. However the\\nreference to non-binding GSM Association Permanent Reference Documents in Article\\n5.1 (3) shall not be deemed to include a reference to such non-binding documents as\\namended by GSM Association from time to time unless and to the extent that this is\\nexpressly agreed by the Parties and detailed in the Agreement, including the Annexes.\\nThis Article 22.2(3) shall be subject to Article 5.2."
+					"sub": "22.3",
+					"content": "The references to Technical Specifications and binding GSM Association Permanent\\nReference Documents in Article 5.1 (1)and (2) shall be deemed to include references\\nto these documents as amended by GSM Association from time to time. However the\\nreference to non-binding GSM Association Permanent Reference Documents in Article\\n5.1 (3) shall not be deemed to include a reference to such non-binding documents as\\namended by GSM Association from time to time unless and to the extent that this is\\nexpressly agreed by the Parties and detailed in the Agreement, including the Annexes.\\nThis Article 22.2(3) shall be subject to Article 5.2."
 				},
 				{
-					"22.4": "It is also recognised by the Parties that it may be appropriate to seek changes to the\\nAgreement in the light of experience and development in the GSM Association and the\\nestablishment of IR between the Parties. Accordingly, the Parties shall enter into good\\nfaith discussions with a view to agreeing mutually acceptable modifications to the\\nAgreement."
+					"sub": "22.4",
+					"content": "It is also recognised by the Parties that it may be appropriate to seek changes to the\\nAgreement in the light of experience and development in the GSM Association and the\\nestablishment of IR between the Parties. Accordingly, the Parties shall enter into good\\nfaith discussions with a view to agreeing mutually acceptable modifications to the\\nAgreement."
 				}
 			]
 		},
 		{
+			"number": 23,
 			"name": [
 				"Miscellaneous"
 			],
 			"content": [
 				{
-					"23.1": "The Agreement and the rights and obligations specified herein shall be binding\\nupon the Parties hereto and their respective legal successors and neither Party\\nshall sell, transfer or assign the Agreement or any part, interest, right or\\nobligation hereunder, except that a Party shall have the right to transfer or\\nassign the Agreement in whole (but not in part) to an Affiliated Company within\\nEU regulation. No person other than a Party to the Agreement shall acquire\\nany rights hereunder as a third-party beneficiary or otherwise by virtue of the\\nAgreement."
+					"sub": "23.1",
+					"content": "The Agreement and the rights and obligations specified herein shall be binding\\nupon the Parties hereto and their respective legal successors and neither Party\\nshall sell, transfer or assign the Agreement or any part, interest, right or\\nobligation hereunder, except that a Party shall have the right to transfer or\\nassign the Agreement in whole (but not in part) to an Affiliated Company within\\nEU regulation. No person other than a Party to the Agreement shall acquire\\nany rights hereunder as a third-party beneficiary or otherwise by virtue of the\\nAgreement."
 				},
 				{
-					"23.2": "Headings\\nThe headings of the Agreement are for the convenience of reference only and\\nshall in no way limit or affect the meaning or interpretation of the provisions of\\nthe Agreement."
+					"sub": "23.2",
+					"content": "Headings\\nThe headings of the Agreement are for the convenience of reference only and\\nshall in no way limit or affect the meaning or interpretation of the provisions of\\nthe Agreement."
 				},
 				{
-					"23.3": "No waiver\\nFailure by any Party at any time or times to require performance of any\\nprovisions of the Agreement shall in no manner affect its rights to enforce the\\nsame, and the waiver by any Party of any breach of any provisions of the\\nAgreement shall not be construed to be a waiver by such Party of any\\nsucceeding breach of such provision or waiver by such Party of any breach of\\nany other provision hereof."
+					"sub": "23.3",
+					"content": "No waiver\\nFailure by any Party at any time or times to require performance of any\\nprovisions of the Agreement shall in no manner affect its rights to enforce the\\nsame, and the waiver by any Party of any breach of any provisions of the\\nAgreement shall not be construed to be a waiver by such Party of any\\nsucceeding breach of such provision or waiver by such Party of any breach of\\nany other provision hereof."
 				},
 				{
-					"23.4": "Provisions severable\\nIf any part of the Agreement or any Annex hereto is held to be invalid or\\nunenforceable, such determination shall not invalidate any other provision of\\nthe Agreement or Annexes hereto; and the Parties shall attempt, through\\nnegotiations in good faith, to replace any part of the Agreement or Annexes\\nhereto so held to be invalid or unenforceable. The failure of the Parties to agree\\non such replacement shall not affect the validity of the remaining parts of the\\nAgreement."
+					"sub": "23.4",
+					"content": "Provisions severable\\nIf any part of the Agreement or any Annex hereto is held to be invalid or\\nunenforceable, such determination shall not invalidate any other provision of\\nthe Agreement or Annexes hereto; and the Parties shall attempt, through\\nnegotiations in good faith, to replace any part of the Agreement or Annexes\\nhereto so held to be invalid or unenforceable. The failure of the Parties to agree\\non such replacement shall not affect the validity of the remaining parts of the\\nAgreement."
 				},
 				{
-					"23.5": "Notices\\nAll notices, information and communications required under the Agreement\\nshall be given as described in Annex 1: Agreement Management Principles."
+					"sub": "23.5",
+					"content": "Notices\\nAll notices, information and communications required under the Agreement\\nshall be given as described in Annex 1: Agreement Management Principles."
 				},
 				{
-					"23.6": "Compliance with Laws and Regulatory requirements\\nThe commitment of the Parties hereto shall be subject to all applicable laws\\nand/or regulatory requirements, present and future, of any governmental or\\nregulatory authority having jurisdiction over the Parties hereto, as well as any\\nvalid order of a court of competent jurisdiction."
+					"sub": "23.6",
+					"content": "Compliance with Laws and Regulatory requirements\\nThe commitment of the Parties hereto shall be subject to all applicable laws\\nand/or regulatory requirements, present and future, of any governmental or\\nregulatory authority having jurisdiction over the Parties hereto, as well as any\\nvalid order of a court of competent jurisdiction."
 				},
 				{
-					"23.7": "Anti-bribery compliance\\nThe Parties hereby acknowledge the importance of combating and preventing\\nbribery and to that end both Parties agree to comply fully with all applicable\\nlaws, regulations and sanctions relating to anti-bribery and anti-corruption."
+					"sub": "23.7",
+					"content": "Anti-bribery compliance\\nThe Parties hereby acknowledge the importance of combating and preventing\\nbribery and to that end both Parties agree to comply fully with all applicable\\nlaws, regulations and sanctions relating to anti-bribery and anti-corruption."
 				},
 				{
-					"23.8": "Counterparts\\n(Optional clause to be removed where e-signature is not used)\\nThe Parties acknowledge that they shall use (Operator A’s)/(Operator B’s) –\\n[Note: Identify here which Party’s e-signature system will be used, to delete\\nas nessasary] electronic signature process to sign the Agreement and agree to\\nbe bound by any such electronic signature which they have applied to the\\nAgreement.\\nThe Agreement may be executed in any number of counterparts, each of which,\\nwhen executed and delivered, shall be an original, and all the counterparts\\ntogether shall constitute one and the same instrument. A counterpart signature\\npage of the Agreement executed by a Party and the execution version of the\\ncontract transmitted electronically in Portable Document Format (PDF) shall be\\ntreated as an original, fully binding and with legal force and effect. The Parties\\nwaive any rights they may have to object to such treatment."
+					"sub": "23.8",
+					"content": "Counterparts\\n(Optional clause to be removed where e-signature is not used)\\nThe Parties acknowledge that they shall use (Operator A’s)/(Operator B’s) –\\n[Note: Identify here which Party’s e-signature system will be used, to delete\\nas nessasary] electronic signature process to sign the Agreement and agree to\\nbe bound by any such electronic signature which they have applied to the\\nAgreement.\\nThe Agreement may be executed in any number of counterparts, each of which,\\nwhen executed and delivered, shall be an original, and all the counterparts\\ntogether shall constitute one and the same instrument. A counterpart signature\\npage of the Agreement executed by a Party and the execution version of the\\ncontract transmitted electronically in Portable Document Format (PDF) shall be\\ntreated as an original, fully binding and with legal force and effect. The Parties\\nwaive any rights they may have to object to such treatment."
 				}
 			]
 		},
 		{
+			"number": 24,
 			"name": [
 				"Dispute Resolution & Arbitration"
 			],
 			"content": [
 				{
-					"24.1": "The Agreement and any matters relating hereto shall be governed by and construed in\\naccordance with Swiss law."
+					"sub": "24.1",
+					"content": "The Agreement and any matters relating hereto shall be governed by and construed in\\naccordance with Swiss law."
 				}
 			]
 		},
 		{
+			"number": 25,
 			"name": [
 				"Choice of Law"
 			],
 			"content": [
 				{
-					"25.1": "The Parties agree to seek to resolve any dispute arising out of the Agreement in\\naccordance with the following escalation procedures before commencing the\\narbitration procedures described below."
+					"sub": "25.1",
+					"content": "The Parties agree to seek to resolve any dispute arising out of the Agreement in\\naccordance with the following escalation procedures before commencing the\\narbitration procedures described below."
 				},
 				{
-					"25.2": "The Contact Persons of both Parties shall work in good faith to try to resolve the\\ndispute within thirty days from the date that a Party first gives notice that a dispute has\\noccurred."
+					"sub": "25.2",
+					"content": "The Contact Persons of both Parties shall work in good faith to try to resolve the\\ndispute within thirty days from the date that a Party first gives notice that a dispute has\\noccurred."
 				},
 				{
-					"25.3": "If the Contact Persons fail to reach an agreement on the dispute within thirty days, the\\ndispute shall be referred to more senior persons within the respective companies who\\nshall try to resolve the dispute within a further thirty-day period. If no resolution is\\nfound each Party is entitled to commence the arbitration proceedings described below."
+					"sub": "25.3",
+					"content": "If the Contact Persons fail to reach an agreement on the dispute within thirty days, the\\ndispute shall be referred to more senior persons within the respective companies who\\nshall try to resolve the dispute within a further thirty-day period. If no resolution is\\nfound each Party is entitled to commence the arbitration proceedings described below."
 				},
 				{
-					"25.4": "In accordance with the Article 17 of the Roaming Regulation III in the event of a\\ndispute between undertakings providing electronic communications networks or\\nroaming services in a Member State, the dispute resolution procedures laid down in\\nArticles 20 and 21 of the Framework Directive should be applied fully."
+					"sub": "25.4",
+					"content": "In accordance with the Article 17 of the Roaming Regulation III in the event of a\\ndispute between undertakings providing electronic communications networks or\\nroaming services in a Member State, the dispute resolution procedures laid down in\\nArticles 20 and 21 of the Framework Directive should be applied fully."
 				}
 			]
 		}

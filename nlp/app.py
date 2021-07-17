@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
+from library.Parsing.SortArticles import sortArticles
 from library.Parsing.FindArticles import findArticles
 from library.ManagePDF.ReturnTitle import find_between
 from library.ManageJSON.UpdateFile import updateFileV1
@@ -9,6 +10,7 @@ from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
+from library.Parsing.FindArticles import findSubArticles
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
@@ -54,27 +56,27 @@ for document in pdfs:
     """
     VARIABLE COLLECTION
     """
-    txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
-    readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
-    entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
+#    txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
+#    readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
+#    entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
     
     # POPULATE NAME ON THE OBJECT
     jsonObject = updateJSONObj(jsonObject,'document name','hint',file_name) #Populate variable of date
     
     # POPULATE DATE  ON THE OBJECT
-    date = dateFinder(entitiesList) #Method to find the date
-    jsonObject = updateJSONObj(jsonObject,'date','hint',date) #Populate variable of date
+    #date = dateFinder(entitiesList) #Method to find the date
+    #jsonObject = updateJSONObj(jsonObject,'date','hint',date) #Populate variable of date
     
     # POPULATE ORGANIZATIONS ON THE OBJECT
-    organizations = organizationFinder(entitiesList) #Method to find organizations
-    jsonObject = updateJSONObj(jsonObject,'organization','hint',organizations) #Populate variable of organizations
+#    organizations = organizationFinder(entitiesList) #Method to find organizations
+#    jsonObject = updateJSONObj(jsonObject,'organization','hint',organizations) #Populate variable of organizations
     
     # POPULATE LOCATIONS ON THE OBJECT
-    locations = locationFinder(entitiesList)    #Method to find locations
-    jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
+#    locations = locationFinder(entitiesList)    #Method to find locations
+#    jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
 
     # POPULATE ROAMING AGREEMENTS JSON FILE
-    var = appendObject(jsonFilePath, jsonObject)
+#    var = appendObject(jsonFilePath, jsonObject)
 
     """
     VARIATIONS COLLECTION
@@ -83,20 +85,15 @@ for document in pdfs:
 
     # FIND ARTICLES
     list_articles = findArticles(raw_text, articlesTemplate)
+    print(list_articles)
     
-    # ARTICLE: Charging Billing Accounting
-#    articleRaw = textToArticle(txtParsedToVariat,jsonFilePath,"charging billing accounting") #Second layer of parsing to divide text as articles
-#    tokenList = recoverSyntax(articleRaw)   #Recover tokens as part of Part of Speech using as base the text of the article
-#    phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
-#    updateFileV2(jsonFilePath,"charging billing accounting",0,"payment of charges","stdClause", 
-#        organizations, tokenList, phrasesList)  #Populate variation of charging billing accounting
-    
-    # ARTICLE: TAP implementation
-#    articleRaw = textToArticle(txtParsedToVariat,jsonFilePath, "TAP implementation") #Second layer of parsing to divide text as articles
-#    tokenList = recoverSyntax(articleRaw) #Recover tokens as part of Part of Speech using as base the text of the article
-#    phrasesList = recoverPhrases(articleRaw)    #Recover phrases using as base the text of the article
-#    updateFileV2(jsonFilePath,"TAP implementation",0,"implementation of tap","stdClause", 
-#        organizations, tokenList, phrasesList) #Populate variation of TAP implementation
+    # SORT ARTICLES
+    sorted_list = sortArticles(list_articles)
+
+    # FIND SUBARTICLES
+    list_sub_articles = findSubArticles(sorted_list)
+
+print(a)
 
 @app.route('/')
 def server():
