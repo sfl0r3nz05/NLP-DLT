@@ -4,7 +4,7 @@
 			"number": 1,
 			"name": [
 				"Introduction",
-				"INTRODUCTION"
+				"Introduction and scope"
 			],
 			"content": [
 				{
@@ -48,8 +48,7 @@
 		{
 			"number": 2,
 			"name": [
-				"Starting Date",
-				"STARTING DATE"
+				"Starting Date"
 			],
 			"content": [
 				{
@@ -306,7 +305,8 @@
 		{
 			"number": 15,
 			"name": [
-				"Fraud Prevention"
+				"Fraud Prevention",
+				"Fraud"
 			],
 			"content": [
 				{
@@ -318,7 +318,8 @@
 		{
 			"number": 16,
 			"name": [
-				"Liability of the Parties"
+				"Liability of the Parties",
+				"Liability"
 			],
 			"content": [
 				{
@@ -514,7 +515,8 @@
 		{
 			"number": 24,
 			"name": [
-				"Dispute Resolution & Arbitration"
+				"Dispute Resolution & Arbitration",
+				"Dispute Resolution & Jurisdiction"
 			],
 			"content": [
 				{

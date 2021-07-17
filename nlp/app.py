@@ -10,7 +10,7 @@ from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
-from library.Parsing.FindArticles import findSubArticles
+#from library.Parsing.FindArticles import findSubArticles
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
@@ -46,6 +46,7 @@ pdfs = find_ext(pdfFilePath,"pdf")
 #Find each document
 for document in pdfs:
     file_name = find_between(document)
+    print(file_name)
 
     #METHOD TO CONVERT PDF TO TEXT
     text = convert_pdf_to_string(document)
@@ -88,13 +89,11 @@ for document in pdfs:
     print(list_articles)
     
     # SORT ARTICLES
-    sorted_list = sortArticles(list_articles)
+    #sorted_list = sortArticles(list_articles)
 
     # FIND SUBARTICLES
-    list_sub_articles = findSubArticles(sorted_list)
-
+    #list_sub_articles = findSubArticles(sorted_list)
 print(a)
-
 @app.route('/')
 def server():
     return
