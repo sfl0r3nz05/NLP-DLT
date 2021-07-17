@@ -2,7 +2,6 @@ import os
 import json
 from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
-from library.Parsing.SortArticles import sortArticles
 from library.Parsing.FindArticles import findArticles
 from library.ManagePDF.ReturnTitle import find_between
 from library.ManageJSON.UpdateFile import updateFileV1
@@ -10,7 +9,7 @@ from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
-#from library.Parsing.FindArticles import findSubArticles
+from library.Parsing.FindSubArticles import findSubArticles
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
@@ -86,16 +85,11 @@ for document in pdfs:
 
     # FIND ARTICLES
     list_articles = findArticles(raw_text, articlesTemplate)
-    #for article in list_articles:
-    #    print(article)
-    #    print('\n')
-
-    # SORT ARTICLES
-    #sorted_list = sortArticles(list_articles)
 
     # FIND SUBARTICLES
-    #list_sub_articles = findSubArticles(sorted_list)
+    list_sub_articles = findSubArticles(list_articles)
 
+print(a)
 @app.route('/')
 def server():
     return
