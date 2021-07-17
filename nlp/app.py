@@ -86,14 +86,16 @@ for document in pdfs:
 
     # FIND ARTICLES
     list_articles = findArticles(raw_text, articlesTemplate)
-    print(list_articles)
-    
+    #for article in list_articles:
+    #    print(article)
+    #    print('\n')
+
     # SORT ARTICLES
     #sorted_list = sortArticles(list_articles)
 
     # FIND SUBARTICLES
     #list_sub_articles = findSubArticles(sorted_list)
-print(a)
+
 @app.route('/')
 def server():
     return
