@@ -7,8 +7,8 @@ obj_similarity = {'number':'','similarity':''}
 def setSimilarity(list_sub_articles, list_similarity):
     for similarityX in list_similarity:
         for articleX in list_sub_articles:
-            #if(similarityX['number'] == articleX['content']['number']):
-                #print('hereeee')
+            if(similarityX['number'] == articleX['content']['number']):
+                ###print('hereeee')
 
 def lenMng(num):
     if(len(num) == 4):
