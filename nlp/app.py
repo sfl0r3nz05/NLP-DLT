@@ -81,6 +81,7 @@ for document in pdfs:
     """
     VARIATIONS COLLECTION
     """
+    # INITIAL PARSE
     raw_text = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
 
     # FIND ARTICLES
@@ -88,6 +89,9 @@ for document in pdfs:
 
     # FIND SUBARTICLES
     list_sub_articles = findSubArticles(list_articles)
+
+    # FIND SIMILARITIES
+    
 
 print(a)
 @app.route('/')
