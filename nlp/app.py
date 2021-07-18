@@ -39,15 +39,16 @@ articlesTemplate = os.getenv("PATH_TO_ARTICLE_TEMPLATE")
 """
 APP.PY CONSTITUTES AN ENTRYPOINT TO CALL LIBRARY METHODS
 """
-#Search PDF files
+# SEARCH PDF FILES INTO OUTPUT FOLDER
 pdfs = find_ext(pdfFilePath,"pdf")
 
-#Find each document
+# LOOP FOR EACH DOCUMENT
 for document in pdfs:
+    # COLLECT DOCUMENT NAME
     file_name = find_between(document)
     print(file_name)
 
-    #METHOD TO CONVERT PDF TO TEXT
+    # METHOD TO CONVERT PDF TO TEXT
     text = convert_pdf_to_string(document)
 
     # UPLOAD JSON FILE FROM DEFAULT TEMPLATE
@@ -91,9 +92,8 @@ for document in pdfs:
     list_sub_articles = findSubArticles(list_articles)
 
     # FIND SIMILARITIES
-    
+    findSimilarity()
 
-print(a)
 @app.route('/')
 def server():
     return
