@@ -13,6 +13,7 @@ from library.Parsing.FindSubArticles import findSubArticles
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
+from library.Similarity.FindSimilarity import findSimilarity
 from library.ManageJSON.UpdateJsonObject import updateJSONObj
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
 from library.ManagePDF.PdfToString import convert_pdf_to_string
@@ -92,8 +93,9 @@ for document in pdfs:
     list_sub_articles = findSubArticles(list_articles)
 
     # FIND SIMILARITIES
-    findSimilarity()
+    list_sub_art_tagged = findSimilarity(list_sub_articles, articlesTemplate)
 
+print(a)
 @app.route('/')
 def server():
     return
