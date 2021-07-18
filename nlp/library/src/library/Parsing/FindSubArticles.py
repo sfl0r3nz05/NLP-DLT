@@ -1,8 +1,8 @@
 import json
 
 list_sub_articles = []
-sub_article = {"number": "", "similarity": "","content":""}
-article = {"number": 0, "name": "","content": []}
+article = {"id": 0, "article": "", "uuid":"", "sub-articles": []}
+sub_article = {"id": "", "uuid":"", "type":"", "similarity": "","content":""}
 
 def findSubArticle(content, number):
     max = 14
@@ -17,7 +17,7 @@ def findSubArticle(content, number):
                 index1 = index1 + 6
             else:
                 index1 = index1 + 5
-            sub_article['number'] = str1
+            sub_article['id'] = str1
             sub_article['content'] = content[index1:index2]
             dictionary_copy = sub_article.copy()
             list_content.append(dictionary_copy)
@@ -25,10 +25,10 @@ def findSubArticle(content, number):
 
 def filterSubArticles(name, content, number):
     list_content = []
-    article['number'] = number
-    article['name'] = name
+    article['id'] = number
+    article['article'] = name
     list_content = findSubArticle(content, number)
-    article['content'] = list_content
+    article['sub-articles'] = list_content
     return article
 
 def findSubArticles(list_articles):
@@ -36,7 +36,7 @@ def findSubArticles(list_articles):
     Method used to parse the text previous to send to Amazon Comprehend dividing it by articles. This method is used only by variations
     """
     for article in list_articles:
-        objArticle = filterSubArticles(article['name'], article['content'], article['number'])
+        objArticle = filterSubArticles(article['article'], article['sub-articles'], article['id'])
         dictionary_copy = objArticle.copy()
         list_sub_articles.append(dictionary_copy)
     return list_sub_articles

@@ -1,14 +1,14 @@
 import json
 
 list_articles = []
-obj_article = {"number":"","name":"","content":""}
+obj_article = {"id":"","article":"","sub-articles":""}
 list_positions = []
-position_article = {"name":"","position":""}
+position_article = {"article":"","position":""}
 
 def mapPositions(name, raw_text):
     str1 = '.' + ' ' + name         
     index1 = raw_text.find(str1)
-    position_article['name'] = name
+    position_article['article'] = name
     position_article['position'] = index1
     dictionary_copy = position_article.copy()
     list_positions.append(dictionary_copy)
@@ -33,23 +33,23 @@ def objArticle(raw_text, newlist):
     for i, j in zip(range(0, len(newlist)+1), range(1, len(newlist))):
         if((raw_text[newlist[i]['position']-2]).isnumeric()):
             temp = raw_text[newlist[i]['position']-2 : newlist[i]['position']]
-            obj_article['number'] = int(temp)
-            obj_article['name'] = newlist[i]['name']
+            obj_article['id'] = int(temp)
+            obj_article['article'] = newlist[i]['article']
             index1 = newlist[i]['position']
             index2 = newlist[j]['position']
             if(i == len(newlist)):
-                obj_article['content'] = raw_text[index1:]
+                obj_article['sub-articles'] = raw_text[index1:]
             else:
-                obj_article['content'] = raw_text[index1:index2]
+                obj_article['sub-articles'] = raw_text[index1:index2]
             dictionary_copy = obj_article.copy()
             list_articles.append(dictionary_copy)
         else:
             temp = raw_text[newlist[i]['position']-1]
-            obj_article['number'] = int(temp)
-            obj_article['name'] = newlist[i]['name']
+            obj_article['id'] = int(temp)
+            obj_article['article'] = newlist[i]['article']
             index1 = newlist[i]['position']
             index2 = newlist[j]['position']
-            obj_article['content'] = raw_text[index1:index2]
+            obj_article['sub-articles'] = raw_text[index1:index2]
             dictionary_copy = obj_article.copy()
             list_articles.append(dictionary_copy)           
 
@@ -63,7 +63,7 @@ def findArticles(raw_text, articlesTemplate):
         dataJson = json.load(ra)                   
         dataX = dataJson['list_of_articles']       
         for data in dataX:                         
-            name_list = data['name']               
+            name_list = data['article']               
             for name in name_list: 
                 mapPositions(name,raw_text)
                 filterPositions(list_positions)
