@@ -63,19 +63,19 @@ for document in pdfs:
 #    entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
     
     # POPULATE NAME ON THE OBJECT
-    jsonObject = updateJSONObj(jsonObject,'document name','hint',file_name) #Populate variable of date
+    jsonObject = updateJSONObj(jsonObject,'','document name','hint',file_name) #Populate variable of date
     
     # POPULATE DATE  ON THE OBJECT
     #date = dateFinder(entitiesList) #Method to find the date
-    #jsonObject = updateJSONObj(jsonObject,'date','hint',date) #Populate variable of date
+    #jsonObject = updateJSONObj(jsonObject,'variables','date','hint',date) #Populate variable of date
     
     # POPULATE ORGANIZATIONS ON THE OBJECT
 #    organizations = organizationFinder(entitiesList) #Method to find organizations
-#    jsonObject = updateJSONObj(jsonObject,'organization','hint',organizations) #Populate variable of organizations
+#    jsonObject = updateJSONObj(jsonObject,'variables','organization','hint',organizations) #Populate variable of organizations
     
     # POPULATE LOCATIONS ON THE OBJECT
 #    locations = locationFinder(entitiesList)    #Method to find locations
-#    jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
+#    jsonObject = updateJSONObj(jsonObject,'variables','location','hint', locations) #Populate variable of locations
 
     """
     VARIATIONS COLLECTION
@@ -94,7 +94,7 @@ for document in pdfs:
 
     # POPULATE LOCATIONS ON THE OBJECT
     #   new_list_sub_articles = variablesVariations(list_sub_art_tagged)    #Method to find locations
-    #   jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
+    #   jsonObject = updateJSONObj(jsonObject,'variations','','', list_sub_art_tagged) #Populate variable of locations
 
     # POPULATE ROAMING AGREEMENTS JSON FILE
     #   var = appendObject(jsonFilePath, jsonObject)

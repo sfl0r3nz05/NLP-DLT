@@ -5,38 +5,47 @@
         "verify": "Document Name",
         "hint": ""
     },
-    "date": {
-        "uid": "",
-        "type": "text",
-        "verify": "date",
-        "hint": ""
-    },
-    "organization": [
+    "variables": [
         {
-            "uid": "",
-            "type": "text",
-            "verify": "operador A",
-            "hint": ""
+            "date": {
+                "uid": "",
+                "type": "text",
+                "verify": "date",
+                "hint": ""
+            }
         },
         {
-            "uid": "",
-            "type": "text",
-            "verify": "operador B",
-            "hint": ""
+            "organization": [
+                {
+                    "uid": "",
+                    "type": "text",
+                    "verify": "operador A",
+                    "hint": ""
+                },
+                {
+                    "uid": "",
+                    "type": "text",
+                    "verify": "operador B",
+                    "hint": ""
+                }
+            ]
+        },
+        {
+            "location": [
+                {
+                    "uid": "",
+                    "type": "text",
+                    "verify": "operador A",
+                    "hint": ""
+                },
+                {
+                    "uid": "",
+                    "type": "text",
+                    "verify": "operador B",
+                    "hint": ""
+                }
+            ]
         }
     ],
-    "location": [
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador A",
-            "hint": ""
-        },
-        {
-            "uid": "",
-            "type": "text",
-            "verify": "operador B",
-            "hint": ""
-        }
-    ]
+    "variations": []
 }
