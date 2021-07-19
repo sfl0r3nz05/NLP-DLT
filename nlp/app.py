@@ -2,17 +2,16 @@ import os
 import json
 from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
-from library.Parsing.FindArticles import findArticles
 from library.ManagePDF.ReturnTitle import find_between
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
 from library.Parsing.ParseToVariab import parseToVariab
 from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
-from library.Parsing.FindSubArticles import findSubArticles
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
 from library.ManageJSON.UploadDefault import uploadDefault
+from library.ManageEntities.FindArticles import findArticles
 from library.Similarity.FindSimilarity import findSimilarity
 from library.ManageJSON.UpdateJsonObject import updateJSONObj
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
@@ -21,6 +20,7 @@ from library.ManageEntities.RecovEntAndPhr import recoverSyntax
 from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
+from library.ManageEntities.FindSubArticles import findSubArticles
 from library.ManageEntities.OrganizationFinder import organizationFinder
 app = Flask(__name__)
 
@@ -77,9 +77,6 @@ for document in pdfs:
 #    locations = locationFinder(entitiesList)    #Method to find locations
 #    jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
 
-    # POPULATE ROAMING AGREEMENTS JSON FILE
-#    var = appendObject(jsonFilePath, jsonObject)
-
     """
     VARIATIONS COLLECTION
     """
@@ -94,7 +91,13 @@ for document in pdfs:
 
     # FIND SIMILARITIES
     list_sub_art_tagged = findSimilarity(list_sub_articles, articlesTemplate)
-    print(list_sub_art_tagged)
+
+    # POPULATE LOCATIONS ON THE OBJECT
+    #   new_list_sub_articles = variablesVariations(list_sub_art_tagged)    #Method to find locations
+    #   jsonObject = updateJSONObj(jsonObject,"location","hint", locations) #Populate variable of locations
+
+    # POPULATE ROAMING AGREEMENTS JSON FILE
+    #   var = appendObject(jsonFilePath, jsonObject)
 
 print(a)
 @app.route('/')

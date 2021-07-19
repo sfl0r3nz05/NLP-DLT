@@ -1,7 +1,7 @@
 import json
 
 list_sub_articles = []
-article = {"id": 0, "article": "", "uuid":"", "sub-articles": []}
+article = {"id": 0, "article": "", "uuid":"", "variables": [], "sub-articles": []}
 sub_article = {"id": "", "uuid":"", "type":"", "similarity": "","content":""}
 
 def findSubArticle(content, number):

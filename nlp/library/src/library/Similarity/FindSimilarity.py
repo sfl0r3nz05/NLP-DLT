@@ -1,7 +1,6 @@
 import json
 from library.Parsing.uuid import uuidV1
 
-list_sub_art_tagged = []
 list_similarity = []
 obj_similarity = {'id':'','similarity':''}
 
@@ -15,24 +14,20 @@ def setSimilarity(list_sub_articles, list_similarity):
     new_list_article = []
     for article in list_sub_articles:
         article['uuid'] = str(uuidV1())
-        print(article)
-        for subArticle in article:
-            flag, similarity = searchIdSimilarity(article['id'], list_similarity)
-            if(similarity > 80):
-                print("H1")
-                #article[index_pos]['uuid'] = str(uuidV1())
-                #article[index_pos]['similarity'] = similarity
-                #article[index_pos]['type'] = 'stdClause'
-            elif (similarity > 30 and similarity < 80):
-                print("H2")
-                #article[index_pos]['uuid'] = str(uuidV1())
-                #article[index_pos]['similarity'] = similarity
-                #article[index_pos]['type'] = 'custmText'
+        for subarticle in article['sub-articles']:
+            flag, similarity = searchIdSimilarity(subarticle['id'], list_similarity)
+            if(similarity*100 > 80):
+                subarticle['uuid'] = str(uuidV1())
+                subarticle['similarity'] = similarity
+                subarticle['type'] = 'stdClause'
+            elif (similarity*100 > 30 and similarity*100 < 80):
+                subarticle['uuid'] = str(uuidV1())
+                subarticle['similarity'] = similarity
+                subarticle['type'] = 'custmText'
             else:
-                print("H3")
-                #article[index_pos]['uuid'] = str(uuidV1())
-                #article[index_pos]['similarity'] = similarity
-                #article[index_pos]['type'] = 'newText'
+                subarticle['uuid'] = str(uuidV1())
+                subarticle['similarity'] = similarity
+                subarticle['type'] = 'newText'
         dictionary_copy = article.copy()
         new_list_article.append(dictionary_copy)
     return new_list_article
