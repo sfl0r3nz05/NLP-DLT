@@ -3,7 +3,6 @@ from library.Parsing.uuid import uuidV1
 
 list_sub_art_tagged = []
 list_similarity = []
-new_list = []
 obj_similarity = {'id':'','similarity':''}
 
 def searchIdSimilarity(id, list_similarity):
@@ -12,14 +11,32 @@ def searchIdSimilarity(id, list_similarity):
             return [True, sim['similarity']]
     return [False, 0]
 
-####AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 def setSimilarity(list_sub_articles, list_similarity):
+    new_list_article = []
     for article in list_sub_articles:
-        for sub-article in article:
+        article['uuid'] = str(uuidV1())
+        print(article)
+        for subArticle in article:
             flag, similarity = searchIdSimilarity(article['id'], list_similarity)
-            if(flag):
-                article['uuid'] = str(uuidV1())
-
+            if(similarity > 80):
+                print("H1")
+                #article[index_pos]['uuid'] = str(uuidV1())
+                #article[index_pos]['similarity'] = similarity
+                #article[index_pos]['type'] = 'stdClause'
+            elif (similarity > 30 and similarity < 80):
+                print("H2")
+                #article[index_pos]['uuid'] = str(uuidV1())
+                #article[index_pos]['similarity'] = similarity
+                #article[index_pos]['type'] = 'custmText'
+            else:
+                print("H3")
+                #article[index_pos]['uuid'] = str(uuidV1())
+                #article[index_pos]['similarity'] = similarity
+                #article[index_pos]['type'] = 'newText'
+        dictionary_copy = article.copy()
+        new_list_article.append(dictionary_copy)
+    return new_list_article
+                
 def lenMng(num):
     if(len(num) == 4):
         n = num[2:]
@@ -52,6 +69,7 @@ def matchSubArticles(data, article):
                 list_similarity.append(dictionary_copy)
 
 def findSimilarity(list_sub_articles, articlesTemplate):
+    new_list = []
     with open(articlesTemplate, 'r') as ra:
         dataJson = json.load(ra)                   
         dataX = dataJson['list_of_articles']       
@@ -60,5 +78,5 @@ def findSimilarity(list_sub_articles, articlesTemplate):
             for article in list_sub_articles:
                 if(article['article'] in name_list):
                     matchSubArticles(data, article)
-    setSimilarity(list_sub_articles, list_similarity)
+    new_list = setSimilarity(list_sub_articles, list_similarity)
     return new_list

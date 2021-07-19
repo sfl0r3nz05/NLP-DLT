@@ -94,6 +94,7 @@ for document in pdfs:
 
     # FIND SIMILARITIES
     list_sub_art_tagged = findSimilarity(list_sub_articles, articlesTemplate)
+    print(list_sub_art_tagged)
 
 print(a)
 @app.route('/')
