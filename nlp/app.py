@@ -21,6 +21,7 @@ from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.FindSubArticles import findSubArticles
+from library.ManageEntities.VariablesVariations import variablesVariations
 from library.ManageEntities.OrganizationFinder import organizationFinder
 app = Flask(__name__)
 
@@ -47,7 +48,6 @@ pdfs = find_ext(pdfFilePath,"pdf")
 for document in pdfs:
     # COLLECT DOCUMENT NAME
     file_name = find_between(document)
-    print(file_name)
 
     # METHOD TO CONVERT PDF TO TEXT
     text = convert_pdf_to_string(document)
@@ -58,24 +58,27 @@ for document in pdfs:
     """
     VARIABLE COLLECTION
     """
-#    txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
-#    readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
-#    entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
+    txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
+    readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
+    entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
     
     # POPULATE NAME ON THE OBJECT
-    jsonObject = updateJSONObj(jsonObject,'','document name','hint',file_name) #Populate variable of date
+    jsonObject = updateJSONObj(jsonObject,'','document name','','hint',file_name) #Populate variable of date
     
     # POPULATE DATE  ON THE OBJECT
-    #date = dateFinder(entitiesList) #Method to find the date
-    #jsonObject = updateJSONObj(jsonObject,'variables','date','hint',date) #Populate variable of date
+    date = dateFinder(entitiesList) #Method to find the date
+    jsonObject = updateJSONObj(jsonObject,'variables',0,'date','hint',date) #Populate variable of date
     
     # POPULATE ORGANIZATIONS ON THE OBJECT
-#    organizations = organizationFinder(entitiesList) #Method to find organizations
-#    jsonObject = updateJSONObj(jsonObject,'variables','organization','hint',organizations) #Populate variable of organizations
+    organizations = organizationFinder(entitiesList) #Method to find organizations
+    jsonObject = updateJSONObj(jsonObject,'variables',1,'organization','hint',organizations) #Populate variable of organizations
     
     # POPULATE LOCATIONS ON THE OBJECT
-#    locations = locationFinder(entitiesList)    #Method to find locations
-#    jsonObject = updateJSONObj(jsonObject,'variables','location','hint', locations) #Populate variable of locations
+    locations = locationFinder(entitiesList)    #Method to find locations
+    jsonObject = updateJSONObj(jsonObject,'variables',2,'location','hint', locations) #Populate variable of locations
+    
+    # POPULATE ROAMING AGREEMENTS JSON FILE
+    #var = appendObject(jsonFilePath, jsonObject)
 
     """
     VARIATIONS COLLECTION
@@ -93,11 +96,11 @@ for document in pdfs:
     list_sub_art_tagged = findSimilarity(list_sub_articles, articlesTemplate)
 
     # POPULATE LOCATIONS ON THE OBJECT
-    #   new_list_sub_articles = variablesVariations(list_sub_art_tagged)    #Method to find locations
-    #   jsonObject = updateJSONObj(jsonObject,'variations','','', list_sub_art_tagged) #Populate variable of locations
+    new_list_sub_articles = variablesVariations(list_sub_art_tagged, date, organizations, locations)    #Method to find locations
+    jsonObject = updateJSONObj(jsonObject,'variations','','','', list_sub_art_tagged) #Populate variable of locations
 
     # POPULATE ROAMING AGREEMENTS JSON FILE
-    #   var = appendObject(jsonFilePath, jsonObject)
+    #var = appendObject(jsonFilePath, jsonObject)
 
 print(a)
 @app.route('/')
