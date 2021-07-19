@@ -100,9 +100,8 @@ for document in pdfs:
     jsonObject = updateJSONObj(jsonObject,'variations','','','', list_sub_art_tagged) #Populate variable of locations
 
     # POPULATE ROAMING AGREEMENTS JSON FILE
-    #var = appendObject(jsonFilePath, jsonObject)
+    appendObject(jsonFilePath, jsonObject)
 
-print(a)
 @app.route('/')
 def server():
     return
