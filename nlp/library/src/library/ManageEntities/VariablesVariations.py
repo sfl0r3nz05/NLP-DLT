@@ -22,6 +22,19 @@ def findLocations(content,location):
     else:
         return False, ''
 
+def appendVariable(new_variable, id):
+    new_variableX = []
+    for variable in new_variable:
+        str1 = variable['sub-article']
+        #if (len(str1) == 4):
+        #    int1 = int(str1[:2])
+        #else:
+        #    int1 = int(str1[:1])
+        #if(id == int1):
+        #    dictionary_copy = variable.copy()
+        #    new_variableX.append(dictionary_copy)
+    return new_variableX
+
 def variablesVariations(list_sub_articles, date, organizations, locations):
     new_variable = []
     for articles in list_sub_articles:
@@ -63,6 +76,7 @@ def variablesVariations(list_sub_articles, date, organizations, locations):
                     variables['hint'] = locationX
                     dictionary_copy = variables.copy()
                     new_variable.append(dictionary_copy)
-        #articles['variables'] = new_variable
-    print(new_variable)
+    for articles in list_sub_articles:
+        new_variableX = appendVariable(new_variable, articles['id'])
+        articles['variables'] = new_variableX
     return list_sub_articles
