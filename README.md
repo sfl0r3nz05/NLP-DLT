@@ -7,8 +7,10 @@
     - Update the environment variable AWS_ACCESS_KEY_ID
     - Update the environment variable AWS_SECRET_ACCESS_KEY
     - Update the environment variable AWS_SESSION_TOKEN
-    - Updating path of pdf file
-    - Updating path of JSON file
+    - Updating path of PDF files which contains Roaming Agreements
+        - Default place: ~/NLP-DLT/nlp/input
+    - Updating path of JSON files
+        - Default place: ~/NLP-DLT/nlp/output
 
 ## How to use 😎
 1. Clone repository
