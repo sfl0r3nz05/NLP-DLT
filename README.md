@@ -6,7 +6,7 @@
 ## Set up 🙂
 1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
     Obtain access keys from AWS E.g.:
-    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/accessKey.png" width="700" height="350">
+    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/accessKey.png" width="800" height="350">
     - Update the environment variable AWS_ACCESS_KEY_ID
     - Update the environment variable AWS_SECRET_ACCESS_KEY
     - Update the environment variable AWS_SESSION_TOKEN
