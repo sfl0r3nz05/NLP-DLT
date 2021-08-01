@@ -21,8 +21,9 @@ from library.ManageEntities.RecovEntAndPhr import recoverSyntax
 from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
-from library.ManageEntities.VariablesVariations import variablesVariations
 from library.ManageEntities.OrganizationFinder import organizationFinder
+from library.ManageEntities.VariablesVariations import variablesVariations
+
 app = Flask(__name__)
 
 """
