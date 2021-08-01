@@ -40,6 +40,8 @@ This stage include two outputs:
 
 ## To do 🤔
 1. Perform the analysis one level down to go on the sentence level (0%)
+    - There are two branches created: main and sentencelvl
+        - To change to the branch `main` use the command `git checkout main`
 2. Fix the code to correctly determine the organizations variables.
 3. Fix heading detection when sub-articles are analized.
 4. Automate accuracy determination.
