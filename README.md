@@ -1,7 +1,7 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
 ## General Architecture 🤖
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/gralArch.png" width="100" height="100">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/gralArch.png" width="200" height="200">
 
 ## Set up 🙂
 1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
