@@ -43,8 +43,8 @@ This stage include two outputs:
 2. Fix heading detection when sub-articles are analized.
 3. Perform the analysis one level down to go on the sentence level
     - There are two branches created: main and sentencelvl
-        - To change between branches to use the commands
-            - `git checkout <branch-name>`
+        - To change to the branch `sentencelvl` use the commands
+            - `git checkout sentencelvl`
 4. Automate accuracy determination.
 5. Hardcode of the default template.json file
 6. Hardcode of list of articles.json file
