@@ -14,11 +14,10 @@
         - Default place: ~/NLP-DLT/nlp/output
 
 ## How to use 😎
-1. Clone repository
-2. cd ~/NLP-DLT/network
-3. Start: docker-compose up -d
-4. Stop: docker-compose stop
-5. Down: docker-compose down
+1. cd ~/NLP-DLT/network
+2. Start: docker-compose up -d
+3. Stop: docker-compose stop
+4. Down: docker-compose down
 
 ## NLP Engine Stage
 The documentation of this stage can be found in:
