@@ -10,8 +10,8 @@ from library.Parsing.ParseToVariat import parseToVariat
 from library.Parsing.TextToArticle import textToArticle
 from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
-from library.ManageJSON.UploadDefault import uploadDefault
 from library.ManageTEXT.FindArticles import findArticles
+from library.ManageJSON.UploadDefault import uploadDefault
 from library.Similarity.FindSimilarity import findSimilarity
 from library.ManageJSON.UpdateJsonObject import updateJSONObj
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
@@ -21,8 +21,8 @@ from library.ManageEntities.RecovEntAndPhr import recoverSyntax
 from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
-from library.ManageEntities.VariablesVariations import variablesVariations
 from library.ManageEntities.OrganizationFinder import organizationFinder
+from library.ManageEntities.VariablesVariations import variablesVariations
 app = Flask(__name__)
 
 """
