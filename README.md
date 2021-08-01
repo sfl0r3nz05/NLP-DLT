@@ -19,7 +19,7 @@
 3. Stop: `docker-compose stop`
 4. Down: `docker-compose down`
 
-## NLP Engine Stage
+## NLP Engine Stage 💻
 The documentation of this stage can be found in:
 - [Documentation of NLP stage](https://drive.google.com/file/d/1koele3CqJVgkUA9-LVAs5eLdc01ZQYak/view?usp=sharing)
 
