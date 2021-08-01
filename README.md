@@ -5,7 +5,9 @@
 
 ## Set up 🙂
 1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
-    - Updating access keys
+    Obtain access keys from AWS E.g.:
+    ![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/accesskey.png)
+    - Update the environment variable: AWS_ACCESS_KEY_ID
     - Updating path of pdf file
     - Updating path of JSON file
 
