@@ -14,10 +14,10 @@
         - Default place: ~/NLP-DLT/nlp/output
 
 ## How to use 😎
-1. cd ~/NLP-DLT/network
-2. Start: docker-compose up -d
-3. Stop: docker-compose stop
-4. Down: docker-compose down
+1. `cd ~/NLP-DLT/network`
+2. Start: `docker-compose up -d`
+3. Stop: `docker-compose stop`
+4. Down: `docker-compose down`
 
 ## NLP Engine Stage
 The documentation of this stage can be found in:
@@ -28,8 +28,9 @@ This stage include two outputs:
 - Manual Measurement of the NLP Engine Accuracy
 
 ### RAOT NLP Engine
-1. cd ~/NLP-DLT/nlp/output
-2. more ./[Roamming Agreements Output Template.json](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/output/Roaming%20Agreements%20Output%20Template.json)
+1. `cd ~/NLP-DLT/nlp/output`
+2. `more ./Roamming Agreements Output Template.json`
+    - Default example of Roaming Agreement: [Roamming Agreements Output Template.json](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/output/Roaming%20Agreements%20Output%20Template.json)
 
 ### Measurement of Accuracy
 - The [text comparison tool](https://countwordsfree.com/comparetexts) was used manually to check the accuracy of the results. 
