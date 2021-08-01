@@ -30,12 +30,14 @@ Outputs: NLP engine and manual measurement of the NLP engine accuracy
 ### Measurement of Accuracy
 - The [text comparison tool](https://countwordsfree.com/comparetexts) was used manually to check the accuracy of the results. 
 - For this purpose each of the sub-articles found in [Roamming Agreements Output Template.json](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/output/Roaming%20Agreements%20Output%20Template.json) are compared with the sub-articles of the PDFs found in the input folder (~/NLP-DLT/nlp/input).
-- The spreadsheets corresponding to the two PDF files used as inputs have been generated.
+- The spreadsheets corresponding to the two PDF files used as inputs have been generated:
+    - [Determination of the accuracy of the NLP engine for the Proxymus Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Proxymus.xlsx?raw=true)
+    - [Determination of the accuracy of the NLP engine for the Proxymus Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Orange.xlsx?raw=true)
 
 ## To do 🤔
 1. Fix the code to correctly determine the organizations variables.
 2. Fix heading detection when sub-articles are analized.
-3. [Possibility] Paragraph analysis instead of article analysis
+3. Perform the analysis one level down to go on the sentence level
 4. Automate accuracy determination.
 5. Hardcode of the default template.json file
 6. Hardcode of list of articles.json file
