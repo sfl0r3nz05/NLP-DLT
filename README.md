@@ -20,3 +20,10 @@
 4. Stop: docker-compose stop
 5. Down: docker-compose down
 
+## Outputs 💾
+Outputs of NLP engine and manual measurement of the NLP engine accuracy
+### NLP Engine
+1. cd ~/NLP-DLT/nlp/output
+2. more ./Roamming Agreements Output Template.json
+### Measurement Accuracy
+The [text comparison tool](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/gralArch.png) was used manually to check the accuracy of the results.
