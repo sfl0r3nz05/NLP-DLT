@@ -1,1 +1,2139 @@
-[]
+[
+    {
+        "document name": {
+            "uid": "7a1ec135-8f92-11cf-a394-d65f34ed8af9",
+            "type": "text",
+            "verify": "Document Name",
+            "hint": "",
+            "": "Proximus"
+        },
+        "variables": [
+            {
+                "date": {
+                    "uid": "7a6c1388-ebf5-180c-b4e1-7d11e9e2fece",
+                    "type": "text",
+                    "verify": "date",
+                    "hint": "29/05/2017"
+                }
+            },
+            {
+                "organization": [
+                    {
+                        "uid": "cf477227-d481-15e7-a9cb-859de13eea6d",
+                        "type": "text",
+                        "verify": "operador A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uid": "c1cb12b7-4d42-1dd0-9168-e1a0613976fc",
+                        "type": "text",
+                        "verify": "operador B",
+                        "hint": "GSM Association"
+                    }
+                ]
+            },
+            {
+                "location": [
+                    {
+                        "uid": "df23454d-f747-186d-a0e2-cf3c2689ff3a",
+                        "type": "text",
+                        "verify": "operador A",
+                        "hint": "27, Bld roi Albert II, B-1030 Brussels"
+                    },
+                    {
+                        "uid": "fc2f6ddb-b172-1dc4-927f-c5563bb7200d",
+                        "type": "text",
+                        "verify": "operador B",
+                        "hint": "Geneva"
+                    }
+                ]
+            }
+        ],
+        "variations": [
+            {
+                "id": 1,
+                "article": "Introduction and scope",
+                "uuid": "9743f31c-ec13-16fa-b99c-2409c32b346e",
+                "variables": [
+                    {
+                        "uuid": "e6bf136b-a3c9-1895-8d98-8a319b708333",
+                        "sub-article": "1.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "8dba4b09-cce7-15f7-b6ea-11c68da73947",
+                        "sub-article": "1.3",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "aa0c41dd-78db-13d1-be5c-0e0366ee0640",
+                        "sub-article": "1.4",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "bfd09dba-8e81-16d2-9855-446febf49971",
+                        "sub-article": "1.6",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "608f9b7f-7594-1e7e-99bd-1af6656e7712",
+                        "sub-article": "1.8",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "b11698e7-16b9-1fcf-ae98-53c14bb9fa4e",
+                        "sub-article": "1.8",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "1.1",
+                        "uuid": "9ff284ae-908a-1e80-8831-90a4cef427a5",
+                        "type": "custmText",
+                        "similarity": 0.7380952380952381,
+                        "content": "This a unilateral agreement for International Roaming for the provision by \nProximus of Direct Wholesale Roaming Access Services, in order to enable \nRoaming Customers of Operator to gain access to mobile telecommunications \nservices in the geographic areas where Proximus operates as a VPMN. This \nagreement is for Direct Roaming Wholesale Access (\u201cagreement\u201d), as defined \nbelow. \n \n"
+                    },
+                    {
+                        "id": "1.2",
+                        "uuid": "bdbdac41-4cdf-190b-bd3f-8d4b4bea7e04",
+                        "type": "newText",
+                        "similarity": 0.13414634146341464,
+                        "content": "The Operator is either (i) a MNO constituting a Roaming Provider or (ii) a full \nMVNO which operates as an MNO in relation to international roaming and which \nequally constitutes a Roaming Provider.  This reference offer is intended for \nEU/EEA MNO\u2019s and full MVNO\u2019s having obtained a License and/or Authorization \nfor offering mobile services by the authorities in their EU/EEA country of origin, \nexcluding Belgium. \n"
+                    },
+                    {
+                        "id": "1.3",
+                        "uuid": "83732a00-0ebf-12aa-bab2-89a4c59c14ab",
+                        "type": "custmText",
+                        "similarity": 0.3333333333333333,
+                        "content": "This Direct Wholesale Roaming Access Agreement contains the basic principles \napplicable to the Services provided by Proximus to Operator. \n"
+                    },
+                    {
+                        "id": "1.4",
+                        "uuid": "07a1a24b-33b3-1968-b9c2-61f640ae2e28",
+                        "type": "newText",
+                        "similarity": 0.06666666666666667,
+                        "content": "The Services and the technical terms and conditions offered by Proximus to \nOperator shall not differ substantially from those provided by Proximus to other \nOperators who request a similar service upon similar technical, qualitative and \npricing conditions, however subject to technical availability. Without prejudice to \nthe foregoing, the Parties may alternatively directly amend the terms and \nconditions of this Agreement, or otherwise include deviations.  \n"
+                    },
+                    {
+                        "id": "1.5",
+                        "uuid": "605412b5-ef8d-1b6e-bee3-f6e67da6f082",
+                        "type": "newText",
+                        "similarity": 0.16,
+                        "content": "The Annexes, including the Overview of the Annex Structure, constitute an \nintegral part of the Agreement. In case of discrepancy between different parts of \nthe Agreement the following order of interpretation shall be applied:  \n1. the main body of this Agreement; and  \n2. the Annexes \n"
+                    },
+                    {
+                        "id": "1.6",
+                        "uuid": "81805e95-4b6e-1d32-bce9-4768938d9131",
+                        "type": "newText",
+                        "similarity": 0.05172413793103448,
+                        "content": "In case of additional requirements, exceptions and/or contradictions between the \nAgreement and any Technical Specifications or GSM Association Permanent \nReference Documents, the provisions of the Agreement shall prevail. \n"
+                    },
+                    {
+                        "id": "1.7",
+                        "uuid": "7ed277db-44db-1ed8-98f8-fb101b2f73ab",
+                        "type": "newText",
+                        "similarity": 0.10204081632653061,
+                        "content": "Subject to applicable laws, the Parties agree to be bound by GSMA Permanent \nReference documents relevant to International Roaming for example but not \nlimited to: \n1. GSMA PRDs related to Quality of Service; \n2. GSMA PRDs related to Fraud Detection; and \n3. GSMA PRDs relating to Billing between the parties including Invoicing, \nSettlement and dispute resolution. \n"
+                    },
+                    {
+                        "id": "1.8",
+                        "uuid": "bf955807-3204-1340-bc2e-69d2b0087905",
+                        "type": "newText",
+                        "similarity": 0.13953488372093023,
+                        "content": "he conclusion of the Agreement is subject to the respect of the procedure for \naccess requests, as described on Proximus website.  Moreover, as a condition \nprecedent for the signature of the present Agreement, such Agreement may not \nbe signed (or renewed) if during the 12 months preceding the envisaged date of \nsignature/renewal, the Operator has been subject to a notice of termination sent \nby Proximus in the context of Direct Wholesale Roaming Access services or to \npenalties for abusive use of the then ongoing Wholesale Roaming Access \nAgreement. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "article": "Starting Date",
+                "uuid": "41da7c4d-ff32-1a52-89b7-49f27bfb8683",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "2.1",
+                        "uuid": "69cd2ae8-da6b-1297-9b4c-9575caf23ac6",
+                        "type": "custmText",
+                        "similarity": 0.7428571428571429,
+                        "content": "The actual commercial starting date for International Roaming shall be the date \nas agreed by both Parties in written form after successful completion of all \nnecessary network and billing test procedures. \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "article": "Definitions",
+                "uuid": "115500d1-e48e-1d19-9482-be7a9ef909e9",
+                "variables": [
+                    {
+                        "uuid": "7fcc9457-6842-123d-bb7d-c6b24115f8ca",
+                        "sub-article": "3.7",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "c00d01ce-78ac-145d-897c-e2610bcce4fa",
+                        "sub-article": "3.7",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "e333b23d-172e-1ecf-8bb2-16b170d9b3bf",
+                        "sub-article": "3.7",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "51c30fd1-0d97-18f5-811d-2696ad64de1e",
+                        "sub-article": "3.9",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "bdb31500-22a7-16b1-9422-29b743239c7f",
+                        "sub-article": "3.9",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "2d2fdc00-1b21-1182-86ce-5012e83da2dc",
+                        "sub-article": "3.12",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "3.1",
+                        "uuid": "c7ea55d4-e2cc-1100-961c-62fe5ae47574",
+                        "type": "custmText",
+                        "similarity": 0.7142857142857143,
+                        "content": " \"Affiliated Company\" of a Party means any other legal entity: \n1. directly or indirectly owning or controlling the Party, or \n2. under the direct or indirect ownership or control of the same legal \nentity directly or indirectly owning or controlling the Party, or \n3. directly or indirectly owned or controlled by the Party, for so long as \nsuch ownership or control lasts. \n \nOwnership or control shall exist through the direct or indirect ownership of more \nthan 50 % of the nominal value of the issued equity share capital or of more \nthan 50 % of the shares entitling the holders to vote for the election of directors \nor persons performing similar functions. \n"
+                    },
+                    {
+                        "id": "3.2",
+                        "uuid": "8ea3e706-a680-1722-b28b-f674ff65c179",
+                        "type": "newText",
+                        "similarity": 0.0,
+                        "content": "\n"
+                    },
+                    {
+                        "id": "3.3",
+                        "uuid": "2cb55636-563b-1419-b203-138d3c2587ff",
+                        "type": "custmText",
+                        "similarity": 0.5483870967741935,
+                        "content": "\n\"Agreement\" shall mean this Direct Wholesale Roaming \nAccess Agreement together with the Annexes attached \nhereto. \n\"Date of the Agreement\" shall mean the date as of which \nboth Parties have signed the Agreement by their duly \nauthorized representatives. \n"
+                    },
+                    {
+                        "id": "3.4",
+                        "uuid": "b8230d05-fe09-1745-a22e-27ab2fa55fd0",
+                        "type": "newText",
+                        "similarity": 0.11764705882352941,
+                        "content": "Direct Wholesale Roaming Access shall have the \nmeaning as defined in Article 2 (2) (p) of the Roaming \nRegulation, with the exception of wholesale roaming resale \naccess as defined in Article 2 (2) (q) of the Roaming \nRegulation. \n"
+                    },
+                    {
+                        "id": "3.5",
+                        "uuid": "b8f11fe0-bb84-1a3a-8d47-a2d672680465",
+                        "type": "newText",
+                        "similarity": 0.0,
+                        "content": "\n"
+                    },
+                    {
+                        "id": "3.6",
+                        "uuid": "356a1d49-46a4-11de-81b0-58d44486a539",
+                        "type": "newText",
+                        "similarity": 0.0,
+                        "content": "\n"
+                    },
+                    {
+                        "id": "3.7",
+                        "uuid": "1ff2b850-6001-1df5-a07e-63810b176c15",
+                        "type": "newText",
+                        "similarity": 0.11428571428571428,
+                        "content": "\n\"GSM Association General Assembly\" shall mean that \nbody of the GSM Association formed by the Members and \nAssociate Members. \n\"GSM Association Permanent Reference Documents\" \nmeans a document noted as such by the PSMC to the \nGeneral Assembly and listed as such by Headquarters on \nthe list of Permanent Reference Documents. \n\u201cInternational Roaming\u201d or \u201cIR\u201d shall mean the provision \nof Services by Proximus in respect of which access is \ngranted by Roaming Customers of Operator through \nProximus\u2019 s PMN. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n"
+                    },
+                    {
+                        "id": "3.8",
+                        "uuid": "f7886820-b774-1c6b-96ad-1f272463dab4",
+                        "type": "newText",
+                        "similarity": 0.0,
+                        "content": "\n"
+                    },
+                    {
+                        "id": "3.9",
+                        "uuid": "f9841ed7-9a57-187b-b4e3-c6e8cda6fe96",
+                        "type": "newText",
+                        "similarity": 0.07692307692307693,
+                        "content": "\n\"Public Mobile Network\u201c or \"PMN\" shall mean a network \nthat complies with the definition of a GSM network as set \nout in the Articles of Association of the GSM Association \n(AA.16).1 \n \n\"Roaming Customer\" shall have the meaning as defined \nin Article 2 (2) (g) of the Roaming Regulation and shall in \npractice mean a person or entity with a valid legal \nrelationship with Operator using a GSM SIM (Subscriber \nIdentity Module) and/or a GSM USIM \n(Universal \nSubscriber Identity Module) for use by that person or entity \nof the Services while roaming on Proximus\u2019s PMN in \naccordance with \nthis \nAgreement. \nterms and conditions of \nthe \n"
+                    },
+                    {
+                        "id": "3.10",
+                        "uuid": "404b85d1-8688-107c-957f-d35709aefef3",
+                        "type": "newText",
+                        "similarity": 0.08,
+                        "content": " Roaming Provider shall have the meaning as defined in \nArticle 2 (2) (a) of the Roaming Regulation. \n"
+                    },
+                    {
+                        "id": "3.11",
+                        "uuid": "c373ecd3-602b-169f-9e43-f0f9b84803bc",
+                        "type": "newText",
+                        "similarity": 0.06818181818181818,
+                        "content": " Roaming Regulation shall mean the Regulation (EU) No. \n2015/2120 of the European Parliament and of the Council \nof 25 November 2015 amending Regulation (EU) No \n531/2012 on roaming on public mobile communications \nnetworks within the Union, O.J., L 310/1 of 26 November \n2015. \n"
+                    },
+                    {
+                        "id": "3.12",
+                        "uuid": "77dca38c-800d-1414-9e9d-0b34f071b80a",
+                        "type": "newText",
+                        "similarity": 0.1111111111111111,
+                        "content": " \"Services\" shall mean the services of Direct Wholesale \nRoaming Access provided under this Agreement, as \nspecified in Annexes 2 and 10, as the same may be \namended from time to time by Proximus. \n"
+                    },
+                    {
+                        "id": "3.13",
+                        "uuid": "becabde2-bacb-1f03-a864-89bd26415af7",
+                        "type": "newText",
+                        "similarity": 0.03225806451612903,
+                        "content": " \u201cSession\u201d shall mean the time between PDP Context \nActivation until PDP Context deactivation. \n"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "article": "Annexes",
+                "uuid": "870288fc-8766-1f1d-8fcc-432b18649b85",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "4.1",
+                        "uuid": "c37def81-6547-175c-9105-f44be2ace8a8",
+                        "type": "stdClause",
+                        "similarity": 1.0,
+                        "content": " The Annexes are divided as set out in the Overview of the Annex Structure. \n \n \n \n \n \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "article": "Technical Framework",
+                "uuid": "229c98f4-d180-1176-a913-ccebb54a62a0",
+                "variables": [
+                    {
+                        "uuid": "05a0f1cf-2562-1b20-99a7-94988ec42cc5",
+                        "sub-article": "5.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "5.1",
+                        "uuid": "9d38fc1b-30c4-1001-afc7-3cddf76c4c96",
+                        "type": "newText",
+                        "similarity": 0.2638888888888889,
+                        "content": "In respect of and subject to their licenses or rights and other national binding \nregulations to establish and operate Public Mobile Networks, the Parties to the \nAgreement agree, subject to Article "
+                    },
+                    {
+                        "id": "5.2",
+                        "uuid": "d042ff71-92e1-1dba-a165-0cea5696d85c",
+                        "type": "custmText",
+                        "similarity": 0.3508771929824561,
+                        "content": "to establish IR in accordance with: \n1. relevant Technical Specifications;  \n2. all binding GSM Association Permanent Reference Documents; and  \n3. those non-binding GSM Association Permanent Reference Documents \nwhich are agreed by the Parties and specifically set out in the \nAnnexes; including in each case all the commercial aspects, as defined \nin the Agreement, including the Annexes hereto. \n5.2. Additional requirements and exceptions to the Technical Specifications and GSM \nAssociation Permanent Reference Documents, as agreed between the Parties, \nare detailed in the Agreement and/or Annexes to the Agreement.  \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "article": "Management of Modifications to the Services",
+                "uuid": "aede5ed9-9bca-1ac8-a951-dd00042dbab2",
+                "variables": [
+                    {
+                        "uuid": "a2aea036-1654-1d0f-84ed-68cadd1975e8",
+                        "sub-article": "6.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "63e6c314-f971-1560-925c-7c4f75ef8fac",
+                        "sub-article": "6.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "f605d2f3-14e8-1130-88a5-18f3d98713ab",
+                        "sub-article": "6.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "ca6a003f-976f-1924-93c4-b9dad16368a2",
+                        "sub-article": "6.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "6.1",
+                        "uuid": "2d5cbef2-b3cf-1639-b688-6d88ad2a8ad0",
+                        "type": "custmText",
+                        "similarity": 0.6049382716049383,
+                        "content": "Following notice of change served by Proximus to implement new Services or \nchanges to any existing Services in accordance with Article 19.2, section 2 \nboth Parties shall discuss the impact of any such change for Roaming \nCustomers (including Roaming Customers\u2019 access to these Services) and in \nrelation to:  \n1. network and billing test procedures as set out in the Technical \nSpecifications and the GSM Association Permanent Reference \nDocuments, as requested by either Party;  \n2. administrative activities; and \n3. \nthe targeted starting date for the changed services. \n"
+                    },
+                    {
+                        "id": "6.2",
+                        "uuid": "75281aba-aed8-1703-b7d5-4bbe1153d875",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "he Roaming provider is entitled to ask the Direct Wholesale Operator, prior to \nthe launch, a forecast of all voice, SMS and data traffic for the coming 12 \nmonths after commercial launch. These forecasts will enable Proximus to \nmake the Services available in the best possible conditions. Consequently, \nsuch forecasts shall be based on reliable data and Operator undertakes to \nupdate them at the end of each calendar semester starting from the semester \nfollowing the commercial starting date, by consistently maintaining a 12-month \nanticipation. In case of inaccurate forecasts, Proximus will not be liable for any \ndefault in the provision of the Services. \n \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "article": "Charging, Billing & Accounting",
+                "uuid": "4a64749a-162c-1ea3-86f8-f23be9de62e8",
+                "variables": [
+                    {
+                        "uuid": "40499249-e60e-100b-ab4d-fb609632a9f8",
+                        "sub-article": "7.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "7.1",
+                        "uuid": "491be861-5517-1d55-8eed-e974fe3764e3",
+                        "type": "newText",
+                        "similarity": 0.07017543859649122,
+                        "content": "When a Roaming Customer uses the Services made available hereunder by \nProximus, Operator shall be responsible for payment of charges for the said \nServices so used in accordance with the tariff of Proximus.  \n"
+                    },
+                    {
+                        "id": "7.2",
+                        "uuid": "0720ed13-fb93-1561-b747-fd8171306164",
+                        "type": "newText",
+                        "similarity": 0.09090909090909091,
+                        "content": "he Roaming provider is entitled to ask the Wholesale Operator, prior to the \ncommercial launch, to provide a bank guarantee based on the traffic forecast \nfor the coming twelve months. If traffic volumes change the roaming provider \nmay request the bank guarantee to be changed accordingly.  \n \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "article": "Implementation of TAP",
+                "uuid": "e1c0b5fc-43a7-14b0-8a3a-75e3dfcecb26",
+                "variables": [
+                    {
+                        "uuid": "fda5ac2b-02a1-13ba-ab59-5e4fa72625f4",
+                        "sub-article": "8.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "8.1",
+                        "uuid": "663f3483-a98c-1511-83cd-efdedbba6c85",
+                        "type": "stdClause",
+                        "similarity": 0.8571428571428571,
+                        "content": "The Parties shall implement TAP according to the GSM Association \nPermanent Reference Documents and the provisions set out in the Annex \n3.1. \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "article": "Billing and Accounting",
+                "uuid": "1c64317c-b387-138e-9947-e122a3fb8f08",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "9.1",
+                        "uuid": "538c1532-26e0-197d-8e97-75b75fc027db",
+                        "type": "custmText",
+                        "similarity": 0.75,
+                        "content": "The Parties shall implement billing and accounting according to the GSM \nAssociation Permanent Reference Documents and the provisions set out in \nAnnex 3. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "article": "Customer Care",
+                "uuid": "37520720-67fa-1077-ad4b-86d4a9573ff7",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "10.1",
+                        "uuid": "f07fe540-4d0e-1c4a-9fe5-300937fb9bed",
+                        "type": "custmText",
+                        "similarity": 0.7333333333333333,
+                        "content": "The responsibilities of each Party concerning Customer Care are described in \nAnnex 4. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "article": "Confidentiality",
+                "uuid": "f4de4338-4c67-1227-be98-5c0cbed080c9",
+                "variables": [
+                    {
+                        "uuid": "f0e32ecf-6755-10b0-8e03-8d12d505a9b1",
+                        "sub-article": "11.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "cb088108-f110-1432-a361-6cc9b8000e1b",
+                        "sub-article": "11.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "11.1",
+                        "uuid": "09e47bbc-b1a5-10ab-b836-df265bbba3ee",
+                        "type": "custmText",
+                        "similarity": 0.775,
+                        "content": "The Parties agree that all aspects of the contents of the Agreement shall be \ntreated as Information (as defined below) and no information in respect to the \ncontent of the Agreement shall be disclosed without the prior written consent \nof the Parties except as reasonably necessary to implement the Agreement  \nthem \nreferred \n(hereinafter \n"
+                    },
+                    {
+                        "id": "11.2",
+                        "uuid": "791fd312-5139-1f78-a66a-fdd4afd1cde5",
+                        "type": "custmText",
+                        "similarity": 0.5728643216080402,
+                        "content": "In addition to Article 11.1 hereof, the Parties hereby agree to treat all \ninformation exchanged between \nto as \n\"Information\") as confidential and agree not to disclose such Information in \nany manner whatsoever, in whole or in part except as provided in this Article \n11. The Parties shall not use any Information other than in connection with the \ndiscussions between them and any transactions resulting therefrom, or for the \nprovision of the Services as contemplated herein. The Parties are also entitled \nto disclose Information to third parties in the context of a possible bona fide \nacquisition or sale of its operations in support of reasonably related due \ndiligence activities in respect thereof, or for the borrowing of funds or obtaining \nof insurance, in which case any third parties (including lenders or insurance \ncompanies) involved in such activities shall be  obliged to enter into \nconfidentiality agreements which have the equivalent content as this Article \n11 before receiving the Information. In addition to the foregoing, the Parties \nshall also be entitled to share information with Affiliated Companies, directors, \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \nagents, professional advisers, contractors, employees or resellers on a need \nto know basis provided that such Affiliated Companies, agents, contractors, \nemployees or resellers have entered into confidentiality agreements in a form \nsubstantially equivalent to and on terms and conditions no less stringent than \nthe terms and conditions set out in this Article 11. Subject to Article "
+                    },
+                    {
+                        "id": "11.3",
+                        "uuid": "68651b87-c765-1f28-bc2c-2c7277b49d91",
+                        "type": "custmText",
+                        "similarity": 0.6111111111111112,
+                        "content": "each \nParty shall be liable in accordance with Article 14 (subject to Article 11.3) \ntowards the other Party in respect of any unauthorized disclosure of \nInformation made by any other authorized recipients. \n \n11.3. Notwithstanding Article 14, each Party shall be liable under this Agreement to \nthe other Party in respect of any proven damage or loss to the other Party \ncaused by its unauthorised use or disclosure of such information only up to \nthe sum of five hundred thousand (500,000) SDR.  \n"
+                    },
+                    {
+                        "id": "11.4",
+                        "uuid": "15b5bb61-7285-1123-a02c-5c9a49ba13aa",
+                        "type": "custmText",
+                        "similarity": 0.7857142857142857,
+                        "content": "Notwithstanding Article 11.1 above, Information and the contents of this \nAgreement may be transmitted to governmental, judicial or regulatory \nauthorities, as may be required by any governmental, judicial or regulatory \nauthority. \n"
+                    },
+                    {
+                        "id": "11.5",
+                        "uuid": "0a637b0f-a4df-164f-a375-d384e6b326f3",
+                        "type": "custmText",
+                        "similarity": 0.6521739130434783,
+                        "content": " For the purposes of the Agreement, Information and the contents of this \nAgreement shall not be considered to be confidential if such Information is: \n1. \nin or passed into the public domain other than by breach of this Article; \nor \n2. known to a receiving Party prior to the disclosure by a disclosing Party; \nor \n3. disclosed to a receiving Party without restriction by a third party having \n4. \nthe full right to disclose; or \nindependently developed by a receiving Party to whom no disclosure \nof confidential Information relevant to such Information has been \nmade. \n"
+                    },
+                    {
+                        "id": "11.6",
+                        "uuid": "26e12ab0-3a32-1a41-967b-d9db23aba56a",
+                        "type": "stdClause",
+                        "similarity": 0.803030303030303,
+                        "content": "Each Party agrees that in the event of a breach or threatened breach of Article \n11, the harm suffered by the other Party would not be compensable by \nmonetary damages alone and, accordingly, in addition to other available legal \nor equitable remedies, the other Party shall be entitled to apply for an \ninjunction or specific performance with respect to such breach or threatened \nbreach, without proof of actual damages (and without the requirement of \nposting a bond or other security) and each Party agrees not to plead \nsufficiency of damages as a defence.  \n"
+                    },
+                    {
+                        "id": "11.7",
+                        "uuid": "ba9a637d-1895-1dd7-abdf-7f224ee6925c",
+                        "type": "custmText",
+                        "similarity": 0.7272727272727273,
+                        "content": "Article 11 shall survive the termination of the Agreement for a period of ten \n(10) years but shall not in any way limit or restrict a disclosing Party's use of \nits own confidential Information. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "article": "Data Privacy",
+                "uuid": "cb409a1b-0ddc-106d-89ab-58a89e66f931",
+                "variables": [
+                    {
+                        "uuid": "e9a42657-c7cf-149f-aadb-3347c1d29fb8",
+                        "sub-article": "12.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "d5edb48e-4012-1329-ad54-744d8dc3ad9f",
+                        "sub-article": "12.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "12.1",
+                        "uuid": "8df65075-65c4-1d2f-b6cb-70cad7e7178e",
+                        "type": "stdClause",
+                        "similarity": 0.8333333333333334,
+                        "content": "Each Party\u2019s obligations hereunder to transfer information to the other Party \nshall not apply to the extent that a Party is prohibited from doing so by the \nregulations and laws of its own country applicable to IR and/or data protection.  \n"
+                    },
+                    {
+                        "id": "12.2",
+                        "uuid": "d46129cf-5355-1d4a-ba68-ade229970570",
+                        "type": "custmText",
+                        "similarity": 0.32,
+                        "content": " Each Party shall inform its customers that during roaming, the storage, \ntreatment and transfer of their personal data may be subject to regulation \ndifferent from the regulation in their own country. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n"
+                    },
+                    {
+                        "id": "12.3",
+                        "uuid": "d59508d1-cff2-1b6b-8ac8-6ea5616b8c9b",
+                        "type": "custmText",
+                        "similarity": 0.7894736842105263,
+                        "content": " The Parties confirm that they shall comply with the Data Privacy \nRegulations/Laws applicable in their respective countries.  \n \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "article": "Fraud Prevention",
+                "uuid": "c560505b-e37a-1c10-b309-5ec21624d1ae",
+                "variables": [
+                    {
+                        "uuid": "3e9534c1-4b95-14d2-b47d-2b67dcf95658",
+                        "sub-article": "13.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "f39d0d9f-25b8-1f5f-8de8-de76c30ccfaa",
+                        "sub-article": "13.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "13.1",
+                        "uuid": "0574fce1-d240-1e64-9a26-c8470b5f8200",
+                        "type": "custmText",
+                        "similarity": 0.5263157894736842,
+                        "content": "The Parties shall comply with the procedures and provisions concerning \nfraudulent or unauthorised use by Roaming Customers set out in the GSM \nAssociation Permanent Reference Documents. The Parties shall implement \nfraud prevention procedures as specified by the GSM Association Binding \nPRD BA.20. \n"
+                    },
+                    {
+                        "id": "13.2",
+                        "uuid": "7515e7ab-a940-11f6-b437-e78a65102b06",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "Are considered as an \u201cacceptable periodical travel presence\u201d on the Proximus \nnetwork the presence of maximum 15 % of the Roaming- In subscribers of \nthe EU operator for maximum 30 days in a 4 months period and 5% of the \nRoaming-In subscribers for maximum 90 days in a 4 months period. \nNotwithstanding any clause to the contrary in any other document, if more \nthan 15% of the Roaming-In subscribers of the EU operator are detected by \nthe Proximus network for more than 30 days in a 4 months period or more \nthan 5% of the Roaming-In subscribers are detected for more than 90 days in \na 4 months period, the corresponding usage that exceeds the above \nmentioned parameters will be considered as a \u201cSuspected fraudulent or \nunauthorised use\u201d of Proximus network. When this suspected fraudulent or \nunauthorised use is observed by Proximus, a monthly penalty for voice, SMS \nmessages and data will be invoiced in accordance with the traffic volume \ngenerated as specified in annex 9 of the Agreement, without prejudice to \nProximus\u2019 right to suspend the service according to clause 15.1 (and notably \n15.1.3). \nNotwithstanding any clause to the contrary, in the event penalties have been \ninvoiced for a total period of six months during a contractual year, Proximus \nreserves the right to terminate the present Agreement in accordance with the \nprocedure described in Art 3 of the Regulation n\u00b0531/2012 amended by \nRegulation 2017/920 on roaming on public mobile communication networks \nwithin the European Union. During this procedure, the penalties remain due \n(if applicable) \nProximus reserves the right to review the parameters indicated in the present \nregulated offer to define what is considered as an \u201cacceptable periodical travel \npresence\u201d after having notified the BIPT of the objective grounds based on \nwhich Proximus considers that the current parameters are no more \nappropriate. \nThe present Article 13.2 only applies to EU/EEA traffic. \n \n \n \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "article": "Liability of the Parties",
+                "uuid": "0109ad50-9bd8-1839-a1ba-d9cc115399b8",
+                "variables": [
+                    {
+                        "uuid": "7fba0f3b-4d69-10cb-a676-616505d0537c",
+                        "sub-article": "14.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "6592464d-e6dd-14a6-b9f0-1ffa1c8c9351",
+                        "sub-article": "14.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "14.1",
+                        "uuid": "53e4ac1f-c0a9-1e9d-a5fb-d4eaf3d4a7eb",
+                        "type": "custmText",
+                        "similarity": 0.4083333333333333,
+                        "content": "Neither Party shall be liable to the other Party under or in connection with the \nAgreement except: \n1. in respect of charges to be paid to Proximus pursuant to Article 7; \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n2. to the extent of its negligence where such negligence results in proven \ndamages or loss to the other Party, in which event the liability of the \nnegligent Party shall be limited to and shall in no event exceed two \nhundred and fifty thousand (250,000) SDR in respect of any one \nincident or series of incidents arising from the same cause; \n3. in respect of charges arising from non-compliance with binding GSM \nAssociation Permanent Reference Documents pursuant to Article 13. \n \n"
+                    },
+                    {
+                        "id": "14.2",
+                        "uuid": "b3c3ebc8-94f3-1803-9790-d737e36ccd94",
+                        "type": "stdClause",
+                        "similarity": 0.8888888888888888,
+                        "content": "Furthermore, in no event shall either Party be liable for any consequential \ndamage or loss of whatsoever nature, including but not limited to, loss of \nprofit or loss of business, even if such Party has been advised of the \npossibility of such loss or damage. \n"
+                    },
+                    {
+                        "id": "14.3",
+                        "uuid": "42d7cba7-cbef-12b9-8934-4c6c72fb5cf2",
+                        "type": "custmText",
+                        "similarity": 0.782608695652174,
+                        "content": "\nIn no event shall any employee of either Party or of an Affiliated Company \nbe liable to the other Party for any act of negligence or intent under or in \nconnection with the Agreement. Save for the limitations in Articles 14.1 and \n14.2 nothing in the foregoing shall in any way restrict the liability of either \nParty for the actions of its employees. \n"
+                    },
+                    {
+                        "id": "14.4",
+                        "uuid": "dd6adeef-f66b-1e5c-9259-a0b8ba170d65",
+                        "type": "stdClause",
+                        "similarity": 0.8571428571428571,
+                        "content": "Limitation of liability as described in this Article shall not apply if damage or \nloss is caused by a Party's wilful misconduct (including fraud) or gross \nnegligence. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "article": "Suspension of Services",
+                "uuid": "40425053-bb26-1e7e-aadd-dc804602a6ca",
+                "variables": [
+                    {
+                        "uuid": "d012a0d4-843a-14ff-9cf6-8d5f27c86236",
+                        "sub-article": "15.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "ea501940-6ece-1291-b169-3abbd9935f0f",
+                        "sub-article": "15.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "54c5e020-0f93-1aff-94a0-dcad01eb4ae2",
+                        "sub-article": "15.3",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "da93a4bb-8599-121c-9028-0a6455990df4",
+                        "sub-article": "15.3",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "0a0cadb3-6fe9-1708-a287-e64574621b39",
+                        "sub-article": "15.4",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "15.1",
+                        "uuid": "8155c40f-d659-12ee-bde3-18c3ad187d48",
+                        "type": "custmText",
+                        "similarity": 0.5353535353535354,
+                        "content": "Notwithstanding anything in the Agreement to the contrary, Proximus may \nwithout liability suspend or terminate all or any of its Services to Roaming \nCustomer(s) in circumstances where it would suspend or terminate those \nServices to its own customers, including but not limited to: \n1. Roaming Customers using equipment which is defective or illegal; or \n2. Roaming Customers causing any technical or other problems on \nProximus\u2019s Public Mobile Network; or \n3. Suspected fraudulent or unauthorised use; or \n4. Authentication of the legal relationship not being possible; or \n5. Traffic volumes which significantly differ from predicted volumes; or \n6. Maintenance or enhancement of its Public Mobile Network; or \n7. Suspension by non-payment exceeding 3 months. \n"
+                    },
+                    {
+                        "id": "15.2",
+                        "uuid": "4d0e2853-f1e1-1649-8900-c286a15df6e8",
+                        "type": "custmText",
+                        "similarity": 0.7627118644067796,
+                        "content": "In case of a proposed suspension of Services to all Roaming Customers, \nProximus shall use commercially reasonable efforts to give four (4) weeks \nwritten notice (shorter notice may apply given the circumstances related to the \nsuspension) to Operator prior to the suspension taking effect.  If the \nsuspension continues for more than six (6) months, Operator shall have the \nright to terminate the Agreement with immediate effect by written notice. \n"
+                    },
+                    {
+                        "id": "15.3",
+                        "uuid": "801ee6a7-2887-1592-a7f1-6ce371133066",
+                        "type": "custmText",
+                        "similarity": 0.38461538461538464,
+                        "content": "Operator has the right at any time, for technical reasons, without liability but \nupon detailed written notice to Proximus, to suspend access to the Services \nto its Roaming Customers. Alternatively, if it is technically more practicable, \nOperator may require Proximus to suspend all of its Services to Roaming \nCustomers of Operator. Proximus shall use commercially reasonable efforts \nto comply with such requirement within seven (7) calendar days after receipt \nof the said notice. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n"
+                    },
+                    {
+                        "id": "15.4",
+                        "uuid": "ed856e63-a96e-14a4-ac70-56e226eee6a1",
+                        "type": "custmText",
+                        "similarity": 0.625,
+                        "content": "The Parties agree that the suspension described in Article 15.3 shall be \nremoved as soon as the technical reason for the suspension has been \novercome by Proximus or Operator as the case may be.  \n \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "article": "Force Majeure",
+                "uuid": "413e4cc1-c7ab-1e46-806b-cd029ebd66c7",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "16.1",
+                        "uuid": "baacab53-a6f9-1e82-b709-0d4b312bd8f1",
+                        "type": "custmText",
+                        "similarity": 0.7413793103448276,
+                        "content": "Non-performance of either Party\u2019s obligations pursuant to the Agreement or \ndelay in performing same (except with respect to the payment of charges \napplicable hereunder) shall not constitute a breach of the Agreement if, and \nfor as long as, it is due to a force majeure event, including, but not being \nlimited to, governmental action, or requirement of regulatory authority, \nlockouts, strikes, shortage of transportation, war, rebellion or other military \naction, fire, flood, natural catastrophes, or any other unforeseeable obstacles \nthat a Party is not able to overcome with reasonable efforts, or non-\nperformance of obligations by a sub-contractor to a Party pursuant to any of \nthe aforementioned reasons.  The Party prevented from fulfilling its \nobligations shall on becoming aware of such event inform the other Party in \nwriting of such force majeure event as soon as possible. If the force majeure \nevent continues for more than six (6) months, either Party shall have the right \nto terminate the Agreement with immediate effect by written notice. \n"
+                    },
+                    {
+                        "id": "16.2",
+                        "uuid": "4e6cb42d-3e14-1767-abde-3f4767d02a9f",
+                        "type": "stdClause",
+                        "similarity": 0.8113207547169812,
+                        "content": "If the affected Party fails to inform the other Party of the occurrence of a force \nmajeure event as set forth in Article 16.1 above, then such Party thereafter \nshall not be entitled to refer such events to force majeure as a reason for \nnon-fulfilment. This obligation does not apply if the force majeure event is \nknown by both Parties or the affected Party is unable to inform the other \nParty due to the force majeure event.  \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "article": "Duration of the Agreement",
+                "uuid": "21f340f6-f2e5-1814-90fd-ad8cd15b798f",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "17.1",
+                        "uuid": "47a7d5b8-a720-1ae5-8879-35bba264df52",
+                        "type": "newText",
+                        "similarity": 0.2898550724637681,
+                        "content": "The Agreement comes into force on the Date of the Agreement Without \nprejudice to the conditions of Articles 15.2, 16.1 and 18, the Agreement shall \nhave a duration of one (1) year as from the Date of the Agreement and shall \nbe subject to tacit yearly renewals unless one of the Parties receives a \ntermination notice 3 months prior to the end of the then current term. \nThe present Article 17.1 is without prejudice to the termination rules as \ndetailed in article 18 below. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "article": "Termination of the Agreement",
+                "uuid": "8da2fc42-2ed2-117c-b430-eac3114afc0a",
+                "variables": [
+                    {
+                        "uuid": "c4916833-c542-1f36-8ec2-59ae2df10bb8",
+                        "sub-article": "18.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "70233926-f217-1ff6-928f-8080b137e428",
+                        "sub-article": "18.1",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "1ae3a22d-8ad8-1987-bb7d-9b5e2015c262",
+                        "sub-article": "18.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "18.1",
+                        "uuid": "9c72f2c3-0f1b-1922-b4ed-79cadffef6c6",
+                        "type": "custmText",
+                        "similarity": 0.4896907216494845,
+                        "content": "In addition to the conditions of Articles 15.2, 16.1 and 17 the Agreement may \nbe terminated as follows: \n1. by mutual agreement of the Parties in writing subject to a prior notice of \nsix (6) months; or \n2. by one of the Parties, with immediate effect, when the other Party is in \nmaterial breach of the Agreement and does not or is not capable of \nremedying such breach within thirty (30) days of receipt of a written notice \nto such effect; \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n \n3. by one of the Parties, with immediate effect, if the other Party becomes \nbankrupt or insolvent or if that other Party enters into any composition or \narrangement with its creditors and that other Party is not able to ensure \nperformance of its obligations under the Agreement by a guarantee from \na first class bank, payable on first written demand; \n4. by written notice of either Party to the other in the event that IR becomes \ntechnically or commercially impracticable on Proximus\u2019s Public Mobile \nNetwork and the provisions set out in Article 15 are not sufficient to solve \nthe problem or if an unacceptable level of unauthorized use occurs and \nthe other Party is not capable of remedying such unauthorized use within \nsixty (60) days of receipt of a written notice to such effect; or \n5. subject to Article 14.1 immediately in the event a final order by the relevant \ngovernmental authority revoking or denying renewal of the license(s) or \npermission to operate a Public Mobile Network(s) granted to either Party, \nor any other license necessary to operate the Service(s), takes effect. \n"
+                    },
+                    {
+                        "id": "18.2",
+                        "uuid": "a561c4c0-96a6-1075-a4cb-f503e1ff8eab",
+                        "type": "custmText",
+                        "similarity": 0.7073170731707317,
+                        "content": "In the event of termination on the grounds of a breach of the Agreement under \nthe Article 18.1.2, the Party in breach shall, notwithstanding Article 14.2, be \nliable to the other Party (in addition to charges properly due and payable to \nProximus) for proven direct damage or loss (excluding indirect or consequential \ndamage or loss) arising as a consequence of such breach up to a maximum \naggregate liability of two hundred and fifty thousand (250,000) SDR, provided, \nhowever, that such limitation of liability shall not apply if a damage or loss is \ncaused by a Party\u2019s wilful misconduct or gross negligence. \n \n1"
+                    }
+                ]
+            },
+            {
+                "id": 19,
+                "article": "Changes to the Agreement",
+                "uuid": "631476fe-1a20-13b2-9ded-08c5244c16a7",
+                "variables": [
+                    {
+                        "uuid": "c69e2738-38c1-1178-9362-d20cd3669dac",
+                        "sub-article": "19.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "8703b44a-bfdb-109b-b005-bdc49e168d76",
+                        "sub-article": "19.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    },
+                    {
+                        "uuid": "5686af0d-78e3-181d-976d-2dc9f88743e0",
+                        "sub-article": "19.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "57535dfa-7949-16aa-b6f9-d00d008c5483",
+                        "sub-article": "19.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "19.1",
+                        "uuid": "def0563d-901b-11f3-9247-736e3dea6d16",
+                        "type": "custmText",
+                        "similarity": 0.7419354838709677,
+                        "content": "Any amendments and/or additions to the Agreement and/or Annexes and/or \nAddenda shall be valid only if made in writing and signed by duly authorized \nrepresentatives of both Parties hereto. \n"
+                    },
+                    {
+                        "id": "19.2",
+                        "uuid": "8b9a090a-5a4d-1ae9-b464-b1de523c9f9f",
+                        "type": "custmText",
+                        "similarity": 0.41397849462365593,
+                        "content": "Notwithstanding Article 19.1 Proximus shall be entitled to:  \n1. implement new Services or change existing Services as it sees fit subject \nto the successful completion of all network and billing test procedures as \nset out in the Technical Specifications and the GSM Association \nPermanent Reference Documents and as requested by either Party. \nProximus shall give Operator at least thirty (30) days\u2019 prior written notice \nof any implementation of Services for the first time. Proximus also agrees \nto use its reasonable efforts to give the other Party at least thirty (30) days \nprior written notice of any other proposed implementation of new Services \nor change of existing Services which is a major change which has an \nimpact on IR;  \n \n2. terminate all or any existing Services offered by or to a roaming partner. \nProximus agrees to use its reasonable efforts to give Operator at least \nsixty (60) days prior written notice of any termination of existing Services \nwhich is a major change which has an impact on IR; or \n \n3. subject to the constraints of the Roaming Regulation, vary its tariff stated \nin the Annex 8 or subsequent variation thereof. In the case of scheduled \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \n \nchanges (as described in BA.27) Proximus shall give sixty (60) days \nwritten notice of any variation to its tariff and the new change shall take \neffect on the first day of the month following the expiration of the sixty (60) \nday notice period. In the case of unscheduled changes Proximus shall use \nall reasonable endeavours to give adequate notice of such changes and \nthe new change shall take effect on the first day following the expiration of \nthe notice period given. Any variation in the tariff shall be deemed to be \nincorporated into the Agreement. Any challenges to changes to the Tariff \nshall be made in accordance with Article 23.22.2; \n \n"
+                    },
+                    {
+                        "id": "19.3",
+                        "uuid": "51a23ff4-49dc-1e3a-a4e3-13229af260f9",
+                        "type": "custmText",
+                        "similarity": 0.7301587301587301,
+                        "content": "The references to Technical Specifications and binding GSM Association \nPermanent Reference Documents in Article 5.1 (1) and (2) shall be deemed to \ninclude references to these documents as amended by GSM Association from \ntime to time.  However the reference to non-binding GSM Association \nPermanent Reference Documents in Article 5.1(3) shall not be deemed to \ninclude a reference to such non-binding documents as amended by GSM \nAssociation from time to time unless and to the extent that this is expressly \nagreed by the Parties and detailed in the Agreement, including the Annexes. \nThis Article 19.23 shall be subject to Article 5.2.  \n"
+                    },
+                    {
+                        "id": "19.4",
+                        "uuid": "b5acb0e1-148e-1a92-861f-b4fc8d59458e",
+                        "type": "custmText",
+                        "similarity": 0.7916666666666666,
+                        "content": "It is also recognised by the Parties that it may be appropriate to seek changes \nto the Agreement in the light of experience and development in the GSM \nAssociation and the establishment of IR between the Parties. Accordingly, the \nParties shall enter into good faith discussions with a view to agreeing mutually \nacceptable modifications to the Agreement. \n \n2"
+                    }
+                ]
+            },
+            {
+                "id": 20,
+                "article": "Miscellaneous",
+                "uuid": "0436d3ff-5aa2-10cc-b184-b44910b0fc17",
+                "variables": [
+                    {
+                        "uuid": "8df71d3e-6714-1458-aafc-5f3df2275c19",
+                        "sub-article": "20.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "GSM Association"
+                    },
+                    {
+                        "uuid": "8e4b524e-cf4f-11f8-a36b-03b72830ee2b",
+                        "sub-article": "20.3",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "29/05/2017"
+                    },
+                    {
+                        "uuid": "3021b17e-0674-1a34-948f-086d781d2baf",
+                        "sub-article": "20.3",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "Proximus"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "20.1",
+                        "uuid": "92220be8-e6f2-119a-b30f-711dfc5645f6",
+                        "type": "custmText",
+                        "similarity": 0.5148514851485149,
+                        "content": "\nSuccessors and Assigns \nThe Agreement and the rights and obligations specified herein shall be \nbinding upon the Parties hereto and their respective legal successors and \nneither Party shall sell, transfer or assign the Agreement or any part, interest, \nright or obligation hereunder, except that a Party shall have the right to \ntransfer or assign the Agreement in whole (but not in part) to an Affiliated \nCompany who is also a Member of the GSM Association or to an assignee of \nits license or right to operate a Public Mobile Network(s) provided that such \nassignee expressly assumes, by written instrument approved by the Parties, \nall of the obligations of such Party hereunder and thereby becomes a Party \nhereunder, it being understood that such assignment shall not release the \nassigning Party of its obligations under Article 11 of this Agreement.  No \nperson other than a Party to the Agreement shall acquire any rights hereunder \nas a third-party beneficiary or otherwise by virtue of the Agreement. \n \n \n"
+                    },
+                    {
+                        "id": "20.2",
+                        "uuid": "8b5e5fc6-cde7-1d67-b291-1c7755ca685a",
+                        "type": "custmText",
+                        "similarity": 0.7307692307692307,
+                        "content": "\nHeadings \nThe headings of the Agreement are for the convenience of reference only \nand shall in no way limit or affect the meaning or interpretation of the \nprovisions of the Agreement. \n"
+                    },
+                    {
+                        "id": "20.3",
+                        "uuid": "7ca590d8-b70e-1dea-acd1-5c63f6f20645",
+                        "type": "custmText",
+                        "similarity": 0.4,
+                        "content": "\nNo waiver \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by \nProximus.  \n \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  \nSensitivity: Confidential \nProximus reference offer of 29/05/2017 \n \nUnilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions \nFailure by any Party at any time or times to require performance of any \nprovisions of the Agreement shall in no manner affect its rights to enforce the \nsame, and the waiver by any Party of any breach of any provisions of the \nAgreement shall not be construed to be a waiver by such Party of any \nsucceeding breach of such provision or waiver by such Party of any breach of \nany other provision hereof. \n \n \n \n \n \n"
+                    },
+                    {
+                        "id": "20.4",
+                        "uuid": "a742b9b4-f0b9-1b3d-9098-eed7bd60c234",
+                        "type": "custmText",
+                        "similarity": 0.7222222222222222,
+                        "content": "\nProvisions severable \nIf any part of the Agreement or any Annex hereto is held to be invalid or \nunenforceable, such determination shall not invalidate any other provision of \nthe Agreement or Annexes hereto; and the Parties shall attempt, through \nnegotiations in good faith, to replace any part of the Agreement or Annexes \nhereto so held to be invalid or unenforceable.  The failure of the Parties to \nagree on such replacement shall not affect the validity of the remaining parts \nof the Agreement. \n"
+                    },
+                    {
+                        "id": "20.5",
+                        "uuid": "468be5ea-2835-1283-94b1-b98a3764962a",
+                        "type": "custmText",
+                        "similarity": 0.7727272727272727,
+                        "content": "\nNotices \nAll notices, information and communications required under the Agreement \nshall be given as described in Annex 1: Agreement Management Principles. \n"
+                    },
+                    {
+                        "id": "20.6",
+                        "uuid": "1d653904-611c-1c01-be94-d2c9c4efc12a",
+                        "type": "custmText",
+                        "similarity": 0.7727272727272727,
+                        "content": "\nCompliance with Laws and Regulatory requirements  \nThe commitment of the Parties hereto shall be subject to all applicable laws \nand/or regulatory requirements, present and future, of any governmental or \nregulatory authority having jurisdiction over the Parties hereto, as well as any \nvalid order of a court of competent jurisdiction. \n"
+                    },
+                    {
+                        "id": "20.7",
+                        "uuid": "4b56db86-f9f2-1859-8ab2-b377f840bcf9",
+                        "type": "custmText",
+                        "similarity": 0.696969696969697,
+                        "content": "\nAnti-bribery compliance \nThe Parties hereby acknowledge the importance of combating and preventing \nbribery and to that end both Parties agree to comply fully with all applicable \nlaws, regulations and sanctions relating to anti-bribery and anti-corruption. \n \n2"
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "article": "Choice of Law",
+                "uuid": "1bb4c3b4-b7b9-1505-a274-1cc2e07b65d7",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "21.1",
+                        "uuid": "1222e631-87a6-111e-8249-87b03a2e1a6a",
+                        "type": "newText",
+                        "similarity": 0.10810810810810811,
+                        "content": "The Agreement and any matters relating hereto shall be governed by and construed \nin accordance with Swiss law. \n \n2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "document name": {
+            "uid": "568df764-99ae-107b-ac13-95acfe836d3a",
+            "type": "text",
+            "verify": "Document Name",
+            "hint": "",
+            "": "Orange"
+        },
+        "variables": [
+            {
+                "date": {
+                    "uid": "ff901a50-0610-1b55-b2b1-92dd3b4c7888",
+                    "type": "text",
+                    "verify": "date",
+                    "hint": "01/01/2013"
+                }
+            },
+            {
+                "organization": [
+                    {
+                        "uid": "f14a28ee-69e1-1173-ac55-7bdf0605a152",
+                        "type": "text",
+                        "verify": "operador A",
+                        "hint": "Orange Communications Luxembourg SA"
+                    },
+                    {
+                        "uid": "173bb345-1910-119d-865c-72fcf66c618e",
+                        "type": "text",
+                        "verify": "operador B",
+                        "hint": "Orange"
+                    }
+                ]
+            },
+            {
+                "location": [
+                    {
+                        "uid": "eb3d0f08-949e-111e-8477-370c7ad5b420",
+                        "type": "text",
+                        "verify": "operador A",
+                        "hint": "EU/EEA"
+                    },
+                    {
+                        "uid": "9e7be80b-f195-16b2-b10c-614da932fa30",
+                        "type": "text",
+                        "verify": "operador B",
+                        "hint": "8, rue des M\u00e9rovingiens - Bertrange, L-8070 Luxembourg"
+                    }
+                ]
+            }
+        ],
+        "variations": [
+            {
+                "id": 1,
+                "article": "Introduction and scope",
+                "uuid": "519eb278-2dab-1321-a027-20964448721b",
+                "variables": [
+                    {
+                        "uuid": "13d3994c-c025-1d93-909b-5daa368088a0",
+                        "sub-article": "1.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "EU/EEA"
+                    },
+                    {
+                        "uuid": "5bea8785-26ca-1db9-91e9-f48ae09cd889",
+                        "sub-article": "1.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "954d4822-5943-167d-ba2a-42a1b21922c0",
+                        "sub-article": "1.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "a2d99e09-6fda-1ba9-8df9-fa7bf49b7432",
+                        "sub-article": "1.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "dc2042c3-b306-18e5-b6a2-86a44ba3dcbf",
+                        "sub-article": "1.4",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "9d601c0f-ea72-1388-a1db-1517e69fc7a0",
+                        "sub-article": "1.5",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "03240103-b47f-1862-ab7a-5e0f402fb03d",
+                        "sub-article": "1.6",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "1.1",
+                        "uuid": "f86911ba-b253-18d5-9127-678ecdfe6bee",
+                        "type": "custmText",
+                        "similarity": 0.7380952380952381,
+                        "content": "The Parties have expressed their wish to enter into this Wholesale Roaming Resale Access \nAgreement (\u201cAgreement\u201d) for the provision by Orange of Wholesale Roaming Resale Access \nServices, in order to enable Access Seeker to offer Regulated Roaming Services to its Roaming \nCustomers. \n"
+                    },
+                    {
+                        "id": "1.2",
+                        "uuid": "fd650e78-4236-1cab-b3d5-f4efe3ad89fb",
+                        "type": "newText",
+                        "similarity": 0.13414634146341464,
+                        "content": "The Access Seeker is a Roaming Provider. In addition, Access Seeker may also purchase \nmobile access services from Orange, based on Orange\u2019s mobile network, allowing Access Seeker to \nprovide domestic mobile services to its customers pursuant to an agreement concluded between \nOrange and Access Seeker (hereinafter referred to as \u201cNational MVNO or Mobile Resale \nAgreement\u201d). \n"
+                    },
+                    {
+                        "id": "1.3",
+                        "uuid": "eb8cfbe1-1c84-1e42-886b-d2fd1fe0bcee",
+                        "type": "custmText",
+                        "similarity": 0.3333333333333333,
+                        "content": "This Agreement contains the basic principles applicable to the Services provided by Orange to \nAccess Seeker. \n"
+                    },
+                    {
+                        "id": "1.4",
+                        "uuid": "077c3fd5-7994-1a0a-bdb7-af6cffbda672",
+                        "type": "newText",
+                        "similarity": 0.06666666666666667,
+                        "content": "To the extent that Access Seeker has entered into a National MVNO or Mobile Resale \nAgreement with Orange, such agreement will unless otherwise explicitly agreed also set out the \nterms of the Wholesale Roaming Resale Access offered by Orange to Access Seeker, which will be \nin accordance with the terms of the present Agreement. For the sake of clarity, in such case, Parties \ndo not have to enter into the present Agreement and the terms of the National MVNO or Mobile \nResale Agreement will prevail. \n"
+                    },
+                    {
+                        "id": "1.5",
+                        "uuid": "70ee9adf-b02c-165b-84ef-e637b3bc7a0e",
+                        "type": "newText",
+                        "similarity": 0.16,
+                        "content": "The Services offered by Orange to Access Seeker shall not differ substantially from those \nprovided by Orange to other Access Seekers who request a similar service upon similar technical, \nqualitative, quantitive and pricing conditions, however subject to technical availability. Without \nprejudice to the foregoing, the Parties may decide to complete or amend the terms and conditions \nof this Agreement, or otherwise include deviations in the Agreement. \n"
+                    },
+                    {
+                        "id": "1.6",
+                        "uuid": "1a07c787-eb52-14ac-8b81-8fcdc5e2f38c",
+                        "type": "newText",
+                        "similarity": 0.05172413793103448,
+                        "content": "The conclusion of the Agreement is subject to the respect of the procedure for access \nrequests, as described on Orange website. \n"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "article": "Definitions",
+                "uuid": "171959d8-3cf6-174e-b4b6-d463bb1d8b13",
+                "variables": [
+                    {
+                        "uuid": "7bdc30f2-ddd7-13b4-b334-03eb8af11849",
+                        "sub-article": "2.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "654e383d-0ded-1f39-8c9c-23137eea12cb",
+                        "sub-article": "2.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "2.1",
+                        "uuid": "a9602b40-003d-13ff-83e8-7e3e7e8be418",
+                        "type": "custmText",
+                        "similarity": 0.7428571428571429,
+                        "content": "\"Affiliated Company\" of a Party means any other legal entity: \n1. directly or indirectly owning or controlling the Party, or \n2. under the direct or indirect ownership or control of the same legal entity directly or \nindirectly owning or controlling the Party, or \n3. directly or indirectly owned or controlled by the Party, \nfor so long as such ownership or control lasts. \n \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \nOwnership or control shall exist through the direct or indirect ownership of more than 50 % of the \nnominal value of the issued equity share capital or of more than 50 % of the shares entitling the \nholders to vote for the election of directors or persons performing similar functions \n \n \n \n"
+                    },
+                    {
+                        "id": "2.2",
+                        "uuid": "3d5019a0-b119-1115-bf54-60a7e92a02a0",
+                        "type": "custmText",
+                        "similarity": 0.75,
+                        "content": "\"Agreement\" shall mean this Wholesale Roaming Resale Access Agreement together with the \nAnnexes attached hereto. \n"
+                    },
+                    {
+                        "id": "2.3",
+                        "uuid": "a029ec27-4d02-1c9a-99fb-f40fafeab15b",
+                        "type": "stdClause",
+                        "similarity": 0.85,
+                        "content": "\"Date of the Agreement\" shall mean the date as of which both Parties have signed the \nAgreement by their duly authorized representatives. \n"
+                    },
+                    {
+                        "id": "2.4",
+                        "uuid": "08b47b2b-069a-1164-b315-7da02ad75763",
+                        "type": "newText",
+                        "similarity": 0.08888888888888889,
+                        "content": "\u201cWholesale Roaming Resale Access\u201d shall have the meaning as defined in in Article 2 (2) q) of \nthe Roaming Regulation. \n"
+                    },
+                    {
+                        "id": "2.5",
+                        "uuid": "9501a15f-03bb-10c6-8d2a-6fef781fcf94",
+                        "type": "newText",
+                        "similarity": 0.06382978723404255,
+                        "content": "\u201cRegulated Roaming Services\u201d shall mean either or more of the following services : regulated \nroaming calls as defined in Article 2 (2) h) of the Roaming Regulation, regulated roaming SMS \nmessages as defined in Article 2 (2) k) of the Roaming Regulation, and regulated data roaming \nservices as defined in Article 2 (2) m) of the Roaming Regulation. \n"
+                    },
+                    {
+                        "id": "2.6",
+                        "uuid": "77769bc6-1d72-1299-a2ec-a6bf9a566670",
+                        "type": "newText",
+                        "similarity": 0.06779661016949153,
+                        "content": "\"Roaming Customer\" shall mean an end-user, either a person or legal entity, with a valid legal \nrelationship with Access Seeker using a GSM SIM (Subscriber Identity Module) and/or a GSM USIM \n(Universal Subscriber Identity Module), and identified by an EU MSISDN. \n"
+                    },
+                    {
+                        "id": "2.7",
+                        "uuid": "02f420a9-01c0-1cb3-b2cd-4d2383054f9f",
+                        "type": "newText",
+                        "similarity": 0.14285714285714285,
+                        "content": "\u201cRoaming Provider\u201d shall have the meaning as defined in Article 2 (2) a) of the Roaming \nRegulation. \n"
+                    },
+                    {
+                        "id": "2.8",
+                        "uuid": "37a9a28d-6942-169a-9c1d-a53df8630680",
+                        "type": "newText",
+                        "similarity": 0.0945945945945946,
+                        "content": "\u201cRoaming Regulation\u201d shall mean the Regulation (EU) No. 531/2012 of the European Parliament \nand of the Council of 13 June 2012 on roaming on public mobile communications networks within \nthe Union, O.J., L 17210 of 30 June 2012. \n"
+                    },
+                    {
+                        "id": "2.9",
+                        "uuid": "b9d31015-6f41-147d-93a5-5a0fa8cca1bd",
+                        "type": "newText",
+                        "similarity": 0.15151515151515152,
+                        "content": "\"PMN\" shall mean a network that complies with the definition of a GSM network as set out in the \nArticles of Association of the GSM Association (AA.16).1 \n"
+                    },
+                    {
+                        "id": "2.10",
+                        "uuid": "6813a4fc-3d4e-1b35-ac6e-6aacf9522268",
+                        "type": "newText",
+                        "similarity": 0.13043478260869565,
+                        "content": " \"Services\" shall mean the Basic Services and the Additional Services, as specified in Annex 2. \n"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "article": "Annexes",
+                "uuid": "e4001c58-1278-1499-8309-b28c9d383180",
+                "variables": [
+                    {
+                        "uuid": "4685b779-a68f-106b-8fda-415deef5c4e1",
+                        "sub-article": "3.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "a8b2b99f-0408-113e-8684-230145b158da",
+                        "sub-article": "3.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "3.1",
+                        "uuid": "979f1f59-25a8-19f0-86e9-f165ab43bfb0",
+                        "type": "custmText",
+                        "similarity": 0.7142857142857143,
+                        "content": "The Annexes are divided as set out in the Overview of the Annex Structure. \n"
+                    },
+                    {
+                        "id": "3.2",
+                        "uuid": "39f5dfa5-a892-1b16-bd8d-776074852f37",
+                        "type": "newText",
+                        "similarity": 0.0,
+                        "content": "The Annexes constitute an integral part of the Agreement. In case of discrepancy between \ndifferent parts of the Agreement the following order of interpretation shall be applied: \n1. the main body of this Agreement; \n2. the Annexes \n  \n  \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "article": "Starting Date",
+                "uuid": "5cea8b8e-250f-1f37-8e65-17cda9718ba8",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "4.1",
+                        "uuid": "4a1071a3-5380-165d-81c6-488462df90e2",
+                        "type": "stdClause",
+                        "similarity": 1.0,
+                        "content": "The actual commercial starting date for the Services shall be agreed between the Parties in \nwriting. \n"
+                    },
+                    {
+                        "id": "4.2",
+                        "uuid": "42623c96-c5be-1d32-8ce5-aa4bfd20d7d0",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "In the absence of such agreement, the actual commercial starting date for the Services will be 3 \nmonths from the Date of the Agreement, however subject to delays on the part of the Access \nSeeker. \n"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "article": "Duration of the Agreement",
+                "uuid": "f99382cb-8b97-10fb-8c13-cddb79ce7873",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "5.1",
+                        "uuid": "d513cb03-136c-1fa7-946e-fd9701925275",
+                        "type": "newText",
+                        "similarity": 0.2638888888888889,
+                        "content": "The Agreement comes into force on the Date of the Agreement and subject to the conditions \nof Articles 6, 18.2 and 19.1 shall remain in force for the duration agreed between the Parties. \n"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "article": "Termination of the Agreement",
+                "uuid": "45c87c9d-bd8e-1d21-af00-65fee99cb38a",
+                "variables": [
+                    {
+                        "uuid": "e07f23bb-6050-13b4-b11d-468dfb329d06",
+                        "sub-article": "6.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "35f4f63b-fc33-143f-a2e1-513d394e441c",
+                        "sub-article": "6.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "4ae60930-d801-1957-af1c-e7e7089182f3",
+                        "sub-article": "6.5",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "d745debc-4ec6-138e-a784-58f4f9419abd",
+                        "sub-article": "6.5",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "6.1",
+                        "uuid": "3b100448-1f63-1c1d-8a22-ac6e70cdf642",
+                        "type": "custmText",
+                        "similarity": 0.6049382716049383,
+                        "content": "In addition to the conditions of Articles 5.1, 16, 18.2, 19.1, the Agreement may be terminated as \nfollows: \n1. by mutual agreement of the Parties in writing subject to a prior notice of six (6) months; \nor \n2. by one of the Parties, with immediate effect, when the other Party is in material breach of \nthe Agreement and does not or is not capable of remedying such breach within sixty (60) \ndays of receipt of a written notice to such effect; \n3. by one of the Parties, with immediate effect, if the other Party becomes bankrupt or \ninsolvent or if that other Party enters into any composition or arrangement with its creditors \nand that other Party is not able to ensure performance of its obligations under the \nAgreement by a guarantee from a first class bank, payable on first written demand; \n4. immediately in the event a final order by the relevant governmental authority revoking or \ndenying renewal of the license(s) or permission to operate a Public Mobile Network(s) or \nany other license necessary to operate the Service(s) granted to the other Party, takes \neffect; \n5. by Orange, with immediate effect, in the event that Access Seeker fails to pay any \noutstanding invoice for any amount due under this Agreement or fails to constitute or re-\nconstitute a required financial guarantee, for a period of one (1) month as of the due date \nof the relevant invoice  or as of the obligation to constitute or re-constitute a financial \nguarantee, and such default of payment is not cured within two (2) weeks after the date of \nthe first written notice of default of payment or the notice inviting to constitute or re-\nconstitute the adequate financial guarantee by Orange, subject to sending a notice \ntermination with immediate effect to Access Seeker; and \n6. by either Party, with immediate effect, if the other Party ceases to carry out a substantial \npart of its business which is relevant to the performance of this Agreement. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
+                    },
+                    {
+                        "id": "6.2",
+                        "uuid": "28bc7db0-4d4a-1180-9053-9f7698ca00ad",
+                        "type": "newText",
+                        "similarity": 0.11494252873563218,
+                        "content": "The provisions in Article 6.1 are without prejudice to any other right or claim for compensation \nto which one of the Parties may be entitled to in the event of termination of this Agreement. \n \n \n \n"
+                    },
+                    {
+                        "id": "6.3",
+                        "uuid": "648dbf5a-e73e-15ac-8754-579a0accca2f",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "In the case of termination of this Agreement for any reason, either Party shall be entitled to \npayment for all services provided prior to such termination provided that a Party is entitled to \nrecover such expenses under the provisions of this Agreement. \n"
+                    },
+                    {
+                        "id": "6.4",
+                        "uuid": "9cb34f7d-c035-17e1-8a75-2b3615ee54db",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "The provisions of this Agreement which by their nature are determined to survive the \ntermination of this Agreement (including in particular but without limitation, Articles 16, 17, 23 and \n24), shall remain in full force and effect after the termination. \n"
+                    },
+                    {
+                        "id": "6.5",
+                        "uuid": "17a7e0e6-f446-1726-957b-93b915be5422",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "In the event of termination of this Agreement, Access Seeker will be responsible to inform its \nRoaming Customers of the consequences of the termination of the Agreement on the Regulated \nRoaming Services that it provides to its Roaming Customers. \n"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "article": "General obligations of Orange",
+                "uuid": "8bbce428-294d-11b9-a042-0334a0067dea",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "7.1",
+                        "uuid": "40f57d11-1312-4eea-9df6-27c4e1539f36",
+                        "type": "newText",
+                        "similarity": 0.07017543859649122,
+                        "content": "Orange shall provide to Access Seeker the Basic Services as described in Annex 2.1. Parties \ncan agree that Orange will provide Additional Services to be described in Annex 22. \n"
+                    },
+                    {
+                        "id": "7.2",
+                        "uuid": "b603d82f-6524-4e37-8813-99005dd48d12",
+                        "type": "newText",
+                        "similarity": 0.0156689123060681,
+                        "content": "Orange will use all reasonable endeavors to provide to Access Seeker an equivalent level of \nservice as that of Regulated Roaming Services offered to Orange Roaming Customers. \n"
+                    },
+                    {
+                        "id": "7.3",
+                        "uuid": "23de736a-e98b-4234-a693-129d61efb664",
+                        "type": "newText",
+                        "similarity": 0.03468823321214591,
+                        "content": "Due to its dependency on the network quality of its roaming partners, and to the nature of \nmobile communications the quality of which depends on several factors such as network coverage, \ninteroperability with mobile devices, geographic conditions etc., the obligation set out in Article 7.1 is \nmerely a best effort obligation. In the same vein, Orange bears no responsibility for the quality and \ncoverage of the mobile networks of its roaming partners. \n"
+                    },
+                    {
+                        "id": "7.4",
+                        "uuid": "6c419d86-4fca-489a-b8e5-96bd4ae492fa",
+                        "type": "newText",
+                        "similarity": 0.0976543333801171,
+                        "content": "Orange will at its own discretion conclude or terminate international roaming agreements with \nother mobile network operators. In case of relevant changes to Orange\u2019s roaming coverage, Orange \nwill inform the Access Seeker without delay. \n"
+                    },
+                    {
+                        "id": "7.5",
+                        "uuid": "01f3b4f6-8216-479d-9b15-db789f0350ac",
+                        "type": "newText",
+                        "similarity": 0.0009016670908792,
+                        "content": "Orange agrees to provide Access Seeker with all relevant information on faults or planned \nmaintenances of the network supporting the Services, obviously subject to the availability thereof \nwith respect to its roaming partners. \n"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "article": "General obligation of Access Seeker",
+                "uuid": "42ad1900-ca17-1497-8afe-1c185d354d75",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "8.1",
+                        "uuid": "3ca6d0cb-cc55-4663-ab7f-55a284a6978b",
+                        "type": "newText",
+                        "similarity": 0.0073448575488970,
+                        "content": "A request received from an Access Seeker should considered as reasonable if it contains the \nfollowing data : \ni. evidence that the requestor is authorized under its national legislation to provide \nRegulated Roaming Services; \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n \n \n \nii. traffic forecast for all roaming services applicable to the first 12 (twelve) months from the \ncommercial launch; \nIn addition to the data enclosed to the reasonable request the Requestor shall enclose the following \ndocuments : \ni. \nii. \niii. \niv. \nv. \nvi. \nwritten documents evidencing the capacity of the requestor to act as a personal data \nadministrator; \ndeclaration by the legal representatives of the requestor for the readiness of the \nrequestor to establish a bank guarantee; \na reference from the servicing bank of the Requestor confirming the Requestor\u2019s \nreputable bank record; \nwritten documents evidencing the absence of pending tax payments to the state; \nwritten documents evidencing the absence of pending payments to the insurance \nfunds; \ndescription of the current business of the Requestor \n"
+                    },
+                    {
+                        "id": "8.2",
+                        "uuid": "d18182cf-7e4a-4deb-b472-6f65228de8f1",
+                        "type": "newText",
+                        "similarity": 0.0572423584458571,
+                        "content": "Access Seeker will only use equipment, be it hardware, software, or other, which complies with: \ni. Orange\u2019s specifications, \nii. technical prerequisites for connecting with Orange\u2019s systems; \niii. recognized industry standards including but not limited to user\u2019s manuals and instructions provided \nby the relevant mobile device manufacturers, security standards allowing to prevent, inter alia, \nunauthorized access, etc. \n"
+                    },
+                    {
+                        "id": "8.3",
+                        "uuid": "683bf2bc-2604-4a2c-9e2f-471544afabc7",
+                        "type": "newText",
+                        "similarity": 0.016781468943221,
+                        "content": "Access Seeker will at any time hold the necessary regulatory authorizations and/or licenses \nallowing it to provide Regulated Roaming Services to its Roaming Customers, or any other services \nprovided in addition thereto, in the relevant countries of its activities. \n"
+                    },
+                    {
+                        "id": "8.4",
+                        "uuid": "82c72f30-0c9c-4e98-a3bb-9e8c0e7f4ced",
+                        "type": "newText",
+                        "similarity": 0.0786543571428431,
+                        "content": "When Access Seeker provides Regulated Roaming Services based on the Services, or any other \nservices provided in addition thereto, it will do so at its own expense, on its own behalf, and under \nits own trademarks, logos and brands. Unless explicitly agreed otherwise, Access Seeker will at all \ntimes refrain from referring in its relation with its Roaming Customers to Orange. \n"
+                    },
+                    {
+                        "id": "8.5",
+                        "uuid": "5a4f5fb0-cec1-410c-a378-40e69560ca84",
+                        "type": "newText",
+                        "similarity": 0.051428571428571,
+                        "content": "Access Seeker will only provide Regulated Roaming Services to Roaming Customers which are \nend-users. Access Seeker will at all times refrain from reselling on a wholesale basis the Services \noffered by Orange under this Agreement to a third party. \n"
+                    },
+                    {
+                        "id": "8.6",
+                        "uuid": "330f640e-d062-4638-b028-94422b39c2f2",
+                        "type": "newText",
+                        "similarity": 0.0471428571428571,
+                        "content": "Access Seeker shall be responsible for the billing, invoicing and payment collection of all \ncharges due to it by its Roaming Customers. \n"
+                    },
+                    {
+                        "id": "8.7",
+                        "uuid": "0f4f66d0-6059-4596-9132-02dfeb3aaa75",
+                        "type": "newText",
+                        "similarity": 0.0671428571428571,
+                        "content": "Notwithstanding Article 8.5, Access Seeker shall ensure that the contracts with its Roaming \nCustomers allow for compliance with this Agreement, and particularly with the obligations and \ninstructions imposed on the Access Seeker in the context of this Agreement, including but not \nlimited to Article 9.2 \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \nAccess Seeker agrees that unused SIM-cards will be deactivated according to the rules set out in \nAnnex 11. \n \n \n \nAccess Seeker will also ensure compliance with reasonable guidelines from Orange as regards to \nrestriction of access to Access Seeker\u2019s Roaming Customers who are in default of payment, and \nAccess Seeker will also ensure that the contracts with its Roaming Customers allow for compliance \nwith such guidelines. \n"
+                    },
+                    {
+                        "id": "8.8",
+                        "uuid": "b0318d81-a61a-4d83-8d06-187c076a1483",
+                        "type": "newText",
+                        "similarity": 0.0857128571428571,
+                        "content": "Access Seeker will pay the fees for the Services, as set out in Annex 8. \n"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "article": "Fincial Conditions",
+                "uuid": "fce06621-630e-12b4-8492-d0f0dff0050f",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "9.1",
+                        "uuid": "f7e29180-19e6-475e-8a34-05f0ef2c2c81",
+                        "type": "custmText",
+                        "similarity": 0.75,
+                        "content": "Fees \nThe Tariffs for the Basic Services are set out in Annex 8. \nAdditional Services provided by Orange on request of Access Seeker will be charged following a \npricing to be agreed between Parties. \n9.2 Financial guarantee \nIn order to guarantee payment by Access Seekers according to Article"
+                    },
+                    {
+                        "id": "9.2",
+                        "uuid": "5056d4d3-2a8e-4a5a-99b6-ccd00e4699c6",
+                        "type": "custmText",
+                        "similarity": 0.7557128571428571,
+                        "content": "Financial guarantee \nIn order to guarantee payment by Access Seekers according to Article Orange will require an \nirrevocable and unconditional bank guarantee issued by a reputable bank or financial institution \nestablished in the EU. That bank guarantee will be issued for an amount equal to an estimate of \nthree months of net amount due by Access Seeker. If traffic volumes change, Orange is entitled to \nrequest the bank guarantee to be changed accordingly. \nFurther details about the bank guarantee are included in Annex 3. \n"
+                    },
+                    {
+                        "id": "9.3",
+                        "uuid": "bdc6ae7b-a554-43e0-87ad-405dca3de794",
+                        "type": "custmText",
+                        "similarity": 0.7557144757987521,
+                        "content": "Billing and Accounting \nThe billing, invoicing and payments for the Offer provided under this Agreement shall be made in \naccordance with the procedures and the conditions set forth in Annex 3. \nIn order to ensure the proper performance and integrity of the billing process, the Parties will \ncomply with the rules set forth in Annex 3 and will, in particular, record, store and exchange all \nrelevant data and information as provided in these rules. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "article": "Fraud",
+                "uuid": "ff021995-7fc4-15a7-81ff-d3e022e95b3c",
+                "variables": [
+                    {
+                        "uuid": "c14dd62c-ae54-14ac-a71b-1b13a27b9042",
+                        "sub-article": "10.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "b9332283-2066-166b-bca8-1d0b6bf6ee89",
+                        "sub-article": "10.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "b7848215-f0e1-1f11-974d-01437bf0b5ad",
+                        "sub-article": "10.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "87cab58b-6918-17e3-b5e9-68b3cff16752",
+                        "sub-article": "10.4",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "10.1",
+                        "uuid": "a52aaf83-70d1-1fc8-8021-9bb6bb70d6cb",
+                        "type": "custmText",
+                        "similarity": 0.7333333333333333,
+                        "content": "arties agree to co-operate in order to avoid fraudulent behavior, and particularly to monitor \nAccess Seeker\u2019s Roaming Customers\u2019 usage on fraud potential. \n"
+                    },
+                    {
+                        "id": "10.2",
+                        "uuid": "2da2af6d-6ab8-1c4a-b2fd-1d6d9777b641",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "raudulent usage is agreed to exist particularly (but not exclusively): \n10.2.1 In case SIM-Cards of Access Seeker\u2019s Roaming Customers are used for offering \ntelecommunication services, switching or interconnection services to 3rd parties, \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n \n \n \n10.2.2 In case SIM-Cards of Access Seeker\u2019s Roaming Customers are used in GSM-\ngateways or in SIM-boxes used for routing mobile traffic; and/or \n10.2.3 In case SIM-Cards of Access Seeker\u2019s Roaming Customers are used not for \npurposes of personal communications but for commercial reasons (e.g. to generate interconnection \nfees). \n"
+                    },
+                    {
+                        "id": "10.3",
+                        "uuid": "d2aa80aa-b582-16c8-a2c4-ac8d69cbef18",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "f a Party identifies fraudulent usage on SIM-Cards of Access Seeker\u2019s Roaming Customers, it \nshall immediately inform the other Party. Access Seeker is obliged to immediately deactivate the \nrelevant SIM-Cards following Orange\u2019s instructions and guidance as will be defined in Annex 11. \n"
+                    },
+                    {
+                        "id": "10.4",
+                        "uuid": "e281c6f6-e7ed-1b5a-bb11-08608c7c20bd",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "n addition to Article 10.3, Orange reserves the right to deactivate SIMCards of Access Seeker\u2019s \nRoaming Customers on which fraudulent usage is identified or reasonably suspected, in order to \nminimize commercial losses and/or adverse effects for Orange\u2019s network availability/capacity. \n"
+                    },
+                    {
+                        "id": "10.5",
+                        "uuid": "1ad83d5a-1d68-1755-86e5-47923327176d",
+                        "type": "newText",
+                        "similarity": 0,
+                        "content": "ny other applicable conditions and/or obligations relating to fraud will be defined in Annex 6. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "article": "Customer Care",
+                "uuid": "176eaa01-73ab-1d6e-a035-ecc72dd5b176",
+                "variables": [
+                    {
+                        "uuid": "94ba27aa-4e9d-142c-8793-6294c4ca3f81",
+                        "sub-article": "11.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "48cbe324-4148-1ba0-986d-cc7b959900bf",
+                        "sub-article": "11.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "11.1",
+                        "uuid": "1d3c3f3e-9b68-1252-9f11-9b912fc62eea",
+                        "type": "custmText",
+                        "similarity": 0.775,
+                        "content": "Access Seeker shall be responsible for establishing and managing the relationships with its \nRoaming Customers. Except as expressly stated otherwise in writing in this Agreement, Orange shall \nnot have any direct contact with Access Seeker\u2019s Roaming Customer. \n"
+                    },
+                    {
+                        "id": "11.2",
+                        "uuid": "4376c227-fc0c-1e4c-929f-26e310ae95dd",
+                        "type": "custmText",
+                        "similarity": 0.5728643216080402,
+                        "content": "Access Seeker shall provide full First Tier Support to its Roaming Customers, as will be \ndescribed in Annex 10. \n"
+                    },
+                    {
+                        "id": "11.3",
+                        "uuid": "dd42f063-bb1c-1b53-b1f3-659e975f3845",
+                        "type": "custmText",
+                        "similarity": 0.6111111111111112,
+                        "content": "Orange will provide Second Tier Support to Access Seeker, against fair and reasonable tariffs, \nas will be defined in Annex 10. \n"
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "article": "Data Privacy",
+                "uuid": "50d0f8e4-00f1-1bca-96c2-e628bd4487ff",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "12.1",
+                        "uuid": "effe6e63-2f0e-1dc8-9b12-4b3e8b666563",
+                        "type": "custmText",
+                        "similarity": 0.4333333333333334,
+                        "content": "Access Seeker will be responsible to handle requests from competent authorities concerning \nits Roaming Customers in the area of emergency & legal intercept, according to applicable \nlegislation and regulation. However, Orange will support Access Seeker to handle such requests if \ndue to the nature of the wholesale relationship, Access Seeker is technically not able to provide the \nrequested information by itself. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "article": "Data Privacy",
+                "uuid": "c6fd4477-42dc-1a38-aa10-f9b50a9f5a5e",
+                "variables": [
+                    {
+                        "uuid": "c7e100b0-112b-1d54-a7be-2a0666d5d56b",
+                        "sub-article": "13.2",
+                        "type": "text",
+                        "verify": "Operator A",
+                        "hint": "EU/EEA"
+                    },
+                    {
+                        "uuid": "9dd57c66-0a6b-11f3-b1d7-c20cf3fc46ac",
+                        "sub-article": "13.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "381ad003-415a-1608-be91-8b37d4ed62fc",
+                        "sub-article": "13.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "5cb34661-475f-1214-894a-9a8b448f9fb6",
+                        "sub-article": "13.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "13.1",
+                        "uuid": "5ad232a3-6a51-1624-843b-9d3b37cf316c",
+                        "type": "custmText",
+                        "similarity": 0.5263157894736842,
+                        "content": "Each Party\u2019s obligations hereunder to transfer information to the other Party shall not apply to \nthe extent that a Party is prohibited from doing so by the regulations and laws of its own country \napplicable to IR and/or data protection. \n"
+                    },
+                    {
+                        "id": "13.2",
+                        "uuid": "2a820ffa-1e11-1471-92cb-0ea0d3030d82",
+                        "type": "custmText",
+                        "similarity": 0.32,
+                        "content": "Each Party shall inform its customers that during roaming, the storage, treatment and transfer \nof their personal data may be subject to regulation different from the regulation in their own country. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
+                    },
+                    {
+                        "id": "13.3",
+                        "uuid": "635d2830-e7f0-1743-ab02-b71de15ec125",
+                        "type": "newText",
+                        "similarity": 0.14285714285714285,
+                        "content": "The Parties confirm that they shall comply with the Data Privacy Regulations/Laws applicable in \nthe respective countries in which they act as data controller or data processor, and each Party shall \nindemnify and hold harmless the other party from and against all costs or expenses of any kind \narising out of any claim or demand brought by any person, entity or authority as a result of any \nbreach or alleged breach of such applicable the Data Privacy Regulations/Laws. \n \n \n \n14. SLA\n14. SLA  \n14. SLA\n14. SLA\n14.1 Without prejudice to Article 7.4, specific service levels are to be agreed between Orange and \nAccess Seeker and will be set out in Annex 7. \n15. Forecasts\n15. Forecasts  \n15. Forecasts\n15. Forecasts\n15.1 The Access Seeker shall comply with its obligations to give forecasts in the formats & \nfrequencies set out in Annex 9. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "article": "Liability of the Parties",
+                "uuid": "2048949d-6310-16d4-a6e5-aca33b820baa",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "14.1",
+                        "uuid": "ac84c387-2f31-1fd7-b35f-f25ea240f54a",
+                        "type": "custmText",
+                        "similarity": 0.4083333333333333,
+                        "content": "Without prejudice to Article 7.4, specific service levels are to be agreed between Orange and \nAccess Seeker and will be set out in Annex 7. \n"
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "article": "Suspension of Services",
+                "uuid": "176a3535-be26-1d77-adbb-0431fbf561ac",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "15.1",
+                        "uuid": "ccd707a5-3dcb-18a3-a47b-ab3be5bdc031",
+                        "type": "custmText",
+                        "similarity": 0.5353535353535354,
+                        "content": "The Access Seeker shall comply with its obligations to give forecasts in the formats & \nfrequencies set out in Annex 9. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "article": "Confidentiality",
+                "uuid": "424222dd-ab88-137b-9327-35ab2be7a49b",
+                "variables": [
+                    {
+                        "uuid": "5c2244c0-e28b-1a00-b54a-16274176c1af",
+                        "sub-article": "16.2",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "4f3e7fb6-8432-1563-a90e-fe13ae2cfd4d",
+                        "sub-article": "16.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "03c51211-59eb-1c09-ba40-97fd52b7b98f",
+                        "sub-article": "16.5",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "9b0f06a4-f250-1005-9824-16b715815303",
+                        "sub-article": "16.5",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "16.1",
+                        "uuid": "d115df5e-478e-1c01-a765-cb3d66b79676",
+                        "type": "custmText",
+                        "similarity": 0.7413793103448276,
+                        "content": "onfidential Information: \nFor the purpose of the Agreement, Confidential Information shall mean any information, either in \nwriting or oral, communicated by one Party (or from any of its Associated Companies) (the \n\u201cDisclosing Party\u201d) to the other Party (or to its employees and advisors) (the \u201cReceiving Party\u201d), or \nobtained by the Receiving Party in connection with the performance of this Agreement, including the \ncontent of this Agreement, except for information which is: \nin or passed into the public domain other than by breach of this Article or any other obligation of \n- \nconfidence; or \n- known to a receiving Party prior to the disclosure by a disclosing Party; or - disclosed to a \nreceiving Party without restriction by a third party having the full right to disclose; or \nindependently developed by a receiving Party to whom no disclosure of confidential Information \n- \nrelevant to such Information has been made. \n"
+                    },
+                    {
+                        "id": "16.2",
+                        "uuid": "7877b03d-b8bb-1d4b-abd0-e247eda8a144",
+                        "type": "stdClause",
+                        "similarity": 0.8113207547169812,
+                        "content": "on-disclosure : \n- The Receiving Party shall refrain from disclosing the Confidential Information to any third party and \nshall use the Confidential Information only for the performance of this Agreement. In addition, the \nReceiving Party shall take any reasonable measures to ensure the confidentiality of this information. \nIn any event, the Receiving Party shall use efforts at least commensurate with those that such Party \nuses for protecting the confidentiality of its own Confidential Information. \n- Either Party shall be only allowed to disclose Confidential Information to third parties provided it \nhas obtained the prior written consent of the other Party. Any such written consent will be given \ncase-by-case upon a discretionary basis. Such written consent shall only be valid and enforceable \nfor the specific information listed therein. The written consent to disclose Confidential Information \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \nshall identify the third party or parties to which the information can be disclosed and shall set forth \nthe terms and conditions to which such disclosure is subject. \n \n \n \n- The Disclosing Party shall remain free to disclose to any third party Confidential Information \ndisclosed to the Receiving Party. \n"
+                    },
+                    {
+                        "id": "16.3",
+                        "uuid": "fe6e4e1f-37ce-1a47-9811-200e857bd608",
+                        "type": "newText",
+                        "similarity": 0.1564625850340136,
+                        "content": "isclosure to Personnel, Advisors or Suppliers: \n- A Receiving Party shall disclose the Confidential Information received from the other only to its \ndirectors, employees, suppliers, agents, advisors or contractors who have a need to know such \ninformation. Such Party shall ensure that such directors, employees, suppliers, agents, advisors or \ncontractors are bound by the obligations of confidentiality in respect of the Confidential Information \nthat are set forth in this Agreement. \n- Notwithstanding anything to the contrary in the foregoing provisions, the Receiving Party shall not \ndisclose or use the Confidential Information, with the aim of providing commercial advantage to \nbusiness divisions of the Receiving Party, or business divisions of the Receiving Party\u2019s Associated \nCompanies, which are engaged in activities competing with the other Party. \n- Either Party may disclose Confidential Information that they received from the other Party, to their \nsuppliers or contractors provided and to the extent that such suppliers or contractors effectively \nrequire to have access to such information in order to supply the relevant goods and services. The \nParties shall do whatever is necessary in order to impose on the suppliers or contractors which \nhave obtained access to Confidential Information obligations to keep this information confidential, \nwhich are at least equivalent to the obligations imposed under this Agreement. \n- Each Party shall be liable under the limitations provided in Article 17 for any unauthorized \ndisclosure or use of the Confidential Information by its directors, employees, suppliers, agents, \nadvisors or contractors. The Party responsible for an unauthorized disclosure or use of the \nConfidential Information shall, in any event, take any reasonable measures (including but not limited \nto court proceedings) to mitigate the damage resulting there from. \n"
+                    },
+                    {
+                        "id": "16.4",
+                        "uuid": "fe26ade8-6b97-1d9f-b13c-71df91d99eb5",
+                        "type": "newText",
+                        "similarity": 0.10869565217391304,
+                        "content": "isclosure required by law \nIn cases where the communication of Confidential Information is required by law, or by a court or \nany competent authority (including, in particular, a national regulatory or competition authority), \nacting within the limits of its competence. In such cases, the Party intending to make the \ncommunication must inform the other Party of the relevant communication that it intends to make \nprior to making such communication in order to allow the other Party to submit its observations in \nthat respect and to take all reasonable measures for protecting its interests. If such disclosure is \nmade, the disclosing party will ensure that the attention of the authority is drawn to the fact that the \nexistence and the content of this Settlement Agreement are confidential \n"
+                    },
+                    {
+                        "id": "16.5",
+                        "uuid": "712ddb7c-2475-1625-aae3-1056272fccfd",
+                        "type": "newText",
+                        "similarity": 0.10833333333333334,
+                        "content": "urvival \nArticle 16 shall survive the termination of the Agreement for a period of ten (10) years but shall not \nin any way limit or restrict a disclosing Party's use of its own confidential Information. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n17. 17. 17. 1"
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "article": "Liability",
+                "uuid": "e65e0e4c-3742-1bf3-ae6b-fd9d476791f2",
+                "variables": [
+                    {
+                        "uuid": "6b391c38-c6a1-17d7-a7b5-44f099a70d62",
+                        "sub-article": "17.4",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "17.1",
+                        "uuid": "e40a18fb-9596-1ae1-b9ac-2436293c7450",
+                        "type": "newText",
+                        "similarity": 0.2898550724637681,
+                        "content": "f either Party is held liable to the other Party (including such other Party\u2019s employee(s) and \ncontractor(s)) under this Agreement, that liability shall be limited to the following: \ni. if such liability results from any personal injury or death incurred as a direct result of the \nnon-performance of the relevant Party\u2019s obligations under this Agreement, then such liability \nshall be only subject to the limitation provided in article "
+                    },
+                    {
+                        "id": "17.2",
+                        "uuid": "cab799ae-4108-1a30-a90a-7b18be4f47ec",
+                        "type": "newText",
+                        "similarity": 0.12,
+                        "content": "\nii. if such liability results from any conduct attributable to the relevant Party, which is, under \nLuxembourgish law, characterized as being gross negligence (faute lourde \u2013 zware fout) or \nintentional negligence (dol \u2013 bedrog), then such liability shall be subject to no limitation, \nexcept as provided by law; \niii. if such liability results from any material damage, other than those referred to above, \narising out of or in any way connected with the performance by the relevant Party of this \nAgreement or the breach of such Party\u2019s obligations under this Agreement, then the total \namount which can be recovered from such Party for all acts or omissions shall, in no event, \nexceed an aggregate amount equal to EUR 250.000, subject to the limitation provided in \narticle 17.2. \n17.2 Neither Party shall be liable for indirect damages (pure and consequential), including without \nlimitation loss of profit, loss of revenue, loss of data, loss of use, loss of savings, loss of goodwill, \ninterruption of business or claim by third parties \n"
+                    },
+                    {
+                        "id": "17.3",
+                        "uuid": "9d628039-7a90-143d-b937-048a8a90e4ed",
+                        "type": "newText",
+                        "similarity": 0.18181818181818182,
+                        "content": "ccess Seeker will be responsible for and will indemnify any claim for damages issued by its \nRoaming Customer(s) in connection with the performance of this Agreement. \n"
+                    },
+                    {
+                        "id": "17.4",
+                        "uuid": "fec0284f-0eea-142c-8353-0b3b7afd711b",
+                        "type": "newText",
+                        "similarity": 0.09090909090909091,
+                        "content": "ccess Seeker will indemnify Orange against any claim and/or for any loss related to any illegal \nuse, or any use for illegal purpose(s), or any use which is non-compliant with this Agreement, of the \nServices or the Regulated Roaming Services based thereon, by its Roaming Customers. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "article": "Suspension of Services",
+                "uuid": "9587aacc-acdf-1626-9fc6-5c65abad4000",
+                "variables": [
+                    {
+                        "uuid": "d562f994-5261-1454-b821-372e2fe1fda8",
+                        "sub-article": "18.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "d210c0de-d6fb-1628-a236-61176aad618d",
+                        "sub-article": "18.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "f31178e8-fc45-1c99-84e3-dea2e219ce70",
+                        "sub-article": "18.2",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "ac42c23b-19f1-1d54-9e59-2f67da665c62",
+                        "sub-article": "18.3",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    },
+                    {
+                        "uuid": "d479ba1b-369f-1d3f-9677-aae24560cd9c",
+                        "sub-article": "18.4",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "18.1",
+                        "uuid": "aba2e611-21c3-111f-858e-b2e26bf09621",
+                        "type": "custmText",
+                        "similarity": 0.4896907216494845,
+                        "content": "In addition to Article 10.4, Orange may without liability suspend all or any of its Services in \ncircumstances where it would suspend equivalent services to its own customers, including but not \nlimited to: \n1. in the event of emergency; \n2. if Orange has the right to terminate the Agreement; \n3. when Access Seeker is in material breach of the Agreement and does not or is not \ncapable of remedying such breach within fifteen (15) days of receipt of a written notice to \nsuch effect; \n4. if Access Seeker\u2019s Roaming Customers use the Regulated Roaming Services offered by \nAccess Seeker in a manner which is contrary to applicable laws or regulations and if Access \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n \n \n \nSeekers fails to take appropriate measures in order to remedy to the situation within a \nperiod of five (5) working days from the sending of notice by Orange or shorter if the \ncircumstances of the case justify this; \n5. if Access Seeker fails to pay any outstanding invoice due under this Agreement \nalternatively fails to constitute or re-constitute a required financial guarantee, for a period of \none (1) month as of the due date of the relevant invoice respectively obligation to constitute \nor reconstitute a financial guarantee, subject to sending a notice to Access Seeker; \n6. in the event that traffic volumes differ significantly from predicted volumes and the Access \nSeeker fails to provide an update of the Bank guarantee according to Article 9.2; or \n7. in cases of maintenance or enhancement of the Orange network without prejudice to \nArticle 7.4; \n"
+                    },
+                    {
+                        "id": "18.2",
+                        "uuid": "2ed35e84-1b51-1649-be41-8562731a533a",
+                        "type": "custmText",
+                        "similarity": 0.7073170731707317,
+                        "content": "In case of a proposed suspension of the Services, Orange shall use commercially reasonable \nefforts to give 5-days written notice to Access Seeker prior to the suspension taking effect. If the \nsuspension continues for more than three (3) months, Access Seeker shall have the right to \nterminate the Agreement with immediate effect subject to written notice. \n"
+                    },
+                    {
+                        "id": "18.3",
+                        "uuid": "12cc1db2-0267-1798-9c98-7556c792a3c4",
+                        "type": "custmText",
+                        "similarity": 0.5921052631578947,
+                        "content": "Access Seeker has the right at any time, for technical reasons, without liability but upon \ndetailed written notice to Orange, to suspend access to the Services to its Roaming Customers. \nAlternatively, if it is technically more practicable, Access Seeker may require Orange to suspend all \nof its Services to Roaming Customers of Access Seeker. Orange shall use commercially reasonable \nefforts to comply with such requirement within seven (7) calendar days after receipt of the said \nnotice. \n"
+                    },
+                    {
+                        "id": "18.4",
+                        "uuid": "dfbf1325-c1ef-1145-949e-9b3689dc025c",
+                        "type": "custmText",
+                        "similarity": 0.6060606060606061,
+                        "content": "The Parties agree that the suspension described in Article 18.3 shall be removed as soon as \nthe technical reason for the suspension has been overcome by Orange or Access Seeker as the \ncase may be. \n1"
+                    }
+                ]
+            },
+            {
+                "id": 19,
+                "article": "Force Majeure",
+                "uuid": "fe03f191-2ead-1902-a99b-d3a00bc35f3e",
+                "variables": [
+                    {
+                        "uuid": "134c4d70-91e9-1e55-bd76-2c5129012812",
+                        "sub-article": "19.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "16e079d7-da0c-1120-9a24-0511e682937d",
+                        "sub-article": "19.1",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "19.1",
+                        "uuid": "88993dd5-3d6d-1fe5-b353-233bf14e8056",
+                        "type": "custmText",
+                        "similarity": 0.7419354838709677,
+                        "content": "Non-performance of either Party\u2019s obligations pursuant to the Agreement or delay in \nperforming same (except with respect to the payment of charges applicable hereunder) shall not \nconstitute a breach of the Agreement if, and for as long as, it is due to a force majeure event, \nincluding, but not being limited to, governmental action, or requirement of regulatory authority, \nlockouts, strikes, shortage of transportation, war, rebellion or other military action, fire, flood, natural \ncatastrophes, or any other unforeseeable obstacles that a Party is not able to overcome with \nreasonable efforts, or non-performance of obligations by a sub-contractor to a Party pursuant to any \nof the aforementioned reasons. \nThe Party prevented from fulfilling its obligations shall once becoming aware of such event inform \nthe other Party in writing of such force majeure event as soon as possible. If the force majeure \nevent continues for more than six (6) months, either Party shall have the right to terminate the \nAgreement with immediate effect by written notice. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
+                    },
+                    {
+                        "id": "19.2",
+                        "uuid": "a4a1a824-b3e1-1c73-b564-5daa445a8d26",
+                        "type": "custmText",
+                        "similarity": 0.41397849462365593,
+                        "content": "If the affected Party fails to inform the other Party of the occurrence of a force majeure event \nas set forth in Article 19.1 above, then such Party thereafter shall not be entitled to refer such events \nto force majeure as a reason for non-fulfillment. \n \n \n \nThis obligation does not apply if the force majeure event is known by both Parties or the affected \nParty is unable to inform the other Party due to the force majeure event. \n"
+                    }
+                ]
+            },
+            {
+                "id": 20,
+                "article": "Miscellaneous",
+                "uuid": "7c53e0c3-76c8-17b0-bb32-df485a27fd96",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "20.1",
+                        "uuid": "593b8459-3f14-13ed-ad0f-a6328b090334",
+                        "type": "custmText",
+                        "similarity": 0.5148514851485149,
+                        "content": "Each of the Party may sub-contract or delegate any or all obligations under this Agreement to \nan appointed supplier or subcontractor. In such a case the Party appointing a delegate or a sub-\ncontractor will remain responsible of the execution of the present Agreement. \n"
+                    },
+                    {
+                        "id": "20.2",
+                        "uuid": "baf75593-c859-166c-916f-014de0f9e2e4",
+                        "type": "custmText",
+                        "similarity": 0.7307692307692307,
+                        "content": "Except as provided in article 20.1, each Party may not assign its rights & obligations under the \nFramework Agreement without the prior written consent of the other Party, such consent not to be \nunreasonably withheld or delayed. \n2"
+                    }
+                ]
+            },
+            {
+                "id": 21,
+                "article": "Miscellaneous",
+                "uuid": "54cdbd0b-085d-13ba-9ef9-7bc50b3ba227",
+                "variables": [
+                    {
+                        "uuid": "986c6631-c066-1e75-8dbf-fa81a7181b51",
+                        "sub-article": "21.5",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    },
+                    {
+                        "uuid": "f8d1266d-02ee-1eee-80ee-52c6a9354421",
+                        "sub-article": "21.5",
+                        "type": "text",
+                        "verify": "Operator B",
+                        "hint": "Orange"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "21.1",
+                        "uuid": "62ed0135-8265-1f25-8ca4-8a55724c6c82",
+                        "type": "newText",
+                        "similarity": 0.10810810810810811,
+                        "content": "This agreement including the attached Annexes and Appendixes represents the entire \nagreement between the Parties on the subject matters covered by this Agreement and shall be \ndeemed to supersede and exclude all other agreements, arrangements, representations, \nunderstandings or other communications, whether written or oral, between the Parties, other than a \nvariation or modification entered into in accordance with the relevant provisions of this Agreement. \n"
+                    },
+                    {
+                        "id": "21.2",
+                        "uuid": "a7b10a02-e57c-15a8-935a-dd3c2b90c00a",
+                        "type": "newText",
+                        "similarity": 0.11764705882352941,
+                        "content": "The Parties acknowledge that this Agreement is to be executed in the English language. If \nconsidered necessary by one of the Parties, that Party shall at its own costs prepare a translation in \nDutch/French and/or English of this Agreement for its convenience. In case of inconsistencies or \ndifference in interpretation of any provisions of this Agreement the English executed version shall \nprevail. In case of litigation, the parties renounce to request a French or Dutch translation of the \nagreement from each other \n"
+                    },
+                    {
+                        "id": "21.3",
+                        "uuid": "3fa843d7-d1e3-1edc-8f8a-dcae05a40a76",
+                        "type": "newText",
+                        "similarity": 0.19607843137254902,
+                        "content": "The headings of the Agreement are for the convenience of reference only and shall in no way \nlimit or affect the meaning or interpretation of the provisions of the Agreement \n"
+                    },
+                    {
+                        "id": "21.4",
+                        "uuid": "dec51a19-3ef3-17e4-9e40-2292f532d815",
+                        "type": "newText",
+                        "similarity": 0.2077922077922078,
+                        "content": "Failure by any Party at any time or times to require performance of any provisions of the \nAgreement shall in no manner affect its rights to enforce the same, and the waiver by any Party of \nany breach of any provisions of the Agreement shall not be construed to be a waiver by such Party \nof any succeeding breach of such provision or waiver by such Party of any breach of any other \nprovision hereof. No waiver shall be valid unless it is in writing and signed on behalf of the Party \nmaking the waiver. \n"
+                    },
+                    {
+                        "id": "21.5",
+                        "uuid": "89f72ae9-f51a-1ad4-a3de-a4a126f42eaa",
+                        "type": "newText",
+                        "similarity": 0.06060606060606061,
+                        "content": "If any part of the Agreement or any Annex hereto is held to be invalid or unenforceable, such \ndetermination shall not invalidate any other provision of the Agreement or Annexes hereto; and the \nParties shall attempt, through negotiations in good faith, to replace any part of the Agreement or \nAnnexes hereto so held to be invalid or unenforceable. The failure of the Parties to agree on such \nreplacement shall not affect the validity of the remaining parts of the Agreement \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
+                    },
+                    {
+                        "id": "21.6",
+                        "uuid": "3a10a3b2-a4c6-1b03-bc41-9ddff5994010",
+                        "type": "newText",
+                        "similarity": 0.1,
+                        "content": "All notices, information and communications required under the Agreement shall be given as \ndescribed in Annex 1. \n \n \n \n"
+                    },
+                    {
+                        "id": "21.7",
+                        "uuid": "015ca145-f085-15b1-8a72-a0c2b5277fb5",
+                        "type": "newText",
+                        "similarity": 0.07272727272727272,
+                        "content": "Except as expressly provided otherwise in this Agreement, software or Intellectual Property \nRights shall remain the property of the Party holding the same and nothing in this Agreement shall \nbe deemed to confer any assignment of the Intellectual Property Rights of one Party to the other \nParty. \n"
+                    },
+                    {
+                        "id": "21.8",
+                        "uuid": "145d754d-16fd-17d2-a333-b9768f8c37c2",
+                        "type": "newText",
+                        "similarity": 0.13142857142857142,
+                        "content": "Any amendments or modifications to this Agreement, including an inclusion or suppression of \na Service Description, shall only be valid if duly agreed upon in writing by the respective \nrepresentatives of the Parties. \n22. Compliance  with Laws and Regulatory requirements\n"
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "article": "Compliance with Laws and Regulatory requirements",
+                "uuid": "8cc5decd-487d-1023-9486-a91303663c77",
+                "variables": [
+                    {
+                        "uuid": "986c6631-c066-1e75-8dbf-fa81a7181b51",
+                        "sub-article": "22.1",
+                        "type": "text",
+                        "verify": "date",
+                        "hint": "01/01/2013"
+                    }
+                ],
+                "sub-articles": [
+                    {
+                        "id": "22.1",
+                        "uuid": "aac1c760-8188-1066-be81-f8c9baa2572b",
+                        "type": "newText",
+                        "similarity": 0.10810810810810811,
+                        "content": "The commitment of the Parties hereto shall be subject to all applicable laws and/or regulatory \nrequirements, present and future, of any governmental or regulatory authority having jurisdiction \nover the Parties hereto, as well as any valid order of a court of competent jurisdiction. \n"
+                    },
+                    {
+                        "id": "22.2",
+                        "uuid": "aac1c760-8188-1066-be81-f8c9baa2572b",
+                        "type": "newText",
+                        "similarity": 0.00139843214080541,
+                        "content": "Access Seeker shall comply with all applicable laws and regulations in the execution of this \nAgreement and the provision of the Regulated Roaming Services to its Roaming Customers, and of \nany services offered in addition to these same Roaming Customers. Access Seeker shall also \nimpose in its contracts with its Roaming Customers, compliance with applicable laws and \nregulations by the Roaming Customers who purchase its Regulated Roaming Services and other \nservices offered in addition thereto. \n"
+                    },
+                    {
+                        "id": "22.3",
+                        "uuid": "aac1c760-8188-1066-be81-f8c9baa2572b",
+                        "type": "newText",
+                        "similarity": 0.12310361816593921,
+                        "content": "The Parties acknowledge the importance of combating and preventing bribery and to that end \nboth Parties agree to comply fully with all applicable laws, regulations and sanctions relating to anti-\nbribery and anti-corruption. \n2"
+                    }
+                ]
+            },
+            {
+                "id": 23,
+                "article": "Choice of Law",
+                "uuid": "152faa56-ce66-13b3-977b-2af9450fd42c",
+                "variables": [],
+                "sub-articles": [
+                    {
+                        "id": "23.1",
+                        "uuid": "3aec6f48-5a80-1157-b319-8d00c285742e",
+                        "type": "newText",
+                        "similarity": 0.10810810810810811,
+                        "content": "The Agreement and any matters relating hereto shall be governed by and construed in \naccordance with Swiss law. \n2"
+                    }
+                ]
+            }
+        ]
+    }
+]

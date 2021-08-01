@@ -1,10 +1,20 @@
-# [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://mentorship.lfx.linuxfoundation.org/project/d8a154c6-41fb-4733-b3c8-df37796e7fa3)
-### How to use:
-1. Clone repository
-2. Create environmental variables file based on .env.example (~/NLP-DLT/network)
+# [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
+
+## General Architecture
+![alt text](https://github.com/sfl0r3nz05/LogMonitoringHFB/blob/main/images/LogMonitoringHFB.png)
+
+## Set up 🙂
+1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
     - Updating access keys
     - Updating path of pdf file
     - Updating path of JSON file
+
+## How to use:
+1. Clone repository
+2. Start: docker-compose up -d
+4. Stop: docker-compose stop
+5. Down: docker-compose down
+
 3. Deploy docker-compose:
     - cd ~/NLP-DLT/network
     - docker-compose up -d
