@@ -1,6 +1,6 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
-## General Architecture
+## General Architecture 🤖
 ![alt text](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/gralArch.png)
 
 ## Set up 🙂
