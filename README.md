@@ -1,15 +1,16 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
 ## Set up 🙂
-1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
-2. Obtain access keys from AWS E.g.:
+1. Clone the repository
+2. Create an environmental variables file based on .env.example (~/NLP-DLT/network)
+3. Obtain access keys from AWS E.g.:
     <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/accessKey.png" width="790" height="350">
     - Update the environment variable AWS_ACCESS_KEY_ID
     - Update the environment variable AWS_SECRET_ACCESS_KEY
     - Update the environment variable AWS_SESSION_TOKEN
-    - Updating path of PDF files which contains Roaming Agreements
+    - Update the path of PDF files which contains Roaming Agreements
         - Default place: ~/NLP-DLT/nlp/input
-    - Updating path of JSON files
+    - Update the path of JSON files
         - Default place: ~/NLP-DLT/nlp/output
 
 ## How to use 😎
