@@ -1,8 +1,5 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
-## General Architecture 🤖
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/gralArch.png" width="350" height="350">
-
 ## Set up 🙂
 1. Create environmental variables file based on .env.example (~/NLP-DLT/network)
     Obtain access keys from AWS E.g.:
@@ -20,10 +17,15 @@
 4. Stop: docker-compose stop
 5. Down: docker-compose down
 
-## Outputs 💾
-Outputs: NLP engine and manual measurement of the NLP engine accuracy
+## NLP Engine Stage
+The documentation of this stage can be found in:
+- [Documentation of NLP stage](https://drive.google.com/file/d/1koele3CqJVgkUA9-LVAs5eLdc01ZQYak/view?usp=sharing)
 
-### NLP Engine
+This stage include two outputs: 
+- Roaming Agreement Output Template (RAOT) determined by NLP engine
+- Manual Measurement of the NLP Engine Accuracy
+
+### RAOT NLP Engine
 1. cd ~/NLP-DLT/nlp/output
 2. more ./[Roamming Agreements Output Template.json](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/output/Roaming%20Agreements%20Output%20Template.json)
 
