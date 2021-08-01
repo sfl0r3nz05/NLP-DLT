@@ -40,7 +40,7 @@ This stage include two outputs:
     - [Determination of the accuracy of the NLP engine for the Orange Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Orange.xlsx?raw=true)
 
 ## To do 🤔
-1. Perform the analysis one level down to go on the sentence level (0%)
+1. Perform the analysis one level down to go on the sentence level (45%)
     - There are two branches created: main and sentencelvl
         - To change to the branch `main` use the command `git checkout main`
 2. Fix the code to correctly determine the organizations variables.
