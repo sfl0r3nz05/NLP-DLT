@@ -35,6 +35,7 @@ def findSubArticles(list_articles):
     """
     Method used to parse the text previous to send to Amazon Comprehend dividing it by articles. This method is used only by variations
     """
+    list_sub_articles.clear()
     for article in list_articles:
         objArticle = filterSubArticles(article['article'], article['sub-articles'], article['id'])
         dictionary_copy = objArticle.copy()
