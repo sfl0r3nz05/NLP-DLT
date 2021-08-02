@@ -50,8 +50,9 @@ This stage include two outputs:
 3. Hardcode of the default template.json file
 4. Hardcode of list of articles.json file
 5. Fix the code to correctly determine the organizations variables.
-6. Complete the documentation of the library
-7. Perform the analysis one level down to go on the sentence level
+6. Determine the accuracy of the NLP engine to extract variables and variations 
+7. Complete the documentation of the library
+8. Perform the analysis one level down to go on the sentence level
     - There are two branches created: `main` and `sentencelvl`
         - To change to the branch `sentencelvl` use the command `git checkout sentencelvl`
-8. Automate accuracy determination.
+9. Automate accuracy determination.
