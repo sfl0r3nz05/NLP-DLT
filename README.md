@@ -46,7 +46,7 @@ This stage include two outputs:
 
 ## Chaincode Design, Implementation and Testing Stage 💻
 
-### RAOT NLP Engine
+### Chaincode Design
 1. `cd ~/NLP-DLT/chaincode/design`
 2. To open the file `diagram_sequence_chaincode.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
