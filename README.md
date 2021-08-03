@@ -45,14 +45,13 @@ This stage include two outputs:
     - [Determination of the accuracy of the NLP engine for the Orange Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Orange.xlsx?raw=true)
 
 ## To do 🤔
-1. Fix the problem of article detection.
-2. Fix heading detection when sub-articles are analized.
-3. Hardcode of the default template.json file.
-4. Hardcode of list of articles.json file.
-5. Fix the code to correctly determine the organizations variables.
-6. Determine the accuracy of the NLP engine to extract variables and variations.
-7. Complete the documentation of the library.
-8. Perform the analysis one level down to go on the sentence level:
+1. Fix heading detection when sub-articles are analized.
+2. Hardcode of the default template.json file.
+3. Hardcode of list of articles.json file.
+4. Fix the code to correctly determine the organizations variables.
+5. Determine the accuracy of the NLP engine to extract variables and variations.
+6. Complete the documentation of the library.
+7. Perform the analysis one level down to go on the sentence level:
     - There are two branches created: `main` and `sentencelvl`
         - To change to the branch `main` use the command `git checkout main`
-9. Automate accuracy determination.
+8. Automate accuracy determination.
