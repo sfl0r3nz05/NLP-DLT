@@ -44,6 +44,12 @@ This stage include two outputs:
     - [Determination of the accuracy of the NLP engine for the Proxymus Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Proxymus.xlsx?raw=true)
     - [Determination of the accuracy of the NLP engine for the Orange Roaming Agreement.](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/nlp/data/accuracy/Accuracy%20Orange.xlsx?raw=true)
 
+## Chaincode Design, Implementation and Testing Stage 💻
+
+### RAOT NLP Engine
+1. `cd ~/NLP-DLT/chaincode/design`
+2. To open the file `diagram_sequence_chaincode.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+
 ## To do 🤔
 1. Delete characters in sub-articles.
 2. Fix heading detection when sub-articles are analized.
