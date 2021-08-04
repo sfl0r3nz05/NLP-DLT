@@ -5,7 +5,7 @@ article = {"id": 0, "article": "", "uuid":"", "variables": [], "sub-articles": [
 sub_article = {"id": "", "uuid":"", "type":"", "similarity": "","content":""}
 
 def findSubArticle(content, number):
-    max = 14
+    max = 17
     list_content = []
     for i in range(0, max-1):
         str1 = str(number) + '.' + str(i+1)
@@ -18,7 +18,7 @@ def findSubArticle(content, number):
             else:
                 index1 = index1 + 5
             sub_article['id'] = str1
-            sub_article['content'] = content[index1-1:index2]
+            sub_article['content'] = content[index1:index2]
             dictionary_copy = sub_article.copy()
             list_content.append(dictionary_copy)
     return list_content

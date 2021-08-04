@@ -1,4 +1,4 @@
-def parseToVariab(raw_text):
+def parseToVariable(raw_text):
     """
     Method used to parse the text previous to send to Amazon Comprehend. This method is used only by variables
     """

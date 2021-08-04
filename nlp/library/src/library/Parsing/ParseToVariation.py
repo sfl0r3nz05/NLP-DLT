@@ -1,6 +1,6 @@
 import re
 
-def parseToVariat(raw_text):
+def parseToVariation(raw_text):
     """
     Method used to parse the text previous to send to Amazon Comprehend. This method is used only by variations
     """
