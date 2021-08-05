@@ -124,9 +124,31 @@ def headers_para(doc, size_tag):
 
     return header_para
 
+def select_subscripts(elements):
+    subscripts = ['<s1>', '<s2>', '<s3>', '<s4>', '<s5>', '<s6>', '<s7>']
+    subscriptObj = {'label': '', 'text': '', 'freq': 0}
+    list_subscripts = [{'label': '', 'text': '', 'freq': 0}]
+
+    for subscript in subscripts:
+        for element in elements:
+            if element.find(subscript) != -1:
+                subscriptObj['label'] = subscript
+                subscriptObj['text'] = element
+                subscriptObj['freq'] += 1
+                for match in list_subscripts:
+                    if element == match['text']:
+                        match['freq'] += 1
+                    else:
+                        dictionary_copy = subscriptObj.copy()
+                        list_subscripts.append(dictionary_copy)
+    return list_subscripts
+
 def headerDetection(document):
     doc = fitz.open(document)
     font_counts, styles = fonts(doc, granularity=False)
     size_tag = font_tags(font_counts, styles)
     elements = headers_para(doc, size_tag)
-    print(elements)
+    list_subscripts = select_subscripts(elements)
+    print(list_subscripts)
+    #with open("./output/doc.json", 'a') as json_out:
+    #    json.dump(elements, json_out)
