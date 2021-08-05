@@ -4,6 +4,7 @@ from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
 from library.ManagePDF.ReturnTitle import find_between
 from library.ManagePDF.PdfToString import convert_pdf_to_string
+from library.ManagePDF.HeaderDetection  import headerDetection
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
 from library.ManageJSON.AppendObject import appendObject
@@ -49,6 +50,8 @@ pdfs = find_ext(pdfFilePath,"pdf")
 for document in pdfs:
     # COLLECT DOCUMENT NAME
     file_name = find_between(document)
+
+    headerDetection(document)
 
     # METHOD TO CONVERT PDF TO TEXT
     text = convert_pdf_to_string(document)
