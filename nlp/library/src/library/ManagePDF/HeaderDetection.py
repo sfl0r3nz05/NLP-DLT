@@ -135,12 +135,6 @@ def select_subscripts(elements):
                 subscriptObj['label'] = subscript
                 subscriptObj['text'] = element
                 subscriptObj['freq'] += 1
-                for match in list_subscripts:
-                    if element == match['text']:
-                        match['freq'] += 1
-                    else:
-                        dictionary_copy = subscriptObj.copy()
-                        list_subscripts.append(dictionary_copy)
     return list_subscripts
 
 def headerDetection(document):
