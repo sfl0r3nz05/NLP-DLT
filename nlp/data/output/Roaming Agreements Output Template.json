@@ -1301,8 +1301,8 @@
                     {
                         "id": "4.1",
                         "uuid": "4a1071a3-5380-165d-81c6-488462df90e2",
-                        "type": "stdClause",
-                        "similarity": 1.0,
+                        "type": "newText",
+                        "similarity": 0.3637536862534589,
                         "content": "The actual commercial starting date for the Services shall be agreed between the Parties in \nwriting. \n"
                     },
                     {
@@ -1968,15 +1968,15 @@
                     {
                         "id": "19.1",
                         "uuid": "88993dd5-3d6d-1fe5-b353-233bf14e8056",
-                        "type": "custmText",
-                        "similarity": 0.7419354838709677,
+                        "type": "stdClause",
+                        "similarity": 0.9119354838709677,
                         "content": "Non-performance of either Party\u2019s obligations pursuant to the Agreement or delay in \nperforming same (except with respect to the payment of charges applicable hereunder) shall not \nconstitute a breach of the Agreement if, and for as long as, it is due to a force majeure event, \nincluding, but not being limited to, governmental action, or requirement of regulatory authority, \nlockouts, strikes, shortage of transportation, war, rebellion or other military action, fire, flood, natural \ncatastrophes, or any other unforeseeable obstacles that a Party is not able to overcome with \nreasonable efforts, or non-performance of obligations by a sub-contractor to a Party pursuant to any \nof the aforementioned reasons. \nThe Party prevented from fulfilling its obligations shall once becoming aware of such event inform \nthe other Party in writing of such force majeure event as soon as possible. If the force majeure \nevent continues for more than six (6) months, either Party shall have the right to terminate the \nAgreement with immediate effect by written notice. \nThis reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to updates & completions by Orange. \nThis document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis. \n \n \nOrange Communications Luxembourg S.A. reference offer of 01/01/2013. \nWholesale Roaming Resale Access Agreement : Main terms & Conditions \n \n"
                     },
                     {
                         "id": "19.2",
                         "uuid": "a4a1a824-b3e1-1c73-b564-5daa445a8d26",
-                        "type": "custmText",
-                        "similarity": 0.41397849462365593,
+                        "type": "stdClause",
+                        "similarity": 0.94397849462365593,
                         "content": "If the affected Party fails to inform the other Party of the occurrence of a force majeure event \nas set forth in Article 19.1 above, then such Party thereafter shall not be entitled to refer such events \nto force majeure as a reason for non-fulfillment. \n \n \n \nThis obligation does not apply if the force majeure event is known by both Parties or the affected \nParty is unable to inform the other Party due to the force majeure event. \n"
                     }
                 ]
@@ -2128,8 +2128,8 @@
                     {
                         "id": "23.1",
                         "uuid": "3aec6f48-5a80-1157-b319-8d00c285742e",
-                        "type": "newText",
-                        "similarity": 0.10810810810810811,
+                        "type": "stdClause",
+                        "similarity": 0.91810810810810811,
                         "content": "The Agreement and any matters relating hereto shall be governed by and construed in \naccordance with Swiss law. \n2"
                     }
                 ]
