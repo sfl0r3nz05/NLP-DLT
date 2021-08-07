@@ -44,6 +44,22 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle2.png">
 
+### Delete Articles
+- The drafting of the Roaming Agreement involves the deletion of the articles. 
+- Identity is verified.
+- The inputs are `json org`, `RAID` and `article_num`.
+- An event is emitted to set the state `proposed_deletion`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/deleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/deleteArticle2.png">
+
+### Confirmation of Article Deletion
+- The other MNO must validate the article deletion.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- An event is emitted to set the state `confirm_proposed_deletion`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmDeleteArticle2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
