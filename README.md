@@ -48,8 +48,9 @@ This stage include two outputs:
 
 ### Chaincode Design
 1. `cd ~/NLP-DLT/chaincode/design`
-2. To open the file `diagram_sequence_chaincode_v2.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
-3. To open the file `class_diagram_chaincode.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+2. To open the file `diagram_sequence_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+3. To open the file `class_diagram_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ## To do 🤔
 1. Delete characters in sub-articles.
