@@ -96,7 +96,8 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/states_diagram.png">
 
 ### States and events
-- The following table associates states to events emitted
+- The following table associates states to events emitted:
+
 | States        | Events        |
 | ------------- |:-------------:|
 |               | org_created   |
