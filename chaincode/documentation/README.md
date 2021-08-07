@@ -101,5 +101,5 @@ All the designs performed can be found in the folder design. The stages designed
 | States        | Events        |
 | ------------- |:-------------:|
 |               | org_created   |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |
+| ra_started    | ra_started    |
+| confirm_ra_started | confirm_ra_started      |
