@@ -2,7 +2,10 @@
 - This section is divided in `chaincode design`, `chaincode implementation` and `chaincode testing`.
 
 ## Chaincode design
-All the designs performed can be found in the folder design. The stages designed are as follows:
+1. `cd ~/NLP-DLT/chaincode/design`
+2. To open the file `diagram_sequence_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+3. To open the file `class_diagram_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
 - Any MNO must be registered before drafting a roaming agreement.
