@@ -24,6 +24,10 @@
 3. Stop: `docker-compose stop`
 4. Down: `docker-compose down`
 
+## Project Documentation
+- [NLP Engine](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/nlp/documentation)
+- [Chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode/documentation)
+
 ## To do 🤔
 1. Fix heading detection when sub-articles are analized.
 2. Hardcode of the default template.json file.
