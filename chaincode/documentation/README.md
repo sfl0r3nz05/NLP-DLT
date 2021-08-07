@@ -6,10 +6,18 @@ All the designs performed can be found in the folder design. The stages designed
 
 ### Register organization
 - Any MNO must be registered before drafting a roaming agreement.
-- Identity is verified at each interaction
+- Identity is verified at each interaction.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/registerOrg1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/registerOrg2.png">
 
+### Start Agreement
+- A registered organization can enable the drafting of a Roaming Agreement.
+- Identity is verified.
+- The inputs are two `json org` and `json ROAT.json`, i.e., the output of the NLP engine.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/startAgreement1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/startAgreement2.png">
+
 ### State-to-state-transition
-Each time an action is performed the status is changed. The following figure shows the possible state-to-state transitions. The chaincode makes the corresponding verifications to enable the transitions.
+- Actions implies change of state. 
+- The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/states_diagram.png">
