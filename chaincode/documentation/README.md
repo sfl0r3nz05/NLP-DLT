@@ -36,6 +36,14 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/setArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/setArticle2.png">
 
+### Confirmation of Article Update
+- The other MNO must validate the article update.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- An event is emitted to set the state `confirm_proposed_change`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
