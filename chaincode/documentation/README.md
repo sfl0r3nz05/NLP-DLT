@@ -28,7 +28,7 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement2.png">
 
-### Update Articles
+### Articles Update
 - The drafting of the Roaming Agreement involves the updating of the articles. 
 - Identity is verified.
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
@@ -44,7 +44,7 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmSetArticle2.png">
 
-### Delete Articles
+### Article Deletion
 - The drafting of the Roaming Agreement involves the deletion of the articles. 
 - Identity is verified.
 - The inputs are `json org`, `RAID` and `article_num`.
