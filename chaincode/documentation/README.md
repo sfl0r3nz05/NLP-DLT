@@ -60,6 +60,36 @@ All the designs performed can be found in the folder design. The stages designed
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmDeleteArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmDeleteArticle2.png">
 
+### Agreement Achieved
+- The drafting of the Roaming Agreement involves the acceptation of the drafting process. 
+- Identity is verified.
+- The inputs are `json org`and `RAID`.
+- An event is emitted to set the state `RA_accepted`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/agreementAchieved1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/agreementAchieved2.png">
+
+### Confirmation of Agreement Achieved
+- The other MNO must validate the article deletion.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- An event is emitted to set the state `confirm_RA_achieved`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmAgreementAchieved1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmAgreementAchieved2.png">
+
+### Query Single Article
+- Identity is verified.
+- The inputs are `json org`, `RAID`and `article_num`.
+- The content of `article_num` is returned.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/querySingleArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/querySingleArticle2.png">
+
+### Query All Article
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The content of `jsonRA` is returned.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/queryAllArticles1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/queryAllArticles2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
