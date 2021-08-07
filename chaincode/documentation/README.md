@@ -1,7 +1,7 @@
 # Chaincode documentation
-- This section is divided in `chaincode design`, `chaincode implementation` and `chaincode testing`.
+- This section is divided in `chaincode design`, `chaincode implementation` and `chaincode test`.
 
-## Chaincode design
+## Chaincode design 📄✏
 1. `cd ~/NLP-DLT/chaincode/design`
 2. To open the file `diagram_sequence_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 3. To open the file `class_diagram_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
@@ -110,3 +110,7 @@
 | confirm_proposed_change | confirm_proposed_change      |
 | ra_accepted | ra_accepted      |
 | confirm_ra_achieved | confirm_ra_achieved      |
+
+## Chaincode implementation 💻
+
+## Chaincode test 📈📉📊
