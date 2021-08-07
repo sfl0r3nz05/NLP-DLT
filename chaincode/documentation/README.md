@@ -14,8 +14,19 @@ All the designs performed can be found in the folder design. The stages designed
 - A registered organization can enable the drafting of a Roaming Agreement.
 - Identity is verified.
 - The inputs are two `json org` and `json ROAT.json`, i.e., the output of the NLP engine.
+- The `RAID` is generated.
+    - `RAID` is accesible for all MNOs.
+- An event is emitted to set the state `ra_started`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/startAgreement1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/startAgreement2.png">
+
+### Start Agreement Confirmation
+- For the roaming agreement drafting to be valid, the other MNO must confirm it.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- An event is emitted to set the state `ra_started`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
