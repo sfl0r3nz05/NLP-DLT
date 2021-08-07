@@ -94,3 +94,11 @@ All the designs performed can be found in the folder design. The stages designed
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/states_diagram.png">
+
+### States and events
+- The following table associates states to events emitted
+| States        | Events        |
+| ------------- |:-------------:|
+|               | org_created   |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
