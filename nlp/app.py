@@ -3,27 +3,28 @@ import json
 from flask import Flask
 from library.ManagePDF.SearchPdf import find_ext
 from library.ManagePDF.ReturnTitle import find_between
+from library.ManagePDF.PdfToString import convert_pdf_to_string
+from library.ManagePDF.HeaderDetection  import headerDetection
 from library.ManageJSON.UpdateFile import updateFileV1
 from library.ManageJSON.UpdateFile import updateFileV2
-from library.Parsing.ParseToVariab import parseToVariab
-from library.Parsing.ParseToVariat import parseToVariat
-from library.Parsing.TextToArticle import textToArticle
-from library.ManageEntities.DateFinder import dateFinder
 from library.ManageJSON.AppendObject import appendObject
-from library.ManageTEXT.FindArticles import findArticles
 from library.ManageJSON.UploadDefault import uploadDefault
-from library.Similarity.FindSimilarity import findSimilarity
 from library.ManageJSON.UpdateJsonObject import updateJSONObj
+from library.Parsing.TextToArticle import textToArticle
+from library.Parsing.ParseToVariable import parseToVariable
+from library.Parsing.ParseToVariation import parseToVariation
 from library.Parsing.ParseToAmzComph import parseToAmzCompreh
+from library.Parsing.ParsingSubArticles import parsingSubArticles
+from library.ManageTEXT.FindArticles import findArticles
 from library.ManageTEXT.FindSubArticles import findSubArticles
-from library.ManagePDF.PdfToString import convert_pdf_to_string
+from library.ManageEntities.DateFinder import dateFinder
 from library.ManageEntities.RecovEntAndPhr import recoverSyntax
 from library.ManageEntities.RecovEntAndPhr import recoverPhrases
 from library.ManageEntities.LocationFinder import locationFinder
 from library.ManageEntities.RecovEntAndPhr import recoverEntities
 from library.ManageEntities.OrganizationFinder import organizationFinder
 from library.ManageEntities.VariablesVariations import variablesVariations
-
+from library.Similarity.FindSimilarity import findSimilarity
 app = Flask(__name__)
 
 """
@@ -50,6 +51,8 @@ for document in pdfs:
     # COLLECT DOCUMENT NAME
     file_name = find_between(document)
 
+    headerDetection(document)
+
     # METHOD TO CONVERT PDF TO TEXT
     text = convert_pdf_to_string(document)
 
@@ -59,8 +62,8 @@ for document in pdfs:
     """
     VARIABLE COLLECTION
     """
-    txtParsedToVariab = parseToVariab(text) #Initial parse of text collected from pdf to use in variables collection
-    readyToComprh = parseToAmzCompreh(txtParsedToVariab)   #Second parse preparing to send data to comprehend
+    txtParsedToVariable = parseToVariable(text) #Initial parse of text collected from pdf to use in variables collection
+    readyToComprh = parseToAmzCompreh(txtParsedToVariable)   #Second parse preparing to send data to comprehend
     entitiesList = recoverEntities(readyToComprh)   #Recover entites from amanzon comprehend, entities are base of variable populations
     
     # POPULATE NAME ON THE OBJECT
@@ -85,7 +88,7 @@ for document in pdfs:
     VARIATIONS COLLECTION
     """
     # INITIAL PARSE
-    raw_text = parseToVariat(text) #Initial parse of text collected from pdf to use in collection of variations
+    raw_text = parseToVariation(text) #Initial parse of text collected from pdf to use in collection of variations
 
     # FIND ARTICLES
     list_articles = findArticles(raw_text, articlesTemplate)
