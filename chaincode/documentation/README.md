@@ -24,9 +24,17 @@ All the designs performed can be found in the folder design. The stages designed
 - For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
-- An event is emitted to set the state `ra_started`.
+- An event is emitted to set the state `confirm_ra_started`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/confirmStartAgreement2.png">
+
+### Update Articles
+- The drafting of the Roaming Agreement involves the updating of the articles. 
+- Identity is verified.
+- The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
+- An event is emitted to set the state `proposed_change`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/setArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/setArticle2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
