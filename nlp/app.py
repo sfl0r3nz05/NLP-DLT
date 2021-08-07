@@ -96,6 +96,9 @@ for document in pdfs:
     # FIND SUBARTICLES
     list_sub_articles = findSubArticles(list_articles)
 
+    list_sub_articles_parsed = parsingSubArticles(list_sub_articles)
+    #print(list_sub_articles)
+
     # FIND SIMILARITIES
     list_sub_art_tagged = findSimilarity(list_sub_articles, articlesTemplate)
 
