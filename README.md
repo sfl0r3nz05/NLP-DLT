@@ -24,6 +24,10 @@
 3. Stop: `docker-compose stop`
 4. Down: `docker-compose down`
 
+## Project Documentation
+- [NLP Engine](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/nlp/documentation)
+- [Chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode/documentation)
+
 ## To do 🤔
 1. Fix heading detection when sub-articles are analized.
 2. Hardcode of the default template.json file.
@@ -33,5 +37,5 @@
 6. Complete the documentation of the library.
 7. Perform the analysis one level down to go on the sentence level:
     - There are two branches created: `main` and `sentencelvl`
-        - To change to the branch `main` use the command `git checkout main`
+        - To change to the branch `main` use the command `git checkout sentencelvl`
 8. Automate accuracy determination.
