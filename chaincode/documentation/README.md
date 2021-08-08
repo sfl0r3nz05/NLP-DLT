@@ -101,11 +101,14 @@
 ### States and events
 - The following table associates states to events emitted:
 
-|Method                    | Events         | States        |
-|:------------------------:|:--------------:|:-------------:|
-|addOrg                    |org_created     |-              |
-|startAgreement            |ra_started      |ra_started     |
-|confirmAgreementInitiation|confirm_ra_started|confirm_ra_started|
+|Method                    | Events              | States           |
+|:------------------------:|:-------------------:|:----------------:|
+|addOrg                    |org_created          |-                 |
+|startAgreement            |ra_started           |ra_started        |
+|confirmAgreementInitiation|confirm_ra_started   |confirm_ra_started|
+|addArticle                |proposed_add_article |proposed_changes  |
+|confirmAddArticle         |confirm_add_article  |accepted_changes  |
+|denyAddArticle            |confirm_deny_article |denied_changes    |
 
 ## Chaincode implementation 💻
 
