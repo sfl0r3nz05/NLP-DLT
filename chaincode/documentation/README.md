@@ -96,20 +96,20 @@
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/states_diagram.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/states_diagram_v2.png">
 
 ### States and events
 - The following table associates states to events emitted:
 
-| States        | Events        |
-| ------------- |:-------------:|
-|               | org_created   |
-| ra_started    | ra_started    |
-| confirm_ra_started | confirm_ra_started      |
-| proposed_change | proposed_change      |
-| confirm_proposed_change | confirm_proposed_change      |
-| ra_accepted | ra_accepted      |
-| confirm_ra_achieved | confirm_ra_achieved      |
+|Method         | States        | Events        |
+| ------------- | ------------- |:-------------:|
+|               |               | org_created   |
+|               | ra_started    | ra_started    |
+|               | confirm_ra_started | confirm_ra_started      |
+|               | proposed_change | proposed_change      |
+|               | confirm_proposed_change | confirm_proposed_change      |
+|               | ra_accepted | ra_accepted      |
+|               | confirm_ra_achieved | confirm_ra_achieved      |
 
 ## Chaincode implementation 💻
 
