@@ -101,9 +101,9 @@
 ### States and events
 - The following table associates states to events emitted:
 
-|Method         | States        | Events        |
+|Method         | Events        | States        |
 | ------------- | ------------- |:-------------:|
-|               |               | org_created   |
+|addOrg         |org_created    | -   |
 |               | ra_started    | ra_started    |
 |               | confirm_ra_started | confirm_ra_started      |
 |               | proposed_change | proposed_change      |
