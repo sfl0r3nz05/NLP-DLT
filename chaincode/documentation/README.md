@@ -101,14 +101,22 @@
 ### States and events
 - The following table associates states to events emitted:
 
-|Method                    | Events              | States           |
-|:------------------------:|:-------------------:|:----------------:|
-|addOrg                    |org_created          |-                 |
-|startAgreement            |ra_started           |ra_started        |
-|confirmAgreementInitiation|confirm_ra_started   |confirm_ra_started|
-|addArticle                |proposed_add_article |proposed_changes  |
-|confirmAddArticle         |confirm_add_article  |accepted_changes  |
-|denyAddArticle            |confirm_deny_article |denied_changes    |
+|Method                    | Events                 | States                |
+|:------------------------:|:----------------------:|:---------------------:|
+|addOrg                    |created_org             |-                      |
+|proposeAgreementInitiation|started_ra              |started_ra             |
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
+|proposeAddArticle         |proposed_add_article    |proposed_changes       |
+|acceptAddArticle          |accepted_add_article    |accepted_changes       |
+|denyAddArticle            |denied_add_article      |denied_changes         |
+|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+|acceptUpdateArticle       |accepted_update_article |accepted_changes       |
+|denyUpdateArticle         |denied_update_article   |denied_changes         |
+|proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
+|acceptDeleteArticle       |accepted_delete_article |accepted_changes       |
+|denyDeleteArticle         |denied_delete_article   |denied_changes         |
+|reachAgreement            |accepted_ra             |acepted_ra             |
+|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
 ## Chaincode implementation 💻
 
