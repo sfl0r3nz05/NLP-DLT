@@ -8,6 +8,9 @@
 4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
+|Method                    | Event                  | State                 |
+|:------------------------:|:----------------------:|:---------------------:|
+|addOrg                    |created_org             |-                      |
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/registerOrg1.png">       
@@ -101,15 +104,22 @@
 ### States and events
 - The following table associates states to events emitted:
 
-|Method         | States        | Events        |
-| ------------- | ------------- |:-------------:|
-|               |               | org_created   |
-|               | ra_started    | ra_started    |
-|               | confirm_ra_started | confirm_ra_started      |
-|               | proposed_change | proposed_change      |
-|               | confirm_proposed_change | confirm_proposed_change      |
-|               | ra_accepted | ra_accepted      |
-|               | confirm_ra_achieved | confirm_ra_achieved      |
+|Methods                   | Events                 | States                |
+|:------------------------:|:----------------------:|:---------------------:|
+|addOrg                    |created_org             |-                      |
+|proposeAgreementInitiation|started_ra              |started_ra             |
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
+|proposeAddArticle         |proposed_add_article    |proposed_changes       |
+|acceptAddArticle          |accepted_add_article    |accepted_changes       |
+|denyAddArticle            |denied_add_article      |denied_changes         |
+|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+|acceptUpdateArticle       |accepted_update_article |accepted_changes       |
+|denyUpdateArticle         |denied_update_article   |denied_changes         |
+|proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
+|acceptDeleteArticle       |accepted_delete_article |accepted_changes       |
+|denyDeleteArticle         |denied_delete_article   |denied_changes         |
+|reachAgreement            |accepted_ra             |acepted_ra             |
+|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
 ## Chaincode implementation 💻
 
