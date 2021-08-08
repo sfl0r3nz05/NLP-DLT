@@ -103,13 +103,9 @@
 
 |Method         | Events        | States        |
 | ------------- | ------------- |:-------------:|
-|addOrg         |org_created    | -   |
-|               | ra_started    | ra_started    |
-|               | confirm_ra_started | confirm_ra_started      |
-|               | proposed_change | proposed_change      |
-|               | confirm_proposed_change | confirm_proposed_change      |
-|               | ra_accepted | ra_accepted      |
-|               | confirm_ra_achieved | confirm_ra_achieved      |
+|addOrg         | org_created   | -             |
+|startAgreement | ra_started    | ra_started    |
+|               |               |               |
 
 ## Chaincode implementation 💻
 
