@@ -8,7 +8,7 @@
 4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
-|Method                    | Events                 | States                |
+|Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |addOrg                    |created_org             |-                      |
 - Any MNO must be registered before drafting a roaming agreement.
@@ -104,7 +104,7 @@
 ### States and events
 - The following table associates states to events emitted:
 
-|Method                    | Events                 | States                |
+|Methods                   | Events                 | States                |
 |:------------------------:|:----------------------:|:---------------------:|
 |addOrg                    |created_org             |-                      |
 |proposeAgreementInitiation|started_ra              |started_ra             |
