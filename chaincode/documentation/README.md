@@ -8,6 +8,9 @@
 4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
+|Method                    | Events                 | States                |
+|:------------------------:|:----------------------:|:---------------------:|
+|addOrg                    |created_org             |-                      |
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/registerOrg1.png">       
