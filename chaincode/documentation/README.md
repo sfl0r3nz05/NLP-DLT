@@ -13,6 +13,7 @@
 |addOrg                    |created_org             |-                      |
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
+- An event is emitted to set the state `created_org`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/registerOrg1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/registerOrg2.png">
 
@@ -25,11 +26,14 @@
 - The inputs are two `json org` and `json ROAT.json`, i.e., the output of the NLP engine.
 - The `RAID` is generated.
     - `RAID` is accesible for all MNOs.
-- An event is emitted to set the state `ra_started`.
+- An event is emitted to set the state `started_ra`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/startAgreement1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/startAgreement2.png">
 
 ### Start Agreement Confirmation
+|Method                    | Event                  | State                 |
+|:------------------------:|:----------------------:|:---------------------:|
+|acceptAgreementInitiation |confirm_ra_started      |confirm_ra_started     |
 - For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
