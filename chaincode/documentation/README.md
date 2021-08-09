@@ -17,6 +17,9 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/images/registerOrg2.png">
 
 ### Start Agreement
+|Method                    | Event                  | State                 |
+|:------------------------:|:----------------------:|:---------------------:|
+|proposeAgreementInitiation|started_ra              |started_ra             |
 - A registered organization can enable the drafting of a Roaming Agreement.
 - Identity is verified.
 - The inputs are two `json org` and `json ROAT.json`, i.e., the output of the NLP engine.
