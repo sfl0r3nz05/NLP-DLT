@@ -134,8 +134,20 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `accepted_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmDeleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle2.png">
+
+### Refusing of Article Deletion
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|denyDeleteArticle         |denied_delete_article   |denied_changes                |
+- The other MNO must validate the article deletion.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The previous state (`proposed_changes`) is verified.
+- An event is emitted to set the state `denied_delete_article`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
