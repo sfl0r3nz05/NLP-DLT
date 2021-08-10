@@ -41,13 +41,17 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmStartAgreement1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmStartAgreement2.png">
 
-### Articles Update
-- The drafting of the Roaming Agreement involves the updating of the articles. 
+### Add Article
+|Method                    | Event                  | State                 |
+|:------------------------:|:----------------------:|:---------------------:|
+|proposeAddArticle         |proposed_add_article    |proposed_changes       |
+- The drafting of the Roaming Agreement involves to add article by article. 
 - Identity is verified.
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
-- An event is emitted to set the state `proposed_change`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/setArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/setArticle2.png">
+- The previous state (`confirm_ra_started`) is verified.
+- An event is emitted once the state `proposed_changes` is set.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/setArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/setArticle2.png">
 
 ### Confirmation of Article Update
 - The other MNO must validate the article update.
