@@ -125,6 +125,15 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/deleteArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/deleteArticle2.png">
 
+### Confirmation of Article Deletion
+- The other MNO must validate the article deletion.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The previous state (`proposed_changes`) is verified.
+- An event is emitted to set the state `accepted_delete_article`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
