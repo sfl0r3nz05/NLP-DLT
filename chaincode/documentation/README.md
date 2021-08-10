@@ -113,6 +113,18 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyUpdateArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyUpdateArticle2.png">
 
+### Article Deletion
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|proposeDeleteArticle      |proposed_delete_article |proposed_changes              |
+- The drafting of the Roaming Agreement involves the deletion of the articles. 
+- Identity is verified.
+- The inputs are `json org`, `RAID` and `article_num`.
+- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
+- An event is emitted to set the state `proposed_delete_article`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
