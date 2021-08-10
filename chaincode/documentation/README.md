@@ -54,12 +54,16 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/setArticle2.png">
 
 ### Confirmation of Article Update
-- The other MNO must validate the article update.
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|proposeAddArticle         |accepted_add_article    |confirm_proposed_change       |
+- The other MNO must validate the article added in order to include the change.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
+- The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `confirm_proposed_change`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmSetArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmSetArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle2.png">
 
 ### Article Deletion
 - The drafting of the Roaming Agreement involves the deletion of the articles. 
