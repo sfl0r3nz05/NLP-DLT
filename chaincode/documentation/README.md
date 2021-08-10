@@ -110,8 +110,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyUpdArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyUpdArticle2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
