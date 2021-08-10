@@ -149,6 +149,18 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle2.png">
 
+### Agreement Achieved
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|reachAgreement            |accepted_ra             |acepted_ra                    |
+- The drafting of the Roaming Agreement involves the acceptation of the drafting process. 
+- Identity is verified.
+- The inputs are `json org`and `RAID`.
+- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
+- An event is emitted to set the state `accepted_ra`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
