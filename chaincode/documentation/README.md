@@ -53,7 +53,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/setArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/setArticle2.png">
 
-### Confirmation of Article Update
+### Confirmation to Add Article
 |Method                    | Event                  | State                        |
 |:------------------------:|:----------------------:|:----------------------------:|
 |proposeAddArticle         |accepted_add_article    |confirm_proposed_change       |
@@ -64,6 +64,18 @@
 - An event is emitted to set the state `confirm_proposed_change`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle2.png">
+
+### Refusing to Add Article
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|denyAddArticle            |denied_add_article      |denied_changes                |
+- The other MNO can deny the article added in order if not agree.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The previous state (`proposed_changes`) is verified.
+- An event is emitted to set the state `denied_changes`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle2.png">
 
 ### Article Deletion
 - The drafting of the Roaming Agreement involves the deletion of the articles. 
