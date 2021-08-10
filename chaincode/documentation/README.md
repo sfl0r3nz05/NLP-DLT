@@ -161,6 +161,18 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/agreementAchieved1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/agreementAchieved2.png">
 
+### Confirmation of Agreement Achieved
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra       |
+- The other MNO must validate the article deletion.
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The previous state (`acepted_ra`) is verified.
+- An event is emitted to set the state `confirmation_accepted_ra`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmAgreementAchieved1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmAgreementAchieved2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
