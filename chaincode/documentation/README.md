@@ -77,6 +77,18 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle2.png">
 
+### Update Article
+|Method                    | Event                  | State                 |
+|:------------------------:|:----------------------:|:---------------------:|
+|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+- The drafting of the Roaming Agreement involves to update articles. 
+- Identity is verified.
+- The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
+- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
+- An event is emitted once the state `proposed_changes` is set.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation2.png">
+
 ### Article Deletion
 - The drafting of the Roaming Agreement involves the deletion of the articles. 
 - Identity is verified.
