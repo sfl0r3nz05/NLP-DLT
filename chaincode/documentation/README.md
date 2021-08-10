@@ -86,54 +86,20 @@
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle2.png">
 
-### Article Deletion
-- The drafting of the Roaming Agreement involves the deletion of the articles. 
-- Identity is verified.
-- The inputs are `json org`, `RAID` and `article_num`.
-- An event is emitted to set the state `proposed_deletion`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle2.png">
-
-### Confirmation of Article Deletion
-- The other MNO must validate the article deletion.
+### Confirmation to Update Article
+|Method                    | Event                  | State                        |
+|:------------------------:|:----------------------:|:----------------------------:|
+|acceptUpdateArticle       |accepted_update_article |accepted_changes              |
+- The other MNO must validate the article added in order to include the change.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
-- An event is emitted to set the state `confirm_proposed_deletion`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmDeleteArticle2.png">
-
-### Agreement Achieved
-- The drafting of the Roaming Agreement involves the acceptation of the drafting process. 
-- Identity is verified.
-- The inputs are `json org`and `RAID`.
-- An event is emitted to set the state `RA_accepted`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved2.png">
-
-### Confirmation of Agreement Achieved
-- The other MNO must validate the article deletion.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- An event is emitted to set the state `confirm_RA_achieved`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmAgreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmAgreementAchieved2.png">
-
-### Query Single Article
-- Identity is verified.
-- The inputs are `json org`, `RAID`and `article_num`.
-- The content of `article_num` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle2.png">
-
-### Query All Article
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The content of `jsonRA` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles2.png">
+- The previous state (`proposed_changes`) is verified.
+- An event is emitted to set the state `accepted_update_article`.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
