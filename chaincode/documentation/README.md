@@ -190,7 +190,7 @@
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/states_diagram_v2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/states_diagram_v3.png">
 
 ### States and events
 - The following table associates states to events emitted:
