@@ -122,8 +122,8 @@
 - The inputs are `json org`, `RAID` and `article_num`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted to set the state `proposed_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/deleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/deleteArticle2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
