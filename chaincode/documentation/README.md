@@ -86,8 +86,8 @@
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeAcceptUpdation2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle2.png">
 
 ### Article Deletion
 - The drafting of the Roaming Agreement involves the deletion of the articles. 
