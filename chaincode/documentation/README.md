@@ -173,6 +173,20 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmAgreementAchieved1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmAgreementAchieved2.png">
 
+### Query Single Article
+- Identity is verified.
+- The inputs are `json org`, `RAID`and `article_num`.
+- The content of `article_num` is returned.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle2.png">
+
+### Query All Article
+- Identity is verified.
+- The inputs are `json org` and `RAID`.
+- The content of `jsonRA` is returned.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles2.png">
+
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
