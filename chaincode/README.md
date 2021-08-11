@@ -213,5 +213,41 @@
 |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
 ## Chaincode implementation 💻
+### Project configuration
+This project has to be stored in the following route
+
+```
+$GOPATH/src/name_of_the_project
+```
+
+### Build vendor for chaincode
+Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
+
+If the chaincode does not run because of the vendor, it can be built from scratch:
+
+```
+cd   $GOPATH/src/name_of_the_project/src/chaincode
+dep  init
+```
+
+Also if it already exists, the missing packages can be imported using the update option:
+
+```
+ cd   $GOPATH/src/name_of_the_project/src/chaincode
+ dep  ensure -v
+```
+
+### Init the chaincode
+
+To initialize the chaincode first is necessary to install and instantiate the chaincode on one peer of the HF network. For that action, it can be used the coren-hfservice module, abstracting the complexity of using the command-line interface
 
 ## Chaincode test 📈📉📊
+
+### Testing the chaincode
+In postman folder there are the collection and environment to interact and test with the chaincode methods. It is only needed to import them into postman application and know to use the coren-hfservice module
+
+You can also run the unit test executing the following commmand:
+
+```
+go test
+```
