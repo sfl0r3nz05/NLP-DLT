@@ -228,8 +228,8 @@ If the chaincode does not run because of the vendor, it can be built from scratc
 
 Also if it already exists, the missing packages can be imported using the update option:
 
-<cd   $GOPATH/src/name_of_the_project/src/chaincode>
-<dep  ensure -v>
+`cd   $GOPATH/src/name_of_the_project/src/chaincode
+ dep  ensure -v`
 
 ### Init the chaincode
 
