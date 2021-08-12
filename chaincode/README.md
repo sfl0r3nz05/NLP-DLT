@@ -284,17 +284,17 @@ Building a vendor is necessary to import all the external dependencies needed fo
 
 If the chaincode does not run because of the vendor, it can be built from scratch:
 
-    ```
-    cd   $GOPATH/src/name_of_the_project/src/chaincode
-    dep  init
-    ```
+```
+cd   $GOPATH/src/name_of_the_project/src/chaincode
+dep  init
+```
 
 Also if it already exists, the missing packages can be imported using the update option:
 
-    ```
-    cd   $GOPATH/src/name_of_the_project/src/chaincode
-    dep  ensure -v
-    ```
+```
+cd   $GOPATH/src/name_of_the_project/src/chaincode
+dep  ensure -v
+```
 
 ### Init the chaincode
 
@@ -307,6 +307,6 @@ In postman folder there are the collection and environment to interact and test 
 
 You can also run the unit test executing the following commmand:
 
-    ```
-    go test
-    ```
+```
+go test
+```
