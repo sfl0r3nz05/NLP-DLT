@@ -14,8 +14,8 @@
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
 - An event is emitted to set the state `created_org`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/registerOrg1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/registerOrg2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/registerOrg1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/registerOrg2.png">
 
 ### Start Agreement
 |Method                    | Event                  | State                 |
@@ -27,8 +27,8 @@
 - The `RAID` is generated.
     - `RAID` is accesible for all MNOs.
 - An event is emitted to set the state `started_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/startAgreement1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/startAgreement2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/startAgreement1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/startAgreement2.png">
 
 ### Start Agreement Confirmation
 |Method                    | Event                  | State                 |
@@ -38,8 +38,8 @@
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
 - An event is emitted to set the state `confirmation_ra_started`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmStartAgreement1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmStartAgreement2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmStartAgreement1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmStartAgreement2.png">
 
 ### Add Article
 |Method                    | Event                  | State                 |
@@ -50,8 +50,8 @@
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
 - The previous state (`confirm_ra_started`) is verified.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/setArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/setArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/setArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/setArticle2.png">
 
 ### Confirmation to Add Article
 |Method                    | Event                  | State                        |
@@ -62,8 +62,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `confirm_proposed_change`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmSetArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmSetArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmSetArticle2.png">
 
 ### Refusing to Add Article
 |Method                    | Event                  | State                        |
@@ -74,8 +74,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_changes`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denySetArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denySetArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denySetArticle2.png">
 
 ### Update Article
 |Method                    | Event                  | State                 |
@@ -86,8 +86,8 @@
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/proposeUpdateArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle2.png">
 
 ### Confirmation to Update Article
 |Method                    | Event                  | State                        |
@@ -98,8 +98,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `accepted_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/acceptUpdArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/acceptUpdArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/acceptUpdArticle2.png">
 
 ### Refusing to Update Article
 |Method                    | Event                  | State                        |
@@ -110,8 +110,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denyUpdateArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/denyUpdateArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denyUpdateArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denyUpdateArticle2.png">
 
 ### Article Deletion
 |Method                    | Event                  | State                        |
@@ -122,8 +122,8 @@
 - The inputs are `json org`, `RAID` and `article_num`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted to set the state `proposed_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/deleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/deleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/deleteArticle2.png">
 
 ### Confirmation of Article Deletion
 |Method                    | Event                  | State                        |
@@ -134,8 +134,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `accepted_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/confirmDeleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmDeleteArticle2.png">
 
 ### Refusing of Article Deletion
 |Method                    | Event                  | State                        |
@@ -146,8 +146,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/documentation/images/denyDeleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyDeleteArticle1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyDeleteArticle2.png">
 
 ### Agreement Achieved
 |Method                    | Event                  | State                        |
@@ -158,8 +158,8 @@
 - The inputs are `json org`and `RAID`.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted to set the state `accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/agreementAchieved2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/agreementAchieved1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/agreementAchieved2.png">
 
 ### Confirmation of Agreement Achieved
 |Method                    | Event                  | State                        |
@@ -170,27 +170,27 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`acepted_ra`) is verified.
 - An event is emitted to set the state `confirmation_accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmAgreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/confirmAgreementAchieved2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmAgreementAchieved1.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmAgreementAchieved2.png">
 
 ### Query Single Article
 - Identity is verified.
 - The inputs are `json org`, `RAID`and `article_num`.
 - The content of `article_num` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/querySingleArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/querySingleArticle1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/querySingleArticle2.png">
 
 ### Query All Article
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
 - The content of `jsonRA` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/queryAllArticles2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/queryAllArticles1.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/queryAllArticles2.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/documentation/images/states_diagram_v3.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/states_diagram_v3.png">
 
 ### States and events
 - The following table associates states to events emitted:
