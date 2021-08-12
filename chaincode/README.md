@@ -213,6 +213,61 @@
 |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
 ## Chaincode implementation 💻
+### Build/Modify chaincode
+1. Download Golang version
+    ```
+    wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
+    ```
+2. To verify the tarball checksum it can be used the sha256sum command:
+    ```
+    sha256sum go1.16.7.linux-amd64.tar.gz
+    ```
+3. Copy Golang bynary into executable folder
+    ```
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
+    ```
+4. Edit the `profile` file
+    ```
+    sudo nano $HOME/.profile
+    ```
+5. Add next line into `profile` file
+    ```
+    export PATH=$PATH:/usr/local/go/bin
+    ```
+6. Enabling changes in the `profile` file
+    ```
+    source ~/.profile
+    ```
+7. Verify Golang version
+    ```
+    go version
+    ```
+8. By default the workspace directory is set to $HOME/go
+    ```
+    mkdir ~/go
+    ```
+9. Inside the workspace create a new directory
+    ```
+    mkdir -p ~/go/src/chaincode
+    ```
+10. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
+    ```
+    sudo sudo ln -s ~/NLP-DLT/chaincode/implementation/* ~/go/src/chaincode
+    ```
+11. Enable go mod
+    ```
+    go mod init ~/go/src/chaincode
+    ```
+12. Install dependencies
+    ```
+    go get github.com/hyperledger/fabric-protos-go/peer
+    go get github.com/hyperledger/fabric-chaincode-go/shim
+    go get github.com/sirupsen/logrus
+    ```
+13. Build the changes
+    ```
+    go build
+    ```
 ### Project configuration
 This project has to be stored in the following route
 
