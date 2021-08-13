@@ -24,6 +24,12 @@ type DBINFO struct {
 	sim_header_info string   		`json:"sim_header_info,omitempty"`
 }
 
+// Struct used to return
+type UUIDRAID struct {
+	UUID string `json:"uuid,omitempty"`
+	RAID string `json:"raid,omitempty"`
+}
+
 // Event to handle events in HF
 type Event struct {
 	EventName string 	 			`json:"eventName"` // name for the event
@@ -69,4 +75,6 @@ const (
 	ERRORUserID	          = `Error user has not identity`
 	ERRORStoringOrg  	  = `Error storing org`
 	ERRORParsingOrg  	  = `Error when parsing org to byte`
+	ERRORAgreement  	  = `Error when agreement is created`
+	ERRORParsing	  	  = `Error when parsing byte`
 )
