@@ -25,91 +25,184 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 
     if function == "addOrg" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-        if err != nil {return shim.Error(ERRORGetID)}
-        if (id == "") {return shim.Error(ERRORUserID)}
-        var org string
-        org = args[0]
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        org := args[0]
         identity_exist := verifyOrg(stub, id)
         if !identity_exist {
             org_id, err := cc.registerOrg(stub, org, id)
-            if err != nil {return shim.Error(ERRORStoringOrg)}
+            if err != nil {
+                return shim.Error(ERRORStoringOrg)
+            }
             return shim.Success([]byte(org_id))
         }
     } else if function == "proposeAgreementInitiation" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-        if err != nil {return shim.Error(ERRORGetID)}
-        if (id == "") {return shim.Error(ERRORUserID)}
-        cc.startAgreement(stub, args)
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        org1 := args[0]
+        org2 := args[1]
+        jsonRA := args[2]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            uuid, raid, err := cc.startAgreement(stub, org1, org2, jsonRA)
+            if err != nil {
+                return shim.Error(ERRORAgreement)
+            }
+            identityStore, err := json.Marshal(UUIDRAID{UUID: uuid, RAID: raid})
+            if err != nil {
+                log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+                return shim.Error(ERRORParsingID + err.Error())
+            }
+            return shim.Success([]byte(identityStore))
+        }
     } else if function == "acceptAgreementInitiation" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-        if err != nil {return shim.Error(ERRORGetID)}
-        if (id == "") {return shim.Error(ERRORUserID)}
-        cc.confirmAgreement(stub, args)
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        org := args[0]
+        raid := args[1]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.confirmAgreement(stub, org, raid)
+        }
     } else if function == "proposeAddArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-        if err != nil {return shim.Error(ERRORGetID)}
-        if (id == "") {return shim.Error(ERRORUserID)}
-        cc.addArticle(stub, args)
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        org := args[0]
+        raid := args[1]
+        article_num := args[2]
+        jsonArticle := args[3]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.addArticle(stub, org, raid, article_num, jsonArticle)
+        }
     } else if function == "acceptAddArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.acceptArticle(stub, args)
+        org := args[0]
+        raid := args[1]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.acceptArticle(stub, org, raid)
+        }
     } else if function == "denyAddArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.denyArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.denyArticle(stub, args)
+        }
     } else if function == "proposeUpdateArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.updateArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.updateArticle(stub, args)
+        }
     } else if function == "acceptUpdateArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.acceptUpdArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.acceptUpdArticle(stub, args)
+        }
     } else if function == "denyUpdateArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.denyUpdArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.denyUpdArticle(stub, args)
+        }
     } else if function == "proposeDeleteArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.delArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.delArticle(stub, args)
+        }
     } else if function == "acceptDeleteArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.acceptDelArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.acceptDelArticle(stub, args)
+        }
     } else if function == "denyDeleteArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.denyDelArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.denyDelArticle(stub, args)
+        }
     } else if function == "reachAgreement" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.acceptReachAgree(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.acceptReachAgree(stub, args)
+        }
     } else if function == "acceptReachAgreement" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.confirmAchieRA(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.confirmAchieRA(stub, args)
+        }
     } else if function == "querySingleArticle" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.queryArticle(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.queryArticle(stub, args)
+        }
     } else if function == "queryAllArticles" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {return shim.Error(ERRORGetID)}
         if (id == "") {return shim.Error(ERRORUserID)}
-        cc.queryRAarticles(stub, args)
+        org := args[0]
+        identity_exist := verifyOrg(stub, id)
+        if identity_exist {
+            cc.queryRAarticles(stub, args)
+        }
     }
     return shim.Success([]byte("OK"))
 }
@@ -131,18 +224,15 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, args string, 
     }
     return id , errors.New(ERRORWrongNumberArgs)
 }
-func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, args []string) (string, error){
-    return "" , errors.New(ERRORWrongNumberArgs)
+func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 string, org2 string, jsonRA string) (string, string, error){
+    return "" , "" , errors.New(ERRORWrongNumberArgs)
 }
-func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, args []string) (string, error){
-    return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-    return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) acceptArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-    return "" , errors.New(ERRORWrongNumberArgs)
-}
+func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string, jsonArticle string) {}
+
+func (cc *Chaincode) acceptArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
 func (cc *Chaincode) denyArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
     return "" , errors.New(ERRORWrongNumberArgs)
 }
