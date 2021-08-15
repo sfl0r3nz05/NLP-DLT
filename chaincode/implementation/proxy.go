@@ -106,7 +106,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.addArticle(stub, org, raid, article_num, jsonArticle)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORAddArticle)
 			}
 		}
 		if err != nil {
@@ -126,7 +126,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.acceptArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORAcceptAddArticle)
 			}
 		}
 		if err != nil {
@@ -146,7 +146,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.denyArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORDenyAddArticle)
 			}
 		}
 		if err != nil {
@@ -168,7 +168,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.updateArticle(stub, org, raid, article_num, jsonArticle)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORUpdateArticle)
 			}
 		}
 		if err != nil {
@@ -188,7 +188,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.acceptUpdArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORAcceptUpdateArticle)
 			}
 		}
 		if err != nil {
@@ -208,7 +208,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.denyUpdArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORDenyUpdateArticle)
 			}
 		}
 		if err != nil {
@@ -229,7 +229,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.delArticle(stub, org, raid, article_num)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORDeleteArticle)
 			}
 		}
 		if err != nil {
@@ -249,7 +249,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.acceptDelArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORAcceptDeleteArticle)
 			}
 		}
 		if err != nil {
@@ -269,7 +269,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.denyDelArticle(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORDenyDeleteArticle)
 			}
 		}
 		if err != nil {
@@ -289,7 +289,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.acceptReachAgree(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORReachAgreement)
 			}
 		}
 		if err != nil {
@@ -309,7 +309,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			err := cc.confirmAchieRA(stub, org, raid)
 			if err != nil {
-				return shim.Error(ERRORAgreement)
+				return shim.Error(ERRORAcceptAgreement)
 			}
 		}
 		if err != nil {
@@ -330,7 +330,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			article_jsonRA, err := cc.queryArticle(stub, org, raid, article_num)
 			if err != nil {
-                return shim.Error(ERRORAgreement)
+                return shim.Error(ERRORQuerySingleArticle)
             }
 			return shim.Success([]byte(article_jsonRA))
 		}
@@ -351,7 +351,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		if identity_exist {
 			jsonRA, err := cc.queryRAarticles(stub, org, raid)
 			if err != nil {
-                return shim.Error(ERRORAgreement)
+                return shim.Error(ERRORQueryAllArticles)
             }
 			return shim.Success([]byte(jsonRA))
 		}
@@ -433,6 +433,7 @@ func (cc *Chaincode) confirmAchieRA(stub shim.ChaincodeStubInterface, org string
 func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string) (string, error){
 	return "" , errors.New(ERRORWrongNumberArgs)
 }
+
 func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org string, raid string) (string, error){
 	return "" , errors.New(ERRORWrongNumberArgs)
 }
