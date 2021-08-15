@@ -77,4 +77,5 @@ const (
 	ERRORParsingOrg  	  = `Error when parsing org to byte`
 	ERRORAgreement  	  = `Error when agreement is created`
 	ERRORParsing	  	  = `Error when parsing byte`
+	ERRORRecoverIdentity  = `Error Identity is recovered`
 )

@@ -32,13 +32,16 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 			return shim.Error(ERRORUserID)
 		}
 		org := args[0]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if !identity_exist {
 			org_id, err := cc.registerOrg(stub, org, id)
 			if err != nil {
 				return shim.Error(ERRORStoringOrg)
 			}
 			return shim.Success([]byte(org_id))
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
     } else if function == "proposeAgreementInitiation" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -51,7 +54,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		org1 := args[0]
 		org2 := args[1]
 		jsonRA := args[2]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			uuid, raid, err := cc.startAgreement(stub, org1, org2, jsonRA)
 			if err != nil {
@@ -64,6 +67,9 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 			}
 			return shim.Success([]byte(identityStore))
 		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
+		}
 	} else if function == "acceptAgreementInitiation" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
 		if err != nil {
@@ -74,9 +80,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.confirmAgreement(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "proposeAddArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -90,9 +99,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		raid := args[1]
 		article_num := args[2]
 		jsonArticle := args[3]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.addArticle(stub, org, raid, article_num, jsonArticle)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "acceptAddArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -104,9 +116,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.acceptArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "denyAddArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -118,9 +133,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.denyArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "proposeUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -134,9 +152,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		raid := args[1]
 		article_num := args[2]
 		jsonArticle := args[3]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.updateArticle(stub, org, raid, article_num, jsonArticle)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "acceptUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -148,9 +169,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
         org := args[0]
         raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.acceptUpdArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "denyUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -162,9 +186,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
         org := args[0]
         raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.denyUpdArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "proposeDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -177,9 +204,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		org := args[0]
 		raid := args[1]
 		article_num := args[2]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.delArticle(stub, org, raid, article_num)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "acceptDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -191,9 +221,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
         org := args[0]
         raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.acceptDelArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "denyDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -205,9 +238,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.denyDelArticle(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "reachAgreement" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -219,9 +255,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.acceptReachAgree(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "acceptReachAgreement" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -233,9 +272,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			cc.confirmAchieRA(stub, org, raid)
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "querySingleArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -248,13 +290,16 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		org := args[0]
 		raid := args[1]
 		article_num := args[2]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			article_jsonRA, err := cc.queryArticle(stub, org, raid, article_num)
 			if err != nil {
                 return shim.Error(ERRORAgreement)
             }
 			return shim.Success([]byte(article_jsonRA))
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	} else if function == "queryAllArticles" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -266,13 +311,16 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 		org := args[0]
 		raid := args[1]
-		identity_exist := verifyOrg(stub, id)
+		identity_exist, err := verifyOrg(stub, id)
 		if identity_exist {
 			jsonRA, err := cc.queryRAarticles(stub, org, raid)
 			if err != nil {
                 return shim.Error(ERRORAgreement)
             }
 			return shim.Success([]byte(jsonRA))
+		}
+		if err != nil {
+			return shim.Error(ERRORRecoverIdentity)
 		}
 	}
 	return shim.Success([]byte("OK"))
