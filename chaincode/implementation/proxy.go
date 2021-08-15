@@ -96,8 +96,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 	} else if function == "acceptAddArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
 		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
@@ -106,102 +110,169 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 		}
 	} else if function == "denyAddArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.denyArticle(stub, args)
+			cc.denyArticle(stub, org, raid)
 		}
 	} else if function == "proposeUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
+		article_num := args[2]
+		jsonArticle := args[3]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.updateArticle(stub, args)
+			cc.updateArticle(stub, org, raid, article_num, jsonArticle)
 		}
 	} else if function == "acceptUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
-		org := args[0]
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
+        org := args[0]
+        raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.acceptUpdArticle(stub, args)
+			cc.acceptUpdArticle(stub, org, raid)
 		}
 	} else if function == "denyUpdateArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
-		org := args[0]
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
+        org := args[0]
+        raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.denyUpdArticle(stub, args)
+			cc.denyUpdArticle(stub, org, raid)
 		}
 	} else if function == "proposeDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
+		article_num := args[2]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.delArticle(stub, args)
+			cc.delArticle(stub, org, raid, article_num)
 		}
 	} else if function == "acceptDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
-		org := args[0]
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
+        org := args[0]
+        raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.acceptDelArticle(stub, args)
+			cc.acceptDelArticle(stub, org, raid)
 		}
 	} else if function == "denyDeleteArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.denyDelArticle(stub, args)
+			cc.denyDelArticle(stub, org, raid)
 		}
 	} else if function == "reachAgreement" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.acceptReachAgree(stub, args)
+			cc.acceptReachAgree(stub, org, raid)
 		}
 	} else if function == "acceptReachAgreement" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.confirmAchieRA(stub, args)
+			cc.confirmAchieRA(stub, org, raid)
 		}
 	} else if function == "querySingleArticle" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
+		article_num := args[2]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.queryArticle(stub, args)
+			article_jsonRA, err := cc.queryArticle(stub, org, raid, article_num)
+			if err != nil {
+                return shim.Error(ERRORAgreement)
+            }
+			return shim.Success([]byte(article_jsonRA))
 		}
 	} else if function == "queryAllArticles" {
 		id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-		if err != nil {return shim.Error(ERRORGetID)}
-		if (id == "") {return shim.Error(ERRORUserID)}
+		if err != nil {
+			return shim.Error(ERRORGetID)
+		}
+		if (id == "") {
+			return shim.Error(ERRORUserID)
+		}
 		org := args[0]
+		raid := args[1]
 		identity_exist := verifyOrg(stub, id)
 		if identity_exist {
-			cc.queryRAarticles(stub, args)
+			jsonRA, err := cc.queryRAarticles(stub, org, raid)
+			if err != nil {
+                return shim.Error(ERRORAgreement)
+            }
+			return shim.Success([]byte(jsonRA))
 		}
 	}
 	return shim.Success([]byte("OK"))
@@ -233,37 +304,28 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org string, ra
 
 func (cc *Chaincode) acceptArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
 
-func (cc *Chaincode) denyArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
+func (cc *Chaincode) denyArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string, jsonArticle string) {}
+
+func (cc *Chaincode) acceptUpdArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) denyUpdArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string) {}
+
+func (cc *Chaincode) acceptDelArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) denyDelArticle(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) acceptReachAgree(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) confirmAchieRA(stub shim.ChaincodeStubInterface, org string, raid string) {}
+
+func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string) (string, error){
 	return "" , errors.New(ERRORWrongNumberArgs)
 }
-func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) acceptUpdArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) denyUpdArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) acceptDelArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) denyDelArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) acceptReachAgree(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) confirmAchieRA(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, args []string) (string, error){
-	return "" , errors.New(ERRORWrongNumberArgs)
-}
-func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, args []string) (string, error){
+func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org string, raid string) (string, error){
 	return "" , errors.New(ERRORWrongNumberArgs)
 }
 
