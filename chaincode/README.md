@@ -56,7 +56,7 @@
 ### Confirmation to Add Article
 |Method                    | Event                  | State                        |
 |:------------------------:|:----------------------:|:----------------------------:|
-|proposeAddArticle         |accepted_add_article    |confirm_proposed_change       |
+|acceptAddArticle          |accepted_add_article    |confirm_proposed_change       |
 - The other MNO must validate the article added in order to include the change.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
