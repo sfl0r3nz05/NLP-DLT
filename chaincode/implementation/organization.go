@@ -5,16 +5,16 @@ import (
     "github.com/hyperledger/fabric-chaincode-go/shim"
 )
 
-func verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool) {
+func verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool, error) {
     bytes, err := stub.GetState(id)
     if bytes != nil {
         log.Errorf("[%s][%s][verifyOrg] The identity already exists", CHANNEL_ENV, IDREGISTRY)
-        return true
+        return true, err
     }
     if err != nil {
         log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
-        return true
+        return false, err
     }
     log.Info("[%s][%s][verifyOrg] The must be registered", CHANNEL_ENV, IDREGISTER)
-    return false
+    return false, err
 }
