@@ -3,8 +3,8 @@
 
 ## Chaincode design 📄✏
 1. `cd ~/NLP-DLT/chaincode/design`
-2. To open the file `diagram_sequence_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
-3. To open the file `class_diagram_chaincode_v5.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+2. To open the file `diagram_sequence_chaincode_v7.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
+3. To open the file `class_diagram_chaincode_v8.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
