@@ -1,5 +1,8 @@
 # Chaincode documentation
-- This section is divided in `chaincode design`, `chaincode implementation` and `chaincode test`.
+- This section is divided in three sub-sections:
+    1. [Chaincode design](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-design-)
+    2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-implementation-)
+    3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-test-)
 
 ## Chaincode design 📄✏
 1. `cd ~/NLP-DLT/chaincode/design`
