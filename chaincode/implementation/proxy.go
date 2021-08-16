@@ -45,7 +45,6 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             if err != nil {
                 return shim.Error(ERRORStoringOrg)
             }
-            //return shim.Success([]byte(org_id))
         }
     } else if function == "proposeAgreementInitiation" {
         id_org1, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
