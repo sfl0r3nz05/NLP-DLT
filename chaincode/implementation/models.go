@@ -92,6 +92,9 @@ const (
 	ERRORBase64           				= `Error decoding into base64`
 	ERRORVerifying        				= `Error verifying signature `
 	ERRORRecoveringOrg	  				= `Error recovering organization`
+	ERRORVerifyingOrg	  				= `Error verifying organization in Roaming Agreement struct`
+	ERRORRecoveringRA	  				= `Error recovering Roaming Agreement`
+	ERRORUpdatingStatus					= `Error updating status of Roaming Agreement struct`
 	IDREGISTER            				= `Identity to register`
 	IDREGISTRY            				= `Identity already registered`
 	ERRORUserID	          				= `Error user has not identity`
