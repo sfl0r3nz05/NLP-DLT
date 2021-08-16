@@ -41,7 +41,7 @@ type ROAMINGAGREEMNT struct {
 type JSONROAMINGAGREEMENT struct {
 	uuid	string						`json:"uuid"` // name for the event
 	document_name	string				`json:"document_name"` // name for the event
-	articles	[]string				`json:"articles"` // name for the event
+	articles	[]ARTICLE				`json:"articles"` // name for the event
 }
 
 type ARTICLE struct {
@@ -92,8 +92,10 @@ const (
 	ERRORBase64           				= `Error decoding into base64`
 	ERRORVerifying        				= `Error verifying signature `
 	ERRORRecoveringOrg	  				= `Error recovering organization`
+	ERRORRecoveringJsonRA	  			= `Error recovering Json Roaming Agreement`
 	ERRORVerifyingOrg	  				= `Error verifying organization in Roaming Agreement struct`
 	ERRORRecoveringRA	  				= `Error recovering Roaming Agreement`
+	ERRORaddingArticle	  				= `Error adding Article to Roaming Agreement`
 	ERRORUpdatingStatus					= `Error updating status of Roaming Agreement struct`
 	IDREGISTER            				= `Identity to register`
 	IDREGISTRY            				= `Identity already registered`
@@ -102,6 +104,7 @@ const (
 	ERRORParsingOrg  	  				= `Error when parsing org to byte`
 	ERRORAgreement  	  				= `Error when agreement is created`
 	ERRORParsing	  	  				= `Error when parsing byte`
+	ERRORStatusRA	  	  				= `Error: Status of RA not match`
 	ERRORRecoverIdentity  				= `Error Identity is recovered`
 	ERRORAddArticle						= `Error adding article`
 	ERRORAcceptAddArticle				= `Error accepting add article`
