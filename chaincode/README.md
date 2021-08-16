@@ -36,13 +36,13 @@
 ### Start Agreement Confirmation
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
-|acceptAgreementInitiation |confirm_ra_started      |confirm_ra_started     |
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
 - For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
 - An event is emitted to set the state `confirm_ra_started`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmStartAgreement1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmStartAgreement2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
 ### Add Article
 |Method                    | Event                  | State                 |
