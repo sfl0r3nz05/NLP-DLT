@@ -17,8 +17,8 @@
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
 - An event is emitted to set the state `created_org`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/registerOrg1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/registerOrg2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/01.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/02.png">
 
 ### Start Agreement
 |Method                    | Event                  | State                 |
@@ -30,8 +30,8 @@
 - The `RAID` is generated.
     - `RAID` is accesible for all MNOs.
 - An event is emitted to set the state `started_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/startAgreement1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/startAgreement2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/03.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/04.png">
 
 ### Start Agreement Confirmation
 |Method                    | Event                  | State                 |
