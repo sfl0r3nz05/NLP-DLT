@@ -1,7 +1,7 @@
 package main
 
 // Compliant with Official Document IR.21 - GSM Association Roaming Database, Structure and Updating Procedures
-type Org struct {
+type Organization struct {
 	mno_name string 	 			`json:"mno_name,omitempty"`
 	mno_country string      		`json:"mno_country,omitempty"`
 	mno_network Network  			`json:"mno_network,omitempty"` // issuer's DID
@@ -32,6 +32,8 @@ type UUIDRAID struct {
 
 // Event to handle events in HF
 type Event struct {
+	ChaincodeId	string				`json:"chaincodeid"` // name for the event
+	Txid	string					`json:"txid"` // name for the event
 	EventName string 	 			`json:"eventName"` // name for the event
 	Payload   []byte 	 			`json:"payload"`   // payload for the
 }
@@ -91,4 +93,6 @@ const (
 	ERRORAcceptAgreement		= `Error: Agreement not accepted`
 	ERRORQuerySingleArticle 	= `Error recovering single article`
 	ERRORQueryAllArticles		= `Error recovering all articles`
+	ERROREventName				= `Error missing Event Name`
+	ERROREventEmit				= `Failed to emit Event`
 )

@@ -14,9 +14,11 @@ type Chaincode struct {
 }
 
 var CHANNEL_ENV string
+var TxID string
 
 func (cc *Chaincode) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
     log.Info("DEBUG")
+    CHANNEL_ENV = APIstub.GetChannelID()
     return shim.Success([]byte("OK"))
 }
 
@@ -362,9 +364,9 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     return shim.Success([]byte("OK"))
 }
 
-func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, args string, id string) (string, error){
-    var organization Org    
-    json.Unmarshal([]byte(args), &organization)
+func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org string, id string) (string, error){
+    var organization Organization    
+    json.Unmarshal([]byte(org), &organization)
 
     idBytes, err := json.Marshal(organization)
     if err != nil {
@@ -377,7 +379,16 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, args string, 
         log.Errorf("[%s][%s][registerOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
         return "", errors.New(ERRORStoringIdentity + err.Error())
     }
-    return id , errors.New(ERRORWrongNumberArgs)
+
+    event_name := "created_org"
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    err = cc.emitEvent(stub, event_name, org, timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][registerOrg] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return "", err
+    }    
+    return id , nil
 }
 func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 string, org2 string, jsonRA string) (string, string, error){
     return "" , "" , errors.New(ERRORWrongNumberArgs)
