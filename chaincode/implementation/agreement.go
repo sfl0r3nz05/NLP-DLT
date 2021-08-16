@@ -42,3 +42,54 @@ func (cc *Chaincode) setAgreement(stub shim.ChaincodeStubInterface, org1_id stri
 
 	return raid, nil
 }
+
+func (cc *Chaincode) recoverRA(stub shim.ChaincodeStubInterface, raid string) (ROAMINGAGREEMNT, error){
+    var RA ROAMINGAGREEMNT
+    CHANNEL_ENV := stub.GetChannelID()
+	bytes_RA, err := stub.GetState(raid)
+	if err != nil {
+		log.Errorf("[%s][%s][recoverRA] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return RA, errors.New(ERRORRecoveringRA + err.Error())
+	}
+    if bytes_RA == nil {
+		log.Errorf("[%s][%s][recoverRA] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
+		return RA, errors.New(ERRORRecoveringRA + err.Error())
+	}
+    err = json.Unmarshal(bytes_RA, RA)
+    if err != nil {
+		log.Errorf("[%s][%s][recoverRA] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return RA, errors.New(ERRORRecoveringRA + err.Error())
+	}
+    return RA, nil
+}
+
+func (cc *Chaincode) updateStatusAgreement(stub shim.ChaincodeStubInterface, raid string, status string) (error){
+    var RA ROAMINGAGREEMNT
+    
+    CHANNEL_ENV := stub.GetChannelID()
+	bytes_RA, err := stub.GetState(raid)
+	if err != nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    if bytes_RA == nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    err = json.Unmarshal(bytes_RA, RA)
+    if err != nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    
+    RA.STATUS = status  //Direct on struct
+    RaAsBytes, _ := json.Marshal(RA)
+
+    err = stub.PutState(raid, RaAsBytes) // PuState of Client (Organization) Identity and Organtization struct
+    if err != nil {
+        log.Errorf("[%s][%s][setAgreement] Error storing: %v", CHANNEL_ENV, ERRORStoringRA, err.Error())
+        return errors.New(ERRORStoringRA + err.Error())
+    }
+
+    return nil
+}
