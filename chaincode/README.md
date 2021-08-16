@@ -263,6 +263,7 @@
     ```
 12. Install dependencies
     ```
+    go get github.com/google/uuid
     go get github.com/sirupsen/logrus
     go get github.com/hyperledger/fabric-protos-go/peer
     go get github.com/hyperledger/fabric-chaincode-go/shim
