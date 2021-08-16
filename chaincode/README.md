@@ -41,8 +41,8 @@
 - Identity is verified.
 - The inputs are `json org` and `RAID`.
 - An event is emitted to set the state `confirmation_ra_started`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmStartAgreement1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/confirmStartAgreement2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/05.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/06.png">
 
 ### Add Article
 |Method                    | Event                  | State                 |
