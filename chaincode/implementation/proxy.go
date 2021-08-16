@@ -412,6 +412,8 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", err
     }
     return uuid, raid, nil
+
+    //FALTA EMITIR EL EVENTO PARA TERMINAR
 }
 
 func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org string, raid string) (error){
