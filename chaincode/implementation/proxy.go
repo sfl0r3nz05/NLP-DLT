@@ -367,14 +367,16 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 }
 
 func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, id string) (string, error){
+    //record organizations
     err := cc.recordOrg(stub, organization, id)
     store := make(map[string]Organization)  //mapping string to Organtization data type
     store["org"] = organization
-
+    
+    //emit event "created_org"
     event_name := "created_org"
     timestamp := timeNow()
     TxID = stub.GetTxID()
-    err = cc.emitEvent(stub, event_name, store["org"].mno_name, timestamp, TxID, CHANNEL_ENV)
+    err = cc.emitEvent(stub, event_name, store["org"].mno_name, "", timestamp, TxID, CHANNEL_ENV)
     if err != nil {
         log.Errorf("[%s][registerOrg] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "", err
@@ -392,7 +394,7 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         log.Errorf("[%s][startAgreement] Error: [%v] when [recordRAJson] is stored", CHANNEL_ENV, err.Error())
         return "","", err
     }
-    status := "started_ra"
+    status := "started_ra"  //set status as "started_ra".
 
     json.Unmarshal([]byte(org1), &organization1)
     id_org1, err := cc.recoverOrgId(stub, organization2)    //recover identifier of organization 1.
@@ -406,14 +408,29 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", errors.New(ERRORRecoveringOrg)
     }
 
+    //set roaming agreement
     raid, err := cc.setAgreement(stub, id_org1, id_org2, uuid, status)
     if err != nil {
         log.Errorf("[%s][startAgreement] Error: [%v] when [setAgreement] is created", CHANNEL_ENV, err.Error())
         return "","", err
     }
+
+    //emit event "started_ra"
+    event_name := "created_org"
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    store := make(map[string]Organization)  //mapping string to Organtization data type
+    store["org1"] = organization1
+    store["org2"] = organization2
+    err = cc.emitEvent(stub, event_name, store["org1"].mno_name, store["org2"].mno_name, timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][setAgreement] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return "","", err
+    }
+
+    // Ready to return to enableAgreement method
     return uuid, raid, nil
 
-    //FALTA EMITIR EL EVENTO PARA TERMINAR
 }
 
 func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org string, raid string) (error){
