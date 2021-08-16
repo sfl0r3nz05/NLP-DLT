@@ -428,7 +428,7 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", err
     }
 
-    // Ready to return to enableAgreement method
+    // Ready to return to startAgreement method
     return uuid, raid, nil
 
 }
