@@ -20,7 +20,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
-### Start Agreement
+### Proposal for start agreement
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |proposeAgreementInitiation|started_ra              |started_ra             |
@@ -33,7 +33,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
-### Start Agreement Confirmation
+### Confirmation of Started Agreement
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
@@ -44,7 +44,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
-### Add Article
+### Proposal for add article
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |proposeAddArticle         |proposed_add_article    |proposed_changes       |
@@ -56,31 +56,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/08.png">
 
-### Confirmation to Add Article
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|acceptAddArticle          |accepted_add_article    |confirm_proposed_change       |
-- The other MNO must validate the article added in order to include the change.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `confirm_proposed_change`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/09.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/10.png">
-
-### Refusing to Add Article
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|denyAddArticle            |denied_add_article      |denied_changes                |
-- The other MNO can deny the article added in order if not agree.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `denied_changes`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/11.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/12.png">
-
-### Update Article
+### Proposal for update article
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |proposeUpdateArticle      |proposed_update_article |proposed_changes       |
@@ -92,31 +68,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/proposeUpdateArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/proposeUpdateArticle2.png">
 
-### Confirmation to Update Article
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|acceptUpdateArticle       |accepted_update_article |accepted_changes              |
-- The other MNO must validate the article added in order to include the change.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `accepted_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/15.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
-
-### Refusing to Update Article
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|denyUpdateArticle         |denied_update_article   |denied_changes                |
-- The other MNO must validate the article added in order to include the change.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `denied_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/17.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/18.png">
-
-### Article Deletion
+### Proposal for delete article
 |Method                    | Event                  | State                        |
 |:------------------------:|:----------------------:|:----------------------------:|
 |proposeDeleteArticle      |proposed_delete_article |proposed_changes              |
@@ -128,31 +80,7 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/deleteArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/deleteArticle2.png">
 
-### Confirmation of Article Deletion
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|acceptDeleteArticle       |accepted_delete_article |accepted_changes              |
-- The other MNO must validate the article deletion.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `accepted_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmDeleteArticle2.png">
-
-### Refusing of Article Deletion
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|denyDeleteArticle         |denied_delete_article   |denied_changes                |
-- The other MNO must validate the article deletion.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`proposed_changes`) is verified.
-- An event is emitted to set the state `denied_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyDeleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyDeleteArticle2.png">
-
-### Agreement Achieved
+### Proposal of Agreement Achieved
 |Method                    | Event                  | State                        |
 |:------------------------:|:----------------------:|:----------------------------:|
 |reachAgreement            |accepted_ra             |acepted_ra                    |
@@ -204,14 +132,8 @@
 |proposeAgreementInitiation|started_ra              |started_ra             |
 |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
 |proposeAddArticle         |proposed_add_article    |proposed_changes       |
-|acceptAddArticle          |accepted_add_article    |accepted_changes       |
-|denyAddArticle            |denied_add_article      |denied_changes         |
 |proposeUpdateArticle      |proposed_update_article |proposed_changes       |
-|acceptUpdateArticle       |accepted_update_article |accepted_changes       |
-|denyUpdateArticle         |denied_update_article   |denied_changes         |
 |proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
-|acceptDeleteArticle       |accepted_delete_article |accepted_changes       |
-|denyDeleteArticle         |denied_delete_article   |denied_changes         |
 |reachAgreement            |accepted_ra             |acepted_ra             |
 |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
