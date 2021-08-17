@@ -540,6 +540,13 @@ func (cc *Chaincode) acceptArticle(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORVerifyingOrg)
     }
 
+    valid_status := []string{"proposed_changes", "", ""}
+    err = cc.verifyCurrentStatus(stub, raid, valid_status[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyCurrentStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
     status := "accepted_changes"  //set status as "accepted_changes".
     err = cc.updateStatusAgreement(stub, raid, status)
     if err != nil {
