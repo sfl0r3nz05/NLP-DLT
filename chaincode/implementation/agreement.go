@@ -46,6 +46,8 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
     
+    //PENDING DATAILS OF VARIABLES AND VARIATIONS
+
     // CREATE NEW ARTICLE
     new_article := ARTICLE{id: article_num, variables: variables, variations: variations}
     
