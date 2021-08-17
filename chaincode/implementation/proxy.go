@@ -197,7 +197,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 return shim.Error(ERRORReachAgreement)
             }
         }
-    } else if function == "acceptReachAgreement" {
+    } else if function == "acceptRefuseReachAgreement" {
         org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
@@ -206,12 +206,13 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORUserID)
         }
         raid := args[0]
+        accept := args[1]
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.confirmAchieRA(stub, org_id, raid)
+            err := cc.confirmRefuseAchieveRA(stub, org_id, raid, accept)
             if err != nil {
                 return shim.Error(ERRORAcceptAgreement)
             }
@@ -610,19 +611,163 @@ func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_i
 }
 
 func (cc *Chaincode) acceptReachAgree(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
+    
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status_ra := "drafting_agreement"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    status := "accepted_ra"  //set status as "confirmation_ra_started".
+    err = cc.updateAgreementStatus(stub, raid, status)
+    if err != nil {
+        log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+    
+    event_name := "proposal_accept_ra"	//emit event "proposed_delete_article"
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    err = cc.emitEvent(stub, event_name, "", org_name, "", timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
     return nil
 }
 
-func (cc *Chaincode) confirmAchieRA(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
+func (cc *Chaincode) confirmRefuseAchieveRA(stub shim.ChaincodeStubInterface, org_id string, raid string, accept string) (error){
+    var status string
+    var event_name string
+    
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status_ra := "accepted_ra"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    if accept == "true" {
+        status = "accepted_changes"
+    } else {
+        status = "denied_changes"
+    }
+
+    err = cc.updateAgreementStatus(stub, raid, status)
+    if err != nil {
+        log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    if accept == "true" {
+        event_name = "confirmation_accepted_ra"
+    } else {
+        event_name = "confirmation_refused_ra"
+    }
+
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    err = cc.emitEvent(stub, event_name, "", org_name, "", timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
     return nil
 }
 
 func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (string, error){
-    return "", nil
+    RA, err := cc.recoverRA(stub, raid)
+    
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return "", errors.New(ERRORVerifyingOrg)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    article_jsonRA, err := cc.recoverArticleRA(stub, uuid, article_num)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverArticleRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQuerySingleArticle)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    return article_jsonRA, nil
 }
 
-func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) (string, error){
-    return "", nil
+func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) (string , error){
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return "", errors.New(ERRORVerifyingOrg)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    jsonRA, err := cc.recoverJsonRA(stub, uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQueryAllArticles)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    return jsonRA, nil
 }
 
 func main() {
