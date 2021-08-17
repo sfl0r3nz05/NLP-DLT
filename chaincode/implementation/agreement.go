@@ -26,6 +26,32 @@ func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string,
 	return nil
 }
 
+func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, variables string, variations string) (error){
+
+    var jsonRAgreement JSONROAMINGAGREEMENT 
+    CHANNEL_ENV := stub.GetChannelID()
+
+	bytes_jsonRA, err := stub.GetState(uuid)
+	if err != nil {
+		log.Errorf("[%s][%s][addArticleJson] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    if bytes_jsonRA == nil {
+		log.Errorf("[%s][%s][addArticleJson] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
+    if err != nil {
+		log.Errorf("[%s][%s][addArticleJson] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+		return errors.New(ERRORRecoveringJsonRA + err.Error())
+	}
+
+    // CREAR ARTÍCULO
+    //ATTACH al ya existente en JSONROAMINGAGREEMENT
+
+	return nil
+}
+
 
 func (cc *Chaincode) setAgreement(stub shim.ChaincodeStubInterface, org1_id string, org2_id string, uuid string, status string) (string, error){
 	RA, err := json.Marshal(ROAMINGAGREEMNT{UUID: uuid, ORG1_ID: org1_id, ORG2_ID: org2_id, STATUS: status})
@@ -76,7 +102,7 @@ func (cc *Chaincode) updateStatusAgreement(stub shim.ChaincodeStubInterface, rai
 		log.Errorf("[%s][%s][updateStatusAgreement] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
 		return errors.New(ERRORRecoveringRA + err.Error())
 	}
-    err = json.Unmarshal(bytes_RA, RA)
+    err = json.Unmarshal(bytes_RA, RA)  //Parsing bytes_RA to ROAMINGAGREEMENT data type
     if err != nil {
 		log.Errorf("[%s][%s][updateStatusAgreement] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
 		return errors.New(ERRORRecoveringRA + err.Error())
@@ -92,4 +118,58 @@ func (cc *Chaincode) updateStatusAgreement(stub shim.ChaincodeStubInterface, rai
     }
 
     return nil
+}
+
+func (cc *Chaincode) verifyCurrentStatus(stub shim.ChaincodeStubInterface, raid string, valid_status []string) (error){
+    var RA ROAMINGAGREEMNT
+    
+    CHANNEL_ENV := stub.GetChannelID()
+	bytes_RA, err := stub.GetState(raid)
+	if err != nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    if bytes_RA == nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+    err = json.Unmarshal(bytes_RA, RA)  //Parsing bytes_RA to ROAMINGAGREEMENT data type
+    if err != nil {
+		log.Errorf("[%s][%s][updateStatusAgreement] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+		return errors.New(ERRORRecoveringRA + err.Error())
+	}
+
+    store := make(map[string]ROAMINGAGREEMNT)  //mapping string to Organtization data type
+    store["org_id"] = RA
+
+	if (store["org_id"].STATUS == valid_status[0] || store["org_id"].STATUS == valid_status[1] || store["org_id"].STATUS == valid_status[2] ){
+		return nil	
+	}
+
+    return errors.New(ERRORStatusRA)
+}
+
+func (cc *Chaincode) recoverUUID(stub shim.ChaincodeStubInterface, raid string) (string, error){
+    var RA ROAMINGAGREEMNT
+    CHANNEL_ENV := stub.GetChannelID()
+    bytes_RA, err := stub.GetState(raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+    if bytes_RA == nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+    err = json.Unmarshal(bytes_RA, RA)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    store := make(map[string]ROAMINGAGREEMNT)  //mapping string to Organtization data type
+    store["org_id"] = RA
+	uuid := store["org1_id"].UUID
+
+    return uuid, nil
 }
