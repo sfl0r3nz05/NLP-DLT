@@ -53,8 +53,8 @@
 - The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
 - The previous state (`confirm_ra_started`) is verified.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/setArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/setArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/07.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/08.png">
 
 ### Confirmation to Add Article
 |Method                    | Event                  | State                        |
