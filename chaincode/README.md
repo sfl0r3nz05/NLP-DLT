@@ -101,8 +101,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `accepted_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/acceptUpdArticle1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/acceptUpdArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/15.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
 
 ### Refusing to Update Article
 |Method                    | Event                  | State                        |
@@ -113,8 +113,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_update_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyUpdateArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/denyUpdateArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/17.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/18.png">
 
 ### Article Deletion
 |Method                    | Event                  | State                        |
