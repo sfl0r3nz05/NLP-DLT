@@ -46,8 +46,8 @@ type JSONROAMINGAGREEMENT struct {
 
 type ARTICLE struct {
 	id	string							`json:"id"` // name for the event
-	variables	string				`json:"variables"` // name for the event
-	variations	string				`json:"variations"` // name for the event
+	variables	string					`json:"variables"` // name for the event
+	variations	string					`json:"variations"` // name for the event
 }
 
 // Event to handle events in HF
