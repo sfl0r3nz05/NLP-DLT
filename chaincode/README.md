@@ -77,8 +77,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `denied_changes`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denySetArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/denySetArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/11.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/12.png">
 
 ### Update Article
 |Method                    | Event                  | State                 |
