@@ -104,7 +104,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raid := args[0]
         article_num := args[1]
         variables := args[2]
-        variations := args[2]
+        variations := args[3]
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
@@ -116,47 +116,46 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             }
         }
     } else if function == "proposeUpdateArticle" {
-        id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
         }
-        if (id == "") {
+        if (org_id == "") {
             return shim.Error(ERRORUserID)
         }
-        org := args[0]
-        raid := args[1]
-        article_num := args[2]
-        jsonArticle := args[3]
-        identity_exist, err := cc.verifyOrg(stub, id)
+        raid := args[0]
+        article_num := args[1]
+        variables := args[2]
+        variations := args[3]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
         if identity_exist {
-            err := cc.updateArticle(stub, org, raid, article_num, jsonArticle)
+            err := cc.updateArticle(stub, org_id, raid, article_num, variables, variations)
             if err != nil {
                 return shim.Error(ERRORUpdateArticle)
             }
         }
-        if err != nil {
-            return shim.Error(ERRORRecoverIdentity)
-        }
     } else if function == "proposeDeleteArticle" {
-        id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
         }
-        if (id == "") {
+        if (org_id == "") {
             return shim.Error(ERRORUserID)
         }
-        org := args[0]
-        raid := args[1]
-        article_num := args[2]
-        identity_exist, err := cc.verifyOrg(stub, id)
+        raid := args[0]
+        article_num := args[1]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
         if identity_exist {
-            err := cc.delArticle(stub, org, raid, article_num)
+            err := cc.delArticle(stub, org_id, raid, article_num)
             if err != nil {
                 return shim.Error(ERRORDeleteArticle)
             }
-        }
-        if err != nil {
-            return shim.Error(ERRORRecoverIdentity)
         }
     } else if function == "reachAgreement" {
         id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -325,7 +324,7 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     }
 
     status := "confirmation_ra_started"  //set status as "confirmation_ra_started".
-    err = cc.updateStatusAgreement(stub, raid, status)
+    err = cc.updateAgreementStatus(stub, raid, status)
     if err != nil {
         log.Errorf("[%s][updateStatusAgreement][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
         return errors.New(ERRORUpdatingStatus + err.Error())
@@ -361,10 +360,10 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORVerifyingOrg)
     }
 
-    valid_status := []string{"confirmation_ra_started", "accepted_changes", "denied_changes"}
-    err = cc.verifyCurrentStatus(stub, raid, valid_status[0:])
+    valid_status := "confirmation_ra_started"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status[0:])
     if err != nil {
-        log.Errorf("[%s][verifyCurrentStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)
     }
 
@@ -374,14 +373,15 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORRecoveringRA + err.Error())
     }
     
-    err = cc.addArticleJson(stub, uuid, article_num, variables, variations)
+    article_status := "proposed_changes"
+    err = cc.addArticleJson(stub, uuid, article_num, article_status, variables, variations)
     if err != nil {
         log.Errorf("[%s][%s][addArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
-    status := "proposed_changes"  //set status as "proposed_changes".
-    err = cc.updateStatusAgreement(stub, raid, status)
+    status := "drafting_agreement"  //set status as "proposed_changes".
+    err = cc.updateAgreementStatus(stub, raid, status)
     if err != nil {
         log.Errorf("[%s][updateStatusAgreement][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
         return errors.New(ERRORUpdatingStatus + err.Error())
@@ -393,25 +393,132 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
 
-    //emit event "confirmation_ra_started"
-    event_name := "proposed_add_article"
+    event_name := "proposed_add_article"    //emit event "proposed_add_article"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, org_name, "", timestamp, TxID, CHANNEL_ENV)
     if err != nil {
-        log.Errorf("[%s][registerOrg] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return err
     }
 
     return nil
 }
 
-func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string, jsonArticle string) (error){
-    return errors.New(ERRORWrongNumberArgs)
+func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string) (error){
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status_ra := "drafting_agreement"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    valid_status_article := []string{"accepted_changes", "denied_changes"}
+    err = cc.verifyArticleStatus(stub, uuid, article_num, valid_status_article[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    article_status := "proposed_change"
+    err = cc.updateArticleJson(stub, uuid, article_num, article_status, variables, variations)
+    if err != nil {
+        log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        return errors.New(ERRORaddingArticle + err.Error())
+    }
+
+    org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    event_name := "proposed_update_article"	//emit event "proposed_update_article"
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    err = cc.emitEvent(stub, event_name, org_name, "", timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
+    return nil
 }
 
-func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org string, raid string, article_num string) (error){
-    return errors.New(ERRORWrongNumberArgs)
+func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (error){
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status_ra := "drafting_agreement"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    valid_status_article := []string{"accepted_changes", "denied_changes"}
+    err = cc.verifyArticleStatus(stub, uuid, article_num, valid_status_article[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    article_status := "proposed_change"
+    err = cc.deleteArticleJson(stub, uuid, article_num, article_status)
+    if err != nil {
+        log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        return errors.New(ERRORaddingArticle + err.Error())
+    }
+
+    org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    event_name := "proposed_delete_article"	//emit event "proposed_delete_article"
+    timestamp := timeNow()
+    TxID = stub.GetTxID()
+    err = cc.emitEvent(stub, event_name, org_name, "", timestamp, TxID, CHANNEL_ENV)
+    if err != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
+    return nil
 }
 
 func (cc *Chaincode) acceptReachAgree(stub shim.ChaincodeStubInterface, org string, raid string) (error){
