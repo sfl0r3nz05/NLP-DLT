@@ -45,9 +45,20 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
 		log.Errorf("[%s][%s][addArticleJson] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
 		return errors.New(ERRORRecoveringJsonRA + err.Error())
 	}
+    
+    // CREATE NEW ARTICLE
+    new_article := ARTICLE{id: article_num, variables: variables, variations: variations}
+    
+    //APPEND to existing JSONROAMINGAGREEMENT data type
+    s := append(jsonRAgreement.articles, new_article)
 
-    // CREAR ARTÍCULO
-    //ATTACH al ya existente en JSONROAMINGAGREEMENT
+    readyToSubmit, _ := json.Marshal(s)
+
+    err = stub.PutState(uuid, readyToSubmit) // PuState of Client (Organization) Identity and Organtization struct
+    if err != nil {
+        log.Errorf("[%s][%s][addArticleJson] Error storing: %v", CHANNEL_ENV, ERRORStoringRA, err.Error())
+        return errors.New(ERRORStoringRA + err.Error())
+    }
 
 	return nil
 }
