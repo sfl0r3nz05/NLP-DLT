@@ -65,8 +65,8 @@
 - The inputs are `json org` and `RAID`.
 - The previous state (`proposed_changes`) is verified.
 - An event is emitted to set the state `confirm_proposed_change`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmSetArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmSetArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/09.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/10.png">
 
 ### Refusing to Add Article
 |Method                    | Event                  | State                        |
