@@ -91,7 +91,8 @@ const (
 	ERRORParseJWS         				= `Error parsing into JWS`
 	ERRORParseX509        				= `Error parsing into X509`
 	ERRORBase64           				= `Error decoding into base64`
-	ERRORVerifying        				= `Error verifying signature `
+	ERRORVerifying        				= `Error verifying signature`
+	ERRORFindingArticle   				= `Error finding article`
 	ERRORRecoveringOrg	  				= `Error recovering organization`
 	ERRORRecoveringJsonRA	  			= `Error recovering Json Roaming Agreement`
 	ERRORVerifyingOrg	  				= `Error verifying organization in Roaming Agreement struct`
