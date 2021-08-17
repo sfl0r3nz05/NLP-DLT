@@ -8,16 +8,20 @@ import (
 	"github.com/hyperledger/fabric-chaincode-go/shim"
 )
 
-func (cc *Chaincode) emitEvent(stub shim.ChaincodeStubInterface, event_name string, org1 string, org2 string, timestamp, txid string, channelid string) (error){
+func (cc *Chaincode) emitEvent(stub shim.ChaincodeStubInterface, event_name string, article_num string, org1 string, org2 string, timestamp, txid string, channelid string) (error){
 	var eventPayload string
 	
 	if event_name == "" {
 		return errors.New(ERROREventName)
 	}
-	if org2 == "" {
+	if (org2 == ""  && article_num == "") {
 		eventPayload = "Event Name " + event_name + " organtization " + org1 + " timestamp " + timestamp + " TxID " + txid + " Channel ID " + channelid
-	} else {
+	} else if (org2 != ""  && article_num == "") {
 		eventPayload = "Event Name " + event_name + " organtization 1 " + org1 + " organtization 2 " + org2 + " timestamp " + timestamp + " TxID " + txid + " Channel ID " + channelid
+	} else if (org2 == ""  && article_num != "") {
+		eventPayload = "Event Name " + event_name + "Article Number" + article_num + " organtization 1 " + org1 + " timestamp " + timestamp + " TxID " + txid + " Channel ID " + channelid
+	} else if (org2 != ""  && article_num != "") {
+		eventPayload = "Event Name " + event_name +  "Article Number" + article_num + " organtization 1 " + org1 + " organtization 2 " + org2 + " timestamp " + timestamp + " TxID " + txid + " Channel ID " + channelid
 	}
 	payloadAsBytes := []byte(eventPayload)
 	eventErr := stub.SetEvent(event_name ,payloadAsBytes)
