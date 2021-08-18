@@ -262,10 +262,10 @@ Query a single article.
 - The content of `article_num` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/19.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/19.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/20.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/20.png">
 
 Query All Article
 ---
@@ -276,10 +276,10 @@ Query all articles added to the negotiation process.
 - The content of `jsonRA` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/21.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/21.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/22.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
 1. The chaincode implementation is divided in:
