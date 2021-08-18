@@ -41,9 +41,11 @@
 |:------------------------:|:----------------------:|:---------------------:|
 |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
 - For the roaming agreement drafting to be valid, the other MNO must confirm it.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- An event is emitted to set the state `confirmation_ra_started`.
+- Identity is verified at each interaction.
+- The input is `RAID`.
+- The `RAID` is obtained in the frontend.
+- The Roaming Agreement status is set as `confirmation_ra_started`.
+- The `confirmation_ra_started` event is emitted.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/05.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/06.png">
 
