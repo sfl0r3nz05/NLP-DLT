@@ -97,7 +97,8 @@
 ### Accept/Refuse proposed changes
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
-|proposeDeleteArticle      |proposed_delete_article |drafting_agreement      |proposed_changes        |
+|proposeDeleteArticle      |accept_proposed_changes |drafting_agreement      |accepted_changes        |
+|proposeDeleteArticle      |refuse_proposed_changes |drafting_agreement      |denied_changes        |
 - The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) must be accepted or refused.
 - Conditional sentences `(accept == "true") ? article_status = "accepted_changes" : article_status = "denied_changes"` enable to accept or refuse the `proposed_changes` and therefore set the article state.
 - The article state is set to `proposed_change`.
@@ -106,6 +107,7 @@
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - The previous states: `proposed_changes` is verified.
 - Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` also enable to accept or refuse the `proposed_changes` and therefore set the event name.
+- After refusing a proposed change, the MNO must continue to negotiate via an [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article).
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/13.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/14.png">
 
