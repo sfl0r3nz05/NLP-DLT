@@ -13,10 +13,10 @@
 3. The chaincode mechanisms designed are defined below:
 
 ### Register organization
+This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |addOrg                    |created_org             |-                       |-                       |
-- Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
 - No state is set
 - An event is emitted to set the state `created_org`.
@@ -27,10 +27,10 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
+A registered organization is enabled to draft a Roaming Agreement.
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |proposeAgreementInitiation|started_ra              |started_ra              |-                       |
-- A registered organization is enabled to draft a Roaming Agreement.
 - Identity is verified at each interaction.
 - The inputs are two `json org` and `json jsonRA`.
 - The `json jsonRA` provides basic information of the Roaming Agreement.
