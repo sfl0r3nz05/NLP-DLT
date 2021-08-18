@@ -1,4 +1,4 @@
-# Chaincode documentation
+# Chaincode Documentation
 - This section is divided in three sub-sections:
     1. [Chaincode design](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-design-)
     2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-implementation-)
@@ -378,7 +378,7 @@ To initialize the chaincode first is necessary to install and instantiate the ch
 
 ## Chaincode test 📈📉📊
 
-Testing the chaincode
+### Testing the chaincode
 ---
 
 You can run the unit test executing the following commmand:
