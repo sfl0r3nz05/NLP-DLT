@@ -7,27 +7,26 @@
 ## Chaincode design 📄✏
 1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
 2. The application [App Diagrams Tool](https://app.diagrams.net/) *has been used to design*:
-    1. [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
-    2. [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
-    3. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
-
+    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
+    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
+    - [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
 3. Chaincode contains two types of states:
-    1. [State transitions in Roaming Agreement]()
-    2. [State transition for the articles negotiation]()
+    - [State transitions in Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transitions-in-roaming-agreement)
+    - [State transition for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transition-for-the-articles-negotiation)
 4. Chaincode emits events from actions:
-    1. [List of events]()
+    - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
 5. The chaincode mechanisms designed are:
-    1. [Register organization]()
-    2. [Proposal for start agreement]()
-    3. [Confirmation of Started Agreement]()
-    4. [Proposal for add article]()
-    5. [Proposal for update article]()
-    6. [Proposal for delete article]()
-    7. [Accept/Refuse proposed changes]()
-    8. [Proposal of Agreement Achieved]()
-    9. [Confirmation of Agreement Achieved]()
-    10. [Query Single Article]() 
-    11. [Query All Article]() 
+    - [Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#register-organization)
+    - [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement)
+    - [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement)
+    - [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article)
+    - [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article)
+    - [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article)
+    - [Accept/Refuse proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#acceptrefuse-proposed-changes)
+    - [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved)
+    - [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved)
+    - [Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article) 
+    - [Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-all-article) 
 
 State transitions in Roaming Agreement
 ---
