@@ -283,10 +283,10 @@ Query all articles added to the negotiation process.
 
 ## Chaincode implementation 💻
 1. The chaincode implementation is divided in:
-    - [How to build/modify Chaincode]()
-    - [How to deploy the project configuration: use directly the chaincode]()
-    - [Build vendor for chaincode]()
-    - [Init the chaincode]()
+    - [How to build/modify Chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
+    - [How to deploy the project configuration: use directly the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-deploy-the-project-configuration-use-directly-the-chaincode)
+    - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#build-vendor-for-chaincode)
+    - [Init the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#init-the-chaincode)
 
 ### How to build/modify Chaincode
 
