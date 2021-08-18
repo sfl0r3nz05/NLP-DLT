@@ -20,7 +20,10 @@
 - Identity is verified at each interaction.
 - No state is set
 - An event is emitted to set the state `created_org`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">       
+#### Chaincode sequence diagram piece
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">
+
+#### Chaincode class diagram piece
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
