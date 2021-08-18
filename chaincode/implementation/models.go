@@ -93,6 +93,7 @@ const (
 	ERRORBase64           				= `Error decoding into base64`
 	ERRORVerifying        				= `Error verifying signature`
 	ERRORFindingArticle   				= `Error finding article`
+	ERRORAcceptingProposedChanges		= `Error accepting proposed changes`
 	ERRORRecoveringOrg	  				= `Error recovering organization`
 	ERRORRecoveringJsonRA	  			= `Error recovering Json Roaming Agreement`
 	ERRORVerifyingOrg	  				= `Error verifying organization in Roaming Agreement struct`

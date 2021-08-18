@@ -175,7 +175,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if identity_exist {
             err := cc.acceptRefuseChanges(stub, org_id, raid, article_num, accept)
             if err != nil {
-                return shim.Error(ERRORDeleteArticle)
+                return shim.Error(ERRORAcceptingProposedChanges)
             }
         }
     } else if function == "reachAgreement" {
@@ -456,7 +456,7 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORStatusRA)
     }
 
-    article_status := "proposed_change"
+    article_status := "proposed_changes"
     err = cc.updateArticleJson(stub, uuid, article_num, article_status, variables, variations)
     if err != nil {
         log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
@@ -514,7 +514,7 @@ func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORStatusRA)
     }
 
-    article_status := "proposed_change"
+    article_status := "proposed_changes"
     err = cc.deleteArticleJson(stub, uuid, article_num, article_status)
     if err != nil {
         log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
@@ -568,7 +568,7 @@ func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_i
         return errors.New(ERRORRecoveringRA + err.Error())
     }
 
-    valid_status_article := []string{"proposed_change"}
+    valid_status_article := []string{"proposed_changes"}
     err = cc.verifyArticleStatus(stub, uuid, article_num, valid_status_article[0:])
     if err != nil {
         log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
