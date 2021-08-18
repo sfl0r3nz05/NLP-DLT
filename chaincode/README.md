@@ -5,34 +5,36 @@
     3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-test-)
 
 ## Chaincode design 📄✏
-1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
-2. The application [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
+**1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`**
+**2. The application [App Diagrams Tool](https://app.diagrams.net/) has been used to design:**
     1. [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     2. [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
     3. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
 
-3. Chaincode contains states:
+**3. Chaincode contains states:**
 
     ### State-to-state-transition
-- Actions implies change of state. 
-- The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/states_diagram_v3.png">
+    - Actions implies change of state. 
+    - The chaincode validates the changes of states.
+    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/states_diagram_v3.png">
+    
+**4. In addition to states the Chaincode emits events:**
 
-### States and events
-- The following table associates states to events emitted:
+    ### States and events
+    - The following table associates states to events emitted:
 
-|Methods                   | Events                 | States                |
-|:------------------------:|:----------------------:|:---------------------:|
-|addOrg                    |created_org             |-                      |
-|proposeAgreementInitiation|started_ra              |started_ra             |
-|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
-|proposeAddArticle         |proposed_add_article    |proposed_changes       |
-|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
-|proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
-|reachAgreement            |accepted_ra             |acepted_ra             |
-|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
+    |Methods                   | Events                 | States                |
+    |:------------------------:|:----------------------:|:---------------------:|
+    |addOrg                    |created_org             |-                      |
+    |proposeAgreementInitiation|started_ra              |started_ra             |
+    |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
+    |proposeAddArticle         |proposed_add_article    |proposed_changes       |
+    |proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+    |proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
+    |reachAgreement            |accepted_ra             |acepted_ra             |
+    |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
-3. The chaincode mechanisms designed are defined below:
+**5. The chaincode mechanisms designed are defined below:**
 
 ### 1. Register organization
 
