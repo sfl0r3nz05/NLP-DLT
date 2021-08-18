@@ -23,16 +23,16 @@
    ### States and events
    - The following table associates states to events emitted:
 
-    |Methods                   | Events                 | States                |
-    |:------------------------:|:----------------------:|:---------------------:|
-    |addOrg                    |created_org             |-                      |
-    |proposeAgreementInitiation|started_ra              |started_ra             |
-    |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
-    |proposeAddArticle         |proposed_add_article    |proposed_changes       |
-    |proposeUpdateArticle      |proposed_update_article |proposed_changes       |
-    |proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
-    |reachAgreement            |accepted_ra             |acepted_ra             |
-    |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
+|Methods                   | Events                 | States                |
+|:------------------------:|:----------------------:|:---------------------:|
+|addOrg                    |created_org             |-                      |
+|proposeAgreementInitiation|started_ra              |started_ra             |
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
+|proposeAddArticle         |proposed_add_article    |proposed_changes       |
+|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+|proposeDeleteArticle      |proposed_delete_article |proposed_changes       |
+|reachAgreement            |accepted_ra             |acepted_ra             |
+|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
 **5. The chaincode mechanisms designed are defined below:**
 
