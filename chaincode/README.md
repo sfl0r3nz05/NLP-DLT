@@ -42,7 +42,7 @@ State transition for the articles negotiation
     
 List of events
 ---
-- The following table relates `Methods`, `Events` to emit and two types of states: `Roaming Agreement State` and `Article Negotiation States`
+- The following table relates `Methods`, `Events` to emit and the two types of states: `Roaming Agreement State` and `Article Negotiation States`
 
 |Method                     |Event                   |Roaming Agreement State  |Article Negotiation States |
 |:-------------------------:|:----------------------:|:-----------------------:|:-------------------------:|
