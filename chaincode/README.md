@@ -42,10 +42,10 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The Roaming Agreement state is set as `started_ra`.
 - The `started_ra` event is emitted.
 
-**Part of Chaincode Sequence Diagram**
+##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">
 
-**Part of Chaincode Class Diagram**
+##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
 ### Confirmation of Started Agreement
@@ -58,10 +58,11 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The `RAID` is obtained in the frontend.
 - The Roaming Agreement state is set as `confirmation_ra_started`.
 - The `confirmation_ra_started` event is emitted.
-**Part of Chaincode Sequence Diagram**
+
+##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">
 
-**Part of Chaincode Class Diagram**
+##### Part of Chaincode Class Diagram  
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
 ### Proposal for add article
@@ -76,7 +77,11 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
 - A new state of the Roamming Agreement is set to `drafting_agreement`.
 - An event is emitted once the state `proposed_changes` is set.
+
+##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
+
+##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/08.png">
 
 ### Proposal for update article
