@@ -54,8 +54,8 @@
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |proposeAddArticle         |proposed_add_article    |drafting_agreement      |proposed_changes        |
 - The drafting of the Roaming Agreement involves to add article by article.
-- Each article will independently manage its own state.
-- The article statte is set to `proposed_change`.
+- The state of each article is managed independently.
+- The article state is set to `proposed_change`.
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num`, `variables` and `variations`.
 - The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
@@ -69,8 +69,8 @@
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |proposeUpdateArticle      |proposed_update_article |drafting_agreement      |proposed_changes        |
 - The drafting of the Roaming Agreement involves to update articles. 
-- Each article will independently manage its own state.
-- The article statte is set to `proposed_change`.
+- The state of each article is managed independently.
+- The article state is set to `proposed_change`.
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num`, `variables` and `variations`.
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
@@ -80,16 +80,19 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/10.png">
 
 ### Proposal for delete article
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|proposeDeleteArticle      |proposed_delete_article |proposed_changes              |
-- The drafting of the Roaming Agreement involves the deletion of the articles. 
-- Identity is verified.
-- The inputs are `json org`, `RAID` and `article_num`.
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|proposeDeleteArticle      |proposed_delete_article |drafting_agreement      |proposed_changes        |
+- The drafting of the Roaming Agreement involves the deletion of the articles.
+- The state of each article is managed independently.
+- The article state is set to `proposed_change`.
+- Identity is verified at each interaction.
+- The inputs are `RAID` and `article_num`.
+- The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted to set the state `proposed_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/deleteArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/deleteArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/11.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/12.png">
 
 ### Proposal of Agreement Achieved
 |Method                    | Event                  | State                        |
