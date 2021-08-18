@@ -65,13 +65,16 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/08.png">
 
 ### Proposal for update article
-|Method                    | Event                  | State                 |
-|:------------------------:|:----------------------:|:---------------------:|
-|proposeUpdateArticle      |proposed_update_article |proposed_changes       |
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|proposeUpdateArticle      |proposed_update_article |drafting_agreement      |proposed_changes        |
 - The drafting of the Roaming Agreement involves to update articles. 
-- Identity is verified.
-- The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
-- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
+- Each article will independently manage its own state.
+- The article statte is set to `proposed_change`.
+- Identity is verified at each interaction.
+- The inputs are `RAID`, `article_num`, `variables` and `variations`.
+- The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
+- One of the two previous Articles states: `accepted_changes` and `denied_changes` are verified.
 - An event is emitted once the state `proposed_changes` is set.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle1.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle2.png">
