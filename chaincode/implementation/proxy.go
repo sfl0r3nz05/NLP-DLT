@@ -379,7 +379,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     }
 
     valid_status := "confirmation_ra_started"
-    err = cc.verifyAgreementStatus(stub, raid, valid_status[0:])
+    err = cc.verifyAgreementStatus(stub, raid, valid_status)
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)

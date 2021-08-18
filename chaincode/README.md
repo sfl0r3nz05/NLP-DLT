@@ -11,52 +11,55 @@
 4. To open the file `states_diagram.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
 
 ### Register organization
-|Method                    | Event                  | State                 |
-|:------------------------:|:----------------------:|:---------------------:|
-|addOrg                    |created_org             |-                      |
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|addOrg                    |created_org             |-                       |-                       |
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
-- No status is set
+- No state is set
 - An event is emitted to set the state `created_org`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
-|Method                    | Event                  | State                 |
-|:------------------------:|:----------------------:|:---------------------:|
-|proposeAgreementInitiation|started_ra              |started_ra             |
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|proposeAgreementInitiation|started_ra              |started_ra              |-                       |
 - A registered organization is enabled to draft a Roaming Agreement.
 - Identity is verified at each interaction.
 - The inputs are two `json org` and `json jsonRA`.
 - The `json jsonRA` provides basic information of the Roaming Agreement.
 - The `RAID` is generated.
     - `RAID` is accesible for all MNOs.
-- The Roaming Agreement status is set as `started_ra`.
+- The Roaming Agreement state is set as `started_ra`.
 - The `started_ra` event is emitted.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
 ### Confirmation of Started Agreement
-|Method                    | Event                  | State                 |
-|:------------------------:|:----------------------:|:---------------------:|
-|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started|
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started |-                       |
 - For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - Identity is verified at each interaction.
 - The input is `RAID`.
 - The `RAID` is obtained in the frontend.
-- The Roaming Agreement status is set as `confirmation_ra_started`.
+- The Roaming Agreement state is set as `confirmation_ra_started`.
 - The `confirmation_ra_started` event is emitted.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
 ### Proposal for add article
-|Method                    | Event                  | State                 |
-|:------------------------:|:----------------------:|:---------------------:|
-|proposeAddArticle         |proposed_add_article    |proposed_changes       |
-- The drafting of the Roaming Agreement involves to add article by article. 
-- Identity is verified.
-- The inputs are `json org`, `RAID`, `article_num` and `jsonArticle`.
-- The previous state (`confirm_ra_started`) is verified.
+|Method                    | Event                  | Roaming Agreement State| Article State          |
+|:------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|proposeAddArticle         |proposed_add_article    |drafting_agreement      |proposed_changes        |
+- The drafting of the Roaming Agreement involves to add article by article.
+- Each article will independently manage its own state.
+- The article statte is set to `proposed_change`.
+- Identity is verified at each interaction.
+- The inputs are `RAID`, `article_num`, `variables` and `variations`.
+- The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
+- A new state of the Roamming Agreement is set to `drafting_agreement`.
 - An event is emitted once the state `proposed_changes` is set.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/08.png">
