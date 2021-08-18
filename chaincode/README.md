@@ -10,6 +10,7 @@
     1. [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     2. [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
     3. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
+3. The chaincode mechanisms designed are defined below:
 
 ### Register organization
 |Method                    | Event                  | Roaming Agreement State| Article State          |
