@@ -58,7 +58,6 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The `RAID` is obtained in the frontend.
 - The Roaming Agreement state is set as `confirmation_ra_started`.
 - The `confirmation_ra_started` event is emitted.
-
 **Part of Chaincode Sequence Diagram**
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">
 
