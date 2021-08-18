@@ -31,14 +31,14 @@
 
 State transitions in Roaming Agreement
 ---
-- Actions implies change of state. 
+- The first type of state change to be considered is at the Roaming Agreement level.
 - The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State.png">
 
 State transition for the articles negotiation
 ---
-- Actions implies change of state. 
-- The chaincode validates the changes of states.
+- The second type of state change to be considered is at the Article Negotiation level.
+- The chaincode also validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State.png">
     
 List of events
