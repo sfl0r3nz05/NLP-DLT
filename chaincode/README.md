@@ -282,7 +282,8 @@ Query all articles added to the negotiation process.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
-### Build/Modify chaincode
+How to build/modify Chaincode
+---
 1. Download Golang version
     ```
     wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
@@ -339,7 +340,8 @@ Query all articles added to the negotiation process.
     ```
     go build
     ```
-### Project configuration: use directly the chaincode
+How to deploy the project configuration: use directly the chaincode
+---
 1. Verify GOPATH where GOPATH could be set in `~/go`
     ```
     echo $GOPATH
@@ -350,7 +352,9 @@ Query all articles added to the negotiation process.
     $GOPATH/src/name_of_the_project
     ```
 
-### Build vendor for chaincode
+Build vendor for chaincode
+---
+
 Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
 
 If the chaincode does not run because of the vendor, it can be built from scratch:
@@ -367,16 +371,17 @@ cd   $GOPATH/src/name_of_the_project/src/chaincode
 dep  ensure -v
 ```
 
-### Init the chaincode
+Init the chaincode
+---
 
-To initialize the chaincode first is necessary to install and instantiate the chaincode on one peer of the HF network. For that action, it can be used the coren-hfservice module, abstracting the complexity of using the command-line interface
+To initialize the chaincode first is necessary to install and instantiate the chaincode on one peer of the Hyperledger Fabric network. For that action, it can be used the coren-hfservice module, abstracting the complexity of using the command-line interface
 
 ## Chaincode test 📈📉📊
 
-### Testing the chaincode
-In postman folder there are the collection and environment to interact and test with the chaincode methods. It is only needed to import them into postman application and know to use the coren-hfservice module
+Testing the chaincode
+---
 
-You can also run the unit test executing the following commmand:
+You can run the unit test executing the following commmand:
 
 ```
 go test
