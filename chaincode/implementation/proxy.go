@@ -715,7 +715,6 @@ func (cc *Chaincode) confirmRefuseAchieveRA(stub shim.ChaincodeStubInterface, or
 
 func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (string, error){
     RA, err := cc.recoverRA(stub, raid)
-    
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return "", errors.New(ERRORRecoveringRA + err.Error())
