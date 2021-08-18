@@ -7,9 +7,9 @@
 ## Chaincode design 📄✏
 1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
 2. The application [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
-    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
-    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
-    - [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
+    1. [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
+    2. [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
+    3. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
 
 ### Register organization
 |Method                    | Event                  | Roaming Agreement State| Article State          |
