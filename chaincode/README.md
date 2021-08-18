@@ -20,10 +20,10 @@
 - Identity is verified at each interaction.
 - No state is set
 - An event is emitted to set the state `created_org`.
-#### Piece of [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
+#### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">
 
-#### Piece of [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
+#### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
@@ -38,7 +38,10 @@
     - `RAID` is accesible for all MNOs.
 - The Roaming Agreement state is set as `started_ra`.
 - The `started_ra` event is emitted.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">       
+#### Part of Chaincode Sequence Diagram
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">
+
+#### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
 ### Confirmation of Started Agreement
