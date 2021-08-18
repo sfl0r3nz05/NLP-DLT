@@ -229,11 +229,13 @@ The drafting of the Roaming Agreement involves the proposal of acceptation of th
 
 Confirmation of Agreement Achieved
 ---
+The changes proposed in Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
+
 |Method                     | Event                  | Roaming Agreement State| Article State          |
 |:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |acceptRefuseReachAgreement |confirmation_accepted_ra|accepted_ra             |confirm_accepted_ra     |
 |acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra             |refused_ra              |
-- The changes proposed in Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
+
 - Conditional sentences `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enable to accept or refuse the `accepted_ra` previous state.
 - Identity is verified at each interaction.
 - The inputs are `RAID` and `accept`.
@@ -248,6 +250,8 @@ Confirmation of Agreement Achieved
 
 Query Single Article
 ---
+Query a single article.
+
 - Identity is verified.
 - The inputs are `RAID`and `article_num`.
 - The content of `article_num` is returned.
@@ -260,6 +264,8 @@ Query Single Article
 
 Query All Article
 ---
+Query all articles added to the negotiation process.
+
 - Identity is verified.
 - The input is `RAID`.
 - The content of `jsonRA` is returned.
