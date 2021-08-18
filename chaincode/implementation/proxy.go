@@ -680,9 +680,9 @@ func (cc *Chaincode) confirmRefuseAchieveRA(stub shim.ChaincodeStubInterface, or
     }
 
     if accept == "true" {
-        status = "accepted_changes"
+        status = "confirm_accepted_ra"
     } else {
-        status = "denied_changes"
+        status = "refused_ra"
     }
 
     err = cc.updateAgreementStatus(stub, raid, status)

@@ -105,8 +105,8 @@
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num` and `accept`.
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
-- The previous states: `proposed_changes` is verified.
-- Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` also enable to accept or refuse the `proposed_changes` and therefore set the event name.
+- The previous states of the article: `proposed_changes` is verified.
+- Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` enable the event name asociated to the Roaming Agreement.
 - After refusing a proposed change, the MNO must continue to negotiate via an [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article).
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/13.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/14.png">
@@ -127,16 +127,18 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
 
 ### Confirmation of Agreement Achieved
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra       |
-- The other MNO must validate the article deletion.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`acepted_ra`) is verified.
-- An event is emitted to set the state `confirmation_accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmAgreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmAgreementAchieved2.png">
+|Method                     | Event                  | Roaming Agreement State| Article State          |
+|:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|acceptRefuseReachAgreement |confirmation_accepted_ra|accepted_ra             |confirm_accepted_ra     |
+|acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra             |refused_ra              |
+- The changes proposed in Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
+- Conditional sentences `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enable to accept or refuse the `accepted_ra` previous state.
+- Identity is verified at each interaction.
+- The inputs are `RAID` and `accept`.
+- The previous state of the Roamming Agreement (`accepted_ra`) is verified.
+- Conditional sentences `(accept == "true") ? event_name= "confirmation_accepted_ra" : event_name= "confirmation_refused_ra"` also enable the event name asociated to the Roaming Agreement state.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/17.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/18.png">
 
 ### Query Single Article
 - Identity is verified.
