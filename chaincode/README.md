@@ -56,7 +56,7 @@ List of events
 |reachAgreement            |accepted_ra             |acepted_ra             |
 |acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra|
 
-1. Register organization
+Register organization
 ---
 
 This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
@@ -74,7 +74,7 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
-2. Proposal for start agreement
+Proposal for start agreement
 ---
 A registered organization is enabled to draft a Roaming Agreement.
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -94,7 +94,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
-3. Confirmation of Started Agreement
+Confirmation of Started Agreement
 ---
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -112,7 +112,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram  
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
-4. Proposal for add article
+Proposal for add article
 ---
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -132,7 +132,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/08.png">
 
-5. Proposal for update article
+Proposal for update article
 ---
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -152,7 +152,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/10.png">
 
-6. Proposal for delete article
+Proposal for delete article
 ---
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -172,7 +172,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/12.png">
 
-7. Accept/Refuse proposed changes
+Accept/Refuse proposed changes
 ---
 |Method                     | Event                  | Roaming Agreement State| Article State          |
 |:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -194,7 +194,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/14.png">
 
-8. Proposal of Agreement Achieved
+Proposal of Agreement Achieved
 ---
 |Method                    | Event                  | Roaming Agreement State|
 |:------------------------:|:----------------------:|:----------------------:|
@@ -214,7 +214,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
 
-9. Confirmation of Agreement Achieved
+Confirmation of Agreement Achieved
 ---
 |Method                     | Event                  | Roaming Agreement State| Article State          |
 |:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -233,7 +233,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/18.png">
 
-10. Query Single Article
+Query Single Article
 ---
 - Identity is verified.
 - The inputs are `RAID`and `article_num`.
@@ -245,7 +245,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/20.png">
 
-11. Query All Article
+Query All Article
 ---
 - Identity is verified.
 - The input is `RAID`.
