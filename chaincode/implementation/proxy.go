@@ -262,9 +262,9 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     return shim.Success([]byte("OK"))
 }
 
-func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, id string) (error){
+func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, org_id string) (error){
     //record organizations
-    err := cc.recordOrg(stub, organization, id)
+    err := cc.recordOrg(stub, organization, org_id)
     store := make(map[string]Organization)  //mapping string to Organtization data type
     store["org"] = organization
     
@@ -290,10 +290,10 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         log.Errorf("[%s][startAgreement] Error: [%v] when [recordRAJson] is stored", CHANNEL_ENV, err.Error())
         return "","", err
     }
+    
     status := "started_ra"  //set status as "started_ra".
-
     json.Unmarshal([]byte(org1), &organization1)
-    id_org1, err := cc.recoverOrgId(stub, organization2)    //recover identifier of organization 1.
+    id_org1, err := cc.recoverOrgId(stub, organization1)    //recover identifier of organization 1.
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)
     }
@@ -379,7 +379,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     }
 
     valid_status := "confirmation_ra_started"
-    err = cc.verifyAgreementStatus(stub, raid, valid_status[0:])
+    err = cc.verifyAgreementStatus(stub, raid, valid_status)
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)
