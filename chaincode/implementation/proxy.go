@@ -290,10 +290,10 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         log.Errorf("[%s][startAgreement] Error: [%v] when [recordRAJson] is stored", CHANNEL_ENV, err.Error())
         return "","", err
     }
+    
     status := "started_ra"  //set status as "started_ra".
-
     json.Unmarshal([]byte(org1), &organization1)
-    id_org1, err := cc.recoverOrgId(stub, organization2)    //recover identifier of organization 1.
+    id_org1, err := cc.recoverOrgId(stub, organization1)    //recover identifier of organization 1.
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)
     }
