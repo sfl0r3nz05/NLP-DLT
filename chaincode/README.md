@@ -13,9 +13,9 @@
 3. The chaincode mechanisms designed are defined below:
 
 ### Register organization
-```
-This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
-```
+
+###### This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
+
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |addOrg                    |created_org             |-                       |-                       |
