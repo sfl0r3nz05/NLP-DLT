@@ -25,12 +25,14 @@
 |Method                    | Event                  | State                 |
 |:------------------------:|:----------------------:|:---------------------:|
 |proposeAgreementInitiation|started_ra              |started_ra             |
-- A registered organization can enable the drafting of a Roaming Agreement.
-- Identity is verified.
-- The inputs are two `json org` and `json ROAT.json`, i.e., the output of the NLP engine.
+- A registered organization is enabled to draft a Roaming Agreement.
+- Identity is verified at each interaction.
+- The inputs are two `json org` and `json jsonRA`.
+- The `json jsonRA` provides basic information of the Roaming Agreement.
 - The `RAID` is generated.
     - `RAID` is accesible for all MNOs.
-- An event is emitted to set the state `started_ra`.
+- The Roaming Agreement status is set as `started_ra`.
+- The `started_ra` event is emitted.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/03.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/04.png">
 
