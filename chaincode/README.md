@@ -196,13 +196,13 @@ The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05
 |acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement         |accepted_changes             |
 |acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement         |denied_changes               |
 
-- Conditional sentences `(accept == "true") ? article_status = "accepted_changes" : article_status = "denied_changes"` enable to accept or refuse the `proposed_changes` and therefore set the article state.
+- Conditional sentence `(accept == "true") ? article_status = "accepted_changes" : article_status = "denied_changes"` enables to accept or refuse the `proposed_changes` and therefore set the article state.
 - The article state is set to `proposed_change`.
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num` and `accept`.
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - The previous states of the article: `proposed_changes` is verified.
-- Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` enable the event name asociated to the Roaming Agreement.
+- Conditional sentence `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` enables the event name asociated to the Roaming Agreement.
 - After refusing a proposed change, the MNO must continue to negotiate via an [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article).
 
 ##### Part of Chaincode Sequence Diagram
@@ -241,11 +241,11 @@ The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0
 |acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra         |-                            |
 |acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra                |-                            |
 
-- Conditional sentences `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enable to accept or refuse the `accepted_ra` previous state.
+- Conditional sentence `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enables to accept or refuse the `accepted_ra` previous state.
 - Identity is verified at each interaction.
 - The inputs are `RAID` and `accept`.
 - The previous state of the Roamming Agreement (`accepted_ra`) is verified.
-- Conditional sentences `(accept == "true") ? event_name= "confirmation_accepted_ra" : event_name= "confirmation_refused_ra"` also enable the event name asociated to the Roaming Agreement state.
+- Conditional sentence `(accept == "true") ? event_name= "confirmation_accepted_ra" : event_name= "confirmation_refused_ra"` also enables the event name asociated to the Roaming Agreement state.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/17.png">       
