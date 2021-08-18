@@ -282,8 +282,14 @@ Query all articles added to the negotiation process.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
-How to build/modify Chaincode
----
+1. The chaincode implementation is divided in:
+    - [How to build/modify Chaincode]()
+    - [How to deploy the project configuration: use directly the chaincode]()
+    - [Build vendor for chaincode]()
+    - [Init the chaincode]()
+
+### How to build/modify Chaincode
+
 1. Download Golang version
     ```
     wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
@@ -340,8 +346,9 @@ How to build/modify Chaincode
     ```
     go build
     ```
-How to deploy the project configuration: use directly the chaincode
----
+
+### How to deploy the project configuration: use directly the chaincode
+
 1. Verify GOPATH where GOPATH could be set in `~/go`
     ```
     echo $GOPATH
@@ -352,8 +359,7 @@ How to deploy the project configuration: use directly the chaincode
     $GOPATH/src/name_of_the_project
     ```
 
-Build vendor for chaincode
----
+### Build vendor for chaincode
 
 Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
 
@@ -371,15 +377,13 @@ cd   $GOPATH/src/name_of_the_project/src/chaincode
 dep  ensure -v
 ```
 
-Init the chaincode
----
+### Init the chaincode
 
 To initialize the chaincode first is necessary to install and instantiate the chaincode on one peer of the Hyperledger Fabric network. For that action, it can be used the coren-hfservice module, abstracting the complexity of using the command-line interface
 
 ## Chaincode test 📈📉📊
 
 ### Testing the chaincode
----
 
 You can run the unit test executing the following commmand:
 
