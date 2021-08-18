@@ -12,7 +12,7 @@
     3. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
 3. The chaincode mechanisms designed are defined below:
 
-### Register organization
+### 1. Register organization
 
 This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
 
@@ -29,7 +29,7 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
-### Proposal for start agreement
+### 2. Proposal for start agreement
 A registered organization is enabled to draft a Roaming Agreement.
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
@@ -48,7 +48,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
 
-### Confirmation of Started Agreement
+### 3. Confirmation of Started Agreement
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started |-                       |
@@ -65,7 +65,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 ###### Part of Chaincode Class Diagram  
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
 
-### Proposal for add article
+### 4. Proposal for add article
 |Method                    | Event                  | Roaming Agreement State| Article State          |
 |:------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |proposeAddArticle         |proposed_add_article    |drafting_agreement      |proposed_changes        |
