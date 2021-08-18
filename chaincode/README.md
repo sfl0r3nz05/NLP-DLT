@@ -1,8 +1,8 @@
 # Chaincode documentation
 - This section is divided in three sub-sections:
-    1. [Chaincode design](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-design-)
-    2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-implementation-)
-    3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-test-)
+    1. [Chaincode design](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-design-)
+    2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-implementation-)
+    3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-test-)
 
 ## Chaincode design 📄✏
 1. `cd ~/NLP-DLT/chaincode/design`
@@ -18,8 +18,8 @@
 - Identity is verified at each interaction.
 - No state is set
 - An event is emitted to set the state `created_org`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/01.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -33,8 +33,8 @@
     - `RAID` is accesible for all MNOs.
 - The Roaming Agreement state is set as `started_ra`.
 - The `started_ra` event is emitted.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/04.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/03.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/04.png">
 
 ### Confirmation of Started Agreement
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -46,8 +46,8 @@
 - The `RAID` is obtained in the frontend.
 - The Roaming Agreement state is set as `confirmation_ra_started`.
 - The `confirmation_ra_started` event is emitted.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/06.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/05.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/06.png">
 
 ### Proposal for add article
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -61,8 +61,8 @@
 - The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
 - A new state of the Roamming Agreement is set to `drafting_agreement`.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/08.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/07.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/08.png">
 
 ### Proposal for update article
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -76,8 +76,8 @@
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - One of the two previous Articles states: `accepted_changes` and `denied_changes` are verified.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/09.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/10.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/09.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/10.png">
 
 ### Proposal for delete article
 |Method                    | Event                  | Roaming Agreement State| Article State          |
@@ -91,25 +91,25 @@
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
 - An event is emitted to set the state `proposed_delete_article`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/11.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/12.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/11.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/12.png">
 
 ### Accept/Refuse proposed changes
 |Method                     | Event                  | Roaming Agreement State| Article State          |
 |:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
 |acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement      |accepted_changes        |
 |acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement      |denied_changes          |
-- The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) must be accepted or refused.
+- The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article) must be accepted or refused.
 - Conditional sentences `(accept == "true") ? article_status = "accepted_changes" : article_status = "denied_changes"` enable to accept or refuse the `proposed_changes` and therefore set the article state.
 - The article state is set to `proposed_change`.
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num` and `accept`.
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
-- The previous states: `proposed_changes` is verified.
-- Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` also enable to accept or refuse the `proposed_changes` and therefore set the event name.
-- After refusing a proposed change, the MNO must continue to negotiate via an [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article).
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/13.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/14.png">
+- The previous states of the article: `proposed_changes` is verified.
+- Conditional sentences `(accept == "true") ? event_name= "accept_proposed_changes" : event_name= "refuse_proposed_changes"` enable the event name asociated to the Roaming Agreement.
+- After refusing a proposed change, the MNO must continue to negotiate via an [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article).
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/13.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/14.png">
 
 ### Proposal of Agreement Achieved
 |Method                    | Event                  | Roaming Agreement State|
@@ -123,20 +123,22 @@
 - The `accepted_ra` states of the Roaming Agreement states is updated.
 - The Articles states are not managed as part of this mechanism.
 - An event is emitted to set the state `accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/15.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/15.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/16.png">
 
 ### Confirmation of Agreement Achieved
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|acceptReachAgreement      |confirmation_accepted_ra|confirmation_acepted_ra       |
-- The other MNO must validate the article deletion.
-- Identity is verified.
-- The inputs are `json org` and `RAID`.
-- The previous state (`acepted_ra`) is verified.
-- An event is emitted to set the state `confirmation_accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmAgreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/confirmAgreementAchieved2.png">
+|Method                     | Event                  | Roaming Agreement State| Article State          |
+|:-------------------------:|:----------------------:|:----------------------:|:----------------------:|
+|acceptRefuseReachAgreement |confirmation_accepted_ra|accepted_ra             |confirm_accepted_ra     |
+|acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra             |refused_ra              |
+- The changes proposed in Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
+- Conditional sentences `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enable to accept or refuse the `accepted_ra` previous state.
+- Identity is verified at each interaction.
+- The inputs are `RAID` and `accept`.
+- The previous state of the Roamming Agreement (`accepted_ra`) is verified.
+- Conditional sentences `(accept == "true") ? event_name= "confirmation_accepted_ra" : event_name= "confirmation_refused_ra"` also enable the event name asociated to the Roaming Agreement state.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/17.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/18.png">
 
 ### Query Single Article
 - Identity is verified.
@@ -155,7 +157,7 @@
 ### State-to-state-transition
 - Actions implies change of state. 
 - The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/states_diagram_v3.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/states_diagram_v3.png">
 
 ### States and events
 - The following table associates states to events emitted:
