@@ -112,16 +112,19 @@
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/14.png">
 
 ### Proposal of Agreement Achieved
-|Method                    | Event                  | State                        |
-|:------------------------:|:----------------------:|:----------------------------:|
-|reachAgreement            |accepted_ra             |acepted_ra                    |
-- The drafting of the Roaming Agreement involves the acceptation of the drafting process. 
-- Identity is verified.
-- The inputs are `json org`and `RAID`.
-- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
+|Method                    | Event                  | Roaming Agreement State|
+|:------------------------:|:----------------------:|:----------------------:|
+|reachAgreement            |accepted_ra             |drafting_agreement      |
+|reachAgreement            |accepted_ra             |accepted_ra             |       
+- The drafting of the Roaming Agreement involves the proposal of acceptation of the drafting process. 
+- Identity is verified at each interaction.
+- The input is `RAID`.
+- The `drafting_agreement` states of the Roaming Agreement states is verified.
+- The `accepted_ra` states of the Roaming Agreement states is updated.
+- The Articles states are not managed as part of this mechanism.
 - An event is emitted to set the state `accepted_ra`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/agreementAchieved1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/agreementAchieved2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/15.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/16.png">
 
 ### Confirmation of Agreement Achieved
 |Method                    | Event                  | State                        |
