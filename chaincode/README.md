@@ -5,10 +5,11 @@
     3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-test-)
 
 ## Chaincode design 📄✏
-1. `cd ~/NLP-DLT/chaincode/design`
-2. To open the file `diagram_sequence_chaincode_v15.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
-3. To open the file `class_diagram_chaincode_v15.drawio` using [App Diagrams Tool](https://app.diagrams.net/)
-4. To open the file `states_diagram.drawio_v3` using [App Diagrams Tool](https://app.diagrams.net/)
+1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
+2. The application [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
+3. [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
+4. [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
+5. [Chaincode States Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/states_diagram_v3.drawio)
 
 ### Register organization
 |Method                    | Event                  | Roaming Agreement State| Article State          |
