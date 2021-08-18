@@ -76,8 +76,8 @@
 - The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
 - One of the two previous Articles states: `accepted_changes` and `denied_changes` are verified.
 - An event is emitted once the state `proposed_changes` is set.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle1.png">       
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/proposeUpdateArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/09.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/10.png">
 
 ### Proposal for delete article
 |Method                    | Event                  | State                        |
