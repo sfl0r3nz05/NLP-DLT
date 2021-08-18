@@ -13,14 +13,16 @@
 
 3. *Chaincode contains states*:
 
-   ### State-to-state-transition
+   State-to-state-transition
+   ---
    - Actions implies change of state. 
    - The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/states_diagram_v3.png">
     
 4. *In addition to states the Chaincode emits events*:
 
-   ### States and events
+   States and events
+   ---
    - The following table associates states to events emitted:
 
 |Methods                   | Events                 | States                |
