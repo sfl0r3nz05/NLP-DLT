@@ -23,10 +23,10 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 - No state is set
 - An event is emitted to set the state `created_org`.
 
-**Part of Chaincode Sequence Diagram**
+##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">
 
-**Part of Chaincode Class Diagram**
+##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
 
 ### Proposal for start agreement
