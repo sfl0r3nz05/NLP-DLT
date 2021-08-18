@@ -175,7 +175,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if identity_exist {
             err := cc.acceptRefuseChanges(stub, org_id, raid, article_num, accept)
             if err != nil {
-                return shim.Error(ERRORDeleteArticle)
+                return shim.Error(ERRORAcceptingProposedChanges)
             }
         }
     } else if function == "reachAgreement" {
