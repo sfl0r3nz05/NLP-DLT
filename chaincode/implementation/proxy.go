@@ -469,7 +469,7 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
 
-    event_name := "proposed_update_article" //emit event "proposed_update_article"
+    event_name := "proposed_update_article"	//emit event "proposed_update_article"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, article_num, org_name, "", timestamp, TxID, CHANNEL_ENV)
@@ -527,7 +527,7 @@ func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
 
-    event_name := "proposed_delete_article" //emit event "proposed_delete_article"
+    event_name := "proposed_delete_article"	//emit event "proposed_delete_article"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, article_num, org_name, "", timestamp, TxID, CHANNEL_ENV)
@@ -644,7 +644,7 @@ func (cc *Chaincode) acceptReachAgree(stub shim.ChaincodeStubInterface, org_id s
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
     
-    event_name := "proposal_accept_ra"  //emit event "proposed_delete_article"
+    event_name := "proposal_accept_ra"	//emit event "proposed_delete_article"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, "", org_name, "", timestamp, TxID, CHANNEL_ENV)
@@ -715,7 +715,6 @@ func (cc *Chaincode) confirmRefuseAchieveRA(stub shim.ChaincodeStubInterface, or
 
 func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (string, error){
     RA, err := cc.recoverRA(stub, raid)
-    
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return "", errors.New(ERRORRecoveringRA + err.Error())

@@ -142,17 +142,17 @@
 
 ### Query Single Article
 - Identity is verified.
-- The inputs are `json org`, `RAID`and `article_num`.
+- The inputs are `RAID`and `article_num`.
 - The content of `article_num` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/querySingleArticle1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/querySingleArticle2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/19.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/20.png">
 
 ### Query All Article
 - Identity is verified.
-- The inputs are `json org` and `RAID`.
+- The input is `RAID`.
 - The content of `jsonRA` is returned.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/queryAllArticles1.png">
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/queryAllArticles2.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/21.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/22.png">
 
 ### State-to-state-transition
 - Actions implies change of state. 
