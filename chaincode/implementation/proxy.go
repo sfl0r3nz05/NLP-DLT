@@ -262,9 +262,9 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     return shim.Success([]byte("OK"))
 }
 
-func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, id string) (error){
+func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, org_id string) (error){
     //record organizations
-    err := cc.recordOrg(stub, organization, id)
+    err := cc.recordOrg(stub, organization, org_id)
     store := make(map[string]Organization)  //mapping string to Organtization data type
     store["org"] = organization
     

@@ -16,6 +16,7 @@
 |addOrg                    |created_org             |-                      |
 - Any MNO must be registered before drafting a roaming agreement.
 - Identity is verified at each interaction.
+- No status is set
 - An event is emitted to set the state `created_org`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">       
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/02.png">
