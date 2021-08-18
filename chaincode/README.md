@@ -6,14 +6,14 @@
 
 ## Chaincode design 📄✏
 1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
-2. The application [App Diagrams Tool](https://app.diagrams.net/) *has been used to design*:
+2. The application [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
-    - [Chaincode States Diagram: Roaming Agreement States](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State.drawio)
-    - [Chaincode States Diagram: Articles Negotiation States](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State.drawio)
+    - [Chaincode States Diagram: States for Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State.drawio)
+    - [Chaincode States Diagram: States for Articles Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State.drawio)
 3. Chaincode contains two types of states:
-    - [State transitions in Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transitions-in-roaming-agreement)
-    - [State transition for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transition-for-the-articles-negotiation)
+    - [State transitions for Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transitions-in-roaming-agreement)
+    - [State transition for articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transition-for-the-articles-negotiation)
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
 5. The chaincode mechanisms designed are:
@@ -45,29 +45,29 @@ List of events
 ---
 - The following table relates `Methods`, `Events` to emit and the two types of states: `Roaming Agreement State` and `Article Negotiation States`
 
-|Method                     |Event                   |Roaming Agreement State  |Article Negotiation State  |
-|:-------------------------:|:----------------------:|:-----------------------:|:-------------------------:|
-|addOrg                     |created_org             |-                        |-                          |
-|proposeAgreementInitiation |started_ra              |started_ra               |-                          |
-|acceptAgreementInitiation  |confirmation_ra_started |confirmation_ra_started  |-                          |
-|proposeAddArticle          |proposed_add_article    |drafting_agreement       |proposed_changes           |
-|proposeUpdateArticle       |proposed_update_article |drafting_agreement       |proposed_changes           |
-|proposeDeleteArticle       |proposed_delete_article |drafting_agreement       |proposed_changes           |
-|acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement       |accepted_changes           |
-|acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement       |denied_changes             |
-|reachAgreement             |proposal_accepted_ra    |acepted_ra               |-                          |
-|acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra       |-                          |
-|acceptRefuseReachAgreement |confirmation_refused_ra |refused_ra               |-                          |
-|querySingleArticle         |-                       |-                        |-                          |
-|queryAllArticles           |-                       |-                        |-                          |
+|Method                     |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:-------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|addOrg                     |created_org             |-                          |-                            |
+|proposeAgreementInitiation |started_ra              |started_ra                 |-                            |
+|acceptAgreementInitiation  |confirmation_ra_started |confirmation_ra_started    |-                            |
+|proposeAddArticle          |proposed_add_article    |drafting_agreement         |proposed_changes             |
+|proposeUpdateArticle       |proposed_update_article |drafting_agreement         |proposed_changes             |
+|proposeDeleteArticle       |proposed_delete_article |drafting_agreement         |proposed_changes             |
+|acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement         |accepted_changes             |
+|acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement         |denied_changes               |
+|reachAgreement             |proposal_accepted_ra    |acepted_ra                 |-                            |
+|acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra         |-                            |
+|acceptRefuseReachAgreement |confirmation_refused_ra |refused_ra                 |-                            |
+|querySingleArticle         |-                       |-                          |-                            |
+|queryAllArticles           |-                       |-                          |-                            |
 
 Register organization
 ---
 This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|addOrg                    |created_org             |-                       |-                          |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|addOrg                    |created_org             |-                          |-                            |
 
 - Identity is verified at each interaction.
 - No state is set
@@ -83,9 +83,9 @@ Proposal for start agreement
 ---
 A registered organization is enabled to draft a Roaming Agreement.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|proposeAgreementInitiation|started_ra              |started_ra              |-                          |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|proposeAgreementInitiation|started_ra              |started_ra                 |-                            |
 
 - Identity is verified at each interaction.
 - The inputs are two `json org` and `json jsonRA`.
@@ -105,9 +105,9 @@ Confirmation of Started Agreement
 ---
 For the roaming agreement drafting to be valid, the other MNO must confirm it.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started |-                          |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started    |-                            |
 
 - Identity is verified at each interaction.
 - The input is `RAID`.
@@ -125,9 +125,9 @@ Proposal for add article
 ---
 The drafting of the Roaming Agreement involves to add article by article.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|proposeAddArticle         |proposed_add_article    |drafting_agreement      |proposed_changes           |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|proposeAddArticle         |proposed_add_article    |drafting_agreement         |proposed_changes             |
 
 - The state of each article is managed independently.
 - The article state is set to `proposed_change`.
@@ -147,9 +147,9 @@ Proposal for update article
 ---
 The drafting of the Roaming Agreement involves to update articles.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|proposeUpdateArticle      |proposed_update_article |drafting_agreement      |proposed_changes           |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|proposeUpdateArticle      |proposed_update_article |drafting_agreement         |proposed_changes             |
 
 - The state of each article is managed independently.
 - The article state is set to `proposed_change`.
@@ -169,9 +169,9 @@ Proposal for delete article
 ---
 The drafting of the Roaming Agreement involves the deletion of the articles.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|proposeDeleteArticle      |proposed_delete_article |drafting_agreement      |proposed_changes           |
+|Method                    |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|proposeDeleteArticle      |proposed_delete_article |drafting_agreement         |proposed_changes             |
 
 - The state of each article is managed independently.
 - The article state is set to `proposed_change`.
@@ -191,10 +191,10 @@ Accept/Refuse proposed changes
 ---
 The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) must be accepted or refused.
 
-|Method                     |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:-------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement      |accepted_changes           |
-|acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement      |denied_changes             |
+|Method                     |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:-------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement         |accepted_changes             |
+|acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement         |denied_changes               |
 
 - Conditional sentences `(accept == "true") ? article_status = "accepted_changes" : article_status = "denied_changes"` enable to accept or refuse the `proposed_changes` and therefore set the article state.
 - The article state is set to `proposed_change`.
@@ -215,9 +215,9 @@ Proposal of Agreement Achieved
 ---
 The drafting of the Roaming Agreement involves the proposal of acceptation of the drafting process.
 
-|Method                    |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|reachAgreement            |proposal_accepted_ra    |accepted_ra             |-                          |       
+|Method                     |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:-------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|reachAgreement             |proposal_accepted_ra    |accepted_ra                |-                            |       
 
 - Identity is verified at each interaction.
 - The input is `RAID`.
@@ -236,10 +236,10 @@ Confirmation of Agreement Achieved
 ---
 The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
 
-|Method                     |Event                   |Roaming Agreement State |Article Negotiation State  |
-|:-------------------------:|:----------------------:|:----------------------:|:-------------------------:|
-|acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra      |-                          |
-|acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra             |-                          |
+|Method                     |Event                   |State for Roaming Agreement|State for Article Negotiation|
+|:-------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
+|acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra         |-                            |
+|acceptRefuseReachAgreement |confirmation_refused_ra |accepted_ra                |-                            |
 
 - Conditional sentences `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enable to accept or refuse the `accepted_ra` previous state.
 - Identity is verified at each interaction.
