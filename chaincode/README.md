@@ -267,7 +267,7 @@ Query a single article.
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/20.png">
 
-Query All Article
+Query All Articles
 ---
 Query all articles added to the negotiation process.
 
