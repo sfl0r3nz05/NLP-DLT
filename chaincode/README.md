@@ -284,9 +284,9 @@ Query all articles added to the negotiation process.
 ## Chaincode implementation 💻
 **The chaincode implementation consists of 6 modules which are described below:**
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): It receives the interactions from the off-chain side and routes them to the different points within the chaincode.
-2. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/agreement.go): 
+2. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add/update/delete articles, change states, etc.
 3. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
-4. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/organization.go):
+4. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/organization.go: This module contains all the interactions related to organizations, allowing you to create a new organization, consult existing organizations, etc.
 5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go): It contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling. 
 
