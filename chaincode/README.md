@@ -4,7 +4,7 @@
     2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-implementation-)
     3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#chaincode-test-)
 
-## Chaincode design 📄✏
+## Chaincode design 📄✏🖊
 1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
 2. The [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
