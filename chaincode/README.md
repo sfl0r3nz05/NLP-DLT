@@ -290,7 +290,7 @@ Query all articles added to the negotiation process.
 5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go): It contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling. 
 
-**The chaincode implementation is divided in:**
+**The following sections detail how to modify, deploy and initialize the chaincode:**
    - [How to modify the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
    - [How to directly deploy the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-directly-deploy-the-chaincode)
    - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#build-vendor-for-chaincode)
