@@ -282,16 +282,26 @@ Query all articles added to the negotiation process.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/sample_of_diagram_of_sequence.png">
-
-**The figure shows 4 of the 6 modules that compose the chaincode implementation. These 4 modules appear in each of the sequence diagrams. Each of the 6 modules is described below:**
+**The chaincode implementation consists of 6 modules which are described below:**
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): It receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add/update/delete articles, change states, etc.
 3. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
 4. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/organization.go): This module contains all the interactions related to organizations, allowing you to create a new organization, consult existing organizations, etc.
 5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
-6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go): It contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling. 
+6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go): It contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
+
+**Other relevant features of the chaincode implementation are:**
+- [Logrus library](https://github.com/sirupsen/logrus) for log generation.
+```
+log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
+```
+- Error handling
+```
+ERRORWrongNumberArgs  				= `Wrong number of arguments. Expecting a JSON with token information.`
+ERRORParsingData      				= `Error parsing data `
+ERRORPutState         				= `Failed to store data in the ledger.	`
+```
 
 **The following sections detail how to modify, deploy and initialize the chaincode:**
    - [How to modify the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
