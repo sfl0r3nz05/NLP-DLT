@@ -282,7 +282,7 @@ Query all articles added to the negotiation process.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
-The chaincode implementation consists of 6 modules which are described below:
+**The chaincode implementation consists of 6 modules which are described below:**
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): It receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/agreement.go): 
 3. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
@@ -290,7 +290,7 @@ The chaincode implementation consists of 6 modules which are described below:
 5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go): It contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling. 
 
-1. The chaincode implementation is divided in:
+**The chaincode implementation is divided in:**
     - [How to build/modify Chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
     - [How to deploy the project configuration: use directly the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-deploy-the-project-configuration-use-directly-the-chaincode)
     - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#build-vendor-for-chaincode)
