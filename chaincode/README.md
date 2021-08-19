@@ -282,9 +282,9 @@ Query all articles added to the negotiation process.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/22.png">
 
 ## Chaincode implementation 💻
-**The chaincode implementation consists of 6 modules (4 of which are shown in the sequence diagrams, see figure) which are described below:**
-
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/sample_of_diagram_of_sequence.png">
+
+**The figure shows 4 of the 6 modules that compose the chaincode implementation. These 4 modules appear in each of the sequence diagrams. Each of the 6 modules is described below:**
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): It receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add/update/delete articles, change states, etc.
