@@ -304,7 +304,7 @@ Query all articles added to the negotiation process.
     ```
 
 **The following sections detail how to modify, deploy and initialize the chaincode:**
-   - [How to modify the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
+   - [How to modify the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-modify-chaincode)
    - [How to directly deploy the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-directly-deploy-the-chaincode)
    - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#build-vendor-for-chaincode)
    - [Init the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#init-the-chaincode)
