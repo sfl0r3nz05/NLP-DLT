@@ -281,7 +281,7 @@ Query all articles added to the negotiation process.
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/22.png">
 
-## Chaincode implementation 💻
+## Chaincode implementation ⛏💻🖥
 **The chaincode implementation consists of 6 modules which are described below:**
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/proxy.go): It receives the interactions from the off-chain side and routes them to the different points within the chaincode.
