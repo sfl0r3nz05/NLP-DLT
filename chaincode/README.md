@@ -293,15 +293,15 @@ Query all articles added to the negotiation process.
 
 **Other relevant features of the chaincode implementation are:**
 - [Logrus library](https://github.com/sirupsen/logrus) for log generation.
-```
-log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
-```
+    ```
+    log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
+    ```
 - Error handling
-```
-ERRORWrongNumberArgs  				= `Wrong number of arguments. Expecting a JSON with token information.`
-ERRORParsingData      				= `Error parsing data `
-ERRORPutState         				= `Failed to store data in the ledger.	`
-```
+    ```
+    ERRORWrongNumberArgs  				= `Wrong number of arguments. Expecting a JSON with token information.`
+    ERRORParsingData      				= `Error parsing data `
+    ERRORPutState         				= `Failed to store data in the ledger.	`
+    ```
 
 **The following sections detail how to modify, deploy and initialize the chaincode:**
    - [How to modify the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#how-to-buildmodify-chaincode)
