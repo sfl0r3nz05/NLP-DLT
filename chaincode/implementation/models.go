@@ -9,7 +9,7 @@ type Organization struct {
 
 // Network
 type NETWORK struct {
-	tadig int            				`json:"tadig,omitempty"`
+	tadig int            					`json:"tadig,omitempty"`
 	nwk_info string 	 				`json:"nwk_info,omitempty"`
 	db_info DBINFO  	 				`json:"db_info,omitempty"` // issuer's DID
 }
