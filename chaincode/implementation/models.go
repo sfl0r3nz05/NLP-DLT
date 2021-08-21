@@ -39,16 +39,38 @@ type ROAMINGAGREEMNT struct {
 }
 
 type JSONROAMINGAGREEMENT struct {
-	uuid	string						`json:"uuid"` // name for the event
-	document_name	string				`json:"document_name"` // name for the event
-	articles	[]ARTICLE				`json:"articles"` // name for the event
+	uuid	string						`json:"uuid"` // name for the uuid
+	document_name	string				`json:"document_name"` // name for the document_name
+	articles	[]ARTICLE				`json:"articles"` // name for the articles
 }
 
 type ARTICLE struct {
-	id	string							`json:"id"` // name for the event
+	id	string							`json:"id"` // name for the id
 	status string						`json:"status,omitempty"`
-	variables	string					`json:"variables"` // name for the event
-	variations	string					`json:"variations"` // name for the event
+	variables	[]VARIABLE				`json:"variables"` // name for the variables
+	variations	[]VARIATIONS			`json:"variations"` // name for the variations
+	customText	[]CUSTOMTEXT			`json:"customText"` // name for the Custom Text
+	stdClause	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+}
+
+type VARIABLE struct {
+	id	string							`json:"id"` // name for the id
+	value	string						`json:"value"` // name for value
+}
+
+type VARIATION struct {
+	id	string							`json:"id"` // name for the id
+	value	string						`json:"value"` // name for value
+}
+
+type CUSTOMTEXT struct {
+	id	string							`json:"id"` // name for the id
+	value	string						`json:"value"` // name for value
+}
+
+type STDCLAUSE struct {
+	id	string							`json:"id"` // name for the id
+	value	string						`json:"value"` // name for value
 }
 
 // Event to handle events in HF
