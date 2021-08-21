@@ -3,8 +3,8 @@ package main
 // Compliant with Official Document IR.21 - GSM Association Roaming Database, Structure and Updating Procedures
 type Organization struct {
 	mno_name string 	 				`json:"mno_name,omitempty"`
-	mno_country string      			`json:"mno_country,omitempty"`
-	mno_network NETWORK  				`json:"mno_network,omitempty"` // issuer's DID
+	mno_country string      				`json:"mno_country,omitempty"`
+	mno_network NETWORK  					`json:"mno_network,omitempty"` // issuer's DID
 }
 
 // Network
