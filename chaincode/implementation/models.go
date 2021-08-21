@@ -16,12 +16,12 @@ type NETWORK struct {
 
 // Network
 type DBINFO struct {
-	technology string    				`json:"technology,omitempty"`
+	technology string    					`json:"technology,omitempty"`
 	frequency string 	 				`json:"frequency,omitempty"`
-	country_initials string  			`json:"country_initials,omitempty"`
-	mobile_network_name string   		`json:"mobile_network_name,omitempty"`
-	network_colour_code string   		`json:"network_colour_code,omitempty"`
-	sim_header_info string   			`json:"sim_header_info,omitempty"`
+	country_initials string  				`json:"country_initials,omitempty"`
+	mobile_network_name string   				`json:"mobile_network_name,omitempty"`
+	network_colour_code string   				`json:"network_colour_code,omitempty"`
+	sim_header_info string   				`json:"sim_header_info,omitempty"`
 }
 
 // Struct used to return
@@ -40,36 +40,36 @@ type ROAMINGAGREEMNT struct {
 
 type JSONROAMINGAGREEMENT struct {
 	uuid	string						`json:"uuid"` // name for the uuid
-	document_name	string				`json:"document_name"` // name for the document_name
+	document_name	string					`json:"document_name"` // name for the document_name
 	articles	[]ARTICLE				`json:"articles"` // name for the articles
 }
 
 type ARTICLE struct {
-	id	string							`json:"id"` // name for the id
+	id	string						`json:"id"` // name for the id
 	status string						`json:"status,omitempty"`
 	variables	[]VARIABLE				`json:"variables"` // name for the variables
-	variations	[]VARIATIONS			`json:"variations"` // name for the variations
-	customText	[]CUSTOMTEXT			`json:"customText"` // name for the Custom Text
+	variations	[]VARIATIONS				`json:"variations"` // name for the variations
+	customText	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
 	stdClause	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
 }
 
 type VARIABLE struct {
-	id	string							`json:"id"` // name for the id
+	id	string						`json:"id"` // name for the id
 	value	string						`json:"value"` // name for value
 }
 
 type VARIATION struct {
-	id	string							`json:"id"` // name for the id
+	id	string						`json:"id"` // name for the id
 	value	string						`json:"value"` // name for value
 }
 
 type CUSTOMTEXT struct {
-	id	string							`json:"id"` // name for the id
+	id	string						`json:"id"` // name for the id
 	value	string						`json:"value"` // name for value
 }
 
 type STDCLAUSE struct {
-	id	string							`json:"id"` // name for the id
+	id	string						`json:"id"` // name for the id
 	value	string						`json:"value"` // name for value
 }
 
@@ -84,38 +84,38 @@ type Event struct {
 // Error responses
 // ERROR_XXX occurs when XXX
 const (
-	ERRORWrongNumberArgs  				= `Wrong number of arguments. Expecting a JSON with token information.`
-	ERRORParsingData      				= `Error parsing data `
-	ERRORPutState         				= `Failed to store data in the ledger.	`
-	ERRORGetState         				= `Failed to get data from the ledger. `
-	ERRORDelState         				= `Failed to delete data from the ledger. `
-	ERRORChaincodeCall    				= `Error calling chaincode`
-	ERRORGetService       				= `Error getting service`
-	ERRORUpdService       				= `Error updating service`
-	ERRORServiceNotExists 				= `Error The service doesn't exist`
-	ERRORCreatingService  				= `Error storing service`
-	ERRORParsingService   				= `Error parsing service`
-	ERRORServiceExists    				= `The service already exists in registry`
-	ERRORDidMissing       				= `Error calling service, no service DID Specified`
-	ERRORStoringIdentity  				= `Error storing identity`
-	ERRORUpdatingID       				= `Error updating identity in ledger`
-	ERRORGetID            				= `Error getting identity`
-	ERRORVerID            				= `Error verification unauthorized, the did provided has not access`
-	ERRORRevID            				= `Error revocation unauthorized, the did provided has not access`
-	ERRORVerSign          				= `Error verifying signature`
-	ERRORRevSign          				= `Error revoking signature`
-	ERRORRevoke           				= `Error revoking Unauthorized, the did provided cannot revoke the identity`
-	ERRORnotID            				= `Error the identity does not exist`
-	ERRORParsingID        				= `Error parsing identity`
-	ERRORRevokeLedger     				= `Error deleting from ledger`
-	ERRORIDExists         				= `Error the identity already exists`
-	ERRORUserAccess       				= `Error user has not access`
-	ERRORParseJWS         				= `Error parsing into JWS`
-	ERRORParseX509        				= `Error parsing into X509`
-	ERRORBase64           				= `Error decoding into base64`
-	ERRORVerifying        				= `Error verifying signature`
-	ERRORFindingArticle   				= `Error finding article`
-	ERRORAcceptingProposedChanges		= `Error accepting proposed changes`
+	ERRORWrongNumberArgs  					= `Wrong number of arguments. Expecting a JSON with token information.`
+	ERRORParsingData      					= `Error parsing data `
+	ERRORPutState         					= `Failed to store data in the ledger.	`
+	ERRORGetState         					= `Failed to get data from the ledger. `
+	ERRORDelState         					= `Failed to delete data from the ledger. `
+	ERRORChaincodeCall    					= `Error calling chaincode`
+	ERRORGetService       					= `Error getting service`
+	ERRORUpdService       					= `Error updating service`
+	ERRORServiceNotExists 					= `Error The service doesn't exist`
+	ERRORCreatingService  					= `Error storing service`
+	ERRORParsingService   					= `Error parsing service`
+	ERRORServiceExists    					= `The service already exists in registry`
+	ERRORDidMissing       					= `Error calling service, no service DID Specified`
+	ERRORStoringIdentity  					= `Error storing identity`
+	ERRORUpdatingID       					= `Error updating identity in ledger`
+	ERRORGetID            					= `Error getting identity`
+	ERRORVerID            					= `Error verification unauthorized, the did provided has not access`
+	ERRORRevID            					= `Error revocation unauthorized, the did provided has not access`
+	ERRORVerSign          					= `Error verifying signature`
+	ERRORRevSign          					= `Error revoking signature`
+	ERRORRevoke           					= `Error revoking Unauthorized, the did provided cannot revoke the identity`
+	ERRORnotID            					= `Error the identity does not exist`
+	ERRORParsingID        					= `Error parsing identity`
+	ERRORRevokeLedger     					= `Error deleting from ledger`
+	ERRORIDExists         					= `Error the identity already exists`
+	ERRORUserAccess       					= `Error user has not access`
+	ERRORParseJWS         					= `Error parsing into JWS`
+	ERRORParseX509        					= `Error parsing into X509`
+	ERRORBase64           					= `Error decoding into base64`
+	ERRORVerifying        					= `Error verifying signature`
+	ERRORFindingArticle   					= `Error finding article`
+	ERRORAcceptingProposedChanges				= `Error accepting proposed changes`
 	ERRORRecoveringOrg	  				= `Error recovering organization`
 	ERRORRecoveringJsonRA	  			= `Error recovering Json Roaming Agreement`
 	ERRORVerifyingOrg	  				= `Error verifying organization in Roaming Agreement struct`
