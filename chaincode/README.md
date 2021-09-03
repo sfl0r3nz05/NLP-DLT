@@ -48,8 +48,8 @@ Status for the articles negotiation
 - The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
 - It controls the *negotiation* at the **articles** level.
 - It indicates whether the negotiation of the articles has been **initiated**, is in the **drafting** process, has been **confirmed**, or has been **ended**.
-- It is set to **init** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
-- It is set to **articles_drafting** when the first article is created after the first execution of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
+- It is set to `init` when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
+- It is set to `articles_drafting` when the first article is created after the first execution of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
 - When [Accept/Refuse proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#acceptrefuse-proposed-changes) is executed the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
     - if this happens, the *status* is set to `transient_confimation`.
     - if this does not happen, the *status* continues as `articles_drafting`.
@@ -61,9 +61,11 @@ Status for the articles negotiation
 
 Status for the article drafting
 ---
+- The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
 - It controls the *drafting* at the **article** level.
-- The second type of state change to be considered is at the Article Negotiation level.
-- The chaincode also validates the changes of states.
+- It is set to `added_article` when the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method is executed.
+- It is set to `proposed_changes` when the methods [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article), or [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) are executed.
+- It is set to `accepted_changes` when the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method is executed.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v03.drawio.png">
     
 List of events
