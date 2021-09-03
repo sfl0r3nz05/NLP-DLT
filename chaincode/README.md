@@ -25,7 +25,7 @@
     - [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article)
     - [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article)
     - [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article)
-    - [Accept/Refuse proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#acceptrefuse-proposed-changes)
+    - [Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes)
     - [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved)
     - [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved)
     - [Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article) 
@@ -43,14 +43,14 @@ Status for Roaming Agreement Negotiation
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.drawio.png">
 
-Status for the articles negotiation
+Status for the Articles Negotiation
 ---
 - The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
 - It controls the *negotiation* at the **articles** level.
 - It indicates whether the negotiation of the articles has been **initiated**, is in the **drafting** process, has been **confirmed**, or has been **ended**.
 - It is set to `init` when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to `articles_drafting` when the first article is created after the first execution of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
-- When [Accept/Refuse proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#acceptrefuse-proposed-changes) is executed the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
+- When [Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes) is executed the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
     - if this happens, the *status* is set to `transient_confimation`.
     - if this does not happen, the *status* continues as `articles_drafting`.
 - If the *status* is `transient_confimation` and the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, the *status* changes to `end`.
@@ -59,7 +59,7 @@ Status for the articles negotiation
 - Whether all *articles* can be verified when [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, the *status* of the list is set to `end`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v03.drawio.png">
 
-Status for the article drafting
+Status for the Article Drafting
 ---
 - The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
 - It controls the *drafting* at the **article** level.
@@ -72,21 +72,19 @@ List of events
 ---
 - The following table relates `Methods`, `Events` to emit and the two types of states: `Roaming Agreement State` and `Article Negotiation States`
 
-|Method                     |Event                   |State for Roaming Agreement|State for Article Negotiation|
-|:-------------------------:|:----------------------:|:-------------------------:|:---------------------------:|
-|addOrg                     |created_org             |-                          |-                            |
-|proposeAgreementInitiation |started_ra              |started_ra                 |-                            |
-|acceptAgreementInitiation  |confirmation_ra_started |confirmation_ra_started    |-                            |
-|proposeAddArticle          |proposed_add_article    |drafting_agreement         |proposed_changes             |
-|proposeUpdateArticle       |proposed_update_article |drafting_agreement         |proposed_changes             |
-|proposeDeleteArticle       |proposed_delete_article |drafting_agreement         |proposed_changes             |
-|acceptRefuseProposedChanges|accept_proposed_changes |drafting_agreement         |accepted_changes             |
-|acceptRefuseProposedChanges|refuse_proposed_changes |drafting_agreement         |denied_changes               |
-|reachAgreement             |proposal_accepted_ra    |acepted_ra                 |-                            |
-|acceptRefuseReachAgreement |confirmation_accepted_ra|confirm_acepted_ra         |-                            |
-|acceptRefuseReachAgreement |confirmation_refused_ra |refused_ra                 |-                            |
-|querySingleArticle         |-                       |-                          |-                            |
-|queryAllArticles           |-                       |-                          |-                            |
+|Method                     |Event                   |Status for Roaming Agreement|Status for Article Negotiation|Status for Article Drafting   |
+|:-------------------------:|:----------------------:|:--------------------------:|:----------------------------:|:----------------------------:|
+|addOrg                     |created_org             |-                           |-                             |-                             |
+|proposeAgreementInitiation |started_ra              |started_ra                  |-                             |-                             |
+|acceptAgreementInitiation  |confirmation_ra_started |started_ra_confirmation     |-                             |-                             |
+|proposeAddArticle          |proposed_add_article    |ra_negotiating              |added_article                 |added_article                 |
+|proposeUpdateArticle       |proposed_update_article |ra_negotiating              |proposed_changes              |proposed_changes              |
+|proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |proposed_changes              |proposed_changes              |
+|acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |accepted_changes              |accepted_changes              |
+|reachAgreement             |proposal_accepted_ra    |ra_accepted                 |-                             |-                             |
+|acceptRefuseReachAgreement |confirmation_accepted_ra|acepted_ra_confirmation     |-                             |-                             |
+|querySingleArticle         |-                       |-                           |-                             |-                             |
+|queryAllArticles           |-                       |-                           |-                             |-                             |
 
 Register organization
 ---
@@ -214,7 +212,7 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/12.png">
 
-Accept/Refuse proposed changes
+Accept proposed changes
 ---
 The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) must be accepted or refused.
 
