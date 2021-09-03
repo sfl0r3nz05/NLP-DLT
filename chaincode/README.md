@@ -31,17 +31,23 @@
     - [Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article) 
     - [Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-all-article) 
 
-State transitions in Roaming Agreement
+State for Roaming Agreement Negotiation
 ---
 - The first type of state change to be considered is at the Roaming Agreement level.
 - The chaincode validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
 
-State transition for the articles negotiation
+State for the article negotiation
 ---
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
+
+State for the article drafting
+---
+- The second type of state change to be considered is at the Article Negotiation level.
+- The chaincode also validates the changes of states.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v02.png">
     
 List of events
 ---
