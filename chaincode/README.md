@@ -40,11 +40,11 @@ Status for Roaming Agreement Negotiation
 Status for the articles negotiation
 ---
 - The list that contains this **status** indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
-- The list that contains this **status** is enabled into the *model* [List of articles](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT)
+- The list that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT)
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
 - It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
-- A call to the method [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) implies the verification all *articles* verifying each *status* into the model [article](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE)
+- A call to the method [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE)
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
 Status for the article drafting
