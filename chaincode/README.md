@@ -53,25 +53,24 @@ Status for the Articles Negotiation
 ---
 - The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
 - It controls the *negotiation* at the **articles** level.
-- It indicates whether the negotiation of the articles has been **initiated**, is in the **drafting** process, has been **confirmed**, or has been **ended**.
+- It contains 4 *status* for the articles negotiation process: `init`, `articles_drafting`, `transient_confirmation`, and `end`.
 - It is set to `init` when the list that contains the *articles* is created by the `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to `articles_drafting` when the first article is created after the first execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
-- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes) is executed the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
+- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes) is executed, the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
     - if this happens, the *status* is set to `transient_confimation`.
     - if this does not happen, the *status* continues as `articles_drafting`.
 - If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
-- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article), the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article), or the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delte-article) are executed, the *status* returns to `articles_drafting`.
-- A call to the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE).
-- Whether all *articles* can be verified when the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) is executed, the *status* of the list is set to `end`.
+- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v03.drawio.png">
 
 Status for the Article Drafting
 ---
 - The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
 - It controls the *drafting* at the **article** level.
-- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method is executed.
-- It is set to `proposed_changes` when the methods `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article), or `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) are executed.
-- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method is executed.
+- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) is executed.
+- It is set to `proposed_changes` when the method `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) is executed.
+- It is set to `proposed_changes` when the method `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) is executed.
+- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) is executed.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v03.drawio.png">
     
 List of events
@@ -81,14 +80,14 @@ List of events
 |Method                     |Event                   |Status for Roaming Agreement|Status for Article Negotiation|Status for Article Drafting   |
 |:-------------------------:|:----------------------:|:--------------------------:|:----------------------------:|:----------------------------:|
 |addOrg                     |created_org             |-                           |-                             |-                             |
-|proposeAgreementInitiation |started_ra              |started_ra                  |-                             |-                             |
-|acceptAgreementInitiation  |confirmation_ra_started |started_ra_confirmation     |-                             |-                             |
-|proposeAddArticle          |proposed_add_article    |ra_negotiating              |added_article                 |added_article                 |
-|proposeUpdateArticle       |proposed_update_article |ra_negotiating              |proposed_changes              |proposed_changes              |
-|proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |proposed_changes              |proposed_changes              |
-|acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |accepted_changes              |accepted_changes              |
-|reachAgreement             |proposal_accepted_ra    |accepted_ra                 |-                             |-                             |
-|acceptRefuseReachAgreement |confirmation_accepted_ra|acepted_ra_confirmation     |-                             |-                             |
+|proposeAgreementInitiation |started_ra              |started_ra                  |Init                          |-                             |
+|acceptAgreementInitiation  |confirmation_ra_started |started_ra_confirmation     |Init                          |-                             |
+|proposeAddArticle          |proposed_add_article    |ra_negotiating              |articles_drating              |added_article                 |
+|proposeUpdateArticle       |proposed_update_article |ra_negotiating              |articles_drating              |proposed_changes              |
+|proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |articles_drating              |proposed_changes              |
+|acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |transient_confirmation        |accepted_changes              |
+|reachAgreement             |proposal_accepted_ra    |accepted_ra                 |end                           |-                             |
+|acceptRefuseReachAgreement |confirmation_accepted_ra|acepted_ra_confirmation     |end                           |-                             |
 |querySingleArticle         |-                       |-                           |-                             |-                             |
 |queryAllArticles           |-                       |-                           |-                             |-                             |
 
