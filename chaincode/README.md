@@ -9,9 +9,9 @@
 2. The [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
-    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State_v02.drawio)
-    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State_v02.drawio)
-    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v02.drawio)
+    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State_v03.drawio)
+    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State_v03.drawio)
+    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v03.drawio)
 3. Chaincode contains three types of status:
     - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-roaming-agreement-negotiation)
     - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-the-articles-negotiation)
@@ -39,7 +39,7 @@ Status for Roaming Agreement Negotiation
 - The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `confirmation_ra_started`.
 - The first time execution of the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
 
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.png">
 
 Status for the articles negotiation
 ---
@@ -51,14 +51,14 @@ Status for the articles negotiation
 - It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
 - A call to the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE).
 - Whether all *articles* can be verified when [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, the *status* of the list is set to `end`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v03.png">
 
 Status for the article drafting
 ---
 - It controls the *drafting* at the **article** level.
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v02.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v03.png">
     
 List of events
 ---
