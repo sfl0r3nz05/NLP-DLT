@@ -19,6 +19,7 @@
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
 5. The chaincode methods designed are:
+
 |Method                     |Mechanism                                                                                                                          |
 |:-------------------------:|:---------------------------------------------------------------------------------------------------------------------------------:|
 |addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#register-organization)                           |
