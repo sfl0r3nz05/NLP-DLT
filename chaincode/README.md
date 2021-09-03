@@ -35,7 +35,10 @@ Status for Roaming Agreement Negotiation
 ---
 - The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
 - It controls the *negotiation* at the **Roaming Agreement** level.
-- The [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement) method set the *status* to ´started_ra´.
+- The [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement) method set the *status* to `started_ra`.
+- The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `confirmation_ra_started`.
+- The first time execution of the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
+
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
 
 Status for the articles negotiation
