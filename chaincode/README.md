@@ -9,8 +9,9 @@
 2. The [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
-    - [Chaincode States Diagram: States for Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State.drawio)
-    - [Chaincode States Diagram: States for Articles Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State.drawio)
+    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State_v02.drawio)
+    - [States Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State_v02.drawio)
+    - [States Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v02.drawio)
 3. Chaincode contains two types of states:
     - [State transitions for Roaming Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transitions-in-roaming-agreement)
     - [State transition for articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-transition-for-the-articles-negotiation)
