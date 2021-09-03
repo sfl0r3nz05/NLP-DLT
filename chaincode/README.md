@@ -14,7 +14,7 @@
     - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v02.drawio)
 3. Chaincode contains three types of status:
     - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-roaming-agreement-negotiation)
-    - [Status for the article negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-the-article-negotiation)
+    - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-the-articles-negotiation)
     - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
@@ -37,11 +37,12 @@ Status for Roaming Agreement Negotiation
 - The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
 
-Status for the article negotiation
+Status for the articles negotiation
 ---
-- The list that contains this **status** which indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
+- The list that contains this **status** indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
+- The list that contains this **status** is enabled into the *model* [List of articles](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT)
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
-- It is set to **drafting** when the first article is created when the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) is used first time.
+- It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
 - It remains as **drafting** until all *articles* have `accepted_changes` as *status*.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
