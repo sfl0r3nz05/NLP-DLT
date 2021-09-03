@@ -33,13 +33,15 @@
 
 Status for Roaming Agreement Negotiation
 ---
-- The first type of state change to be considered is at the Roaming Agreement level.
-- The chaincode validates the changes of states.
+- The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
+- It controls the *negotiation* at the **Roaming Agreement** level.
+- .
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
 
 Status for the articles negotiation
 ---
 - The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
+- It controls the *negotiation* at the **articles** level.
 - It indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
@@ -50,6 +52,7 @@ Status for the articles negotiation
 
 Status for the article drafting
 ---
+- It controls the *drafting* at the **article** level.
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v02.png">
