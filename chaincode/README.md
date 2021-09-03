@@ -44,8 +44,8 @@ Status for the articles negotiation
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
 - It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
-- A call to the method [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE).
-- Whether all *articles* can be verified when method [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) is executed, the *status* is set to ´end´.
+- A call to the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE).
+- Whether all *articles* can be verified when [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, the *status* of the list is set to `end`.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
 Status for the article drafting
