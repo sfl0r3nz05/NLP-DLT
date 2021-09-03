@@ -36,9 +36,10 @@ Status for Roaming Agreement Negotiation
 - The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
 - It controls the *negotiation* at the **Roaming Agreement** level.
 - The [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement) method set the *status* to `started_ra`.
-- The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `confirmation_ra_started`.
+- The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `started_ra_confirmation`.
 - The first time execution of the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
-- When the [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) method is executed, it is verified that *status* at the *article* negotiation level is set to `end` inspecting the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT) and then, the ROAMINGAGREEMNT *status* is set from `ra_negotiating` to `accepted_ra`.
+- When the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, it is verified that *status* at the *article* negotiation level is set to `end` inspecting the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT) and then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) struct is set from `ra_negotiating` to `accepted_ra`.
+- The [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) method changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.drawio.png">
 
