@@ -39,7 +39,7 @@ Status for Roaming Agreement Negotiation
 - The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `confirmation_ra_started`.
 - The first time execution of the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
 
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.drawio.png">
 
 Status for the articles negotiation
 ---
@@ -51,7 +51,7 @@ Status for the articles negotiation
 - It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
 - A call to the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method implies the verification of the *status* of each *article* into the *model* [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE).
 - Whether all *articles* can be verified when [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, the *status* of the list is set to `end`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v03.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v03.drawio.png">
 
 Status for the article drafting
 ---
