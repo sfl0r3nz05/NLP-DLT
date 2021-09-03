@@ -100,8 +100,8 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 |addOrg                    |created_org             |-                           |-                             |-                             |
 
 - Identity is verified at each interaction.
-- No state is set
-- An event is emitted to set the state `created_org`.
+- No status is set
+- The event `created_org` is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/01.png">
