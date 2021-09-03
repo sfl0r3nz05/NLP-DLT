@@ -40,7 +40,8 @@ Status for Roaming Agreement Negotiation
 Status for the article negotiation
 ---
 - The list that contains this **status** which indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
-- It is **initialized** when the list that contains the *articles* is created by method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement)
+- It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
+- It remains as **drafting** until all *articles* has `accepted_changes` as *status*.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
 Status for the article drafting
