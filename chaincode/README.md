@@ -18,7 +18,7 @@
     - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
-5. The chaincode mechanisms designed are:
+5. The chaincode methods designed are:
     - [Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#register-organization)
     - [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement)
     - [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement)
@@ -39,8 +39,7 @@ Status for Roaming Agreement Negotiation
 
 Status for the article negotiation
 ---
-- The second type of state change to be considered is at the Article Negotiation level.
-- The chaincode also validates the changes of states.
+- Each article contains this **status** which indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
 Status for the article drafting
