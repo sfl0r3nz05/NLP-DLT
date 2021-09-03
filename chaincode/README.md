@@ -58,7 +58,7 @@ Status for the article drafting
 - It controls the *drafting* at the **article** level.
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v03.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Drafting_State_v03.drawio.png">
     
 List of events
 ---
