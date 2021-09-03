@@ -43,7 +43,8 @@ Status for the articles negotiation
 - The list that contains this **status** is enabled into the *model* [List of articles](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT)
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
-- It remains as **drafting** until all *articles* have `accepted_changes` as *status*.
+- It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
+- A call to the method [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) implies the verification all *articles* verifying each *status* into the model [article](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ARTICLE)
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
 Status for the article drafting
