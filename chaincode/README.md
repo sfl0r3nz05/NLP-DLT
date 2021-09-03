@@ -118,11 +118,14 @@ A registered organization is enabled to draft a Roaming Agreement.
 |proposeAgreementInitiation|started_ra              |started_ra                  |Init                          |-                             |
 
 - Identity is verified at each interaction.
-- The inputs are two `json org` and `json jsonRA`.
-- The `json jsonRA` provides basic information of the Roaming Agreement.
-- The `RAID` is generated.
-    - `RAID` is accesible for all MNOs.
-- The Roaming Agreement state is set as `started_ra`.
+- The inputs are two organizations (MNOs): `org`, `org` and the name of the Roaming Agreement: `document_name`.
+- The outputs are the `RAID` and the `uuid`.
+    - The `RAID` is generated.
+    - The `RAID` is accesible for all MNOs.
+    - The `RAID` identifies the Roaming Agreement.
+    - The `uuid` identifies the Roaming Agreement at articles level.
+- The Status for the Roaming Agreement Negotiation is set as `started_ra`.
+- The Status for the Articles Negotiation is set as `init`.
 - The `started_ra` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
