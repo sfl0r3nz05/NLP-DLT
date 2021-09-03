@@ -35,11 +35,14 @@ Status for Roaming Agreement Negotiation
 ---
 - The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
 - It controls the *negotiation* at the **Roaming Agreement** level.
-- The [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement) method set the *status* to `started_ra`.
-- The [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) method changes the *status* from `started_ra` to `started_ra_confirmation`.
-- The first time execution of the [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) method changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
-- When the [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) method is executed, it is verified that *status* at the *article* negotiation level is set to `transient_confimation` inspecting the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT) then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
-- The [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) method changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
+- The method for the [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement) set the *status* to `started_ra`.
+- The method for [Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-started-agreement) changes the *status* from `started_ra` to `started_ra_confirmation`.
+- The first time execution of the method for [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
+- A new method call for [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article) maintains the *status* as `ra_negotiating`.
+- A method call for [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article) maintains the *status* as `ra_negotiating`.
+- A method call for [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article) maintains the *status* as `ra_negotiating`.
+- When the method for [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is set to `transient_confimation` inspecting the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT) then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
+- The method for the [Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v03.drawio.png">
 
@@ -81,7 +84,7 @@ List of events
 |proposeUpdateArticle       |proposed_update_article |ra_negotiating              |proposed_changes              |proposed_changes              |
 |proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |proposed_changes              |proposed_changes              |
 |acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |accepted_changes              |accepted_changes              |
-|reachAgreement             |proposal_accepted_ra    |ra_accepted                 |-                             |-                             |
+|reachAgreement             |proposal_accepted_ra    |accepted_ra                 |-                             |-                             |
 |acceptRefuseReachAgreement |confirmation_accepted_ra|acepted_ra_confirmation     |-                             |-                             |
 |querySingleArticle         |-                       |-                           |-                             |-                             |
 |queryAllArticles           |-                       |-                           |-                             |-                             |
