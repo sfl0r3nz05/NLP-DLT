@@ -140,12 +140,12 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 
 |Method                    |Event                   |Status for Roaming Agreement|Status for Article Negotiation|Status for Article Drafting   |
 |:------------------------:|:----------------------:|:--------------------------:|:----------------------------:|:----------------------------:|
-|acceptAgreementInitiation |confirmation_ra_started |started_ra_confirmation     |Init                          |-                             |
+|acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started     |Init                          |-                             |
 
 - Identity is verified at each interaction.
 - The input is `RAID`.
-- The `RAID` is obtained in the frontend.
-- The Roaming Agreement state is set as `confirmation_ra_started`.
+- The `RAID` is obtained from the frontend.
+- The Roaming Agreement status is set as `confirmation_ra_started`.
 - The `confirmation_ra_started` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
@@ -162,8 +162,12 @@ The drafting of the Roaming Agreement involves to add article by article.
 |:------------------------:|:----------------------:|:--------------------------:|:----------------------------:|:----------------------------:|
 |proposeAddArticle         |proposed_add_article    |ra_negotiating              |articles_drating              |added_article                 |
 
-- The state of each article is managed independently.
-- The article state is set to `proposed_change`.
+- The status are managed at three levels:
+    - The Status for Roaming Agreement is set to `ra_negotiating`
+    - Status for Articles Negotiation is set to `articles_drating`
+    - Status for Article Drafting is set to `added_article`
+- The Status for Roaming Agreement is verfied as `confirmation_ra_started`
+- The Status for Article Drafting is verfied as `init`
 - Identity is verified at each interaction.
 - The inputs are `RAID`, `article_num`, `variables` and `variations`.
 - The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
