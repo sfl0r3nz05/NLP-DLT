@@ -10,12 +10,12 @@
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/diagram_sequence_chaincode_v15.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/class_diagram_chaincode_v15.drawio)
     - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Roaming_Agreement_State_v02.drawio)
-    - [States Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State_v02.drawio)
-    - [States Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v02.drawio)
-3. Chaincode contains three types of states:
-    - [State for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-for-roaming-agreement-negotiation)
-    - [State for the article negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#state-for-the-article-negotiation)
-    - [State for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#state-for-the-article-drafting)
+    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Negotiation_State_v02.drawio)
+    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/Article_Drafting_State_v02.drawio)
+3. Chaincode contains three types of status:
+    - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-roaming-agreement-negotiation)
+    - [Status for the article negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#status-for-the-article-negotiation)
+    - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#list-of-events)
 5. The chaincode mechanisms designed are:
@@ -31,19 +31,19 @@
     - [Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article) 
     - [Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-all-article) 
 
-State for Roaming Agreement Negotiation
+Status for Roaming Agreement Negotiation
 ---
 - The first type of state change to be considered is at the Roaming Agreement level.
 - The chaincode validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Roaming_Agreement_State_v02.png">
 
-State for the article negotiation
+Status for the article negotiation
 ---
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/Article_Negotiation_State_v02.png">
 
-State for the article drafting
+Status for the article drafting
 ---
 - The second type of state change to be considered is at the Article Negotiation level.
 - The chaincode also validates the changes of states.
