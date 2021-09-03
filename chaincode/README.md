@@ -39,8 +39,8 @@ Status for Roaming Agreement Negotiation
 
 Status for the articles negotiation
 ---
-- The list that contains this **status** indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
-- The list that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT)
+- The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
+- It indicates whether the negotiation of the article has been **initiated**, is in the **drafting** process, or has been **ended**.
 - It is **initialized** when the list that contains the *articles* is created by the method [Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-start-agreement).
 - It is set to **drafting** when the first article is created after the first use of the method [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-add-article).
 - It remains as **drafting** until all *articles* into the list have `accepted_changes` as *status*.
