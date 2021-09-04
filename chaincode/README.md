@@ -434,15 +434,15 @@ Query all articles added to the negotiation process.
     ```
 
 ### How to deploy the HFB network
-1. Go to the directory `2org_2peer_solo_goleveldb`:
+1. **Go to the directory**: `2org_2peer_solo_goleveldb`:
     ```
     cd ~/NLP-DLT/network/HFB/2org_2peer_solo_goleveldb
     ```
-2. Set up the environmental variables to define:
+2. **Set up the environmental variables to define**:
     * FABRIC_VERSION
     * FABRIC_CA_VERSION
     * ELK_VERSION
-3. The network includes the next features:
+3. **The network includes the next features**:
 
 ##### Prometheus + Grafana
 Visualize performance metrics
