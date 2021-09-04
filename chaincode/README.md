@@ -118,7 +118,7 @@ A registered organization is enabled to draft a Roaming Agreement.
 |proposeAgreementInitiation|started_ra              |started_ra                  |Init                           |-                             |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The inputs are two organizations (MNOs): `org`, `org` and the name of the Roaming Agreement: `document_name`.
 - The outputs are the `RAID` and the `uuid`.
     - The `RAID` is generated.
@@ -144,7 +144,7 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 |acceptAgreementInitiation |confirmation_ra_started |confirmation_ra_started     |Init                           |-                             |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The input is `RAID`.
 - The `confirmation_ra_started` event is emitted.
 - The `RAID` is obtained from the frontend.
@@ -165,7 +165,7 @@ The drafting of the Roaming Agreement involves to add article by article.
 |proposeAddArticle         |proposed_add_article    |ra_negotiating              |articles_drating               |added_article                 |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clause`.
 - The `proposed_add_article` event is emitted.
 - The status are managed at three levels:
@@ -190,7 +190,7 @@ The drafting of the Roaming Agreement involves to update articles.
 |proposeUpdateArticle      |proposed_update_article |ra_negotiating              |articles_drating               |proposed_changes              |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clauses`.
 - The `proposed_update_article` event is emitted.
 - The Status for Article Drafting is set to `proposed_change`.
@@ -212,7 +212,7 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 |proposeDeleteArticle      |proposed_delete_article |ra_negotiating              |articles_drating               |proposed_changes              |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The inputs are `RAID`, `article_num` and `type`.
 - The `proposed_delete_article` event is emitted.
 - The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
@@ -235,7 +235,7 @@ The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05
 |acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |transient_confirmation         |accepted_changes              |
 
 - Identity is verified.
-- The Organization that submit the transaction is verified.
+- The Organization that invokes the transaction is verified.
 - The inputs are `RAID` and `article_num`.
 - The `accept_proposed_changes` event is emitted.
 - The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
@@ -261,6 +261,7 @@ The drafting of the Roaming Agreement involves the proposal of acceptation of th
 |proposeReachAgreement      |proposal_accepted_ra    |accepted_ra                 |end                            |-                             |
 
 - Identity is verified at each interaction.
+- The Organization that invokes the transaction is verified.
 - The input is `RAID`.
 - The `proposal_accepted_ra` event is emitted.
 - The `articles_drating` Status for Roaming Agreement is verified.
@@ -283,11 +284,14 @@ The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0
 |:-------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
 |acceptReachAgreement       |confirmation_accepted_ra|acepted_ra_confirmation     |end                            |-                             |
 
-- Conditional sentence `(accept == "true") ? status= "confirm_accepted_ra" : status= "refused_ra"` enables to accept or refuse the `accepted_ra` previous state.
 - Identity is verified at each interaction.
-- The inputs are `RAID` and `accept`.
-- The previous state of the Roamming Agreement (`accepted_ra`) is verified.
-- Conditional sentence `(accept == "true") ? event_name= "confirmation_accepted_ra" : event_name= "confirmation_refused_ra"` also enables the event name asociated to the Roaming Agreement state.
+- The Organization that invokes the transaction is verified.
+- The input is `RAID`.
+- The `proposal_accepted_ra` event is emitted.
+- The `confirmation_accepted_ra` Status for Roaming Agreement is verified.
+- The previous `accepted_ra` status of the Roaming Agreement is verified.
+- The previous `end` status of the Articles Negotiation is verified.
+- The `acepted_ra_confirmation` status of the Roaming Agreement is set.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/17.png">       
