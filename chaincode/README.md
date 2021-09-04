@@ -471,7 +471,7 @@ go test
     ```
     cd ~/NLP-DLT/network/HFB/2org_2peer_solo_goleveldb
     ```
-2. **Set up the environmental variables to define**:
+2. **Set the environmental variables**:
     * FABRIC_VERSION
     * FABRIC_CA_VERSION
     * ELK_VERSION
