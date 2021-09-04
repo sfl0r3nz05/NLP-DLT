@@ -29,7 +29,7 @@
 |proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-update-article)               |
 |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article)               |
 |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes)                       |
-|reachAgreement             |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved)         |
+|proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved)         |
 |acceptRefuseReachAgreement |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) |
 |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article)                             |
 |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-all-article)                                   |
@@ -86,7 +86,7 @@ List of events
 |proposeUpdateArticle       |proposed_update_article |ra_negotiating              |articles_drating               |proposed_changes              |
 |proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |articles_drating               |proposed_changes              |
 |acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |transient_confirmation         |accepted_changes              |
-|reachAgreement             |proposal_accepted_ra    |accepted_ra                 |end                            |-                             |
+|proposeReachAgreement      |proposal_accepted_ra    |accepted_ra                 |end                            |-                             |
 |acceptReachAgreement       |confirmation_accepted_ra|acepted_ra_confirmation     |end                            |-                             |
 |querySingleArticle         |-                       |-                           |-                              |-                             |
 |queryAllArticles           |-                       |-                           |-                              |-                             |
@@ -125,9 +125,9 @@ A registered organization is enabled to draft a Roaming Agreement.
     - The `RAID` is accesible for all MNOs.
     - The `RAID` identifies the Roaming Agreement.
     - The `uuid` identifies the Roaming Agreement at articles level.
+- The `started_ra` event is emitted.
 - The Status for the Roaming Agreement Negotiation is set as `started_ra`.
 - The Status for the Articles Negotiation is set as `init`.
-- The `started_ra` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/03.png">
@@ -146,9 +146,9 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - Identity is verified.
 - The Organization that submit the transaction is verified.
 - The input is `RAID`.
+- The `confirmation_ra_started` event is emitted.
 - The `RAID` is obtained from the frontend.
 - The Roaming Agreement status is set as `confirmation_ra_started`.
-- The `confirmation_ra_started` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/05.png">
@@ -166,14 +166,14 @@ The drafting of the Roaming Agreement involves to add article by article.
 
 - Identity is verified.
 - The Organization that submit the transaction is verified.
+- The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clause`.
+- The `proposed_add_article` event is emitted.
 - The status are managed at three levels:
     - The Status for Roaming Agreement is set to `ra_negotiating`
     - Status for Articles Negotiation is set to `articles_drating`
     - Status for Article Drafting is set to `added_article`
 - The Status for Roaming Agreement is verfied as `confirmation_ra_started`
 - The Status for Article Drafting is verfied as `init`
-- The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clause`.
-- The `proposed_add_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
@@ -191,11 +191,11 @@ The drafting of the Roaming Agreement involves to update articles.
 
 - Identity is verified.
 - The Organization that submit the transaction is verified.
-- The Status for Article Drafting is set to `proposed_change`.
 - The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clauses`.
+- The `proposed_update_article` event is emitted.
+- The Status for Article Drafting is set to `proposed_change`.
 - The previous Status for the Roamming Agreement (`articles_drafting`) is verified.
 - One of the two previous Articles states: `added_article` and `proposed_changes` are verified.
-- The `proposed_update_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/09.png">
@@ -213,12 +213,12 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 
 - Identity is verified.
 - The Organization that submit the transaction is verified.
-- The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
-- The previous Status for Articles Negotiation (`articles_drating`) is verified.
-- The previous Status for Article Drafting (`added_article` or `proposed_changes`) is verified.
-- The article state is set to `proposed_change`.
 - The inputs are `RAID`, `article_num` and `type`.
 - The `proposed_delete_article` event is emitted.
+- The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
+- The previous Status for Articles Negotiation (`articles_drating`) is verified.
+- The previous Status for Article Drafting (`added_article` or `proposed_changes`) are verified.
+- The article state is set to `proposed_change`.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/11.png">       
@@ -239,9 +239,12 @@ The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05
 - The inputs are `RAID` and `article_num`.
 - The `accept_proposed_changes` event is emitted.
 - The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
-- The article state is set to `proposed_change`.
-- The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
-- The previous states of the article: `proposed_changes` is verified.
+- The previous Status for Articles Negotiation (`articles_drating`) is verified.
+- The previous Status for Article Drafting (`added_article` or `proposed_changes`) are verified.
+- The article status of the article with number `article_num` is set to `accepted_changes`.
+- The Status for Article Drafting of all articles is verified as `accepted_changes`:
+    - if this happens, the Status for Articles Negotiation is set to `transient_confimation`.
+
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/13.png">
@@ -255,14 +258,16 @@ The drafting of the Roaming Agreement involves the proposal of acceptation of th
 
 |Method                     |Event                   |Status for Roaming Agreement|Status for Articles Negotiation|Status for Article Drafting   |
 |:-------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
-|reachAgreement             |proposal_accepted_ra    |accepted_ra                 |end                            |-                             |
+|proposeReachAgreement      |proposal_accepted_ra    |accepted_ra                 |end                            |-                             |
 
 - Identity is verified at each interaction.
 - The input is `RAID`.
-- The `drafting_agreement` states of the Roaming Agreement states is verified.
-- The `accepted_ra` states of the Roaming Agreement states is updated.
-- The Articles states are not managed as part of this mechanism.
-- An event is emitted to set the state `accepted_ra`.
+- The `proposal_accepted_ra` event is emitted.
+- The `articles_drating` Status for Roaming Agreement is verified.
+- If the Status for Articles Negotiation has been set to `transient_confimation`:
+    - The `accepted_ra` status of the Roaming Agreement is set.
+    - The `end` status of the Articles Negotiation is set.
+    - Else `error` message is returned.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/15.png">       
