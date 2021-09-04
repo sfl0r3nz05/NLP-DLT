@@ -104,11 +104,9 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 - The event `created_org` is emitted.
 
 ##### Part of Chaincode Sequence Diagram
-
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/01.png">
 
 ##### Part of Chaincode Class Diagram
-
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/02.png">
 
 Proposal for start agreement
@@ -446,10 +444,10 @@ Query all articles added to the negotiation process.
     * ELK_VERSION
 3. The network includes the next features:
 ##### Prometheus
-    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
 
 ##### ELK Infrastructure
-    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
 
 4. How to use 😎
     1. Start: docker-compose up -d
