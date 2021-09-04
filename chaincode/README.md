@@ -361,6 +361,7 @@ Query all articles added to the negotiation process.
    - [How to directly deploy the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#how-to-directly-deploy-the-chaincode)
    - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#build-vendor-for-chaincode)
    - [Init the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#init-the-chaincode)
+   - [How to deploy the HFB network](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/README.md#how-to-deploy-the-hfb-network)
 
 ### How to modify Chaincode
 
@@ -433,33 +434,6 @@ Query all articles added to the negotiation process.
     $GOPATH/src/name_of_the_project
     ```
 
-### How to deploy the HFB network
-1. **Go to the directory**: `2org_2peer_solo_goleveldb`:
-    ```
-    cd ~/NLP-DLT/network/HFB/2org_2peer_solo_goleveldb
-    ```
-2. **Set up the environmental variables to define**:
-    * FABRIC_VERSION
-    * FABRIC_CA_VERSION
-    * ELK_VERSION
-
-3. **How to use** 😎
-    1. Start: docker-compose up -d
-    2. Stop: docker-compose stop
-    3. Down: docker-compose down
-
-4. **The network includes the next features**:
-
-##### Prometheus + Grafana
-Visualize performance metrics
-
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
-
-##### ELK Infrastructure
-
-User friendly visualization of variables such as blocks, channels, organizations.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
-
 ### Build vendor for chaincode
 
 Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
@@ -491,3 +465,30 @@ You can run the unit test executing the following commmand:
 ```
 go test
 ```
+
+### How to deploy the HFB network
+1. **Go to the directory**: `2org_2peer_solo_goleveldb`:
+    ```
+    cd ~/NLP-DLT/network/HFB/2org_2peer_solo_goleveldb
+    ```
+2. **Set up the environmental variables to define**:
+    * FABRIC_VERSION
+    * FABRIC_CA_VERSION
+    * ELK_VERSION
+
+3. **How to use** 😎
+    1. Start: docker-compose up -d
+    2. Stop: docker-compose stop
+    3. Down: docker-compose down
+
+4. **The network includes the next features**:
+
+##### Prometheus + Grafana
+Visualize performance metrics
+
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
+
+##### ELK Infrastructure
+
+User friendly visualization of variables such as blocks, channels, organizations.
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
