@@ -169,8 +169,8 @@ The drafting of the Roaming Agreement involves to add article by article.
 - The Status for Roaming Agreement is verfied as `confirmation_ra_started`
 - The Status for Article Drafting is verfied as `init`
 - Identity is verified at each interaction.
-- The inputs are `RAID`, `article_num`, `type`, `variables` and `clause`.
-- An `proposed_add_article` event is emitted.
+- The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clause`.
+- The `proposed_add_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
@@ -186,13 +186,12 @@ The drafting of the Roaming Agreement involves to update articles.
 |:------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
 |proposeUpdateArticle      |proposed_update_article |ra_negotiating              |articles_drating               |proposed_changes              |
 
-- The state of each article is managed independently.
-- The article state is set to `proposed_change`.
+- The Status for Article Drafting is set to `proposed_change`.
 - Identity is verified at each interaction.
-- The inputs are `RAID`, `article_num`, `variables` and `variations`.
-- The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
-- One of the two previous Articles states: `accepted_changes` and `denied_changes` are verified.
-- An event is emitted once the state `proposed_changes` is set.
+- The inputs are `RAID`, `article_num`, `type`, `[] variables` and `[] clauses`.
+- The previous Status for the Roamming Agreement (`articles_drafting`) is verified.
+- One of the two previous Articles states: `added_article` and `proposed_changes` are verified.
+- The `proposed_update_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/09.png">
