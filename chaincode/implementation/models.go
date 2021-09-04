@@ -38,9 +38,10 @@ type ROAMINGAGREEMNT struct {
 	STATUS string						`json:"status,omitempty"`
 }
 
-type JSONROAMINGAGREEMENT struct {
-	uuid	string						`json:"uuid"` // name for the uuid
-	document_name	string					`json:"document_name"` // name for the document_name
+type LISTOFARTICLES struct {
+	UUID	string						`json:"uuid"` // name for the uuid
+	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
+	STATUS string						`json:"status,omitempty"`
 	articles	[]ARTICLE				`json:"articles"` // name for the articles
 }
 
