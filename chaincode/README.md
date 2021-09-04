@@ -30,7 +30,7 @@
 |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-for-delete-article)               |
 |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#accept-proposed-changes)                       |
 |proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#proposal-of-agreement-achieved)         |
-|acceptRefuseReachAgreement |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) |
+|acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#confirmation-of-agreement-achieved) |
 |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-single-article)                             |
 |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/main/chaincode#query-all-article)                                   |
 
