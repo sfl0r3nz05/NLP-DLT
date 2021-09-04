@@ -445,8 +445,10 @@ Query all articles added to the negotiation process.
 3. The network includes the next features:
     * Prometheus
     <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
+
     * ELK Infrastructure
     <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
+    
 4. How to use 😎
     1. Start: docker-compose up -d
     2. Stop: docker-compose stop
