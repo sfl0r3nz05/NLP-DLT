@@ -443,13 +443,18 @@ Query all articles added to the negotiation process.
     * FABRIC_CA_VERSION
     * ELK_VERSION
 3. The network includes the next features:
-##### Prometheus
+
+##### Prometheus + Grafana
+Visualize performance metrics
+
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
 
 ##### ELK Infrastructure
+
+User friendly visualization of variables such as blocks, channels, organizations.
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
 
-4. How to use 😎
+4. **How to use** 😎
     1. Start: docker-compose up -d
     2. Stop: docker-compose stop
     3. Down: docker-compose down
