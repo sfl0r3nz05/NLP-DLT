@@ -207,13 +207,14 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 |:------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
 |proposeDeleteArticle      |proposed_delete_article |ra_negotiating              |articles_drating               |proposed_changes              |
 
-- The state of each article is managed independently.
+- Identity is verified.
+- The Organization that submit the transaction is verified.
+- The previous Status for Roaming Agreement (`ra_negotiating`) is verified.
+- The previous Status for Articles Negotiation (`articles_drating`) is verified.
+- The previous Status for Article Drafting (`added_article` or `proposed_changes`) is verified.
 - The article state is set to `proposed_change`.
-- Identity is verified at each interaction.
-- The inputs are `RAID` and `article_num`.
-- The previous state of the Roamming Agreement (`drafting_agreement`) is verified.
-- One of the two previous states: `accepted_changes` and `denied_changes` must be enabled.
-- An event is emitted to set the state `proposed_delete_article`.
+- The inputs are `RAID`, `article_num` and `type`.
+- An `proposed_delete_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/11.png">       
