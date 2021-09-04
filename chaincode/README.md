@@ -3,6 +3,7 @@
     1. [Chaincode design](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-design-)
     2. [Chaincode implementation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-implementation-)
     3. [Chaincode test](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#chaincode-test-)
+    4. [Deploy the HFB network](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/README.md#how-to-deploy-the-hfb-network)
 
 ## Chaincode design 📄✏
 1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
@@ -361,7 +362,6 @@ Query all articles added to the negotiation process.
    - [How to directly deploy the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#how-to-directly-deploy-the-chaincode)
    - [Build vendor for chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#build-vendor-for-chaincode)
    - [Init the chaincode](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#init-the-chaincode)
-   - [How to deploy the HFB network](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/README.md#how-to-deploy-the-hfb-network)
 
 ### How to modify Chaincode
 
@@ -466,7 +466,7 @@ You can run the unit test executing the following commmand:
 go test
 ```
 
-### How to deploy the HFB network
+## How to deploy the HFB network
 1. **Go to the directory**: `2org_2peer_solo_goleveldb`:
     ```
     cd ~/NLP-DLT/network/HFB/2org_2peer_solo_goleveldb
