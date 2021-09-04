@@ -287,8 +287,7 @@ The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0
 - Identity is verified at each interaction.
 - The Organization that invokes the transaction is verified.
 - The input is `RAID`.
-- The `proposal_accepted_ra` event is emitted.
-- The `confirmation_accepted_ra` Status for Roaming Agreement is verified.
+- The `confirmation_accepted_ra` event is emitted.
 - The previous `accepted_ra` status of the Roaming Agreement is verified.
 - The previous `end` status of the Articles Negotiation is verified.
 - The `acepted_ra_confirmation` status of the Roaming Agreement is set.
