@@ -169,10 +169,8 @@ The drafting of the Roaming Agreement involves to add article by article.
 - The Status for Roaming Agreement is verfied as `confirmation_ra_started`
 - The Status for Article Drafting is verfied as `init`
 - Identity is verified at each interaction.
-- The inputs are `RAID`, `article_num`, `variables` and `variations`.
-- The previous state of the Roamming Agreement (`confirm_ra_started`) is verified.
-- A new state of the Roamming Agreement is set to `drafting_agreement`.
-- An event is emitted once the state `proposed_changes` is set.
+- The inputs are `RAID`, `article_num`, `type`, `variables` and `values`.
+- An `proposed_add_article` event is emitted.
 
 ##### Part of Chaincode Sequence Diagram
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/chaincode/design/images/07.png">       
