@@ -17,7 +17,7 @@ destroy:
 	rm -rf connection-profile-[0-9].yaml
 	rm -rf connectionProfile.json
 	rm -rf docker-compose.yaml
-	rm -rf ../../dashboards
+	rm -rf ../dashboards
 
 rmchaincode:
 	docker images | grep dummy | awk '{print $1}' | xargs docker rmi

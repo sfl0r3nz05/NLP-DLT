@@ -2,7 +2,7 @@
 
 HLNETWORK?=el-network
 ORG_NUMBER?=1
-NETWORK?=hfb
+NETWORK?=basic
 PEER_NUMBER?=0
 
 WHICHOS := $(shell uname)

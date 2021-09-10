@@ -14,14 +14,14 @@ services:
       - NETWORK=CONFIG_NETWORK_NAME
     volumes:
       # Fabricbeat configuration file
-      - ./fabricbeat/fabricbeat.yml:/go/src/github.com/nlp-dlt/elk-agent/fabricbeat/fabricbeat.yml
+      - ./fabricbeat/fabricbeat.yml:/go/src/github.com/blockchain-analyzer/agent/fabricbeat/fabricbeat.yml
       # Connection profile ("connectionProfile" in configuration file)
-      - ./connection-profile-CONFIG_ORG_NUM.yaml:/go/src/github.com/nlp-dlt/network/CONFIG_NETWORK_NAME/connection-profile-CONFIG_ORG_NUM.yaml
+      - ./connection-profile-CONFIG_ORG_NUM.yaml:/go/src/github.com/blockchain-analyzer/network/basic/connection-profile-CONFIG_ORG_NUM.yaml
       # Crypto-config
-      - ../network/CONFIG_NETWORK_NAME/crypto-config:/go/src/github.com/nlp-dlt/network/hfb/crypto-config
+      - ../hfb/crypto-config:/go/src/github.com/blockchain-analyzer/network/basic/crypto-config
       # Kibana dashboard directory ("dashboardDirectory" in configuration file)
-      - ../dashboards/7/dashboard:/go/src/github.com/nlp-dlt/dashboards/7/dashboard
+      - ../dashboards/7/dashboard:/go/src/github.com/blockchain-analyzer/dashboards/7/dashboard
       # Kibana template directory ("templateDirectory" in configuration file)
-      - ../elk-agent/kibana_templates:/go/src/github.com/nlp-dlt/elk/kibana_templates
+      - ./kibana_templates:/go/src/github.com/blockchain-analyzer/agent/kibana_templates
       # Note that if you change "dashboardDirectory", you have to change setup.dashboards.directory accordingly!
 
