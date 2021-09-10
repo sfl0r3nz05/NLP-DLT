@@ -9,26 +9,28 @@ WHICHOS := $(shell uname)
 
 start:
 	make generate ABSPATH=${ABSPATH}
-	./start-dummy.sh
+	./scripts/start-hfb.sh
 	
 destroy:
-	./destroy-network.sh
-	rm -rf *-e
+	./scripts/destroy-network.sh
 	rm -rf ../../apps/dummyapp/wallet
 	rm -rf connection-profile-[0-9].yaml
+	rm -rf connectionProfile.json
+	rm -rf docker-compose.yaml
+	rm -rf ../../dashboards
 
 rmchaincode:
 	docker images | grep dummy | awk '{print $1}' | xargs docker rmi
 
 generate:
-	cp docker-compose-TEMPLATE.yaml docker-compose.yaml
+	cp ./templates/docker-compose-TEMPLATE.yaml docker-compose.yaml
 	sed -i -e "s/HLNETWORK/${HLNETWORK}/g" docker-compose.yaml
-	cp connectionProfile-TEMPLATE.json connectionProfile.json
+	cp ./templates/connectionProfile-TEMPLATE.json connectionProfile.json
 	sed -i -e "s/HLNETWORK/${HLNETWORK}/g" connectionProfile.json
 	sed -i -e "s~ABSPATH~${ABSPATH}~g" connectionProfile.json
 	for NUMBER in 1 2 3 4 ; \
 	do \
-		cp connection-profile-TEMPLATE.yaml connection-profile-$${NUMBER}.yaml; \
+		cp ./templates/connection-profile-TEMPLATE.yaml connection-profile-$${NUMBER}.yaml; \
 		sed -i -e  "s/HLNETWORK/${HLNETWORK}/g" connection-profile-$${NUMBER}.yaml; \
 		sed -i -e  "s/ORG/Org$${NUMBER}/g" connection-profile-$${NUMBER}.yaml; \
 		sed -i -e  "s~ABSPATH~${ABSPATH}~g" connection-profile-$${NUMBER}.yaml; \
