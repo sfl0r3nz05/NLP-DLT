@@ -1,9 +1,8 @@
-
 #set +x
 
 HLNETWORK?=el-network
 ORG_NUMBER?=1
-NETWORK?=basic
+NETWORK?=hfb
 PEER_NUMBER?=0
 
 WHICHOS := $(shell uname)
