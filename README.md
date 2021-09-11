@@ -8,9 +8,9 @@ In addition, the project has been documented through the following Medium articl
 
 ### Scientific Contributions
 
-## How to use all tools integrated
+## How to use the tools integrated 🦾🦿
 
-## How to use each part separately ⛏
+## How to use each tool separately ⛏
 
 ### NLP-Engine
 1. To use the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
