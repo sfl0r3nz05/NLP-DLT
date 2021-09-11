@@ -35,7 +35,6 @@ In addition, the project has been documented through the following Medium articl
     $ mkdir $GOPATH/src/github.com -p
     $ cd $GOPATH/src/github.com  
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
-
     ```
 
 2. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
