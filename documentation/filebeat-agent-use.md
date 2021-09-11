@@ -38,3 +38,5 @@
 - Be *patient*, there is only one step left. Once the chaincode be deployed the transacciones can be visualized through Kibana dashboard:
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png">
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/videos/hfb_demo1.mp4)
