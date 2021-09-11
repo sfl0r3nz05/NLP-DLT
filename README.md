@@ -8,7 +8,7 @@ In addition, the project has been documented through the following Medium articl
 
 ### Scientific Contributions
 
-## All as a whole
+## How to use all tools integrated
 
 ## How to use each part separately ⛏
 
