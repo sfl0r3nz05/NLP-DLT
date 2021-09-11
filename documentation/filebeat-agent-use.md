@@ -1,4 +1,4 @@
-# How to use the ELK-Network 😎
+# How to use the Filebeat Agent 😎
 
 1. In the root of the project execute:
     ```
