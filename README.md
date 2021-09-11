@@ -5,11 +5,6 @@
 ### Medium Articles
 In addition, the project has been documented through the following Medium articles:
 1. [Blockchain-based digitization of the roaming agreement drafting process](https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521)
-2. 
-3. 
-4. 
-5. 
-6. 
 
 ### Scientific Contributions
 
