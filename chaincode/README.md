@@ -48,7 +48,7 @@ Status for Roaming Agreement Negotiation
 - When the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is `transient_confimation` then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
 - The `acceptReachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
 
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/Roaming_Agreement_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
 Status for the Articles Negotiation
 ---
@@ -62,7 +62,7 @@ Status for the Articles Negotiation
     - if this does not happen, the *status* continues as `articles_drafting`.
 - If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
 - If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/Article_Negotiation_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
 Status for the Article Drafting
 ---
@@ -72,7 +72,7 @@ Status for the Article Drafting
 - It is set or continued as `proposed_changes` when the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) is executed.
 - It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article) is executed.
 - It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/Article_Drafting_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
     
 List of events
 ---
@@ -105,10 +105,10 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 - The event `created_org` is emitted.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/01.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/01.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/02.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/02.png">
 
 Proposal for start agreement
 ---
@@ -131,10 +131,10 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The Status for the Articles Negotiation is set as `init`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/03.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/03.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/04.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/04.png">
 
 Confirmation of Started Agreement
 ---
@@ -152,10 +152,10 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - The Roaming Agreement status is set as `confirmation_ra_started`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/05.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/05.png">
 
 ##### Part of Chaincode Class Diagram  
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/06.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/06.png">
 
 Proposal for add article
 ---
@@ -177,10 +177,10 @@ The drafting of the Roaming Agreement involves to add article by article.
 - The Status for Article Drafting is verfied as `init`
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/07.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/07.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/08.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/08.png">
 
 Proposal for update article
 ---
@@ -199,10 +199,10 @@ The drafting of the Roaming Agreement involves to update articles.
 - One of the two previous Articles states: `added_article` and `proposed_changes` are verified.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/09.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/09.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/10.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/10.png">
 
 Proposal for delete article
 ---
@@ -222,10 +222,10 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 - The article state is set to `proposed_change`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/11.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/11.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/12.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/12.png">
 
 Accept proposed changes
 ---
@@ -248,10 +248,10 @@ The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05
 
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/13.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/13.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/14.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/14.png">
 
 Proposal of Agreement Achieved
 ---
@@ -272,10 +272,10 @@ The drafting of the Roaming Agreement involves the proposal of acceptation of th
     - Else `error` message is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/15.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/15.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/16.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/16.png">
 
 Confirmation of Agreement Achieved
 ---
@@ -294,10 +294,10 @@ The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0
 - The `acepted_ra_confirmation` status of the Roaming Agreement is set.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/17.png">       
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/17.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/18.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/18.png">
 
 Query Single Article
 ---
@@ -312,10 +312,10 @@ Query a single article.
 - The content of `article_num` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/19.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/19.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/20.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/20.png">
 
 Query All Articles
 ---
@@ -330,10 +330,10 @@ Query all articles added to the negotiation process.
 - The content of `jsonRA` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/21.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/21.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/22.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/22.png">
 
 ## Chaincode implementation ⛏💻🖥
 **The chaincode implementation consists of 6 modules which are described below:**
@@ -486,9 +486,9 @@ go test
 ##### Prometheus + Grafana
 Visualize performance metrics
 
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/performance.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/performance.png">
 
 ##### ELK Infrastructure
 
 User friendly visualization of variables such as blocks, channels, organizations.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/images/kibana.png">
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/kibana.png">
