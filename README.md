@@ -2,7 +2,7 @@
 
 ## Project documentation 📕📗📘
 
-*This part is in development ......*
+*This part is under development ...*
 
 ### Medium Articles
 In addition, the project has been documented through the following Medium articles:
@@ -12,7 +12,7 @@ In addition, the project has been documented through the following Medium articl
 
 ## How to use the tools integrated 🦾🦿
 
-*This part is in development ......*
+*This part is under development ...*
 
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
 
@@ -52,15 +52,14 @@ In addition, the project has been documented through the following Medium articl
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
 
 ## Design details
-*This part is in development ......*
+*This part is under development ...*
 
 ### Chaincode
 1. Details of the `chaincode` design [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md)
 2. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-implementation.md)
 
 ## How to modify each part ✏
-
-*This part is in development ......*
+*This part is under development ...*
 
 ### NLP-Engine
 1. To modify the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-edit.md)
