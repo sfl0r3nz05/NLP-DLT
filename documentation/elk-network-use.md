@@ -2,8 +2,5 @@
 
 1. In the root of the project execute:
     ```
-    export GOPATH=$HOME/go
-    ```
-    ```
-    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+    sudo sysctl -w vm.max_map_count=262144
     ```
