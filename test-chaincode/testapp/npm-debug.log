@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'n' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData n
+8 silly fetchNamedPackageData n
+9 silly mapToRegistry name n
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/n
+13 verbose request uri https://registry.npmjs.org/n
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 7:08:57 PM
+16 verbose request id 0bb71418b4e10a13
+17 http request GET https://registry.npmjs.org/n
+18 http 200 https://registry.npmjs.org/n
+19 verbose headers { date: 'Tue, 07 Sep 2021 19:08:57 GMT',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'transfer-encoding': 'chunked',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'cf-ray': '68b23a899e1e5896-IAD',
+19 verbose headers   age: '142',
+19 verbose headers   'cache-control': 'public, max-age=300',
+19 verbose headers   etag: 'W/"a0450be7f552cea401f5eca936962300"',
+19 verbose headers   'last-modified': 'Sat, 24 Jul 2021 21:56:16 GMT',
+19 verbose headers   vary: 'accept-encoding, accept',
+19 verbose headers   'cf-cache-status': 'HIT',
+19 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+19 verbose headers   'x-amz-replication-status': 'COMPLETED',
+19 verbose headers   server: 'cloudflare',
+19 verbose headers   'content-encoding': 'gzip' }
+20 silly get cb [ 200,
+20 silly get   { date: 'Tue, 07 Sep 2021 19:08:57 GMT',
+20 silly get     'content-type': 'application/json',
+20 silly get     'transfer-encoding': 'chunked',
+20 silly get     connection: 'keep-alive',
+20 silly get     'cf-ray': '68b23a899e1e5896-IAD',
+20 silly get     age: '142',
+20 silly get     'cache-control': 'public, max-age=300',
+20 silly get     etag: 'W/"a0450be7f552cea401f5eca936962300"',
+20 silly get     'last-modified': 'Sat, 24 Jul 2021 21:56:16 GMT',
+20 silly get     vary: 'accept-encoding, accept',
+20 silly get     'cf-cache-status': 'HIT',
+20 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+20 silly get     'x-amz-replication-status': 'COMPLETED',
+20 silly get     server: 'cloudflare',
+20 silly get     'content-encoding': 'gzip' } ]
+21 verbose get saving n to /home/ubuntu/.npm/registry.npmjs.org/n/.cache.json
+22 verbose makeDirectory /home/ubuntu/.npm creation not in flight; initializing
+23 silly makeDirectory /home/ubuntu/.npm uid: 1000 gid: 1000
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule n@7.3.1 checking installable status
+37 silly cache add args [ 'n', null ]
+38 verbose cache add spec n
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'n',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'n',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed n@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for n
+42 info addNameTag [ 'n', 'latest' ]
+43 silly mapToRegistry name n
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/n
+47 verbose addNameTag registry:https://registry.npmjs.org/n not in flight; fetching
+48 verbose get https://registry.npmjs.org/n not expired, no request
+49 silly addNameTag next cb for n with tag latest
+50 silly addNamed n@7.3.1
+51 verbose addNamed "7.3.1" is a plain semver version for n
+52 silly mapToRegistry name n
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/n
+56 verbose addRemoteTarball https://registry.npmjs.org/n/-/n-7.3.1.tgz not in flight; adding
+57 verbose addRemoteTarball [ 'https://registry.npmjs.org/n/-/n-7.3.1.tgz',
+57 verbose addRemoteTarball   'f51bcceaaee3b9094fd8eeaf619861dabcfa28a8' ]
+58 info retry fetch attempt 1 at 7:08:57 PM
+59 info attempt registry request try #1 at 7:08:57 PM
+60 http fetch GET https://registry.npmjs.org/n/-/n-7.3.1.tgz
+61 http fetch 200 https://registry.npmjs.org/n/-/n-7.3.1.tgz
+62 silly fetchAndShaCheck shasum f51bcceaaee3b9094fd8eeaf619861dabcfa28a8
+63 verbose addTmpTarball /tmp/npm-8857-31adc948/registry.npmjs.org/n/-/n-7.3.1.tgz not in flight; adding
+64 verbose addTmpTarball already have metadata; skipping unpack for n@7.3.1
+65 silly cache afterAdd n@7.3.1
+66 verbose afterAdd /home/ubuntu/.npm/n/7.3.1/package/package.json not in flight; writing
+67 verbose afterAdd /home/ubuntu/.npm/n/7.3.1/package/package.json written
+68 silly loadAllDepsIntoIdealTree Finishing
+69 silly idealTree:prePrune lib
+69 silly idealTree:prePrune └── n@7.3.1
+70 silly loadIdealTree Finishing
+71 silly currentTree lib
+72 silly idealTree lib
+72 silly idealTree └── n@7.3.1
+73 silly generateActionsToTake Starting
+74 silly install generateActionsToTake
+75 warn checkPermissions Missing write access to /usr/local/lib
+76 silly rollbackFailedOptional Starting
+77 silly rollbackFailedOptional Finishing
+78 silly runTopLevelLifecycles Starting
+79 silly runTopLevelLifecycles Finishing
+80 silly install printInstalled
+81 verbose stack Error: EACCES: permission denied, access '/usr/local/lib'
+82 verbose cwd /home/ubuntu/go/src/github.com/blockchain-analyzer/apps/testapp
+83 error Linux 5.4.0-1055-aws
+84 error argv "/usr/bin/node" "/usr/bin/npm" "install" "-g" "n"
+85 error node v8.10.0
+86 error npm  v3.5.2
+87 error path /usr/local/lib
+88 error code EACCES
+89 error errno -13
+90 error syscall access
+91 error Error: EACCES: permission denied, access '/usr/local/lib'
+91 error  { Error: EACCES: permission denied, access '/usr/local/lib'
+91 error   errno: -13,
+91 error   code: 'EACCES',
+91 error   syscall: 'access',
+91 error   path: '/usr/local/lib' }
+92 error Please try running this command again as root/Administrator.
+93 verbose exit [ -13, true ]

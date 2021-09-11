@@ -7,8 +7,7 @@ services:
     environment:
       - node.name=elasticsearch1
       - cluster.name=docker-cluster
-      - discovery.seed_hosts=elasticsearch1,elasticsearch2
-      - cluster.initial_master_nodes=elasticsearch1, elasticsearch2, elasticsearch3
+      - cluster.initial_master_nodes=elasticsearch1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - http.cors.enabled=true
@@ -38,10 +37,10 @@ services:
     environment:
       - node.name=elasticsearch2
       - cluster.name=docker-cluster
-      - discovery.seed_hosts=elasticsearch1,elasticsearch3
-      - cluster.initial_master_nodes=elasticsearch1, elasticsearch2, elasticsearch3
+      - cluster.initial_master_nodes=elasticsearch1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch1"
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - network.host=_eth0_
@@ -68,10 +67,10 @@ services:
     environment:
       - node.name=elasticsearch3
       - cluster.name=docker-cluster
-      - discovery.seed_hosts=elasticsearch1,elasticsearch2
-      - cluster.initial_master_nodes=elasticsearch1, elasticsearch2, elasticsearch3
+      - cluster.initial_master_nodes=elasticsearch1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch1"
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - network.host=_eth0_

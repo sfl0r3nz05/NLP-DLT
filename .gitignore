@@ -1,3 +1,5 @@
 .env
 __pycache__/
 *.pyc
+
+test-chaincode/testapp/node_modules/
