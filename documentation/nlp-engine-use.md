@@ -5,7 +5,7 @@
     - `cd $GOPATH/src/github.com/nlp-dlt/nlp`
     - `docker build -t nlp-engine .`
 
-2. To verify the docker image should be used the command `docker images`
+2. Verify the `docker image` built through the command `docker images`
 
     <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/dockerVerification.png">
 
