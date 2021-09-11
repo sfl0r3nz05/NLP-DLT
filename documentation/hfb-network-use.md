@@ -8,6 +8,36 @@
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
 
-### Return to
-1. [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
-2. [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)
+2. To deploy the HFB Network
+    *   Go to the directory:
+    ```
+    cd ~/network/hfb/
+    ```
+    *   Go to the directory:
+    ```
+    make start
+    ```
+
+3. To destroy the HFB Network, i.e.,`docker`.
+    *   Go to the directory:
+    ```
+    cd ~/network/hfb/
+    ```
+    *   Go to the directory:
+    ```
+    make destroy
+    ```
+
+3. To remove the HFB Network chaincode.
+    *   Go to the directory:
+    ```
+    cd ~/network/hfb/
+    ```
+    *   Go to the directory:
+    ```
+    make rmchaincode
+    ```
+
+4. Return to
+    - [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
+    - [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)

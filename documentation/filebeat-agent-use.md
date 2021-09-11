@@ -10,6 +10,26 @@
     dial tcp 127.0.0.1:5601: connect: connection refused
     ```
 
-### Return to
-1. [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
-2. [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)
+2. To deploy the Filebeat Agent
+    *   Go to the directory:
+    ```
+    cd ~/network/elk-agent/
+    ```
+    *   Go to the directory:
+    ```
+    make start
+    ```
+
+3. To destroy the Filebeat Agent
+    *   Go to the directory:
+    ```
+    cd ~/network/elk-agent/
+    ```
+    *   Go to the directory:
+    ```
+    make destroy
+    ```
+
+4. Return to
+    - [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
+    - [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)

@@ -4,7 +4,36 @@
     ```
     sudo sysctl -w vm.max_map_count=262144
     ```
+2. To deploy the ELK Infrastructure 
+    *   Go to the directory:
+    ```
+    cd ~/network/elk/
+    ```
+    *   Go to the directory:
+    ```
+    make start
+    ```
 
-### Return to
-1. [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
-2. [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)
+3. To destroy the ELK Infrastructure, i.e.,`docker`.
+    *   Go to the directory:
+    ```
+    cd ~/network/elk/
+    ```
+    *   Go to the directory:
+    ```
+    make destroy
+    ```
+
+3. To erase the ELK Infrastructure information, i.e.,`docker`, `volumes` and `dashboards`.
+    *   Go to the directory:
+    ```
+    cd ~/network/elk/
+    ```
+    *   Go to the directory:
+    ```
+    make erase
+    ```
+
+4. Return to
+    - [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
+    - [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)

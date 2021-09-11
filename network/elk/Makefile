@@ -9,4 +9,4 @@ destroy:
 
 erase:
 	docker-compose -f docker-compose.yml down -v
-	rm -rf ../dashboards/7/dashboard/*
+	sudo rm -rf ../dashboards/7/dashboard/*
