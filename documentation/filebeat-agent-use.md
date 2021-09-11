@@ -33,3 +33,7 @@
 4. Return to
     - [How to use the tools integrated](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-the-tools-integrated-)
     - [How to use each tool separately](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-each-tool-separately-)
+
+### Transactions on Kibana
+Be patient, there is only one step left. Once the chaincode be deployed the transacciones can be visualized through Kibana dashboard:
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png">

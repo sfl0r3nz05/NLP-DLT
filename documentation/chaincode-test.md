@@ -25,3 +25,7 @@ To make a query, run
 ```
 make query KEY=key1
 ```
+
+### Transactions on Kibana
+Once the chaincode be deployed the transacciones can be visualized through Kibana dashboard:
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png">
