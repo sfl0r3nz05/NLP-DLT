@@ -1,13 +1,16 @@
 # How to use the NLP-Engine 😎
 
 ## Set up 🙂
-1. Clone the repository
-2. Build a docker image:
-    - `cd ~/nlp-dlt/nlp`
+1. Build a docker image:
+    - `cd $GOPATH/src/github.com/nlp-dlt/nlp`
     - `docker build -t nlp-engine .`
-3. To verify the docker image should be used the command `docker images`
+
+2. To verify the docker image should be used the command `docker images`
+
     <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/dockerVerification.png">
+
 3. Create an environmental variables file based on .env.example (~/nlp-dlt/network)
+
 4. Obtain access keys from AWS E.g.:
     <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/accessKey.png">
     - Update the environment variable `AWS_ACCESS_KEY_ID`
