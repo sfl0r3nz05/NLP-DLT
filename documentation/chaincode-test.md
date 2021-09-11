@@ -1,5 +1,5 @@
 # Testapp Application
-The Testapp application is used to generate users and transactions. It can connect to both the `basic` and the `multichannel` networks.
+The Testapp application is used to generate users and transactions.
 
 ### Configuration
 The `config.json` contains the configuration for the application. We can configure the channel and chaincode name that we want our application to use, the users we want to enroll and the transactions we want to initialize. Transactions have 4 fields:
