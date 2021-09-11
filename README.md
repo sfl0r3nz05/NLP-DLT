@@ -19,6 +19,7 @@ In addition, the project has been documented through the following Medium articl
 1. To get started with the project, clone the git repository in the go folder:
 
     ```
+    $ export GOPATH=$HOME/go
     $ mkdir $GOPATH/src/github.com -p
     $ cd $GOPATH/src/github.com  
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
@@ -31,6 +32,7 @@ In addition, the project has been documented through the following Medium articl
 1. To get started with the project, clone the git repository in the go folder:
 
     ```
+    $ export GOPATH=$HOME/go
     $ mkdir $GOPATH/src/github.com -p
     $ cd $GOPATH/src/github.com  
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
