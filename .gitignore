@@ -2,4 +2,4 @@
 __pycache__/
 *.pyc
 
-test-chaincode/testapp/node_modules/
+chaincode/test/testapp/node_modules/
