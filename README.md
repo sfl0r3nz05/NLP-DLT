@@ -10,7 +10,12 @@ In addition, the project has been documented through the following Medium articl
 
 ## How to use the tools integrated 🦾🦿
 
+0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
+
+
 ## How to use each tool separately ⛏
+
+0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
 
 1. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
 
