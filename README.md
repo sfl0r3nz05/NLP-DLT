@@ -27,7 +27,7 @@ In addition, the project has been documented through the following Medium articl
 
 5. To test the **chaincode** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
 
-👁‍🗨 A demonstration video can be visualized from this [link](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/videos/hfb_demo1.mp4)
+    👁‍🗨 A demonstration video can be visualized from this [link](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/videos/hfb_demo1.mp4)
 
 ## Design details
 
