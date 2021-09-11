@@ -12,14 +12,15 @@ In addition, the project has been documented through the following Medium articl
 
 ## How to use each tool separately ⛏
 
-### NLP-Engine
-1. To use the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
+1. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
 
-### Hyperledger Fabric Blockchain network
-1. To use the `HFB-Network` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/hfb-network-use.md)
+2. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/hfb-network-use.md)
 
-### Chaincode
-1. How to test the [`chaincode`](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
+3. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/hfb-network-use.md)
+
+4. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/hfb-network-use.md)
+
+5. To test the **chaincode** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
 
 ## Design details
 
@@ -34,4 +35,4 @@ In addition, the project has been documented through the following Medium articl
 1. To modify the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-edit.md)
 
 ### Chaincode
-3. How to modify the [`chaincode`](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-modification.md)
+2. How to modify the [`chaincode`](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-modification.md)
