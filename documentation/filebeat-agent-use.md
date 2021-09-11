@@ -5,8 +5,9 @@
 - The following is the **error** returned by the container:
 
 ```
-2021-09-11T09:55:49.027Z ERROR instance/beat.go:877 Exiting: Post http://localhost:5601/api/saved_objects/index-pattern/fabricbeat-block-org1: dial tcp 127.0.0.1:5601: connect: connection refused
-Exiting: Post http://localhost:5601/api/saved_objects/index-pattern/fabricbeat-block-org1: dial tcp 127.0.0.1:5601: connect: connection refused
+2021-09-11T09:55:49.027Z ERROR instance/beat.go:877 
+Exiting: Post http://localhost:5601/api/saved_objects/index-pattern/fabricbeat-block-org1: 
+dial tcp 127.0.0.1:5601: connect: connection refused
 ```
 
 ### Return to
