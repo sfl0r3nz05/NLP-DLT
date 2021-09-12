@@ -1,7 +1,9 @@
 # Chaincode Design 📄✏
 
-1. The designs are located in: `cd ~/NLP-DLT/chaincode/design`
-2. The [App Diagrams Tool](https://app.diagrams.net/) has been used to design:
+1. The designs are located into the directory: `$GOPATH/src/github.com/nlp-dlt/chaincode/design`.
+
+2. The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
+    Drawio files can be found at:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v16.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v16.drawio)
     - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
