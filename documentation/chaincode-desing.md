@@ -3,76 +3,77 @@
 1. The designs are located into the directory: `$GOPATH/src/github.com/nlp-dlt/chaincode/design`.
 
 2. The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). Drawio files can be found at:
-    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v16.drawio)
-    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v16.drawio)
-    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
-    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
-    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
+    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v16.drawio)
+    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v16.drawio)
+    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
+    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
+    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
 
 3. The chaincode contains three types of status:
-    - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-roaming-agreement-negotiation)
-    - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-the-articles-negotiation)
-    - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
+    - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#status-for-roaming-agreement-negotiation)
+    - [Status for the articles negotiation](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#status-for-the-articles-negotiation)
+    - [Status for the article drafting](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#status-for-the-article-drafting)
 
-4. The integration
+4. The status of the chaincode can be integrated:
+    - [Integration of Chaincode status]()
 
 5. The chaincode emits events from actions:
-    - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#list-of-events)
+    - [List of events](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#list-of-events)
 
 6. The chaincode methods designed are:
 
-    |Method                     |   Mechanism                                                                                                                          |
-    |:-------------------------:|   :---------------------------------------------------------------------------------------------------------------------------------:|
-    |addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#register-organization)                           |
-    |proposeAgreementInitiation |[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-start-agreement)             |
-    |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-started-agreement)   |
-    |proposeAddArticle          |[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article)                     |
-    |proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article)               |
-    |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article)               |
-    |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#accept-proposed-changes)                       |
-    |proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved)         |
-    |acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) |
-    |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-single-article)                             |
-    |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-all-article)                                   |
+    |Method|Mechanism|
+    |:----:|:-------:|
+    |addOrg|[Register organization](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#register-organization)|
+    |proposeAgreementInitiation|[Proposal for start agreement](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement)|
+    |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-started-agreement)|
+    |proposeAddArticle|[Proposal for add article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article)|
+    |proposeUpdateArticle|[Proposal for update article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/          chaincode#proposal-for-update-article)               |
+    |proposeDeleteArticle|[Proposal for delete article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/          chaincode#proposal-for-delete-article)               |
+    |acceptProposedChanges|[Accept proposed changes](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/          chaincode#accept-proposed-changes)                       |
+    |proposeReachAgreement|[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/           chaincode#proposal-of-agreement-achieved)         |
+    |acceptReachAgreement|[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/           chaincode#confirmation-of-agreement-achieved) |
+    |querySingleArticle|[Query Single Article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/         chaincode#query-single-article)                             |
+    |queryAllArticles|[Query All Article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/            chaincode#query-all-article)                                   |
 
 Status for Roaming Agreement Negotiation
 ---
-- The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
+- The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
 - It controls the *negotiation* at the **Roaming Agreement** level.
-- The `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-start-agreement) set the *status* to `started_ra`.
-- The `acceptAgreementInitiation` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-started-agreement) changes the *status* from `started_ra` to `started_ra_confirmation`.
-- The first time execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
-- A new call to the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) maintains the *status* as `ra_negotiating`.
-- A call to the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) maintains the *status* as `ra_negotiating`.
-- A call to the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article) maintains the *status* as `ra_negotiating`.
-- When the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is `transient_confimation` then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
-- The `acceptReachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
+- The `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement) set the *status* to `started_ra`.
+- The `acceptAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-started-agreement) changes the *status* from `started_ra` to `started_ra_confirmation`.
+- The first time execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
+- A new call to the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) maintains the *status* as `ra_negotiating`.
+- A call to the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-update-article) maintains the *status* as `ra_negotiating`.
+- A call to the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) maintains the *status* as `ra_negotiating`.
+- When the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is `transient_confimation` then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
+- The `acceptReachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
 
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
 Status for the Articles Negotiation
 ---
-- The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
+- The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
 - It controls the *negotiation* at the **articles** level.
 - It contains 4 *status* for the articles negotiation process: `init`, `articles_drafting`, `transient_confirmation`, and `end`.
-- It is set to `init` when the list that contains the *articles* is created by the `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-start-agreement).
-- It is set to `articles_drafting` when the first article is created after the first execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article).
-- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#accept-proposed-changes) is executed, the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
+- It is set to `init` when the list that contains the *articles* is created by the `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement).
+- It is set to `articles_drafting` when the first article is created after the first execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article).
+- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#accept-proposed-changes) is executed, the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
     - if this happens, the *status* is set to `transient_confimation`.
     - if this does not happen, the *status* continues as `articles_drafting`.
-- If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
-- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
+- If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
+- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
 Status for the Article Drafting
 ---
-- The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
+- The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
 - It controls the *drafting* at the **article** level.
-- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
-- It is set or continued as `proposed_changes` when the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) is executed.
-- It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article) is executed.
-- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
+- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
+- It is set or continued as `proposed_changes` when the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-update-article) is executed.
+- It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) is executed.
+- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
     
 List of events
 ---
@@ -105,10 +106,10 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 - The event `created_org` is emitted.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/01.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/01.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/02.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/02.png">
 
 Proposal for start agreement
 ---
@@ -131,10 +132,10 @@ A registered organization is enabled to draft a Roaming Agreement.
 - The Status for the Articles Negotiation is set as `init`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/03.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/03.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/04.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/04.png">
 
 Confirmation of Started Agreement
 ---
@@ -152,10 +153,10 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 - The Roaming Agreement status is set as `confirmation_ra_started`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/05.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/05.png">
 
 ##### Part of Chaincode Class Diagram  
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/06.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/06.png">
 
 Proposal for add article
 ---
@@ -177,10 +178,10 @@ The drafting of the Roaming Agreement involves to add article by article.
 - The Status for Article Drafting is verfied as `init`
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/07.png">       
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/07.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/08.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/08.png">
 
 Proposal for update article
 ---
@@ -199,10 +200,10 @@ The drafting of the Roaming Agreement involves to update articles.
 - One of the two previous Articles states: `added_article` and `proposed_changes` are verified.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/09.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/09.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/10.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/10.png">
 
 Proposal for delete article
 ---
@@ -222,14 +223,14 @@ The drafting of the Roaming Agreement involves the deletion of the articles.
 - The article state is set to `proposed_change`.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/11.png">       
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/11.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/12.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/12.png">
 
 Accept proposed changes
 ---
-The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article) must be accepted or refused.
+The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article), [Proposal for update article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-update-article) and [Proposal for delete article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) must be accepted or refused.
 
 |Method                     |Event                   |Status for Roaming Agreement|Status for Articles Negotiation|Status for Article Drafting   |
 |:-------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
@@ -248,10 +249,10 @@ The changes proposed in [Proposal for add article](https://github.com/sfl0r3nz05
 
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/13.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/13.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/14.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/14.png">
 
 Proposal of Agreement Achieved
 ---
@@ -272,14 +273,14 @@ The drafting of the Roaming Agreement involves the proposal of acceptation of th
     - Else `error` message is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/15.png">       
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/15.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/16.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/16.png">
 
 Confirmation of Agreement Achieved
 ---
-The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
+The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) must be accepted or refused.
 
 |Method                     |Event                   |Status for Roaming Agreement|Status for Articles Negotiation|Status for Article Drafting   |
 |:-------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
@@ -294,10 +295,10 @@ The changes proposed in [Proposal of Agreement Achieved](https://github.com/sfl0
 - The `acepted_ra_confirmation` status of the Roaming Agreement is set.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/17.png">       
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/17.png">       
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/18.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/18.png">
 
 Query Single Article
 ---
@@ -312,10 +313,10 @@ Query a single article.
 - The content of `article_num` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/19.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/19.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/20.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/20.png">
 
 Query All Articles
 ---
@@ -330,7 +331,7 @@ Query all articles added to the negotiation process.
 - The content of `jsonRA` is returned.
 
 ##### Part of Chaincode Sequence Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/21.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/21.png">
 
 ##### Part of Chaincode Class Diagram
-<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/22.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/22.png">
