@@ -22,7 +22,7 @@
     - Update the path of JSON files
         - Default place: `$GOPATH/src/github.com/nlp-dlt/nlp-engine/data/output`
 
-5. To deploy the HFB Network
+5. To deploy the NLP Engine
     *   Go to the directory:
     ```
     cd $GOPATH/src/github.com/nlp-dlt/network/nlp-engine/
@@ -32,7 +32,7 @@
     make start
     ```
 
-6. To stop the HFB Network, i.e.,`docker`.
+6. To stop the NLP Engine, i.e.,`docker`.
     *   Go to the directory:
     ```
     cd $GOPATH/src/github.com/nlp-dlt/network/nlp-engine/
@@ -42,7 +42,7 @@
     make stop
     ```
 
-7. To destroy the HFB Network, i.e.,`docker`.
+7. To destroy the NLP Engine, i.e.,`docker`.
     *   Go to the directory:
     ```
     cd $GOPATH/src/github.com/nlp-dlt/network/nlp-engine/
