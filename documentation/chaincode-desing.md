@@ -15,7 +15,7 @@
     - [Status for the article drafting](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#status-for-the-article-drafting)
 
 4. The status of the chaincode can be integrated:
-    - [Integration of Chaincode Statuses](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#integration-of-chaincode-statutes)
+    - [Integration of Chaincode Statuses](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#integration-of-chaincode-statuses)
 
 5. The chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#list-of-events)
