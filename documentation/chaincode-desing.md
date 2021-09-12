@@ -9,29 +9,31 @@
     - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
     - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
 
-3. Chaincode contains three types of status:
+3. The chaincode contains three types of status:
     - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-roaming-agreement-negotiation)
     - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-the-articles-negotiation)
     - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
 
-4. Chaincode emits events from actions:
-    - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#list-of-events)
-    
-5. The chaincode methods designed are:
+4. The integration
 
-|Method                     |Mechanism                                                                                                                          |
-|:-------------------------:|:---------------------------------------------------------------------------------------------------------------------------------:|
-|addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#register-organization)                           |
-|proposeAgreementInitiation |[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-start-agreement)             |
-|acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-started-agreement)   |
-|proposeAddArticle          |[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article)                     |
-|proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article)               |
-|proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article)               |
-|acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#accept-proposed-changes)                       |
-|proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved)         |
-|acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) |
-|querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-single-article)                             |
-|queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-all-article)                                   |
+5. The chaincode emits events from actions:
+    - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#list-of-events)
+
+6. The chaincode methods designed are:
+
+    |Method                     |   Mechanism                                                                                                                          |
+    |:-------------------------:|   :---------------------------------------------------------------------------------------------------------------------------------:|
+    |addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#register-organization)                           |
+    |proposeAgreementInitiation |[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#proposal-for-start-agreement)             |
+    |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#confirmation-of-started-agreement)   |
+    |proposeAddArticle          |[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#proposal-for-add-article)                     |
+    |proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#proposal-for-update-article)               |
+    |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#proposal-for-delete-article)               |
+    |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#accept-proposed-changes)                       |
+    |proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/   chaincode#proposal-of-agreement-achieved)         |
+    |acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/   chaincode#confirmation-of-agreement-achieved) |
+    |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#query-single-article)                             |
+    |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#query-all-article)                                   |
 
 Status for Roaming Agreement Negotiation
 ---
