@@ -15,7 +15,7 @@
     - [Status for the article drafting](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#status-for-the-article-drafting)
 
 4. The status of the chaincode can be integrated:
-    - [Integration of Chaincode status]()
+    - [Integration of Chaincode Statuses](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#integration-of-chaincode-statutes)
 
 5. The chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#list-of-events)
@@ -74,7 +74,11 @@ Status for the Article Drafting
 - It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) is executed.
 - It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
-    
+
+Integration of Chaincode Statuses
+---    
+<img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Status_Integration.png">
+
 List of events
 ---
 - The following table relates `Methods`, `Events` to emit and the two types of states: `Roaming Agreement State` and `Article Negotiation States`
