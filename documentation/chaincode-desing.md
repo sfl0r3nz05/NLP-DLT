@@ -24,7 +24,7 @@
 
     |Method|Mechanism|
     |:----:|:-------:|
-    |addOrg|[Register organization](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#register-organization)|
+    |addOrg|[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#register-organization)|
     |proposeAgreementInitiation|[Proposal for start agreement](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement)|
     |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-started-agreement)|
     |proposeAddArticle|[Proposal for add article](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article)|
