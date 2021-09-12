@@ -18,9 +18,9 @@
     - Update the environment variable `AWS_SECRET_ACCESS_KEY`
     - Update the environment variable `AWS_SESSION_TOKEN`
     - Update the path of PDF files which contains Roaming Agreements
-        - Default place: `~/nlp-dlt/nlp/input`
+        - Default place: `$GOPATH/src/github.com/nlp-dlt/nlp-engine/data/input`
     - Update the path of JSON files
-        - Default place: `~/nlp-dlt/nlp/output`
+        - Default place: `$GOPATH/src/github.com/nlp-dlt/nlp-engine/data/output`
 
 ## Deploy the NLP-Engine 🙂
 1. `cd ~/nlp-dlt/network`
