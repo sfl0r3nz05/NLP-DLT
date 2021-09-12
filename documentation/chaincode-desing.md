@@ -2,19 +2,21 @@
 
 1. The designs are located into the directory: `$GOPATH/src/github.com/nlp-dlt/chaincode/design`.
 
-2. The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
-    Drawio files can be found at:
+2. The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). Drawio files can be found at:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v16.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v16.drawio)
     - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
     - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
     - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
+
 3. Chaincode contains three types of status:
     - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-roaming-agreement-negotiation)
     - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#status-for-the-articles-negotiation)
     - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/tree/mainchaincode#status-for-the-article-drafting)
+
 4. Chaincode emits events from actions:
     - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#list-of-events)
+    
 5. The chaincode methods designed are:
 
 |Method                     |Mechanism                                                                                                                          |
