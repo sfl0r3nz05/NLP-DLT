@@ -23,17 +23,17 @@
 
     |Method                     |   Mechanism                                                                                                                          |
     |:-------------------------:|   :---------------------------------------------------------------------------------------------------------------------------------:|
-    |addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#register-organization)                           |
-    |proposeAgreementInitiation |[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#proposal-for-start-agreement)             |
-    |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#confirmation-of-started-agreement)   |
-    |proposeAddArticle          |[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#proposal-for-add-article)                     |
-    |proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#proposal-for-update-article)               |
-    |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#proposal-for-delete-article)               |
-    |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/  chaincode#accept-proposed-changes)                       |
-    |proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/   chaincode#proposal-of-agreement-achieved)         |
-    |acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/   chaincode#confirmation-of-agreement-achieved) |
-    |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/ chaincode#query-single-article)                             |
-    |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/    chaincode#query-all-article)                                   |
+    |addOrg                     |[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#register-organization)                           |
+    |proposeAgreementInitiation |[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-start-agreement)             |
+    |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-started-agreement)   |
+    |proposeAddArticle          |[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-add-article)                     |
+    |proposeUpdateArticle       |[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-update-article)               |
+    |proposeDeleteArticle       |[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-for-delete-article)               |
+    |acceptProposedChanges      |[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#accept-proposed-changes)                       |
+    |proposeReachAgreement      |[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#proposal-of-agreement-achieved)         |
+    |acceptReachAgreement       |[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) |
+    |querySingleArticle         |[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-single-article)                             |
+    |queryAllArticles           |[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl/chaincode#query-all-article)                                   |
 
 Status for Roaming Agreement Negotiation
 ---
