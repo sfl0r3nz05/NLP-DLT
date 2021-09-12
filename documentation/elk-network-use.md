@@ -7,7 +7,7 @@
 2. To deploy the ELK Infrastructure 
     *   Go to the directory:
     ```
-    cd ~/network/elk/
+    cd $GOPATH/src/github.com/nlp-dlt/network/elk/
     ```
     *   Go to the directory:
     ```
@@ -17,7 +17,7 @@
 3. To destroy the ELK Infrastructure, i.e.,`docker`.
     *   Go to the directory:
     ```
-    cd ~/network/elk/
+    cd $GOPATH/src/github.com/nlp-dlt/network/elk/
     ```
     *   Go to the directory:
     ```
@@ -27,7 +27,7 @@
 3. To erase the ELK Infrastructure information, i.e.,`docker`, `volumes` and `dashboards`.
     *   Go to the directory:
     ```
-    cd ~/network/elk/
+    cd $GOPATH/src/github.com/nlp-dlt/network/elk/
     ```
     *   Go to the directory:
     ```

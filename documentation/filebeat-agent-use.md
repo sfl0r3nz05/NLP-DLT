@@ -13,7 +13,7 @@
 2. To deploy the Filebeat Agent
     *   Go to the directory:
     ```
-    cd ~/network/elk-agent/
+    cd $GOPATH/src/github.com/nlp-dlt/network/elk-agent/
     ```
     *   Go to the directory:
     ```
@@ -23,7 +23,7 @@
 3. To destroy the Filebeat Agent
     *   Go to the directory:
     ```
-    cd ~/network/elk-agent/
+    cd $GOPATH/src/github.com/nlp-dlt/network/elk-agent/
     ```
     *   Go to the directory:
     ```

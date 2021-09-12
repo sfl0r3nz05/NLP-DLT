@@ -11,7 +11,7 @@
 2. To deploy the HFB Network
     *   Go to the directory:
     ```
-    cd ~/network/hfb/
+    cd $GOPATH/src/github.com/nlp-dlt/network/hfb/
     ```
     *   Go to the directory:
     ```
@@ -21,7 +21,7 @@
 3. To destroy the HFB Network, i.e.,`docker`.
     *   Go to the directory:
     ```
-    cd ~/network/hfb/
+    cd $GOPATH/src/github.com/nlp-dlt/network/hfb/
     ```
     *   Go to the directory:
     ```
@@ -31,7 +31,7 @@
 3. To remove the HFB Network chaincode.
     *   Go to the directory:
     ```
-    cd ~/network/hfb/
+    cd $GOPATH/src/github.com/nlp-dlt/network/hfb/
     ```
     *   Go to the directory:
     ```
