@@ -32,7 +32,7 @@
     |proposeDeleteArticle|[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#proposal-for-delete-article)               |
     |acceptProposedChanges|[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#accept-proposed-changes)                       |
     |proposeReachAgreement|[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#proposal-of-agreement-achieved)         |
-    |acceptReachAgreement|[Confirmation of Agreement Achieved]https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#confirmation-of-agreement-achieved) |
+    |acceptReachAgreement|[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#confirmation-of-agreement-achieved) |
     |querySingleArticle|[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#query-single-article)                             |
     |queryAllArticles|[Query All Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#query-all-articles)                                   |
 
