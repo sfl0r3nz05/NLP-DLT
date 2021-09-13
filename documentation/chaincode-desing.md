@@ -76,7 +76,12 @@ Status for the Article Drafting
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
 
 Integration of Chaincode Statuses
----    
+---
+- The following figure integrates the three statuses:
+    - `Status for Roaming Agreement Negotiation`
+    - `Status for the Articles Negotiation`
+    - `Status for the Article Drafting`
+
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Status_Integration.png">
 
 List of events
