@@ -81,9 +81,9 @@ Integration of Chaincode Statuses
 
 |Status                                    |Application level      |
 |:----------------------------------------:|:---------------------:|
-|`Status for Roaming Agreement Negotiation`|Roaming Agreement Level|
-|`Status for the Articles Negotiation`     |Articles Level         |
-|`Status for the Article Drafting`         |Article Level          |
+|Status for Roaming Agreement Negotiation  |Roaming Agreement Level|
+|Status for the Articles Negotiation       |Articles Level         |
+|Status for the Article Drafting           |Article Level          |
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Status_Integration.png">
 
