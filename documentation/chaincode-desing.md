@@ -10,9 +10,9 @@
     - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
 
 3. The chaincode contains three types of status:
-    - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#status-for-roaming-agreement-negotiation)
-    - [Status for the articles negotiation](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#status-for-the-articles-negotiation)
-    - [Status for the article drafting](https://github.com/sfl0r3nz05/nlp-dlt/tree/mainchaincode#status-for-the-article-drafting)
+    - [Status for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#status-for-roaming-agreement-negotiation)
+    - [Status for the articles negotiation](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#status-for-the-articles-negotiation)
+    - [Status for the article drafting](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#status-for-the-article-drafting)
 
 4. The status of the chaincode can be integrated:
     - [Integration of Chaincode Statuses](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#integration-of-chaincode-statuses)
