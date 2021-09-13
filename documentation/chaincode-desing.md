@@ -78,9 +78,11 @@ Status for the Article Drafting
 Integration of Chaincode Statuses
 ---
 - The following figure integrates the three statuses:
-    - `Status for Roaming Agreement Negotiation`
-    - `Status for the Articles Negotiation`
-    - `Status for the Article Drafting`
+|Status                                    |Application level      |
+|:----------------------------------------:|:---------------------:|
+|`Status for Roaming Agreement Negotiation`|Roaming Agreement Level|
+|`Status for the Articles Negotiation`     |Articles Level         |
+|`Status for the Article Drafting`         |Article Level          |
 
 <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Status_Integration.png">
 
