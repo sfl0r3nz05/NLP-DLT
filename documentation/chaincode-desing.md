@@ -78,6 +78,7 @@ Status for the Article Drafting
 Integration of Chaincode Statuses
 ---
 - The following figure integrates the three statuses:
+
 |Status                                    |Application level      |
 |:----------------------------------------:|:---------------------:|
 |`Status for Roaming Agreement Negotiation`|Roaming Agreement Level|
