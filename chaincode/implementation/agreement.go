@@ -24,12 +24,9 @@ func (cc *Chaincode) setAgreement(stub shim.ChaincodeStubInterface, org1_id stri
     return raid, nil
 }
 
-func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string, jsonRA string) (error){
+func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string, jsonRA LISTOFARTICLES) (error){
 
-    var jsonRAgreement LISTOFARTICLES    
-    json.Unmarshal([]byte(jsonRA), &jsonRAgreement)
-
-    idBytes, err := json.Marshal(jsonRAgreement)
+    idBytes, err := json.Marshal(jsonRA)
     if err != nil {
         log.Errorf("[%s][%s][recordRAJson] Error parsing: %v", CHANNEL_ENV, ERRORParsingRA, err.Error())
         return errors.New(ERRORParsingRA + err.Error())
@@ -43,6 +40,16 @@ func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string,
 
     return nil
 }
+
+func (cc *Chaincode) initRomingAgreement(stub shim.ChaincodeStubInterface, uuid string, nameRA string, status string) (LISTOFARTICLES){
+    var list_articles LISTOFARTICLES
+    list_articles.UUID = uuid
+    list_articles.DOCUMENT_NAME = nameRA
+    list_articles.STATUS = status
+
+    return list_articles
+}
+
 //MANAGING AGREEMENT    #########################################################################################
 
 //MANAGING ARTICLES     #########################################################################################

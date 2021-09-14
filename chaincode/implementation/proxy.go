@@ -56,10 +56,10 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         }
         org1 := args[0] //organization object parsed as string
         org2 := args[1] //organization object parsed as string
-        jsonRA := args[2]
+        nameRA := args[2]
         identity_exist, err := cc.verifyOrg(stub, id_org)
         if identity_exist {
-            uuid, raid, err := cc.startAgreement(stub, org1, org2, jsonRA)
+            uuid, raid, err := cc.startAgreement(stub, org1, org2, nameRA)
             if err != nil {
                 return shim.Error(ERRORAgreement)
             }
@@ -288,12 +288,15 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization 
     return nil
 }
 
-func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 string, org2 string, jsonRA string) (string, string, error){
+func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 string, org2 string, nameRA string) (string, string, error){
     var organization1 Organization
     var organization2 Organization
 
     uuid := uuidgen()
-    err := cc.recordRAJson(stub, uuid, jsonRA)
+
+    list_articles := cc.initRomingAgreement(stub, uuid, nameRA, "init")
+
+    err := cc.recordRAJson(stub, uuid, list_articles)
     if err != nil {
         log.Errorf("[%s][startAgreement] Error: [%v] when [recordRAJson] is stored", CHANNEL_ENV, err.Error())
         return "","", err
