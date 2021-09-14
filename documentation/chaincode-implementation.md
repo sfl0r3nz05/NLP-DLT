@@ -41,39 +41,43 @@
     ```
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
     ```
-4. Edit the `profile` file
+4. Define the `GOPATH` environmental variable
+    ```
+    export GOPATH=$HOME/go
+    ```
+5. Edit the `profile` file
     ```
     sudo nano $HOME/.profile
     ```
-5. Add next line into `profile` file
+6. Add next line into `profile` file
     ```
-    export PATH=$PATH:/usr/local/go/bin
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-6. Enabling changes in the `profile` file
+7. Enabling changes in the `profile` file
     ```
     source ~/.profile
     ```
-7. Verify Golang version
+8. Verify Golang version
     ```
     go version
     ```
-8. By default the workspace directory is set to $HOME/go
+9. By default the workspace directory is set to $HOME/go
     ```
     mkdir ~/go
     ```
-9. Inside the workspace create a new directory
+10. Inside the workspace create a new directory
     ```
     mkdir -p ~/go/src/chaincode
     ```
-10. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
+11. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
     ```
-    sudo sudo ln -s ~/NLP-DLT/chaincode/implementation/* ~/go/src/chaincode
+    sudo ln -s $GOPATH/src/github.com/nlp-dlt/chaincode/implementation/* ~/go/src/chaincode
     ```
-11. Enable go mod
+12. Enable go mod
     ```
     go mod init ~/go/src/chaincode
     ```
-12. Install dependencies
+13. Install dependencies
     ```
     go get github.com/google/uuid
     go get github.com/sirupsen/logrus
@@ -81,7 +85,7 @@
     go get github.com/hyperledger/fabric-chaincode-go/shim
     go get github.com/hyperledger/fabric-chaincode-go/pkg/cid
     ```
-13. Build the changes
+14. Build the changes
     ```
     go build
     ```
