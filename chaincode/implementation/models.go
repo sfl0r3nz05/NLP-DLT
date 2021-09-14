@@ -48,10 +48,10 @@ type LISTOFARTICLES struct {
 type ARTICLE struct {
 	id	string						`json:"id"` // name for the id
 	status string						`json:"status,omitempty"`
-	variable	[]VARIABLE				`json:"variables"` // name for the variables
-	variation	[]VARIATION				`json:"variations"` // name for the variations
-	customText	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
-	stdClause	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+	variables	[]VARIABLE				`json:"variables"` // name for the variables
+	variations	[]VARIATION				`json:"variations"` // name for the variations
+	customTexts	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
+	stdClauses	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
 }
 
 type VARIABLE struct {

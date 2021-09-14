@@ -86,7 +86,7 @@ func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, uuid 
     }
 }
 
-func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variable VARIABLE, variation VARIATION, customText CUSTOMTEXT, stdClause STDCLAUSE) (error){
+func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables []VARIABLE, variations []VARIATION, customTexts []CUSTOMTEXT, stdClauses []STDCLAUSE) (error){
 
     var jsonRAgreement LISTOFARTICLES 
     CHANNEL_ENV := stub.GetChannelID()
@@ -108,7 +108,7 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
     
     //PENDING DATAILS OF VARIABLES AND VARIATIONS
     
-    new_article := ARTICLE{id: article_num, status: status, variable: variable, variation: variation, customText: customText, stdClause: stdClause}       // Creating new article
+    new_article := ARTICLE{id: article_num, status: status, variables: variables, variations: variations, customTexts: customTexts, stdClauses: stdClauses}       // Creating new article
     
     s := append(jsonRAgreement.articles, new_article)   //APPEND to existing LISTOFARTICLES data type
 
@@ -123,7 +123,7 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
     return nil
 }
 
-func (cc *Chaincode) updateArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables string, variations string) (error){
+func (cc *Chaincode) updateArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables []VARIABLE, variations []VARIATION, customTexts []CUSTOMTEXT, stdClauses []STDCLAUSE) (error){
         
     var jsonRAgreement LISTOFARTICLES
     CHANNEL_ENV := stub.GetChannelID()
@@ -148,6 +148,8 @@ func (cc *Chaincode) updateArticleJson(stub shim.ChaincodeStubInterface, uuid st
             s.status = status
             s.variables = variables
             s.variations = variations
+            s.customTexts = customTexts
+            s.stdClauses = stdClauses
         }
     }
 
@@ -183,10 +185,11 @@ func (cc *Chaincode) deleteArticleJson(stub shim.ChaincodeStubInterface, uuid st
 
     for _, s := range jsonRAgreement.articles {
         if(s.id == article_num){
-            s.id = ""
             s.status = ""
-            s.variables = ""
-            s.variations = ""
+            s.variables = nil
+            s.variations = nil
+            s.customTexts = nil
+            s.stdClauses = nil
         }
     }
 

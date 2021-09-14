@@ -105,12 +105,14 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         article_num := args[1]
         variables := args[2]
         variations := args[3]
+        customTexts := args[4]
+        stdClauses := args[5]
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.addArticle(stub, org_id, raid, article_num, variables, variations)
+            err := cc.addArticle(stub, org_id, raid, article_num, variables, variations, customTexts, stdClauses)
             if err != nil {
                 return shim.Error(ERRORAddArticle)
             }
@@ -127,12 +129,14 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         article_num := args[1]
         variables := args[2]
         variations := args[3]
+        customTexts := args[4]
+        stdClauses := args[5]
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.updateArticle(stub, org_id, raid, article_num, variables, variations)
+            err := cc.updateArticle(stub, org_id, raid, article_num, variables, variations, customTexts, stdClauses)
             if err != nil {
                 return shim.Error(ERRORUpdateArticle)
             }
@@ -370,6 +374,11 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
 }
 
 func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
+    var variable_list []VARIABLE
+    var variation_list []VARIATION
+    var customText_list []CUSTOMTEXT
+    var stdClause_list []STDCLAUSE
+    
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
@@ -394,9 +403,14 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
-    
+
     article_status := "proposed_changes"
-    err = cc.addArticleJson(stub, uuid, article_num, article_status, variable["variable"], variation["variation"], customText["customText"], stdClause["stdClause"])
+    json.Unmarshal([]byte(variables), &variable_list)
+    json.Unmarshal([]byte(variations), &variation_list)
+    json.Unmarshal([]byte(customTexts), &customText_list)
+    json.Unmarshal([]byte(stdClauses), &stdClause_list)
+
+    err = cc.addArticleJson(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
         log.Errorf("[%s][%s][addArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
@@ -427,7 +441,12 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     return nil
 }
 
-func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string) (error){
+func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
+    var variable_list []VARIABLE
+    var variation_list []VARIATION
+    var customText_list []CUSTOMTEXT
+    var stdClause_list []STDCLAUSE
+
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
@@ -461,7 +480,12 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
     }
 
     article_status := "proposed_changes"
-    err = cc.updateArticleJson(stub, uuid, article_num, article_status, variables, variations)
+    json.Unmarshal([]byte(variables), &variable_list)
+    json.Unmarshal([]byte(variations), &variation_list)
+    json.Unmarshal([]byte(customTexts), &customText_list)
+    json.Unmarshal([]byte(stdClauses), &stdClause_list)
+
+    err = cc.updateArticleJson(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
         log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
