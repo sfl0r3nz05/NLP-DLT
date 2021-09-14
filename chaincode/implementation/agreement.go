@@ -26,7 +26,7 @@ func (cc *Chaincode) setAgreement(stub shim.ChaincodeStubInterface, org1_id stri
 
 func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string, jsonRA string) (error){
 
-    var jsonRAgreement JSONROAMINGAGREEMENT    
+    var jsonRAgreement LISTOFARTICLES    
     json.Unmarshal([]byte(jsonRA), &jsonRAgreement)
 
     idBytes, err := json.Marshal(jsonRAgreement)
@@ -49,7 +49,7 @@ func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, uuid string,
 
 func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, uuid string, article_num string, valid_status []string) (error){
     
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     var value bool
     CHANNEL_ENV := stub.GetChannelID()
 
@@ -86,9 +86,9 @@ func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, uuid 
     }
 }
 
-func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables string, variations string) (error){
+func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variable VARIABLE, variation VARIATION, customText CUSTOMTEXT, stdClause STDCLAUSE) (error){
 
-    var jsonRAgreement JSONROAMINGAGREEMENT 
+    var jsonRAgreement LISTOFARTICLES 
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)
@@ -108,9 +108,9 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
     
     //PENDING DATAILS OF VARIABLES AND VARIATIONS
     
-    new_article := ARTICLE{id: article_num, status: status, variables: variables, variations: variations}       // Creating new article
+    new_article := ARTICLE{id: article_num, status: status, variable: variable, variation: variation, customText: customText, stdClause: stdClause}       // Creating new article
     
-    s := append(jsonRAgreement.articles, new_article)   //APPEND to existing JSONROAMINGAGREEMENT data type
+    s := append(jsonRAgreement.articles, new_article)   //APPEND to existing LISTOFARTICLES data type
 
     readyToSubmit, _ := json.Marshal(s)
 
@@ -125,7 +125,7 @@ func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid strin
 
 func (cc *Chaincode) updateArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables string, variations string) (error){
         
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)
@@ -163,7 +163,7 @@ func (cc *Chaincode) updateArticleJson(stub shim.ChaincodeStubInterface, uuid st
 
 func (cc *Chaincode) deleteArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string) (error){
         
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)
@@ -202,7 +202,7 @@ func (cc *Chaincode) deleteArticleJson(stub shim.ChaincodeStubInterface, uuid st
 
 func (cc *Chaincode) updateArticleStatus(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string) (error){
         
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)
@@ -237,7 +237,7 @@ func (cc *Chaincode) updateArticleStatus(stub shim.ChaincodeStubInterface, uuid 
 }
 
 func (cc *Chaincode) recoverArticleRA(stub shim.ChaincodeStubInterface, uuid string, article_num string) (string, error){
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     var jsonRA_article ARTICLE
     CHANNEL_ENV := stub.GetChannelID()
 
@@ -271,7 +271,7 @@ func (cc *Chaincode) recoverArticleRA(stub shim.ChaincodeStubInterface, uuid str
 }
 
 func (cc *Chaincode) recoverJsonRA(stub shim.ChaincodeStubInterface, uuid string) (string, error){
-    var jsonRAgreement JSONROAMINGAGREEMENT
+    var jsonRAgreement LISTOFARTICLES
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)

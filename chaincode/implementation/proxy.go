@@ -369,7 +369,7 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     return nil
 }
 
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string) (error){
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
@@ -396,7 +396,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     }
     
     article_status := "proposed_changes"
-    err = cc.addArticleJson(stub, uuid, article_num, article_status, variables, variations)
+    err = cc.addArticleJson(stub, uuid, article_num, article_status, variable["variable"], variation["variation"], customText["customText"], stdClause["stdClause"])
     if err != nil {
         log.Errorf("[%s][%s][addArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
