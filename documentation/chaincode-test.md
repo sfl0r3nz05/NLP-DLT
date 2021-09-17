@@ -9,7 +9,7 @@ The `config.json` contains the configuration for the application. We can configu
 4. `previousKey`: This field is optional. We can specify here the key to which the new transaction (key-value pair) is linked.
 
 ### To test the chaincode
-    *   Go to the directory:
+Go to the directory:
     ```
     cd $GOPATH/src/github.com/nlp-dlt/chaincode/test/testapp
     ```
