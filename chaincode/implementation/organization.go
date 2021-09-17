@@ -34,9 +34,9 @@ func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGR
 	return false
 }
 
-func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, organization Organization, id string)(error) {
+func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organization, id string)(error) {
 	CHANNEL_ENV := stub.GetChannelID()
-	idBytes, err := json.Marshal(organization)
+	idBytes, err := json.Marshal(org)
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error parsing: %v", CHANNEL_ENV, ERRORParsingOrg, err.Error())
 		return errors.New(ERRORParsingID + err.Error())
@@ -49,7 +49,7 @@ func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, organization Or
 	}
 
 	store := make(map[string]Organization)
-	store["org"] = organization
+	store["org"] = org
 	err = stub.PutState(store["org"].mno_name, []byte(id)) // PuState of Client (Organization) Name and Organtization Identity
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())

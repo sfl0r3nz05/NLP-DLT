@@ -266,15 +266,15 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     return shim.Success([]byte("OK"))
 }
 
-func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, organization Organization, org_id string) (error){
+func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organization, org_id string) (error){
     //record organizations
-    err := cc.recordOrg(stub, organization, org_id)
+    err := cc.recordOrg(stub, org, org_id)
     if err != nil {
         log.Errorf("[%s][recordOrg] Error: [%v] when organization [%s] is recorded", CHANNEL_ENV, err.Error(), err)
         return err
     } 
     store := make(map[string]Organization)  //mapping string to Organtization data type
-    store["org"] = organization
+    store["org"] = org
     
     //emit event "created_org"
     event_name := "created_org"
