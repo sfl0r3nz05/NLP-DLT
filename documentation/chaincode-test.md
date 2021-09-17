@@ -10,9 +10,9 @@ The `config.json` contains the configuration for the application. We can configu
 
 ### To test the chaincode
 Go to the directory:
-    ```
-    cd $GOPATH/src/github.com/nlp-dlt/chaincode/test/testapp
-    ```
+```
+cd $GOPATH/src/github.com/nlp-dlt/chaincode/test/testapp
+```
 
 ###  Organizations enrollment and registration
 To enroll admins, register and enroll users, run the following command:
