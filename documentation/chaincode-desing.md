@@ -18,7 +18,7 @@
     - [Integration of Chaincode Statuses](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#integration-of-chaincode-statuses)
 
 5. The chaincode emits events from actions:
-    - [List of events](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/chaincode-design.md#list-of-events)
+    - [List of events](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-desing.md#list-of-events)
 
 6. The chaincode methods designed are:
 
