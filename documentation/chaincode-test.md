@@ -32,7 +32,7 @@ The `config.json` contains the configuration for the application. We can configu
     make invoke
     ```
 
-4. To query key
+4. To **query** key:
     
 - To make a query, run
 
