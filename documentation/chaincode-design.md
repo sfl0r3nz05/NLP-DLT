@@ -24,13 +24,13 @@
 
     |Method|Mechanism|
     |:----:|:-------:|
-    |addOrg|[Register organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#register-organization)|
-    |proposeAgreementInitiation|[Proposal for start agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-start-agreement)|
+    |addOrg|[Register Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#register-organization)|
+    |proposeAgreementInitiation|[Proposal for Start Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-start-agreement)|
     |acceptAgreementInitiation  |[Confirmation of Started Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#confirmation-of-started-agreement)|
-    |proposeAddArticle|[Proposal for add article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-add-article)|
-    |proposeUpdateArticle|[Proposal for update article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-update-article)               |
-    |proposeDeleteArticle|[Proposal for delete article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-delete-article)               |
-    |acceptProposedChanges|[Accept proposed changes](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#accept-proposed-changes)                       |
+    |proposeAddArticle|[Proposal for Add Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-add-article)|
+    |proposeUpdateArticle|[Proposal for Update Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-update-article)               |
+    |proposeDeleteArticle|[Proposal for Delete Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-for-delete-article)               |
+    |acceptProposedChanges|[Accept Proposed Changes](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#accept-proposed-changes)                       |
     |proposeReachAgreement|[Proposal of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#proposal-of-agreement-achieved)         |
     |acceptReachAgreement|[Confirmation of Agreement Achieved](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#confirmation-of-agreement-achieved) |
     |querySingleArticle|[Query Single Article](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md#query-single-article)                             |
@@ -105,7 +105,7 @@ List of events
 |querySingleArticle         |-                       |-                           |-                              |-                             |
 |queryAllArticles           |-                       |-                           |-                              |-                             |
 
-Register organization
+Register Organization
 ---
 This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.
 
@@ -123,7 +123,7 @@ This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain 
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/02.png">
 
-Proposal for start agreement
+Proposal for Start Agreement
 ---
 A registered organization is enabled to draft a Roaming Agreement.
 
@@ -170,7 +170,7 @@ For the roaming agreement drafting to be valid, the other MNO must confirm it.
 ##### Part of Chaincode Class Diagram  
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/06.png">
 
-Proposal for add article
+Proposal for Add Article
 ---
 The drafting of the Roaming Agreement involves to add article by article.
 
@@ -195,7 +195,7 @@ The drafting of the Roaming Agreement involves to add article by article.
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/08.png">
 
-Proposal for update article
+Proposal for Update Article
 ---
 The drafting of the Roaming Agreement involves to update articles.
 
@@ -217,7 +217,7 @@ The drafting of the Roaming Agreement involves to update articles.
 ##### Part of Chaincode Class Diagram
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/10.png">
 
-Proposal for delete article
+Proposal for Delete Article
 ---
 The drafting of the Roaming Agreement involves the deletion of the articles.
 
