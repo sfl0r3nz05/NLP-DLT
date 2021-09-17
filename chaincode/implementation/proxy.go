@@ -434,7 +434,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     //      return errors.New(ERRORrecoveringArticlesList + err.Error())
     //  }
 
-    article_status := "proposed_changes"
+    article_status := "added_article"
     json.Unmarshal([]byte(variables), &variable_list)
     json.Unmarshal([]byte(variations), &variation_list)
     json.Unmarshal([]byte(customTexts), &customText_list)
@@ -446,8 +446,15 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
-    status := "drafting_agreement"  //set status as "proposed_changes".
-    err = cc.updateAgreementStatus(stub, raid, status)
+    update_articles_status := "articles_drating"  //set status as "drafting_agreement".
+    err = cc.setArticlesStatus(stub, uuid, update_articles_status)
+    if err != nil {
+        log.Errorf("[%s][setArticlesStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    status_RA := "ra_negotiating"  //set status as "drafting_agreement".
+    err = cc.updateAgreementStatus(stub, raid, status_RA)
     if err != nil {
         log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
         return errors.New(ERRORUpdatingStatus + err.Error())

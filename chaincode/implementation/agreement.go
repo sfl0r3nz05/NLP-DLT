@@ -118,6 +118,27 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, uuid
     return nil
 }
 
+func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, uuid string, articles_status string) (error){
+
+    var jsonRAgreement LISTOFARTICLES 
+    CHANNEL_ENV := stub.GetChannelID()
+
+    bytes_jsonRA, err := stub.GetState(uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][setArticlesStatus] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
+    if err != nil {
+        log.Errorf("[%s][%s][setArticlesStatus] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return errors.New(ERRORRecoveringJsonRA + err.Error())
+    }
+
+    jsonRAgreement.STATUS = articles_status
+    return nil
+}
+
 //  func (cc *Chaincode) recoverArticlesList(stub shim.ChaincodeStubInterface, uuid string) ([]ARTICLE, error){
 //  
 //      var jsonRAgreement LISTOFARTICLES 
@@ -125,13 +146,13 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, uuid
 //  
 //      bytes_jsonRA, err := stub.GetState(uuid)
 //      if err != nil {
-//          log.Errorf("[%s][%s][verifyArticlesStatus] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+//          log.Errorf("[%s][%s][recoverArticlesList] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
 //          return nil, errors.New(ERRORRecoveringRA + err.Error())
 //      }
 //  
 //      err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
 //      if err != nil {
-//          log.Errorf("[%s][%s][verifyArticlesStatus] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+//          log.Errorf("[%s][%s][recoverArticlesList] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
 //          return nil, errors.New(ERRORRecoveringJsonRA + err.Error())
 //      }
 //  
@@ -143,7 +164,7 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, uuid
 //      CHANNEL_ENV := stub.GetChannelID()
 //  
 //      if(list_of_articles != nil){
-//          log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
+//          log.Errorf("[%s][%s][verifyArticlesListEmpty] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
 //          return errors.New(ERRORdeterminingStatus + err.Error())
 //      }
 //  
