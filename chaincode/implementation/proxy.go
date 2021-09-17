@@ -650,9 +650,9 @@ func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id stri
 
     if(article_bool){
         article_status = "transient_confirmation"
-        err = cc.updateArticlesStatus(stub, uuid, article_status)
+        err = cc.setArticlesStatus(stub, uuid, article_status)
         if err != nil {
-            log.Errorf("[%s][%s][updateArticlesStatus] Error updating the status of the article", CHANNEL_ENV, ERRORUpdatingStatus)
+            log.Errorf("[%s][%s][setArticlesStatus] Error updating the status of the article", CHANNEL_ENV, ERRORUpdatingStatus)
             return errors.New(ERRORUpdatingStatus + err.Error())
         }
     }

@@ -449,11 +449,6 @@ func (cc *Chaincode) verifyAllArticlesStatus(stub shim.ChaincodeStubInterface, u
     return true, nil
 }
 
-func (cc *Chaincode) updateArticlesStatus(stub shim.ChaincodeStubInterface, uuid string, valid_status string) (error){
-    
-    return nil
-}
-
 //AGREEMENT STATUS      #########################################################################################
 
 //RECOVER       #################################################################################################
