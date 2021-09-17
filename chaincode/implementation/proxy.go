@@ -702,6 +702,12 @@ func (cc *Chaincode) proposeReachAgree(stub shim.ChaincodeStubInterface, org_id 
         return errors.New(ERRORStatusRA)
     }
 
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
     articles_status := "transient_confirmation"
     err = cc.verifyArticlesStatus(stub, uuid, articles_status)
     if err != nil {
@@ -763,6 +769,12 @@ func (cc *Chaincode) confirmationReachAgreement(stub shim.ChaincodeStubInterface
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
     }
 
     articles_status := "end"
