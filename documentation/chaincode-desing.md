@@ -38,16 +38,16 @@
 
 Status for Roaming Agreement Negotiation
 ---
-- The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
+- The *struct* that contains this **status** is enabled into the *model* [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT).
 - It controls the *negotiation* at the **Roaming Agreement** level.
-- The `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement) set the *status* to `started_ra`.
-- The `acceptAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-started-agreement) changes the *status* from `started_ra` to `started_ra_confirmation`.
-- The first time execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
-- A new call to the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) maintains the *status* as `ra_negotiating`.
-- A call to the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-update-article) maintains the *status* as `ra_negotiating`.
-- A call to the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) maintains the *status* as `ra_negotiating`.
-- When the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is `transient_confimation` then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
-- The `acceptReachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
+- The `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-start-agreement) set the *status* to `started_ra`.
+- The `acceptAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#confirmation-of-started-agreement) changes the *status* from `started_ra` to `started_ra_confirmation`.
+- The first time execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article) changes the *status* from `started_ra_confirmation` to `ra_negotiating`.
+- A new call to the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article) maintains the *status* as `ra_negotiating`.
+- A call to the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-update-article) maintains the *status* as `ra_negotiating`.
+- A call to the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-delete-article) maintains the *status* as `ra_negotiating`.
+- When the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-of-agreement-achieved) is executed, it is verified that *status* at the *article* negotiation level is `transient_confimation` then, the *status* of the [ROAMINGAGREEMNT](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=type-,ROAMINGAGREEMNT) *struct* is set from `ra_negotiating` to `accepted_ra`.
+- The `acceptReachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#confirmation-of-agreement-achieved) changes the *status* from `accepted_ra` to `accepted_ra_confirmation`.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
@@ -56,23 +56,23 @@ Status for the Articles Negotiation
 - The *list* that contains this **status** is enabled into the *model* [LISTOFARTICLES](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=JSONROAMINGAGREEMENT).
 - It controls the *negotiation* at the **articles** level.
 - It contains 4 *status* for the articles negotiation process: `init`, `articles_drafting`, `transient_confirmation`, and `end`.
-- It is set to `init` when the list that contains the *articles* is created by the `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-start-agreement).
-- It is set to `articles_drafting` when the first article is created after the first execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article).
-- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#accept-proposed-changes) is executed, the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
+- It is set to `init` when the list that contains the *articles* is created by the `proposeAgreementInitiation` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-start-agreement).
+- It is set to `articles_drafting` when the first article is created after the first execution of the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article).
+- When `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#accept-proposed-changes) is executed, the chaincode verifies if all *articles* into the list have `accepted_changes` as *status*:
     - if this happens, the *status* is set to `transient_confimation`.
     - if this does not happen, the *status* continues as `articles_drafting`.
-- If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
-- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
+- If the *status* is `transient_confimation` and the `reachAgreement` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-of-agreement-achieved) is executed, the *status* changes to `end`.
+- If the *status* is `transient_confimation` and the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article) is executed, the *status* returns to `articles_drafting`.
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
 Status for the Article Drafting
 ---
 - The *struct* that contains this *status* is enabled into the model [ARTICLE](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/implementation/models.go#:~:text=ARTICLE%20struct).
 - It controls the *drafting* at the **article** level.
-- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
-- It is set or continued as `proposed_changes` when the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-update-article) is executed.
-- It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-delete-article) is executed.
-- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/chaincode#proposal-for-add-article) is executed.
+- It is set to `added_article` when the `proposeAddArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article) is executed.
+- It is set or continued as `proposed_changes` when the `proposeUpdateArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-update-article) is executed.
+- It is set or continued as `proposed_changes` when the `proposeDeleteArticle` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-delete-article) is executed.
+- It is set to `accepted_changes` when the `acceptProposedChanges` [method](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl/documentation/chaincode#proposal-for-add-article) is executed.
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
 
 Integration of Chaincode Statuses
