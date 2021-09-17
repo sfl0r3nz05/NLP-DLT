@@ -302,18 +302,22 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", err
     }
     
-    status := "started_ra"  //set status as "started_ra".
+    //recover identifier of organization 1.
     json.Unmarshal([]byte(org1), &organization1)
-    id_org1, err := cc.recoverOrgId(stub, organization1)    //recover identifier of organization 1.
+    id_org1, err := cc.recoverOrgId(stub, organization1)
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)
     }
 
+    //recover identifier of organization 2.
     json.Unmarshal([]byte(org2), &organization2)
-    id_org2, err := cc.recoverOrgId(stub, organization2)    //recover identifier of organization 2.
+    id_org2, err := cc.recoverOrgId(stub, organization2)
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)
     }
+
+    //set status as "started_ra"
+    status := "started_ra"
 
     //set roaming agreement
     raid, err := cc.setAgreement(stub, id_org1, id_org2, uuid, status)
@@ -352,18 +356,21 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
         return errors.New(ERRORVerifyingOrg)
     }
 
-    status := "confirmation_ra_started"  //set status as "confirmation_ra_started".
+    //set status as "confirmation_ra_started".
+    status := "confirmation_ra_started"
     err = cc.updateAgreementStatus(stub, raid, status)
     if err != nil {
         log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
         return errors.New(ERRORUpdatingStatus + err.Error())
     }
 
-    org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
+    //recover organization name
+    org_name, err := cc.recoverOrg(stub, org_id)
     if err != nil {
         log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
+
     //emit event "confirmation_ra_started"
     event_name := "confirmation_ra_started"
     timestamp := timeNow()
@@ -381,6 +388,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     var variation_list []VARIATION
     var customText_list []CUSTOMTEXT
     var stdClause_list []STDCLAUSE
+    //var list_of_articles []ARTICLE
     
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
@@ -407,15 +415,34 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORRecoveringRA + err.Error())
     }
 
+    articles_status := "init"
+    err = cc.verifyArticlesStatus(stub, uuid, articles_status)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
+        return errors.New(ERRORdeterminingStatus + err.Error())
+    }
+
+    //  list_of_articles, err = cc.recoverArticlesList(stub, uuid)
+    //  if err != nil {
+    //      log.Errorf("[%s][%s][recoverArticlesList] Error recovering the List of Articles", CHANNEL_ENV, ERRORrecoveringArticlesList)
+    //      return errors.New(ERRORrecoveringArticlesList + err.Error())
+    //  }
+
+    //  err = cc.verifyArticlesListEmpty(stub, list_of_articles)
+    //  if err != nil {
+    //      log.Errorf("[%s][%s][verifyArticlesListEmpty] Error recovering the List of Articles", CHANNEL_ENV, ERRORrecoveringArticlesList)
+    //      return errors.New(ERRORrecoveringArticlesList + err.Error())
+    //  }
+
     article_status := "proposed_changes"
     json.Unmarshal([]byte(variables), &variable_list)
     json.Unmarshal([]byte(variations), &variation_list)
     json.Unmarshal([]byte(customTexts), &customText_list)
     json.Unmarshal([]byte(stdClauses), &stdClause_list)
 
-    err = cc.addArticleJson(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
+    err = cc.setArticle(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
-        log.Errorf("[%s][%s][addArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 

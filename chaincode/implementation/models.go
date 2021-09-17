@@ -116,6 +116,7 @@ const (
 	ERRORBase64           					= `Error decoding into base64`
 	ERRORVerifying        					= `Error verifying signature`
 	ERRORFindingArticle   					= `Error finding article`
+	ERRORrecoveringArticlesList					= `Error recovering articles list`	
 	ERRORAcceptingProposedChanges				= `Error accepting proposed changes`
 	ERRORRecoveringOrg	  				= `Error recovering organization`
 	ERRORRecoveringJsonRA	  				= `Error recovering Json Roaming Agreement`
@@ -143,6 +144,7 @@ const (
 	ERRORDenyDeleteArticle					= `Error denying delete article`
 	ERRORReachAgreement					= `Error: Agreement not reached`
 	ERRORAcceptAgreement					= `Error: Agreement not accepted`
+	ERRORdeterminingStatus					= `Error determining status`
 	ERRORQuerySingleArticle 				= `Error recovering single article`
 	ERRORQueryAllArticles					= `Error recovering all articles`
 	ERROREventName						= `Error missing Event Name`

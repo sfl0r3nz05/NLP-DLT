@@ -93,27 +93,82 @@ func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, uuid 
     }
 }
 
-func (cc *Chaincode) addArticleJson(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables []VARIABLE, variations []VARIATION, customTexts []CUSTOMTEXT, stdClauses []STDCLAUSE) (error){
+func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, uuid string, articles_status string) (error){
 
     var jsonRAgreement LISTOFARTICLES 
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(uuid)
     if err != nil {
-        log.Errorf("[%s][%s][addArticleJson] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return errors.New(ERRORRecoveringJsonRA + err.Error())
+    }
+
+    if(jsonRAgreement.STATUS != articles_status){
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
+        return errors.New(ERRORdeterminingStatus + err.Error())
+    }
+
+    return nil
+}
+
+//  func (cc *Chaincode) recoverArticlesList(stub shim.ChaincodeStubInterface, uuid string) ([]ARTICLE, error){
+//  
+//      var jsonRAgreement LISTOFARTICLES 
+//      CHANNEL_ENV := stub.GetChannelID()
+//  
+//      bytes_jsonRA, err := stub.GetState(uuid)
+//      if err != nil {
+//          log.Errorf("[%s][%s][verifyArticlesStatus] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+//          return nil, errors.New(ERRORRecoveringRA + err.Error())
+//      }
+//  
+//      err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
+//      if err != nil {
+//          log.Errorf("[%s][%s][verifyArticlesStatus] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+//          return nil, errors.New(ERRORRecoveringJsonRA + err.Error())
+//      }
+//  
+//      return jsonRAgreement.articles, nil
+//  }
+
+//  func (cc *Chaincode) verifyArticlesListEmpty(stub shim.ChaincodeStubInterface, list_of_articles string) (error){
+//  
+//      CHANNEL_ENV := stub.GetChannelID()
+//  
+//      if(list_of_articles != nil){
+//          log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
+//          return errors.New(ERRORdeterminingStatus + err.Error())
+//      }
+//  
+//      return jsonRAgreement.articles, nil
+//  }
+
+func (cc *Chaincode) setArticle(stub shim.ChaincodeStubInterface, uuid string, article_num string, status string, variables []VARIABLE, variations []VARIATION, customTexts []CUSTOMTEXT, stdClauses []STDCLAUSE) (error){
+
+    var jsonRAgreement LISTOFARTICLES 
+    CHANNEL_ENV := stub.GetChannelID()
+
+    bytes_jsonRA, err := stub.GetState(uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][setArticle] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
         return errors.New(ERRORRecoveringRA + err.Error())
     }
     if bytes_jsonRA == nil {
-        log.Errorf("[%s][%s][addArticleJson] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
+        log.Errorf("[%s][%s][setArticle] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
     err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
     if err != nil {
-        log.Errorf("[%s][%s][addArticleJson] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        log.Errorf("[%s][%s][setArticle] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
-    
-    //PENDING DATAILS OF VARIABLES AND VARIATIONS
     
     new_article := ARTICLE{id: article_num, status: status, variables: variables, variations: variations, customTexts: customTexts, stdClauses: stdClauses}       // Creating new article
     
