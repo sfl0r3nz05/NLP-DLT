@@ -7,10 +7,10 @@ services:
     hostname: nlp-engine
     working_dir: /administrator
     volumes:
-      - ./../nlp/data/input:/administrator/input
-      - ./../nlp/data/output:/administrator/output
-      - ./../nlp/library/src/library:/administrator/library
-      - ./../nlp/app.py:/administrator/app.py
+      - ./../nlp-engine/data/input:/administrator/input
+      - ./../nlp-engine/data/output:/administrator/output
+      - ./../nlp-engine/library/src/library:/administrator/library
+      - ./../nlp-engine/app.py:/administrator/app.py
     command: sh -c "python3 -m flask run --host=0.0.0.0"
     environment:
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
