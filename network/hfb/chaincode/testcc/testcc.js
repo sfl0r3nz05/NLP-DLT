@@ -17,7 +17,7 @@ class TestCC extends Contract {
         return JSON.parse(dataAsBytes)
     }
 
-    async setValue(ctx, key, previousKey) {
+    async addOrg(ctx, key, previousKey) {
         if (!(key in counter)) {
             counter[key] = 1;
         }

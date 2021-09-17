@@ -39,54 +39,54 @@
     "transactions": [
         {
             "user": "user1",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key1"
         },
         {
             "user": "user2",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key2",
             "previousKey": "Key1"
         },
         {
             "user": "user3",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key3",
             "previousKey": "Key2"
         },
         {
             "user": "user4",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key4"
         },
         {
             "user": "user1",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key2"
         },
         {
             "user": "user1",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key3"
         },
         {
             "user": "user2",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key2"
         },
         {
             "user": "user3",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key2"
         },
         {
             "user": "user4",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key4"
         },
         {
             "user": "user2",
-            "txFunction": "setValue",
+            "txFunction": "addOrg",
             "key": "Key4"
         }
     ]

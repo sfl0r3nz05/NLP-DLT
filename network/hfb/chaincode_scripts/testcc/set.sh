@@ -5,7 +5,7 @@ export CACERT_ORDERER=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
 
 if [ $# == 1 ];
     then
-        peer chaincode invoke -o orderer.el-network.com:7050 -C $CHANNEL_NAME -n testcc -c "{\"Args\":[\"setValue\",\"$1\"]}" --tls --cafile $CACERT_ORDERER
+        peer chaincode invoke -o orderer.el-network.com:7050 -C $CHANNEL_NAME -n testcc -c "{\"Args\":[\"addOrg\",\"$1\"]}" --tls --cafile $CACERT_ORDERER
     else
         echo "Usage: set.sh <key>"
 fi
