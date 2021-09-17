@@ -161,7 +161,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 return shim.Error(ERRORDeleteArticle)
             }
         }
-    } else if function == "acceptRefuseProposedChanges" {
+    } else if function == "acceptProposedChanges" {
         org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
@@ -171,13 +171,12 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         }
         raid := args[0]
         article_num := args[1]
-        accept := args[2]
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.acceptRefuseChanges(stub, org_id, raid, article_num, accept)
+            err := cc.acceptChanges(stub, org_id, raid, article_num)
             if err != nil {
                 return shim.Error(ERRORAcceptingProposedChanges)
             }
@@ -388,7 +387,6 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     var variation_list []VARIATION
     var customText_list []CUSTOMTEXT
     var stdClause_list []STDCLAUSE
-    //var list_of_articles []ARTICLE
     
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
@@ -421,18 +419,6 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
         return errors.New(ERRORdeterminingStatus + err.Error())
     }
-
-    //  list_of_articles, err = cc.recoverArticlesList(stub, uuid)
-    //  if err != nil {
-    //      log.Errorf("[%s][%s][recoverArticlesList] Error recovering the List of Articles", CHANNEL_ENV, ERRORrecoveringArticlesList)
-    //      return errors.New(ERRORrecoveringArticlesList + err.Error())
-    //  }
-
-    //  err = cc.verifyArticlesListEmpty(stub, list_of_articles)
-    //  if err != nil {
-    //      log.Errorf("[%s][%s][verifyArticlesListEmpty] Error recovering the List of Articles", CHANNEL_ENV, ERRORrecoveringArticlesList)
-    //      return errors.New(ERRORrecoveringArticlesList + err.Error())
-    //  }
 
     article_status := "added_article"
     json.Unmarshal([]byte(variables), &variable_list)
@@ -496,7 +482,7 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORVerifyingOrg)
     }
 
-    valid_status_ra := "drafting_agreement"
+    valid_status_ra := "ra_negotiating"
     err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
@@ -509,7 +495,7 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORRecoveringRA + err.Error())
     }
 
-    valid_status_article := []string{"accepted_changes", "denied_changes"}
+    valid_status_article := []string{"added_article", "proposed_changes"}
     err = cc.verifyArticleStatus(stub, uuid, article_num, valid_status_article[0:])
     if err != nil {
         log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
@@ -522,9 +508,9 @@ func (cc *Chaincode) updateArticle(stub shim.ChaincodeStubInterface, org_id stri
     json.Unmarshal([]byte(customTexts), &customText_list)
     json.Unmarshal([]byte(stdClauses), &stdClause_list)
 
-    err = cc.updateArticleJson(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
+    err = cc.updateArticleRA(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
-        log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        log.Errorf("[%s][%s][updateArticleRA] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
@@ -580,9 +566,9 @@ func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string,
     }
 
     article_status := "proposed_changes"
-    err = cc.deleteArticleJson(stub, uuid, article_num, article_status)
+    err = cc.deleteArticleRA(stub, uuid, article_num, article_status)
     if err != nil {
-        log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        log.Errorf("[%s][%s][updateArticleRA] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
@@ -604,7 +590,7 @@ func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string,
     return nil
 }
 
-func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, accept string) (error){
+func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (error){
     var article_status string
     var event_name string
     
@@ -620,7 +606,7 @@ func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_i
         return errors.New(ERRORVerifyingOrg)
     }
 
-    valid_status_ra := "drafting_agreement"
+    valid_status_ra := "ra_negotiating"
     err = cc.verifyAgreementStatus(stub, raid, valid_status_ra[0:])
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
@@ -633,24 +619,32 @@ func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_i
         return errors.New(ERRORRecoveringRA + err.Error())
     }
 
-    valid_status_article := []string{"proposed_changes"}
+    valid_status_articles := "articles_drafting"
+    err = cc.verifyArticlesStatus(stub, uuid, valid_status_articles)
+    if err != nil {
+        log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    valid_status_article := []string{"added_article", "proposed_changes"}
     err = cc.verifyArticleStatus(stub, uuid, article_num, valid_status_article[0:])
     if err != nil {
         log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)
     }
 
-    if accept == "true" {
-        article_status = "accepted_changes"
-    } else {
-        article_status = "denied_changes"
-    }
-
+    article_status := "accepted_changes"
     err = cc.updateArticleStatus(stub, uuid, article_num, article_status)
     if err != nil {
         log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
+
+    //recoverArticleList
+
+    //verifyAllArticlesStatus
+
+    //updateArticlesStatus
 
     org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
     if err != nil {
@@ -658,12 +652,7 @@ func (cc *Chaincode) acceptRefuseChanges(stub shim.ChaincodeStubInterface, org_i
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
 
-    if accept == "true" {
-        event_name = "accept_proposed_changes"
-    } else {
-        event_name = "refuse_proposed_changes"
-    }
-
+    event_name := "accept_proposed_changes"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, article_num, org_name, "", timestamp, TxID, CHANNEL_ENV)
