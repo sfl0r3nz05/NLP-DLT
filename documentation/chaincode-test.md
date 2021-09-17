@@ -11,26 +11,31 @@ The `config.json` contains the configuration for the application. We can configu
 ### To test the chaincode
 
 1. Go to the directory:
+    
     ```
     cd $GOPATH/src/github.com/nlp-dlt/chaincode/test/testapp
     ```
 
 2. Organizations **enrollment** and **registration**:
 
-To enroll admins, register and enroll users, run the following command:
+    To enroll admins, register and enroll users, run the following command:
+
     ```
     make users
     ```
 
-3. To **invoke** transactions:
+3. **Invoke** transactions:
 
-To add key/value pairs, run
+    To add key/value pairs, run
+
     ```
     make invoke
     ```
 
 4. To query key
-To make a query, run
+    
+    To make a query, run
+
     ```
     make query KEY=key1
     ```
