@@ -39,11 +39,12 @@
     ```
 3. Copy Golang bynary into executable folder
     ```
-    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
+    sudo rm -rf ~/go/bin && sudo tar -C ~/go/bin -xzf go1.16.7.linux-amd64.tar.gz
     ```
 4. Define the `GOPATH` environmental variable
     ```
     export GOPATH=$HOME/go
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
 5. Edit the `profile` file
     ```
