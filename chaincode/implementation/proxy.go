@@ -416,8 +416,8 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     articles_status := "init"
     err = cc.verifyArticlesStatus(stub, uuid, articles_status)
     if err != nil {
-        log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
-        return errors.New(ERRORdeterminingStatus + err.Error())
+        log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
     }
 
     article_status := "added_article"
@@ -593,6 +593,7 @@ func (cc *Chaincode) delArticle(stub shim.ChaincodeStubInterface, org_id string,
 func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (error){
     var article_status string
     var event_name string
+    var article_bool bool
     
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
@@ -633,18 +634,28 @@ func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORStatusRA)
     }
 
-    article_status := "accepted_changes"
+    article_status = "accepted_changes"
     err = cc.updateArticleStatus(stub, uuid, article_num, article_status)
     if err != nil {
         log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
-    //recoverArticleList
+    all_article_status := "accepted_changes"
+    article_bool, err = cc.verifyAllArticlesStatus(stub, uuid, all_article_status)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyAllArticlesStatus] Error verifying the articles of the Roaming Agreement", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
+    }
 
-    //verifyAllArticlesStatus
-
-    //updateArticlesStatus
+    if(article_bool){
+        article_status = "transient_confirmation"
+        err = cc.updateArticlesStatus(stub, uuid, article_status)
+        if err != nil {
+            log.Errorf("[%s][%s][updateArticlesStatus] Error updating the status of the article", CHANNEL_ENV, ERRORUpdatingStatus)
+            return errors.New(ERRORUpdatingStatus + err.Error())
+        }
+    }
 
     org_name, err := cc.recoverOrg(stub, org_id)    //recover organization name
     if err != nil {
@@ -652,7 +663,7 @@ func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id stri
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
 
-    event_name := "accept_proposed_changes"
+    event_name = "accept_proposed_changes"
     timestamp := timeNow()
     TxID = stub.GetTxID()
     err = cc.emitEvent(stub, event_name, article_num, org_name, "", timestamp, TxID, CHANNEL_ENV)

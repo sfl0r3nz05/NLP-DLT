@@ -111,8 +111,8 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, uuid
     }
 
     if(jsonRAgreement.STATUS != articles_status){
-        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORdeterminingStatus)
-        return errors.New(ERRORdeterminingStatus + err.Error())
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
     }
 
     return nil
@@ -330,16 +330,16 @@ func (cc *Chaincode) recoverJsonRA(stub shim.ChaincodeStubInterface, uuid string
 
     bytes_jsonRA, err := stub.GetState(uuid)
     if err != nil {
-        log.Errorf("[%s][%s][updateArticleJson] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
-        return "", errors.New(ERRORRecoveringRA + err.Error())
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return "", errors.New(ERRORRecoveringJsonRA + err.Error())
     }
     if bytes_jsonRA == nil {
-        log.Errorf("[%s][%s][updateArticleJson] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
-        return "", errors.New(ERRORRecoveringRA + err.Error())
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
+        return "", errors.New(ERRORRecoveringJsonRA + err.Error())
     }
     err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
     if err != nil {
-        log.Errorf("[%s][%s][updateArticleJson] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        log.Errorf("[%s][%s][recoverJsonRA] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
         return "", errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
@@ -414,6 +414,46 @@ func (cc *Chaincode) verifyAgreementStatus(stub shim.ChaincodeStubInterface, rai
 
     return errors.New(ERRORStatusRA)
 }
+
+func (cc *Chaincode) verifyAllArticlesStatus(stub shim.ChaincodeStubInterface, uuid string, valid_status string) (bool, error){
+    var jsonRAgreement LISTOFARTICLES
+    var counter int
+    CHANNEL_ENV := stub.GetChannelID()
+
+    bytes_jsonRA, err := stub.GetState(uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyAllArticlesStatus] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return false, errors.New(ERRORRecoveringJsonRA + err.Error())
+    }
+    if bytes_jsonRA == nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
+        return false, errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    err = json.Unmarshal(bytes_jsonRA, jsonRAgreement)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
+        return false, errors.New(ERRORRecoveringJsonRA + err.Error())
+    }
+
+    for _, s := range jsonRAgreement.articles {
+        if (s.status != valid_status){
+            counter =+ 1
+        }
+    }
+
+    if (counter > 0){
+        return false, nil
+    }
+
+    return true, nil
+}
+
+func (cc *Chaincode) updateArticlesStatus(stub shim.ChaincodeStubInterface, uuid string, valid_status string) (error){
+    
+    return nil
+}
+
 //AGREEMENT STATUS      #########################################################################################
 
 //RECOVER       #################################################################################################
