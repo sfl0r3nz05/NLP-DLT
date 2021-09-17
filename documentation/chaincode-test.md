@@ -18,7 +18,7 @@ The `config.json` contains the configuration for the application. We can configu
 
 2. Organizations **enrollment** and **registration**:
 
-    To enroll admins, register and enroll users, run the following command:
+    - To enroll admins, register and enroll users, run the following command:
 
     ```
     make users
@@ -26,7 +26,7 @@ The `config.json` contains the configuration for the application. We can configu
 
 3. **Invoke** transactions:
 
-    To add key/value pairs, run
+    - To add key/value pairs, run
 
     ```
     make invoke
@@ -34,7 +34,7 @@ The `config.json` contains the configuration for the application. We can configu
 
 4. To query key
     
-    To make a query, run
+    - To make a query, run
 
     ```
     make query KEY=key1
