@@ -66,7 +66,7 @@ The project has been documented through the following Medium articles:
 
 5. To deploy the **Filebeat-Agent** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/filebeat-agent-use.md)
 
-6. To test the **chaincode** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
+6. To test the **Chaincode** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
 
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
