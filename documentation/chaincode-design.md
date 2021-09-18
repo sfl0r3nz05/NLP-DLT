@@ -3,8 +3,8 @@
 1. The designs are located into the directory: `$GOPATH/src/github.com/nlp-dlt/chaincode/design`.
 
 2. The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). Drawio files can be found at:
-    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v16.drawio)
-    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v16.drawio)
+    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v17.drawio)
+    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v17.drawio)
     - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
     - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
     - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
