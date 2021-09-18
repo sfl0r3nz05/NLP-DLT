@@ -6,11 +6,11 @@
 
 Table of Content for the project documentation:
 
-1. [Publications that support the project]()
-2. [How to use it]()
-3. [Design criteria]()
-4. [Implementation criteria]()
-5. [How to modify it]()
+1. [Publications that support the project](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#publications-that-support-the-project)
+2. [How to use it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-it)
+3. [Design criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#designs-criteria)
+4. [Implementation criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#implementations-criteria)
+5. [How to modify it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify-)
 
 ## Publications that support the project
 
@@ -70,13 +70,13 @@ In addition, the project has been documented through the following Medium articl
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
 
-## Designs criteria
+## Designs criteria 🎻
 *This part is under development ...*
 
 ### Chaincode
 1. Details of the `chaincode` design [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md)
 
-## Implementations criteria
+## Implementations criteria 💻
 *This part is under development ...*
 
 ### Chaincode
