@@ -1,17 +1,35 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
-## Project documentation 📕📗📘
+# Project documentation 📕📗📘
 
 *This part is under development ...*
 
-### Medium Articles
+Table of Content for the project documentation:
+
+1. [Publications that support the project]()
+2. [How to use it]()
+3. [Design criteria]()
+4. [Implementation criteria]()
+5. [How to modify it]()
+
+## Publications that support the project
+
+*This part is under development ...*
+
+### Medium Articles that support the project
 In addition, the project has been documented through the following Medium articles:
 1. [Blockchain-based digitization of the roaming agreement drafting process](https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521)
 2. [NLP Engine to detect variables, standard clauses, variations, and customized texts](https://medium.com/@sfl0r3nz05/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5)
 
-### Scientific Contributions
+### Scientific Contributions that support the project
 
-## How to use the tools integrated 🦾🦿
+*This part is under development ...*
+
+## How to use it
+
+*This part is under development ...*
+
+### How to use from a centralized point 🦾🦿
 
 *This part is under development ...*
 
@@ -26,7 +44,7 @@ In addition, the project has been documented through the following Medium articl
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
     ```
 
-## How to use each tool separately ⛏
+### How to use each tool separately ⛏
 
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
 
@@ -52,14 +70,19 @@ In addition, the project has been documented through the following Medium articl
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
 
-## Design details
+## Designs criteria
 *This part is under development ...*
 
 ### Chaincode
 1. Details of the `chaincode` design [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md)
-2. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-implementation.md)
 
-## How to modify each part ✏
+## Implementations criteria
+*This part is under development ...*
+
+### Chaincode
+1. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-implementation.md)
+
+## How to modify ✏
 *This part is under development ...*
 
 ### NLP-Engine
