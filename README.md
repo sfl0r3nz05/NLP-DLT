@@ -4,7 +4,7 @@
 
 *This part is under development ...*
 
-Table of Content for the project documentation
+Table of Content for the project documentation:
 
 1. [Publications that support the project](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#publications-that-support-the-project)
 2. [How to use it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-it)
