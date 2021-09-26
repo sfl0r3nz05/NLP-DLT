@@ -26,6 +26,21 @@ The project has been documented through the following Medium articles:
 
 *This part is under development ...*
 
+## Repository explenation
+
+*This section is under development ...*
+
+### nlp-engine folder
+*This sub-section is under development ...*
+### chaincode folder
+*This sub-section is under development ...*
+### backend folder
+*This sub-section is under development ...*
+### frontend folder
+*This sub-section is under development ...*
+### documentation folder
+*This sub-section is under development ...*
+
 ## How to use it
 
 *This part is under development ...*
