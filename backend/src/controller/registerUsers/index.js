@@ -19,7 +19,7 @@ const registerUsers = async (req, res) => {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
         }
 
-        ccpPath = path.resolve(__dirname, config.connection_profile);
+        ccpPath = path.resolve("data", config.connection_profile);
         ccpJSON = fs.readFileSync(ccpPath, 'utf8');
         ccp = JSON.parse(ccpJSON);
 

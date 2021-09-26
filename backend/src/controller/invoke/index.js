@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 
-const configPath = path.resolve("data", './../data/config.json');
+const configPath = path.resolve("data", 'config.json');
 const configJSON = fs.readFileSync(configPath, 'utf8');
 const config = JSON.parse(configJSON);
 
@@ -21,7 +21,7 @@ const invoke = async (req, res) => {
           config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
       }
 
-      ccpPath = path.resolve(__dirname, config.connection_profile);
+      ccpPath = path.resolve("data", config.connection_profile);
       ccpJSON = fs.readFileSync(ccpPath, 'utf8');
       ccp = JSON.parse(ccpJSON);
 

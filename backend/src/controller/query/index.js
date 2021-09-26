@@ -13,6 +13,9 @@ let ccp;
 
 const query = async (req, res) => {
     try {
+      var KEY  = req.body; // params from POST
+      console.log(KEY);
+
       dotenv.config();
       if ( process.env.NETWORK != undefined) {
           config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
@@ -21,7 +24,7 @@ const query = async (req, res) => {
           config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
       }
 
-      ccpPath = path.resolve(__dirname, config.connection_profile);
+      ccpPath = path.resolve("data", config.connection_profile);
       ccpJSON = fs.readFileSync(ccpPath, 'utf8');
       ccp = JSON.parse(ccpJSON);
 
@@ -54,8 +57,8 @@ const query = async (req, res) => {
           const result = await contract.evaluateTransaction('queryAllValues');
           console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
       }
-      console.log(`Querying value for key ${process.argv[2]}`)
-      const result = await contract.evaluateTransaction('queryValue', process.argv[2]);
+      console.log(`Querying value for key:`, KEY)
+      const result = await contract.evaluateTransaction('queryValue', KEY.toString());
       console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         
         res.sendStatus(200);

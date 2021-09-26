@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 
-const configPath = path.resolve("data", './../data/config.json');
+const configPath = path.resolve("data", 'config.json');
 const configJSON = fs.readFileSync(configPath, 'utf8');
 const config = JSON.parse(configJSON);
 
@@ -14,12 +14,12 @@ let ccp;
 
 const enrollAdmins = async (req, res) => {
   try {
+    console.log("ccpPath");
     dotenv.config();
     if ( process.env.NETWORK != undefined) {
         config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
     }
-
-    ccpPath = path.resolve(__dirname, config.connection_profile);
+    ccpPath = path.resolve("data", config.connection_profile);
     ccpJSON = fs.readFileSync(ccpPath, 'utf8');
     ccp = JSON.parse(ccpJSON);
 

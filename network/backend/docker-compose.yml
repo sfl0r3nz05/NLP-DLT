@@ -1,5 +1,8 @@
 version: "3.2"
 
+networks:
+  el-network:
+
 services:
   backend:
     container_name: backend
@@ -8,9 +11,12 @@ services:
     working_dir: /app/src
     volumes:
       - ../../backend:/app
+      - ../hfb:/app/network/hfb
     command: sh -c "npm i && npm start"
     environment:
       HOST: "${HOST_BACKEND}"
       PORT: "${PORT_BACKEND}"
     ports:
       - "80:3005"
+    networks:
+      - el-network
