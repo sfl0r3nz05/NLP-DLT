@@ -10,7 +10,7 @@ services:
     hostname: backend
     image: node:13-alpine
     ports:
-      - "3005:3005"
+      - "80:80"
     working_dir: /app/src
     volumes:
       - ../../backend:/app
