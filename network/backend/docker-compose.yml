@@ -1,16 +1,10 @@
 version: "3.2"
 
-networks:
-  contrack:
-    driver: bridge
-
 services:
   backend:
     container_name: backend
     hostname: backend
     image: node:13-alpine
-    ports:
-      - "80:80"
     working_dir: /app/src
     volumes:
       - ../../backend:/app
@@ -18,5 +12,5 @@ services:
     environment:
       HOST: "${HOST_BACKEND}"
       PORT: "${PORT_BACKEND}"
-    networks:
-      - contrack
+    ports:
+      - "80:3005"
