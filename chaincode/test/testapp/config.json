@@ -3,7 +3,7 @@
         "channelName": "mychannel",
         "contract": "testcc"
     },
-    "connection_profile": "../../network/basic/connectionProfile.json",
+    "connection_profile": "../../network/hfb/connectionProfile.json",
     "organizations": {
         "Org1": {
             "MSP": "Org1MSP"
