@@ -12,7 +12,7 @@ Table of Content for the project documentation:
 4. [Implementation criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#implementations-criteria)
 5. [How to modify it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify-)
 
-## Publications that support the project
+# Publications that support the project
 
 *This part is under development ...*
 The project is supported by two types of publications [Medium Articles](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#medium-articles-that-support-the-project) and [Scientific Contributions](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#scientific-contributions-that-support-the-project).
@@ -26,22 +26,24 @@ The project has been documented through the following Medium articles:
 
 *This part is under development ...*
 
-## Repository explenation
+# Repository overview
 
 *This section is under development ...*
 
-### nlp-engine folder
+### Nlp-engine Folder
 *This sub-section is under development ...*
-### chaincode folder
+### Chaincode Folder
 *This sub-section is under development ...*
-### backend folder
+### Backend Folder
 *This sub-section is under development ...*
-### frontend folder
+### Frontend Folder
 *This sub-section is under development ...*
-### documentation folder
+### Documentation Folder
+*This sub-section is under development ...*
+### Network Folder
 *This sub-section is under development ...*
 
-## How to use it
+# How to use it
 
 *This part is under development ...*
 
@@ -86,7 +88,7 @@ The project has been documented through the following Medium articles:
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
 
-## Designs criteria 🎻
+# Designs criteria 🎻
 *This part is under development ...*
 
 ### Chaincode
@@ -98,7 +100,7 @@ The project has been documented through the following Medium articles:
 ### Chaincode
 1. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-implementation.md)
 
-## How to modify ✏
+# How to modify ✏
 *This part is under development ...*
 
 ### NLP-Engine
