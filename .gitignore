@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 
 chaincode/test/testapp/node_modules/
+backend/src/node_modules/
