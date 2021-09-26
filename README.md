@@ -7,10 +7,11 @@
 Table of Content for the project documentation:
 
 1. [Publications that support the project](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#publications-that-support-the-project)
-2. [How to use it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-it)
+2. [Repository overview](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl#repository-overview)
+2. [How to use the repository](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-use-it)
 3. [Design criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#designs-criteria)
-4. [Implementation criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#implementations-criteria)
-5. [How to modify it](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify-)
+4. [Implementations criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#implementations-criteria)
+5. [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify-)
 
 # Publications that support the project
 
@@ -43,7 +44,7 @@ The project has been documented through the following Medium articles:
 ### Network Folder
 *This sub-section is under development ...*
 
-# How to use it
+# How to use the repository
 
 *This part is under development ...*
 
