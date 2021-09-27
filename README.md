@@ -31,17 +31,9 @@ The project has been documented through the following Medium articles:
 
 *This section is under development ...*
 
-### Nlp-engine Folder
+### NLP-engine Folder
 *This sub-section is under development ...*
 ### Chaincode Folder
-*This sub-section is under development ...*
-### Backend Folder
-*This sub-section is under development ...*
-### Frontend Folder
-*This sub-section is under development ...*
-### Documentation Folder
-*This sub-section is under development ...*
-### Network Folder
 *This sub-section is under development ...*
 
 # How to use the repository
@@ -84,10 +76,17 @@ The project has been documented through the following Medium articles:
 
 5. To deploy the **Filebeat-Agent** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/filebeat-agent-use.md)
 
-6. To test the **Chaincode** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test.md)
+6. There are two ways to test the **Chaincode** 
+
+ - To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test-cli.md)
 
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
+
+ - To test using POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test-cli.md)
+
+    👁‍🗨 **Demonstration video:**
+    [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png)](https://youtu.be/xk5uwrzAaJw)
 
 # Designs criteria
 *This part is under development ...*
