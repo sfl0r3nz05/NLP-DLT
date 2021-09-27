@@ -23,4 +23,4 @@
     ```
 
 The monitoring tools will allow to monitor the Backend Application:
-<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/prometheus-node.png">
+    <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/prometheus-node.png">
