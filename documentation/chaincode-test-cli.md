@@ -1,4 +1,4 @@
-# Testapp Application
+# Test Chaincode Application via CLI container
 The Testapp application is used to generate users and transactions.
 
 ### Configuration

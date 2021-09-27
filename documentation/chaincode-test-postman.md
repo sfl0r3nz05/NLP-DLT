@@ -1,4 +1,4 @@
-# Testapp Application
+# Test Chaincode Application via POSTMAN tool
 The Testapp application is used to generate users and transactions.
 
 ### Configuration
