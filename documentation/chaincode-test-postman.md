@@ -17,7 +17,7 @@ Before to use Postman tool must be [downloaded](https://www.postman.com/download
 3. Import the **Postman** collection:
 
 4. To **Enroll** Admins:
-<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/EnrollAdmin.png">
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/EnrollAdmins.png">
 
 *This part is under development ... Postman will support authentication and environmental variables*
 
