@@ -16,19 +16,19 @@ Before to use Postman tool must be [downloaded](https://www.postman.com/download
 
 3. Import the **Postman** collection:
 
-- To add key/value pairs, run
+4. To **Enroll** Admins:
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/EnrollAdmin.png">
 
-    ```
-    make invoke
-    ```
+*This part is under development ... Postman will support authentication and environmental variables*
 
-4. To **query** key:
-    
-- To make a query, run
+5. To **Register** Users:
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/RegisterUsers.png">
 
-    ```
-    make query KEY=key1
-    ```
+*This part is under development ... Postman will support authentication and environmental variables*
+
+6. To **invoke** Transactions:
+
+6. To **query** key:
 
 ### Transactions on Kibana
 - Once the chaincode be deployed the transacciones can be visualized through Kibana dashboard:
