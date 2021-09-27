@@ -10,7 +10,7 @@ scrape_configs:
     honor_labels: true
 
     static_configs:
-      - targets: ["prometheus:9090", "pushGateway:9091", "172.31.16.137:3005"]
+      - targets: ["prometheus:9090", "pushGateway:9091", "backend:3005"]
   - job_name: cadvisor
     scrape_interval: 5s
     static_configs:
