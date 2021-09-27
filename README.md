@@ -78,7 +78,9 @@ The project has been documented through the following Medium articles:
 
     ⭐**Note** The **Filebeat-Agent** is based on the Hyperledger Fabric Project: [Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions](https://github.com/hyperledger-labs/blockchain-analyzer)⭐
 
-6. There are two ways to test the **Chaincode**:
+6. To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/backend-use.md)
+
+7. There are two ways to test the **Chaincode**:
 
     - To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test-cli.md).
 
