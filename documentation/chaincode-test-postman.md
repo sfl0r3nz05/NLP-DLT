@@ -26,9 +26,15 @@ Before to use Postman tool must be [downloaded](https://www.postman.com/download
 
 *This part is under development ... Postman will support authentication and environmental variables*
 
-6. To **invoke** Transactions:
+6. To **invoke** Transactions to add organizations:
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/invoke.png">
+
+*This part is under development ... Postman will support authentication and environmental variables*
 
 6. To **query** key:
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/query.png">
+
+*This part is under development ... Postman will support authentication and environmental variables*
 
 ### Transactions on Kibana
 - Once the chaincode be deployed the transacciones can be visualized through Kibana dashboard:
