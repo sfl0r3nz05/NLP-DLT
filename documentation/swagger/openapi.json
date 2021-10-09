@@ -372,7 +372,7 @@
       }
     },
     "/api/querySingleArticle": {
-      "post": {
+      "get": {
         "description": "Query a single article.",
         "operationId": "querySingleArticle",
         "requestBody": {
@@ -411,7 +411,7 @@
       }
     },
     "/api/queryAllArticles": {
-      "post": {
+      "get": {
         "description": "Query all articles added to the negotiation process.",
         "operationId": "queryAllArticles",
         "requestBody": {
