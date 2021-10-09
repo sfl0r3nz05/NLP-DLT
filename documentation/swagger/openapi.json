@@ -25,28 +25,42 @@
         "description": "This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.",
         "operationId": "addOrg",
         "requestBody": {
-          "description": "",
+          "description": "Organization Object",
           "required": true,
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Organization"
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "name":{
+                    "type":"string"
+                  },
+                  "country":{
+                    "type":"string"
+                  },
+                  "tadig":{
+                    "type":"string"
+                  },
+                  "testNumber":{
+                    "type":"string"
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -66,26 +80,43 @@
         "requestBody": {
           "description": "",
           "required": true,
-          "content": {
+          "content":{
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Organization"
+              "schema":{
+                "type": "array",
+                "items":{
+                  "type":"object",
+                  "properties":{
+                    "name":{
+                      "type":"string"
+                    },
+                    "country":{
+                      "type":"string"
+                    },
+                    "tadig":{
+                      "type":"string"
+                    },
+                    "testNumber":{
+                      "type":"string"
+                    }
+                  }
+                }
               }
             }
-          }
+          }            
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -115,16 +146,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -154,16 +185,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -193,16 +224,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -232,16 +263,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -271,16 +302,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -309,16 +340,16 @@
           },
           "responses": {
             "200": {
-              "description": "Token response",
+              "description": "Response code",
               "content": {
                 "application/json": {
                   "schema": {
-                    "$ref": "#/components/schemas/Token"
+                    "type":"integer"
                   }
                 }
               }
             },
-            "default": {
+            "400": {
               "description": "unexpected error",
               "content": {
                 "application/json": {
@@ -349,16 +380,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -388,16 +419,16 @@
         },
         "responses": {
           "200": {
-            "description": "Token response",
+            "description": "Response code",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Token"
+                  "type":"integer"
                 }
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -436,7 +467,7 @@
               }
             }
           },
-          "default": {
+          "400": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -452,37 +483,6 @@
   },
   "components": {
     "schemas": {
-      "Organization": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Organization"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "NewToken": {
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "tag": {
-            "type": "string"
-          }
-        }
-      },
       "Error": {
         "required": [
           "code",
