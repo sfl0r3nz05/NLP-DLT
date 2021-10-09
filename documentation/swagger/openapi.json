@@ -30,7 +30,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewToken"
+                "$ref": "#/components/schemas/Organization"
               }
             }
           }
@@ -69,7 +69,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewToken"
+                "$ref": "#/components/schemas/Organization"
               }
             }
           }
@@ -455,10 +455,12 @@
       "Organization": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/NewToken"
+            "$ref": "#/components/schemas/Organization"
           },
           {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "integer",
@@ -468,8 +470,24 @@
           }
         ]
       },
+      "NewToken": {
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        }
+      },
       "Error": {
-        "required": ["code", "message"],
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "integer",
