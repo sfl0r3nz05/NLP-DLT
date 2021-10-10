@@ -78,13 +78,19 @@ The project has been documented through the following Medium articles:
 
     ⭐**Note** The **Filebeat-Agent** is based on the Linux Foundation Project: [Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions](https://github.com/hyperledger-labs/blockchain-analyzer)⭐
 
-6. To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/backend-use.md)
+6. The Backend of the project is:
+    - To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/backend-use.md)
+    - To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/monitoring.md)
+    - The **Backend** has been documented via **Swagger**:
+        - To deploy **Swagger** :following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/swagger.md)
+        
+        |Swagger demonstration|
+        |---|
+        |<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png" alt="Watch the video" width="420" height="220"/></a>|
 
-7. To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/monitoring.md)
+7. There are two ways to test the **Chaincode**:
 
-8. There are two ways to test the **Chaincode**:
-
-|To test via CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-cli.md)|To test via POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-postman.md)|
+|Test via CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-cli.md)|Test via POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-postman.md)|
 |---|---|
 |<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png" alt="Watch the video" width="420" height="220"/></a>|<a      href="https://youtu.be/xk5uwrzAaJw" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png" alt="Watch the video" width="440" height="240"/></a>|
 
