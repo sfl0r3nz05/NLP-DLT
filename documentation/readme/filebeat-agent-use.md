@@ -1,6 +1,6 @@
 # How to use the Filebeat Agent 😎
 
-1. The [ELK network](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/elk-network-use.md) must be deployed in order to run the agent.
+1. The [ELK network](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/elk-network-use.md) must be deployed in order to run the agent.
 
     - The following is the **error** returned by the container:
 

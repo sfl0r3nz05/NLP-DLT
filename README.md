@@ -44,7 +44,7 @@ The project has been documented through the following Medium articles:
 
 *This part is under development ...*
 
-0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
+0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
 
 1. To get started with the project, clone the git repository in the go folder:
 
@@ -57,7 +57,7 @@ The project has been documented through the following Medium articles:
 
 ### How to use each tool separately ⛏
 
-0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/prerequisites.md).
+0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
 
 1. To get started with the project, clone the git repository in the go folder:
 
@@ -68,49 +68,51 @@ The project has been documented through the following Medium articles:
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
     ```
 
-2. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-use.md)
+2. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/nlp-engine-use.md)
 
-3. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/hfb-network-use.md)
+3. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/hfb-network-use.md)
 
-4. To deploy the **ELK-Infrastructure** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/elk-network-use.md)
+4. To deploy the **ELK-Infrastructure** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/elk-network-use.md)
 
-5. To deploy the **Filebeat-Agent** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/filebeat-agent-use.md)
+5. To deploy the **Filebeat-Agent** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/filebeat-agent-use.md)
 
     ⭐**Note** The **Filebeat-Agent** is based on the Linux Foundation Project: [Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions](https://github.com/hyperledger-labs/blockchain-analyzer)⭐
 
-6. To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/backend-use.md)
+6. To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/backend-use.md)
 
-7. To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/monitoring.md)
+7. To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/monitoring.md)
 
 8. There are two ways to test the **Chaincode**:
 
-    - To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test-cli.md).
+    - To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-cli.md).
 
     👁‍🗨 **Demonstration video:**
     [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
 
-    - To test using POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-test-postman.md).
+    - To test using POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-postman.md).
 
     👁‍🗨 **Demonstration video:**
-    [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png)](https://youtu.be/xk5uwrzAaJw)
+    <a href="https://youtu.be/xk5uwrzAaJw" target="_blank">
+    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png" alt="Watch the video" width="240" height="180"/>
+    </a>
 
 # Designs criteria
 *This part is under development ...*
 
 ### Chaincode
-1. Details of the `chaincode` design [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-design.md)
+1. Details of the `chaincode` design [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-design.md)
 
 # Implementations criteria
 *This part is under development ...*
 
 ### Chaincode
-1. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-implementation.md)
+1. Details of the `chaincode` implementation [here](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-implementation.md)
 
 # How to modify
 *This part is under development ...*
 
 ### NLP-Engine
-1. To modify the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/nlp-engine-edit.md)
+1. To modify the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/nlp-engine-edit.md)
 
 ### Chaincode
-2. How to modify the [`chaincode`](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/chaincode-modification.md)
+2. How to modify the [`chaincode`](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-modification.md)
