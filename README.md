@@ -82,11 +82,11 @@ The project has been documented through the following Medium articles:
     - To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/backend-use.md)
     - To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/monitoring.md)
     - The **Backend** has been documented via **Swagger**:
-        - To deploy **Swagger** :following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/swagger.md)
+        - To deploy **Swagger** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/swagger.md)
                 
-        |Swagger demonstration|
-        |---|
-        |<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png" alt="Watch the video" width="420" height="220"/></a>|
+|Swagger demonstration|
+|---|
+|<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentatioimages/Kibana.png" alt="Watch the video" width="420" height="220"/></a>|
 
 7. There are two ways to test the **Chaincode**:
 
