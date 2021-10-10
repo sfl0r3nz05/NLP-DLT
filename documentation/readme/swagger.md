@@ -23,4 +23,4 @@
     ```
 
 The Swagger Documentation Tool will allow to document the Backend API Rest interactions:
-    <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/swagger.png">
+    <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Swagger.png">

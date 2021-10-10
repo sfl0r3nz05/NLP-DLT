@@ -86,7 +86,7 @@ The project has been documented through the following Medium articles:
                 
 |Swagger demonstration|
 |---|
-|<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Swagger.png" alt="Watch the video" width="420" height="220"><a>|
+|<a href="https://youtu.be/8MdspJhR1zA" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Swagger.png" alt="Watch the video" width="420" height="220"><a>|
 
 7. There are two ways to test the **Chaincode**:
 
@@ -108,6 +108,9 @@ The project has been documented through the following Medium articles:
 
 # How to modify
 *This part is under development ...*
+
+### Swagger (Backend Documentation)
+1. To modify `swagger` documentation following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/swagger_modification.md)
 
 ### NLP-Engine
 1. To modify the `NLP-Engine` following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/nlp-engine-edit.md)
