@@ -89,7 +89,7 @@ Integration of Chaincode Statuses
 
 List of events
 ---
-- The following table relates `Methods`, `Events` to emit and the two types of states: `Roaming Agreement State` and `Article Negotiation States`
+- The following table relates `Methods`, `Events` to emit and the two types of states: `Status for Roaming Agreement Negotiation`, `Status for the Articles Negotiation` and `Status for the Article Drafting`.
 
 |Method                     |Event                   |Status for Roaming Agreement|Status for Articles Negotiation|Status for Article Drafting   |
 |:-------------------------:|:----------------------:|:--------------------------:|:-----------------------------:|:----------------------------:|
