@@ -86,7 +86,7 @@ The project has been documented through the following Medium articles:
                 
 |Swagger demonstration|
 |---|
-|<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentatioimages/Swagger.png" alt="Watch the video" width="420" height="220"/></a>|
+|<a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentatioimages/Swagger.png" alt="Watch the video" width="420" height="220"><a>|
 
 7. There are two ways to test the **Chaincode**:
 
