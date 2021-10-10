@@ -84,18 +84,9 @@ The project has been documented through the following Medium articles:
 
 8. There are two ways to test the **Chaincode**:
 
-    - To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-cli.md).
-
-    👁‍🗨 **Demonstration video:**
-    [![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)
-
-    - To test using POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-postman.md).
-
-    👁‍🗨 **Demonstration video:**
-
-    <a href="https://youtu.be/xk5uwrzAaJw" target="_blank">
-    <img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png" alt="Watch the video" width="440" height="280"/>
-    </a>
+| To test using CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-cli.md)  |  To test using POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/chaincode-test-postman.md) |
+|---|---|
+|[![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png)](https://youtu.be/KnRWKfw3oQM)  |[![Watch the video](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png)](https://youtu.be/xk5uwrzAaJw) |
 
 # Designs criteria
 *This part is under development ...*
