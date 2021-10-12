@@ -13,70 +13,62 @@ let ccp;
 
 const invoke = async (req, res) => {
     try {
-      dotenv.config();
-      if ( process.env.NETWORK != undefined) {
-          config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
-      }
-      if ( process.env.CHANNEL != undefined) {
-          config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
-      }
+        let tx = req.body;
+        console.log(tx);
 
-      ccpPath = path.resolve("data", config.connection_profile);
-      ccpJSON = fs.readFileSync(ccpPath, 'utf8');
-      ccp = JSON.parse(ccpJSON);
+        dotenv.config();
+        if (process.env.NETWORK != undefined) {
+            config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
+        }
+        if (process.env.CHANNEL != undefined) {
+            config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
+        }
 
-      // Create a new file system based wallet for managing identities.
-      const walletPath = path.join(process.cwd(), 'wallet');
-      const wallet = new FileSystemWallet(walletPath);
-      console.log(`Wallet path: ${walletPath}`);
+        ccpPath = path.resolve("data", config.connection_profile);
+        ccpJSON = fs.readFileSync(ccpPath, 'utf8');
+        ccp = JSON.parse(ccpJSON);
 
-      // Check to see if we've already enrolled all the users.
-      for (let i = 0; i < config.users.length; i++) {
-          var userExists = await wallet.exists(config.users[i].name);
-          if (!userExists) {
-              console.log('An identity for the user does not exist in the wallet: ', config.users[i].name);
-              console.log('Run the registerUser.js application before retrying');
-              return;
-          }
-      }
+        // Create a new file system based wallet for managing identities.
+        const walletPath = path.join(process.cwd(), 'wallet');
+        const wallet = new FileSystemWallet(walletPath);
+        //console.log(`Wallet path: ${walletPath}`);
 
-      for (let i = 0; i < config.transactions.length; i++) {
+        // Check to see if we've already enrolled all the users.
+        for (let i = 0; i < config.users.length; i++) {
+            var userExists = await wallet.exists(config.users[i].name);
+            if (!userExists) {
+                console.log('An identity for the user does not exist in the wallet: ', config.users[i].name);
+                console.log('Run the registerUser.js application before retrying');
+                return;
+            }
+        }
 
-          let tx = config.transactions[i];
-          // Create a new gateway for connecting to our peer node.
-          const gateway = new Gateway();
-          await gateway.connect(ccp, { wallet, identity: tx.user, discovery: { enabled: false } });
+        //let tx = config.transactions[i];
+        // Create a new gateway for connecting to our peer node.
+        const gateway = new Gateway();
+        await gateway.connect(ccp, { wallet, identity: tx.user, discovery: { enabled: false } });
+        //console.log(gateway);
 
-          // Get the network (channel) our contract is deployed to.
-          const network = await gateway.getNetwork(config.channel.channelName);
+        // Get the network (channel) our contract is deployed to.
+        const network = await gateway.getNetwork(config.channel.channelName);
+        //console.log(network);
 
-          // Get the contract from the network.
-          const contract = network.getContract(config.channel.contract);
+        // Get the contract from the network.
+        const contract = network.getContract(config.channel.contract);
+        //console.log(contract);
 
-          // Submit the transaction.
-          if (tx.key){
-              if (tx.previousKey) {
-                  await contract.submitTransaction(tx.txFunction, tx.key, tx.previousKey);
-                  console.log(`Transaction has been submitted: ${tx.user}\t${tx.txFunction}\t${tx.key}\t${tx.previousKey}`);
-              }
-              else {
-                  await contract.submitTransaction(tx.txFunction, tx.key);
-                  console.log(`Transaction has been submitted: ${tx.user}\t${tx.txFunction}\t${tx.key}`);
-              }
-          }
-          else {
-              await contract.submitTransaction(tx.txFunction);
-              console.log(`Transaction has been submitted: ${tx.user}\t${tx.txFunction}`);
-          }
-          
-          // Disconnect from the gateway.
-          await gateway.disconnect();
-      }
+        // Submit the transaction.
+        if (tx.method) {
+            await contract.submitTransaction(tx.method, tx.value);
+            console.log(`Transaction has been submitted: ${tx.user}\t${tx.method}\t${tx.value}`);
+        }
+        // Disconnect from the gateway.
+        await gateway.disconnect();
 
-      res.sendStatus(200);
+        res.sendStatus(200);
     } catch (error) {
-      res.sendStatus(400);
+        res.sendStatus(400);
     }
-  };
-  
-  module.exports = { invoke };
+};
+
+module.exports = { invoke };
