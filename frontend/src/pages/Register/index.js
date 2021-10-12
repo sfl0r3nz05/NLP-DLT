@@ -94,25 +94,25 @@ const Register = () => {
         if (res.status === 200) {
           openNotificationWithIcon(
             "success",
-            "PARTICIPANTE REGISTRADO SATISFACTORIAMENTE"
+            "MNO SUCCESSFULLY REGISTERED"
           );
         }
         if (res.status === 201) {
           openNotificationWithIcon(
             "error",
-            "FALTAN VALORES PARA REGISTRAR EL PARTICIPANTE"
+            "MISSING VALUES TO REGISTER THE MNO"
           );
         }
         if (res.status === 202) {
           openNotificationWithIcon(
             "error",
-            "CONTENEDOR NO DESPLEGADO PARA ESTA ENTIDAD"
+            "CONTAINER NOT DEPLOYED FOR THIS ENTITY"
           );
         }
         if (res.status === 203) {
           openNotificationWithIcon(
             "error",
-            "ERROR DE INTERACCIÓN CON LA BLOCKCHAIN, REVISAR LA INFORMACIÓN QUE SE ENVÍA"
+            "BLOCKCHAIN INTERACTION ERROR"
           );
         }
       })

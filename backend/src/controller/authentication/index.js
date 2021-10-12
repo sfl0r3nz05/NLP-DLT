@@ -7,11 +7,9 @@ const authentication = async (req, res) => {
   let companies;
   let company;
   let users;
-  let user;
 
   selectEnv = 3;
   users = await readBuffer(selectEnv);
-  console.log(users);
   user = users.find((user) => user.username.toLowerCase() === username);
 
   if (user) { //console.log("loggin");

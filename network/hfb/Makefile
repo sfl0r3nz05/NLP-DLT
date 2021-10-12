@@ -13,10 +13,10 @@ start:
 	
 destroy:
 	./scripts/destroy-network.sh
-	rm -rf ../../backend/src/wallet
-	rm -rf connection-profile-[0-9].yaml
-	rm -rf connectionProfile.json
-	rm -rf docker-compose.yaml
+	sudo rm -rf ../../backend/src/wallet
+	sudo rm -rf connection-profile-[0-9].yaml
+	sudo rm -rf connectionProfile.json
+	sudo rm -rf docker-compose.yaml
 	sudo rm -rf ../../dashboards
 
 rmchaincode:

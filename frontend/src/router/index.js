@@ -42,7 +42,7 @@ const Rutes = ({ history }) => {
               </Menu.Item>
               <Menu.Item key="7">
                 <Button type="danger" size="small" ghost onClick={e => logout(e)}>
-                  <Icon type="logout" /> Cerrar sesión
+                  <Icon type="logout" /> Close session
                 </Button>
               </Menu.Item>
             </Menu>

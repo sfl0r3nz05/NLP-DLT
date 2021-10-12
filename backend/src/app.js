@@ -24,6 +24,7 @@ const HOST = process.env.HOST;
 
 // Init express instance
 const app = express();
+global.user = "user1";
 
 // enable cors policy
 app.use(cors());

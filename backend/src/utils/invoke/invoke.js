@@ -11,8 +11,9 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function invoke(tx) {
+module.exports = async function invoke(method, value) {
     try {
+        let arg = JSON.stringify(value);
         dotenv.config();
         if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
@@ -43,7 +44,7 @@ module.exports = async function invoke(tx) {
         //let tx = config.transactions[i];
         // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
-        await gateway.connect(ccp, { wallet, identity: tx.user, discovery: { enabled: false } });
+        await gateway.connect(ccp, { wallet, identity: user, discovery: { enabled: false } });
         //console.log(gateway);
 
         // Get the network (channel) our contract is deployed to.
@@ -55,9 +56,9 @@ module.exports = async function invoke(tx) {
         //console.log(contract);
 
         // Submit the transaction.
-        if (tx.method) {
-            await contract.submitTransaction(tx.method, tx.value);
-            console.log(`Transaction has been submitted: ${tx.user}\t${tx.method}\t${tx.value}`);
+        if (method) {
+            await contract.submitTransaction(method, arg);
+            console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
         }
         // Disconnect from the gateway.
         await gateway.disconnect();

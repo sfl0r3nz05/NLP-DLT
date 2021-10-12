@@ -14,6 +14,7 @@ stop:
 destroy:
 	./scripts/destroy-backend.sh
 	sudo rm -rf ../../backend/src/wallet
+	sudo rm -rf ../../backend/network
 
 ifeq ($(WHICHOS),Darwin)
 	rm *-e
