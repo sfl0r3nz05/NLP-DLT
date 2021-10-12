@@ -13,11 +13,11 @@ start:
 	
 destroy:
 	./scripts/destroy-network.sh
-	rm -rf ../../test-chaincode/testapp/wallet
+	rm -rf ../../backend/src/wallet
 	rm -rf connection-profile-[0-9].yaml
 	rm -rf connectionProfile.json
 	rm -rf docker-compose.yaml
-	rm -rf ../dashboards
+	sudo rm -rf ../../dashboards
 
 rmchaincode:
 	docker images | grep test | awk '{print $1}' | xargs docker rmi
