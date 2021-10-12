@@ -12,10 +12,11 @@ collectDefaultMetrics({ gcDurationBuckets: [0.1, 0.2, 0.3] });
 
 // Routes file
 const query = require("./routes/query.js");
-const invoke = require("./routes/invoke.js");
 const queryAll = require("./routes/queryAll.js");
 const enrollAdmins = require("./routes/enrollAdmins.js");
 const registerUsers = require("./routes/registerUsers.js");
+const authentication = require("./routes/authentication.js");
+const registerParticipant = require("./routes/registerParticipant.js");
 
 // Get PORT from env or set default
 const PORT = process.env.PORT;
@@ -34,10 +35,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/query", query);
-app.use("/api/invoke", invoke);
 app.use("/api/queryAll", queryAll);
 app.use("/api/enrollAdmins", enrollAdmins);
 app.use("/api/registerUsers", registerUsers);
+app.use("/api/authentication", authentication);
+app.use("/api/registerParticipant", registerParticipant);
 
 
 app.listen(

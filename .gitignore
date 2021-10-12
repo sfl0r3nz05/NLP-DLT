@@ -5,3 +5,4 @@ __pycache__/
 chaincode/test/testapp/node_modules/
 chaincode/test/testapp/wallet/
 backend/src/node_modules/
+frontend/src/node_modules/

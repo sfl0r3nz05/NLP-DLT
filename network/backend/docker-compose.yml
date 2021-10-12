@@ -16,6 +16,9 @@ services:
     environment:
       HOST: "${HOST_BACKEND}"
       PORT: "${PORT_BACKEND}"
+      PATH_TO_BUFFER_PRODUCTS: "${PATH_TO_BUFFER_PRODUCTS}"
+      PATH_TO_BUFFER_COMPANIES: "${PATH_TO_BUFFER_COMPANIES}"
+      PATH_TO_BUFFER_USERS: "${PATH_TO_BUFFER_USERS}"
     ports:
       - "80:3005"
     networks:

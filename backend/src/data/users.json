@@ -1,0 +1,16 @@
+[
+    {
+        "name": "",
+        "surname": "",
+        "username": "user1",
+        "password": "password",
+        "idParticipant": "0x000000000000000000000004",
+        "img": "/public/images/user1.png",
+        "email": "user1@mail.com",
+        "path": [
+            "/",
+            "/user-data"
+        ],
+        "company": 1
+    }
+]

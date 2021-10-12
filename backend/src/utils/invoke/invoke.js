@@ -11,11 +11,8 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-const invoke = async (req, res) => {
+module.exports = async function invoke(tx) {
     try {
-        let tx = req.body;
-        console.log(tx);
-
         dotenv.config();
         if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
@@ -65,10 +62,8 @@ const invoke = async (req, res) => {
         // Disconnect from the gateway.
         await gateway.disconnect();
 
-        res.sendStatus(200);
+        return true;
     } catch (error) {
-        res.sendStatus(400);
+        return error;
     }
 };
-
-module.exports = { invoke };

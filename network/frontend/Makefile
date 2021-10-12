@@ -6,14 +6,13 @@ ABSPATH?=$(shell dirname $(shell dirname $(shell dirname ${PWD})))
 WHICHOS := $(shell uname)
 
 start:
-	./scripts/start-backend.sh
+	./scripts/start-frontend.sh
 
 stop:
-	./scripts/stop-backend.sh
+	./scripts/stop-frontend.sh
 
 destroy:
-	./scripts/destroy-backend.sh
-	sudo rm -rf ../../backend/src/wallet
+	./scripts/destroy-frontend.sh
 
 ifeq ($(WHICHOS),Darwin)
 	rm *-e

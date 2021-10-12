@@ -1,0 +1,25 @@
+version: "3.2"
+
+networks:
+  el-network:
+
+services:
+  frontend:
+    container_name: frontend
+    hostname: frontend
+    image: node:11-alpine
+    command: sh -c "npm i && npm start"
+    working_dir: /app
+    volumes:
+      - ../../frontend:/app
+      - type: bind
+        source: ../../frontend/data-volume
+        target: /app/src/data
+    environment:
+      REACT_APP_PORT: "${REACT_APP_PORT}"
+      REACT_APP_GATEWAY_HOST: "${GATEWAY_HOST}"
+      REACT_APP_GATEWAY_PORT: "${GATEWAY_PORT}"
+    ports:
+      - "3004:3000"
+    networks:
+      - el-network
