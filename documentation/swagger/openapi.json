@@ -29,20 +29,20 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema":{
-                "type":"object",
-                "properties":{
-                  "name":{
-                    "type":"string"
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
                   },
-                  "country":{
-                    "type":"string"
+                  "country": {
+                    "type": "string"
                   },
-                  "tadig":{
-                    "type":"string"
+                  "tadig": {
+                    "type": "string"
                   },
-                  "testNumber":{
-                    "type":"string"
+                  "testNumber": {
+                    "type": "string"
                   }
                 }
               }
@@ -55,7 +55,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -80,57 +80,58 @@
         "requestBody": {
           "description": "",
           "required": true,
-          "content":{
+          "content": {
             "application/json": {
-              "schema":{
-                "items":{
+              "schema": {
+                "items": {
                   "anyOf": [
                     {
-                      "type":"object",
-                      "properties":{
-                        "name":{
-                          "type":"string"
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
                         },
-                        "country":{
-                          "type":"string"
+                        "country": {
+                          "type": "string"
                         },
-                        "tadig":{
-                          "type":"string"
+                        "tadig": {
+                          "type": "string"
                         },
-                        "testNumber":{
-                          "type":"string"
-                        }} 
-                      },
-                      {
-                        "type":"object",
-                        "properties":{
-                        "name":{
-                          "type":"string"
-                        },
-                        "country":{
-                          "type":"string"
-                        },
-                        "tadig":{
-                          "type":"string"
-                        },
-                        "testNumber":{
-                          "type":"string"
+                        "testNumber": {
+                          "type": "string"
                         }
-                      } 
+                      }
                     },
                     {
-                      "type":"object",
-                      "properties":{
-                        "nameRA":{
-                          "type":"string"
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "country": {
+                          "type": "string"
+                        },
+                        "tadig": {
+                          "type": "string"
+                        },
+                        "testNumber": {
+                          "type": "string"
                         }
-                      }                      
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "nameRA": {
+                          "type": "string"
+                        }
+                      }
                     }
                   ]
                 }
               }
             }
-          }            
+          }
         },
         "responses": {
           "200": {
@@ -138,13 +139,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
-                  "properties":{
-                    "uuid":{
-                      "type":"string"
+                  "type": "object",
+                  "properties": {
+                    "uuid": {
+                      "type": "string"
                     },
-                    "raid":{
-                      "type":"string"
+                    "raid": {
+                      "type": "string"
                     }
                   }
                 }
@@ -174,10 +175,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   }
                 }
               }
@@ -190,7 +191,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -218,25 +219,25 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   },
-                  "article_num":{
-                    "type":"string"
+                  "article_num": {
+                    "type": "string"
                   },
-                  "variables":{
-                    "type":"string"
+                  "variables": {
+                    "type": "string"
                   },
-                  "variations":{
-                    "type":"string"
+                  "variations": {
+                    "type": "string"
                   },
-                  "customText":{
-                    "type":"string"
+                  "customText": {
+                    "type": "string"
                   },
-                  "stdClauses":{
-                    "type":"string"
+                  "stdClauses": {
+                    "type": "string"
                   }
                 }
               }
@@ -249,7 +250,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -277,25 +278,25 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   },
-                  "article_num":{
-                    "type":"string"
+                  "article_num": {
+                    "type": "string"
                   },
-                  "variables":{
-                    "type":"string"
+                  "variables": {
+                    "type": "string"
                   },
-                  "variations":{
-                    "type":"string"
+                  "variations": {
+                    "type": "string"
                   },
-                  "customText":{
-                    "type":"string"
+                  "customText": {
+                    "type": "string"
                   },
-                  "stdClauses":{
-                    "type":"string"
+                  "stdClauses": {
+                    "type": "string"
                   }
                 }
               }
@@ -308,7 +309,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -336,13 +337,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   },
-                  "article_num":{
-                    "type":"string"
+                  "article_num": {
+                    "type": "string"
                   }
                 }
               }
@@ -355,7 +356,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -383,13 +384,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   },
-                  "article_num":{
-                    "type":"string"
+                  "article_num": {
+                    "type": "string"
                   }
                 }
               }
@@ -402,7 +403,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -429,10 +430,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
-                  "properties":{
-                    "raid":{
-                      "type":"string"
+                  "type": "object",
+                  "properties": {
+                    "raid": {
+                      "type": "string"
                     }
                   }
                 }
@@ -445,7 +446,7 @@
               "content": {
                 "application/json": {
                   "schema": {
-                    "type":"integer"
+                    "type": "integer"
                   }
                 }
               }
@@ -474,10 +475,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   }
                 }
               }
@@ -490,7 +491,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"integer"
+                  "type": "integer"
                 }
               }
             }
@@ -518,13 +519,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   },
-                  "article_num":{
-                    "type":"string"
+                  "article_num": {
+                    "type": "string"
                   }
                 }
               }
@@ -537,10 +538,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
-                  "properties":{
-                    "article_jsonRA":{
-                      "type":"string"
+                  "type": "object",
+                  "properties": {
+                    "article_jsonRA": {
+                      "type": "string"
                     }
                   }
                 }
@@ -570,10 +571,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "type":"object",
-                "properties":{
-                  "raid":{
-                    "type":"string"
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
                   }
                 }
               }
@@ -586,10 +587,108 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
-                  "properties":{
-                    "jsonRA":{
-                      "type":"string"
+                  "type": "object",
+                  "properties": {
+                    "jsonRA": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/queryMNO": {
+      "get": {
+        "description": "Query the Mobile Network Operator.",
+        "operationId": "queryMNO",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonRA": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/queryRAID": {
+      "get": {
+        "description": "Query the Roaming Agreement Identifier.",
+        "operationId": "queryRAID",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "raid": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonRA": {
+                      "type": "string"
                     }
                   }
                 }

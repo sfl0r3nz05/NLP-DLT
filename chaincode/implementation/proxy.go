@@ -260,6 +260,46 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             }
             return shim.Success([]byte(jsonRA))
         }
+    } else if function == "queryMNO" {
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            jsonRA, err := cc.queryMNOs(stub, org_id, raid)
+            if err != nil {
+                return shim.Error(ERRORQueryAllArticles)
+            }
+            return shim.Success([]byte(jsonRA))
+        }
+    } else if function == "qeryRAID" {
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            jsonRA, err := cc.queryRAIDs(stub, org_id, raid)
+            if err != nil {
+                return shim.Error(ERRORQueryAllArticles)
+            }
+            return shim.Success([]byte(jsonRA))
+        }
     }
     return shim.Success([]byte("OK"))
 }
@@ -837,6 +877,62 @@ func (cc *Chaincode) queryArticle(stub shim.ChaincodeStubInterface, org_id strin
 }
 
 func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) (string , error){
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return "", errors.New(ERRORVerifyingOrg)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    jsonRA, err := cc.recoverJsonRA(stub, uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQueryAllArticles)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    return jsonRA, nil
+}
+
+func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, org_id string, raid string) (string , error){
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return "", errors.New(ERRORVerifyingOrg)
+    }
+
+    uuid, err := cc.recoverUUID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    jsonRA, err := cc.recoverJsonRA(stub, uuid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQueryAllArticles)
+        return "", errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    return jsonRA, nil
+}
+
+func (cc *Chaincode) queryRAIDs(stub shim.ChaincodeStubInterface, org_id string, raid string) (string , error){
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)

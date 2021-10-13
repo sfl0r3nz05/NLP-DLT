@@ -89,7 +89,7 @@ const Register = () => {
     const jwtToken = localStorage.getItem("token");
     //Set POST request
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/registerParticipant`, { feature }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/addOrg`, { feature }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -160,7 +160,7 @@ const Register = () => {
                 >
                   <Input
                     size="large"
-                    placeholder="TELEFONICA"
+                    placeholder="E.g.: TELEFONICA"
                     type="text"
                     name="mno_name"
                     style={{ width: '90%' }}
@@ -181,7 +181,7 @@ const Register = () => {
                 >
                   <Input
                     size="large"
-                    placeholder={"SPAIN"}
+                    placeholder={"E.g.: SPAIN"}
                     type="text"
                     name="mno_country"
                     value={feature.mno_country}
@@ -202,7 +202,7 @@ const Register = () => {
                 >
                   <Input
                     size="large"
-                    placeholder="MOVISTAR"
+                    placeholder="E.g.: MOVISTAR"
                     type="text"
                     name="mno_network"
                     style={{ width: '90%' }}

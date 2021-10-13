@@ -66,6 +66,7 @@ fi
     eval "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org$ORG_NUM.el-network.com/users/Admin@org$ORG_NUM.el-network.com/msp CORE_PEER_ADDRESS=peer0.org$ORG_NUM.el-network.com:7051 CORE_PEER_LOCALMSPID=Org$(($ORG_NUM))MSP CORE_PEER_TLS_ROOTCERT_FILE=$CACERT"
     echo "Installing chaincode on peer$ORG_NUM..."
     peer chaincode install -n testcc -v 5.5 -l node -p /opt/gopath/src/github.com/chaincode/testcc
+    #peer chaincode install -n testcc -v 1.0 -p github.com/chaincode/testcc
 done
 
 # Instantiate chaincode

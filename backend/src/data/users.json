@@ -9,7 +9,8 @@
         "email": "user1@mail.com",
         "path": [
             "/",
-            "/user-data"
+            "/user-data",
+            "/agreement"
         ],
         "company": 1
     }

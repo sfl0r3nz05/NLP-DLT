@@ -23,3 +23,16 @@ services:
       - "80:3005"
     networks:
       - el-network
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ../../documentation/swagger/openapi.json:/openapi.json
+    environment:
+      SWAGGER_JSON: /openapi.json
+      BASE_URL: /documentation
+    networks:
+      - el-network
