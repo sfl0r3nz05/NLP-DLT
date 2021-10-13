@@ -119,7 +119,7 @@ const Register = () => {
       .catch(() =>
         openNotificationWithIcon(
           "error",
-          "NO SE HA PODIDO REGISTRAR EL PARTICIPANTE",
+          "UNREGISTERED MOBILE NETWORK OPERATOR",
         )
       )
       .finally(() => setLoading(false));

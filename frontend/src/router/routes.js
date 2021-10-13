@@ -18,7 +18,7 @@ export const routes = [
     key: "2",
     path: "/agreement",
     exact: true,
-    text: "MANAGE AGREEMENT",
+    text: "ROAMING AGREEMENT",
     icon: "plus",
     menuShow: true,
     body: () => <Agreement />,

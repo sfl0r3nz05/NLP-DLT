@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { Form, Icon, Input, Button, Layout, Row, Col, Alert, Spin } from "antd";
 import { AuthContext } from "../../App";
-import logoHyperledger from "./../../assets/img/hyperledger.png";
+import logoHyperledger from "./../../assets/img/Linux_Foundation_logo.png";
 
 const { Header, Content, Footer } = Layout;
 

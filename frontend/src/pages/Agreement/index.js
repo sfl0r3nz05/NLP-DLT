@@ -121,7 +121,7 @@ const Agreement = () => {
       .catch(() =>
         openNotificationWithIcon(
           "error",
-          "NO SE HA PODIDO REGISTRAR EL LOTE",
+          "UNREGISTERED ROAMING AGREEMENT",
         )
       )
       .finally(() => setLoading(false));
@@ -136,7 +136,7 @@ const Agreement = () => {
 
   return (
     <section className="CommentsWrapper">
-      <h2> AGREEMENT CREATION</h2>
+      <h2> ROAMING AGREEMENT CREATION</h2>
       <Row gutter={[16, 16]} type="flex">
         <Col xl={24} lg={24} md={24}>
           <Form
@@ -238,7 +238,7 @@ const Agreement = () => {
                     block
                     style={{ width: '100%' }}
                   >
-                    CREATE AGREEMENT
+                    CREATE ROAMING AGREEMENT
                   </Button>
                 </Form.Item>
               </Col>
