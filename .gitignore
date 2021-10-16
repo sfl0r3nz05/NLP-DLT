@@ -6,3 +6,6 @@ chaincode/test/testapp/node_modules/
 chaincode/test/testapp/wallet/
 backend/src/node_modules/
 frontend/src/node_modules/
+network/hfb/chaincode/testcc/vendor
+network/hfb/chaincode/testcc/Gopkg.lock
+network/hfb/chaincode/testcc/Gopkg.toml
