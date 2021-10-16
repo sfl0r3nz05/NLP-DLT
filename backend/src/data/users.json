@@ -13,5 +13,50 @@
             "/agreement"
         ],
         "company": 1
+    },
+    {
+        "name": "",
+        "surname": "",
+        "username": "user2",
+        "password": "password",
+        "idParticipant": "0x000000000000000000000005",
+        "img": "/public/images/user2.png",
+        "email": "user2@mail.com",
+        "path": [
+            "/",
+            "/user-data",
+            "/agreement"
+        ],
+        "company": 2
+    },
+    {
+        "name": "",
+        "surname": "",
+        "username": "user3",
+        "password": "password",
+        "idParticipant": "0x000000000000000000000005",
+        "img": "/public/images/user3.png",
+        "email": "user3@mail.com",
+        "path": [
+            "/",
+            "/user-data",
+            "/agreement"
+        ],
+        "company": 3
+    },
+    {
+        "name": "",
+        "surname": "",
+        "username": "user4",
+        "password": "password",
+        "idParticipant": "0x000000000000000000000005",
+        "img": "/public/images/user4.png",
+        "email": "user1@mail.com",
+        "path": [
+            "/",
+            "/user-data",
+            "/agreement"
+        ],
+        "company": 4
     }
 ]

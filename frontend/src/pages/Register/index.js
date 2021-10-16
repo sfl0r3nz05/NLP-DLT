@@ -64,11 +64,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [mapState, setMapState] = useState(INITIAL_STATE); //Estado por defecto
   const [feature, setFeature] = useState(initialFormState);
-
-  const handleInputChange = (value, name) => {
-    setFeature({ ...feature, [name]: value });
-    feature.role[value] = true;
-  }
+  let userDetails = JSON.parse(localStorage.getItem('user'));
 
   function handleChange(event) {
     const value = event.target.value;
@@ -78,18 +74,13 @@ const Register = () => {
     });
   }
 
-  const changeLocation = e => {
-    setMapState({ ...mapState, lat: e.latlng.lat, lng: e.latlng.lng });
-    setFeature(prevState => ({ ...prevState, location: e.latlng }));
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
     //Set POST request
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/addOrg`, { feature }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/addOrg`, { feature, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(

@@ -1,5 +1,6 @@
-//const jwt = require("jsonwebtoken");
+const path = require('path');
 const readBuffer = require("../../utils/buffer/readBuffer");
+const { FileSystemWallet } = require('fabric-network');
 
 const authentication = async (req, res) => {
   const { username, password } = req.body; //console.log(username);
@@ -12,7 +13,11 @@ const authentication = async (req, res) => {
   users = await readBuffer(selectEnv);
   user = users.find((user) => user.username.toLowerCase() === username);
 
-  if (user) { //console.log("loggin");
+  const walletPath = path.join(process.cwd(), 'wallet');
+  const wallet = new FileSystemWallet(walletPath);
+  var userExists = await wallet.exists(user.username);
+
+  if (user && userExists) {
     if (user.password === password) {
       selectEnv = 2;
       companies = await readBuffer(selectEnv);  //console.log(companies);

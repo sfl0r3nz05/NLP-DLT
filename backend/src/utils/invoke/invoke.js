@@ -11,7 +11,7 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function invoke(method, value) {
+module.exports = async function invoke(method, value, user) {
     try {
         let arg = JSON.stringify(value);
 
@@ -30,23 +30,18 @@ module.exports = async function invoke(method, value) {
         // Create a new file system based wallet for managing identities.
         const walletPath = path.join(process.cwd(), 'wallet');
         const wallet = new FileSystemWallet(walletPath);
-        //console.log(`Wallet path: ${walletPath}`);
 
         // Check to see if we've already enrolled all the users.
-        for (let i = 0; i < config.users.length; i++) {
-            var userExists = await wallet.exists(config.users[i].name);
-            if (!userExists) {
-                console.log('An identity for the user does not exist in the wallet: ', config.users[i].name);
-                console.log('Run the registerUser.js application before retrying');
-                return;
-            }
+        var userExists = await wallet.exists(user);
+        if (!userExists) {
+            console.log('An identity for the user does not exist in the wallet: ', user);
+            console.log('Run the registerUser.js application before retrying');
+            return;
         }
 
-        //let tx = config.transactions[i];
         // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
         await gateway.connect(ccp, { wallet, identity: user, discovery: { enabled: false } });
-        //console.log(gateway);
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(config.channel.channelName);
@@ -54,11 +49,10 @@ module.exports = async function invoke(method, value) {
 
         // Get the contract from the network.
         const contract = network.getContract(config.channel.contract);
-        //console.log(contract);
 
         // Submit the transaction.
         if (method) {
-            await contract.submitTransaction(method, arg.toString());
+            await contract.submitTransaction(method, arg);
             console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
         }
         // Disconnect from the gateway.
