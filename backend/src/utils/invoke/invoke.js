@@ -14,6 +14,7 @@ let ccp;
 module.exports = async function invoke(method, value) {
     try {
         let arg = JSON.stringify(value);
+
         dotenv.config();
         if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
@@ -57,7 +58,7 @@ module.exports = async function invoke(method, value) {
 
         // Submit the transaction.
         if (method) {
-            await contract.submitTransaction(method, arg);
+            await contract.submitTransaction(method, arg.toString());
             console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
         }
         // Disconnect from the gateway.
