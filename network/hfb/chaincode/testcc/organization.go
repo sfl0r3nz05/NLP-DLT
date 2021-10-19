@@ -81,23 +81,3 @@ func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name str
 	}
 	return id_org, nil
 }
-
-func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, id string)(string, error) {
-	CHANNEL_ENV := stub.GetChannelID()
-	bytes_org, err := stub.GetState(id)
-	if err != nil {
-		log.Errorf("[%s][%s][recoverOrg] GetState API Error: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
-		return "", errors.New(ERRORRecoveringOrg + err.Error())
-	}
-	if bytes_org == nil {
-		log.Errorf("[%s][%s][recoverOrg] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringOrg)
-		return "", errors.New(ERRORRecoveringOrg + err.Error())
-	}
-	org := make([]Organization, 0)
-	err = json.Unmarshal(bytes_org, &org)
-    if err != nil {
-		log.Errorf("[%s][%s][recoverRA] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
-		return "", errors.New(ERRORRecoveringOrg + err.Error())
-	}
-	return org.Mno_name, nil
-}

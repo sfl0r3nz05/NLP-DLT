@@ -6,7 +6,10 @@ const addOrg = async (req, res) => {
         let method = "addOrg";
         let value = data.feature;
         let userDetails = data.userDetails;
-        users = await invoke(method, value, userDetails.username);
+        value = await invoke(method, value, userDetails.username);
+        if (!value) {
+            res.sendStatus(403);
+        }
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

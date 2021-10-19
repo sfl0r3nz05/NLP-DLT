@@ -100,17 +100,17 @@ const Register = () => {
             "CONTAINER NOT DEPLOYED FOR THIS ENTITY"
           );
         }
-        if (res.status === 203) {
+        if (res.status === 403) {
           openNotificationWithIcon(
             "error",
-            "BLOCKCHAIN INTERACTION ERROR"
+            "IDENTITY ALREADY REGISTERED"
           );
         }
       })
       .catch(() =>
         openNotificationWithIcon(
           "error",
-          "UNREGISTERED MOBILE NETWORK OPERATOR",
+          "IDENTITY ALREADY REGISTERED",
         )
       )
       .finally(() => setLoading(false));

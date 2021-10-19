@@ -52,12 +52,15 @@ module.exports = async function invoke(method, value, user) {
 
         // Submit the transaction.
         if (method) {
-            await contract.submitTransaction(method, arg);
-            console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
+            try {
+                await contract.submitTransaction(method, arg);
+                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
+            } catch (error) {
+                return false
+            }
         }
         // Disconnect from the gateway.
         await gateway.disconnect();
-
         return true;
     } catch (error) {
         return error;

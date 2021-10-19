@@ -37,6 +37,9 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
+        if identity_exist {
+            return shim.Error(IDREGISTRY)
+        }
         if !identity_exist {
             organizationJson := Organization{}
 
@@ -88,14 +91,8 @@ func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string
     if err != nil {
         log.Errorf("[%s][queryMNOs] Error: [%v] when organization's id [%s] is recovered", CHANNEL_ENV, err.Error(), err)
         return "", err
-    }
-    log.Info(id_org)
-    mno_name, err = cc.recoverOrg(stub, id_org)
-    if err != nil {
-        log.Errorf("[%s][queryMNOs] Error: [%v] when organization's name [%s] is recovered", CHANNEL_ENV, err.Error(), err)
-        return "", err
-    }    
-    return mno_name, nil
+    }  
+    return id_org, nil
 }
 
 func main() {
