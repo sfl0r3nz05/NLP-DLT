@@ -11,9 +11,9 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function query(value) {
+module.exports = async function query(arg) {
     try {
-        let arg = JSON.stringify(value);
+        //let arg = JSON.stringify(value);
 
         dotenv.config();
         if (process.env.NETWORK != undefined) {
@@ -42,8 +42,7 @@ module.exports = async function query(value) {
 
         // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
-        await gateway.connect(ccp, { wallet, identity: user, discovery: { enabled: false } });
-        //console.log(gateway);
+        await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(config.channel.channelName);
@@ -53,9 +52,9 @@ module.exports = async function query(value) {
         //console.log(contract);
 
         // Submit the transaction.
-        if (value) {
-            console.log(`Querying value for key:`, value)
-            const result = await contract.evaluateTransaction('queryMNO', value.toString());
+        if (arg) {
+            console.log(`Querying value for key:`, arg)
+            const result = await contract.evaluateTransaction('queryMNO', arg);
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         }
         // Disconnect from the gateway.

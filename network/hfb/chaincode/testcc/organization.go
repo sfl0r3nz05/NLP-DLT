@@ -83,7 +83,6 @@ func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name str
 }
 
 func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, id string)(string, error) {
-	var org Organization
 	CHANNEL_ENV := stub.GetChannelID()
 	bytes_org, err := stub.GetState(id)
 	if err != nil {
@@ -94,7 +93,8 @@ func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, id string)(str
 		log.Errorf("[%s][%s][recoverOrg] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringOrg)
 		return "", errors.New(ERRORRecoveringOrg + err.Error())
 	}
-	//err = json.Unmarshal(bytes_org, &org)
+	org := make([]Organization, 0)
+	err = json.Unmarshal(bytes_org, &org)
     if err != nil {
 		log.Errorf("[%s][%s][recoverRA] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
 		return "", errors.New(ERRORRecoveringOrg + err.Error())

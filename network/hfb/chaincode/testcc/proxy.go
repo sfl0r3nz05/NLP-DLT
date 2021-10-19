@@ -89,6 +89,7 @@ func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string
         log.Errorf("[%s][queryMNOs] Error: [%v] when organization's id [%s] is recovered", CHANNEL_ENV, err.Error(), err)
         return "", err
     }
+    log.Info(id_org)
     mno_name, err = cc.recoverOrg(stub, id_org)
     if err != nil {
         log.Errorf("[%s][queryMNOs] Error: [%v] when organization's name [%s] is recovered", CHANNEL_ENV, err.Error(), err)
