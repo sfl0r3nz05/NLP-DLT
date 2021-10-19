@@ -14,6 +14,7 @@ let ccp;
 
 module.exports = async function invoke(method, value, user) {
     try {
+        let payload
         let arg = JSON.stringify(value);
 
         dotenv.config();
@@ -63,7 +64,7 @@ module.exports = async function invoke(method, value, user) {
         }
         // Disconnect from the gateway.
         await gateway.disconnect();
-        return true;
+        return payload.toString();
     } catch (error) {
         return error;
     }

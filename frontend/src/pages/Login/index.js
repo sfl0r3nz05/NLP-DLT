@@ -60,7 +60,7 @@ const Login = () => {
       .catch((error) => {
         let errorText =
           error.status === 404
-            ? "Usuario incorrecto"
+            ? "Register user on the blockchain"
             : error.status === 401
               ? "Contraseña incorrecta"
               : "No se pudo realizar la petición";
