@@ -12,6 +12,7 @@ services:
     volumes:
       - ../../backend:/app
       - ../hfb:/app/network/hfb
+      - ../../frontend/src/data/LER.json:/app/src/data/LER.json
     command: sh -c "npm i && npm start"
     environment:
       HOST: "${HOST_BACKEND}"

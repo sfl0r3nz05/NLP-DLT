@@ -24,6 +24,11 @@ type Dbinfo struct {
 	Sim_header_info string   				`json:"sim_header_info"`
 }
 
+// List of MNOs
+type Listofmnos struct {
+	Listmnos []string `json:"listofmnos"`
+}
+
 // Struct used to return
 type UUIDRAID struct {
 	UUID string 						`json:"uuid"`

@@ -17,11 +17,11 @@ import axios from "axios";
 import Control from 'react-leaflet-control';
 import Clipboard from 'react-clipboard.js';
 import { useGlobal } from "reactn";
+import * as lerData from "./../../data/LER.json";
 //Leaflet
 //----------------------------------------------------------------------------------------------
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import * as locData from "./../../data/companies.json";
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import './../../react-leaflet.css';
 import L, { Icon } from 'leaflet';
@@ -68,11 +68,11 @@ const Agreement = () => {
   const [loading, setLoading] = useState(false);
   const [global] = useGlobal();
 
-  const onChange = (value) => {
-    setcreateAgreement({ ...createAgreement, mno2: value }) //console.log(createAgreement);
-    //setcreateAgreement(prevValue =>({...prevValue, createAgreement:value}))
-    createAgreement.mno2 = value;
-  };
+  function onChange(value) {
+    const index = lerData.LER.findIndex(data => data.name === value)
+    const ler = lerData.LER[index].id
+    setcreateAgreement(prevValue => ({ ...prevValue, mno2: value })) //console.log(token);
+  }
 
   const onClick = () => {
     const value = global.value;
@@ -151,36 +151,7 @@ const Agreement = () => {
               <Col lg={8} md={24}>
 
                 <Form.Item
-                  label="NAME OF THE MOBILE NETWORK OPERATOR 1"
-                  name="mno1"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Introducir el nombre del Token"
-                    }
-                  ]}
-                  hasFeedback
-                >
-                  <Input
-                    size="large"
-                    placeholder={"E.g.: TELEFONICA"}
-                    suffix={
-                      <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
-                        <Tooltip title="Pegar el nombre del Token">
-                          <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
-                        </Tooltip>
-                      </Clipboard>
-                    }
-                    type="text"
-                    name="mno1"
-                    value={createAgreement.mno1}
-                    onChange={handleChange}
-                    style={{ width: '100%' }}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  label="NAME OF THE MOBILE NETWORK OPERATOR 2:"
+                  label="NAME OF THE SECOND MOBILE NETWORK OPERATOR:"
                   name="mno2"
                   rules={[
                     {
@@ -189,22 +160,15 @@ const Agreement = () => {
                     }
                   ]}
                 >
-                  <Input
+                  <AutoComplete
                     size="large"
-                    placeholder={"E.g.: ORANGE"}
-                    suffix={
-                      <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
-                        <Tooltip title="Pegar el nombre del Token">
-                          <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
-                        </Tooltip>
-                      </Clipboard>
-                    }
-                    type="text"
-                    name="mno2"
-                    value={createAgreement.mno2}
-                    onChange={handleChange}
+                    dataSource={lerData.LER.map(data => data.name)}
+                    placeholder={"Descripción del código LER"}
                     style={{ width: '100%' }}
-                  />
+                    onSelect={(data) => data}
+                    onChange={onChange}
+                  >
+                  </AutoComplete>
                 </Form.Item>
 
                 <Form.Item

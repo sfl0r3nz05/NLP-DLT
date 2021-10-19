@@ -2,6 +2,7 @@ const { FileSystemWallet, Gateway } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
+const { Console } = require('console');
 
 const configPath = path.resolve("data", 'config.json');
 const configJSON = fs.readFileSync(configPath, 'utf8');
@@ -53,8 +54,9 @@ module.exports = async function invoke(method, value, user) {
         // Submit the transaction.
         if (method) {
             try {
-                await contract.submitTransaction(method, arg);
+                payload = await contract.submitTransaction(method, arg);
                 console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
+                console.log(payload.toString())
             } catch (error) {
                 return false
             }

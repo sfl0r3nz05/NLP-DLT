@@ -25,6 +25,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     function, args := stub.GetFunctionAndParameters()
 
     if function == "addOrg" {
+        var listToReturn string
         org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
@@ -49,11 +50,13 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 return shim.Error(ERRORStoringOrg)
             }
 
-            err = cc.registerOrg(stub, organizationJson, org_id)  //call registerOrg using organization name and organization identifier
+            listToReturn, err = cc.registerOrg(stub, organizationJson, org_id)  //call registerOrg using organization name and organization identifier
             if err != nil {
                 log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
                 return shim.Error(ERRORStoringOrg)
             }
+
+            return shim.Success([]byte(listToReturn))
         }
     }   else if function == "queryMNO" {
         mno_name := args[0]
@@ -66,12 +69,13 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
     return shim.Success([]byte("OK"))
 }
 
-func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organization, org_id string) (error){
+func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organization, org_id string) (string, error){
     //record organizations
-    err := cc.recordOrg(stub, org, org_id)
+    var mno_name string
+    mno_name, err := cc.recordOrg(stub, org, org_id)
     if err != nil {
         log.Errorf("[%s][recordOrg] Error: [%v] when organization [%s] is recorded", CHANNEL_ENV, err.Error(), err)
-        return err
+        return "", err
     } 
 
     //emit event "created_org"
@@ -81,9 +85,9 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organizat
     err = cc.emitEvent(stub, event_name, "", org.Mno_name, "", timestamp, TxID, CHANNEL_ENV)
     if err != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
-        return err
+        return "", err
     }    
-    return nil
+    return mno_name, nil
 }
 
 func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string) (string , error){

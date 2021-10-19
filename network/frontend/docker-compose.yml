@@ -13,7 +13,7 @@ services:
     volumes:
       - ../../frontend:/app
       - type: bind
-        source: ../../frontend/data-volume
+        source: ../../frontend/src/data
         target: /app/src/data
     environment:
       REACT_APP_PORT: "${REACT_APP_PORT}"

@@ -40,12 +40,12 @@ func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGR
 	return false
 }
 
-func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organization, id string)(error) {
+func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organization, id string)(string, error) {
 	CHANNEL_ENV := stub.GetChannelID()
 	idBytes, err := json.Marshal(org)
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error parsing: %v", CHANNEL_ENV, ERRORParsingOrg, err.Error())
-		return errors.New(ERRORParsingID + err.Error())
+		return "", errors.New(ERRORParsingID + err.Error())
 	}
 
 	new_id := sha256.Sum256([]byte(id))
@@ -54,15 +54,16 @@ func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organizatio
 	err = stub.PutState(new_id_str, idBytes) // PuState of Client (Organization) Identity and Organtization struct
 	if err != nil {
 		log.Errorf("[%s][%s]][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
-		return errors.New(ERRORStoringIdentity + err.Error())
+		return "", errors.New(ERRORStoringIdentity + err.Error())
 	}
 
 	err = stub.PutState(org.Mno_name, []byte(new_id_str)) // PuState of Client (Organization) Name and Organtization Identity
 	if err != nil {
 		log.Errorf("[%s][%s]][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
-		return errors.New(ERRORStoringIdentity + err.Error())
+		return "", errors.New(ERRORStoringIdentity + err.Error())
 	}
-	return nil
+
+	return org.Mno_name, nil
 }
 
 func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name string)(string, error) {
