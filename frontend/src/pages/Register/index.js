@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  AutoComplete,
   Row,
   Col,
   Form,
@@ -11,16 +12,13 @@ import {
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import { roles } from "../../variables/config.js";
+import * as lerData from "./../../data/COUNTRY.json";
 //Leaflet
 //----------------------------------------------------------------------------------------------
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import 'leaflet/dist/leaflet.css';
 import './../../react-leaflet.css';
 import L, { Icon } from 'leaflet';
-import { MarkerIcon } from '../../components/map/react-leaflet-icon';
-import Search from "react-leaflet-search";
 //----------------------------------------------------------------------------------------------
 const { TextArea } = Input;
 const { Meta } = Card;
@@ -65,6 +63,12 @@ const Register = () => {
   const [mapState, setMapState] = useState(INITIAL_STATE); //Estado por defecto
   const [feature, setFeature] = useState(initialFormState);
   let userDetails = JSON.parse(localStorage.getItem('user'));
+
+  function onChange(value) {
+    const index = lerData.LER.findIndex(data => data.name === value)
+    const ler = lerData.LER[index].id
+    setFeature(prevValue => ({ ...prevValue, mno_country: value })) //console.log(token);
+  }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -170,14 +174,13 @@ const Register = () => {
                     }
                   ]}
                 >
-                  <Input
+                  <AutoComplete
                     size="large"
-                    placeholder={"E.g.: SPAIN"}
-                    type="text"
-                    name="mno_country"
-                    value={feature.mno_country}
-                    style={{ width: '90%' }}
-                    onChange={handleChange}
+                    dataSource={lerData.LER.map(data => data.name)}
+                    placeholder={"Select the country of the MNO"}
+                    style={{ width: '100%' }}
+                    onSelect={(data) => data}
+                    onChange={onChange}
                   />
                 </Form.Item>
 

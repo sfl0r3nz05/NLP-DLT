@@ -5,10 +5,8 @@ import {
   Col,
   Form,
   Input,
-  InputNumber,
   Button,
   Spin,
-  Tooltip,
   notification
 } from "antd";
 import { Icon as NewIco } from "antd";
@@ -45,6 +43,8 @@ const INITIAL_STATE = {
 }
 
 const Agreement = () => {
+
+  let userDetails = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     delete L.Icon.Default.prototype._getIconUrl;
@@ -97,7 +97,7 @@ const Agreement = () => {
     const jwtToken = localStorage.getItem("token");
     //Set POST request
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAgreementInitiation`, { createAgreement }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAgreementInitiation`, { createAgreement, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -163,7 +163,7 @@ const Agreement = () => {
                   <AutoComplete
                     size="large"
                     dataSource={lerData.LER.map(data => data.name)}
-                    placeholder={"Descripción del código LER"}
+                    placeholder={"MNO to propose the Roaming Agreement"}
                     style={{ width: '100%' }}
                     onSelect={(data) => data}
                     onChange={onChange}

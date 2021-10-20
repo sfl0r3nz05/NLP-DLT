@@ -6,7 +6,10 @@ const proposeAgreementInitiation = async (req, res) => {
         console.log(data);
         let method = "addOrg";
         let value = data.createAgreement;
-        users = await invoke(method, value);
+        value = await invoke(method, value, userDetails.username);
+        if (!value) {
+            res.sendStatus(403);
+        }
         res.sendStatus(200);
     } catch (error) {
         console.error(error);
