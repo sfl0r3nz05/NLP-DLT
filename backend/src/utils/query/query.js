@@ -11,7 +11,7 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function query(method, arg, user) {
+module.exports = async function query(method, noArgs, arg, user) {
     try {
         let result
         dotenv.config();
@@ -51,7 +51,11 @@ module.exports = async function query(method, arg, user) {
         //console.log(contract);
 
         // Submit the transaction.
-        if (arg) {
+        if (noArgs == 0) {
+            console.log(`Querying value for key:`)
+            result = await contract.evaluateTransaction(method);
+            console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+        } else if (noArgs == 1) {
             console.log(`Querying value for key:`, arg)
             result = await contract.evaluateTransaction(method, arg);
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);

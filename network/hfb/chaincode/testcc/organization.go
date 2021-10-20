@@ -82,3 +82,23 @@ func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name str
 	}
 	return id_org, nil
 }
+
+
+func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, org_id string)(string, error) {
+	CHANNEL_ENV := stub.GetChannelID()
+	var org Organization
+
+	new_id := sha256.Sum256([]byte(org_id))
+	new_id_str := hex.EncodeToString(new_id[:])
+
+	log.Info(new_id_str)
+
+	org_bytes, err := stub.GetState(new_id_str)
+	err = json.Unmarshal(org_bytes, org)
+ 	if err != nil {
+		log.Errorf("[%s][%s][recoverOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
+ 	}
+	log.Info(org)
+ 	log.Info(org.Mno_name)
+	return org.Mno_name, nil
+}

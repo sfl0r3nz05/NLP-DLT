@@ -61,7 +61,34 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 
             return shim.Success([]byte(listToReturn))
         }
-    }   else if function == "queryMNO" {
+    } else if function == "proposeAgreementInitiation" {
+            id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+            if err != nil {
+                return shim.Error(ERRORGetID)
+            }
+            if (id_org == "") {
+                return shim.Error(ERRORUserID)
+            }
+            org1 := args[0] //organization object parsed as string
+            org2 := args[1] //organization object parsed as string
+            nameRA := args[2]
+            identity_exist, err := cc.verifyOrg(stub, id_org)
+            if identity_exist {
+                uuid, raid, err := cc.startAgreement(stub, org1, org2, nameRA)
+                if err != nil {
+                    return shim.Error(ERRORAgreement)
+                }
+                identityStore, err := json.Marshal(ARTICLESIDRAID{ARTICLESID: uuid, RAID: raid})
+                if err != nil {
+                    return shim.Error(ERRORRecoverIdentity)
+                }
+                if err != nil {
+                    log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+                    return shim.Error(ERRORParsingID + err.Error())
+                }
+                return shim.Success([]byte(identityStore))
+            }
+    } else if function == "queryMNO" {
         mno_name := args[0]
         jsonRA, err := cc.queryMNOs(stub, mno_name)
         if err != nil {
@@ -92,34 +119,20 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Success([]byte("False"))            
         }
     
-    } else if function == "proposeAgreementInitiation" {
-            id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-            if err != nil {
-                return shim.Error(ERRORGetID)
-            }
-            if (id_org == "") {
-                return shim.Error(ERRORUserID)
-            }
-            org1 := args[0] //organization object parsed as string
-            org2 := args[1] //organization object parsed as string
-            nameRA := args[2]
-            identity_exist, err := cc.verifyOrg(stub, id_org)
-            if identity_exist {
-                uuid, raid, err := cc.startAgreement(stub, org1, org2, nameRA)
-                if err != nil {
-                    return shim.Error(ERRORAgreement)
-                }
-                identityStore, err := json.Marshal(ARTICLESIDRAID{ARTICLESID: uuid, RAID: raid})
-                if err != nil {
-                    return shim.Error(ERRORRecoverIdentity)
-                }
-                if err != nil {
-                    log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
-                    return shim.Error(ERRORParsingID + err.Error())
-                }
-                return shim.Success([]byte(identityStore))
-            }
+    } else if function == "recoverMNO" {
+        id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        log.Info(id_org)
+        if err != nil {
+            return shim.Error(ERRORGetID)
         }
+        if (id_org == "") {
+            return shim.Error(ERRORUserID)
+        }
+        jsonRA, err := cc.recoverOrg(stub, id_org)
+
+        return shim.Success([]byte(jsonRA))
+    }   
+
     return shim.Success([]byte("OK"))
 }
 
