@@ -3,6 +3,8 @@ package main
 import (
     "fmt"
     "errors"
+    "encoding/hex"
+    "crypto/sha256"
     "encoding/json"
     log "github.com/sirupsen/logrus"
     "github.com/hyperledger/fabric-chaincode-go/shim"
@@ -65,8 +67,32 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if err != nil {
             return shim.Error(ERRORQueryAllArticles)
         }
+
         return shim.Success([]byte(jsonRA))
-        } else if function == "proposeAgreementInitiation" {
+
+    } else if function == "queryMNOforID" {
+        id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (id_org == "") {
+            return shim.Error(ERRORUserID)
+        }
+        new_id := sha256.Sum256([]byte(id_org))
+        new_id_str := hex.EncodeToString(new_id[:])
+
+        mno_name := args[0]
+        jsonRA, err := cc.queryMNOs(stub, mno_name)
+        if err != nil {
+            return shim.Error(ERRORQueryAllArticles)
+        }
+        if (new_id_str == jsonRA){
+            return shim.Success([]byte("True"))
+        } else {
+            return shim.Success([]byte("False"))            
+        }
+    
+    } else if function == "proposeAgreementInitiation" {
             id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
             if err != nil {
                 return shim.Error(ERRORGetID)
