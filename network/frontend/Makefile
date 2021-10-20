@@ -16,7 +16,6 @@ destroy:
 	sudo rm -rf ../../frontend/src/data/LER.json
 	echo '{"LER": []}' | sudo tee LER.json >/dev/null
 	sudo mv LER.json ../../frontend/src/data/
-	sudo chmod 777 -R ../../frontend/src/data/LER.json
 
 ifeq ($(WHICHOS),Darwin)
 	rm *-e

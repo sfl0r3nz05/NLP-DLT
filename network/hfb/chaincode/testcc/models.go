@@ -30,21 +30,21 @@ type Listofmnos struct {
 }
 
 // Struct used to return
-type UUIDRAID struct {
-	UUID string 						`json:"uuid"`
+type ARTICLESIDRAID struct {
+	ARTICLESID string 					`json:"articlesid"`
 	RAID string 						`json:"raid"`
 }
 
 // Struct used to return
 type ROAMINGAGREEMNT struct {
-	UUID string 						`json:"uuid"`
+	ARTICLESID string 					`json:"articlesid"`
 	ORG1_ID string 						`json:"org1_id"`
 	ORG2_ID string 						`json:"org2_id"`
 	STATUS string						`json:"status"`
 }
 
 type LISTOFARTICLES struct {
-	UUID	string						`json:"uuid"` // name for the uuid
+	ARTICLESID string 					`json:"articlesid"`
 	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
 	STATUS string						`json:"status"`
 	articles	[]ARTICLE				`json:"articles"` // name for the articles

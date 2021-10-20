@@ -7,6 +7,7 @@ WHICHOS := $(shell uname)
 
 start:
 	./scripts/start-backend.sh
+	sudo chmod 777 -R ../../backend/src/data/LER.json
 
 stop:
 	./scripts/stop-backend.sh

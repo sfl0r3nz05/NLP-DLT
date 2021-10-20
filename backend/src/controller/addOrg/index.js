@@ -7,7 +7,8 @@ const addOrg = async (req, res) => {
         let method = "addOrg";
         let value = data.feature;
         let userDetails = data.userDetails;
-        value = await invoke(method, value, userDetails.username);
+        let noArg = 1
+        value = await invoke(method, noArg, value, "", "", userDetails.username);
         if (!value) {
             res.sendStatus(403);
         }

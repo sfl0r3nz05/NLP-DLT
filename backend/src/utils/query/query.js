@@ -11,10 +11,9 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function query(arg) {
+module.exports = async function query(method, arg, user) {
     try {
-        //let arg = JSON.stringify(value);
-
+        let result
         dotenv.config();
         if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
@@ -33,7 +32,7 @@ module.exports = async function query(arg) {
         //console.log(`Wallet path: ${walletPath}`);
 
         // Check to see if we've already enrolled the user.
-        const userExists = await wallet.exists('user1');
+        const userExists = await wallet.exists(user);
         if (!userExists) {
             console.log('An identity for the user "user1" does not exist in the wallet');
             console.log('Run the registerUser.js application before retrying');
@@ -42,7 +41,7 @@ module.exports = async function query(arg) {
 
         // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
-        await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
+        await gateway.connect(ccp, { wallet, identity: user, discovery: { enabled: false } });
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(config.channel.channelName);
@@ -54,13 +53,12 @@ module.exports = async function query(arg) {
         // Submit the transaction.
         if (arg) {
             console.log(`Querying value for key:`, arg)
-            const result = await contract.evaluateTransaction('queryMNO', arg);
+            result = await contract.evaluateTransaction(method, arg);
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         }
         // Disconnect from the gateway.
         await gateway.disconnect();
-
-        return true;
+        return result.toString();
     } catch (error) {
         return error;
     }

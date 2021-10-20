@@ -109,7 +109,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 if err != nil {
                     return shim.Error(ERRORAgreement)
                 }
-                identityStore, err := json.Marshal(UUIDRAID{UUID: uuid, RAID: raid})
+                identityStore, err := json.Marshal(ARTICLESIDRAID{ARTICLESID: uuid, RAID: raid})
                 if err != nil {
                     return shim.Error(ERRORRecoverIdentity)
                 }
@@ -168,7 +168,6 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", err
     }
     
-    //recover identifier of organization 1.
     id_org1, err := cc.recoverOrgId(stub, org1)
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)

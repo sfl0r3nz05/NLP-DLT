@@ -12,10 +12,12 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function invoke(method, value, user) {
+module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
     try {
         let payload
-        let arg = JSON.stringify(value);
+        let arg_1 = JSON.stringify(arg1);
+        let arg_2 = JSON.stringify(arg2);
+        let arg_3 = JSON.stringify(arg3);
 
         dotenv.config();
         if (process.env.NETWORK != undefined) {
@@ -53,10 +55,26 @@ module.exports = async function invoke(method, value, user) {
         const contract = network.getContract(config.channel.contract);
 
         // Submit the transaction.
-        if (method) {
+        if (noArgs == 1) {
             try {
-                payload = await contract.submitTransaction(method, arg);
-                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg}`);
+                payload = await contract.submitTransaction(method, arg_1);
+                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}`);
+                console.log(payload.toString())
+            } catch (error) {
+                return false
+            }
+        } else if (noArgs == 2) {
+            try {
+                payload = await contract.submitTransaction(method, arg_1, arg2);
+                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}`);
+                console.log(payload.toString())
+            } catch (error) {
+                return false
+            }
+        } else if (noArgs == 3) {
+            try {
+                payload = await contract.submitTransaction(method, arg1, arg2, arg3);
+                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}\t${arg_3}`);
                 console.log(payload.toString())
             } catch (error) {
                 return false

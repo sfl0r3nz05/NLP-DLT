@@ -62,20 +62,12 @@ const Agreement = () => {
   };
 
   const [createAgreement, setcreateAgreement] = useState(initialFormState);
-  const [mapState, setMapState] = useState(INITIAL_STATE); //Estado por defecto
   const [loading, setLoading] = useState(false);
-  const [global] = useGlobal();
 
   function onChange(value) {
     const index = lerData.LER.findIndex(data => data.name === value)
     const ler = lerData.LER[index].id
     setcreateAgreement(prevValue => ({ ...prevValue, mno2: value })) //console.log(token);
-  }
-
-  const onClick = () => {
-    const value = global.value;
-    createAgreement.mno1 = value;
-    setcreateAgreement(prevValue => ({ ...prevValue, mno1: value }))
   }
 
   function handleChange(event) {
@@ -84,7 +76,6 @@ const Agreement = () => {
       ...createAgreement,
       [event.target.name]: value
     });
-    //console.log(createAgreement);
   }
 
   //Create a news products
@@ -112,7 +103,7 @@ const Agreement = () => {
         if (res.status === 202) {
           openNotificationWithIcon(
             "error",
-            "BLOCKCHAIN INTERACTION ERROR"
+            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
           );
         }
       })
