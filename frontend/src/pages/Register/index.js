@@ -177,8 +177,8 @@ const Register = () => {
                   <AutoComplete
                     size="large"
                     dataSource={lerData.LER.map(data => data.name)}
-                    placeholder={"Select the country of the MNO"}
-                    style={{ width: '100%' }}
+                    placeholder={"SELECT THE COUNTRY OF THE MNO"}
+                    style={{ width: '90%' }}
                     onSelect={(data) => data}
                     onChange={onChange}
                   />

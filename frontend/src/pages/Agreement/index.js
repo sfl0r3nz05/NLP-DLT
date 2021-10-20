@@ -18,8 +18,6 @@ import { useGlobal } from "reactn";
 import * as lerData from "./../../data/LER.json";
 //Leaflet
 //----------------------------------------------------------------------------------------------
-import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import './../../react-leaflet.css';
 import L, { Icon } from 'leaflet';

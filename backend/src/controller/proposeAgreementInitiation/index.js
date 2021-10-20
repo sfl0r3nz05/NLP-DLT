@@ -4,9 +4,9 @@ const proposeAgreementInitiation = async (req, res) => {
     try {
         let data = req.body; // params from POST
         console.log(data);
-        let method = "addOrg";
+        let method = "proposeAgreementInitiation";
         let value = data.createAgreement;
-        value = await invoke(method, value, userDetails.username);
+        //value = await invoke(method, value, userDetails.username);
         if (!value) {
             res.sendStatus(403);
         }
