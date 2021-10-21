@@ -7,5 +7,14 @@
         "ra_name": "RA001",
         "ra_status": "INIT",
         "timestamp": 1634803280
+    },
+    {
+        "mno1": "TELEFONICA",
+        "country_mno1": "ES",
+        "mno2": "MNO3",
+        "country_mno2": "GB",
+        "ra_name": "RA002",
+        "ra_status": "INIT",
+        "timestamp": 1634803280
     }
 ]
