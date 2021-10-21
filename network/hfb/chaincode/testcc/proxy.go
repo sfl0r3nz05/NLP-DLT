@@ -145,12 +145,18 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organizat
         return "", err
     } 
 
-    //emit event "created_org"
     event_name := "created_org"
     timestamp := timeNow()
     TxID = stub.GetTxID()
-    err = cc.emitEvent(stub, event_name, "", org.Mno_name, "", timestamp, TxID, CHANNEL_ENV)
+    
+    eventPayload , err := json.Marshal(EVENT{ChaincodeId: CHANNEL_ENV, Txid: TxID, EventName: event_name, Mno1: org.Mno_name, Mno2: "", ArticleNo: "", Timestamp: timestamp})
     if err != nil {
+        log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+        return "", errors.New(ERRORParsingRA + err.Error())
+    }
+
+    eventErr := stub.SetEvent(event_name,eventPayload)
+    if eventErr != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "", err
     }    

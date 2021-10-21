@@ -14,7 +14,8 @@ let ccp;
 
 module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
     try {
-        let payload
+        let payLoad
+        let listener
         let arg_1 = JSON.stringify(arg1);
         let arg_2 = JSON.stringify(arg2);
         let arg_3 = JSON.stringify(arg3);
@@ -54,46 +55,45 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
         // Get the contract from the network.
         const contract = network.getContract(config.channel.contract);
 
+        await contract.addContractListener('my-contract-listener', 'created_org', (err, event, blockNumber, transactionId, status) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            event = event.payload.toString();
+            event = JSON.parse(event)
+            console.log(`Event: ${event} Block Number: ${blockNumber} Transaction ID: ${transactionId} Status: ${status}`);
+        })
+
         // Submit the transaction.
         if (noArgs == 1) {
             try {
-                payload = await contract.submitTransaction(method, arg_1);
+                payLoad = await contract.submitTransaction(method, arg_1);
                 console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}`);
-                console.log(payload.toString())
+                console.log(payLoad.toString())
             } catch (error) {
                 return false
             }
         } else if (noArgs == 2) {
             try {
-                payload = await contract.submitTransaction(method, arg_1, arg2);
+                payLoad = await contract.submitTransaction(method, arg_1, arg2);
                 console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}`);
-                console.log(payload.toString())
+                console.log(payLoad.toString())
             } catch (error) {
                 return false
             }
         } else if (noArgs == 3) {
             try {
-                payload = await contract.submitTransaction(method, arg1, arg2, arg3);
+                payLoad = await contract.submitTransaction(method, arg1, arg2, arg3);
                 console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}\t${arg_3}`);
-                console.log(payload.toString())
+                console.log(payLoad.toString())
             } catch (error) {
                 return false
             }
         }
-        listener = await contract.addContractListener('my-contract-listener', 'created_org', (err, event, blockNumber, transactionId, status) => {
-            if (err) {
-                console.log("HEREREER");
-                console.error(err);
-                return;
-            }
-            console.log("HEREREER2");
-            console.log(`Event: ${event} Block Number: ${blockNumber} Transaction ID: ${transactionId} Status: ${status}`);
-        })
-        console.log(listener);
-
         // Disconnect from the gateway.
         await gateway.disconnect();
-        return payload.toString();
+        return payLoad.toString();
     } catch (error) {
         return error;
     }
