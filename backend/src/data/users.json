@@ -10,7 +10,8 @@
         "path": [
             "/",
             "/user-data",
-            "/agreement"
+            "/agreement",
+            "/list"
         ],
         "company": 1
     },
@@ -25,7 +26,8 @@
         "path": [
             "/",
             "/user-data",
-            "/agreement"
+            "/agreement",
+            "/list"
         ],
         "company": 2
     },
@@ -40,7 +42,8 @@
         "path": [
             "/",
             "/user-data",
-            "/agreement"
+            "/agreement",
+            "/list"
         ],
         "company": 3
     },
@@ -55,7 +58,8 @@
         "path": [
             "/",
             "/user-data",
-            "/agreement"
+            "/agreement",
+            "/list"
         ],
         "company": 4
     }

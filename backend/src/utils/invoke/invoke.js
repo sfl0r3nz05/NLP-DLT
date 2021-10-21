@@ -80,6 +80,17 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
                 return false
             }
         }
+        listener = await contract.addContractListener('my-contract-listener', 'created_org', (err, event, blockNumber, transactionId, status) => {
+            if (err) {
+                console.log("HEREREER");
+                console.error(err);
+                return;
+            }
+            console.log("HEREREER2");
+            console.log(`Event: ${event} Block Number: ${blockNumber} Transaction ID: ${transactionId} Status: ${status}`);
+        })
+        console.log(listener);
+
         // Disconnect from the gateway.
         await gateway.disconnect();
         return payload.toString();

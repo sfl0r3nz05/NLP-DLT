@@ -27,7 +27,7 @@ export const routes = [
     key: "3",
     path: "/list",
     exact: true,
-    text: "MARKETPLACE",
+    text: "RAs AVAILABLE",
     icon: "unordered-list",
     menuShow: true,
     body: () => <List />,

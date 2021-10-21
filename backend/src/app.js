@@ -11,6 +11,7 @@ collectDefaultMetrics({ gcDurationBuckets: [0.1, 0.2, 0.3] });
 // -----------------------------------------------------------
 
 // Routes file
+const list = require("./routes/list.js");
 const addOrg = require("./routes/addOrg.js");
 const queryMNO = require("./routes/queryMNO.js");
 const queryRAID = require("./routes/queryRAID.js");
@@ -44,6 +45,7 @@ app.use(promMetrics);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use("/api/list", list);
 app.use("/api/addOrg", addOrg);
 app.use("/api/queryMNO", queryMNO);
 app.use("/api/queryRAID", queryRAID);

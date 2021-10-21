@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment from "moment";
 import axios from "axios";
@@ -12,13 +13,12 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 const RenderList = () => {
 
   const initialFormState = {
-    token_name: "",
-    token_sellable: "",
-    token_price: "",
-    token_state: "",
-    token_ler: "",
-    participant_name: "",
-    location: "",
+    mno1: "",
+    country_mno1: "",
+    mno2: "",
+    country_mno2: "",
+    ra_name: "",
+    ra_status: "",
     timestamp: "",
   };
   const copyState = {
@@ -39,11 +39,11 @@ const RenderList = () => {
 
   useEffect(() => {
     axios
-      .get(`https://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/list`, {
+      .get(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/list`, {
         headers: { 'Content-Type': 'application/json' }
       })
       .then(res => {
-        //console.log("res", res);
+        console.log("res", res);
         setList(res.data);
         if (res.ok) {
           return res.json();
@@ -58,18 +58,18 @@ const RenderList = () => {
 
   const columns = [
     {
-      title: "Nombre del Token", dataIndex: "token_name", key: "token_name", ...Search("token_name", "por nombre del Token"), align: 'center',
-      render: (token_name) => (
+      title: "MNO1 Name", dataIndex: "mno1", key: "mno1", ...Search("mno1", "MNO Name"), align: 'center',
+      render: (mno1) => (
         <Row>
           <Col span={20}>
-            {token_name}
+            {mno1}
           </Col>
           <Col span={4}>
             <CopyToClipboard
-              text={token_name}
+              text={mno1}
               onCopy={onCopy}
             >
-              <Tooltip title="Copiar el nombre del Token">
+              <Tooltip title="Copy the name of MNO1">
                 <Icon type="copy" style={{ color: 'black', fontSize: 'large' }} />
               </Tooltip>
             </CopyToClipboard>
@@ -78,56 +78,82 @@ const RenderList = () => {
       )
     },
     {
-      title: "Vendibilidad", dataIndex: "token_sellable", key: "token_sellable",
+      title: "MNO Country", dataIndex: "country_mno1", key: "country_mno1", ...Search("country_mno1", "por precio del Token"), align: 'center',
+      render: (country_mno1) => (
+        <Row>
+          <Col span={20}>
+            <ReactCountryFlag countryCode={country_mno1} svg style={{
+              width: '2em',
+              height: '2em',
+            }} />
+          </Col>
+        </Row>
+      )
+    },
+    {
+      title: "MNO2 Name", dataIndex: "mno2", key: "mno2", ...Search("mno2", "MNO Name"), align: 'center',
+      render: (mno2) => (
+        <Row>
+          <Col span={20}>
+            {mno2}
+          </Col>
+          <Col span={4}>
+            <CopyToClipboard
+              text={mno2}
+              onCopy={onCopy}
+            >
+              <Tooltip title="Copy the name of MNO2">
+                <Icon type="copy" style={{ color: 'black', fontSize: 'large' }} />
+              </Tooltip>
+            </CopyToClipboard>
+          </Col>
+        </Row>
+      )
+    },
+    {
+      title: "MNO Country", dataIndex: "country_mno2", key: "country_mno2", ...Search("country_mno2", "por precio del Token"), align: 'center',
+      render: (country_mno2) => (
+        <Row>
+          <Col span={20}>
+            <ReactCountryFlag countryCode={country_mno2} svg style={{
+              width: '2em',
+              height: '2em',
+            }} />
+          </Col>
+        </Row>
+      )
+    },
+    {
+      title: "RA name", dataIndex: "ra_name", key: "ra_name", ...Search("ra_name", "por precio del Token"), align: 'center',
+      render: (ra_name) => (
+        <Row>
+          <Col span={20}>
+            {ra_name}
+          </Col>
+        </Row>
+      )
+    },
+    {
+      title: "RA Status", dataIndex: "ra_status", key: "ra_status",
       filters: [
         { text: "Comprable", value: "comprable" },
         { text: "No vendible", value: "no vendible" },
       ],
       filterMultiple: false,
-      onFilter: (value, record) => record.token_sellable.toLowerCase().includes(value),
-      render(token_sellable, record) {
+      onFilter: (value, record) => record.ra_status.toLowerCase().includes(value),
+      render(ra_status, record) {
         return {
-          children: <Tag color={(token_sellable) === "comprable" ? 'green' : 'volcano'}>{token_sellable}</Tag>
+          children: <Tag color={(ra_status) === "INIT" ? 'green' : 'volcano'}>{ra_status}</Tag>
         };
       }, align: 'center'
     },
-    {
-      title: "Precio del Token (ETH)", dataIndex: "token_price", key: "token_price", ...Search("token_price", "por precio del Token"), align: 'center',
-      render: (token_price) => (
-        <Row>
-          <Col span={20}>
-            {token_price}
-          </Col>
-          <Col span={4}>
-            <CopyToClipboard
-              text={token_price}
-              onCopy={onCopy}
-            >
-              <Tooltip title="Copiar el precio del Token">
-                <Icon type="copy" style={{ color: 'black', fontSize: 'large' }} />
-              </Tooltip>
-            </CopyToClipboard>
-          </Col>
-        </Row>
-      )
-    },
-    { title: "Estado actual del Token", dataIndex: "token_state", key: "token_state", ...Search("token_state", "por estado del Token"), align: 'center' },
-    { title: "LER del Token", dataIndex: "token_ler", key: "token_ler", ...Search("token_ler", "por código LER del Token"), align: 'center' },
-    { title: "Dueño del Token", dataIndex: "participant_name", key: "participant_name", ...Search("token_ler", "por dueño del Token"), align: 'center' },
-    {
-      title: "Localización del Token", dataIndex: "location", key: "location", align: 'center',
-      render: location => <a target="popup" href={'https://www.google.com/maps/search/?api=1&query=' + location[1] + "," + location[0]}>
-        <Tooltip title="Enlace a Google Maps">
-          <Icon type="global" style={{ color: 'sky', fontSize: 'large' }} />
-        </Tooltip></a>
-    },
-    { title: "Fecha de cambio de estado", dataIndex: "timestamp", key: "timestamp", sorter: (a, b) => moment(a.timestamp).unix() - moment(b.timestamp).unix(), defaultSortOrder: "descend", ...SearchDates("timestamp"), render: date => moment(date * 1000).format("DD/MM/YYYY"), align: 'center' },
-  ]; //{'user/' + record.name}
+    { title: "Date of status change", dataIndex: "timestamp", key: "timestamp", sorter: (a, b) => moment(a.timestamp).unix() - moment(b.timestamp).unix(), defaultSortOrder: "descend", ...SearchDates("timestamp"), render: date => moment(date * 1000).format("DD/MM/YYYY"), align: 'center' },
+  ];
 
   return (
     <section className="CommentsWrapper">
-      <h2>TOKENS EN MARKETPLACE</h2>
-      <Table bordered rowKey="token_name" columns={columns} dataSource={list} />
+      <h2>MOBILE NETWORK OPERATORS IN ROAMING AGREEMENTS</h2>
+      <Table bordered rowKey="mno1" columns={columns} dataSource={list} />
     </section>
   );
 };

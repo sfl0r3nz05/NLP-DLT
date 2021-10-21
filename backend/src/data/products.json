@@ -1,0 +1,11 @@
+[
+    {
+        "mno1": "TELEFONICA",
+        "country_mno1": "ES",
+        "mno2": "ORANGE",
+        "country_mno2": "FR",
+        "ra_name": "RA001",
+        "ra_status": "INIT",
+        "timestamp": 1634803280
+    }
+]

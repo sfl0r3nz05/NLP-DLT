@@ -12,6 +12,7 @@ const proposeAgreementInitiation = async (req, res) => {
         if (queried_value == "True") {
             res.sendStatus(202);
             res.end("402");
+            return
         }
         noArgs = 3
         let arg1 = "TELEFONICA"
@@ -23,6 +24,7 @@ const proposeAgreementInitiation = async (req, res) => {
         if (!received_value) {
             res.sendStatus(403);
             res.end("403");
+            return
         }
         res.sendStatus(200);
     } catch (error) {
