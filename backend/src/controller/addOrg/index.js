@@ -1,4 +1,4 @@
-const populateJSON = require("../../utils/data/populateJSON");
+const populateLER = require("../../utils/data/populateLER");
 const invoke = require("../../utils/invoke/invoke");
 
 const addOrg = async (req, res) => {
@@ -12,7 +12,7 @@ const addOrg = async (req, res) => {
         if (!value) {
             res.sendStatus(403);
         }
-        await populateJSON(value)
+        await populateLER(value)
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

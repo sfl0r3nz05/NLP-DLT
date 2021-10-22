@@ -120,17 +120,21 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         }
     
     } else if function == "recoverMNO" {
+        var org Organization
+
         id_org, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
-        log.Info(id_org)
         if err != nil {
             return shim.Error(ERRORGetID)
         }
         if (id_org == "") {
             return shim.Error(ERRORUserID)
         }
-        jsonRA, err := cc.recoverOrg(stub, id_org)
+        org, err = cc.recoverOrg(stub, id_org)
+        if err != nil {
+            return shim.Error(ERRORRecoveringOrg)
+        }
 
-        return shim.Success([]byte(jsonRA))
+        return shim.Success([]byte(org.Mno_name))
     }   
 
     return shim.Success([]byte("OK"))
@@ -146,10 +150,9 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organizat
     } 
 
     event_name := "created_org"
-    //timestamp := timeNow()
-    TxID = stub.GetTxID()
+    timestamp := timeNow()
     
-    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org.Mno_name, Mno2: "", ArticleNo: ""})
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org.Mno_name, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return "", errors.New(ERRORParsingRA + err.Error())
@@ -159,21 +162,12 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organizat
     if eventErr != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "", err
-    }    
+    }
+
     return mno_name, nil
 }
 
-func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string) (string , error){
-    id_org, err := cc.recoverOrgId(stub, mno_name)
-    if err != nil {
-        log.Errorf("[%s][queryMNOs] Error: [%v] when organization's id [%s] is recovered", CHANNEL_ENV, err.Error(), err)
-        return "", err
-    }  
-    return id_org, nil
-}
-
 func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 string, org2 string, nameRA string) (string, string, error){
-
     var organization1 Organization
     var organization2 Organization
 
@@ -189,11 +183,21 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     
     id_org1, err := cc.recoverOrgId(stub, org1)
     if err != nil {
-        return "","", errors.New(ERRORRecoveringOrg)
+        return "", "", errors.New(ERRORRecoveringOrg)
+    }
+
+    organization1, err = cc.recoverOrg(stub, id_org1)
+    if err != nil {
+        return "", "", errors.New(ERRORRecoveringOrg)
     }
 
     //recover identifier of organization 2.
     id_org2, err := cc.recoverOrgId(stub, org2)
+    if err != nil {
+        return "","", errors.New(ERRORRecoveringOrg)
+    }
+
+    organization2, err = cc.recoverOrg(stub, id_org2)
     if err != nil {
         return "","", errors.New(ERRORRecoveringOrg)
     }
@@ -209,20 +213,40 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     }
 
     //emit event "started_ra"
-    event_name := "created_org"
-    timestamp := timeNow()
-    TxID = stub.GetTxID()
-    store := make(map[string]Organization)  //mapping string to Organtization data type
-    store["org1"] = organization1
-    store["org2"] = organization2
-    err = cc.emitEvent(stub, event_name, "", store["org1"].Mno_name, store["org2"].Mno_name, timestamp, TxID, CHANNEL_ENV)
+    event_name := "started_ra"
+    //timestamp := timeNow()
+    org1_name := organization1.Mno_name
+    log.Info(org1_name)
+    org1_country := organization1.Mno_country
+    log.Info(org1_country)
+    org2_name := organization2.Mno_name
+    log.Info(org2_name)
+    org2_country := organization2.Mno_country
+    log.Info(org2_country)
+    
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org1_name, Country1: org1_country, Mno2: org2_name, Country2: org2_country})
     if err != nil {
+        log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+        return "", "", errors.New(ERRORParsingRA + err.Error())
+    }
+
+    eventErr := stub.SetEvent(event_name, payloadAsBytes)
+    if eventErr != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "","", err
     }
 
     // Ready to return to startAgreement method
     return uuid, raid, nil
+}
+
+func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string) (string , error){
+    id_org, err := cc.recoverOrgId(stub, mno_name)
+    if err != nil {
+        log.Errorf("[%s][queryMNOs] Error: [%v] when organization's id [%s] is recovered", CHANNEL_ENV, err.Error(), err)
+        return "", err
+    }  
+    return id_org, nil
 }
 
 func main() {

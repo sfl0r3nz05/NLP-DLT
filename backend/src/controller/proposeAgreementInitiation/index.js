@@ -1,5 +1,6 @@
 const query = require("../../utils/query/query");
 const invoke = require("../../utils/invoke/invoke");
+const populatePROD = require("../../utils/data/populatePROD");
 
 const proposeAgreementInitiation = async (req, res) => {
     try {
@@ -20,12 +21,13 @@ const proposeAgreementInitiation = async (req, res) => {
         let arg3 = data.createAgreement.nameRA
         method = "proposeAgreementInitiation";
         value = data.createAgreement;
-        received_value = await invoke(method, noArgs, arg1, arg2, arg3, userDetails.username);
-        if (!received_value) {
+        eventHf = await invoke(method, noArgs, arg1, arg2, arg3, userDetails.username);
+        if (!eventHf) {
             res.sendStatus(403);
             res.end("403");
             return
         }
+        await populatePROD(eventHf)
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

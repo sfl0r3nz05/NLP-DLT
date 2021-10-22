@@ -81,12 +81,13 @@ type STDCLAUSE struct {
 
 // Event to handle events in HF
 type EVENT struct {
-	ChaincodeId	string					`json:"chaincodeid"` // Chaincode name
-	Txid string							`json:"txid"` // transtaction id
-	EventName string 	 				`json:"eventName"` // name for the event
 	Mno1 string		 	 				`json:"mno1"`   // event payload
+	Country1 string		 	 			`json:"country1"`   // event payload
 	Mno2 string 	 					`json:"mno2"`   // event payload
-	ArticleNo string					`json:"articleNo"`   // event payload
+	Country2 string		 	 			`json:"country2"`   // event payload
+	RAName string		 	 			`json:"raname"`   // event payload
+	RAStatus string						`json:"rastatus"`   // event payload
+	ArticleNo string					`json:"articleno"`   // event payload
 	Timestamp string					`json:"timestamp"`   // event payload
 }
 
