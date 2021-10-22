@@ -60,9 +60,8 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
                 console.error(err);
                 return;
             }
-            event = event.payload.toString();
-            event = JSON.parse(event)
-            console.log(`Event: ${event} Block Number: ${blockNumber} Transaction ID: ${transactionId} Status: ${status}`);
+            listener = event
+            console.log(`Event: ${event.payload.toString()} Block Number: ${blockNumber} Transaction ID: ${transactionId} Status: ${status}`);
         })
 
         // Submit the transaction.
@@ -93,6 +92,7 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
         }
         // Disconnect from the gateway.
         await gateway.disconnect();
+        console.log(listener.payload.toString());
         return payLoad.toString();
     } catch (error) {
         return error;
