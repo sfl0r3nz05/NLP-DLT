@@ -1,13 +1,12 @@
 var fs = require('fs')
 const readBuffer = require("../buffer/readBuffer");
 
-module.exports = async function populatePROD(valueToUpdate) {
+module.exports = async function updatePROD(valueToUpdate) {
     try {
         value = JSON.parse(valueToUpdate);
-        selectEnv = 4;
-        countries = await readBuffer(selectEnv);
-        country1 = countries.find((country1) => country1.name.toUpperCase() === value.country1);
-        country2 = countries.find((country2) => country2.name.toUpperCase() === value.country2);
+        selectEnv = 1; //Detect flag
+        objs = await readBuffer(selectEnv);
+        var output = objs.filter(function (obj) { return ((obj.mno1 == value.mno1 && obj.mno2 == value.mno2) || (obj.mno1 == value.mno2 && obj.mno2 == value.mno1)); })
 
         fs.readFile(__dirname + "/../../data/listOfMNOs.json", function (err, data) {
             var obj = JSON.parse(data)

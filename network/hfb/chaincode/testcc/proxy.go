@@ -86,7 +86,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                     log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
                     return shim.Error(ERRORParsingID + err.Error())
                 }
-                return shim.Success([]byte(identityStore))
+                return shim.Success(identityStore)
             }
     } else if function == "acceptAgreementInitiation" {
         org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
@@ -97,6 +97,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORUserID)
         }
         raid := args[0]
+        log.Info(raid)
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
@@ -197,8 +198,10 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     var organization2 Organization
 
     uuid := uuidgen()
+    log.Info(uuid)
 
     list_articles := cc.initRomingAgreement(stub, uuid, nameRA, "init")
+    log.Info(list_articles)
 
     err := cc.recordRAJson(stub, uuid, list_articles)
     if err != nil {
@@ -255,12 +258,15 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "","", err
     }
+    log.Info(uuid)
+    log.Info(raid)
     return uuid, raid, nil
 }
 
 func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
     var org Organization
 
+    log.Info(raid)
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)

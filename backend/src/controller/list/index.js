@@ -7,7 +7,6 @@ const list = async (req, res) => {
     const objs = await readBuffer(selectEnv);
     userInfo = JSON.parse(req.query.ID)
     mno = await recoverMNO(userInfo.username)
-    console.log(mno);
     var output = objs.filter(function (obj) { return obj.mno1 == mno || obj.mno2 == mno; })
     if (output) res.status(200).send(output);
     else res.status(404).send("Products not available");

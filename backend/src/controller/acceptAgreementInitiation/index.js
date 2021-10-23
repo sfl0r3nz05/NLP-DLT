@@ -1,16 +1,22 @@
+const recoverMNO = require("../../utils/recoverMNO");
+const updatePROD = require("../../utils/data/updatePROD");
+const readBuffer = require("../../utils/buffer/readBuffer");
 const invokeEvents = require("../../utils/invoke/invokeEvents");
 
 const acceptAgreementInitiation = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        let method = "acceptAgreementInitiation";
-        let arg1 = data.acceptAgreement.mno;
+        let userDetails = data.userDetails;
+        let mno1 = await recoverMNO(userDetails.username)
+        let mno2 = data.acceptAgreement.mno;
+        const selectEnv = 1;
+        const objs = await readBuffer(selectEnv);
+        var output = objs.filter(function (obj) { return ((obj.mno1 == mno1 && obj.mno2 == mno2) || (obj.mno1 == mno2 && obj.mno2 == mno1)); })
+        let arg1 = output[0].ra_id
         let arg2 = "";
         let arg3 = "";
-        let userDetails = data.userDetails;
         noArgs = 1
-        method = "proposeAgreementInitiation";
-        value = data.createAgreement;
+        let method = "acceptAgreementInitiation";
         let event_name = "confirmation_ra_started"
         eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, userDetails.username);
         if (!eventHf[0]) {
@@ -18,6 +24,8 @@ const acceptAgreementInitiation = async (req, res) => {
             res.end("403");
             return
         }
+        console.log(eventHf[1]);
+        //await updatePROD(eventHf[1])
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

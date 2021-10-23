@@ -22,7 +22,6 @@ const proposeAgreementInitiation = async (req, res) => {
         }
         noArgs = 3
         method = "proposeAgreementInitiation";
-        value = data.createAgreement;
         let event_name = "started_ra"
         eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, userDetails.username);
         if (!eventHf[0]) {
