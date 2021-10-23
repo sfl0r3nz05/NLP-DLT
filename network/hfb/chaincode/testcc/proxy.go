@@ -88,6 +88,25 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 }
                 return shim.Success([]byte(identityStore))
             }
+    } else if function == "acceptAgreementInitiation" {
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            err := cc.confirmAgreement(stub, org_id, raid)
+            if err != nil {
+                return shim.Error(ERRORAgreement)
+            }
+        }
     } else if function == "queryMNO" {
         mno_name := args[0]
         jsonRA, err := cc.queryMNOs(stub, mno_name)
@@ -226,7 +245,7 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     org2_name := organization2.Mno_name
     org2_country := organization2.Mno_country
     
-    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org1_name, Country1: org1_country, Mno2: org2_name, Country2: org2_country, RAName: nameRA, RAStatus: status, Timestamp: timestamp})
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org1_name, Country1: org1_country, Mno2: org2_name, Country2: org2_country, RAName: nameRA, RAID: raid, RAStatus: status, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return "", "", errors.New(ERRORParsingRA + err.Error())
@@ -237,6 +256,53 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         return "","", err
     }
     return uuid, raid, nil
+}
+
+func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
+    var org Organization
+
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    //set status as "confirmation_ra_started".
+    status := "confirmation_ra_started"
+    err = cc.updateAgreementStatus(stub, raid, status)
+    if err != nil {
+        log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    //recover organization name
+    org, err = cc.recoverOrg(stub, org_id)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    event_name := "confirmation_ra_started"
+    timestamp := timeNow()
+    
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org.Mno_name, Country1: org.Mno_country, RAID: raid, RAStatus: status, Timestamp: timestamp})
+    if err != nil {
+        log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+        return errors.New(ERRORParsingRA + err.Error())
+    }
+    eventErr := stub.SetEvent(event_name, payloadAsBytes)
+    if eventErr != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
+    return nil
 }
 
 func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string) (string , error){

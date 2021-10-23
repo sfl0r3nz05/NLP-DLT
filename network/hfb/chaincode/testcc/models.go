@@ -86,6 +86,7 @@ type EVENT struct {
 	Mno2 string 	 					`json:"mno2"`   // event payload
 	Country2 string		 	 			`json:"country2"`   // event payload
 	RAName string		 	 			`json:"raname"`   // event payload
+	RAID  string		 	 			`json:"raid"`   // event payload
 	RAStatus string						`json:"rastatus"`   // event payload
 	ArticleNo string					`json:"articleno"`   // event payload
 	Timestamp string					`json:"timestamp"`   // event payload
