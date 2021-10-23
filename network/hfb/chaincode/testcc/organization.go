@@ -42,15 +42,14 @@ func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGR
 
 func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organization, id string)(string, error) {
 	CHANNEL_ENV := stub.GetChannelID()
+	new_id := sha256.Sum256([]byte(id))
+	new_id_str := hex.EncodeToString(new_id[:])
+
 	idBytes, err := json.Marshal(org)
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error parsing: %v", CHANNEL_ENV, ERRORParsingOrg, err.Error())
 		return "", errors.New(ERRORParsingID + err.Error())
 	}
-
-	new_id := sha256.Sum256([]byte(id))
-	new_id_str := hex.EncodeToString(new_id[:])
-
 	err = stub.PutState(new_id_str, idBytes) // PuState of Client (Organization) Identity and Organtization struct
 	if err != nil {
 		log.Errorf("[%s][%s]][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
@@ -83,19 +82,22 @@ func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name str
 	return id_org, nil
 }
 
-
 func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, org_id string)(Organization, error) {
-	CHANNEL_ENV := stub.GetChannelID()
 	var org Organization
-
-	new_id := sha256.Sum256([]byte(org_id))
-	new_id_str := hex.EncodeToString(new_id[:])
-
-	org_bytes, err := stub.GetState(new_id_str)
-	err = json.Unmarshal(org_bytes, org)
- 	if err != nil {
-		log.Errorf("[%s][%s][recoverOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
- 	}
-
+	CHANNEL_ENV := stub.GetChannelID()
+	org_bytes, err := stub.GetState(org_id)
+	if err != nil {
+		log.Errorf("[%s][%s][recoverOrg] GetState API Error: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
+		return org, errors.New(ERRORRecoveringOrg + err.Error())
+	}
+	if org_bytes == nil {
+		log.Errorf("[%s][%s][recoverOrg] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringOrg)
+		return org, errors.New(ERRORRecoveringOrg + err.Error())
+	}
+	err = json.Unmarshal(org_bytes, &org)
+    if err != nil {
+		log.Errorf("[%s][%s][recoverRA] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
+		return org, errors.New(ERRORRecoveringOrg + err.Error())
+	}
 	return org, nil
 }

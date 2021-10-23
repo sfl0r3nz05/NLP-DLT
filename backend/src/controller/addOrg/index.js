@@ -1,5 +1,5 @@
 const populateLER = require("../../utils/data/populateLER");
-const invoke = require("../../utils/invoke/invoke");
+const invokeEvents = require("../../utils/invoke/invokeEvents");
 
 const addOrg = async (req, res) => {
     try {
@@ -8,11 +8,12 @@ const addOrg = async (req, res) => {
         let value = data.feature;
         let userDetails = data.userDetails;
         let noArg = 1
-        value = await invoke(method, noArg, value, "", "", userDetails.username);
+        let event_name = "created_org"
+        value, eventHf = await invokeEvents(method, event_name, noArg, value, "", "", userDetails.username);
         if (!value) {
             res.sendStatus(403);
         }
-        await populateLER(value)
+        await populateLER(value.mno_name)
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

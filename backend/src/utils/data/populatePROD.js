@@ -1,22 +1,27 @@
 var fs = require('fs')
+const readBuffer = require("../buffer/readBuffer");
 
 module.exports = async function populatePROD(valueToUpdate) {
     try {
-        console.log(valueToUpdate);
-        fs.readFile(__dirname + "/../../data/products.json", function (err, data) {
+        value = JSON.parse(valueToUpdate);
+        selectEnv = 4;
+        countries = await readBuffer(selectEnv);
+        country1 = countries.find((country1) => country1.name.toUpperCase() === value.country1);
+        country2 = countries.find((country2) => country2.name.toUpperCase() === value.country2);
+
+        fs.readFile(__dirname + "/../../data/listOfMNOs.json", function (err, data) {
             var obj = JSON.parse(data)
             obj.push({
-                "mno1": "TELEFONICA",
-                "country_mno1": "ES",
-                "mno2": "ORANGE",
-                "country_mno2": "FR",
-                "ra_name": "RA001",
-                "ra_status": "INIT",
-                "timestamp": 1634803280
+                "mno1": value.mno1,
+                "country_mno1": country1.flag,
+                "mno2": value.mno2,
+                "country_mno2": country2.flag,
+                "ra_name": value.raname,
+                "ra_status": value.rastatus,
+                "timestamp": value.timestamp
             })
             var json = JSON.stringify(obj)
-            console.log(json);
-            fs.writeFile(__dirname + "/../../data/products.json", json, function (err) {
+            fs.writeFile(__dirname + "/../../data/listOfMNOs.json", json, function (err) {
                 if (err) throw err;
             })
         })

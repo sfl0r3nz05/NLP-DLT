@@ -1,33 +1,36 @@
 const query = require("../../utils/query/query");
-const invoke = require("../../utils/invoke/invoke");
+const invokeEvents = require("../../utils/invoke/invokeEvents");
 const populatePROD = require("../../utils/data/populatePROD");
+const recoverMNO = require("../../utils/recoverMNO");
 
 const proposeAgreementInitiation = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        let method = "queryMNOforID";
-        let noArgs = 1
-        let arg0 = data.createAgreement.mno2;
         let userDetails = data.userDetails;
-        queried_value = await query(method, noArgs, arg0, userDetails.username);
-        if (queried_value == "True") {
+        let mno1 = await recoverMNO(userDetails.username)
+        let noArgs = 1
+        let arg0 = mno1
+        let method = "queryMNOforID";
+        queried_value1 = await query(method, noArgs, arg0, userDetails.username);
+        if (queried_value1 == "FALSE") {
             res.sendStatus(202);
             res.end("402");
             return
         }
-        noArgs = 3
-        let arg1 = "TELEFONICA"
+        let arg1 = mno1
         let arg2 = data.createAgreement.mno2
         let arg3 = data.createAgreement.nameRA
+        noArgs = 3
         method = "proposeAgreementInitiation";
         value = data.createAgreement;
-        eventHf = await invoke(method, noArgs, arg1, arg2, arg3, userDetails.username);
-        if (!eventHf) {
+        let event_name = "started_ra"
+        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, userDetails.username);
+        if (!eventHf[0]) {
             res.sendStatus(403);
             res.end("403");
             return
         }
-        await populatePROD(eventHf)
+        await populatePROD(eventHf[1])
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

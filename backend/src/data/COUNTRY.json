@@ -1,0 +1,26 @@
+[
+    {
+        "name": "CANADA",
+        "flag": "CA"
+    },
+    {
+        "name": "US",
+        "flag": "US"
+    },
+    {
+        "name": "SPAIN",
+        "flag": "ES"
+    },
+    {
+        "name": "UK",
+        "flag": "GB"
+    },
+    {
+        "name": "FRANCE",
+        "flag": "FR"
+    },
+    {
+        "name": "LIBYA",
+        "flag": "LY"
+    }
+]

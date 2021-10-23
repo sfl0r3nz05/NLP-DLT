@@ -8,7 +8,8 @@ WHICHOS := $(shell uname)
 start:
 	./scripts/start-backend.sh
 	sudo chmod 777 -R ../../backend/src/data/LER.json
-	sudo chmod 777 -R ../../backend/src/data/products.json
+	sudo chmod 777 -R ../../backend/src/data/listOfMNOs.json
+	sudo chmod 777 -R ../../backend/src/data/COUNTRY.json
 
 stop:
 	./scripts/stop-backend.sh
@@ -17,10 +18,10 @@ destroy:
 	./scripts/destroy-backend.sh
 	sudo rm -rf ../../backend/src/wallet
 	sudo rm -rf ../../backend/network
-	sudo rm -rf ../../backend/src/data/products.json
-	echo '[]' | sudo tee products.json >/dev/null
-	sudo mv products.json ../../backend/src/data/
-	sudo chmod 777 -R ../../backend/src/data/products.json
+	sudo rm -rf ../../backend/src/data/listOfMNOs.json
+	echo '[]' | sudo tee listOfMNOs.json >/dev/null
+	sudo mv listOfMNOs.json ../../backend/src/data/
+	sudo chmod 777 -R ../../backend/src/data/listOfMNOs.json
 
 ifeq ($(WHICHOS),Darwin)
 	rm *-e

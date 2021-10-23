@@ -129,7 +129,11 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if (id_org == "") {
             return shim.Error(ERRORUserID)
         }
-        org, err = cc.recoverOrg(stub, id_org)
+
+        new_id := sha256.Sum256([]byte(id_org))
+        new_id_str := hex.EncodeToString(new_id[:])
+
+        org, err = cc.recoverOrg(stub, new_id_str)
         if err != nil {
             return shim.Error(ERRORRecoveringOrg)
         }
@@ -151,19 +155,17 @@ func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organizat
 
     event_name := "created_org"
     timestamp := timeNow()
-    
     payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org.Mno_name, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return "", errors.New(ERRORParsingRA + err.Error())
     }
-
+    
     eventErr := stub.SetEvent(event_name, payloadAsBytes)
     if eventErr != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "", err
     }
-
     return mno_name, nil
 }
 
@@ -214,29 +216,22 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
 
     //emit event "started_ra"
     event_name := "started_ra"
-    //timestamp := timeNow()
+    timestamp := timeNow()
     org1_name := organization1.Mno_name
-    log.Info(org1_name)
     org1_country := organization1.Mno_country
-    log.Info(org1_country)
     org2_name := organization2.Mno_name
-    log.Info(org2_name)
     org2_country := organization2.Mno_country
-    log.Info(org2_country)
     
-    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org1_name, Country1: org1_country, Mno2: org2_name, Country2: org2_country})
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org1_name, Country1: org1_country, Mno2: org2_name, Country2: org2_country, RAName: nameRA, RAStatus: status, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return "", "", errors.New(ERRORParsingRA + err.Error())
     }
-
     eventErr := stub.SetEvent(event_name, payloadAsBytes)
     if eventErr != nil {
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "","", err
     }
-
-    // Ready to return to startAgreement method
     return uuid, raid, nil
 }
 

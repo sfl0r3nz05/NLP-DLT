@@ -1,22 +1,28 @@
 {
     "LER": [
         {
-            "name": "CANADA"
+            "name": "CANADA",
+            "flag": ""
         },
         {
-            "name": "US"
+            "name": "US",
+            "flag": ""
         },
         {
-            "name": "SPAIN"
+            "name": "SPAIN",
+            "flag": ""
         },
         {
-            "name": "UK"
+            "name": "UK",
+            "flag": ""
         },
         {
-            "name": "FRANCE"
+            "name": "FRANCE",
+            "flag": ""
         },
         {
-            "name": "LIBYA"
+            "name": "LIBYA",
+            "flag": ""
         }
     ]
 }

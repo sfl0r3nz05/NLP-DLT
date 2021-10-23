@@ -15,6 +15,9 @@ module.exports = async function readBuffer(selectEnv) {
     if (selectEnv === 3) {
       BUFFERPATH = process.env.PATH_TO_BUFFER_USERS;
     }
+    if (selectEnv === 4) {
+      BUFFERPATH = process.env.PATH_TO_BUFFER_COUNTRY;
+    }
     const data = await readFile(
       __dirname + `${BUFFERPATH}`,
       "utf8"
