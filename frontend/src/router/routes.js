@@ -1,8 +1,9 @@
 import React from "react";
 import List from "../pages/List";
-import Agreement from "../pages/Agreement";
 import UserData from "../pages/UserData";
 import Register from "../pages/Register";
+import Agreement from "../pages/Agreement";
+import AcceptAgreement from "../pages/AcceptAgreement";
 
 export const routes = [
   {
@@ -25,6 +26,15 @@ export const routes = [
   },
   {
     key: "3",
+    path: "/acceptagreement",
+    exact: true,
+    text: "ACCEPT RA",
+    icon: "plus",
+    menuShow: true,
+    body: () => <AcceptAgreement />,
+  },
+  {
+    key: "4",
     path: "/list",
     exact: true,
     text: "RAs AVAILABLE",

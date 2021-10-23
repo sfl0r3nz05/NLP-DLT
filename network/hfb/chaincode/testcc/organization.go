@@ -92,7 +92,8 @@ func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, org_id string)
 	}
 	if org_bytes == nil {
 		log.Errorf("[%s][%s][recoverOrg] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringOrg)
-		return org, errors.New(ERRORRecoveringOrg + err.Error())
+		org = Organization{Mno_name:"EMPTY"}
+		return org, nil
 	}
 	err = json.Unmarshal(org_bytes, &org)
     if err != nil {

@@ -12,6 +12,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const RenderList = () => {
 
+  let userDetails = JSON.parse(localStorage.getItem('user'));
+
   const initialFormState = {
     mno1: "",
     country_mno1: "",
@@ -40,6 +42,7 @@ const RenderList = () => {
   useEffect(() => {
     axios
       .get(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/list`, {
+        params: { ID: userDetails },
         headers: { 'Content-Type': 'application/json' }
       })
       .then(res => {

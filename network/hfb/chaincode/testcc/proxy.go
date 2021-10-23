@@ -137,6 +137,10 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if err != nil {
             return shim.Error(ERRORRecoveringOrg)
         }
+        if(org == Organization{Mno_name:"EMPTY"}){
+            log.Info("TRUE")
+            return shim.Success([]byte("EMPTY"))    
+        }
 
         return shim.Success([]byte(org.Mno_name))
     }   

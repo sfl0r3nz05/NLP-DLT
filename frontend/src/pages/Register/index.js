@@ -34,12 +34,6 @@ notification.config({
   duration: 1.5,
 });
 
-const INITIAL_STATE = {
-  lat: 43.2612,
-  lng: -1.779,
-  zoom: 12
-}
-
 const initialFormState = {
   mno_name: "",
   mno_country: "",
@@ -60,14 +54,13 @@ const Register = () => {
   const formItemLayout = {};
 
   const [loading, setLoading] = useState(false);
-  const [mapState, setMapState] = useState(INITIAL_STATE); //Estado por defecto
   const [feature, setFeature] = useState(initialFormState);
   let userDetails = JSON.parse(localStorage.getItem('user'));
 
   function onChange(value) {
     const index = lerData.LER.findIndex(data => data.name === value)
     const ler = lerData.LER[index].id
-    setFeature(prevValue => ({ ...prevValue, mno_country: value })) //console.log(token);
+    setFeature(prevValue => ({ ...prevValue, mno_country: value }))
   }
 
   function handleChange(event) {

@@ -10,16 +10,16 @@ const proposeAgreementInitiation = async (req, res) => {
         let mno1 = await recoverMNO(userDetails.username)
         let noArgs = 1
         let arg0 = mno1
+        let arg1 = mno1
+        let arg2 = data.createAgreement.mno2
+        let arg3 = data.createAgreement.nameRA
         let method = "queryMNOforID";
         queried_value1 = await query(method, noArgs, arg0, userDetails.username);
-        if (queried_value1 == "FALSE") {
+        if (queried_value1 == "FALSE" || arg0 == arg2) {
             res.sendStatus(202);
             res.end("402");
             return
         }
-        let arg1 = mno1
-        let arg2 = data.createAgreement.mno2
-        let arg3 = data.createAgreement.nameRA
         noArgs = 3
         method = "proposeAgreementInitiation";
         value = data.createAgreement;
