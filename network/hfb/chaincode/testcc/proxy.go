@@ -109,6 +109,31 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 return shim.Error(ERRORAgreement)
             }
         }
+    } else if function == "proposeAddArticle" {
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        raidQuotes := trimQuote(raid)
+        article_num := args[1]
+        variables := args[2]
+        variations := args[3]
+        customTexts := args[4]
+        stdClauses := args[5]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variables, variations, customTexts, stdClauses)
+            if err != nil {
+                return shim.Error(ERRORAddArticle)
+            }
+        }
     } else if function == "queryMNO" {
         mno_name := args[0]
         jsonRA, err := cc.queryMNOs(stub, mno_name)
@@ -298,6 +323,96 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     timestamp := timeNow()
     
     payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org.Mno_name, Country1: org.Mno_country, RAID: raid, RAStatus: status, Timestamp: timestamp})
+    if err != nil {
+        log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+        return errors.New(ERRORParsingRA + err.Error())
+    }
+    eventErr := stub.SetEvent(event_name, payloadAsBytes)
+    if eventErr != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
+    return nil
+}
+
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
+
+    var variable_list []VARIABLE
+    var variation_list []VARIATION
+    var customText_list []CUSTOMTEXT
+    var stdClause_list []STDCLAUSE
+    var organization Organization
+    
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status := "confirmation_ra_started"
+    err = cc.verifyAgreementStatus(stub, raid, valid_status)
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    uuid, err := cc.recoverARTICLESID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    articles_status := "init"
+    err = cc.verifyArticlesStatus(stub, uuid, articles_status)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
+    }
+
+    article_status := "added_article"
+    json.Unmarshal([]byte(variables), &variable_list)
+    json.Unmarshal([]byte(variations), &variation_list)
+    json.Unmarshal([]byte(customTexts), &customText_list)
+    json.Unmarshal([]byte(stdClauses), &stdClause_list)
+
+    err = cc.setArticle(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
+    if err != nil {
+        log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        return errors.New(ERRORaddingArticle + err.Error())
+    }
+
+    update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
+    err = cc.setArticlesStatus(stub, uuid, update_articles_status)
+    if err != nil {
+        log.Errorf("[%s][setArticlesStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    status_RA := "ra_negotiating"  //set status as "drafting_agreement".
+    err = cc.updateAgreementStatus(stub, raid, status_RA)
+    if err != nil {
+        log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
+        return errors.New(ERRORUpdatingStatus + err.Error())
+    }
+
+    organization, err = cc.recoverOrg(stub, org_id)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    event_name := "proposed_add_article"    //emit event "proposed_add_article"
+    timestamp := timeNow()
+    org_name := organization.Mno_name
+
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org_name, RAID: raid, RAStatus: status_RA, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return errors.New(ERRORParsingRA + err.Error())

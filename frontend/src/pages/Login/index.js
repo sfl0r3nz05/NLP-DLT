@@ -144,7 +144,7 @@ const Login = () => {
           </Row>
         </Content>
         <Footer style={{ textAlign: "center" }}>
-          Linux Foundation 2021 Created by sfigueroa
+          <a href="https://www.linuxfoundation.org/" target="_blank">Linux Foundation 2021</a>, Created as part of the Project <a href="https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements" target="_blank">NLP-DLT</a>
         </Footer>
       </Layout>
     </div>

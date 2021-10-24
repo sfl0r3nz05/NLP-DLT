@@ -4,6 +4,7 @@ import UserData from "../pages/UserData";
 import RegisterMNO from "../pages/RegisterMNO";
 import Agreement from "../pages/Agreement";
 import AcceptAgreement from "../pages/AcceptAgreement";
+import AddArticle from "../pages/AddArticle";
 
 export const routes = [
   {
@@ -35,6 +36,15 @@ export const routes = [
   },
   {
     key: "4",
+    path: "/addarticle",
+    exact: true,
+    text: "PROPOSE ARTICLE",
+    icon: "plus",
+    menuShow: true,
+    body: () => <AddArticle />,
+  },
+  {
+    key: "5",
     path: "/list",
     exact: true,
     text: "RAs AVAILABLE",
@@ -43,7 +53,7 @@ export const routes = [
     body: () => <List />,
   },
   {
-    key: "4",
+    key: "6",
     path: "/user-data",
     exact: true,
     text: "DETALLES DEL USUARIO",

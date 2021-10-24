@@ -30,10 +30,13 @@ const acceptAgreementInitiation = async (req, res) => {
         let arg1 = output[0].ra_id
         let arg2 = "";
         let arg3 = "";
+        let arg4 = "";
+        let arg5 = "";
+        let arg6 = "";
         noArgs = 1
         let method = "acceptAgreementInitiation";
         let event_name = "confirmation_ra_started"
-        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, userDetails.username);
+        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, userDetails.username);
         if (!eventHf[0]) {
             res.sendStatus(403);
             res.end("403");

@@ -132,6 +132,16 @@ const RenderList = () => {
           <Col span={20}>
             {ra_name}
           </Col>
+          <Col span={4}>
+            <CopyToClipboard
+              text={ra_name}
+              onCopy={onCopy}
+            >
+              <Tooltip title="Copy name of Roaming Agreement">
+                <Icon type="copy" style={{ color: 'black', fontSize: 'large' }} />
+              </Tooltip>
+            </CopyToClipboard>
+          </Col>
         </Row>
       )
     },

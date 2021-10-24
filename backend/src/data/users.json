@@ -12,6 +12,7 @@
             "/user-data",
             "/agreement",
             "/acceptagreement",
+            "/addarticle",
             "/list"
         ],
         "company": 1
@@ -29,6 +30,7 @@
             "/user-data",
             "/agreement",
             "/acceptagreement",
+            "/addarticle",
             "/list"
         ],
         "company": 2
@@ -46,6 +48,7 @@
             "/user-data",
             "/agreement",
             "/acceptagreement",
+            "/addarticle",
             "/list"
         ],
         "company": 3
@@ -63,6 +66,7 @@
             "/user-data",
             "/agreement",
             "/acceptagreement",
+            "/addarticle",
             "/list"
         ],
         "company": 4
