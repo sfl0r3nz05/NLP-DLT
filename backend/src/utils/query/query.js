@@ -29,13 +29,13 @@ module.exports = async function query(method, noArgs, arg, user) {
         // Create a new file system based wallet for managing identities.
         const walletPath = path.join(process.cwd(), 'wallet');
         const wallet = new FileSystemWallet(walletPath);
-        console.log(`Wallet path: ${walletPath}`);
+        //console.log(`Wallet path: ${walletPath}`);
 
         // Check to see if we've already enrolled the user.
         const userExists = await wallet.exists(user);
         if (!userExists) {
-            console.log('An identity for the user "user1" does not exist in the wallet');
-            console.log('Run the registerUser.js application before retrying');
+            //console.log('An identity for the user "user1" does not exist in the wallet');
+            //console.log('Run the registerUser.js application before retrying');
             return;
         }
 
@@ -48,17 +48,17 @@ module.exports = async function query(method, noArgs, arg, user) {
 
         // Get the contract from the network.
         const contract = network.getContract(config.channel.contract);
-        console.log(contract);
+        //console.log(contract);
 
         // Submit the transaction.
         if (noArgs == 0) {
-            console.log(`Querying value for key:`)
+            //console.log(`Querying value for key:`)
             result = await contract.evaluateTransaction(method);
-            console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+            //console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         } else if (noArgs == 1) {
-            console.log(`Querying value for key:`, arg)
+            //console.log(`Querying value for key:`, arg)
             result = await contract.evaluateTransaction(method, arg);
-            console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+            //console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
         }
         // Disconnect from the gateway.
         await gateway.disconnect();

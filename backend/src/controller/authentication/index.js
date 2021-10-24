@@ -3,7 +3,7 @@ const readBuffer = require("../../utils/buffer/readBuffer");
 const { FileSystemWallet } = require('fabric-network');
 
 const authentication = async (req, res) => {
-  const { username, password } = req.body; console.log(username);
+  const { username, password } = req.body;
   let selectEnv;
   let companies;
   let company;
@@ -20,7 +20,7 @@ const authentication = async (req, res) => {
   if (user && userExists) {
     if (user.password === password) {
       selectEnv = 2;
-      companies = await readBuffer(selectEnv); console.log(companies);
+      companies = await readBuffer(selectEnv);
       company = companies.companies.find((company) => company.id === user.company);
       const payload = {
         username: user.username,

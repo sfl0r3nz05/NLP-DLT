@@ -46,7 +46,6 @@ const RenderList = () => {
         headers: { 'Content-Type': 'application/json' }
       })
       .then(res => {
-        console.log("res", res);
         setList(res.data);
         if (res.ok) {
           return res.json();

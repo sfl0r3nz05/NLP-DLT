@@ -13,6 +13,10 @@ const acceptAgreementInitiation = async (req, res) => {
             res.sendStatus(201);
             res.end("201");
             return
+        } else if (mno1 == mno2) {
+            res.sendStatus(202);
+            res.end("202");
+            return
         }
         const selectEnv = 1;
         const objs = await readBuffer(selectEnv);

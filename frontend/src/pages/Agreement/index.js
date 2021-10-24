@@ -68,7 +68,6 @@ const Agreement = () => {
 
   //Create a news products
   const handleSubmit = (e) => {
-    console.log(e);
     e.preventDefault();
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
