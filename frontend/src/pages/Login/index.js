@@ -132,7 +132,7 @@ const Login = () => {
                       htmlType="submit"
                       className="login-form-button"
                     >
-                      Entrar
+                      LOGIN
                     </Button>
                   </Spin>
                   {data.errorMessage && (
