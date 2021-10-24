@@ -97,13 +97,14 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORUserID)
         }
         raid := args[0]
-        log.Info(raid)
+        raidQuotes := trimQuote(raid)
+
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.confirmAgreement(stub, org_id, raid)
+            err := cc.confirmAgreement(stub, org_id, raidQuotes)
             if err != nil {
                 return shim.Error(ERRORAgreement)
             }
@@ -158,7 +159,6 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORRecoveringOrg)
         }
         if(org == Organization{Mno_name:"EMPTY"}){
-            log.Info("TRUE")
             return shim.Success([]byte("EMPTY"))    
         }
 
@@ -198,12 +198,11 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     var organization2 Organization
 
     uuid := uuidgen()
-    log.Info(uuid)
+    new_id := sha256.Sum256([]byte(uuid))
+    id_uuid := hex.EncodeToString(new_id[:])
+    list_articles := cc.initRomingAgreement(stub, id_uuid, nameRA, "init")
 
-    list_articles := cc.initRomingAgreement(stub, uuid, nameRA, "init")
-    log.Info(list_articles)
-
-    err := cc.recordRAJson(stub, uuid, list_articles)
+    err := cc.recordRAJson(stub, id_uuid, list_articles)
     if err != nil {
         log.Errorf("[%s][startAgreement] Error: [%v] when [recordRAJson] is stored", CHANNEL_ENV, err.Error())
         return "","", err
@@ -234,7 +233,7 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
     status := "started_ra"
 
     //set roaming agreement
-    raid, err := cc.setAgreement(stub, id_org1, id_org2, uuid, status)
+    raid, err := cc.setAgreement(stub, id_org1, id_org2, id_uuid, status)
     if err != nil {
         log.Errorf("[%s][startAgreement] Error: [%v] when [setAgreement] is created", CHANNEL_ENV, err.Error())
         return "","", err
@@ -258,15 +257,14 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
         log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
         return "","", err
     }
-    log.Info(uuid)
-    log.Info(raid)
-    return uuid, raid, nil
+
+    return id_uuid, raid, nil
 }
 
 func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
     var org Organization
+    var RA ROAMINGAGREEMNT
 
-    log.Info(raid)
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
@@ -288,7 +286,9 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     }
 
     //recover organization name
-    org, err = cc.recoverOrg(stub, org_id)
+    new_id := sha256.Sum256([]byte(org_id))
+    new_id_str := hex.EncodeToString(new_id[:])
+    org, err = cc.recoverOrg(stub, new_id_str)
     if err != nil {
         log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
         return errors.New(ERRORRecoveringOrg + err.Error())

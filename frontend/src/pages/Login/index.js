@@ -62,8 +62,8 @@ const Login = () => {
           error.status === 404
             ? "Register user on the blockchain"
             : error.status === 401
-              ? "Contraseña incorrecta"
-              : "No se pudo realizar la petición";
+              ? "Wrong password"
+              : "You cannot make the request";
         setData({
           ...data,
           isSubmitting: false,

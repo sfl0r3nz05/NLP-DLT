@@ -35,7 +35,6 @@ const UserData = () => {
       ...userinfo,
       [event.target.name]: value
     });
-    //console.log(userinfo);
   }
 
   //Create a news products
@@ -200,7 +199,7 @@ const UserData = () => {
                     style={{ width: '55%' }}
                   >
                     CAMBIAR CONTRASEÑA
-                       </Button>
+                  </Button>
                 </Form.Item>
               </Col>
               <Col lg={16} md={24}></Col>

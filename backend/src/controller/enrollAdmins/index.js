@@ -16,8 +16,8 @@ const enrollAdmins = async (req, res) => {
   try {
     console.log("ccpPath");
     dotenv.config();
-    if ( process.env.NETWORK != undefined) {
-        config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
+    if (process.env.NETWORK != undefined) {
+      config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
     }
     ccpPath = path.resolve("data", config.connection_profile);
     ccpJSON = fs.readFileSync(ccpPath, 'utf8');
@@ -31,24 +31,24 @@ const enrollAdmins = async (req, res) => {
     // For each organization in the config file, get the CA from the connection profile.
     const orgs = Object.keys(config.organizations);
     for (let i = 0; i < orgs.length; i++) {
-        // Check if organization is present in connection profile and if it contains at least one CA.
-        if (ccp.organizations[orgs[i]].certificateAuthorities && ccp.organizations[orgs[i]].certificateAuthorities.length != 0) {
-            // Create a new CA client for interacting with the CA.
-            const caURL = ccp.certificateAuthorities[ccp.organizations[orgs[i]].certificateAuthorities[0]].url;
-            const ca = new FabricCAServices(caURL);
+      // Check if organization is present in connection profile and if it contains at least one CA.
+      if (ccp.organizations[orgs[i]].certificateAuthorities && ccp.organizations[orgs[i]].certificateAuthorities.length != 0) {
+        // Create a new CA client for interacting with the CA.
+        const caURL = ccp.certificateAuthorities[ccp.organizations[orgs[i]].certificateAuthorities[0]].url;
+        const ca = new FabricCAServices(caURL);
 
-            // Check to see if we've already enrolled the admin user for this CA.
-            const adminExists = await wallet.exists('admin' + orgs[i]);
-            if (adminExists) {
-                console.log('An identity for the admin user already exists in the wallet: admin', orgs[i]);
-                return;
-            }
-            // Enroll the admin user, and import the new identity into the wallet.
-            const enrollment = await ca.enroll({ enrollmentID: 'admin', enrollmentSecret: 'adminpw' });
-            const identity = X509WalletMixin.createIdentity(config.organizations[orgs[i]].MSP, enrollment.certificate, enrollment.key.toBytes());
-            wallet.import('admin' + orgs[i], identity);
-            console.log('Successfully enrolled admin user and imported it into the wallet: admin' + orgs[i]);
+        // Check to see if we've already enrolled the admin user for this CA.
+        const adminExists = await wallet.exists('admin' + orgs[i]);
+        if (adminExists) {
+          console.log('An identity for the admin user already exists in the wallet: admin', orgs[i]);
+          return;
         }
+        // Enroll the admin user, and import the new identity into the wallet.
+        const enrollment = await ca.enroll({ enrollmentID: 'admin', enrollmentSecret: 'adminpw' });
+        const identity = X509WalletMixin.createIdentity(config.organizations[orgs[i]].MSP, enrollment.certificate, enrollment.key.toBytes());
+        wallet.import('admin' + orgs[i], identity);
+        console.log('Successfully enrolled admin user and imported it into the wallet: admin' + orgs[i]);
+      }
     }
     res.sendStatus(200);
   } catch (error) {

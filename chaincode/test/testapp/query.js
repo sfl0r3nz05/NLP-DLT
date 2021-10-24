@@ -21,10 +21,10 @@ async function main() {
     try {
 
         dotenv.config();
-        if ( process.env.NETWORK != undefined) {
+        if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
         }
-        if ( process.env.CHANNEL != undefined) {
+        if (process.env.CHANNEL != undefined) {
             config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
         }
 

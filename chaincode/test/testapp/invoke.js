@@ -21,10 +21,10 @@ async function main() {
     try {
 
         dotenv.config();
-        if ( process.env.NETWORK != undefined) {
+        if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
         }
-        if ( process.env.CHANNEL != undefined) {
+        if (process.env.CHANNEL != undefined) {
             config.channel.channelName = config.channel.channelName.replace("mychannel", process.env.CHANNEL);
         }
 
@@ -61,7 +61,7 @@ async function main() {
             const contract = network.getContract(config.channel.contract);
 
             // Submit the transaction.
-            if (tx.key){
+            if (tx.key) {
                 if (tx.previousKey) {
                     await contract.submitTransaction(tx.txFunction, tx.key, tx.previousKey);
                     console.log(`Transaction has been submitted: ${tx.user}\t${tx.txFunction}\t${tx.key}\t${tx.previousKey}`);
@@ -75,7 +75,7 @@ async function main() {
                 await contract.submitTransaction(tx.txFunction);
                 console.log(`Transaction has been submitted: ${tx.user}\t${tx.txFunction}`);
             }
-            
+
             // Disconnect from the gateway.
             await gateway.disconnect();
         }

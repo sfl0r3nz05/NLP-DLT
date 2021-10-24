@@ -11,7 +11,6 @@ module.exports = async function populateLER(valueToUpdate) {
                 if (err) throw err;
             })
         })
-        console.log(ler);
     } catch (error) {
 
     }

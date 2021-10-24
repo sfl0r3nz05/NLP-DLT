@@ -26,7 +26,6 @@ module.exports = async function populatePROD(valueToUpdate) {
                 if (err) throw err;
             })
         })
-        console.log(ler);
     } catch (error) {
 
     }

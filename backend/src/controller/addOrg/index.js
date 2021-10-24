@@ -7,6 +7,11 @@ const addOrg = async (req, res) => {
         let method = "addOrg";
         let value = data.feature;
         let userDetails = data.userDetails;
+        if (!userDetails || !value.mno_name || !value.mno_country || !value.mno_network) {
+            res.sendStatus(201);
+            res.end("201");
+            return
+        }
         let noArg = 1
         let event_name = "created_org"
         value, eventHf = await invokeEvents(method, event_name, noArg, value, "", "", userDetails.username);

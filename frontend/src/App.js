@@ -5,9 +5,6 @@ import { withRouter } from "react-router-dom";
 import Router from "./router";
 import Login from "./pages/Login";
 
-import jwt_decode from "jwt-decode";
-import moment from "moment";
-
 import "./App.less";
 
 import { ConfigProvider } from 'antd';
@@ -51,9 +48,6 @@ function App({ history }) {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || null);
-    //const token = JSON.parse(localStorage.getItem("token") || null);
-    //let expiration = token ? jwt_decode(token).exp : 10000000000000000000000000;
-    //let isValid = expiration > moment().unix() ? true : false;
 
     if (user) {
       dispatch({

@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import {
-  AutoComplete,
   Row,
   Col,
   Form,
   Input,
   Button,
   Spin,
-  notification
+  notification,
+  Tooltip
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import * as lerData from "./../../data/LER.json";
+import { Icon as NewIco } from "antd";
+import Clipboard from 'react-clipboard.js';
+import { useGlobal } from "reactn";
 //Leaflet
 //----------------------------------------------------------------------------------------------
 import 'react-leaflet-markercluster/dist/styles.min.css';
@@ -42,15 +44,19 @@ const AcceptAgreement = () => {
   }, []);
 
   const formItemLayout = {};
-
+  const [global] = useGlobal();
   const initialFormState = {
     mno: "",
   };
-
-  let userDetails = JSON.parse(localStorage.getItem('user'));
-
   const [loading, setLoading] = useState(false);
+  let userDetails = JSON.parse(localStorage.getItem('user'));
   const [acceptAgreement, setacceptAgreement] = useState(initialFormState);
+
+  const onClick = () => {
+    const value = global.value;
+    acceptAgreement.mno = value;
+    setacceptAgreement(prevValue => ({ ...prevValue, tokenid: value }));
+  }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -134,6 +140,13 @@ const AcceptAgreement = () => {
                   <Input
                     size="large"
                     placeholder={"E.g.: TELEFONICA"}
+                    suffix={
+                      <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
+                        <Tooltip title="Paste MNO Name">
+                          <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
+                        </Tooltip>
+                      </Clipboard>
+                    }
                     type="text"
                     name="mno"
                     value={acceptAgreement.mno}

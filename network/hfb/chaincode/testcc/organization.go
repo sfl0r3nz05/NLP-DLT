@@ -29,11 +29,10 @@ func (cc *Chaincode) verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool
 }
 
 func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGREEMNT, id string)(bool) {
-	store := make(map[string]ROAMINGAGREEMNT)  //mapping string to Organtization data type
-    store["org1_id"] = RA
-	store["org2_id"] = RA
+	new_id := sha256.Sum256([]byte(id))
+	new_id_str := hex.EncodeToString(new_id[:])
 
-	if (store["org1_id"].ORG1_ID == id || store["org2_id"].ORG2_ID == id){
+	if (RA.ORG1_ID == new_id_str || RA.ORG2_ID == new_id_str){
 		return true	
 	}
 
@@ -85,6 +84,7 @@ func (cc *Chaincode) recoverOrgId(stub shim.ChaincodeStubInterface, org_name str
 func (cc *Chaincode) recoverOrg(stub shim.ChaincodeStubInterface, org_id string)(Organization, error) {
 	var org Organization
 	CHANNEL_ENV := stub.GetChannelID()
+
 	org_bytes, err := stub.GetState(org_id)
 	if err != nil {
 		log.Errorf("[%s][%s][recoverOrg] GetState API Error: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())

@@ -13,6 +13,11 @@ const proposeAgreementInitiation = async (req, res) => {
         let arg1 = mno1
         let arg2 = data.createAgreement.mno2
         let arg3 = data.createAgreement.nameRA
+        if (!arg2 || !arg3) {
+            res.sendStatus(201);
+            res.end("201");
+            return
+        }
         let method = "queryMNOforID";
         queried_value1 = await query(method, noArgs, arg0, userDetails.username);
         if (queried_value1 == "FALSE" || arg0 == arg2) {

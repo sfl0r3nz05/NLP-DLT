@@ -3,7 +3,7 @@ const readBuffer = require("../../utils/buffer/readBuffer");
 const { FileSystemWallet } = require('fabric-network');
 
 const authentication = async (req, res) => {
-  const { username, password } = req.body; //console.log(username);
+  const { username, password } = req.body; console.log(username);
   let selectEnv;
   let companies;
   let company;
@@ -20,7 +20,7 @@ const authentication = async (req, res) => {
   if (user && userExists) {
     if (user.password === password) {
       selectEnv = 2;
-      companies = await readBuffer(selectEnv);  //console.log(companies);
+      companies = await readBuffer(selectEnv); console.log(companies);
       company = companies.companies.find((company) => company.id === user.company);
       const payload = {
         username: user.username,
@@ -34,7 +34,7 @@ const authentication = async (req, res) => {
       };
       //const options = { expiresIn: "10h", issuer: "https://172.31.16.137" };
       //const secret = process.env.JWT_SECRET;
-      //const token = jwt.sign(payload, secret, options); //console.log(token);
+      //const token = jwt.sign(payload, secret, options); console.log(token);
       //return res.send({ token: token, user: payload }); //send OK and the token
       return res.send({ user: payload });
     } else res.status(401).send(); //if the password isn't correct

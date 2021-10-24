@@ -9,12 +9,8 @@ import {
   Spin,
   notification
 } from "antd";
-import { Icon as NewIco } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import Control from 'react-leaflet-control';
-import Clipboard from 'react-clipboard.js';
-import { useGlobal } from "reactn";
 import * as lerData from "./../../data/LER.json";
 //Leaflet
 //----------------------------------------------------------------------------------------------
@@ -33,12 +29,6 @@ notification.config({
   bottom: 50,
   duration: 1.5,
 });
-
-const INITIAL_STATE = {
-  lat: 43.2612,
-  lng: -1.779,
-  zoom: 12
-}
 
 const Agreement = () => {
 
@@ -65,9 +55,7 @@ const Agreement = () => {
   const [loading, setLoading] = useState(false);
 
   function onChange(value) {
-    const index = lerData.LER.findIndex(data => data.name === value)
-    const ler = lerData.LER[index].id
-    setcreateAgreement(prevValue => ({ ...prevValue, mno2: value })) //console.log(token);
+    setcreateAgreement(prevValue => ({ ...prevValue, mno2: value }))
   }
 
   function handleChange(event) {

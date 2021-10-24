@@ -42,3 +42,13 @@ func uuidgen()(string) {
 	id := uuid.New()
 	return id.String()
 }
+
+func trimQuote(s string) string {
+	if len(s) > 0 && s[0] == '"' {
+		s = s[1:]
+	}
+	if len(s) > 0 && s[len(s)-1] == '"' {
+		s = s[:len(s)-1]
+	}
+	return s
+}

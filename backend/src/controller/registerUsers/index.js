@@ -15,7 +15,7 @@ let ccp;
 const registerUsers = async (req, res) => {
     try {
         dotenv.config();
-        if ( process.env.NETWORK != undefined) {
+        if (process.env.NETWORK != undefined) {
             config.connection_profile = config.connection_profile.replace("basic", process.env.NETWORK);
         }
 
@@ -77,10 +77,10 @@ const registerUsers = async (req, res) => {
             wallet.import(config.users[i].name, userIdentity);
             console.log('Successfully registered and enrolled user and imported it into the wallet: ', config.users[i].name);
         }
-      res.sendStatus(200);
+        res.sendStatus(200);
     } catch (error) {
-      res.sendStatus(400);
+        res.sendStatus(400);
     }
-  };
-  
-  module.exports = { registerUsers };
+};
+
+module.exports = { registerUsers };

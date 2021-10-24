@@ -16,7 +16,6 @@ export const authenticationService = {
 };
 
 function login(username, password) {
-  console.log(username);
   return axios
     .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/authentication`, {
       username: username,
@@ -24,7 +23,6 @@ function login(username, password) {
     })
     .then(res => {
       if (res.status === 200) {
-        //console.log("token");
         var decodedUser = jwt_decode(res.data);
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem("currentUser", JSON.stringify(decodedUser));

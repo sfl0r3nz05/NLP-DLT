@@ -1,7 +1,7 @@
 import React from "react";
 import List from "../pages/List";
 import UserData from "../pages/UserData";
-import Register from "../pages/Register";
+import RegisterMNO from "../pages/RegisterMNO";
 import Agreement from "../pages/Agreement";
 import AcceptAgreement from "../pages/AcceptAgreement";
 
@@ -13,7 +13,7 @@ export const routes = [
     text: "REGISTER MNO",
     icon: "plus",
     menuShow: true,
-    body: () => <Register />,
+    body: () => <RegisterMNO />,
   },
   {
     key: "2",

@@ -50,7 +50,7 @@ module.exports = async function invokeEvents(method, event_name, noArgs, arg1, a
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(config.channel.channelName);
-        //console.log(network);
+        console.log(network);
 
         // Get the contract from the network.
         const contract = network.getContract(config.channel.contract);

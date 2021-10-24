@@ -6,13 +6,12 @@ import {
   Form,
   Input,
   Button,
-  Card,
   Spin,
   notification,
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import * as lerData from "./../../data/COUNTRY.json";
+import * as lerData from "../../data/COUNTRY.json";
 //Leaflet
 //----------------------------------------------------------------------------------------------
 import 'react-leaflet-markercluster/dist/styles.min.css';
@@ -20,8 +19,6 @@ import 'leaflet/dist/leaflet.css';
 import './../../react-leaflet.css';
 import L, { Icon } from 'leaflet';
 //----------------------------------------------------------------------------------------------
-const { TextArea } = Input;
-const { Meta } = Card;
 
 export const icon = new Icon({
   iconUrl: "./icon/location.svg",
@@ -40,7 +37,7 @@ const initialFormState = {
   mno_network: "",
 };
 
-const Register = () => {
+const RegisterMNO = () => {
 
   useEffect(() => {
     delete L.Icon.Default.prototype._getIconUrl;
@@ -58,8 +55,6 @@ const Register = () => {
   let userDetails = JSON.parse(localStorage.getItem('user'));
 
   function onChange(value) {
-    const index = lerData.LER.findIndex(data => data.name === value)
-    const ler = lerData.LER[index].id
     setFeature(prevValue => ({ ...prevValue, mno_country: value }))
   }
 
@@ -223,4 +218,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterMNO;

@@ -1,6 +1,8 @@
 package main
 import (
     "errors"
+    "encoding/hex"
+    "crypto/sha256"
     "encoding/json"
     log "github.com/sirupsen/logrus"
     "github.com/hyperledger/fabric-chaincode-go/shim"
@@ -14,17 +16,17 @@ func (cc *Chaincode) setAgreement(stub shim.ChaincodeStubInterface, org1_id stri
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return "", errors.New(ERRORParsingRA + err.Error())
     }
-    log.Info(idBytes)
 
     raid := uuidgen()
-    err = stub.PutState(raid, idBytes) // PuState of Client (Organization) Identity and Organtization struct
+    new_id := sha256.Sum256([]byte(raid))
+    id_raid := hex.EncodeToString(new_id[:])
+    err = stub.PutState(id_raid, idBytes) // PuState of Client (Organization) Identity and Organtization struct
     if err != nil {
         log.Errorf("[%s][%s][setAgreement] Error storing: %v", CHANNEL_ENV, ERRORStoringRA, err.Error())
         return "", errors.New(ERRORStoringRA + err.Error())
     }
-    log.Info(raid)
 
-    return raid, nil
+    return id_raid, nil
 }
 
 func (cc *Chaincode) recordRAJson(stub shim.ChaincodeStubInterface, articlesid string, jsonRA LISTOFARTICLES) (error){
@@ -371,7 +373,7 @@ func (cc *Chaincode) updateAgreementStatus(stub shim.ChaincodeStubInterface, rai
         log.Errorf("[%s][%s][updateAgreementStatus] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
-    err = json.Unmarshal(bytes_RA, RA)  //Parsing bytes_RA to ROAMINGAGREEMENT data type
+    err = json.Unmarshal(bytes_RA, &RA)  //Parsing bytes_RA to ROAMINGAGREEMENT data type
     if err != nil {
         log.Errorf("[%s][%s][updateAgreementStatus] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
         return errors.New(ERRORRecoveringRA + err.Error())
@@ -483,7 +485,7 @@ func (cc *Chaincode) recoverARTICLESID(stub shim.ChaincodeStubInterface, raid st
 func (cc *Chaincode) recoverRA(stub shim.ChaincodeStubInterface, raid string) (ROAMINGAGREEMNT, error){
     var RA ROAMINGAGREEMNT
     CHANNEL_ENV := stub.GetChannelID()
-    log.Info(raid)
+
     bytes_RA, err := stub.GetState(raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
@@ -493,11 +495,12 @@ func (cc *Chaincode) recoverRA(stub shim.ChaincodeStubInterface, raid string) (R
         log.Errorf("[%s][%s][recoverRA] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringRA)
         return RA, errors.New(ERRORRecoveringRA + err.Error())
     }
-    err = json.Unmarshal(bytes_RA, RA)
+    err = json.Unmarshal(bytes_RA, &RA)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error unmarshal Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringRA, err.Error())
         return RA, errors.New(ERRORRecoveringRA + err.Error())
     }
+
     return RA, nil
 }
 

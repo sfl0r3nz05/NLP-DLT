@@ -50,7 +50,7 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(config.channel.channelName);
-        //console.log(network);
+        console.log(network);
 
         // Get the contract from the network.
         const contract = network.getContract(config.channel.contract);
@@ -94,7 +94,7 @@ module.exports = async function invoke(method, noArgs, arg1, arg2, arg3, user) {
         }
         // Disconnect from the gateway.
         await gateway.disconnect();
-        //console.log(listener.payload.toString());
+        console.log(listener.payload.toString());
         return txReturn.toString();
     } catch (error) {
         return error;
