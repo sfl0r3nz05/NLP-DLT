@@ -28,7 +28,7 @@ func (cc *Chaincode) verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool
 	return false, err
 }
 
-func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGREEMNT, id string)(bool) {
+func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA RoamingAgreement, id string)(bool) {
 	new_id := sha256.Sum256([]byte(id))
 	new_id_str := hex.EncodeToString(new_id[:])
 

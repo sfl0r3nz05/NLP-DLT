@@ -29,25 +29,25 @@ type Listofmnos struct {
 	Listmnos []string `json:"listofmnos"`
 }
 
-// Struct used to return
-type ARTICLESIDRAID struct {
+// Main Struct at articles level
+type ArticlesRaid struct {
 	ARTICLESID string 					`json:"articlesid"`
 	RAID string 						`json:"raid"`
 }
 
-// Struct used to return
-type ROAMINGAGREEMNT struct {
+// Main Struct at articles level
+type RoamingAgreement struct {
 	ARTICLESID string 					`json:"articlesid"`
 	ORG1_ID string 						`json:"org1_id"`
 	ORG2_ID string 						`json:"org2_id"`
 	STATUS string						`json:"status"`
 }
 
-type LISTOFARTICLES struct {
+type ListOfArticles struct {
 	ARTICLESID string 					`json:"articlesid"`
 	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
 	STATUS string						`json:"status"`
-	articles	[]ARTICLE				`json:"articles"` // name for the articles
+	ARTICLES []ARTICLE				`json:"articles"` // name for the articles
 }
 
 type ARTICLE struct {
@@ -60,8 +60,8 @@ type ARTICLE struct {
 }
 
 type VARIABLE struct {
-	id	string						`json:"id"` // name for the id
-	value	string						`json:"value"` // name for value
+	Id	string						`json:"id"` // name for the id
+	Value	string						`json:"value"` // name for value
 }
 
 type VARIATION struct {

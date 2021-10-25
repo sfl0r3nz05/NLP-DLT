@@ -78,7 +78,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 if err != nil {
                     return shim.Error(ERRORAgreement)
                 }
-                identityStore, err := json.Marshal(ARTICLESIDRAID{ARTICLESID: uuid, RAID: raid})
+                identityStore, err := json.Marshal(ArticlesRaid{ARTICLESID: uuid, RAID: raid})
                 if err != nil {
                     return shim.Error(ERRORRecoverIdentity)
                 }
@@ -121,6 +121,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raidQuotes := trimQuote(raid)
         article_num := args[1]
         variables := args[2]
+        log.Info(variables)
         variations := args[3]
         customTexts := args[4]
         stdClauses := args[5]
@@ -288,7 +289,7 @@ func (cc *Chaincode) startAgreement(stub shim.ChaincodeStubInterface, org1 strin
 
 func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id string, raid string) (error){
     var org Organization
-    var RA ROAMINGAGREEMNT
+    var RA RoamingAgreement
 
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
@@ -356,40 +357,44 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORVerifyingOrg)
     }
 
-    valid_status := "confirmation_ra_started"
+    valid_status := []string{"confirmation_ra_started","ra_negotiating"}
     err = cc.verifyAgreementStatus(stub, raid, valid_status)
     if err != nil {
         log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
         return errors.New(ERRORStatusRA)
     }
 
-    uuid, err := cc.recoverARTICLESID(stub, raid)
+    articleId, err := cc.recoverARTICLESID(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
+    log.Info(org_id)
+    log.Info(articleId)
 
     articles_status := "init"
-    err = cc.verifyArticlesStatus(stub, uuid, articles_status)
+    err = cc.verifyArticlesStatus(stub, articleId, articles_status)
     if err != nil {
         log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
         return errors.New(ERRORDeterminingStatus + err.Error())
     }
 
+    //variables := `[{"id":"1","value":"likes to perch on rocks"},{"id":"2","value":"bird of prey"}]`
     article_status := "added_article"
     json.Unmarshal([]byte(variables), &variable_list)
     json.Unmarshal([]byte(variations), &variation_list)
     json.Unmarshal([]byte(customTexts), &customText_list)
     json.Unmarshal([]byte(stdClauses), &stdClause_list)
+    log.Info(variable_list)
 
-    err = cc.setArticle(stub, uuid, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
+    err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
         log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
     }
 
     update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
-    err = cc.setArticlesStatus(stub, uuid, update_articles_status)
+    err = cc.setArticlesStatus(stub, articleId, update_articles_status)
     if err != nil {
         log.Errorf("[%s][setArticlesStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
         return errors.New(ERRORUpdatingStatus + err.Error())
@@ -402,11 +407,14 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORUpdatingStatus + err.Error())
     }
 
-    organization, err = cc.recoverOrg(stub, org_id)    //recover organization name
+    new_id := sha256.Sum256([]byte(org_id))
+    new_id_str := hex.EncodeToString(new_id[:])
+    organization, err = cc.recoverOrg(stub, new_id_str)    //recover organization name
     if err != nil {
         log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
+    log.Info(organization.Mno_name)
 
     event_name := "proposed_add_article"    //emit event "proposed_add_article"
     timestamp := timeNow()

@@ -22,8 +22,8 @@ func (cc *Chaincode) verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool
 	return false, err
 }
 
-func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGREEMNT, id string)(bool) {
-	store := make(map[string]ROAMINGAGREEMNT)  //mapping string to Organtization data type
+func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA RoamingAgreement, id string)(bool) {
+	store := make(map[string]RoamingAgreement)  //mapping string to Organtization data type
     store["org1_id"] = RA
 	store["org2_id"] = RA
 

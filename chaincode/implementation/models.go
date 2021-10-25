@@ -31,14 +31,14 @@ type UUIDRAID struct {
 }
 
 // Struct used to return
-type ROAMINGAGREEMNT struct {
+type RoamingAgreement struct {
 	UUID string 						`json:"uuid,omitempty"`
 	ORG1_ID string 						`json:"org1_id,omitempty"`
 	ORG2_ID string 						`json:"org2_id,omitempty"`
 	STATUS string						`json:"status,omitempty"`
 }
 
-type LISTOFARTICLES struct {
+type ListOfArticles struct {
 	UUID	string						`json:"uuid"` // name for the uuid
 	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
 	STATUS string						`json:"status,omitempty"`
