@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
+  AutoComplete,
   Row,
   Col,
   Form,
@@ -8,61 +9,63 @@ import {
   Button,
   Spin,
   notification,
-  Tooltip
+  Table,
+  Tooltip,
+  Select
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
 import { Icon as NewIco } from "antd";
 import Clipboard from 'react-clipboard.js';
 import { useGlobal } from "reactn";
-//Leaflet
-//----------------------------------------------------------------------------------------------
-import 'react-leaflet-markercluster/dist/styles.min.css';
-import './../../react-leaflet.css';
-import L, { Icon } from 'leaflet';
-//----------------------------------------------------------------------------------------------
 
-export const icon = new Icon({
-  iconUrl: "./icon/location.svg",
-  iconSize: [25, 25]
-});
+const style = { background: '#ffffff', padding: '0px 0' };
 
-notification.config({
-  placement: "topRight",
-  bottom: 50,
-  duration: 1.5,
-});
+const dataSource = ['Variable', 'Variation', 'Standard Clause', 'Custom Text'];
+
+const _defaultCosts = [
+  {
+    feature: "",
+    name: "",
+    price: 0,
+  }
+];
+
+const initialFormState = {
+  raname: "",
+  articleNo: "",
+};
 
 const AddArticle = () => {
 
-  useEffect(() => {
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
-    });
-  }, []);
-
-  const { TextArea } = Input;
   const formItemLayout = {};
   const [global] = useGlobal();
-  const initialFormState = {
-    raname: "",
-    articleNo: "",
-    variables: "",
-    variations: "",
-    customTexts: "",
-    standardClauses: "",
-  };
   const [loading, setLoading] = useState(false);
+  const [costs, setCosts] = useState(_defaultCosts);
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
+
+  const handleCostsChange = event => {
+    const _tempCosts = [...costs];
+    _tempCosts[event.target.dataset.id][event.target.name] = event.target.value;
+    setCosts(_tempCosts);
+  };
+
+  const addNewCost = () => {
+    setCosts(prevCosts => [...prevCosts, { name: "", price: 0 }]);
+  };
+
+  const openNotificationWithIcon = (type, title, description) => {
+    notification[type]({
+      message: title,
+      description: description,
+    });
+  };
 
   const onClick = () => {
     const value = global.value;
     addArticle.raname = value;
-    setAddArticle(prevValue => ({ ...prevValue, tokenid: value }));
+    setAddArticle(prevValue => ({ ...prevValue, raname: value }));
   }
 
   const onChange = (value) => {
@@ -72,21 +75,24 @@ const AddArticle = () => {
 
   function handleChange(event) {
     const value = event.target.value;
+    console.log(value);
     setAddArticle({
       ...addArticle,
       [event.target.name]: value
     });
   }
 
-  //Create a news products
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
     //Set POST request
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, costs, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
+        console.log(addArticle);
+        console.log(costs);
         if (res.status === 200) {
           openNotificationWithIcon(
             "success",
@@ -115,13 +121,6 @@ const AddArticle = () => {
       .finally(() => setLoading(false));
   };
 
-  const openNotificationWithIcon = (type, title, description) => {
-    notification[type]({
-      message: title,
-      description: description,
-    });
-  };
-
   return (
     <section className="CommentsWrapper">
       <h2> PROPOSE AN ARTICLE FOR A ROAMING AGREEMENT</h2>
@@ -136,7 +135,7 @@ const AddArticle = () => {
             onSubmit={handleSubmit}
           >
             <Spin spinning={loading}>
-              <Col lg={16} md={24}>
+              <Col lg={24} md={24}>
 
                 <Form.Item
                   label="NAME OF THE ROAMING AGREEMENT"
@@ -162,7 +161,7 @@ const AddArticle = () => {
                     name="raname"
                     value={addArticle.raname}
                     onChange={handleChange}
-                    style={{ width: '50%' }}
+                    style={{ width: '35%' }}
                   />
                 </Form.Item>
 
@@ -187,105 +186,72 @@ const AddArticle = () => {
                     style={{ width: '10%' }}
                   />
                 </Form.Item>
-
-                <Form.Item
-                  label="LIST OF VARIABLES"
-                  name="variables"
-                  rules={[
-                    {
-                      required: true,
-                      message: "LIST OF VARIABLES"
-                    }
-                  ]}
-                >
-                  <TextArea
-                    size="large"
-                    rows={2}
-                    placeholder={"Include a list of variables"}
-                    type="text"
-                    name="variables"
-                    value={addArticle.variables}
-                    onChange={handleChange}
-                    style={{ width: '100%' }}
-                  />
+                <Form.Item hasFeedback>
+                  <Row type="flex" justify="start" gutter={16}>
+                    <Col xs={4} sm={4} xl={4} >
+                      <div style={style}> FEATURE </div>
+                    </Col>
+                    <Col xs={2} sm={2} xl={2}>
+                      <div style={style}> ID </div>
+                    </Col>
+                    <Col xs={5} sm={5} xl={5}>
+                      <div style={style}> VALUE </div>
+                    </Col>
+                  </Row>
+                  {costs.map((item, index) => (
+                    <Row type="flex" justify="start" gutter={16} key={index}>
+                      <Col xs={4} sm={4} xl={4} >
+                        <Input
+                          name="feature"
+                          size="large"
+                          data-id={index}
+                          style={{ width: '100%' }}
+                          type="text"
+                          value={item.feature}
+                          onChange={handleCostsChange}
+                        />
+                      </Col>
+                      <Col xs={2} sm={2} xl={2}>
+                        <Input
+                          name="price"
+                          size="large"
+                          placeholder={"ID"}
+                          style={{ width: '100%' }}
+                          data-id={index}
+                          type="number"
+                          value={item.price}
+                          onChange={handleCostsChange}
+                        />
+                      </Col>
+                      <Col xs={5} sm={5} xl={5}>
+                        <Input
+                          name="name"
+                          size="large"
+                          data-id={index}
+                          style={{ width: '100%' }}
+                          type="text"
+                          value={item.name}
+                          onChange={handleCostsChange}
+                        />
+                      </Col>
+                    </Row>
+                  ))}
                 </Form.Item>
-
-                <Form.Item
-                  label="LIST OF VARIATIONS"
-                  name="variations"
-                  rules={[
-                    {
-                      required: true,
-                      message: "LIST OF VARIATIONS"
-                    }
-                  ]}
-                >
-                  <TextArea
-                    size="large"
-                    rows={2}
-                    placeholder={"Include a list of variations"}
-                    type="text"
-                    name="variations"
-                    value={addArticle.variations}
-                    onChange={handleChange}
-                    style={{ width: '100%' }}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  label="LIST OF CUSTOM TEXTS"
-                  name="customTexts"
-                  rules={[
-                    {
-                      required: true,
-                      message: "LIST OF CUSTOM TEXTS"
-                    }
-                  ]}
-                >
-                  <TextArea
-                    size="large"
-                    rows={2}
-                    placeholder={"Include a list of custom texts"}
-                    type="text"
-                    name="customTexts"
-                    value={addArticle.customTexts}
-                    onChange={handleChange}
-                    style={{ width: '100%' }}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  label="LIST OF STANDARD CLAUSES"
-                  name="standardClauses"
-                  rules={[
-                    {
-                      required: true,
-                      message: "LIST OF STANDARD CLAUSES"
-                    }
-                  ]}
-                >
-                  <TextArea
-                    size="large"
-                    rows={2}
-                    placeholder={"Include a list of standard clauses"}
-                    type="text"
-                    name="standardClauses"
-                    value={addArticle.standardClauses}
-                    onChange={handleChange}
-                    style={{ width: '100%' }}
-                  />
-                </Form.Item>
-
-                <br />
-                <br />
-                <br />
                 <Form.Item>
+                  <Button
+                    type="primary"
+                    icon="plus"
+                    style={{ width: '2%' }}
+                    onClick={addNewCost}>
+                  </Button>
+                  <br />
+                  <br />
                   <Button
                     size="large"
                     type="primary"
                     htmlType="submit"
                     block
-                    style={{ width: '50%' }}
+                    style={{ width: '35%' }}
                   >
                     PROPOSE ARTICLE
                   </Button>
@@ -295,7 +261,7 @@ const AddArticle = () => {
           </Form>
         </Col>
       </Row>
-    </section>
+    </section >
   );
 };
 

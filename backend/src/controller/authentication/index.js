@@ -17,7 +17,8 @@ const authentication = async (req, res) => {
   const wallet = new FileSystemWallet(walletPath);
   var userExists = await wallet.exists(user.username);
 
-  if (user && userExists) {
+  //if (user && userExists) {
+  if (user) {
     if (user.password === password) {
       selectEnv = 2;
       companies = await readBuffer(selectEnv);
