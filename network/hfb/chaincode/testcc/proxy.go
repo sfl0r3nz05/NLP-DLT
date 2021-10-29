@@ -6,7 +6,7 @@ import (
     "encoding/hex"
     "crypto/sha256"
     "encoding/json"
-    b64 "encoding/base64"
+    base64 "encoding/base64"
     log "github.com/sirupsen/logrus"
     "github.com/hyperledger/fabric-chaincode-go/shim"
     sc "github.com/hyperledger/fabric-protos-go/peer"
@@ -122,17 +122,19 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raidQuotes := trimQuote(raid)
         article_num := args[1]
         variables := args[2]
-        varQuotes := trimQuote(variables)
-        variableDec, _ := b64.StdEncoding.DecodeString(varQuotes)
+        variablesParsed := trimQuote(variables)
         variations := args[3]
+        variationsParsed := trimQuote(variations)
         customTexts := args[4]
+        customTextsParsed := trimQuote(customTexts)
         stdClauses := args[5]
+        stdClausesParsed := trimQuote(stdClauses)
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variableDec, variations, customTexts, stdClauses)
+            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variablesParsed, variationsParsed, customTextsParsed, stdClausesParsed)
             if err != nil {
                 return shim.Error(ERRORAddArticle)
             }
@@ -339,7 +341,7 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     return nil
 }
 
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables []byte, variations string, customTexts string, stdClauses string) (error){
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
 
     var variable_list []VARIABLE
     var variation_list []VARIATION
@@ -371,8 +373,6 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
-    log.Info(org_id)
-    log.Info(articleId)
 
     articles_status := []string{"init","articles_drafting"}
     err = cc.verifyArticlesStatus(stub, articleId, articles_status)
@@ -380,15 +380,35 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
         return errors.New(ERRORDeterminingStatus + err.Error())
     }
-
-    variables2 := `[{"id":"1","value":"likes to perch on rocks"},{"id":"2","value":"bird of prey"}]`
-    article_status := "added_article"
-    json.Unmarshal([]byte(variables2), &variable_list)
-    json.Unmarshal([]byte(variables2), &variation_list)
-    json.Unmarshal([]byte(variables2), &customText_list)
-    json.Unmarshal([]byte(variables2), &stdClause_list)
+    
+    variable, err := base64.StdEncoding.DecodeString(variables)
+    if err != nil {
+        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
+        return errors.New(ERRORDecoding + err.Error())
+    }
+    json.Unmarshal([]byte(variable), &variable_list)
+    variation, err := base64.StdEncoding.DecodeString(variations)
+    if err != nil {
+        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
+        return errors.New(ERRORDecoding + err.Error())
+    }
+    json.Unmarshal([]byte(variation), &variation_list)
+    customText, err := base64.StdEncoding.DecodeString(customTexts)
+    if err != nil {
+        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
+        return errors.New(ERRORDecoding + err.Error())
+    }
+    json.Unmarshal([]byte(customText), &customText_list)
+    stdClause, err := base64.StdEncoding.DecodeString(stdClauses)
+    if err != nil {
+        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
+        return errors.New(ERRORDecoding + err.Error())
+    }
+    json.Unmarshal([]byte(stdClause), &stdClause_list)
+    
     log.Info(variable_list)
 
+    article_status := "added_article"
     err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
     if err != nil {
         log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
@@ -416,7 +436,6 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
         return errors.New(ERRORRecoveringOrg + err.Error())
     }
-    log.Info(organization.Mno_name)
 
     event_name := "proposed_add_article"    //emit event "proposed_add_article"
     timestamp := timeNow()

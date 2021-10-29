@@ -61,22 +61,23 @@ type ARTICLE struct {
 
 type VARIABLE struct {
 	Id	string						`json:"id"` // name for the id
-	Value	string						`json:"value"` // name for value
+	Key	string						`json:"key"` // name for value
+	Value string					`json:"value"` // name for value
 }
 
 type VARIATION struct {
-	id	string						`json:"id"` // name for the id
-	value	string						`json:"value"` // name for value
+	Id	string						`json:"id"` // name for the id
+	Value	string						`json:"value"` // name for value
 }
 
 type CUSTOMTEXT struct {
-	id	string						`json:"id"` // name for the id
-	value	string						`json:"value"` // name for value
+	Id	string						`json:"id"` // name for the id
+	Value	string						`json:"value"` // name for value
 }
 
 type STDCLAUSE struct {
-	id	string						`json:"id"` // name for the id
-	value	string						`json:"value"` // name for value
+	Id	string						`json:"id"` // name for the id
+	Value	string						`json:"value"` // name for value
 }
 
 // Event to handle events in HF
@@ -103,6 +104,7 @@ const (
 	ERRORChaincodeCall    					= `Error calling chaincode`
 	ERRORGetService       					= `Error getting service`
 	ERRORUpdService       					= `Error updating service`
+	ERRORDecoding							= `Error decoding base64`
 	ERRORServiceNotExists 					= `Error The service doesn't exist`
 	ERRORCreatingService  					= `Error storing service`
 	ERRORParsingService   					= `Error parsing service`

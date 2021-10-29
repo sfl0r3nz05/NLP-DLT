@@ -8,10 +8,10 @@ const proposeAddArticle = async (req, res) => {
         let data = req.body; // params from POST
         let value = data.addArticle;
         let table_value = data.costs
-        let value3 = "YFt7ImlkIjoiMSIsInZhbHVlIjoibGlrZXMgdG8gcGVyY2ggb24gcm9ja3MifSx7ImlkIjoiMiIsInZhbHVlIjoiYmlyZCBvZiBwcmV5In1dYA=="
+        let value3 = `[{"id":"1","key":"operator","value":"likes to perch on rocks"},{"id":"2","key":"Date","value":"bird of prey"}]`
+        let arg3 = Buffer.from(value3).toString('base64');
         //data_parsed = await parsingFromTable(table_value)
-        //console.log(Buffer.from(table_value).toString('base64'));
-        //console.log(Buffer.from("AAA=", 'base64').toString('ascii'))
+        console.log(arg3);
         let user = data.userDetails;
         if (!user || !value.raname || !value.articleNo) {
             res.sendStatus(201);
@@ -30,7 +30,6 @@ const proposeAddArticle = async (req, res) => {
         noArgs = 6
         let arg1 = output[0].ra_id
         let arg2 = value.articleNo
-        let arg3 = value3.toString()
         let arg4 = ""
         let arg5 = ""
         let arg6 = ""

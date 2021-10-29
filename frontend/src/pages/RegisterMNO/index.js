@@ -129,8 +129,8 @@ const RegisterMNO = () => {
           //onSubmit={handleSubmit}          
           >
             <Spin spinning={loading}>
-              <Col lg={10} md={24}>
-
+              <Col lg={1} md={24}></Col>
+              <Col lg={12} md={24}>
                 <Form.Item
                   label="MOBILE NETWORK OPERATOR NAME:"
                   name="mno_name"
@@ -146,7 +146,7 @@ const RegisterMNO = () => {
                     placeholder="E.g.: TELEFONICA"
                     type="text"
                     name="mno_name"
-                    style={{ width: '90%' }}
+                    style={{ width: '80%' }}
                     value={feature.mno_name}
                     onChange={handleChange}
                   />
@@ -166,19 +166,19 @@ const RegisterMNO = () => {
                     size="large"
                     dataSource={lerData.LER.map(data => data.name)}
                     placeholder={"SELECT THE COUNTRY OF THE MNO"}
-                    style={{ width: '90%' }}
+                    style={{ width: '80%' }}
                     onSelect={(data) => data}
                     onChange={onChange}
                   />
                 </Form.Item>
 
                 <Form.Item
-                  label="NETWORK OF THE MNO:"
+                  label="NETWORK INFORMATION:"
                   name="mno_network"
                   rules={[
                     {
                       required: true,
-                      message: "NETWORK OF THE MNO"
+                      message: "NETWORK INFORMATION"
                     }
                   ]}
                 >
@@ -187,14 +187,15 @@ const RegisterMNO = () => {
                     placeholder="E.g.: MOVISTAR"
                     type="text"
                     name="mno_network"
-                    style={{ width: '90%' }}
+                    style={{ width: '80%' }}
                     value={feature.mno_network}
                     onChange={handleChange}
                   />
                 </Form.Item>
-              </Col>
 
-              <Col lg={24} md={24}>
+                <br />
+                <br />
+
                 <Form.Item>
                   <Button
                     size="large"
@@ -204,10 +205,76 @@ const RegisterMNO = () => {
                     onClick={e => {
                       handleSubmit(e)
                     }}
-                    style={{ width: '37%' }}
+                    style={{ width: '80%' }}
                   >
                     REGISTER MNO
                   </Button>
+                </Form.Item>
+              </Col>
+              <Col lg={11} md={24}>
+                <Form.Item
+                  label="TADIG:"
+                  rules={[
+                    {
+                      required: true,
+                      message: "TADIG"
+                    }
+                  ]}
+                >
+                  <Input
+                    size="large"
+                    placeholder="E.g.: CANGW"
+                    type="text"
+                    style={{ width: '80%' }}
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="DATABASE INFORMATION:"
+                  rules={[
+                    {
+                      required: true,
+                      message: "DATABASE INFORMATION"
+                    }
+                  ]}
+                >
+                  <Input
+                    size="large"
+                    placeholder="E.g.: DB INFO"
+                    type="text"
+                    style={{ width: '80%' }}
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="TECHNOLOGY:"
+                  rules={[
+                    {
+                      required: true,
+                      message: "TECHNOLOGY"
+                    }
+                  ]}
+                >
+                  <Input
+                    size="large"
+                    placeholder="E.g.: 4G LTE"
+                    type="text"
+                    style={{ width: '80%' }}
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="FREQUENCY:"
+                  rules={[
+                    {
+                      required: true,
+                      message: "FREQUENCY"
+                    }
+                  ]}
+                >
+                  <Input
+                    size="large"
+                    placeholder="E.g.: 1800 MHz"
+                    type="text"
+                    style={{ width: '80%' }}
+                  />
                 </Form.Item>
               </Col>
             </Spin>
