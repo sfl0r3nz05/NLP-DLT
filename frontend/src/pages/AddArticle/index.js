@@ -201,14 +201,18 @@ const AddArticle = () => {
                   {costs.map((item, index) => (
                     <Row type="flex" justify="start" gutter={16} key={index}>
                       <Col xs={4} sm={4} xl={4} >
-                        <Input
+                        <AutoComplete
                           name="feature"
                           size="large"
                           data-id={index}
                           style={{ width: '100%' }}
                           type="text"
-                          value={item.feature}
-                          onChange={handleCostsChange}
+                          dataSource={dataSource}
+                          //value={item.feature}
+                          //onChange={handleCostsChange}
+                          filterOption={(inputValue, option) =>
+                            option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                          }
                         />
                       </Col>
                       <Col xs={2} sm={2} xl={2}>

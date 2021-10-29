@@ -98,7 +98,7 @@ func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, artic
     }
 }
 
-func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, articlesid string, articles_status string) (error){
+func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, articlesid string, articles_status []string) (error){
 
     var jsonRAgreement ListOfArticles 
     CHANNEL_ENV := stub.GetChannelID()
@@ -115,7 +115,7 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, arti
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
-    if(jsonRAgreement.STATUS != articles_status){
+    if(jsonRAgreement.STATUS != articles_status[0] && jsonRAgreement.STATUS != articles_status[1]){
         log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
         return errors.New(ERRORDeterminingStatus + err.Error())
     }
@@ -141,6 +141,17 @@ func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, article
     }
 
     jsonRAgreement.STATUS = articles_status
+    idBytes, err := json.Marshal(jsonRAgreement)
+    if err != nil {
+        log.Errorf("[%s][%s][setArticlesStatus] Error parsing: %v", CHANNEL_ENV, ERRORParsingRA, err.Error())
+        return errors.New(ERRORParsingRA + err.Error())
+    }
+
+    err = stub.PutState(articlesid, idBytes) // PuState of Client (Organization) Identity and Organtization struct
+    if err != nil {
+        log.Errorf("[%s][%s][setArticlesStatus] Error storing: %v", CHANNEL_ENV, ERRORStoringRA, err.Error())
+        return errors.New(ERRORStoringRA + err.Error())
+    }
     return nil
 }
 

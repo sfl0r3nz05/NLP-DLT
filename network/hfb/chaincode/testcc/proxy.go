@@ -6,6 +6,7 @@ import (
     "encoding/hex"
     "crypto/sha256"
     "encoding/json"
+    b64 "encoding/base64"
     log "github.com/sirupsen/logrus"
     "github.com/hyperledger/fabric-chaincode-go/shim"
     sc "github.com/hyperledger/fabric-protos-go/peer"
@@ -121,7 +122,8 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raidQuotes := trimQuote(raid)
         article_num := args[1]
         variables := args[2]
-        log.Info(variables)
+        varQuotes := trimQuote(variables)
+        variableDec, _ := b64.StdEncoding.DecodeString(varQuotes)
         variations := args[3]
         customTexts := args[4]
         stdClauses := args[5]
@@ -130,7 +132,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variables, variations, customTexts, stdClauses)
+            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variableDec, variations, customTexts, stdClauses)
             if err != nil {
                 return shim.Error(ERRORAddArticle)
             }
@@ -337,7 +339,7 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     return nil
 }
 
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables []byte, variations string, customTexts string, stdClauses string) (error){
 
     var variable_list []VARIABLE
     var variation_list []VARIATION
@@ -372,19 +374,19 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     log.Info(org_id)
     log.Info(articleId)
 
-    articles_status := "init"
+    articles_status := []string{"init","articles_drafting"}
     err = cc.verifyArticlesStatus(stub, articleId, articles_status)
     if err != nil {
-        log.Errorf("[%s][%s][verifyArticleStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
         return errors.New(ERRORDeterminingStatus + err.Error())
     }
 
-    //variables := `[{"id":"1","value":"likes to perch on rocks"},{"id":"2","value":"bird of prey"}]`
+    variables2 := `[{"id":"1","value":"likes to perch on rocks"},{"id":"2","value":"bird of prey"}]`
     article_status := "added_article"
-    json.Unmarshal([]byte(variables), &variable_list)
-    json.Unmarshal([]byte(variations), &variation_list)
-    json.Unmarshal([]byte(customTexts), &customText_list)
-    json.Unmarshal([]byte(stdClauses), &stdClause_list)
+    json.Unmarshal([]byte(variables2), &variable_list)
+    json.Unmarshal([]byte(variables2), &variation_list)
+    json.Unmarshal([]byte(variables2), &customText_list)
+    json.Unmarshal([]byte(variables2), &stdClause_list)
     log.Info(variable_list)
 
     err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)

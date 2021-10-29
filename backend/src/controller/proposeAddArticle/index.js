@@ -1,12 +1,17 @@
 const recoverMNO = require("../../utils/recoverMNO");
 const readBuffer = require("../../utils/buffer/readBuffer");
 const invokeEvents = require("../../utils/invoke/invokeEvents");
+const parsingFromTable = require("../../utils/parsing/parsingFromTable");
 
 const proposeAddArticle = async (req, res) => {
     try {
         let data = req.body; // params from POST
         let value = data.addArticle;
-        console.log(value);
+        let table_value = data.costs
+        let value3 = "YFt7ImlkIjoiMSIsInZhbHVlIjoibGlrZXMgdG8gcGVyY2ggb24gcm9ja3MifSx7ImlkIjoiMiIsInZhbHVlIjoiYmlyZCBvZiBwcmV5In1dYA=="
+        //data_parsed = await parsingFromTable(table_value)
+        //console.log(Buffer.from(table_value).toString('base64'));
+        //console.log(Buffer.from("AAA=", 'base64').toString('ascii'))
         let user = data.userDetails;
         if (!user || !value.raname || !value.articleNo) {
             res.sendStatus(201);
@@ -25,12 +30,12 @@ const proposeAddArticle = async (req, res) => {
         noArgs = 6
         let arg1 = output[0].ra_id
         let arg2 = value.articleNo
-        let arg3 = value.variables
-        let arg4 = value.variations
-        let arg5 = value.customTexts
-        let arg6 = value.standardClauses
+        let arg3 = value3.toString()
+        let arg4 = ""
+        let arg5 = ""
+        let arg6 = ""
         let method = "proposeAddArticle";
-        let event_name = "confirmation_ra_started"
+        let event_name = "proposed_add_article"
         eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, user.username);
         if (!eventHf[0]) {
             res.sendStatus(403);
