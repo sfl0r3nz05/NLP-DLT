@@ -3,7 +3,6 @@ import List from "../pages/List";
 import UserData from "../pages/UserData";
 import RegisterMNO from "../pages/RegisterMNO";
 import Agreement from "../pages/Agreement";
-import AcceptAgreement from "../pages/AcceptAgreement";
 import AddArticle from "../pages/AddArticle";
 
 export const routes = [
@@ -27,15 +26,6 @@ export const routes = [
   },
   {
     key: "3",
-    path: "/acceptagreement",
-    exact: true,
-    text: "ACCEPT RA",
-    icon: "plus",
-    menuShow: true,
-    body: () => <AcceptAgreement />,
-  },
-  {
-    key: "4",
     path: "/addarticle",
     exact: true,
     text: "PROPOSE ARTICLE",
@@ -44,7 +34,7 @@ export const routes = [
     body: () => <AddArticle />,
   },
   {
-    key: "5",
+    key: "4",
     path: "/list",
     exact: true,
     text: "RAs AVAILABLE",
@@ -53,7 +43,7 @@ export const routes = [
     body: () => <List />,
   },
   {
-    key: "6",
+    key: "5",
     path: "/user-data",
     exact: true,
     text: "DETALLES DEL USUARIO",
