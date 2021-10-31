@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   AutoComplete,
   Row,
@@ -7,15 +7,11 @@ import {
   Input,
   Button,
   notification,
-  Spin,
-  Tooltip
+  Spin
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import { Icon as NewIco } from "antd";
 import * as lerData from "./../../data/LER.json";
-import Clipboard from 'react-clipboard.js';
-import { useGlobal } from "reactn";
 
 notification.config({
   placement: "topRight",
@@ -36,7 +32,6 @@ const Agreement = () => {
   };
 
   const formItemLayout = {};
-  const [global] = useGlobal();
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [createAgreement, setcreateAgreement] = useState(initialFormState);
   const [acceptAgreement, setacceptAgreement] = useState(initialFormState2);
@@ -46,27 +41,16 @@ const Agreement = () => {
     setcreateAgreement(prevValue => ({ ...prevValue, mno2: value }))
   }
 
+  function onChange2(value) {
+    setacceptAgreement(prevValue => ({ ...prevValue, mno: value }))
+  }
+
   function handleChange(event) {
     const value = event.target.value;
     setcreateAgreement({
       ...createAgreement,
       [event.target.name]: value
     });
-  }
-
-  function handleChange2(event) {
-    const value = event.target.value;
-    setacceptAgreement({
-      ...acceptAgreement,
-      [event.target.name]: value
-    });
-  }
-
-
-  const onClick = () => {
-    const value = global.value;
-    acceptAgreement.mno = value;
-    setacceptAgreement(prevValue => ({ ...prevValue, tokenid: value }));
   }
 
   const openNotificationWithIcon = (type, title, description) => {
@@ -179,7 +163,7 @@ const Agreement = () => {
                   <AutoComplete
                     size="large"
                     dataSource={lerData.LER.map(data => data.name)}
-                    placeholder={"MNO to propose the Roaming Agreement"}
+                    placeholder={"E.g.: ORANGE"}
                     style={{ width: '80%' }}
                     onSelect={(data) => data}
                     onChange={onChange}
@@ -199,7 +183,7 @@ const Agreement = () => {
                 >
                   <Input
                     size="large"
-                    placeholder={"E.g.: Proximus Roaming Agreement"}
+                    placeholder={"E.g.: RA001"}
                     type="text"
                     name="nameRA"
                     value={createAgreement.nameRA}
@@ -236,22 +220,15 @@ const Agreement = () => {
                     }
                   ]}
                 >
-                  <Input
+                  <AutoComplete
                     size="large"
+                    dataSource={lerData.LER.map(data => data.name)}
                     placeholder={"E.g.: TELEFONICA"}
-                    suffix={
-                      <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
-                        <Tooltip title="Paste MNO Name">
-                          <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
-                        </Tooltip>
-                      </Clipboard>
-                    }
-                    type="text"
-                    name="mno"
-                    value={acceptAgreement.mno}
-                    onChange={handleChange2}
                     style={{ width: '80%' }}
-                  />
+                    onSelect={(data) => data}
+                    onChange={onChange2}
+                  >
+                  </AutoComplete>
                 </Form.Item>
                 <br />
                 <br />

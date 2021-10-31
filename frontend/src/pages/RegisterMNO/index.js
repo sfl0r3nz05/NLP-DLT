@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   AutoComplete,
   Row,
@@ -12,18 +12,6 @@ import {
 import "./../../App.css";
 import axios from "axios";
 import * as lerData from "../../data/COUNTRY.json";
-//Leaflet
-//----------------------------------------------------------------------------------------------
-import 'react-leaflet-markercluster/dist/styles.min.css';
-import 'leaflet/dist/leaflet.css';
-import './../../react-leaflet.css';
-import L, { Icon } from 'leaflet';
-//----------------------------------------------------------------------------------------------
-
-export const icon = new Icon({
-  iconUrl: "./icon/location.svg",
-  iconSize: [25, 25]
-});
 
 notification.config({
   placement: "topRight",
@@ -38,15 +26,6 @@ const initialFormState = {
 };
 
 const RegisterMNO = () => {
-
-  useEffect(() => {
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
-    });
-  }, []);
 
   const formItemLayout = {};
 
