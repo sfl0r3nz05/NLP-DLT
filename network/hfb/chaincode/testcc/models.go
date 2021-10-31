@@ -65,18 +65,15 @@ type VARIABLE struct {
 	Value string					`json:"value"` // name for value
 }
 
-type VARIATION struct {
-	Id	string						`json:"id"` // name for the id
-	Value	string						`json:"value"` // name for value
-}
-
 type CUSTOMTEXT struct {
-	Id	string						`json:"id"` // name for the id
 	Value	string						`json:"value"` // name for value
 }
 
 type STDCLAUSE struct {
-	Id	string						`json:"id"` // name for the id
+	Value	string						`json:"value"` // name for value
+}
+
+type VARIATION struct {
 	Value	string						`json:"value"` // name for value
 }
 

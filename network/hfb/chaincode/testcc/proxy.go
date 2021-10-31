@@ -119,22 +119,22 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORUserID)
         }
         raid := args[0]
-        raidQuotes := trimQuote(raid)
+        raid_parsed := trimQuote(raid)
         article_num := args[1]
         variables := args[2]
         variablesParsed := trimQuote(variables)
         variations := args[3]
         variationsParsed := trimQuote(variations)
-        customTexts := args[4]
-        customTextsParsed := trimQuote(customTexts)
-        stdClauses := args[5]
+        stdClauses := args[4]
         stdClausesParsed := trimQuote(stdClauses)
+        customTexts := args[5]
+        customTextsParsed := trimQuote(customTexts)
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.addArticle(stub, org_id, raidQuotes, article_num, variablesParsed, variationsParsed, customTextsParsed, stdClausesParsed)
+            err := cc.addArticle(stub, org_id, raid_parsed, article_num, variablesParsed, variationsParsed, stdClausesParsed, customTextsParsed)
             if err != nil {
                 return shim.Error(ERRORAddArticle)
             }
@@ -341,12 +341,12 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     return nil
 }
 
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, customTexts string, stdClauses string) (error){
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, stdClauses string, customTexts string) (error){
 
     var variable_list []VARIABLE
     var variation_list []VARIATION
-    var customText_list []CUSTOMTEXT
     var stdClause_list []STDCLAUSE
+    var customText_list []CUSTOMTEXT
     var organization Organization
     
     RA, err := cc.recoverRA(stub, raid)
@@ -387,26 +387,32 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORDecoding + err.Error())
     }
     json.Unmarshal([]byte(variable), &variable_list)
+
     variation, err := base64.StdEncoding.DecodeString(variations)
     if err != nil {
         log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
         return errors.New(ERRORDecoding + err.Error())
     }
     json.Unmarshal([]byte(variation), &variation_list)
-    customText, err := base64.StdEncoding.DecodeString(customTexts)
-    if err != nil {
-        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
-        return errors.New(ERRORDecoding + err.Error())
-    }
-    json.Unmarshal([]byte(customText), &customText_list)
+
     stdClause, err := base64.StdEncoding.DecodeString(stdClauses)
     if err != nil {
         log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
         return errors.New(ERRORDecoding + err.Error())
     }
     json.Unmarshal([]byte(stdClause), &stdClause_list)
+
+    customText, err := base64.StdEncoding.DecodeString(customTexts)
+    if err != nil {
+        log.Errorf("[%s][%s][addArticle] Error decoding base64", CHANNEL_ENV, ERRORDecoding)
+        return errors.New(ERRORDecoding + err.Error())
+    }
+    json.Unmarshal([]byte(customText), &customText_list)
     
     log.Info(variable_list)
+    log.Info(variation_list)
+    log.Info(stdClause_list)
+    log.Info(customText)
 
     article_status := "added_article"
     err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)

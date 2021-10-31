@@ -165,7 +165,7 @@ const RenderList = () => {
   return (
     <section className="CommentsWrapper">
       <h2>MOBILE NETWORK OPERATORS IN ROAMING AGREEMENTS</h2>
-      <Table bordered rowKey="mno1" columns={columns} dataSource={list} />
+      <Table bordered rowKey="mno1" columns={columns} expandedRowRender={record => <p style={{ margin: 0 }}>{"This place will contain information to update and delete articles"}</p>} dataSource={list} />
     </section>
   );
 };

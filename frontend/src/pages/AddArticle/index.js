@@ -193,7 +193,7 @@ const AddArticle = () => {
                 >
                   <Input
                     size="large"
-                    placeholder={"Name of the Roaming Agreement"}
+                    placeholder={"E.g.: RA001"}
                     suffix={
                       <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
                         <Tooltip title="Paste raname Name">
@@ -203,7 +203,7 @@ const AddArticle = () => {
                     }
                     type="text"
                     name="raname"
-                    value={addArticle.raname}
+                    value={addArticle.raname || ""}
                     onChange={handleChange}
                     style={{ width: '40.5%' }}
                   />
