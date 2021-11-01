@@ -8,7 +8,7 @@ const acceptAgreementInitiation = async (req, res) => {
         let data = req.body; // params from POST
         let userDetails = data.userDetails;
         let mno1 = await recoverMNO(userDetails.username)
-        let mno2 = data.acceptAgreement.mno;
+        let mno2 = data.mno1;
         if (!mno2) {
             res.sendStatus(201);
             res.end("201");

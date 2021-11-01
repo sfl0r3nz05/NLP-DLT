@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
-import moment from "moment";
+import moment, { max } from "moment";
 import axios from "axios";
-import { Icon, Row, Col, Table, Tag, Tooltip } from "antd";
+import { Icon, Col, notification, Row, Statistic, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 //---------------------------------------------------------------------------------------------
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 //---------------------------------------------------------------------------------------------
+
+notification.config({
+  placement: "topRight",
+  bottom: 50,
+  duration: 1.5,
+});
 
 const RenderList = () => {
 
@@ -39,6 +45,13 @@ const RenderList = () => {
     setGlobal({ copied: true })
   }
 
+  const openNotificationWithIcon = (type, title, description) => {
+    notification[type]({
+      message: title,
+      description: description,
+    });
+  };
+
   useEffect(() => {
     axios
       .get(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/list`, {
@@ -57,6 +70,41 @@ const RenderList = () => {
       })
       .catch(error => { });
   }, []); // Execut some element of the array changue
+
+  const handleSubmit = (e, mno1) => {
+    console.log((mno1));
+    e.preventDefault();
+    const jwtToken = localStorage.getItem("token");
+    //Set POST request
+    axios
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptAgreementInitiation`, { mno1, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .then((res) => {
+        if (res.status === 200) {
+          openNotificationWithIcon(
+            "success",
+            "SUCCESSFULLY REGISTERED AGREEMENT"
+          );
+        }
+        if (res.status === 201) {
+          openNotificationWithIcon(
+            "error",
+            "MISSING VALUES TO CREATE THE AGREEMENT"
+          );
+        }
+        if (res.status === 202) {
+          openNotificationWithIcon(
+            "error",
+            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+          );
+        }
+      })
+      .catch(() =>
+        openNotificationWithIcon(
+          "error",
+          "UNREGISTERED ROAMING AGREEMENT",
+        )
+      )
+  };
 
   const columns = [
     {
@@ -160,6 +208,21 @@ const RenderList = () => {
       }, align: 'center'
     },
     { title: "Date of status change", dataIndex: "timestamp", key: "timestamp", sorter: (a, b) => moment(a.timestamp).unix() - moment(b.timestamp).unix(), defaultSortOrder: "descend", ...SearchDates("timestamp"), render: date => moment(date * 1000).format("DD/MM/YYYY"), align: 'center' },
+    {
+      title: "Accept RA", dataIndex: "mno1", align: 'center', render: (mno1) => (
+        <span>
+          <a
+            onClick={e => handleSubmit(e, mno1)}
+          >
+            <Icon type={list.map((rank, i, arr) => {
+              if (arr.length - 1 === i) {
+                return (rank.ra_status).toString()
+              }
+            }) == 'started_ra' ? 'unlock' : 'lock'} />
+          </a>
+        </span>
+      )
+    },
   ];
 
   return (

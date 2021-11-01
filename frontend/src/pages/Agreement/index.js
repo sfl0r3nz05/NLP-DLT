@@ -27,22 +27,13 @@ const Agreement = () => {
     nameRA: "",
   };
 
-  const initialFormState2 = {
-    mno: "",
-  };
-
   const formItemLayout = {};
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [createAgreement, setcreateAgreement] = useState(initialFormState);
-  const [acceptAgreement, setacceptAgreement] = useState(initialFormState2);
   const [loading, setLoading] = useState(false);
 
   function onChange(value) {
     setcreateAgreement(prevValue => ({ ...prevValue, mno2: value }))
-  }
-
-  function onChange2(value) {
-    setacceptAgreement(prevValue => ({ ...prevValue, mno: value }))
   }
 
   function handleChange(event) {
@@ -97,46 +88,10 @@ const Agreement = () => {
       .finally(() => setLoading(false));
   };
 
-  const handleSubmit2 = (e) => {
-    e.preventDefault();
-    setLoading(true)
-    const jwtToken = localStorage.getItem("token");
-    //Set POST request
-    axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptAgreementInitiation`, { acceptAgreement, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
-      .then((res) => {
-        if (res.status === 200) {
-          openNotificationWithIcon(
-            "success",
-            "SUCCESSFULLY REGISTERED AGREEMENT"
-          );
-        }
-        if (res.status === 201) {
-          openNotificationWithIcon(
-            "error",
-            "MISSING VALUES TO CREATE THE AGREEMENT"
-          );
-        }
-        if (res.status === 202) {
-          openNotificationWithIcon(
-            "error",
-            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
-          );
-        }
-      })
-      .catch(() =>
-        openNotificationWithIcon(
-          "error",
-          "UNREGISTERED ROAMING AGREEMENT",
-        )
-      )
-      .finally(() => setLoading(false));
-  };
-
   return (
     <section className="CommentsWrapper">
       <Row gutter={[16, 16]} type="flex">
-        <h2> ROAMING AGREEMENT</h2>
+        <h2> ROAMING AGREEMENT CREATION</h2>
         <Col xl={24} lg={24} md={24}>
           <Form
             {...formItemLayout}
@@ -148,8 +103,6 @@ const Agreement = () => {
             <Spin spinning={loading}>
               <Col lg={1} md={24}></Col>
               <Col lg={12} md={24}>
-                <h2> ROAMING AGREEMENT CREATION</h2>
-                <br />
                 <Form.Item
                   label="NAME OF THE SECOND MOBILE NETWORK OPERATOR:"
                   name="mno2"
@@ -204,50 +157,6 @@ const Agreement = () => {
                     onClick={handleSubmit}
                   >
                     CREATE ROAMING AGREEMENT
-                  </Button>
-                </Form.Item>
-              </Col>
-              <Col lg={11} md={24}>
-                <h2> ROAMING AGREEMENT ACCEPTATION</h2>
-                <br />
-                <Form.Item
-                  label="ROAMING AGREEMENT CLOSED WITH"
-                  name="mno"
-                  rules={[
-                    {
-                      required: true,
-                      message: "ROAMING AGREEMENT CLOSED WITH"
-                    }
-                  ]}
-                >
-                  <AutoComplete
-                    size="large"
-                    dataSource={lerData.LER.map(data => data.name)}
-                    placeholder={"E.g.: TELEFONICA"}
-                    style={{ width: '80%' }}
-                    onSelect={(data) => data}
-                    onChange={onChange2}
-                  >
-                  </AutoComplete>
-                </Form.Item>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Form.Item>
-                  <Button
-                    size="large"
-                    type="primary"
-                    htmlType="submit"
-                    block
-                    style={{ width: '80%' }}
-                    onClick={handleSubmit2}
-                  >
-                    ACCEPT ROAMING AGREEMENT
                   </Button>
                 </Form.Item>
               </Col>
