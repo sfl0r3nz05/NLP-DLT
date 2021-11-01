@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid'
 import {
   AutoComplete,
   Row,
@@ -25,9 +26,7 @@ const initialFormState = {
   customText: "",
 };
 
-const dataSource = ['Variable', 'Variation', 'Standard Clause', 'Custom Text'];
-
-const AddArticle = () => {
+const AddArticle = ({ current, path, onChange }) => {
 
   const formItemLayout = {};
   const { TextArea } = Input;
@@ -35,9 +34,6 @@ const AddArticle = () => {
   const [loading, setLoading] = useState(false);
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
-  const [formVariables, setFormVariables] = useState([{ id: "", key: "", value: "" }])
-  const [formVariations, setFormVariations] = useState([{ value: "" }])
-  const [formStdClauses, setFormStdClauses] = useState([{ value: "" }])
   const [input, setInput] = useState({ value: true });
 
 
@@ -56,73 +52,24 @@ const AddArticle = () => {
 
   function handleChange(event) {
     const value = event.target.value;
-    console.log(value);
     setAddArticle({
       ...addArticle,
       [event.target.name]: value
     });
   }
 
-  const handleVariablesChange = (i, e) => {
-    let newFormVariables = [...formVariables];
-    newFormVariables[i][e.target.name] = e.target.value;
-    setFormVariables(newFormVariables);
-  }
-
-  const handleVariationsChange = (i, e) => {
-    let newFormVariations = [...formVariations];
-    newFormVariations[i][e.target.name] = e.target.value;
-    setFormVariations(newFormVariations);
-  }
-
-  const handleStdClausesChange = (i, e) => {
-    let newFormStdClauses = [...formStdClauses];
-    newFormStdClauses[i][e.target.name] = e.target.value;
-    setFormStdClauses(newFormStdClauses);
-  }
-
-  const onChange = (value) => {
-    setAddArticle({ ...addArticle, articleNo: value })
-    addArticle.articleNo = value;
+  const onChange2 = (value) => {
+    setAddArticle({ ...addArticle, articleName: value })
+    addArticle.articleName = value;
     outputNLP.NLP.map(item => {
       item.articles.map(data => {
-        if (data.id == value) {
-          setAddArticle({ ...addArticle, articleName: data.article })
-          addArticle.articleName = data.article;
+        if (data.article == value) {
+          setAddArticle({ ...addArticle, articleNo: data.id })
+          addArticle.articleNo = data.id;
         }
       })
     })
   };
-
-  let addVariablesFields = () => {
-    setFormVariables([...formVariables, { id: "", key: "", value: "" }])
-  }
-
-  let removeVariablesFields = (i) => {
-    let newFormVariables = [...formVariables];
-    newFormVariables.splice(i, 1);
-    setFormVariables(newFormVariables)
-  }
-
-  let addVariationsFields = () => {
-    setFormVariations([...formVariations, { value: "" }])
-  }
-
-  let removeVariationsFields = (i) => {
-    let newFormVariations = [...formVariations];
-    newFormVariations.splice(i, 1);
-    setFormVariations(newFormVariations)
-  }
-
-  let addStdClausesFields = () => {
-    setFormStdClauses([...formStdClauses, { value: "" }])
-  }
-
-  let removeStdClausesFields = (i) => {
-    let newFormStdClauses = [...formStdClauses];
-    newFormStdClauses.splice(i, 1);
-    setFormStdClauses(newFormStdClauses)
-  }
 
   const handleInput = (e) => {
     input.value = !e;
@@ -134,7 +81,7 @@ const AddArticle = () => {
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, formVariables, formVariations, formStdClauses, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         console.log(addArticle);
         if (res.status === 200) {
@@ -181,250 +128,79 @@ const AddArticle = () => {
             <Spin spinning={loading}>
               <Col lg={1} md={24}></Col>
               <Col lg={23} md={24}>
-                <Form.Item
-                  label="NAME OF THE ROAMING AGREEMENT"
-                  name="raname"
-                  rules={[
-                    {
-                      required: true,
-                      message: "NAME OF THE ROAMING AGREEMENT"
-                    }
-                  ]}
-                >
-                  <Input
-                    size="large"
-                    placeholder={"E.g.: RA001"}
-                    suffix={
-                      <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
-                        <Tooltip title="Paste raname Name">
-                          <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
-                        </Tooltip>
-                      </Clipboard>
-                    }
-                    type="text"
-                    name="raname"
-                    value={addArticle.raname || ""}
-                    onChange={handleChange}
-                    style={{ width: '40.5%' }}
-                  />
-                </Form.Item>
-
                 <Form.Item hasFeedback>
-                  {outputNLP.NLP.map((item, index) => (
+                  <Form.Item label="NAME OF THE ROAMING AGREEMENT">
+                    <Input
+                      size="large"
+                      placeholder={"E.g.: RA001"}
+                      suffix={
+                        <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
+                          <Tooltip title="Paste raname Name">
+                            <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
+                          </Tooltip>
+                        </Clipboard>
+                      }
+                      type="text"
+                      name="raname"
+                      onChange={handleChange}
+                      style={{ width: '40.5%' }}
+                    />
+                  </Form.Item>
+                  {outputNLP.NLP.map((item, index, arr) => (
                     <Row>
-                      <Form.Item
-                        label="SELECT ARTICLE ID AND NAME"
-                      >
-                        <Col span={2} >
+                      <Form.Item label="SELECT ARTICLE NAME AND ID">
+                        <Col span={11}>
                           <AutoComplete
                             size="large"
-                            dataSource={item.articles.map(data => data.id)}
-                            placeholder={"ID"}
-                            onSelect={(data) => data}
-                            onChange={onChange}
-                            style={{ width: '75%' }}
+                            dataSource={item.articles.map(data => data.article)}
+                            placeholder={"Name of the Article"}
+                            style={{ width: '89%' }}
+                            onChange={onChange2}
                           />
                         </Col>
-                        <Col span={14}>
+                        <Col span={2} >
                           <Input
                             size="large"
-                            style={{ width: '55%' }}
-                            placeholder={"Name of the Article"}
-                            defaultValue={addArticle.articleName}
-                            value={addArticle.articleName}
+                            style={{ width: '100%' }}
+                            placeholder={"ID"}
+                            value={addArticle.articleNo}
                           />
                         </Col>
-                        <Col span={8} ></Col>
+                        <Col span={11} ></Col>
                       </Form.Item>
-
-                      <Form.Item label="SELECT VARIABLES">
-                        {formVariables.map((element, index) => (
-                          <Row >
-                            <Col span={2}>
-                              <Input
-                                name="id"
-                                size="large"
-                                placeholder={"ID"}
-                                style={{ width: '82%' }}
-                                type="number"
-                                value={element.id}
-                                onChange={e => handleVariablesChange(index, e)}
-                              />
-                            </Col>
-                            <Col span={3} >
-                              <Input
-                                name="key"
-                                size="large"
-                                placeholder={"Key"}
-                                style={{ width: '85%' }}
-                                type="text"
-                                value={element.key}
-                                //dataSource={dataSource}
-                                onChange={e => handleVariablesChange(index, e)}
-                              >
-                              </Input>
-
-                            </Col>
-                            <Col span={5}>
-                              <Input
-                                name="value"
-                                size="large"
-                                placeholder={"Value"}
-                                style={{ width: '94%' }}
-                                type="text"
-                                value={element.value || ""}
-                                onChange={e => handleVariablesChange(index, e)}
-                              />
-                            </Col>
-                            <Col span={1}>
-                              {
-                                index ?
-                                  <Button
-                                    size="large"
-                                    icon="minus"
-                                    onClick={() => removeVariablesFields(index)}
-                                    style={{ background: "gray", width: '80%' }}
-                                  >
-                                  </Button>
-                                  : null
-                              }
-                            </Col>
-                            <Col span={1}>
-                              <Button
-                                size="large"
-                                type="primary"
-                                icon="plus"
-                                style={{ width: '80%' }}
-                                onClick={addVariablesFields}
-                              >
-                              </Button>
-                            </Col>
-                            <Col span={8}></Col>
-                          </Row>
-                        ))}
-                      </Form.Item>
-
-                      <Form.Item label="SELECT VARIATIONS">
-                        {formVariations.map((element, index) => (
-                          <Row >
-                            <Col span={20}>
-                              <Input
-                                name="value"
-                                size="large"
-                                placeholder={"Variation"}
-                                style={{ width: '99%' }}
-                                type="text"
-                                value={element.value}
-                                onChange={e => handleVariationsChange(index, e)}
-                              />
-                            </Col>
-                            <Col span={1}>
-                              {
-                                index ?
-                                  <Button
-                                    size="large"
-                                    icon="minus"
-                                    onClick={() => removeVariationsFields(index)}
-                                    style={{ background: "gray", width: '80%' }}
-                                  >
-                                  </Button>
-                                  : null
-                              }
-                            </Col>
-                            <Col span={1}>
-                              <Button
-                                size="large"
-                                type="primary"
-                                icon="plus"
-                                style={{ width: '80%' }}
-                                onClick={addVariationsFields}
-                              >
-                              </Button>
-                            </Col>
-                            <Col span={2}></Col>
-                          </Row>
-                        ))}
-                      </Form.Item>
-
-                      <Form.Item label="SELECT STANDARD CLAUSES">
-                        {formStdClauses.map((element, index) => (
-                          <Row >
-                            <Col span={20}>
-                              <Input
-                                name="value"
-                                size="large"
-                                placeholder={"Standard Clause"}
-                                style={{ width: '99%' }}
-                                type="text"
-                                value={element.value}
-                                onChange={e => handleStdClausesChange(index, e)}
-                              />
-                            </Col>
-                            <Col span={1}>
-                              {
-                                index ?
-                                  <Button
-                                    size="large"
-                                    icon="minus"
-                                    onClick={() => removeStdClausesFields(index)}
-                                    style={{ background: "gray", width: '80%' }}
-                                  >
-                                  </Button>
-                                  : null
-                              }
-                            </Col>
-                            <Col span={1}>
-                              <Button
-                                size="large"
-                                type="primary"
-                                icon="plus"
-                                style={{ width: '80%' }}
-                                onClick={addStdClausesFields}
-                              >
-                              </Button>
-                            </Col>
-                            <Col span={2}></Col>
-                          </Row>
-                        ))}
-                      </Form.Item>
-
                       <Form.Item label="ENABLE CUSTOM TEXTS">
-                        <Row>
-                          <Col span={20}>
-                            <Switch
-                              onChange={e => handleInput(e)}>
-                            </Switch>
-                            <TextArea
-                              placeholder={"Name of the Roaming Agreement"}
-                              name="customText"
-                              size="large"
-                              rows={4}
-                              style={{ width: '99%' }}
-                              disabled={input.value}
-                              type="text"
-                              value={addArticle.customText}
-                              onChange={handleChange}
-                            />
-                          </Col>
-                          <Col span={4}></Col>
-                        </Row>
+                        <Col span={20}>
+                          <Switch
+                            size="large"
+                            onChange={e => handleInput(e)}
+                          />
+                          <TextArea
+                            placeholder={"Name of the Roaming Agreement"}
+                            name="customText"
+                            size="large"
+                            rows={4}
+                            style={{ width: '99%' }}
+                            disabled={input.value}
+                            type="text"
+                            onChange={handleChange}
+                          />
+                        </Col>
+                        <Col span={4}></Col>
                       </Form.Item>
-
+                      <Form.Item>
+                        <br />
+                        <Button
+                          size="large"
+                          type="primary"
+                          htmlType="submit"
+                          block
+                          style={{ width: '40.5%' }}
+                        >
+                          PROPOSE ARTICLE
+                        </Button>
+                      </Form.Item>
                     </Row>
                   ))}
-                </Form.Item>
-
-                <Form.Item>
-                  <br />
-                  <Button
-                    size="large"
-                    type="primary"
-                    htmlType="submit"
-                    block
-                    style={{ width: '40.5%' }}
-                  >
-                    PROPOSE ARTICLE
-                  </Button>
                 </Form.Item>
               </Col>
             </Spin>
