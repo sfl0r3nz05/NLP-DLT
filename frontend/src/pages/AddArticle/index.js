@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { v4 as uuidv4 } from 'uuid'
 import {
   AutoComplete,
@@ -14,7 +14,6 @@ import {
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import { useGlobal } from "reactn";
 import outputNLP from "./../../data/outputNLP.json";
 
 const AddArticle = () => {
@@ -30,11 +29,9 @@ const AddArticle = () => {
   const { TextArea } = Input;
   const { Option } = Select;
   const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState({ value: true });
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
-  const [input, setInput] = useState({ value: true });
-  const [itemmap, setItemmap] = useState([{ uid: "", articles: [{}] }]);
-  //const [itemmap, setItemmap] = useState({ uid: "", type: "", verify: "", hint: "", articles: [{ id: "", article: "", uuid: "" }] });
 
   const openNotificationWithIcon = (type, title, description) => {
     notification[type]({
@@ -44,27 +41,13 @@ const AddArticle = () => {
   };
 
   function handleChange(e) {
-    //console.log(e);
     addArticle.raname = e;
-    setAddArticle(prevValue => ({ ...prevValue, raname: e.hint }));
-    let new_e = outputNLP.find(item => {
-      return (item.hint === e)
-    })
-    let new_e_e = outputNLP.map(item => {
-      if (item.hint === e) {
-        return item.articles.map(data => data.article)
-      }
-    })
+    setAddArticle(prevValue => ({ ...prevValue, raname: e }));
+    createItem(e)
+  }
 
-    if (new_e_e[0] === undefined) {
-      itemmap.articles = new_e_e[0];
-      setItemmap(prevValue => ({ ...prevValue, articles: new_e_e[0] }));
-      console.log("herex", itemmap);
-    } else {
-      itemmap.articles = new_e_e[1];
-      setItemmap(prevValue => ({ ...prevValue, articles: new_e_e[0] }));
-      console.log("herex2", itemmap);
-    }
+  function createItem(e) {
+    localStorage.setItem("mytime", e);
   }
 
   function handleChange2(event) {
@@ -76,7 +59,6 @@ const AddArticle = () => {
   }
 
   const onChange2 = (value) => {
-    console.log(value);
     setAddArticle({ ...addArticle, articleName: value })
     addArticle.articleName = value;
     outputNLP.map(item => {
@@ -164,15 +146,18 @@ const AddArticle = () => {
                         ))}
                       </Select>
                     </Form.Item>
+
                     <Form.Item label="SELECT ARTICLE NAME AND ID">
                       <Col span={11}>
-                        <Select
-                          size="large"
-                          placeholder={"Name of the Article"}
-                          style={{ width: '89%' }}
-                          onChange={onChange2}
-                        >
-                        </Select>
+                        {outputNLP.map(item => (
+                          <AutoComplete
+                            size="large"
+                            placeholder={"Name of the Article"}
+                            dataSource={item.articles.map(data => data.article)}
+                            style={{ width: '89%' }}
+                            onChange={onChange2}
+                          />
+                        ))}
                       </Col>
                       <Col span={2} >
                         <Input
@@ -184,6 +169,210 @@ const AddArticle = () => {
                       </Col>
                       <Col span={11} ></Col>
                     </Form.Item>
+
+                    <Form.Item label="SELECT VARIABLES">
+                      {outputNLP.map((item) => (
+                        <Row >
+                          <Row >
+                            <Col span={2}>
+                              <Input
+                                name="id"
+                                size="large"
+                                placeholder={"ID"}
+                                style={{ width: '82%' }}
+                                type="number"
+                              //onChange={e => handleVariablesChange(index, e)}
+                              //defaultValue="mysite"
+                              />
+                            </Col>
+                            <Col span={3} >
+                              <Input
+                                name="key"
+                                size="large"
+                                placeholder={"Key"}
+                                style={{ width: '85%' }}
+                                type="text"
+                                defaultValue={item.articles.map(data => data.variables.map(datax => {
+                                  console.log(datax.verify);
+                                }))}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              >
+                              </Input>
+
+                            </Col>
+                            <Col span={5}>
+                              <Input
+                                name="value"
+                                size="large"
+                                placeholder={"Value"}
+                                style={{ width: '94%' }}
+                                type="text"
+                              //value={element.value || ""}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={8}></Col>
+                          </Row>
+                          <Row >
+                            <Col span={2}>
+                              <Input
+                                name="id"
+                                size="large"
+                                placeholder={"ID"}
+                                style={{ width: '82%' }}
+                                type="number"
+                              //value={element.id}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={3} >
+                              <Input
+                                name="key"
+                                size="large"
+                                placeholder={"Key"}
+                                style={{ width: '85%' }}
+                                type="text"
+                              //value={element.key}
+                              //dataSource={dataSource}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              >
+                              </Input>
+
+                            </Col>
+                            <Col span={5}>
+                              <Input
+                                name="value"
+                                size="large"
+                                placeholder={"Value"}
+                                style={{ width: '94%' }}
+                                type="text"
+                              //value={element.value || ""}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={8}></Col>
+                          </Row>
+                          <Row >
+                            <Col span={2}>
+                              <Input
+                                name="id"
+                                size="large"
+                                placeholder={"ID"}
+                                style={{ width: '82%' }}
+                                type="number"
+                              //value={element.id}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={3} >
+                              <Input
+                                name="key"
+                                size="large"
+                                placeholder={"Key"}
+                                style={{ width: '85%' }}
+                                type="text"
+                              //value={element.key}
+                              //dataSource={dataSource}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              >
+                              </Input>
+
+                            </Col>
+                            <Col span={5}>
+                              <Input
+                                name="value"
+                                size="large"
+                                placeholder={"Value"}
+                                style={{ width: '94%' }}
+                                type="text"
+                              //value={element.value || ""}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={8}></Col>
+                          </Row>
+                          <Row >
+                            <Col span={2}>
+                              <Input
+                                name="id"
+                                size="large"
+                                placeholder={"ID"}
+                                style={{ width: '82%' }}
+                                type="number"
+                              //value={element.id}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={3} >
+                              <Input
+                                name="key"
+                                size="large"
+                                placeholder={"Key"}
+                                style={{ width: '85%' }}
+                                type="text"
+                              //value={element.key}
+                              //dataSource={dataSource}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              >
+                              </Input>
+
+                            </Col>
+                            <Col span={5}>
+                              <Input
+                                name="value"
+                                size="large"
+                                placeholder={"Value"}
+                                style={{ width: '94%' }}
+                                type="text"
+                              //value={element.value || ""}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={8}></Col>
+                          </Row>
+                          <Row >
+                            <Col span={2}>
+                              <Input
+                                name="id"
+                                size="large"
+                                placeholder={"ID"}
+                                style={{ width: '82%' }}
+                                type="number"
+                              //value={element.id}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={3} >
+                              <Input
+                                name="key"
+                                size="large"
+                                placeholder={"Key"}
+                                style={{ width: '85%' }}
+                                type="text"
+                              //value={element.key}
+                              //dataSource={dataSource}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              >
+                              </Input>
+
+                            </Col>
+                            <Col span={5}>
+                              <Input
+                                name="value"
+                                size="large"
+                                placeholder={"Value"}
+                                style={{ width: '94%' }}
+                                type="text"
+                              //value={element.value || ""}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              />
+                            </Col>
+                            <Col span={8}></Col>
+                          </Row>
+                        </Row>
+                      ))}
+                    </Form.Item>
+
                     <Form.Item label="ENABLE CUSTOM TEXTS">
                       <Col span={20}>
                         <Switch
@@ -203,6 +392,7 @@ const AddArticle = () => {
                       </Col>
                       <Col span={4}></Col>
                     </Form.Item>
+
                     <Form.Item>
                       <br />
                       <Button
