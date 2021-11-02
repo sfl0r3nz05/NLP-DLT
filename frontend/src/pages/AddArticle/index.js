@@ -9,33 +9,32 @@ import {
   Button,
   Spin,
   notification,
-  Tooltip,
-  Switch
+  Switch,
+  Select
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
-import { Icon as NewIco } from "antd";
-import Clipboard from 'react-clipboard.js';
 import { useGlobal } from "reactn";
-import * as outputNLP from "./../../data/outputNLP.json";
+import outputNLP from "./../../data/outputNLP.json";
 
-const initialFormState = {
-  raname: "",
-  articleNo: "",
-  articleName: "",
-  customText: "",
-};
+const AddArticle = () => {
 
-const AddArticle = ({ current, path, onChange }) => {
+  const initialFormState = {
+    raname: "",
+    articleNo: "",
+    articleName: "",
+    customText: "",
+  };
 
   const formItemLayout = {};
   const { TextArea } = Input;
-  const [global] = useGlobal();
+  const { Option } = Select;
   const [loading, setLoading] = useState(false);
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
   const [input, setInput] = useState({ value: true });
-
+  const [itemmap, setItemmap] = useState([{ uid: "", articles: [{}] }]);
+  //const [itemmap, setItemmap] = useState({ uid: "", type: "", verify: "", hint: "", articles: [{ id: "", article: "", uuid: "" }] });
 
   const openNotificationWithIcon = (type, title, description) => {
     notification[type]({
@@ -44,13 +43,31 @@ const AddArticle = ({ current, path, onChange }) => {
     });
   };
 
-  const onClick = () => {
-    const value = global.value;
-    addArticle.raname = value;
-    setAddArticle(prevValue => ({ ...prevValue, raname: value }));
+  function handleChange(e) {
+    //console.log(e);
+    addArticle.raname = e;
+    setAddArticle(prevValue => ({ ...prevValue, raname: e.hint }));
+    let new_e = outputNLP.find(item => {
+      return (item.hint === e)
+    })
+    let new_e_e = outputNLP.map(item => {
+      if (item.hint === e) {
+        return item.articles.map(data => data.article)
+      }
+    })
+
+    if (new_e_e[0] === undefined) {
+      itemmap.articles = new_e_e[0];
+      setItemmap(prevValue => ({ ...prevValue, articles: new_e_e[0] }));
+      console.log("herex", itemmap);
+    } else {
+      itemmap.articles = new_e_e[1];
+      setItemmap(prevValue => ({ ...prevValue, articles: new_e_e[0] }));
+      console.log("herex2", itemmap);
+    }
   }
 
-  function handleChange(event) {
+  function handleChange2(event) {
     const value = event.target.value;
     setAddArticle({
       ...addArticle,
@@ -59,9 +76,10 @@ const AddArticle = ({ current, path, onChange }) => {
   }
 
   const onChange2 = (value) => {
+    console.log(value);
     setAddArticle({ ...addArticle, articleName: value })
     addArticle.articleName = value;
-    outputNLP.NLP.map(item => {
+    outputNLP.map(item => {
       item.articles.map(data => {
         if (data.article == value) {
           setAddArticle({ ...addArticle, articleNo: data.id })
@@ -83,7 +101,6 @@ const AddArticle = ({ current, path, onChange }) => {
     axios
       .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
-        console.log(addArticle);
         if (res.status === 200) {
           openNotificationWithIcon(
             "success",
@@ -129,78 +146,76 @@ const AddArticle = ({ current, path, onChange }) => {
               <Col lg={1} md={24}></Col>
               <Col lg={23} md={24}>
                 <Form.Item hasFeedback>
-                  <Form.Item label="NAME OF THE ROAMING AGREEMENT">
-                    <Input
-                      size="large"
-                      placeholder={"E.g.: RA001"}
-                      suffix={
-                        <Clipboard onClick={onClick} style={{ background: 'white', border: '0px', outline: '0px' }}>
-                          <Tooltip title="Paste raname Name">
-                            <NewIco type="snippets" style={{ color: 'black', fontSize: 'x-large' }} />
-                          </Tooltip>
-                        </Clipboard>
-                      }
-                      type="text"
-                      name="raname"
-                      onChange={handleChange}
-                      style={{ width: '40.5%' }}
-                    />
-                  </Form.Item>
-                  {outputNLP.NLP.map((item, index, arr) => (
-                    <Row>
-                      <Form.Item label="SELECT ARTICLE NAME AND ID">
-                        <Col span={11}>
-                          <AutoComplete
-                            size="large"
-                            dataSource={item.articles.map(data => data.article)}
-                            placeholder={"Name of the Article"}
-                            style={{ width: '89%' }}
-                            onChange={onChange2}
-                          />
-                        </Col>
-                        <Col span={2} >
-                          <Input
-                            size="large"
-                            style={{ width: '100%' }}
-                            placeholder={"ID"}
-                            value={addArticle.articleNo}
-                          />
-                        </Col>
-                        <Col span={11} ></Col>
-                      </Form.Item>
-                      <Form.Item label="ENABLE CUSTOM TEXTS">
-                        <Col span={20}>
-                          <Switch
-                            size="large"
-                            onChange={e => handleInput(e)}
-                          />
-                          <TextArea
-                            placeholder={"Name of the Roaming Agreement"}
-                            name="customText"
-                            size="large"
-                            rows={4}
-                            style={{ width: '99%' }}
-                            disabled={input.value}
-                            type="text"
-                            onChange={handleChange}
-                          />
-                        </Col>
-                        <Col span={4}></Col>
-                      </Form.Item>
-                      <Form.Item>
-                        <br />
-                        <Button
+                  <Row>
+                    <Form.Item label="NAME OF THE ROAMING AGREEMENT">
+                      <Select
+                        size="large"
+                        name="raname"
+                        onChange={e => handleChange(e)}
+                        style={{ width: '40.5%' }}
+                      >
+                        {outputNLP.map((item) => (
+                          <Option
+                            key={item.uid}
+                            value={item.hint}
+                          >
+                            {item.hint}
+                          </Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+                    <Form.Item label="SELECT ARTICLE NAME AND ID">
+                      <Col span={11}>
+                        <Select
                           size="large"
-                          type="primary"
-                          htmlType="submit"
-                          block
-                          style={{ width: '40.5%' }}
+                          placeholder={"Name of the Article"}
+                          style={{ width: '89%' }}
+                          onChange={onChange2}
                         >
-                          PROPOSE ARTICLE
-                        </Button>
-                      </Form.Item>
-                    </Row>
-                  ))}
+                        </Select>
+                      </Col>
+                      <Col span={2} >
+                        <Input
+                          size="large"
+                          style={{ width: '100%' }}
+                          placeholder={"ID"}
+                          value={addArticle.articleNo}
+                        />
+                      </Col>
+                      <Col span={11} ></Col>
+                    </Form.Item>
+                    <Form.Item label="ENABLE CUSTOM TEXTS">
+                      <Col span={20}>
+                        <Switch
+                          size="large"
+                          onChange={e => handleInput(e)}
+                        />
+                        <TextArea
+                          placeholder={"Name of the Roaming Agreement"}
+                          name="customText"
+                          size="large"
+                          rows={4}
+                          style={{ width: '99%' }}
+                          disabled={input.value}
+                          type="text"
+                          onChange={handleChange2}
+                        />
+                      </Col>
+                      <Col span={4}></Col>
+                    </Form.Item>
+                    <Form.Item>
+                      <br />
+                      <Button
+                        size="large"
+                        type="primary"
+                        htmlType="submit"
+                        block
+                        style={{ width: '40.5%' }}
+                      >
+                        PROPOSE ARTICLE
+                      </Button>
+                    </Form.Item>
+                  </Row>
                 </Form.Item>
               </Col>
             </Spin>
