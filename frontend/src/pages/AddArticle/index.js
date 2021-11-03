@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  AutoComplete,
   Row,
   Col,
   Form,
@@ -27,12 +26,61 @@ const AddArticle = () => {
   const formItemLayout = {};
   const { TextArea } = Input;
   const { Option } = Select;
-  const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState({ value: true });
-  let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
-  const [itemmap, setItemmap] = useState()
-  const [selectedArticle, setSelectedArticle] = useState({ variables: [] })
+
+
+  const [selectedArticles, setselectedArticles] = useState({ articles: [] });
+  function handleChange(e) {
+    addArticle.raname = e;
+    setAddArticle(prevValue => ({ ...prevValue, raname: e }));
+    let new_e = outputNLP.find(item => {
+      return item.hint === e;
+    })
+    setselectedArticles(new_e)
+    console.log(selectedArticles);
+  }
+
+  const [formVariables, setFormVariables] = useState([{ key: "", value: "" }])
+  const handleVariablesChange = (i, e, v) => {
+    console.log(e);
+    console.log(i);
+    console.log(v);
+    let newFormVariables = [...formVariables];
+    newFormVariables[i][e.target.name] = e.target.value;
+    setFormVariables(newFormVariables);
+    //console.log(formVariables);
+  }
+
+  const [selectedArticleVar, setSelectedArticleVar] = useState({ variables: [] });
+  const [selectedArticleSub, setSelectedArticleSub] = useState({ subarticles: [] });
+  const onChange = (value) => {
+    setAddArticle({ ...addArticle, articleName: value })
+    addArticle.articleName = value;
+    outputNLP.map(item => {
+      item.articles.map(data => {
+        if (data.article == value) {
+          setAddArticle({ ...addArticle, articleNo: data.id })
+          addArticle.articleNo = data.id;
+          setSelectedArticleVar(data)
+          setSelectedArticleSub(data)
+        }
+      })
+    })
+  };
+
+  function handleChangeRA(e) {
+    const value = e.target.value;
+    setAddArticle({
+      ...addArticle,
+      [e.target.name]: value
+    });
+  }
+
+  const [input, setInput] = useState({ value: true });
+  const handleInput = (e) => {
+    input.value = !e;
+    setInput(prevValue => ({ ...prevValue, value: !e }));
+  }
 
   const openNotificationWithIcon = (type, title, description) => {
     notification[type]({
@@ -41,58 +89,8 @@ const AddArticle = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(itemmap);
-  }, [itemmap]);
-
-  useEffect(() => {
-    let new_e = outputNLP.find(item => {
-      if (item.hint === 'RA001') {
-        return item
-      }
-    })
-    setItemmap(new_e);
-  }, []);
-
-  function handleChange(e) {
-    addArticle.raname = e;
-    setAddArticle(prevValue => ({ ...prevValue, raname: e }));
-    let new_e = outputNLP.find(data => {
-      if (data.hint === e) {
-        return data
-      }
-    })
-    setItemmap(new_e);
-  }
-
-  function handleChange2(event) {
-    const value = event.target.value;
-    setAddArticle({
-      ...addArticle,
-      [event.target.name]: value
-    });
-  }
-
-  const onChange2 = (value) => {
-    setAddArticle({ ...addArticle, articleName: value })
-    addArticle.articleName = value;
-    outputNLP.map(item => {
-      item.articles.map(data => {
-        if (data.article == value) {
-          setAddArticle({ ...addArticle, articleNo: data.id })
-          addArticle.articleNo = data.id;
-          setSelectedArticle(data)
-          console.log(selectedArticle);
-        }
-      })
-    })
-  };
-
-  const handleInput = (e) => {
-    input.value = !e;
-    setInput(prevValue => ({ ...prevValue, value: !e }));
-  }
-
+  const [loading, setLoading] = useState(false);
+  let userDetails = JSON.parse(localStorage.getItem('user'));
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true)
@@ -149,9 +147,10 @@ const AddArticle = () => {
                     <Form.Item label="NAME OF THE ROAMING AGREEMENT">
                       <Select
                         size="large"
+                        placeholder={"E.g.: RA001"}
                         name="raname"
                         onChange={e => handleChange(e)}
-                        style={{ width: '40.5%' }}
+                        style={{ width: '35%' }}
                       >
                         {outputNLP.map((item) => (
                           <Option
@@ -165,48 +164,85 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="SELECT ARTICLE NAME AND ID">
-                      <Col span={11}>
-                        {outputNLP.map((item) => (
-                          <AutoComplete
+                      <Row >
+                        <Col span={9}>
+                          <Select
                             size="large"
-                            placeholder={"Name of the Article"}
-                            dataSource={item.articles.map(data => data.article)}
-                            style={{ width: '89%' }}
-                            onChange={onChange2}
+                            placeholder={"Title of the Article"}
+                            style={{ width: '93%' }}
+                            onChange={onChange}
+                          >
+                            {selectedArticles.articles.map((item) => (
+                              <Option
+                                key={item.id}
+                                value={item.article}
+                              >
+                                {item.article}
+                              </Option>
+                            ))}
+                          </Select>
+                        </Col>
+                        <Col span={2} >
+                          <Input
+                            size="large"
+                            style={{ width: '100%' }}
+                            placeholder={"ID"}
+                            value={addArticle.articleNo}
                           />
-                        ))}
-                      </Col>
-                      <Col span={2} >
-                        <Input
-                          size="large"
-                          style={{ width: '100%' }}
-                          placeholder={"ID"}
-                          value={addArticle.articleNo}
-                        />
-                      </Col>
-                      <Col span={11} ></Col>
+                        </Col>
+                        <Col span={13} ></Col>
+                      </Row>
+                    </Form.Item>
+
+                    <Form.Item label="STANDARD CLAUSES DEFINED">
+                      {selectedArticleSub.subarticles.map((item, index) => (
+                        <Row >
+                          <Col span={24}>
+                            <TextArea
+                              size="large"
+                              name="key"
+                              rows={4}
+                              style={{ width: '100%' }}
+                              placeholder={"Key"}
+                              defaultValue={item.content}
+                              //onChange={e => handleVariablesChange(index, e)}
+                              disabled
+                            />
+                          </Col>
+                        </Row>
+                      ))}
                     </Form.Item>
 
                     <Form.Item label="SELECT VARIABLES">
-                      <Select
-                        size="large"
-                        name="raname"
-                        onChange={e => handleChange(e)}
-                        style={{ width: '40.5%' }}
-                      >
-                        {selectedArticle.variables.map((item) => (
-                          <Option
-                            key={item.uuid}
-                            value={item.verify}
-                          >
-                            {item.verify}
-                          </Option>
-                        ))}
-                      </Select>
+                      {selectedArticleVar.variables.map((item, index) => (
+                        <Row >
+                          <Col span={4}>
+                            <Input
+                              size="large"
+                              name="key"
+                              style={{ width: '85%' }}
+                              placeholder={"Key"}
+                              defaultValue={item.verify}
+                              onChange={e => handleVariablesChange(index, e)}
+                            />
+                          </Col>
+                          <Col span={5}>
+                            <Input
+                              name="value"
+                              size="large"
+                              placeholder={"Value"}
+                              style={{ width: '88%' }}
+                              type="text"
+                              onChange={e => handleVariablesChange(index, e)}
+                            />
+                          </Col>
+                          <Col span={15}></Col>
+                        </Row>
+                      ))}
                     </Form.Item>
 
                     <Form.Item label="ENABLE CUSTOM TEXTS">
-                      <Col span={20}>
+                      <Col span={24}>
                         <Switch
                           size="large"
                           onChange={e => handleInput(e)}
@@ -216,13 +252,12 @@ const AddArticle = () => {
                           name="customText"
                           size="large"
                           rows={4}
-                          style={{ width: '99%' }}
+                          style={{ width: '100%' }}
                           disabled={input.value}
                           type="text"
-                          onChange={handleChange2}
+                          onChange={handleChangeRA}
                         />
                       </Col>
-                      <Col span={4}></Col>
                     </Form.Item>
 
                     <Form.Item>
