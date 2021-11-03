@@ -32,6 +32,7 @@ const AddArticle = () => {
   let userDetails = JSON.parse(localStorage.getItem('user'));
   const [addArticle, setAddArticle] = useState(initialFormState);
   const [itemmap, setItemmap] = useState()
+  const [selectedArticle, setSelectedArticle] = useState({ variables: [] })
 
   const openNotificationWithIcon = (type, title, description) => {
     notification[type]({
@@ -80,6 +81,8 @@ const AddArticle = () => {
         if (data.article == value) {
           setAddArticle({ ...addArticle, articleNo: data.id })
           addArticle.articleNo = data.id;
+          setSelectedArticle(data)
+          console.log(selectedArticle);
         }
       })
     })
@@ -191,12 +194,12 @@ const AddArticle = () => {
                         onChange={e => handleChange(e)}
                         style={{ width: '40.5%' }}
                       >
-                        {outputNLP.map((item) => (
+                        {selectedArticle.variables.map((item) => (
                           <Option
-                            key={item.articles.map(data => data.id)}
-                            value={item.articles.map(data => data.variables.map(data => data.verify))}
+                            key={item.uuid}
+                            value={item.verify}
                           >
-                            {item.articles.map(data => data.variables.map(data => data.verify))}
+                            {item.verify}
                           </Option>
                         ))}
                       </Select>
