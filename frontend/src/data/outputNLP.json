@@ -57,56 +57,56 @@
                     {
                         "id": "1.1",
                         "uuid": "9ff284ae-908a-1e80-8831-90a4cef427a5",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7380952380952381,
                         "content": "This a unilateral agreement for International Roaming for the provision by Proximus of Direct Wholesale Roaming Access Services, in order to enable Roaming Customers of Operator to gain access to mobile telecommunications services in the geographic areas where Proximus operates as a VPMN. This agreement is for Direct Roaming Wholesale Access (\u201cagreement\u201d), as defined below.  "
                     },
                     {
                         "id": "1.2",
                         "uuid": "bdbdac41-4cdf-190b-bd3f-8d4b4bea7e04",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.13414634146341464,
                         "content": "The Operator is either (i) a MNO constituting a Roaming Provider or (ii) a full MVNO which operates as an MNO in relation to international roaming and which equally constitutes a Roaming Provider.  This reference offer is intended for EU/EEA MNO\u2019s and full MVNO\u2019s having obtained a License and/or Authorization for offering mobile services by the authorities in their EU/EEA country of origin, excluding Belgium."
                     },
                     {
                         "id": "1.3",
                         "uuid": "83732a00-0ebf-12aa-bab2-89a4c59c14ab",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.3333333333333333,
                         "content": "This Direct Wholesale Roaming Access Agreement contains the basic principles applicable to the Services provided by Proximus to Operator."
                     },
                     {
                         "id": "1.4",
                         "uuid": "07a1a24b-33b3-1968-b9c2-61f640ae2e28",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.06666666666666667,
                         "content": "The Services and the technical terms and conditions offered by Proximus to Operator shall not differ substantially from those provided by Proximus to other Operators who request a similar service upon similar technical, qualitative and pricing conditions, however subject to technical availability. Without prejudice to the foregoing, the Parties may alternatively directly amend the terms and conditions of this Agreement, or otherwise include deviations.  "
                     },
                     {
                         "id": "1.5",
                         "uuid": "605412b5-ef8d-1b6e-bee3-f6e67da6f082",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.16,
                         "content": "The Annexes, including the Overview of the Annex Structure, constitute an integral part of the Agreement. In case of discrepancy between different parts of the Agreement the following order of interpretation shall be applied:  1. the main body of this Agreement; and  2. the Annexes "
                     },
                     {
                         "id": "1.6",
                         "uuid": "81805e95-4b6e-1d32-bce9-4768938d9131",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.05172413793103448,
                         "content": "In case of additional requirements, exceptions and/or contradictions between the Agreement and any Technical Specifications or GSM Association Permanent Reference Documents, the provisions of the Agreement shall prevail."
                     },
                     {
                         "id": "1.7",
                         "uuid": "7ed277db-44db-1ed8-98f8-fb101b2f73ab",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.10204081632653061,
                         "content": "Subject to applicable laws, the Parties agree to be bound by GSMA Permanent Reference documents relevant to International Roaming for example but not limited to: 1. GSMA PRDs related to Quality of Service; 2. GSMA PRDs related to Fraud Detection; and 3. GSMA PRDs relating to Billing between the parties including Invoicing, Settlement and dispute resolution."
                     },
                     {
                         "id": "1.8",
                         "uuid": "bf955807-3204-1340-bc2e-69d2b0087905",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.13953488372093023,
                         "content": "he conclusion of the Agreement is subject to the respect of the procedure for access requests, as described on Proximus website.  Moreover, as a condition precedent for the signature of the present Agreement, such Agreement may not be signed (or renewed) if during the 12 months preceding the envisaged Date of signature/renewal, the Operator has been subject to a notice of termination sent by Proximus in the context of Direct Wholesale Roaming Access services or to penalties for abusive use of the then ongoing Wholesale Roaming Access Agreement. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions   "
                     }
@@ -121,7 +121,7 @@
                     {
                         "id": "2.1",
                         "uuid": "69cd2ae8-da6b-1297-9b4c-9575caf23ac6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7428571428571429,
                         "content": "The actual commercial starting Date for International Roaming shall be the Date as agreed by both Parties in written form after successful completion of all necessary network and billing test procedures.  "
                     }
@@ -179,91 +179,91 @@
                     {
                         "id": "3.1",
                         "uuid": "c7ea55d4-e2cc-1100-961c-62fe5ae47574",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7142857142857143,
                         "content": " \"Affiliated Company\" of a Party means any other legal entity: 1. directly or indirectly owning or controlling the Party, or 2. under the direct or indirect ownership or control of the same legal entity directly or indirectly owning or controlling the Party, or 3. directly or indirectly owned or controlled by the Party, for so long as such ownership or control lasts.  Ownership or control shall exist through the direct or indirect ownership of more than 50 % of the nominal value of the issued equity share capital or of more than 50 % of the shares entitling the holders to vote for the election of directors or persons performing similar functions."
                     },
                     {
                         "id": "3.2",
                         "uuid": "8ea3e706-a680-1722-b28b-f674ff65c179",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.3",
                         "uuid": "2cb55636-563b-1419-b203-138d3c2587ff",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5483870967741935,
                         "content": "\"Agreement\" shall mean this Direct Wholesale Roaming Access Agreement together with the Annexes attached hereto. \"Date of the Agreement\" shall mean the Date as of which both Parties have signed the Agreement by their duly authorized representatives."
                     },
                     {
                         "id": "3.4",
                         "uuid": "b8230d05-fe09-1745-a22e-27ab2fa55fd0",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.11764705882352941,
                         "content": "Direct Wholesale Roaming Access shall have the meaning as defined in Article 2 (2) (p) of the Roaming Regulation, with the exception of wholesale roaming resale access as defined in Article 2 (2) (q) of the Roaming Regulation."
                     },
                     {
                         "id": "3.5",
                         "uuid": "b8f11fe0-bb84-1a3a-8d47-a2d672680465",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.6",
                         "uuid": "356a1d49-46a4-11de-81b0-58d44486a539",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.7",
                         "uuid": "1ff2b850-6001-1df5-a07e-63810b176c15",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.11428571428571428,
                         "content": "\"GSM Association General Assembly\" shall mean that body of the GSM Association formed by the Members and Associate Members. \"GSM Association Permanent Reference Documents\" means a document noted as such by the PSMC to the General Assembly and listed as such by Headquarters on the list of Permanent Reference Documents. \u201cInternational Roaming\u201d or \u201cIR\u201d shall mean the provision of Services by Proximus in respect of which access is granted by Roaming Customers of Operator through Proximus\u2019 s PMN. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "3.8",
                         "uuid": "f7886820-b774-1c6b-96ad-1f272463dab4",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.9",
                         "uuid": "f9841ed7-9a57-187b-b4e3-c6e8cda6fe96",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.07692307692307693,
                         "content": "\"Public Mobile Network\u201c or \"PMN\" shall mean a network that complies with the definition of a GSM network as set out in the Articles of Association of the GSM Association (AA.16).1  \"Roaming Customer\" shall have the meaning as defined in Article 2 (2) (g) of the Roaming Regulation and shall in practice mean a person or entity with a valid legal relationship with Operator using a GSM SIM (Subscriber Identity Module) and/or a GSM USIM (Universal Subscriber Identity Module) for use by that person or entity of the Services while roaming on Proximus\u2019s PMN in accordance with this Agreement. terms and conditions of the "
                     },
                     {
                         "id": "3.10",
                         "uuid": "404b85d1-8688-107c-957f-d35709aefef3",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.08,
                         "content": " Roaming Provider shall have the meaning as defined in Article 2 (2) (a) of the Roaming Regulation."
                     },
                     {
                         "id": "3.11",
                         "uuid": "c373ecd3-602b-169f-9e43-f0f9b84803bc",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.06818181818181818,
                         "content": " Roaming Regulation shall mean the Regulation (EU) No. 2015/2120 of the European Parliament and of the Council of 25 November 2015 amending Regulation (EU) No 531/2012 on roaming on public mobile communications networks within the Union, O.J., L 310/1 of 26 November 2015."
                     },
                     {
                         "id": "3.12",
                         "uuid": "77dca38c-800d-1414-9e9d-0b34f071b80a",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.1111111111111111,
                         "content": " \"Services\" shall mean the services of Direct Wholesale Roaming Access provided under this Agreement, as specified in Annexes 2 and 10, as the same may be amended from time to time by Proximus."
                     },
                     {
                         "id": "3.13",
                         "uuid": "becabde2-bacb-1f03-a864-89bd26415af7",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.03225806451612903,
                         "content": " \u201cSession\u201d shall mean the time between PDP Context Activation until PDP Context deactivation."
                     }
@@ -301,14 +301,14 @@
                     {
                         "id": "5.1",
                         "uuid": "9d38fc1b-30c4-1001-afc7-3cddf76c4c96",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.2638888888888889,
                         "content": "In respect of and subject to their licenses or rights and other national binding regulations to establish and operate Public Mobile Networks, the Parties to the Agreement agree, subject to Article "
                     },
                     {
                         "id": "5.2",
                         "uuid": "d042ff71-92e1-1dba-a165-0cea5696d85c",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.3508771929824561,
                         "content": "to establish IR in accordance with: 1. relevant Technical Specifications;  2. all binding GSM Association Permanent Reference Documents; and  3. those non-binding GSM Association Permanent Reference Documents which are agreed by the Parties and specifically set out in the Annexes; including in each case all the commercial aspects, as defined in the Agreement, including the Annexes hereto. 5.2. Additional requirements and exceptions to the Technical Specifications and GSM Association Permanent Reference Documents, as agreed between the Parties, are detailed in the Agreement and/or Annexes to the Agreement.   "
                     }
@@ -352,14 +352,14 @@
                     {
                         "id": "6.1",
                         "uuid": "2d5cbef2-b3cf-1639-b688-6d88ad2a8ad0",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6049382716049383,
                         "content": "Following notice of change served by Proximus to implement new Services or changes to any existing Services in accordance with Article 19.2, section 2 both Parties shall discuss the impact of any such change for Roaming Customers (including Roaming Customers\u2019 access to these Services) and in relation to:  1. network and billing test procedures as set out in the Technical Specifications and the GSM Association Permanent Reference Documents, as requested by either Party;  2. administrative activities; and 3. the targeted starting Date for the changed services."
                     },
                     {
                         "id": "6.2",
                         "uuid": "75281aba-aed8-1703-b7d5-4bbe1153d875",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0,
                         "content": "he Roaming provider is entitled to ask the Direct Wholesale Operator, prior to the launch, a forecast of all voice, SMS and data traffic for the coming 12 months after commercial launch. These forecasts will enable Proximus to make the Services available in the best possible conditions. Consequently, such forecasts shall be based on reliable data and Operator undertakes to upDate them at the end of each calendar semester starting from the semester following the commercial starting Date, by consistently maintaining a 12-month anticipation. In case of inaccurate forecasts, Proximus will not be liable for any default in the provision of the Services.  This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     }
@@ -382,14 +382,14 @@
                     {
                         "id": "7.1",
                         "uuid": "491be861-5517-1d55-8eed-e974fe3764e3",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.07017543859649122,
                         "content": "When a Roaming Customer uses the Services made available hereunder by Proximus, Operator shall be responsible for payment of charges for the said Services so used in accordance with the tariff of Proximus.  "
                     },
                     {
                         "id": "7.2",
                         "uuid": "0720ed13-fb93-1561-b747-fd8171306164",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.09090909090909091,
                         "content": "he Roaming provider is entitled to ask the Wholesale Operator, prior to the commercial launch, to provide a bank guarantee based on the traffic forecast for the coming twelve months. If traffic volumes change the roaming provider may request the bank guarantee to be changed accordingly.    "
                     }
@@ -427,7 +427,7 @@
                     {
                         "id": "9.1",
                         "uuid": "538c1532-26e0-197d-8e97-75b75fc027db",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.75,
                         "content": "The Parties shall implement billing and accounting according to the GSM Association Permanent Reference Documents and the provisions set out in Annex 3.  1"
                     }
@@ -442,7 +442,7 @@
                     {
                         "id": "10.1",
                         "uuid": "f07fe540-4d0e-1c4a-9fe5-300937fb9bed",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7333333333333333,
                         "content": "The responsibilities of each Party concerning Customer Care are described in Annex 4.  1"
                     }
@@ -472,35 +472,35 @@
                     {
                         "id": "11.1",
                         "uuid": "09e47bbc-b1a5-10ab-b836-df265bbba3ee",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.775,
                         "content": "The Parties agree that all aspects of the contents of the Agreement shall be treated as Information (as defined below) and no information in respect to the content of the Agreement shall be disclosed without the prior written consent of the Parties except as reasonably necessary to implement the Agreement  them referred (hereinafter "
                     },
                     {
                         "id": "11.2",
                         "uuid": "791fd312-5139-1f78-a66a-fdd4afd1cde5",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5728643216080402,
                         "content": "In addition to Article 11.1 hereof, the Parties hereby agree to treat all information exchanged between to as \"Information\") as confidential and agree not to disclose such Information in any manner whatsoever, in whole or in part except as provided in this Article 11. The Parties shall not use any Information other than in connection with the discussions between them and any transactions resulting therefrom, or for the provision of the Services as contemplated herein. The Parties are also entitled to disclose Information to third parties in the context of a possible bona fide acquisition or sale of its operations in support of reasonably related due diligence activities in respect thereof, or for the borrowing of funds or obtaining of insurance, in which case any third parties (including lenders or insurance companies) involved in such activities shall be  obliged to enter into confidentiality agreements which have the equivalent content as this Article 11 before receiving the Information. In addition to the foregoing, the Parties shall also be entitled to share information with Affiliated Companies, directors, This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions agents, professional advisers, contractors, employees or resellers on a need to know basis provided that such Affiliated Companies, agents, contractors, employees or resellers have entered into confidentiality agreements in a form substantially equivalent to and on terms and conditions no less stringent than the terms and conditions set out in this Article 11. Subject to Article "
                     },
                     {
                         "id": "11.3",
                         "uuid": "68651b87-c765-1f28-bc2c-2c7277b49d91",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6111111111111112,
                         "content": "each Party shall be liable in accordance with Article 14 (subject to Article 11.3) towards the other Party in respect of any unauthorized disclosure of Information made by any other authorized recipients.  11.3. Notwithstanding Article 14, each Party shall be liable under this Agreement to the other Party in respect of any proven damage or loss to the other Party caused by its unauthorised use or disclosure of such information only up to the sum of five hundred thousand (500,000) SDR.  "
                     },
                     {
                         "id": "11.4",
                         "uuid": "15b5bb61-7285-1123-a02c-5c9a49ba13aa",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7857142857142857,
                         "content": "Notwithstanding Article 11.1 above, Information and the contents of this Agreement may be transmitted to governmental, judicial or regulatory authorities, as may be required by any governmental, judicial or regulatory authority."
                     },
                     {
                         "id": "11.5",
                         "uuid": "0a637b0f-a4df-164f-a375-d384e6b326f3",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6521739130434783,
                         "content": " For the purposes of the Agreement, Information and the contents of this Agreement shall not be considered to be confidential if such Information is: 1. in or passed into the public domain other than by breach of this Article; or 2. known to a receiving Party prior to the disclosure by a disclosing Party; or 3. disclosed to a receiving Party without restriction by a third party having 4. the full right to disclose; or independently developed by a receiving Party to whom no disclosure of confidential Information relevant to such Information has been made."
                     },
@@ -514,7 +514,7 @@
                     {
                         "id": "11.7",
                         "uuid": "ba9a637d-1895-1dd7-abdf-7f224ee6925c",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7272727272727273,
                         "content": "Article 11 shall survive the termination of the Agreement for a period of ten (10) years but shall not in any way limit or restrict a disclosing Party's use of its own confidential Information.  1"
                     }
@@ -551,14 +551,14 @@
                     {
                         "id": "12.2",
                         "uuid": "d46129cf-5355-1d4a-ba68-ade229970570",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.32,
                         "content": " Each Party shall inform its customers that during roaming, the storage, treatment and transfer of their personal data may be subject to regulation different from the regulation in their own country. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "12.3",
                         "uuid": "d59508d1-cff2-1b6b-8ac8-6ea5616b8c9b",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7894736842105263,
                         "content": " The Parties confirm that they shall comply with the Data Privacy Regulations/Laws applicable in their respective countries.    1"
                     }
@@ -588,14 +588,14 @@
                     {
                         "id": "13.1",
                         "uuid": "0574fce1-d240-1e64-9a26-c8470b5f8200",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5263157894736842,
                         "content": "The Parties shall comply with the procedures and provisions concerning fraudulent or unauthorised use by Roaming Customers set out in the GSM Association Permanent Reference Documents. The Parties shall implement fraud prevention procedures as specified by the GSM Association Binding PRD BA.20."
                     },
                     {
                         "id": "13.2",
                         "uuid": "7515e7ab-a940-11f6-b437-e78a65102b06",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0,
                         "content": "Are considered as an \u201cacceptable periodical travel presence\u201d on the Proximus network the presence of maximum 15 % of the Roaming- In subscribers of the EU operator for maximum 30 days in a 4 months period and 5% of the Roaming-In subscribers for maximum 90 days in a 4 months period. Notwithstanding any clause to the contrary in any other document, if more than 15% of the Roaming-In subscribers of the EU operator are detected by the Proximus network for more than 30 days in a 4 months period or more than 5% of the Roaming-In subscribers are detected for more than 90 days in a 4 months period, the corresponding usage that exceeds the above mentioned parameters will be considered as a \u201cSuspected fraudulent or unauthorised use\u201d of Proximus network. When this suspected fraudulent or unauthorised use is observed by Proximus, a monthly penalty for voice, SMS messages and data will be invoiced in accordance with the traffic volume generated as specified in annex 9 of the Agreement, without prejudice to Proximus\u2019 right to suspend the service according to clause 15.1 (and notably 15.1.3). Notwithstanding any clause to the contrary, in the event penalties have been invoiced for a total period of six months during a contractual year, Proximus reserves the right to terminate the present Agreement in accordance with the procedure described in Art 3 of the Regulation n\u00b0531/2012 amended by Regulation 2017/920 on roaming on public mobile communication networks within the European Union. During this procedure, the penalties remain due (if applicable) Proximus reserves the right to review the parameters indicated in the present regulated offer to define what is considered as an \u201cacceptable periodical travel presence\u201d after having notified the BIPT of the objective grounds based on which Proximus considers that the current parameters are no more appropriate. The present Article 13.2 only applies to EU/EEA traffic.     1"
                     }
@@ -625,7 +625,7 @@
                     {
                         "id": "14.1",
                         "uuid": "53e4ac1f-c0a9-1e9d-a5fb-d4eaf3d4a7eb",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4083333333333333,
                         "content": "Neither Party shall be liable to the other Party under or in connection with the Agreement except: 1. in respect of charges to be paid to Proximus pursuant to Article 7; This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 2. to the extent of its negligence where such negligence results in proven damages or loss to the other Party, in which event the liability of the negligent Party shall be limited to and shall in no event exceed two hundred and fifty thousand (250,000) SDR in respect of any one incident or series of incidents arising from the same cause; 3. in respect of charges arising from non-compliance with binding GSM Association Permanent Reference Documents pursuant to Article 13.  "
                     },
@@ -639,7 +639,7 @@
                     {
                         "id": "14.3",
                         "uuid": "42d7cba7-cbef-12b9-8934-4c6c72fb5cf2",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.782608695652174,
                         "content": "In no event shall any employee of either Party or of an Affiliated Company be liable to the other Party for any act of negligence or intent under or in connection with the Agreement. Save for the limitations in Articles 14.1 and 14.2 nothing in the foregoing shall in any way restrict the liability of either Party for the actions of its employees."
                     },
@@ -697,28 +697,28 @@
                     {
                         "id": "15.1",
                         "uuid": "8155c40f-d659-12ee-bde3-18c3ad187d48",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5353535353535354,
                         "content": "Notwithstanding anything in the Agreement to the contrary, Proximus may without liability suspend or terminate all or any of its Services to Roaming Customer(s) in circumstances where it would suspend or terminate those Services to its own customers, including but not limited to: 1. Roaming Customers using equipment which is defective or illegal; or 2. Roaming Customers causing any technical or other problems on Proximus\u2019s Public Mobile Network; or 3. Suspected fraudulent or unauthorised use; or 4. Authentication of the legal relationship not being possible; or 5. Traffic volumes which significantly differ from predicted volumes; or 6. Maintenance or enhancement of its Public Mobile Network; or 7. Suspension by non-payment exceeding 3 months."
                     },
                     {
                         "id": "15.2",
                         "uuid": "4d0e2853-f1e1-1649-8900-c286a15df6e8",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7627118644067796,
                         "content": "In case of a proposed suspension of Services to all Roaming Customers, Proximus shall use commercially reasonable efforts to give four (4) weeks written notice (shorter notice may apply given the circumstances related to the suspension) to Operator prior to the suspension taking effect.  If the suspension continues for more than six (6) months, Operator shall have the right to terminate the Agreement with immediate effect by written notice."
                     },
                     {
                         "id": "15.3",
                         "uuid": "801ee6a7-2887-1592-a7f1-6ce371133066",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.38461538461538464,
                         "content": "Operator has the right at any time, for technical reasons, without liability but upon detailed written notice to Proximus, to suspend access to the Services to its Roaming Customers. Alternatively, if it is technically more practicable, Operator may require Proximus to suspend all of its Services to Roaming Customers of Operator. Proximus shall use commercially reasonable efforts to comply with such requirement within seven (7) calendar days after receipt of the said notice. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "15.4",
                         "uuid": "ed856e63-a96e-14a4-ac70-56e226eee6a1",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.625,
                         "content": "The Parties agree that the suspension described in Article 15.3 shall be removed as soon as the technical reason for the suspension has been overcome by Proximus or Operator as the case may be.    1"
                     }
@@ -733,7 +733,7 @@
                     {
                         "id": "16.1",
                         "uuid": "baacab53-a6f9-1e82-b709-0d4b312bd8f1",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7413793103448276,
                         "content": "Non-performance of either Party\u2019s obligations pursuant to the Agreement or delay in performing same (except with respect to the payment of charges applicable hereunder) shall not constitute a breach of the Agreement if, and for as long as, it is due to a force majeure event, including, but not being limited to, governmental action, or requirement of regulatory authority, lockouts, strikes, shortage of transportation, war, rebellion or other military action, fire, flood, natural catastrophes, or any other unforeseeable obstacles that a Party is not able to overcome with reasonable efforts, or non-performance of obligations by a sub-contractor to a Party pursuant to any of the aforementioned reasons.  The Party prevented from fulfilling its obligations shall on becoming aware of such event inform the other Party in writing of such force majeure event as soon as possible. If the force majeure event continues for more than six (6) months, either Party shall have the right to terminate the Agreement with immediate effect by written notice."
                     },
@@ -755,7 +755,7 @@
                     {
                         "id": "17.1",
                         "uuid": "47a7d5b8-a720-1ae5-8879-35bba264df52",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.2898550724637681,
                         "content": "The Agreement comes into force on the Date of the Agreement Without prejudice to the conditions of Articles 15.2, 16.1 and 18, the Agreement shall have a duration of one (1) year as from the Date of the Agreement and shall be subject to tacit yearly renewals unless one of the Parties receives a termination notice 3 months prior to the end of the then current term. The present Article 17.1 is without prejudice to the termination rules as detailed in article 18 below.  1"
                     }
@@ -792,14 +792,14 @@
                     {
                         "id": "18.1",
                         "uuid": "9c72f2c3-0f1b-1922-b4ed-79cadffef6c6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4896907216494845,
                         "content": "In addition to the conditions of Articles 15.2, 16.1 and 17 the Agreement may be terminated as follows: 1. by mutual agreement of the Parties in writing subject to a prior notice of six (6) months; or 2. by one of the Parties, with immediate effect, when the other Party is in material breach of the Agreement and does not or is not capable of remedying such breach within thirty (30) days of receipt of a written notice to such effect; This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions  3. by one of the Parties, with immediate effect, if the other Party becomes bankrupt or insolvent or if that other Party enters into any composition or arrangement with its creditors and that other Party is not able to ensure performance of its obligations under the Agreement by a guarantee from a first class bank, payable on first written demand; 4. by written notice of either Party to the other in the event that IR becomes technically or commercially impracticable on Proximus\u2019s Public Mobile Network and the provisions set out in Article 15 are not sufficient to solve the problem or if an unacceptable level of unauthorized use occurs and the other Party is not capable of remedying such unauthorized use within sixty (60) days of receipt of a written notice to such effect; or 5. subject to Article 14.1 immediately in the event a final order by the relevant governmental authority revoking or denying renewal of the license(s) or permission to operate a Public Mobile Network(s) granted to either Party, or any other license necessary to operate the Service(s), takes effect."
                     },
                     {
                         "id": "18.2",
                         "uuid": "a561c4c0-96a6-1075-a4cb-f503e1ff8eab",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7073170731707317,
                         "content": "In the event of termination on the grounds of a breach of the Agreement under the Article 18.1.2, the Party in breach shall, notwithstanding Article 14.2, be liable to the other Party (in addition to charges properly due and payable to Proximus) for proven direct damage or loss (excluding indirect or consequential damage or loss) arising as a consequence of such breach up to a maximum aggregate liability of two hundred and fifty thousand (250,000) SDR, provided, however, that such limitation of liability shall not apply if a damage or loss is caused by a Party\u2019s wilful misconduct or gross negligence.  1"
                     }
@@ -843,28 +843,28 @@
                     {
                         "id": "19.1",
                         "uuid": "def0563d-901b-11f3-9247-736e3dea6d16",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7419354838709677,
                         "content": "Any amendments and/or additions to the Agreement and/or Annexes and/or Addenda shall be valid only if made in writing and signed by duly authorized representatives of both Parties hereto."
                     },
                     {
                         "id": "19.2",
                         "uuid": "8b9a090a-5a4d-1ae9-b464-b1de523c9f9f",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.41397849462365593,
                         "content": "Notwithstanding Article 19.1 Proximus shall be entitled to:  1. implement new Services or change existing Services as it sees fit subject to the successful completion of all network and billing test procedures as set out in the Technical Specifications and the GSM Association Permanent Reference Documents and as requested by either Party. Proximus shall give Operator at least thirty (30) days\u2019 prior written notice of any implementation of Services for the first time. Proximus also agrees to use its reasonable efforts to give the other Party at least thirty (30) days prior written notice of any other proposed implementation of new Services or change of existing Services which is a major change which has an impact on IR;   2. terminate all or any existing Services offered by or to a roaming partner. Proximus agrees to use its reasonable efforts to give Operator at least sixty (60) days prior written notice of any termination of existing Services which is a major change which has an impact on IR; or  3. subject to the constraints of the Roaming Regulation, vary its tariff stated in the Annex 8 or subsequent variation thereof. In the case of scheduled This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions  changes (as described in BA.27) Proximus shall give sixty (60) days written notice of any variation to its tariff and the new change shall take effect on the first day of the month following the expiration of the sixty (60) day notice period. In the case of unscheduled changes Proximus shall use all reasonable endeavours to give adequate notice of such changes and the new change shall take effect on the first day following the expiration of the notice period given. Any variation in the tariff shall be deemed to be incorporated into the Agreement. Any challenges to changes to the Tariff shall be made in accordance with Article 23.22.2;  "
                     },
                     {
                         "id": "19.3",
                         "uuid": "51a23ff4-49dc-1e3a-a4e3-13229af260f9",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7301587301587301,
                         "content": "The references to Technical Specifications and binding GSM Association Permanent Reference Documents in Article 5.1 (1) and (2) shall be deemed to include references to these documents as amended by GSM Association from time to time.  However the reference to non-binding GSM Association Permanent Reference Documents in Article 5.1(3) shall not be deemed to include a reference to such non-binding documents as amended by GSM Association from time to time unless and to the extent that this is expressly agreed by the Parties and detailed in the Agreement, including the Annexes. This Article 19.23 shall be subject to Article 5.2.  "
                     },
                     {
                         "id": "19.4",
                         "uuid": "b5acb0e1-148e-1a92-861f-b4fc8d59458e",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7916666666666666,
                         "content": "It is also recognised by the Parties that it may be appropriate to seek changes to the Agreement in the light of experience and development in the GSM Association and the establishment of IR between the Parties. Accordingly, the Parties shall enter into good faith discussions with a view to agreeing mutually acceptable modifications to the Agreement.  2"
                     }
@@ -901,49 +901,49 @@
                     {
                         "id": "20.1",
                         "uuid": "92220be8-e6f2-119a-b30f-711dfc5645f6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5148514851485149,
                         "content": "Successors and Assigns The Agreement and the rights and obligations specified herein shall be binding upon the Parties hereto and their respective legal successors and neither Party shall sell, transfer or assign the Agreement or any part, interest, right or obligation hereunder, except that a Party shall have the right to transfer or assign the Agreement in whole (but not in part) to an Affiliated Company who is also a Member of the GSM Association or to an assignee of its license or right to operate a Public Mobile Network(s) provided that such assignee expressly assumes, by written instrument approved by the Parties, all of the obligations of such Party hereunder and thereby becomes a Party hereunder, it being understood that such assignment shall not release the assigning Party of its obligations under Article 11 of this Agreement.  No person other than a Party to the Agreement shall acquire any rights hereunder as a third-party beneficiary or otherwise by virtue of the Agreement.   "
                     },
                     {
                         "id": "20.2",
                         "uuid": "8b5e5fc6-cde7-1d67-b291-1c7755ca685a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7307692307692307,
                         "content": "Headings The headings of the Agreement are for the convenience of reference only and shall in no way limit or affect the meaning or interpretation of the provisions of the Agreement."
                     },
                     {
                         "id": "20.3",
                         "uuid": "7ca590d8-b70e-1dea-acd1-5c63f6f20645",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4,
                         "content": "No waiver This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions Failure by any Party at any time or times to require performance of any provisions of the Agreement shall in no manner affect its rights to enforce the same, and the waiver by any Party of any breach of any provisions of the Agreement shall not be construed to be a waiver by such Party of any succeeding breach of such provision or waiver by such Party of any breach of any other provision hereof.      "
                     },
                     {
                         "id": "20.4",
                         "uuid": "a742b9b4-f0b9-1b3d-9098-eed7bd60c234",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7222222222222222,
                         "content": "Provisions severable If any part of the Agreement or any Annex hereto is held to be invalid or unenforceable, such determination shall not invaliDate any other provision of the Agreement or Annexes hereto; and the Parties shall attempt, through negotiations in good faith, to replace any part of the Agreement or Annexes hereto so held to be invalid or unenforceable.  The failure of the Parties to agree on such replacement shall not affect the validity of the remaining parts of the Agreement."
                     },
                     {
                         "id": "20.5",
                         "uuid": "468be5ea-2835-1283-94b1-b98a3764962a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7727272727272727,
                         "content": "Notices All notices, information and communications required under the Agreement shall be given as described in Annex 1: Agreement Management Principles."
                     },
                     {
                         "id": "20.6",
                         "uuid": "1d653904-611c-1c01-be94-d2c9c4efc12a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7727272727272727,
                         "content": "Compliance with Laws and Regulatory requirements  The commitment of the Parties hereto shall be subject to all applicable laws and/or regulatory requirements, present and future, of any governmental or regulatory authority having jurisdiction over the Parties hereto, as well as any valid order of a court of competent jurisdiction."
                     },
                     {
                         "id": "20.7",
                         "uuid": "4b56db86-f9f2-1859-8ab2-b377f840bcf9",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.696969696969697,
                         "content": "Anti-bribery compliance The Parties hereby acknowledge the importance of combating and preventing bribery and to that end both Parties agree to comply fully with all applicable laws, regulations and sanctions relating to anti-bribery and anti-corruption.  2"
                     }
@@ -958,7 +958,7 @@
                     {
                         "id": "21.1",
                         "uuid": "1222e631-87a6-111e-8249-87b03a2e1a6a",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.10810810810810811,
                         "content": "The Agreement and any matters relating hereto shall be governed by and construed in accordance with Swiss law.  2"
                     }
@@ -1024,56 +1024,56 @@
                     {
                         "id": "1.1",
                         "uuid": "9ff284ae-908a-1e80-8831-90a4cef427a5",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7380952380952381,
                         "content": "This a unilateral agreement for International Roaming for the provision by Proximus of Direct Wholesale Roaming Access Services, in order to enable Roaming Customers of Operator to gain access to mobile telecommunications services in the geographic areas where Proximus operates as a VPMN. This agreement is for Direct Roaming Wholesale Access (\u201cagreement\u201d), as defined below.  "
                     },
                     {
                         "id": "1.2",
                         "uuid": "bdbdac41-4cdf-190b-bd3f-8d4b4bea7e04",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.13414634146341464,
                         "content": "The Operator is either (i) a MNO constituting a Roaming Provider or (ii) a full MVNO which operates as an MNO in relation to international roaming and which equally constitutes a Roaming Provider.  This reference offer is intended for EU/EEA MNO\u2019s and full MVNO\u2019s having obtained a License and/or Authorization for offering mobile services by the authorities in their EU/EEA country of origin, excluding Belgium."
                     },
                     {
                         "id": "1.3",
                         "uuid": "83732a00-0ebf-12aa-bab2-89a4c59c14ab",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.3333333333333333,
                         "content": "This Direct Wholesale Roaming Access Agreement contains the basic principles applicable to the Services provided by Proximus to Operator."
                     },
                     {
                         "id": "1.4",
                         "uuid": "07a1a24b-33b3-1968-b9c2-61f640ae2e28",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.06666666666666667,
                         "content": "The Services and the technical terms and conditions offered by Proximus to Operator shall not differ substantially from those provided by Proximus to other Operators who request a similar service upon similar technical, qualitative and pricing conditions, however subject to technical availability. Without prejudice to the foregoing, the Parties may alternatively directly amend the terms and conditions of this Agreement, or otherwise include deviations.  "
                     },
                     {
                         "id": "1.5",
                         "uuid": "605412b5-ef8d-1b6e-bee3-f6e67da6f082",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.16,
                         "content": "The Annexes, including the Overview of the Annex Structure, constitute an integral part of the Agreement. In case of discrepancy between different parts of the Agreement the following order of interpretation shall be applied:  1. the main body of this Agreement; and  2. the Annexes "
                     },
                     {
                         "id": "1.6",
                         "uuid": "81805e95-4b6e-1d32-bce9-4768938d9131",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.05172413793103448,
                         "content": "In case of additional requirements, exceptions and/or contradictions between the Agreement and any Technical Specifications or GSM Association Permanent Reference Documents, the provisions of the Agreement shall prevail."
                     },
                     {
                         "id": "1.7",
                         "uuid": "7ed277db-44db-1ed8-98f8-fb101b2f73ab",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.10204081632653061,
                         "content": "Subject to applicable laws, the Parties agree to be bound by GSMA Permanent Reference documents relevant to International Roaming for example but not limited to: 1. GSMA PRDs related to Quality of Service; 2. GSMA PRDs related to Fraud Detection; and 3. GSMA PRDs relating to Billing between the parties including Invoicing, Settlement and dispute resolution."
                     },
                     {
                         "id": "1.8",
                         "uuid": "bf955807-3204-1340-bc2e-69d2b0087905",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.13953488372093023,
                         "content": "he conclusion of the Agreement is subject to the respect of the procedure for access requests, as described on Proximus website.  Moreover, as a condition precedent for the signature of the present Agreement, such Agreement may not be signed (or renewed) if during the 12 months preceding the envisaged Date of signature/renewal, the Operator has been subject to a notice of termination sent by Proximus in the context of Direct Wholesale Roaming Access services or to penalties for abusive use of the then ongoing Wholesale Roaming Access Agreement. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions   "
                     }
@@ -1088,7 +1088,7 @@
                     {
                         "id": "2.1",
                         "uuid": "69cd2ae8-da6b-1297-9b4c-9575caf23ac6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7428571428571429,
                         "content": "The actual commercial starting Date for International Roaming shall be the Date as agreed by both Parties in written form after successful completion of all necessary network and billing test procedures.  "
                     }
@@ -1146,91 +1146,91 @@
                     {
                         "id": "3.1",
                         "uuid": "c7ea55d4-e2cc-1100-961c-62fe5ae47574",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7142857142857143,
                         "content": " \"Affiliated Company\" of a Party means any other legal entity: 1. directly or indirectly owning or controlling the Party, or 2. under the direct or indirect ownership or control of the same legal entity directly or indirectly owning or controlling the Party, or 3. directly or indirectly owned or controlled by the Party, for so long as such ownership or control lasts.  Ownership or control shall exist through the direct or indirect ownership of more than 50 % of the nominal value of the issued equity share capital or of more than 50 % of the shares entitling the holders to vote for the election of directors or persons performing similar functions."
                     },
                     {
                         "id": "3.2",
                         "uuid": "8ea3e706-a680-1722-b28b-f674ff65c179",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.3",
                         "uuid": "2cb55636-563b-1419-b203-138d3c2587ff",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5483870967741935,
                         "content": "\"Agreement\" shall mean this Direct Wholesale Roaming Access Agreement together with the Annexes attached hereto. \"Date of the Agreement\" shall mean the Date as of which both Parties have signed the Agreement by their duly authorized representatives."
                     },
                     {
                         "id": "3.4",
                         "uuid": "b8230d05-fe09-1745-a22e-27ab2fa55fd0",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.11764705882352941,
                         "content": "Direct Wholesale Roaming Access shall have the meaning as defined in Article 2 (2) (p) of the Roaming Regulation, with the exception of wholesale roaming resale access as defined in Article 2 (2) (q) of the Roaming Regulation."
                     },
                     {
                         "id": "3.5",
                         "uuid": "b8f11fe0-bb84-1a3a-8d47-a2d672680465",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.6",
                         "uuid": "356a1d49-46a4-11de-81b0-58d44486a539",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.7",
                         "uuid": "1ff2b850-6001-1df5-a07e-63810b176c15",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.11428571428571428,
                         "content": "\"GSM Association General Assembly\" shall mean that body of the GSM Association formed by the Members and Associate Members. \"GSM Association Permanent Reference Documents\" means a document noted as such by the PSMC to the General Assembly and listed as such by Headquarters on the list of Permanent Reference Documents. \u201cInternational Roaming\u201d or \u201cIR\u201d shall mean the provision of Services by Proximus in respect of which access is granted by Roaming Customers of Operator through Proximus\u2019 s PMN. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "3.8",
                         "uuid": "f7886820-b774-1c6b-96ad-1f272463dab4",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.0,
                         "content": ""
                     },
                     {
                         "id": "3.9",
                         "uuid": "f9841ed7-9a57-187b-b4e3-c6e8cda6fe96",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.07692307692307693,
                         "content": "\"Public Mobile Network\u201c or \"PMN\" shall mean a network that complies with the definition of a GSM network as set out in the Articles of Association of the GSM Association (AA.16).1  \"Roaming Customer\" shall have the meaning as defined in Article 2 (2) (g) of the Roaming Regulation and shall in practice mean a person or entity with a valid legal relationship with Operator using a GSM SIM (Subscriber Identity Module) and/or a GSM USIM (Universal Subscriber Identity Module) for use by that person or entity of the Services while roaming on Proximus\u2019s PMN in accordance with this Agreement. terms and conditions of the "
                     },
                     {
                         "id": "3.10",
                         "uuid": "404b85d1-8688-107c-957f-d35709aefef3",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.08,
                         "content": " Roaming Provider shall have the meaning as defined in Article 2 (2) (a) of the Roaming Regulation."
                     },
                     {
                         "id": "3.11",
                         "uuid": "c373ecd3-602b-169f-9e43-f0f9b84803bc",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.06818181818181818,
                         "content": " Roaming Regulation shall mean the Regulation (EU) No. 2015/2120 of the European Parliament and of the Council of 25 November 2015 amending Regulation (EU) No 531/2012 on roaming on public mobile communications networks within the Union, O.J., L 310/1 of 26 November 2015."
                     },
                     {
                         "id": "3.12",
                         "uuid": "77dca38c-800d-1414-9e9d-0b34f071b80a",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.1111111111111111,
                         "content": " \"Services\" shall mean the services of Direct Wholesale Roaming Access provided under this Agreement, as specified in Annexes 2 and 10, as the same may be amended from time to time by Proximus."
                     },
                     {
                         "id": "3.13",
                         "uuid": "becabde2-bacb-1f03-a864-89bd26415af7",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.03225806451612903,
                         "content": " \u201cSession\u201d shall mean the time between PDP Context Activation until PDP Context deactivation."
                     }
@@ -1268,14 +1268,14 @@
                     {
                         "id": "5.1",
                         "uuid": "9d38fc1b-30c4-1001-afc7-3cddf76c4c96",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.2638888888888889,
                         "content": "In respect of and subject to their licenses or rights and other national binding regulations to establish and operate Public Mobile Networks, the Parties to the Agreement agree, subject to Article "
                     },
                     {
                         "id": "5.2",
                         "uuid": "d042ff71-92e1-1dba-a165-0cea5696d85c",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.3508771929824561,
                         "content": "to establish IR in accordance with: 1. relevant Technical Specifications;  2. all binding GSM Association Permanent Reference Documents; and  3. those non-binding GSM Association Permanent Reference Documents which are agreed by the Parties and specifically set out in the Annexes; including in each case all the commercial aspects, as defined in the Agreement, including the Annexes hereto. 5.2. Additional requirements and exceptions to the Technical Specifications and GSM Association Permanent Reference Documents, as agreed between the Parties, are detailed in the Agreement and/or Annexes to the Agreement.   "
                     }
@@ -1319,14 +1319,14 @@
                     {
                         "id": "6.1",
                         "uuid": "2d5cbef2-b3cf-1639-b688-6d88ad2a8ad0",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6049382716049383,
                         "content": "Following notice of change served by Proximus to implement new Services or changes to any existing Services in accordance with Article 19.2, section 2 both Parties shall discuss the impact of any such change for Roaming Customers (including Roaming Customers\u2019 access to these Services) and in relation to:  1. network and billing test procedures as set out in the Technical Specifications and the GSM Association Permanent Reference Documents, as requested by either Party;  2. administrative activities; and 3. the targeted starting Date for the changed services."
                     },
                     {
                         "id": "6.2",
                         "uuid": "75281aba-aed8-1703-b7d5-4bbe1153d875",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0,
                         "content": "he Roaming provider is entitled to ask the Direct Wholesale Operator, prior to the launch, a forecast of all voice, SMS and data traffic for the coming 12 months after commercial launch. These forecasts will enable Proximus to make the Services available in the best possible conditions. Consequently, such forecasts shall be based on reliable data and Operator undertakes to upDate them at the end of each calendar semester starting from the semester following the commercial starting Date, by consistently maintaining a 12-month anticipation. In case of inaccurate forecasts, Proximus will not be liable for any default in the provision of the Services.  This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     }
@@ -1349,14 +1349,14 @@
                     {
                         "id": "7.1",
                         "uuid": "491be861-5517-1d55-8eed-e974fe3764e3",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.07017543859649122,
                         "content": "When a Roaming Customer uses the Services made available hereunder by Proximus, Operator shall be responsible for payment of charges for the said Services so used in accordance with the tariff of Proximus.  "
                     },
                     {
                         "id": "7.2",
                         "uuid": "0720ed13-fb93-1561-b747-fd8171306164",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.09090909090909091,
                         "content": "he Roaming provider is entitled to ask the Wholesale Operator, prior to the commercial launch, to provide a bank guarantee based on the traffic forecast for the coming twelve months. If traffic volumes change the roaming provider may request the bank guarantee to be changed accordingly.    "
                     }
@@ -1394,7 +1394,7 @@
                     {
                         "id": "9.1",
                         "uuid": "538c1532-26e0-197d-8e97-75b75fc027db",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.75,
                         "content": "The Parties shall implement billing and accounting according to the GSM Association Permanent Reference Documents and the provisions set out in Annex 3.  1"
                     }
@@ -1409,7 +1409,7 @@
                     {
                         "id": "10.1",
                         "uuid": "f07fe540-4d0e-1c4a-9fe5-300937fb9bed",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7333333333333333,
                         "content": "The responsibilities of each Party concerning Customer Care are described in Annex 4.  1"
                     }
@@ -1439,35 +1439,35 @@
                     {
                         "id": "11.1",
                         "uuid": "09e47bbc-b1a5-10ab-b836-df265bbba3ee",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.775,
                         "content": "The Parties agree that all aspects of the contents of the Agreement shall be treated as Information (as defined below) and no information in respect to the content of the Agreement shall be disclosed without the prior written consent of the Parties except as reasonably necessary to implement the Agreement  them referred (hereinafter "
                     },
                     {
                         "id": "11.2",
                         "uuid": "791fd312-5139-1f78-a66a-fdd4afd1cde5",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5728643216080402,
                         "content": "In addition to Article 11.1 hereof, the Parties hereby agree to treat all information exchanged between to as \"Information\") as confidential and agree not to disclose such Information in any manner whatsoever, in whole or in part except as provided in this Article 11. The Parties shall not use any Information other than in connection with the discussions between them and any transactions resulting therefrom, or for the provision of the Services as contemplated herein. The Parties are also entitled to disclose Information to third parties in the context of a possible bona fide acquisition or sale of its operations in support of reasonably related due diligence activities in respect thereof, or for the borrowing of funds or obtaining of insurance, in which case any third parties (including lenders or insurance companies) involved in such activities shall be  obliged to enter into confidentiality agreements which have the equivalent content as this Article 11 before receiving the Information. In addition to the foregoing, the Parties shall also be entitled to share information with Affiliated Companies, directors, This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions agents, professional advisers, contractors, employees or resellers on a need to know basis provided that such Affiliated Companies, agents, contractors, employees or resellers have entered into confidentiality agreements in a form substantially equivalent to and on terms and conditions no less stringent than the terms and conditions set out in this Article 11. Subject to Article "
                     },
                     {
                         "id": "11.3",
                         "uuid": "68651b87-c765-1f28-bc2c-2c7277b49d91",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6111111111111112,
                         "content": "each Party shall be liable in accordance with Article 14 (subject to Article 11.3) towards the other Party in respect of any unauthorized disclosure of Information made by any other authorized recipients.  11.3. Notwithstanding Article 14, each Party shall be liable under this Agreement to the other Party in respect of any proven damage or loss to the other Party caused by its unauthorised use or disclosure of such information only up to the sum of five hundred thousand (500,000) SDR.  "
                     },
                     {
                         "id": "11.4",
                         "uuid": "15b5bb61-7285-1123-a02c-5c9a49ba13aa",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7857142857142857,
                         "content": "Notwithstanding Article 11.1 above, Information and the contents of this Agreement may be transmitted to governmental, judicial or regulatory authorities, as may be required by any governmental, judicial or regulatory authority."
                     },
                     {
                         "id": "11.5",
                         "uuid": "0a637b0f-a4df-164f-a375-d384e6b326f3",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.6521739130434783,
                         "content": " For the purposes of the Agreement, Information and the contents of this Agreement shall not be considered to be confidential if such Information is: 1. in or passed into the public domain other than by breach of this Article; or 2. known to a receiving Party prior to the disclosure by a disclosing Party; or 3. disclosed to a receiving Party without restriction by a third party having 4. the full right to disclose; or independently developed by a receiving Party to whom no disclosure of confidential Information relevant to such Information has been made."
                     },
@@ -1481,7 +1481,7 @@
                     {
                         "id": "11.7",
                         "uuid": "ba9a637d-1895-1dd7-abdf-7f224ee6925c",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7272727272727273,
                         "content": "Article 11 shall survive the termination of the Agreement for a period of ten (10) years but shall not in any way limit or restrict a disclosing Party's use of its own confidential Information.  1"
                     }
@@ -1518,14 +1518,14 @@
                     {
                         "id": "12.2",
                         "uuid": "d46129cf-5355-1d4a-ba68-ade229970570",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.32,
                         "content": " Each Party shall inform its customers that during roaming, the storage, treatment and transfer of their personal data may be subject to regulation different from the regulation in their own country. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "12.3",
                         "uuid": "d59508d1-cff2-1b6b-8ac8-6ea5616b8c9b",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7894736842105263,
                         "content": " The Parties confirm that they shall comply with the Data Privacy Regulations/Laws applicable in their respective countries.    1"
                     }
@@ -1555,14 +1555,14 @@
                     {
                         "id": "13.1",
                         "uuid": "0574fce1-d240-1e64-9a26-c8470b5f8200",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5263157894736842,
                         "content": "The Parties shall comply with the procedures and provisions concerning fraudulent or unauthorised use by Roaming Customers set out in the GSM Association Permanent Reference Documents. The Parties shall implement fraud prevention procedures as specified by the GSM Association Binding PRD BA.20."
                     },
                     {
                         "id": "13.2",
                         "uuid": "7515e7ab-a940-11f6-b437-e78a65102b06",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0,
                         "content": "Are considered as an \u201cacceptable periodical travel presence\u201d on the Proximus network the presence of maximum 15 % of the Roaming- In subscribers of the EU operator for maximum 30 days in a 4 months period and 5% of the Roaming-In subscribers for maximum 90 days in a 4 months period. Notwithstanding any clause to the contrary in any other document, if more than 15% of the Roaming-In subscribers of the EU operator are detected by the Proximus network for more than 30 days in a 4 months period or more than 5% of the Roaming-In subscribers are detected for more than 90 days in a 4 months period, the corresponding usage that exceeds the above mentioned parameters will be considered as a \u201cSuspected fraudulent or unauthorised use\u201d of Proximus network. When this suspected fraudulent or unauthorised use is observed by Proximus, a monthly penalty for voice, SMS messages and data will be invoiced in accordance with the traffic volume generated as specified in annex 9 of the Agreement, without prejudice to Proximus\u2019 right to suspend the service according to clause 15.1 (and notably 15.1.3). Notwithstanding any clause to the contrary, in the event penalties have been invoiced for a total period of six months during a contractual year, Proximus reserves the right to terminate the present Agreement in accordance with the procedure described in Art 3 of the Regulation n\u00b0531/2012 amended by Regulation 2017/920 on roaming on public mobile communication networks within the European Union. During this procedure, the penalties remain due (if applicable) Proximus reserves the right to review the parameters indicated in the present regulated offer to define what is considered as an \u201cacceptable periodical travel presence\u201d after having notified the BIPT of the objective grounds based on which Proximus considers that the current parameters are no more appropriate. The present Article 13.2 only applies to EU/EEA traffic.     1"
                     }
@@ -1592,7 +1592,7 @@
                     {
                         "id": "14.1",
                         "uuid": "53e4ac1f-c0a9-1e9d-a5fb-d4eaf3d4a7eb",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4083333333333333,
                         "content": "Neither Party shall be liable to the other Party under or in connection with the Agreement except: 1. in respect of charges to be paid to Proximus pursuant to Article 7; This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions 2. to the extent of its negligence where such negligence results in proven damages or loss to the other Party, in which event the liability of the negligent Party shall be limited to and shall in no event exceed two hundred and fifty thousand (250,000) SDR in respect of any one incident or series of incidents arising from the same cause; 3. in respect of charges arising from non-compliance with binding GSM Association Permanent Reference Documents pursuant to Article 13.  "
                     },
@@ -1606,7 +1606,7 @@
                     {
                         "id": "14.3",
                         "uuid": "42d7cba7-cbef-12b9-8934-4c6c72fb5cf2",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.782608695652174,
                         "content": "In no event shall any employee of either Party or of an Affiliated Company be liable to the other Party for any act of negligence or intent under or in connection with the Agreement. Save for the limitations in Articles 14.1 and 14.2 nothing in the foregoing shall in any way restrict the liability of either Party for the actions of its employees."
                     },
@@ -1664,28 +1664,28 @@
                     {
                         "id": "15.1",
                         "uuid": "8155c40f-d659-12ee-bde3-18c3ad187d48",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5353535353535354,
                         "content": "Notwithstanding anything in the Agreement to the contrary, Proximus may without liability suspend or terminate all or any of its Services to Roaming Customer(s) in circumstances where it would suspend or terminate those Services to its own customers, including but not limited to: 1. Roaming Customers using equipment which is defective or illegal; or 2. Roaming Customers causing any technical or other problems on Proximus\u2019s Public Mobile Network; or 3. Suspected fraudulent or unauthorised use; or 4. Authentication of the legal relationship not being possible; or 5. Traffic volumes which significantly differ from predicted volumes; or 6. Maintenance or enhancement of its Public Mobile Network; or 7. Suspension by non-payment exceeding 3 months."
                     },
                     {
                         "id": "15.2",
                         "uuid": "4d0e2853-f1e1-1649-8900-c286a15df6e8",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7627118644067796,
                         "content": "In case of a proposed suspension of Services to all Roaming Customers, Proximus shall use commercially reasonable efforts to give four (4) weeks written notice (shorter notice may apply given the circumstances related to the suspension) to Operator prior to the suspension taking effect.  If the suspension continues for more than six (6) months, Operator shall have the right to terminate the Agreement with immediate effect by written notice."
                     },
                     {
                         "id": "15.3",
                         "uuid": "801ee6a7-2887-1592-a7f1-6ce371133066",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.38461538461538464,
                         "content": "Operator has the right at any time, for technical reasons, without liability but upon detailed written notice to Proximus, to suspend access to the Services to its Roaming Customers. Alternatively, if it is technically more practicable, Operator may require Proximus to suspend all of its Services to Roaming Customers of Operator. Proximus shall use commercially reasonable efforts to comply with such requirement within seven (7) calendar days after receipt of the said notice. This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions "
                     },
                     {
                         "id": "15.4",
                         "uuid": "ed856e63-a96e-14a4-ac70-56e226eee6a1",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.625,
                         "content": "The Parties agree that the suspension described in Article 15.3 shall be removed as soon as the technical reason for the suspension has been overcome by Proximus or Operator as the case may be.    1"
                     }
@@ -1700,7 +1700,7 @@
                     {
                         "id": "16.1",
                         "uuid": "baacab53-a6f9-1e82-b709-0d4b312bd8f1",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7413793103448276,
                         "content": "Non-performance of either Party\u2019s obligations pursuant to the Agreement or delay in performing same (except with respect to the payment of charges applicable hereunder) shall not constitute a breach of the Agreement if, and for as long as, it is due to a force majeure event, including, but not being limited to, governmental action, or requirement of regulatory authority, lockouts, strikes, shortage of transportation, war, rebellion or other military action, fire, flood, natural catastrophes, or any other unforeseeable obstacles that a Party is not able to overcome with reasonable efforts, or non-performance of obligations by a sub-contractor to a Party pursuant to any of the aforementioned reasons.  The Party prevented from fulfilling its obligations shall on becoming aware of such event inform the other Party in writing of such force majeure event as soon as possible. If the force majeure event continues for more than six (6) months, either Party shall have the right to terminate the Agreement with immediate effect by written notice."
                     },
@@ -1722,7 +1722,7 @@
                     {
                         "id": "17.1",
                         "uuid": "47a7d5b8-a720-1ae5-8879-35bba264df52",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.2898550724637681,
                         "content": "The Agreement comes into force on the Date of the Agreement Without prejudice to the conditions of Articles 15.2, 16.1 and 18, the Agreement shall have a duration of one (1) year as from the Date of the Agreement and shall be subject to tacit yearly renewals unless one of the Parties receives a termination notice 3 months prior to the end of the then current term. The present Article 17.1 is without prejudice to the termination rules as detailed in article 18 below.  1"
                     }
@@ -1759,14 +1759,14 @@
                     {
                         "id": "18.1",
                         "uuid": "9c72f2c3-0f1b-1922-b4ed-79cadffef6c6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4896907216494845,
                         "content": "In addition to the conditions of Articles 15.2, 16.1 and 17 the Agreement may be terminated as follows: 1. by mutual agreement of the Parties in writing subject to a prior notice of six (6) months; or 2. by one of the Parties, with immediate effect, when the other Party is in material breach of the Agreement and does not or is not capable of remedying such breach within thirty (30) days of receipt of a written notice to such effect; This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions  3. by one of the Parties, with immediate effect, if the other Party becomes bankrupt or insolvent or if that other Party enters into any composition or arrangement with its creditors and that other Party is not able to ensure performance of its obligations under the Agreement by a guarantee from a first class bank, payable on first written demand; 4. by written notice of either Party to the other in the event that IR becomes technically or commercially impracticable on Proximus\u2019s Public Mobile Network and the provisions set out in Article 15 are not sufficient to solve the problem or if an unacceptable level of unauthorized use occurs and the other Party is not capable of remedying such unauthorized use within sixty (60) days of receipt of a written notice to such effect; or 5. subject to Article 14.1 immediately in the event a final order by the relevant governmental authority revoking or denying renewal of the license(s) or permission to operate a Public Mobile Network(s) granted to either Party, or any other license necessary to operate the Service(s), takes effect."
                     },
                     {
                         "id": "18.2",
                         "uuid": "a561c4c0-96a6-1075-a4cb-f503e1ff8eab",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7073170731707317,
                         "content": "In the event of termination on the grounds of a breach of the Agreement under the Article 18.1.2, the Party in breach shall, notwithstanding Article 14.2, be liable to the other Party (in addition to charges properly due and payable to Proximus) for proven direct damage or loss (excluding indirect or consequential damage or loss) arising as a consequence of such breach up to a maximum aggregate liability of two hundred and fifty thousand (250,000) SDR, provided, however, that such limitation of liability shall not apply if a damage or loss is caused by a Party\u2019s wilful misconduct or gross negligence.  1"
                     }
@@ -1810,28 +1810,28 @@
                     {
                         "id": "19.1",
                         "uuid": "def0563d-901b-11f3-9247-736e3dea6d16",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7419354838709677,
                         "content": "Any amendments and/or additions to the Agreement and/or Annexes and/or Addenda shall be valid only if made in writing and signed by duly authorized representatives of both Parties hereto."
                     },
                     {
                         "id": "19.2",
                         "uuid": "8b9a090a-5a4d-1ae9-b464-b1de523c9f9f",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.41397849462365593,
                         "content": "Notwithstanding Article 19.1 Proximus shall be entitled to:  1. implement new Services or change existing Services as it sees fit subject to the successful completion of all network and billing test procedures as set out in the Technical Specifications and the GSM Association Permanent Reference Documents and as requested by either Party. Proximus shall give Operator at least thirty (30) days\u2019 prior written notice of any implementation of Services for the first time. Proximus also agrees to use its reasonable efforts to give the other Party at least thirty (30) days prior written notice of any other proposed implementation of new Services or change of existing Services which is a major change which has an impact on IR;   2. terminate all or any existing Services offered by or to a roaming partner. Proximus agrees to use its reasonable efforts to give Operator at least sixty (60) days prior written notice of any termination of existing Services which is a major change which has an impact on IR; or  3. subject to the constraints of the Roaming Regulation, vary its tariff stated in the Annex 8 or subsequent variation thereof. In the case of scheduled This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions  changes (as described in BA.27) Proximus shall give sixty (60) days written notice of any variation to its tariff and the new change shall take effect on the first day of the month following the expiration of the sixty (60) day notice period. In the case of unscheduled changes Proximus shall use all reasonable endeavours to give adequate notice of such changes and the new change shall take effect on the first day following the expiration of the notice period given. Any variation in the tariff shall be deemed to be incorporated into the Agreement. Any challenges to changes to the Tariff shall be made in accordance with Article 23.22.2;  "
                     },
                     {
                         "id": "19.3",
                         "uuid": "51a23ff4-49dc-1e3a-a4e3-13229af260f9",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7301587301587301,
                         "content": "The references to Technical Specifications and binding GSM Association Permanent Reference Documents in Article 5.1 (1) and (2) shall be deemed to include references to these documents as amended by GSM Association from time to time.  However the reference to non-binding GSM Association Permanent Reference Documents in Article 5.1(3) shall not be deemed to include a reference to such non-binding documents as amended by GSM Association from time to time unless and to the extent that this is expressly agreed by the Parties and detailed in the Agreement, including the Annexes. This Article 19.23 shall be subject to Article 5.2.  "
                     },
                     {
                         "id": "19.4",
                         "uuid": "b5acb0e1-148e-1a92-861f-b4fc8d59458e",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7916666666666666,
                         "content": "It is also recognised by the Parties that it may be appropriate to seek changes to the Agreement in the light of experience and development in the GSM Association and the establishment of IR between the Parties. Accordingly, the Parties shall enter into good faith discussions with a view to agreeing mutually acceptable modifications to the Agreement.  2"
                     }
@@ -1868,49 +1868,49 @@
                     {
                         "id": "20.1",
                         "uuid": "92220be8-e6f2-119a-b30f-711dfc5645f6",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.5148514851485149,
                         "content": "Successors and Assigns The Agreement and the rights and obligations specified herein shall be binding upon the Parties hereto and their respective legal successors and neither Party shall sell, transfer or assign the Agreement or any part, interest, right or obligation hereunder, except that a Party shall have the right to transfer or assign the Agreement in whole (but not in part) to an Affiliated Company who is also a Member of the GSM Association or to an assignee of its license or right to operate a Public Mobile Network(s) provided that such assignee expressly assumes, by written instrument approved by the Parties, all of the obligations of such Party hereunder and thereby becomes a Party hereunder, it being understood that such assignment shall not release the assigning Party of its obligations under Article 11 of this Agreement.  No person other than a Party to the Agreement shall acquire any rights hereunder as a third-party beneficiary or otherwise by virtue of the Agreement.   "
                     },
                     {
                         "id": "20.2",
                         "uuid": "8b5e5fc6-cde7-1d67-b291-1c7755ca685a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7307692307692307,
                         "content": "Headings The headings of the Agreement are for the convenience of reference only and shall in no way limit or affect the meaning or interpretation of the provisions of the Agreement."
                     },
                     {
                         "id": "20.3",
                         "uuid": "7ca590d8-b70e-1dea-acd1-5c63f6f20645",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.4,
                         "content": "No waiver This reference offer is made pursuant to article 3(5) of Regulation EU/531/2012; it is subject to upDates & completions by Proximus.   This document sets out the main principles; it needs to be completed and if relevant amended on a case by case basis.  Sensitivity: Confidential Proximus reference offer of 29/05/2017  Unilateral Direct Wholesale Roaming Access Agreement : Main terms & conditions Failure by any Party at any time or times to require performance of any provisions of the Agreement shall in no manner affect its rights to enforce the same, and the waiver by any Party of any breach of any provisions of the Agreement shall not be construed to be a waiver by such Party of any succeeding breach of such provision or waiver by such Party of any breach of any other provision hereof.      "
                     },
                     {
                         "id": "20.4",
                         "uuid": "a742b9b4-f0b9-1b3d-9098-eed7bd60c234",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7222222222222222,
                         "content": "Provisions severable If any part of the Agreement or any Annex hereto is held to be invalid or unenforceable, such determination shall not invaliDate any other provision of the Agreement or Annexes hereto; and the Parties shall attempt, through negotiations in good faith, to replace any part of the Agreement or Annexes hereto so held to be invalid or unenforceable.  The failure of the Parties to agree on such replacement shall not affect the validity of the remaining parts of the Agreement."
                     },
                     {
                         "id": "20.5",
                         "uuid": "468be5ea-2835-1283-94b1-b98a3764962a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7727272727272727,
                         "content": "Notices All notices, information and communications required under the Agreement shall be given as described in Annex 1: Agreement Management Principles."
                     },
                     {
                         "id": "20.6",
                         "uuid": "1d653904-611c-1c01-be94-d2c9c4efc12a",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.7727272727272727,
                         "content": "Compliance with Laws and Regulatory requirements  The commitment of the Parties hereto shall be subject to all applicable laws and/or regulatory requirements, present and future, of any governmental or regulatory authority having jurisdiction over the Parties hereto, as well as any valid order of a court of competent jurisdiction."
                     },
                     {
                         "id": "20.7",
                         "uuid": "4b56db86-f9f2-1859-8ab2-b377f840bcf9",
-                        "type": "custmText",
+                        "type": "variation",
                         "similarity": 0.696969696969697,
                         "content": "Anti-bribery compliance The Parties hereby acknowledge the importance of combating and preventing bribery and to that end both Parties agree to comply fully with all applicable laws, regulations and sanctions relating to anti-bribery and anti-corruption.  2"
                     }
@@ -1925,7 +1925,7 @@
                     {
                         "id": "21.1",
                         "uuid": "1222e631-87a6-111e-8249-87b03a2e1a6a",
-                        "type": "newText",
+                        "type": "stdClause",
                         "similarity": 0.10810810810810811,
                         "content": "The Agreement and any matters relating hereto shall be governed by and construed in accordance with Swiss law.  2"
                     }

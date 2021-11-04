@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Row,
   Col,
   Form,
   Input,
   Button,
+  Checkbox,
   Spin,
   notification,
   Switch,
@@ -37,22 +38,19 @@ const AddArticle = () => {
       return item.hint === e;
     })
     setselectedArticles(new_e)
-    console.log(selectedArticles);
   }
 
   const [formVariables, setFormVariables] = useState([{ key: "", value: "" }])
   const handleVariablesChange = (i, e, v) => {
-    console.log(v);
-    console.log(e.target.name);
     let newFormVariables = [...formVariables];
-    //newFormVariables[i][e.target.name] = e.target.value;
     newFormVariables[i] = { key: v, value: e.target.value }
-    console.log(newFormVariables);
     setFormVariables(newFormVariables);
   }
 
   const [selectedArticleVar, setSelectedArticleVar] = useState({ variables: [] });
   const [selectedArticleSub, setSelectedArticleSub] = useState({ subarticles: [] });
+  const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState({ subarticles: [] });
+  const [selectedArticlesVariation, setSelectedArticlesVariation] = useState({ subarticles: [] });
   const onChange = (value) => {
     setAddArticle({ ...addArticle, articleName: value })
     addArticle.articleName = value;
@@ -63,6 +61,13 @@ const AddArticle = () => {
           addArticle.articleNo = data.id;
           setSelectedArticleVar(data)
           setSelectedArticleSub(data)
+          if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax == 'stdClause')) {
+            console.log("here");
+            setSelectedArticlesStdClause(data)
+          } else if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax == 'variation')) {
+            console.log("here2");
+            setSelectedArticlesVariation(data)
+          }
         }
       })
     })
@@ -195,7 +200,7 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="STANDARD CLAUSES DEFINED">
-                      {selectedArticleSub.subarticles.map((item, index) => (
+                      {selectedArticlesStdClause.subarticles.map((item, index) => (
                         <Row >
                           <Col span={24}>
                             <TextArea
@@ -237,6 +242,24 @@ const AddArticle = () => {
                             />
                           </Col>
                           <Col span={15}></Col>
+                        </Row>
+                      ))}
+                    </Form.Item>
+
+                    <Form.Item label="SELECT VARIATIONS">
+                      {selectedArticlesVariation.subarticles.map((item, index) => (
+                        <Row >
+                          <Col span={24}>
+                            <TextArea
+                              size="large"
+                              name="key"
+                              rows={4}
+                              style={{ width: '100%' }}
+                              placeholder={"Key"}
+                              defaultValue={item.content}
+                            //onChange={e => handleVariablesChange(index, e)}
+                            />
+                          </Col>
                         </Row>
                       ))}
                     </Form.Item>
