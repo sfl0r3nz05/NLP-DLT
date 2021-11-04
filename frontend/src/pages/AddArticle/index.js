@@ -42,13 +42,13 @@ const AddArticle = () => {
 
   const [formVariables, setFormVariables] = useState([{ key: "", value: "" }])
   const handleVariablesChange = (i, e, v) => {
-    console.log(e);
-    console.log(i);
     console.log(v);
+    console.log(e.target.name);
     let newFormVariables = [...formVariables];
-    newFormVariables[i][e.target.name] = e.target.value;
+    //newFormVariables[i][e.target.name] = e.target.value;
+    newFormVariables[i] = { key: v, value: e.target.value }
+    console.log(newFormVariables);
     setFormVariables(newFormVariables);
-    //console.log(formVariables);
   }
 
   const [selectedArticleVar, setSelectedArticleVar] = useState({ variables: [] });
@@ -223,7 +223,7 @@ const AddArticle = () => {
                               style={{ width: '85%' }}
                               placeholder={"Key"}
                               defaultValue={item.verify}
-                              onChange={e => handleVariablesChange(index, e)}
+                              disabled
                             />
                           </Col>
                           <Col span={5}>
@@ -233,7 +233,7 @@ const AddArticle = () => {
                               placeholder={"Value"}
                               style={{ width: '88%' }}
                               type="text"
-                              onChange={e => handleVariablesChange(index, e)}
+                              onChange={e => handleVariablesChange(index, e, item.verify)}
                             />
                           </Col>
                           <Col span={15}></Col>
