@@ -6,17 +6,24 @@ const invokeEvents = require("../../utils/invoke/invokeEvents");
 const proposeAddArticle = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        console.log(data);
         let value = data.addArticle;
+
         let value3 = JSON.stringify(data.formVariables)
         let arg3 = Buffer.from(value3).toString('base64');
-        let value4 = JSON.stringify(data.formVariations)
-        let arg4 = Buffer.from(value4).toString('base64');
-        let value5 = JSON.stringify(data.formStdClauses)
-        let arg5 = Buffer.from(value5).toString('base64');
-        let value6 = JSON.stringify(value.customText)
-        let arg6 = Buffer.from(value6).toString('base64');
+
+        let value4 = JSON.stringify(data.selectedArticlesVariation)
+        //let arg4 = Buffer.from(value4).toString('base64'); //console.log("here3" + value4);
+        arg4 = ""
+
+        let value5 = JSON.stringify(data.selectedArticlesStdClause)
+        //let arg5 = Buffer.from(value5).toString('base64'); //console.log("here4" + value5);
+        arg5 = ""
+
+        let value6 = JSON.stringify(data.formCustomText)
+        let arg6 = Buffer.from(value6).toString('base64'); //console.log("here5" + value6);
+
         let user = data.userDetails;
+
         if (!user || !value.raname || !value.articleNo) {
             res.sendStatus(201);
             res.end("201");

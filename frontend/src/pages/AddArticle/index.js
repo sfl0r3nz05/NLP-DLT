@@ -17,18 +17,16 @@ import outputNLP from "./../../data/outputNLP.json";
 
 const AddArticle = () => {
 
+  const formItemLayout = {};
+  const { TextArea } = Input;
+  const { Option } = Select;
+
   const initialFormState = {
     raname: "",
     articleNo: "",
     articleName: "",
-    customText: "",
   };
-
-  const formItemLayout = {};
-  const { TextArea } = Input;
-  const { Option } = Select;
   const [addArticle, setAddArticle] = useState(initialFormState);
-
 
   const [selectedArticles, setselectedArticles] = useState({ articles: [] });
   function handleChange(e) {
@@ -73,12 +71,16 @@ const AddArticle = () => {
     })
   };
 
+  const [formCustomText, setFormCustomText] = useState([{ value: "" }])
   function handleChangeRA(e) {
     const value = e.target.value;
     setAddArticle({
       ...addArticle,
       [e.target.name]: value
     });
+
+    formCustomText[0] = { value: e.target.value }
+    setFormCustomText(formCustomText)
   }
 
   const [input, setInput] = useState({ value: true });
@@ -101,7 +103,7 @@ const AddArticle = () => {
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, selectedArticlesStdClause, formVariables, selectedArticlesVariation, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -210,7 +212,6 @@ const AddArticle = () => {
                               style={{ width: '100%' }}
                               placeholder={"Key"}
                               defaultValue={item.content}
-                              //onChange={e => handleVariablesChange(index, e)}
                               disabled
                             />
                           </Col>

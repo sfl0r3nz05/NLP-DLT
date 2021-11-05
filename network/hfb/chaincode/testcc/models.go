@@ -52,29 +52,28 @@ type ListOfArticles struct {
 
 type ARTICLE struct {
 	id	string						`json:"id"` // name for the id
-	status string						`json:"status"`
-	variables	[]VARIABLE				`json:"variables"` // name for the variables
-	variations	[]VARIATION				`json:"variations"` // name for the variations
-	customTexts	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
-	stdClauses	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+	status string					`json:"status"`
+	stdClauses	[]STDCLAUSE			`json:"stdClause"` // name for the Standard Clauses
+	variables	[]VARIABLE			`json:"variables"` // name for the variables
+	variations	[]VARIATION			`json:"variations"` // name for the variations
+	customTexts	[]CUSTOMTEXT		`json:"customText"` // name for the Custom Text
+}
+
+type STDCLAUSE struct {
+	Value	string					`json:"value"` // name for value
 }
 
 type VARIABLE struct {
-	Id	string						`json:"id"` // name for the id
 	Key	string						`json:"key"` // name for value
 	Value string					`json:"value"` // name for value
 }
 
-type CUSTOMTEXT struct {
-	Value	string						`json:"value"` // name for value
-}
-
-type STDCLAUSE struct {
-	Value	string						`json:"value"` // name for value
-}
-
 type VARIATION struct {
-	Value	string						`json:"value"` // name for value
+	Value	string					`json:"value"` // name for value
+}
+
+type CUSTOMTEXT struct {
+	Value	string					`json:"value"` // name for value
 }
 
 // Event to handle events in HF

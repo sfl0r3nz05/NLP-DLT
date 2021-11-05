@@ -412,7 +412,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     log.Info(variable_list)
     log.Info(variation_list)
     log.Info(stdClause_list)
-    log.Info(customText)
+    log.Info(customText_list)
 
     article_status := "added_article"
     err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
