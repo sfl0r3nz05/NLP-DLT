@@ -26,13 +26,13 @@ type Dbinfo struct {
 
 // List of MNOs
 type Listofmnos struct {
-	Listmnos []string `json:"listofmnos"`
+	Listmnos []string 						`json:"listofmnos"`
 }
 
 // Main Struct at articles level
 type ArticlesRaid struct {
-	ARTICLESID string 					`json:"articlesid"`
-	RAID string 						`json:"raid"`
+	ARTICLESID string 						`json:"articlesid"`
+	RAID string 							`json:"raid"`
 }
 
 // Main Struct at articles level
@@ -45,35 +45,37 @@ type RoamingAgreement struct {
 
 type ListOfArticles struct {
 	ARTICLESID string 					`json:"articlesid"`
-	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
+	DOCUMENT_NAME	string				`json:"document_name"` // name for the document_name
 	STATUS string						`json:"status"`
-	ARTICLES []ARTICLE				`json:"articles"` // name for the articles
+	ARTICLES []ARTICLE					`json:"articles"` // name for the articles
 }
 
 type ARTICLE struct {
-	id	string						`json:"id"` // name for the id
-	status string					`json:"status"`
-	stdClauses	[]STDCLAUSE			`json:"stdClause"` // name for the Standard Clauses
-	variables	[]VARIABLE			`json:"variables"` // name for the variables
-	variations	[]VARIATION			`json:"variations"` // name for the variations
-	customTexts	[]CUSTOMTEXT		`json:"customText"` // name for the Custom Text
+	id	string							`json:"id"` // name for the id
+	status string						`json:"status"`
+	stdClauses	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+	variables	[]VARIABLE				`json:"variables"` // name for the variables
+	variations	[]VARIATION				`json:"variations"` // name for the variations
+	customTexts	[]CUSTOMTEXT			`json:"customText"` // name for the Custom Text
 }
 
 type STDCLAUSE struct {
-	Value	string					`json:"value"` // name for value
+	Id string							`json:"id"` // name for value
+	Value	string						`json:"value"` // name for value
 }
 
 type VARIABLE struct {
-	Key	string						`json:"key"` // name for value
-	Value string					`json:"value"` // name for value
+	Key	string							`json:"key"` // name for value
+	Value string						`json:"value"` // name for value
 }
 
 type VARIATION struct {
-	Value	string					`json:"value"` // name for value
+	Id string							`json:"id"` // name for value
+	Value	string						`json:"value"` // name for value
 }
 
 type CUSTOMTEXT struct {
-	Value	string					`json:"value"` // name for value
+	Value	string						`json:"value"` // name for value
 }
 
 // Event to handle events in HF

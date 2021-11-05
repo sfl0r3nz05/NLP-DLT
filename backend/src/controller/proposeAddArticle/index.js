@@ -11,8 +11,8 @@ const proposeAddArticle = async (req, res) => {
         let value3 = JSON.stringify(data.formVariables)
         let arg3 = Buffer.from(value3).toString('base64');
 
-        let value4 = JSON.stringify(data.selectedArticlesVariation)
-        //let arg4 = Buffer.from(value4).toString('base64'); //console.log("here3" + value4);
+        let value4 = JSON.stringify(data.selectedArticlesVariation); console.log("here3" + value4);
+        //let arg4 = Buffer.from(value4).toString('base64');
         arg4 = ""
 
         let value5 = JSON.stringify(data.selectedArticlesStdClause)
