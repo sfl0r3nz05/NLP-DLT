@@ -193,13 +193,36 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         }
 
         return shim.Success([]byte(org.Mno_name))
-    }   
+
+    } else if function == "queryAllArticles" {
+        //var jsonRA [] ARTICLE
+        
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            jsonRA, err := cc.queryRAarticles(stub, org_id, raid)
+            if err != nil {
+                return shim.Error(ERRORQueryAllArticles)
+            }
+            log.Info(jsonRA)
+            //return shim.Success([]byte(jsonRA))
+        }
+    }
 
     return shim.Success([]byte("OK"))
 }
 
 func (cc *Chaincode) registerOrg(stub shim.ChaincodeStubInterface, org Organization, org_id string) (string, error){
-    //record organizations
     var mno_name string
     mno_name, err := cc.recordOrg(stub, org, org_id)
     if err != nil {
@@ -468,6 +491,42 @@ func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string
         return "", err
     }  
     return id_org, nil
+}
+
+func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) ([]ARTICLE , error){
+    log.Info(raid)
+
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return nil, errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    log.Info(RA)
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return nil, errors.New(ERRORVerifyingOrg)
+    }
+
+    articlesId, err := cc.recoverARTICLESID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return nil, errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    log.Info(articlesId)
+
+    jsonRA, err := cc.recoverJsonRA(stub, articlesId)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverJsonRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQueryAllArticles)
+        return nil, errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    log.Info(jsonRA)
+
+    return jsonRA, nil
 }
 
 func main() {

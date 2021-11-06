@@ -45,6 +45,10 @@ const AddArticle = () => {
     setFormVariables(newFormVariables);
   }
 
+  const handleVariationsChange = (i, e, v) => {
+    console.log(e.target.value);
+  }
+
   const [selectedArticleVar, setSelectedArticleVar] = useState({ variables: [] });
   const [selectedArticleSub, setSelectedArticleSub] = useState({ subarticles: [] });
   const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState({ subarticles: [] });
@@ -251,14 +255,14 @@ const AddArticle = () => {
                       {selectedArticlesVariation.subarticles.map((item, index) => (
                         <Row >
                           <Col span={24}>
-                            <TextArea
+                            <Input
                               size="large"
+                              type='checkbox'
                               name="key"
-                              rows={4}
                               style={{ width: '100%' }}
-                              placeholder={"Key"}
-                              defaultValue={item.content}
-                            //onChange={e => handleVariablesChange(index, e)}
+                              value={item.content}
+                              checked
+                              onChange={e => handleVariationsChange(index, e)}
                             />
                           </Col>
                         </Row>

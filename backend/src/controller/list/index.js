@@ -1,11 +1,13 @@
 const recoverMNO = require("../../utils/recoverMNO");
 const readBuffer = require("../../utils/buffer/readBuffer");
+const queryAllArticles = require("../../utils/queryAllArticles");
 
 const list = async (req, res) => {
   try {
     const selectEnv = 1;
     const objs = await readBuffer(selectEnv);
     userInfo = JSON.parse(req.query.ID)
+    await queryAllArticles(userInfo.username)
     mno = await recoverMNO(userInfo.username)
     var output = objs.filter(function (obj) { return obj.mno1 == mno || obj.mno2 == mno; })
     if (output) res.status(200).send(output);

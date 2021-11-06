@@ -18,20 +18,6 @@
                         "hint": "Proximus"
                     },
                     {
-                        "uuid": "8dba4b09-cce7-15f7-b6ea-11c68da73947",
-                        "subarticle": "1.3",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "aa0c41dd-78db-13d1-be5c-0e0366ee0640",
-                        "subarticle": "1.4",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
                         "uuid": "bfd09dba-8e81-16d2-9855-446febf49971",
                         "subarticle": "1.6",
                         "type": "text",
@@ -44,13 +30,6 @@
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "b11698e7-16b9-1fcf-ae98-53c14bb9fa4e",
-                        "subarticle": "1.8",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -142,34 +121,6 @@
                     {
                         "uuid": "c00d01ce-78ac-145d-897c-e2610bcce4fa",
                         "subarticle": "3.7",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "e333b23d-172e-1ecf-8bb2-16b170d9b3bf",
-                        "subarticle": "3.7",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "51c30fd1-0d97-18f5-811d-2696ad64de1e",
-                        "subarticle": "3.9",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "bdb31500-22a7-16b1-9422-29b743239c7f",
-                        "subarticle": "3.9",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "2d2fdc00-1b21-1182-86ce-5012e83da2dc",
-                        "subarticle": "3.12",
                         "type": "text",
                         "verify": "Operator A",
                         "hint": "Proximus"
@@ -339,13 +290,6 @@
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "ca6a003f-976f-1924-93c4-b9dad16368a2",
-                        "subarticle": "6.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -665,32 +609,11 @@
                         "hint": "Proximus"
                     },
                     {
-                        "uuid": "ea501940-6ece-1291-b169-3abbd9935f0f",
-                        "subarticle": "15.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
                         "uuid": "54c5e020-0f93-1aff-94a0-dcad01eb4ae2",
                         "subarticle": "15.3",
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "da93a4bb-8599-121c-9028-0a6455990df4",
-                        "subarticle": "15.3",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "0a0cadb3-6fe9-1708-a287-e64574621b39",
-                        "subarticle": "15.4",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -779,13 +702,6 @@
                         "type": "text",
                         "verify": "Operator A",
                         "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "1ae3a22d-8ad8-1987-bb7d-9b5e2015c262",
-                        "subarticle": "18.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -827,13 +743,6 @@
                     {
                         "uuid": "5686af0d-78e3-181d-976d-2dc9f88743e0",
                         "subarticle": "19.2",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "57535dfa-7949-16aa-b6f9-d00d008c5483",
-                        "subarticle": "19.3",
                         "type": "text",
                         "verify": "Operator B",
                         "hint": "GSM Association"
@@ -974,26 +883,12 @@
         "articles": [
             {
                 "id": "1",
-                "article": "Introduction and scope2",
+                "article": "Introduction and scope",
                 "uuid": "9743f31c-ec13-16fa-b99c-2409c32b346e",
                 "variables": [
                     {
                         "uuid": "e6bf136b-a3c9-1895-8d98-8a319b708333",
                         "subarticle": "1.1",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "8dba4b09-cce7-15f7-b6ea-11c68da73947",
-                        "subarticle": "1.3",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "aa0c41dd-78db-13d1-be5c-0e0366ee0640",
-                        "subarticle": "1.4",
                         "type": "text",
                         "verify": "Operator A",
                         "hint": "Proximus"
@@ -1011,13 +906,6 @@
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "b11698e7-16b9-1fcf-ae98-53c14bb9fa4e",
-                        "subarticle": "1.8",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -1081,7 +969,7 @@
             },
             {
                 "id": "2",
-                "article": "Starting Date2",
+                "article": "Starting Date",
                 "uuid": "41da7c4d-ff32-1a52-89b7-49f27bfb8683",
                 "variables": [],
                 "subarticles": [
@@ -1109,34 +997,6 @@
                     {
                         "uuid": "c00d01ce-78ac-145d-897c-e2610bcce4fa",
                         "subarticle": "3.7",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "e333b23d-172e-1ecf-8bb2-16b170d9b3bf",
-                        "subarticle": "3.7",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "51c30fd1-0d97-18f5-811d-2696ad64de1e",
-                        "subarticle": "3.9",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "bdb31500-22a7-16b1-9422-29b743239c7f",
-                        "subarticle": "3.9",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "2d2fdc00-1b21-1182-86ce-5012e83da2dc",
-                        "subarticle": "3.12",
                         "type": "text",
                         "verify": "Operator A",
                         "hint": "Proximus"
@@ -1306,13 +1166,6 @@
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "ca6a003f-976f-1924-93c4-b9dad16368a2",
-                        "subarticle": "6.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -1632,32 +1485,11 @@
                         "hint": "Proximus"
                     },
                     {
-                        "uuid": "ea501940-6ece-1291-b169-3abbd9935f0f",
-                        "subarticle": "15.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
                         "uuid": "54c5e020-0f93-1aff-94a0-dcad01eb4ae2",
                         "subarticle": "15.3",
                         "type": "text",
                         "verify": "Date",
                         "hint": "29/05/2017"
-                    },
-                    {
-                        "uuid": "da93a4bb-8599-121c-9028-0a6455990df4",
-                        "subarticle": "15.3",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "0a0cadb3-6fe9-1708-a287-e64574621b39",
-                        "subarticle": "15.4",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -1746,13 +1578,6 @@
                         "type": "text",
                         "verify": "Operator A",
                         "hint": "Proximus"
-                    },
-                    {
-                        "uuid": "1ae3a22d-8ad8-1987-bb7d-9b5e2015c262",
-                        "subarticle": "18.2",
-                        "type": "text",
-                        "verify": "Operator A",
-                        "hint": "Proximus"
                     }
                 ],
                 "subarticles": [
@@ -1794,13 +1619,6 @@
                     {
                         "uuid": "5686af0d-78e3-181d-976d-2dc9f88743e0",
                         "subarticle": "19.2",
-                        "type": "text",
-                        "verify": "Operator B",
-                        "hint": "GSM Association"
-                    },
-                    {
-                        "uuid": "57535dfa-7949-16aa-b6f9-d00d008c5483",
-                        "subarticle": "19.3",
                         "type": "text",
                         "verify": "Operator B",
                         "hint": "GSM Association"
