@@ -3,7 +3,7 @@ import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment, { max } from "moment";
 import axios from "axios";
-import { Icon, Col, notification, Row, Statistic, Table, Tag, Tooltip } from "antd";
+import { Badge, Icon, Col, notification, Row, Statistic, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 //---------------------------------------------------------------------------------------------
@@ -228,7 +228,44 @@ const RenderList = () => {
   return (
     <section className="CommentsWrapper">
       <h2>MOBILE NETWORK OPERATORS IN ROAMING AGREEMENTS</h2>
-      <Table bordered rowKey="mno1" columns={columns} expandedRowRender={record => <p style={{ margin: 0 }}>{"This place will contain information to update and delete articles"}</p>} dataSource={list} />
+      <Table bordered rowKey="mno1" columns={columns} dataSource={list} expandedRowRender={(record) => {
+        const columns = [
+          {
+            title: 'Article Number', dataIndex: 'articleNo', key: 'articleNo', align: 'center',
+            render: (articleNo) => (
+              <Row>
+                <Col span={20}>
+                  {articleNo}
+                </Col>
+              </Row>
+            )
+          },
+          {
+            title: 'Article Name', dataIndex: 'articleName', key: 'articleName', align: 'center', render: (articleName) => (
+              <Row>
+                <Col span={20}>
+                  {articleName}
+                </Col>
+              </Row>
+            )
+          },
+          {
+            title: 'Article Status', dataIndex: 'articleStatus', key: 'articleStatus', align: 'center', render(articleStatus) {
+              return {
+                children: <Tag color={(articleStatus) === "INIT" ? 'green' : 'volcano'}>{articleStatus}</Tag>
+              };
+            }, align: 'center'
+          },
+        ];
+        return (
+          <Table
+            bordered
+            columns={columns}
+            dataSource={record.articles}
+            pagination={false}
+          />
+        );
+      }} />
     </section>
   );
 };
