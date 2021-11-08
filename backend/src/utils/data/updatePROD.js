@@ -4,8 +4,7 @@ const readBuffer = require("../buffer/readBuffer");
 module.exports = async function updatePROD(valueToUpdate) {
     try {
         value = JSON.parse(valueToUpdate);
-        console.log(value.articleno.replace(/['"]+/g, ''));
-        console.log(value.articlename.replace(/['"]+/g, ''));
+        console.log(value);
 
         fs.readFile(__dirname + "/../../data/listOfMNOs.json", function (err, data) {
             var objs = JSON.parse(data)
@@ -17,6 +16,10 @@ module.exports = async function updatePROD(valueToUpdate) {
                     "articleId": value.articleno.replace(/['"]+/g, ''),
                     "articleName": value.articlename.replace(/['"]+/g, ''),
                     "articleStatus": value.articlestatus,
+                    "variables": (Buffer.from(value.variables, 'base64')).toString('utf-8'),
+                    "variations": (Buffer.from(value.variations, 'base64')).toString('utf-8'),
+                    "stdclauses": (Buffer.from(value.stdclauses, 'base64')).toString('utf-8'),
+                    "customtexts": (Buffer.from(value.customtexts, 'base64')).toString('utf-8'),
                 }
                 output[0].articles.push(base)
             }
@@ -26,6 +29,6 @@ module.exports = async function updatePROD(valueToUpdate) {
             })
         })
     } catch (error) {
-
+        console.log(error);
     }
 }

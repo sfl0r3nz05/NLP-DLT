@@ -3,7 +3,7 @@ import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment from "moment";
 import axios from "axios";
-import { Button, Col, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
+import { Input, Button, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 //---------------------------------------------------------------------------------------------
@@ -28,12 +28,22 @@ const RenderList = () => {
     ra_name: "",
     ra_status: "",
     timestamp: "",
+    articles: [{
+      articleId: "",
+      articleName: "",
+      articleStatus: "",
+      variables: [],
+      variations: [],
+      stdclauses: [],
+      customtexts: []
+    }]
   };
   const copyState = {
     value: '',
     copied: false,
   };
 
+  const [articlei, setArticlei] = useState({ id: "" });
   const [list, setList] = useState([initialFormState]);
   const [copy, setCopy] = useState([copyState]);
   const [, setGlobal] = useGlobal();
@@ -65,6 +75,11 @@ const RenderList = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+  const handleChange = (value) => {
+    setInput(prevValue => ({ ...prevValue, id: value }));
+    articlei.id = value;
+  }
 
   useEffect(() => {
     axios
@@ -208,7 +223,7 @@ const RenderList = () => {
       )
     },
     {
-      title: "RA Status", dataIndex: "ra_status", key: "ra_status",
+      title: "RA Status", dataIndex: "ra_status", key: "ra_status", align: 'center',
       filters: [
         { text: "Comprable", value: "comprable" },
         { text: "No vendible", value: "no vendible" },
@@ -248,8 +263,9 @@ const RenderList = () => {
             title: 'Article Number', dataIndex: 'articleId', key: 'articleId', align: 'center',
             render: (articleId) => (
               <Row>
-                <Col span={20}>
+                <Col>
                   {articleId}
+                  {handleChange(articleId)}
                 </Col>
               </Row>
             )
@@ -257,7 +273,7 @@ const RenderList = () => {
           {
             title: 'Article Name', dataIndex: 'articleName', key: 'articleName', align: 'center', render: (articleName) => (
               <Row>
-                <Col span={20}>
+                <Col>
                   {articleName}
                 </Col>
               </Row>
@@ -271,16 +287,22 @@ const RenderList = () => {
             }
           },
           {
-            title: 'Article in details', dataIndex: 'articleStatus', key: 'articleStatus', align: 'center', render(articleStatus) {
+            title: 'Article in details', dataIndex: 'variables', key: 'variables', align: 'center', render(variables) {
               return {
                 children: <>
                   <Button type="primary" onClick={showModal}>
                     View
                   </Button>
                   <Modal title="Article in detail" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Accept" cancelText="Submit Change">
-                    <p>{articleStatus}</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <Form.Item label="Variables">
+                      {console.log(articlei.id)}
+                    </Form.Item>
+                    <Form.Item label="Standard Clauses">
+                    </Form.Item>
+                    <Form.Item label="Variations">
+                    </Form.Item>
+                    <Form.Item label="Custom Texts">
+                    </Form.Item>
                   </Modal>
                 </>
               };
@@ -296,7 +318,7 @@ const RenderList = () => {
           />
         );
       }} />
-    </section>
+    </section >
   );
 };
 
