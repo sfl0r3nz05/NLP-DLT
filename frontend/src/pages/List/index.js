@@ -3,7 +3,7 @@ import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment, { max } from "moment";
 import axios from "axios";
-import { Badge, Icon, Col, notification, Row, Statistic, Table, Tag, Tooltip } from "antd";
+import { Button, Col, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 //---------------------------------------------------------------------------------------------
@@ -50,6 +50,24 @@ const RenderList = () => {
       message: title,
       description: description,
     });
+  };
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleOk2 = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
   };
 
   useEffect(() => {
@@ -253,6 +271,22 @@ const RenderList = () => {
             title: 'Article Status', dataIndex: 'articleStatus', key: 'articleStatus', align: 'center', render(articleStatus) {
               return {
                 children: <Tag color={(articleStatus) === "INIT" ? 'green' : 'volcano'}>{articleStatus}</Tag>
+              };
+            }, align: 'center'
+          },
+          {
+            title: 'Article in details', dataIndex: 'articleStatus', key: 'articleStatus', align: 'center', render(articleStatus) {
+              return {
+                children: <>
+                  <Button type="primary" onClick={showModal}>
+                    View
+                  </Button>
+                  <Modal title="Article in detail" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Accept" cancelText="Submit Change">
+                    <p>{articleStatus}</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                  </Modal>
+                </>
               };
             }, align: 'center'
           },

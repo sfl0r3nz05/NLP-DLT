@@ -438,17 +438,11 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     log.Info(customText_list)
 
     article_status := "added_article"
-    err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list)
+    update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
+    err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list, update_articles_status)
     if err != nil {
         log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
-    }
-
-    update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
-    err = cc.setArticlesStatus(stub, articleId, update_articles_status)
-    if err != nil {
-        log.Errorf("[%s][setArticlesStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
-        return errors.New(ERRORUpdatingStatus + err.Error())
     }
 
     status_RA := "ra_negotiating"  //set status as "drafting_agreement".

@@ -53,10 +53,10 @@ type ListOfArticles struct {
 type ARTICLE struct {
 	ID	string							`json:"id"` // name for the id
 	STATUS string						`json:"status"`
-	STDCLAUSES	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+	STDCLAUSES	[]STDCLAUSE				`json:"stdClauses"` // name for the Standard Clauses
 	VARIABLES	[]VARIABLE				`json:"variables"` // name for the variables
 	VARIATIONS	[]VARIATION				`json:"variations"` // name for the variations
-	CUSTOMTEXTS	[]CUSTOMTEXT			`json:"customText"` // name for the Custom Text
+	CUSTOMTEXTS	[]CUSTOMTEXT			`json:"customTexts"` // name for the Custom Text
 }
 
 type STDCLAUSE struct {
