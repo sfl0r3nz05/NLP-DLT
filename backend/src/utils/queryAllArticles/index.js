@@ -1,5 +1,6 @@
 var fs = require('fs').promises;
 const query = require("../query/query");
+//const updateARTICLE = require("../../utils/data/updateARTICLE");
 
 module.exports = async function queryAllArticles(user) {
   try {
@@ -10,7 +11,9 @@ module.exports = async function queryAllArticles(user) {
       let method = "queryAllArticles";
       let noArg = 1
       value = await query(method, noArg, obj[index].ra_id, user);
-      console.log(value);
+      var obj2 = JSON.parse(value)
+      obj[index].articles = obj2.articles
+      //await updateARTICLE(obj[index]);
     }
 
   } catch (error) {

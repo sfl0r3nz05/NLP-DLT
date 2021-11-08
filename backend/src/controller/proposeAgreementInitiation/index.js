@@ -29,9 +29,10 @@ const proposeAgreementInitiation = async (req, res) => {
         let arg4 = "";
         let arg5 = "";
         let arg6 = "";
+        let arg7 = "";
         method = "proposeAgreementInitiation";
         let event_name = "started_ra"
-        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, userDetails.username);
+        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, arg7, userDetails.username);
         if (!eventHf[0]) {
             res.sendStatus(403);
             res.end("403");

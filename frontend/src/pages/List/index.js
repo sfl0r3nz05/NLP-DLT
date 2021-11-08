@@ -249,11 +249,11 @@ const RenderList = () => {
       <Table bordered rowKey="mno1" columns={columns} dataSource={list} expandedRowRender={(record) => {
         const columns = [
           {
-            title: 'Article Number', dataIndex: 'articleNo', key: 'articleNo', align: 'center',
-            render: (articleNo) => (
+            title: 'Article Number', dataIndex: 'articleId', key: 'articleId', align: 'center',
+            render: (articleId) => (
               <Row>
                 <Col span={20}>
-                  {articleNo}
+                  {articleId}
                 </Col>
               </Row>
             )

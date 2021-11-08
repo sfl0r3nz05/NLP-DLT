@@ -87,8 +87,14 @@ type EVENT struct {
 	RAName string		 	 			`json:"raname"`   // event payload
 	RAID  string		 	 			`json:"raid"`   // event payload
 	RAStatus string						`json:"rastatus"`   // event payload
-	ArticleNo string					`json:"articleno"`   // event payload
 	Timestamp string					`json:"timestamp"`   // event payload
+	ArticleNo string					`json:"articleno"`   // event payload
+	ArticleName string					`json:"articlename"`   // event payload
+	ArticleStatus string				`json:"articlestatus"`   // event payload
+	Variables string					`json:"variables"`   // event payload
+	Variations string					`json:"variations"`   // event payload
+	StdClauses string					`json:"stdclauses"`   // event payload
+	CustomTexts string					`json:"customtexts"`   // event payload
 }
 
 // Error responses

@@ -8,19 +8,19 @@ const proposeAddArticle = async (req, res) => {
         let data = req.body; // params from POST
         let value = data.addArticle;
 
-        let value3 = JSON.stringify(data.formVariables)
-        let arg3 = Buffer.from(value3).toString('base64');
+        let value4 = JSON.stringify(data.formVariables)
+        let arg4 = Buffer.from(value4).toString('base64');
 
-        let value4 = JSON.stringify(data.selectedArticlesVariation); console.log("here3" + value4);
-        //let arg4 = Buffer.from(value4).toString('base64');
-        arg4 = ""
-
-        let value5 = JSON.stringify(data.selectedArticlesStdClause)
-        //let arg5 = Buffer.from(value5).toString('base64'); //console.log("here4" + value5);
+        let value5 = JSON.stringify(data.selectedArticlesVariation);
+        //let arg5 = Buffer.from(value5).toString('base64');
         arg5 = ""
 
-        let value6 = JSON.stringify(data.formCustomText)
-        let arg6 = Buffer.from(value6).toString('base64'); //console.log("here5" + value6);
+        let value6 = JSON.stringify(data.selectedArticlesStdClause)
+        //let arg6 = Buffer.from(value6).toString('base64');
+        arg6 = ""
+
+        let value7 = JSON.stringify(data.formCustomText)
+        let arg7 = Buffer.from(value7).toString('base64');
 
         let user = data.userDetails;
 
@@ -38,18 +38,19 @@ const proposeAddArticle = async (req, res) => {
             res.end("202");
             return
         }
-        noArgs = 6
+        noArgs = 7
         let arg1 = output[0].ra_id
         let arg2 = value.articleNo
+        let arg3 = value.articleName
         let method = "proposeAddArticle";
         let event_name = "proposed_add_article"
-        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, user.username);
+
+        eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, arg7, user.username);
         if (!eventHf[0]) {
             res.sendStatus(403);
             res.end("403");
             return
         }
-        console.log(eventHf);
         await updatePROD(eventHf[1])
         res.sendStatus(200);
     } catch (error) {

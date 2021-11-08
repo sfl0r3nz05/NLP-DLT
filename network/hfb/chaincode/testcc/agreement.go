@@ -354,29 +354,26 @@ func (cc *Chaincode) recoverArticleRA(stub shim.ChaincodeStubInterface, articles
     return string(out), nil
 }
 
-func (cc *Chaincode) recoverJsonRA(stub shim.ChaincodeStubInterface, articlesid string) ([]ARTICLE, error){
+func (cc *Chaincode) recoverJsonRA(stub shim.ChaincodeStubInterface, articlesid string) (ListOfArticles, error){
     var jsonRAgreement ListOfArticles
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(articlesid)
     if err != nil {
         log.Errorf("[%s][%s][recoverJsonRA] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
-        return nil, errors.New(ERRORRecoveringJsonRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringJsonRA + err.Error())
     }
     if bytes_jsonRA == nil {
         log.Errorf("[%s][%s][recoverJsonRA] Error recovering bytes", CHANNEL_ENV, ERRORRecoveringJsonRA)
-        return nil, errors.New(ERRORRecoveringJsonRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringJsonRA + err.Error())
     }
     err = json.Unmarshal(bytes_jsonRA, &jsonRAgreement)
     if err != nil {
         log.Errorf("[%s][%s][recoverJsonRA] Error unmarshal Json Roaming Agreement: %v", CHANNEL_ENV, ERRORRecoveringJsonRA, err.Error())
-        return nil, errors.New(ERRORRecoveringJsonRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
-    log.Info(jsonRAgreement)
-    log.Info(jsonRAgreement.ARTICLES)
-
-    return jsonRAgreement.ARTICLES, nil
+    return jsonRAgreement, nil
 }
 
 //MANAGING ARTICLES     #########################################################################################
@@ -485,7 +482,6 @@ func (cc *Chaincode) verifyAllArticlesStatus(stub shim.ChaincodeStubInterface, a
 func (cc *Chaincode) recoverARTICLESID(stub shim.ChaincodeStubInterface, raid string) (string, error){
     var RA RoamingAgreement
     CHANNEL_ENV := stub.GetChannelID()
-    log.Info(raid)
 
     bytes_RA, err := stub.GetState(raid)
     if err != nil {
@@ -502,11 +498,7 @@ func (cc *Chaincode) recoverARTICLESID(stub shim.ChaincodeStubInterface, raid st
         return "", errors.New(ERRORRecoveringRA + err.Error())
     }
 
-    log.Info(RA)
-    articlesid := RA.ARTICLESID
-    log.Info(articlesid)
-
-    return articlesid, nil
+    return RA.ARTICLESID, nil
 }
 
 func (cc *Chaincode) recoverRA(stub shim.ChaincodeStubInterface, raid string) (RoamingAgreement, error){

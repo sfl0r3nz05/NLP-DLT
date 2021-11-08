@@ -12,7 +12,7 @@ let ccpPath;
 let ccpJSON;
 let ccp;
 
-module.exports = async function invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, user) {
+module.exports = async function invokeEvents(method, event_name, noArgs, arg1, arg2, arg3, arg4, arg5, arg6, arg7, user) {
     try {
         let txReturn
         var listener
@@ -22,6 +22,7 @@ module.exports = async function invokeEvents(method, event_name, noArgs, arg1, a
         let arg_4 = JSON.stringify(arg4);
         let arg_5 = JSON.stringify(arg5);
         let arg_6 = JSON.stringify(arg6);
+        let arg_7 = JSON.stringify(arg7);
 
         dotenv.config();
         if (process.env.NETWORK != undefined) {
@@ -91,10 +92,10 @@ module.exports = async function invokeEvents(method, event_name, noArgs, arg1, a
             } catch (error) {
                 return false
             }
-        } else if (noArgs == 6) {
+        } else if (noArgs == 7) {
             try {
-                txReturn = await contract.submitTransaction(method, arg1, arg_2, arg_3, arg4, arg5, arg6);
-                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}\t${arg_3}\t${arg_4}\t${arg_5}\t${arg_6}`);
+                txReturn = await contract.submitTransaction(method, arg1, arg_2, arg_3, arg4, arg5, arg6, arg7);
+                console.log(`Transaction has been submitted: ${user}\t${method}\t${arg_1}\t${arg_2}\t${arg_3}\t${arg_4}\t${arg_5}\t${arg_6}\t${arg_7}`);
                 console.log(txReturn.toString())
             } catch (error) {
                 return false

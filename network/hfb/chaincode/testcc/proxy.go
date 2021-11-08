@@ -121,20 +121,21 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raid := args[0]
         raid_parsed := trimQuote(raid)
         article_num := args[1]
-        variables := args[2]
+        article_name := args[2]
+        variables := args[3]
         variablesParsed := trimQuote(variables)
-        variations := args[3]
+        variations := args[4]
         variationsParsed := trimQuote(variations)
-        stdClauses := args[4]
+        stdClauses := args[5]
         stdClausesParsed := trimQuote(stdClauses)
-        customTexts := args[5]
+        customTexts := args[6]
         customTextsParsed := trimQuote(customTexts)
         identity_exist, err := cc.verifyOrg(stub, org_id)
         if err != nil {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.addArticle(stub, org_id, raid_parsed, article_num, variablesParsed, variationsParsed, stdClausesParsed, customTextsParsed)
+            err := cc.addArticle(stub, org_id, raid_parsed, article_num, article_name, variablesParsed, variationsParsed, stdClausesParsed, customTextsParsed)
             if err != nil {
                 return shim.Error(ERRORAddArticle)
             }
@@ -194,9 +195,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
 
         return shim.Success([]byte(org.Mno_name))
 
-    } else if function == "queryAllArticles" {
-        //var jsonRA [] ARTICLE
-        
+    } else if function == "queryAllArticles" {        
         org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
         if err != nil {
             return shim.Error(ERRORGetID)
@@ -214,8 +213,15 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             if err != nil {
                 return shim.Error(ERRORQueryAllArticles)
             }
-            log.Info(jsonRA)
-            //return shim.Success([]byte(jsonRA))
+            articles, err := json.Marshal(jsonRA)
+            if err != nil {
+                return shim.Error(ERRORQueryAllArticles)
+            }
+            if err != nil {
+                log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+                return shim.Error(ERRORParsingID + err.Error())
+            }
+            return shim.Success(articles)
         }
     }
 
@@ -364,7 +370,7 @@ func (cc *Chaincode) confirmAgreement(stub shim.ChaincodeStubInterface, org_id s
     return nil
 }
 
-func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, variables string, variations string, stdClauses string, customTexts string) (error){
+func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string, article_name string, variables string, variations string, stdClauses string, customTexts string) (error){
 
     var variable_list []VARIABLE
     var variation_list []VARIATION
@@ -431,11 +437,6 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORDecoding + err.Error())
     }
     json.Unmarshal([]byte(customText), &customText_list)
-    
-    log.Info(variable_list)
-    log.Info(variation_list)
-    log.Info(stdClause_list)
-    log.Info(customText_list)
 
     article_status := "added_article"
     update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
@@ -464,7 +465,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     timestamp := timeNow()
     org_name := organization.Mno_name
 
-    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org_name, RAID: raid, RAStatus: status_RA, Timestamp: timestamp})
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org_name, RAID: raid, RAStatus: status_RA, Timestamp: timestamp, ArticleNo: article_num, ArticleName: article_name, ArticleStatus: article_status, Variables: variables, Variations: variations, StdClauses: stdClauses, CustomTexts: customTexts})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
         return errors.New(ERRORParsingRA + err.Error())
@@ -487,38 +488,31 @@ func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string
     return id_org, nil
 }
 
-func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) ([]ARTICLE , error){
-    log.Info(raid)
-
+func (cc *Chaincode) queryRAarticles(stub shim.ChaincodeStubInterface, org_id string, raid string) (ListOfArticles, error){
+    
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
-        return nil, errors.New(ERRORRecoveringRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringRA + err.Error())
     }
-
-    log.Info(RA)
 
     org_exist := cc.verifyOrgRA(stub, RA, org_id)
     if org_exist == false {
         log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
-        return nil, errors.New(ERRORVerifyingOrg)
+        return ListOfArticles{}, errors.New(ERRORVerifyingOrg)
     }
 
     articlesId, err := cc.recoverARTICLESID(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverUUID] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
-        return nil, errors.New(ERRORRecoveringRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringRA + err.Error())
     }
-
-    log.Info(articlesId)
 
     jsonRA, err := cc.recoverJsonRA(stub, articlesId)
     if err != nil {
         log.Errorf("[%s][%s][recoverJsonRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORQueryAllArticles)
-        return nil, errors.New(ERRORRecoveringRA + err.Error())
+        return ListOfArticles{}, errors.New(ERRORRecoveringRA + err.Error())
     }
-
-    log.Info(jsonRA)
 
     return jsonRA, nil
 }

@@ -19,8 +19,9 @@ const addOrg = async (req, res) => {
         let arg4 = "";
         let arg5 = "";
         let arg6 = "";
+        let arg7 = "";
         let event_name = "created_org"
-        value, eventHf = await invokeEvents(method, event_name, noArg, arg1, arg2, arg3, arg4, arg5, arg6, userDetails.username);
+        value, eventHf = await invokeEvents(method, event_name, noArg, arg1, arg2, arg3, arg4, arg5, arg6, arg7, userDetails.username);
         if (!value) {
             res.sendStatus(403);
         }

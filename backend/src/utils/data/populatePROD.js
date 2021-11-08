@@ -19,7 +19,8 @@ module.exports = async function populatePROD(valueToUpdate) {
                 "ra_name": value.raname,
                 "ra_id": value.raid,
                 "ra_status": value.rastatus,
-                "timestamp": value.timestamp
+                "timestamp": value.timestamp,
+                "articles": []
             })
             var json = JSON.stringify(obj)
             fs.writeFile(__dirname + "/../../data/listOfMNOs.json", json, function (err) {
