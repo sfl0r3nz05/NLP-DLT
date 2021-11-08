@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
-import moment, { max } from "moment";
+import moment from "moment";
 import axios from "axios";
 import { Button, Col, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
@@ -62,10 +62,6 @@ const RenderList = () => {
     setIsModalVisible(false);
   };
 
-  const handleOk2 = () => {
-    setIsModalVisible(false);
-  };
-
   const handleCancel = () => {
     setIsModalVisible(false);
   };
@@ -87,7 +83,7 @@ const RenderList = () => {
         setList(resJson);
       })
       .catch(error => { });
-  }, []); // Execut some element of the array changue
+  }); // Execut some element of the array changue
 
   const handleSubmit = (e, mno1) => {
     console.log((mno1));
@@ -272,7 +268,7 @@ const RenderList = () => {
               return {
                 children: <Tag color={(articleStatus) === "INIT" ? 'green' : 'volcano'}>{articleStatus}</Tag>
               };
-            }, align: 'center'
+            }
           },
           {
             title: 'Article in details', dataIndex: 'articleStatus', key: 'articleStatus', align: 'center', render(articleStatus) {
@@ -288,7 +284,7 @@ const RenderList = () => {
                   </Modal>
                 </>
               };
-            }, align: 'center'
+            }
           },
         ];
         return (

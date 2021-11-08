@@ -5,11 +5,10 @@ import {
   Form,
   Input,
   Button,
-  Checkbox,
   Spin,
   notification,
-  Switch,
-  Select
+  Select,
+  Switch
 } from "antd";
 import "./../../App.css";
 import axios from "axios";
@@ -58,15 +57,15 @@ const AddArticle = () => {
     addArticle.articleName = value;
     outputNLP.map(item => {
       item.articles.map(data => {
-        if (data.article == value) {
+        if (data.article === value) {
           setAddArticle({ ...addArticle, articleNo: data.id })
           addArticle.articleNo = data.id;
           setSelectedArticleVar(data)
           setSelectedArticleSub(data)
-          if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax == 'stdClause')) {
+          if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax === 'stdClause')) {
             console.log("here");
             setSelectedArticlesStdClause(data)
-          } else if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax == 'variation')) {
+          } else if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax === 'variation')) {
             console.log("here2");
             setSelectedArticlesVariation(data)
           }

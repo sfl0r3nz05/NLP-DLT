@@ -4,7 +4,6 @@ import {
   Row,
   Col,
   Form,
-  Input,
   Button,
   notification,
   Spin
@@ -12,6 +11,7 @@ import {
 import "./../../App.css";
 import axios from "axios";
 import * as lerData from "./../../data/LER.json";
+import outputNLP from "./../../data/outputNLP.json";
 
 notification.config({
   placement: "topRight",
@@ -36,12 +36,9 @@ const Agreement = () => {
     setcreateAgreement(prevValue => ({ ...prevValue, mno2: value }))
   }
 
-  function handleChange(event) {
-    const value = event.target.value;
-    setcreateAgreement({
-      ...createAgreement,
-      [event.target.name]: value
-    });
+  function handleChange(value) {
+    console.log(value);
+    setcreateAgreement(prevValue => ({ ...prevValue, nameRA: value }))
   }
 
   const openNotificationWithIcon = (type, title, description) => {
@@ -127,22 +124,17 @@ const Agreement = () => {
                 <Form.Item
                   label="NAME OF THE ROAMING AGREEMENT"
                   name="nameRA"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Introducir correctamente la métrica"
-                    }
-                  ]}
                 >
-                  <Input
+                  <AutoComplete
                     size="large"
                     placeholder={"E.g.: RA001"}
-                    type="text"
-                    name="nameRA"
-                    value={createAgreement.nameRA}
-                    onChange={handleChange}
+                    dataSource={outputNLP.map(item => item.hint)}
+                    name="raname"
                     style={{ width: '80%' }}
-                  />
+                    onSelect={(item) => item}
+                    onChange={handleChange}
+                  >
+                  </AutoComplete>
                 </Form.Item>
                 <br />
                 <br />
