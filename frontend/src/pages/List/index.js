@@ -6,10 +6,8 @@ import axios from "axios";
 import { Input, Button, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
-//---------------------------------------------------------------------------------------------
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import TextArea from "antd/lib/input/TextArea";
-//---------------------------------------------------------------------------------------------
 
 notification.config({
   placement: "topRight",
@@ -39,16 +37,14 @@ const RenderList = () => {
       customtexts: []
     }]
   };
+  const [list, setList] = useState([initialFormState]);
+
   const copyState = {
     value: '',
     copied: false,
   };
-
-  const [list, setList] = useState([initialFormState]);
   const [copy, setCopy] = useState([copyState]);
-  const [selectedRow, setSelectedRow] = useState({ variables: [], customtexts: [] });
   const [, setGlobal] = useGlobal();
-
   const onCopy = (value) => {
     copy.value = value;
     setCopy({ copied: true })
@@ -63,22 +59,18 @@ const RenderList = () => {
     });
   };
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
   const clicRow = (e) => {
     setSelectedRow(e)
   }
 
+  const [selectedRow, setSelectedRow] = useState({ variables: [], customtexts: [] });
   const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = (v) => {
     setSelectedRow(v)
     setIsModalVisible(true);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
   };
 
   useEffect(() => {
@@ -133,6 +125,124 @@ const RenderList = () => {
         )
       )
   };
+
+  const handleOk = (e) => {
+    e.preventDefault();
+    const jwtToken = localStorage.getItem("token");
+    axios
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptProposedChanges`, { list, selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .then((res) => {
+        if (res.status === 200) {
+          openNotificationWithIcon(
+            "success",
+            "SUCCESSFULLY REGISTERED AGREEMENT"
+          );
+        }
+        if (res.status === 201) {
+          openNotificationWithIcon(
+            "error",
+            "MISSING VALUES TO CREATE THE AGREEMENT"
+          );
+        }
+        if (res.status === 202) {
+          openNotificationWithIcon(
+            "error",
+            "THIS MNO CANNOT ACCEPT THE CHANGES PROPOSED BY ITSELF"
+          );
+        }
+        if (res.status === 203) {
+          openNotificationWithIcon(
+            "error",
+            "NOT ALLOWED TO MODIFY VARIABLES, VARIATIONS OR CUSTOM TEXTS"
+          );
+        }
+      })
+      .catch(() =>
+        openNotificationWithIcon(
+          "error",
+          "UNREGISTERED ROAMING AGREEMENT",
+        )
+      )
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const jwtToken = localStorage.getItem("token");
+    axios
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/`, { selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .then((res) => {
+        if (res.status === 200) {
+          openNotificationWithIcon(
+            "success",
+            "SUCCESSFULLY REGISTERED AGREEMENT"
+          );
+        }
+        if (res.status === 201) {
+          openNotificationWithIcon(
+            "error",
+            "MISSING VALUES TO CREATE THE AGREEMENT"
+          );
+        }
+        if (res.status === 202) {
+          openNotificationWithIcon(
+            "error",
+            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+          );
+        }
+      })
+      .catch(() =>
+        openNotificationWithIcon(
+          "error",
+          "UNREGISTERED ROAMING AGREEMENT",
+        )
+      )
+  };
+
+  const handleReject = (e) => {
+    e.preventDefault();
+    const jwtToken = localStorage.getItem("token");
+    axios
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/`, { selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .then((res) => {
+        if (res.status === 200) {
+          openNotificationWithIcon(
+            "success",
+            "SUCCESSFULLY REGISTERED AGREEMENT"
+          );
+        }
+        if (res.status === 201) {
+          openNotificationWithIcon(
+            "error",
+            "MISSING VALUES TO CREATE THE AGREEMENT"
+          );
+        }
+        if (res.status === 202) {
+          openNotificationWithIcon(
+            "error",
+            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+          );
+        }
+      })
+      .catch(() =>
+        openNotificationWithIcon(
+          "error",
+          "UNREGISTERED ROAMING AGREEMENT",
+        )
+      )
+  };
+
+  const [formVariables, setFormVariables] = useState([{ key: "", value: "" }])
+  const handleVariablesChange = (i, e, v) => {
+    let newFormVariables = [...formVariables];
+    newFormVariables[i] = { key: v, value: e.target.value }
+    setFormVariables(newFormVariables);
+  }
+
+  const [formCustomText, setFormCustomText] = useState([{ value: "" }])
+  function handleCustomText(e) {
+    formCustomText[0] = { value: e.target.value }
+    setFormCustomText(formCustomText)
+  }
 
   const columns = [
     {
@@ -306,25 +416,40 @@ const RenderList = () => {
           />
         );
       }} />
-      {<Modal title="Article in detail" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Accept" cancelText="Submit Change">
+      {<Modal title="Article in detail" visible={isModalVisible} width={800} onCancel={handleCancel} footer={[
+        <Button key="accept" type="primary" size="large" onClick={handleOk}>
+          Accept
+        </Button>,
+        <Button key="changes" type="normal" size="large" onClick={handleChange}>
+          Changes
+        </Button>,
+        <Button key="reject" type="dashed" size="large" onClick={handleReject}>
+          Reject
+        </Button>,
+      ]}>
         <Form.Item label="Variables">
-          {selectedRow && selectedRow.variables.map(data =>
+          {selectedRow && selectedRow.variables.map((data, index) =>
             < Row >
-              <Input
-                size="large"
-                name="key"
-                style={{ width: '50%' }}
-                defaultValue={data.key}
-                disabled
-              />
-              <Input
-                name="value"
-                size="large"
-                placeholder={"Value"}
-                style={{ width: '50%' }}
-                defaultValue={data.value}
-              //onChange={e => handleVariablesChange(index, e, item.verify)}
-              />
+              <Col span={6}>
+                <Input
+                  size="large"
+                  name="key"
+                  style={{ width: '100%' }}
+                  defaultValue={data.key}
+                  disabled
+                />
+              </Col>
+              <Col span={7}>
+                <Input
+                  name="value"
+                  size="large"
+                  placeholder={"Value"}
+                  style={{ width: '100%' }}
+                  defaultValue={data.value}
+                  onChange={e => handleVariablesChange(index, e, data.key)}
+                />
+              </Col>
+              <Col span={11} />
             </Row>
           )}
         </Form.Item>
@@ -340,8 +465,8 @@ const RenderList = () => {
                 name="value"
                 style={{ width: '100%' }}
                 defaultValue={data.value}
-                disabled
                 rows={6}
+                onChange={e => handleCustomText(e)}
               />
             </Row>
           )}

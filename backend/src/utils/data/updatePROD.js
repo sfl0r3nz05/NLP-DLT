@@ -12,14 +12,19 @@ module.exports = async function updatePROD(valueToUpdate) {
             output[0].ra_status = value.rastatus
             output[0].timestamp = value.timestamp
             if (value.articleno) {
+                var variablesParsed = (Buffer.from(value.variables, 'base64')).toString('utf-8')
+                var variationsParsed = (Buffer.from(value.variations, 'base64')).toString('utf-8')
+                var stdclausesParsed = (Buffer.from(value.stdclauses, 'base64')).toString('utf-8')
+                var customtextsParsed = (Buffer.from(value.customtexts, 'base64')).toString('utf-8')
+
                 var base = {
                     "articleId": value.articleno.replace(/['"]+/g, ''),
                     "articleName": value.articlename.replace(/['"]+/g, ''),
                     "articleStatus": value.articlestatus,
-                    "variables": ((((Buffer.from(value.variables, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
-                    "variations": ((((Buffer.from(value.variations, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
-                    "stdclauses": ((((Buffer.from(value.stdclauses, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
-                    "customtexts": ((((Buffer.from(value.customtexts, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
+                    "variables": JSON.parse(variablesParsed),
+                    "variations": "",
+                    "stdclauses": "",
+                    "customtexts": JSON.parse(customtextsParsed),
                 }
                 output[0].articles.push(base)
             }
