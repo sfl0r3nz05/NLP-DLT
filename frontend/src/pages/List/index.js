@@ -8,6 +8,7 @@ import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 //---------------------------------------------------------------------------------------------
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import TextArea from "antd/lib/input/TextArea";
 //---------------------------------------------------------------------------------------------
 
 notification.config({
@@ -43,9 +44,9 @@ const RenderList = () => {
     copied: false,
   };
 
-  const [articlei, setArticlei] = useState({ id: "" });
   const [list, setList] = useState([initialFormState]);
   const [copy, setCopy] = useState([copyState]);
+  const [selectedRow, setSelectedRow] = useState({ variables: [], customtexts: [] });
   const [, setGlobal] = useGlobal();
 
   const onCopy = (value) => {
@@ -62,12 +63,6 @@ const RenderList = () => {
     });
   };
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -76,10 +71,15 @@ const RenderList = () => {
     setIsModalVisible(false);
   };
 
-  const handleChange = (value) => {
-    setInput(prevValue => ({ ...prevValue, id: value }));
-    articlei.id = value;
+  const clicRow = (e) => {
+    setSelectedRow(e)
   }
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = (v) => {
+    setSelectedRow(v)
+    setIsModalVisible(true);
+  };
 
   useEffect(() => {
     axios
@@ -101,7 +101,6 @@ const RenderList = () => {
   }); // Execut some element of the array changue
 
   const handleSubmit = (e, mno1) => {
-    console.log((mno1));
     e.preventDefault();
     const jwtToken = localStorage.getItem("token");
     //Set POST request
@@ -257,7 +256,7 @@ const RenderList = () => {
   return (
     <section className="CommentsWrapper">
       <h2>MOBILE NETWORK OPERATORS IN ROAMING AGREEMENTS</h2>
-      <Table bordered rowKey="mno1" columns={columns} dataSource={list} expandedRowRender={(record) => {
+      <Table columns={columns} dataSource={list} expandedRowRender={(record) => {
         const columns = [
           {
             title: 'Article Number', dataIndex: 'articleId', key: 'articleId', align: 'center',
@@ -265,7 +264,6 @@ const RenderList = () => {
               <Row>
                 <Col>
                   {articleId}
-                  {handleChange(articleId)}
                 </Col>
               </Row>
             )
@@ -287,23 +285,12 @@ const RenderList = () => {
             }
           },
           {
-            title: 'Article in details', dataIndex: 'variables', key: 'variables', align: 'center', render(variables) {
+            title: 'Article in details', align: 'center', render(articles) {
               return {
                 children: <>
-                  <Button type="primary" onClick={showModal}>
+                  <Button type="primary" onClick={() => showModal(selectedRow)}>
                     View
                   </Button>
-                  <Modal title="Article in detail" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Accept" cancelText="Submit Change">
-                    <Form.Item label="Variables">
-                      {console.log(articlei.id)}
-                    </Form.Item>
-                    <Form.Item label="Standard Clauses">
-                    </Form.Item>
-                    <Form.Item label="Variations">
-                    </Form.Item>
-                    <Form.Item label="Custom Texts">
-                    </Form.Item>
-                  </Modal>
                 </>
               };
             }
@@ -315,9 +302,51 @@ const RenderList = () => {
             columns={columns}
             dataSource={record.articles}
             pagination={false}
+            onRowClick={clicRow}
           />
         );
       }} />
+      {<Modal title="Article in detail" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} okText="Accept" cancelText="Submit Change">
+        <Form.Item label="Variables">
+          {selectedRow && selectedRow.variables.map(data =>
+            < Row >
+              <Input
+                size="large"
+                name="key"
+                style={{ width: '50%' }}
+                defaultValue={data.key}
+                disabled
+              />
+              <Input
+                name="value"
+                size="large"
+                placeholder={"Value"}
+                style={{ width: '50%' }}
+                defaultValue={data.value}
+              //onChange={e => handleVariablesChange(index, e, item.verify)}
+              />
+            </Row>
+          )}
+        </Form.Item>
+        <Form.Item label="Standard Clauses">
+        </Form.Item>
+        <Form.Item label="Variations">
+        </Form.Item>
+        <Form.Item label="Custom Texts" >
+          {selectedRow && selectedRow.customtexts.map(data =>
+            < Row >
+              <TextArea
+                size="large"
+                name="value"
+                style={{ width: '100%' }}
+                defaultValue={data.value}
+                disabled
+                rows={6}
+              />
+            </Row>
+          )}
+        </Form.Item>
+      </Modal>}
     </section >
   );
 };

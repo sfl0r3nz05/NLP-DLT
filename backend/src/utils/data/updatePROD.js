@@ -16,10 +16,10 @@ module.exports = async function updatePROD(valueToUpdate) {
                     "articleId": value.articleno.replace(/['"]+/g, ''),
                     "articleName": value.articlename.replace(/['"]+/g, ''),
                     "articleStatus": value.articlestatus,
-                    "variables": (Buffer.from(value.variables, 'base64')).toString('utf-8'),
-                    "variations": (Buffer.from(value.variations, 'base64')).toString('utf-8'),
-                    "stdclauses": (Buffer.from(value.stdclauses, 'base64')).toString('utf-8'),
-                    "customtexts": (Buffer.from(value.customtexts, 'base64')).toString('utf-8'),
+                    "variables": ((((Buffer.from(value.variables, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
+                    "variations": ((((Buffer.from(value.variations, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
+                    "stdclauses": ((((Buffer.from(value.stdclauses, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
+                    "customtexts": ((((Buffer.from(value.customtexts, 'base64')).toString('utf-8')).replace('\"', '"')).replace('"[', '[')).replace(']"', ']'),
                 }
                 output[0].articles.push(base)
             }
