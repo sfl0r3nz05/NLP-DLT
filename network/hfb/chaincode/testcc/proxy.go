@@ -140,6 +140,27 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
                 return shim.Error(ERRORAddArticle)
             }
         }
+    } else if function == "acceptProposedChanges" {
+        org_id, err := cid.GetID(stub) // get an ID for the client which is guaranteed to be unique within the MSP
+        if err != nil {
+            return shim.Error(ERRORGetID)
+        }
+        if (org_id == "") {
+            return shim.Error(ERRORUserID)
+        }
+        raid := args[0]
+        raid_parsed := trimQuote(raid)
+        article_num := args[1]
+        identity_exist, err := cc.verifyOrg(stub, org_id)
+        if err != nil {
+            return shim.Error(ERRORRecoverIdentity)
+        }
+        if identity_exist {
+            err := cc.acceptChanges(stub, org_id, raid_parsed, article_num)
+            if err != nil {
+                return shim.Error(ERRORAddArticle)
+            }
+        }
     } else if function == "queryMNO" {
         mno_name := args[0]
         jsonRA, err := cc.queryMNOs(stub, mno_name)
@@ -397,14 +418,14 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
         return errors.New(ERRORStatusRA)
     }
 
-    articleId, err := cc.recoverARTICLESID(stub, raid)
+    articlesId, err := cc.recoverARTICLESID(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
         return errors.New(ERRORRecoveringRA + err.Error())
     }
 
     articles_status := []string{"init","articles_drafting"}
-    err = cc.verifyArticlesStatus(stub, articleId, articles_status)
+    err = cc.verifyArticlesStatus(stub, articlesId, articles_status)
     if err != nil {
         log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
         return errors.New(ERRORDeterminingStatus + err.Error())
@@ -440,7 +461,7 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
 
     article_status := "added_article"
     update_articles_status := "articles_drafting"  //set status as "drafting_agreement".
-    err = cc.setArticle(stub, articleId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list, update_articles_status)
+    err = cc.setArticle(stub, articlesId, article_num, article_status, variable_list, variation_list, customText_list, stdClause_list, update_articles_status)
     if err != nil {
         log.Errorf("[%s][%s][setArticle] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
         return errors.New(ERRORaddingArticle + err.Error())
@@ -477,6 +498,100 @@ func (cc *Chaincode) addArticle(stub shim.ChaincodeStubInterface, org_id string,
     }
 
     return nil
+}
+
+func (cc *Chaincode) acceptChanges(stub shim.ChaincodeStubInterface, org_id string, raid string, article_num string) (error){
+    var organization Organization
+    
+    RA, err := cc.recoverRA(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    org_exist := cc.verifyOrgRA(stub, RA, org_id)
+    if org_exist == false {
+        log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
+        return errors.New(ERRORVerifyingOrg)
+    }
+
+    valid_status := []string{"confirmation_ra_started","ra_negotiating"}
+    err = cc.verifyAgreementStatus(stub, raid, valid_status)
+    if err != nil {
+        log.Errorf("[%s][verifyAgreementStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    articlesId, err := cc.recoverARTICLESID(stub, raid)
+    if err != nil {
+        log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
+        return errors.New(ERRORRecoveringRA + err.Error())
+    }
+
+    articles_status := []string{"init","articles_drafting"}
+    err = cc.verifyArticlesStatus(stub, articlesId, articles_status)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
+    }
+
+    //FROM HERE
+    valid_status_article := []string{"added_article", "proposed_changes"}
+    err = cc.verifyArticleStatus(stub, articlesId, article_num, valid_status_article[0:])
+    if err != nil {
+        log.Errorf("[%s][verifyArticleStatus][%s]", CHANNEL_ENV, ERRORStatusRA)
+        return errors.New(ERRORStatusRA)
+    }
+
+    article_status := "accepted_changes"
+    err = cc.updateArticleStatus(stub, articlesId, article_num, article_status)
+    if err != nil {
+        log.Errorf("[%s][%s][updateArticleJson] Error adding article to Roaming Agreement", CHANNEL_ENV, ERRORaddingArticle)
+        return errors.New(ERRORaddingArticle + err.Error())
+    }
+
+    all_article_status := "accepted_changes"
+    article_bool, err := cc.verifyAllArticlesStatus(stub, articlesId, all_article_status)
+    if err != nil {
+        log.Errorf("[%s][%s][verifyAllArticlesStatus] Error verifying the articles of the Roaming Agreement", CHANNEL_ENV, ERRORDeterminingStatus)
+        return errors.New(ERRORDeterminingStatus + err.Error())
+    }
+
+    if(article_bool){
+        articles_status := "transient_confirmation"
+        err = cc.setArticlesStatus(stub, articlesId, articles_status)
+        if err != nil {
+            log.Errorf("[%s][%s][setArticlesStatus] Error updating the status of the article", CHANNEL_ENV, ERRORUpdatingStatus)
+            return errors.New(ERRORUpdatingStatus + err.Error())
+        }
+    }
+    //TO HERE
+
+    new_id := sha256.Sum256([]byte(org_id))
+    new_id_str := hex.EncodeToString(new_id[:])
+    organization, err = cc.recoverOrg(stub, new_id_str)    //recover organization name
+    if err != nil {
+        log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
+        return errors.New(ERRORRecoveringOrg + err.Error())
+    }
+
+    event_name := "accept_proposed_changes"    //emit event "proposed_add_article"
+    timestamp := timeNow()
+    org_name := organization.Mno_name
+
+    payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org_name, RAID: raid, Timestamp: timestamp, ArticleNo: article_num, ArticleStatus: article_status})
+    if err != nil {
+        log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
+        return errors.New(ERRORParsingRA + err.Error())
+    }
+    eventErr := stub.SetEvent(event_name, payloadAsBytes)
+    if eventErr != nil {
+        log.Errorf("[%s][emitEvent] Error: [%v] when event [%s] is emitted", CHANNEL_ENV, err.Error(), event_name)
+        return err
+    }
+
+    return nil
+
 }
 
 func (cc *Chaincode) queryMNOs(stub shim.ChaincodeStubInterface, mno_name string) (string , error){
