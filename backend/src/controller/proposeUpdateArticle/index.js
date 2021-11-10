@@ -6,7 +6,7 @@ const invokeEvents = require("../../utils/invoke/invokeEvents");
 const proposeUpdateArticle = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        console.log(data);
+        //console.log(data);
         let user = data.userDetails;
         if (!user) {
             res.sendStatus(201);

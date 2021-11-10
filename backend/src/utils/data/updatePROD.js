@@ -4,8 +4,7 @@ const readBuffer = require("../buffer/readBuffer");
 module.exports = async function updatePROD(valueToUpdate) {
     try {
         value = JSON.parse(valueToUpdate);
-        //console.log(value);
-        let art = false
+        console.log(value);
 
         fs.readFile(__dirname + "/../../data/listOfMNOs.json", function (err, data) {
             var objs = JSON.parse(data)
@@ -14,9 +13,10 @@ module.exports = async function updatePROD(valueToUpdate) {
             output[0].timestamp = value.timestamp
             var articles = output[0].articles
             var article = (articles).filter(function (article) { return article.articleId == value.articleno })
-            console.log(article.length);
+            //console.log(article.length);
             console.log(article);
-            if (article.length === 0 && value.articleno) {
+
+            if (value.articlestatus == "added_article") {
                 var variablesParsed = (Buffer.from(value.variables, 'base64')).toString('utf-8')
                 var variationsParsed = (Buffer.from(value.variations, 'base64')).toString('utf-8')
                 var stdclausesParsed = (Buffer.from(value.stdclauses, 'base64')).toString('utf-8')
@@ -34,20 +34,24 @@ module.exports = async function updatePROD(valueToUpdate) {
                 }
                 output[0].articles.push(base)
             }
-            else if ((article.length >= 1) && (value.articlestatus == "accepted_changes")) {
+            if (value.articlestatus == "accepted_changes") {
+                console.log("here");
                 article[0].articleStatus = value.articlestatus
             }
-            else if ((article.length >= 1) && (value.articlestatus == "proposed_changes")) {
+            if (value.articlestatus == "proposed_changes") {
+                console.log(article[0]);
                 var variablesParsed = (Buffer.from(value.variables, 'base64')).toString('utf-8')
                 var variationsParsed = (Buffer.from(value.variations, 'base64')).toString('utf-8')
                 var stdclausesParsed = (Buffer.from(value.stdclauses, 'base64')).toString('utf-8')
                 var customtextsParsed = (Buffer.from(value.customtexts, 'base64')).toString('utf-8')
-                article[0].articleStatus = value.articlestatus,
-                    article[0].variables = JSON.parse(variablesParsed),
-                    article[0].variations = "",
-                    article[0].stdclauses = "",
-                    article[0].customtexts = JSON.parse(customtextsParsed)
+
+                article[0].articleStatus = value.articlestatus
+                article[0].variables = JSON.parse(variablesParsed)
+                article[0].variations = ""
+                article[0].stdclauses = ""
+                article[0].customtexts = JSON.parse(customtextsParsed)
             }
+
             var json = JSON.stringify(objs)
             fs.writeFile(__dirname + "/../../data/listOfMNOs.json", json, function (err) {
                 if (err) throw err;

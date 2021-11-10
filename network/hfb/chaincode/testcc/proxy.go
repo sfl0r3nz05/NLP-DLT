@@ -172,6 +172,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         raid := args[0]
         raid_parsed := trimQuote(raid)
         article_num := args[1]
+        article_num_parsed :=trimQuote(article_num)
         article_name := args[2]
         variables := args[3]
         variablesParsed := trimQuote(variables)
@@ -186,7 +187,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
             return shim.Error(ERRORRecoverIdentity)
         }
         if identity_exist {
-            err := cc.updateArticle(stub, org_id, raid_parsed, article_num, article_name, variablesParsed, variationsParsed, stdClausesParsed, customTextsParsed)
+            err := cc.updateArticle(stub, org_id, raid_parsed, article_num_parsed, article_name, variablesParsed, variationsParsed, stdClausesParsed, customTextsParsed)
             if err != nil {
                 return shim.Error(ERRORUpdateArticle)
             }
