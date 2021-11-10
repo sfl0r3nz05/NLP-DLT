@@ -3,7 +3,7 @@ const updatePROD = require("../../utils/data/updatePROD");
 const readBuffer = require("../../utils/buffer/readBuffer");
 const invokeEvents = require("../../utils/invoke/invokeEvents");
 
-const acceptProposedChanges = async (req, res) => {
+const rejectProposedChanges = async (req, res) => {
     try {
         let data = req.body; // params from POST
         let user = data.userDetails;
@@ -26,8 +26,8 @@ const acceptProposedChanges = async (req, res) => {
         }
 
         if (data.formVariables[0].key === '' && data.formVariables[0].value === '' && data.formCustomText[0].value === '') {
-            let method = "acceptProposedChanges";
-            let event_name = "accept_proposed_changes";
+            let method = "rejectProposedChanges";
+            let event_name = "reject_proposed_changes";
             let noArgs = 2
             let arg1 = output[0].ra_id;
             let arg2 = article[0].articleId;
@@ -52,4 +52,4 @@ const acceptProposedChanges = async (req, res) => {
     }
 };
 
-module.exports = { acceptProposedChanges };
+module.exports = { rejectProposedChanges };

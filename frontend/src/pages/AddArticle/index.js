@@ -123,7 +123,13 @@ const AddArticle = () => {
         if (res.status === 202) {
           openNotificationWithIcon(
             "error",
-            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+            "THIS MNO DOES NOT BELONG TO THIS ROAMING AGREEMENT"
+          );
+        }
+        if (res.status === 203) {
+          openNotificationWithIcon(
+            "error",
+            "THIS ARTICLE HAS ALREADY BEEN ADDED"
           );
         }
       })

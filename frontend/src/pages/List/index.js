@@ -208,7 +208,7 @@ const RenderList = () => {
     e.preventDefault();
     const jwtToken = localStorage.getItem("token");
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeDeleteArticle`, { list, selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/rejectProposedChanges`, { list, selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(

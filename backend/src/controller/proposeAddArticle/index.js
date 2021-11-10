@@ -33,9 +33,16 @@ const proposeAddArticle = async (req, res) => {
         const selectEnv = 1;
         const objs = await readBuffer(selectEnv);
         var output = objs.filter(function (obj) { return ((obj.mno1 == mno || obj.mno2 == mno) && obj.ra_name == value.raname) })
-        if (!output[0]) {
+        if ((!output[0]) || (output[0].ra_name != value.raname)) {
             res.sendStatus(202);
             res.end("202");
+            return
+        }
+        var articles = output[0].articles
+        var article = (articles).filter(function (article) { return article.articleId == value.articleNo })
+        if (article.length != 0) {
+            res.sendStatus(203);
+            res.end("203");
             return
         }
         noArgs = 7
