@@ -208,7 +208,7 @@ const RenderList = () => {
     e.preventDefault();
     const jwtToken = localStorage.getItem("token");
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/`, { selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeDeleteArticle`, { list, selectedRow, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -225,7 +225,13 @@ const RenderList = () => {
         if (res.status === 202) {
           openNotificationWithIcon(
             "error",
-            "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+            "THIS MNO CANNOT ACCEPT THE CHANGES PROPOSED BY ITSELF"
+          );
+        }
+        if (res.status === 203) {
+          openNotificationWithIcon(
+            "error",
+            "MUST MODIFY VARIABLES, VARIATIONS OR CUSTOM TEXTS WHEN A CHANGE IN THE ARTICLE IS PROPOSED"
           );
         }
       })
