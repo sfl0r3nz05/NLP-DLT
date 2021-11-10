@@ -5,6 +5,7 @@ const list = async (req, res) => {
   try {
     const selectEnv = 1;
     const objs = await readBuffer(selectEnv);
+    console.log(objs);
     userInfo = JSON.parse(req.query.ID)
     mno = await recoverMNO(userInfo.username)
     var output = objs.filter(function (obj) { return obj.mno1 == mno || obj.mno2 == mno; })

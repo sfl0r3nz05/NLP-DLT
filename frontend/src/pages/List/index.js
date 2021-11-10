@@ -90,7 +90,7 @@ const RenderList = () => {
         setList(resJson);
       })
       .catch(error => { });
-  }); // Execut some element of the array changue
+  }, []); // Execut some element of the array changue
 
   const handleSubmit = (e, mno1) => {
     e.preventDefault();

@@ -1,12 +1,11 @@
 const recoverMNO = require("../../utils/recoverMNO");
+const updatePROD = require("../../utils/data/updatePROD");
 const readBuffer = require("../../utils/buffer/readBuffer");
 const invokeEvents = require("../../utils/invoke/invokeEvents");
 
 const acceptProposedChanges = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        let method = "acceptProposedChanges";
-
         let user = data.userDetails;
         if (!user) {
             res.sendStatus(201);
@@ -27,16 +26,19 @@ const acceptProposedChanges = async (req, res) => {
         }
 
         if (data.formVariables[0].key === '' && data.formVariables[0].value === '' && data.formCustomText[0].value === '') {
-            var noArgs = 2
-            var arg1 = output[0].ra_id;
-            var arg2 = article[0].articleId;
+            let method = "acceptProposedChanges";
+            let event_name = "accept_proposed_changes";
+            let noArgs = 2
+            let arg1 = output[0].ra_id;
+            let arg2 = article[0].articleId;
             eventHf = await invokeEvents(method, event_name, noArgs, arg1, arg2, "", "", "", "", "", user.username);
             if (!eventHf[0]) {
                 res.sendStatus(403);
                 res.end("403");
                 return
             }
-            //await updatePROD(eventHf[1])
+            console.log(eventHf);
+            await updatePROD(eventHf[1])
         }
         else {
             res.sendStatus(203);
