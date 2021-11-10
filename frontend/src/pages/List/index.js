@@ -153,7 +153,7 @@ const RenderList = () => {
         if (res.status === 203) {
           openNotificationWithIcon(
             "error",
-            "NOT ALLOWED TO MODIFY VARIABLES, VARIATIONS OR CUSTOM TEXTS"
+            "NOT ALLOWED TO MODIFY VARIABLES, VARIATIONS OR CUSTOM TEXTS WHEN CHANGES ARE ACCEPTED"
           );
         }
       })

@@ -1,4 +1,5 @@
 const recoverMNO = require("../../utils/recoverMNO");
+const readBuffer = require("../../utils/buffer/readBuffer");
 const invokeEvents = require("../../utils/invoke/invokeEvents");
 
 const acceptProposedChanges = async (req, res) => {
@@ -13,14 +14,20 @@ const acceptProposedChanges = async (req, res) => {
             return
         }
 
-        let mno = await recoverMNO(user)
-        if (mno == data.list.mno2) {
+        let mno = await recoverMNO(user.username)
+        const selectEnv = 1;
+        const objs = await readBuffer(selectEnv);
+        var output = objs.filter(function (obj) { return obj.ra_id == data.list[0].ra_id })
+        var articles = output[0].articles
+        var article = (articles).filter(function (article) { return article.articleId == data.selectedRow.articleId })
+        if (mno == article[0].proposedBy) {
             res.sendStatus(202);
             res.end("202");
             return
         }
 
         if (data.formVariables[0].key === '' && data.formVariables[0].value === '' && data.formCustomText[0].value === '') {
+            console.log("here");
             //if (!eventHf[0]) {
             //    res.sendStatus(403);
             //    res.end("403");
@@ -29,8 +36,8 @@ const acceptProposedChanges = async (req, res) => {
             //await updatePROD(eventHf[1])
         }
         else {
-            res.sendStatus(202);
-            res.end("202");
+            res.sendStatus(203);
+            res.end("203");
             return
         }
         res.sendStatus(200);

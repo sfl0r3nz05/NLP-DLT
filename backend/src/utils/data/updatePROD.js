@@ -20,6 +20,7 @@ module.exports = async function updatePROD(valueToUpdate) {
                 var base = {
                     "articleId": value.articleno.replace(/['"]+/g, ''),
                     "articleName": value.articlename.replace(/['"]+/g, ''),
+                    "proposedBy": value.mno1,
                     "articleStatus": value.articlestatus,
                     "variables": JSON.parse(variablesParsed),
                     "variations": "",
