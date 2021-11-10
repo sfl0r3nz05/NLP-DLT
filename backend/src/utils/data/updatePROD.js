@@ -34,8 +34,19 @@ module.exports = async function updatePROD(valueToUpdate) {
                 }
                 output[0].articles.push(base)
             }
-            else if (article.length >= 1) {
+            else if ((article.length >= 1) && (value.articlestatus == "accepted_changes")) {
                 article[0].articleStatus = value.articlestatus
+            }
+            else if ((article.length >= 1) && (value.articlestatus == "proposed_changes")) {
+                var variablesParsed = (Buffer.from(value.variables, 'base64')).toString('utf-8')
+                var variationsParsed = (Buffer.from(value.variations, 'base64')).toString('utf-8')
+                var stdclausesParsed = (Buffer.from(value.stdclauses, 'base64')).toString('utf-8')
+                var customtextsParsed = (Buffer.from(value.customtexts, 'base64')).toString('utf-8')
+                article[0].articleStatus = value.articlestatus,
+                    article[0].variables = JSON.parse(variablesParsed),
+                    article[0].variations = "",
+                    article[0].stdclauses = "",
+                    article[0].customtexts = JSON.parse(customtextsParsed)
             }
             var json = JSON.stringify(objs)
             fs.writeFile(__dirname + "/../../data/listOfMNOs.json", json, function (err) {
