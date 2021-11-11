@@ -250,7 +250,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if identity_exist {
             err := cc.confirmationReachAgreement(stub, org_id, raid_parsed)
             if err != nil {
-                return shim.Error(ERRORAcceptAgreement)
+                return nil
             }
         }
     } else if function == "queryMNO" {
@@ -923,20 +923,20 @@ func (cc *Chaincode) confirmationReachAgreement(stub shim.ChaincodeStubInterface
     RA, err := cc.recoverRA(stub, raid)
     if err != nil {
         log.Errorf("[%s][%s][recoverRA] Error recovering Roaming Agreement", CHANNEL_ENV, ERRORRecoveringRA)
-        return errors.New(ERRORRecoveringRA + err.Error())
+        return nil
     }
 
     org_exist := cc.verifyOrgRA(stub, RA, org_id)
     if org_exist == false {
         log.Errorf("[%s][verifyOrgRA][%s]", CHANNEL_ENV, ERRORVerifyingOrg)
-        return errors.New(ERRORVerifyingOrg)
+        return nil
     }
 
     status := "accepted_ra_confirmation"  //set status as "confirmation_ra_started".
     err = cc.updateAgreementStatus(stub, raid, status)
     if err != nil {
         log.Errorf("[%s][updateAgreementStatus][%s]", CHANNEL_ENV, ERRORUpdatingStatus)
-        return errors.New(ERRORUpdatingStatus + err.Error())
+        return nil
     }
 
     new_id := sha256.Sum256([]byte(org_id))
@@ -944,7 +944,7 @@ func (cc *Chaincode) confirmationReachAgreement(stub shim.ChaincodeStubInterface
     organization, err = cc.recoverOrg(stub, new_id_str)    //recover organization name
     if err != nil {
         log.Errorf("[%s][%s][recoverOrg] Error recovering org", CHANNEL_ENV, ERRORRecoveringOrg)
-        return errors.New(ERRORRecoveringOrg + err.Error())
+        return nil
     }
 
     event_name := "confirmation_accepted_ra"    //emit event "proposed_add_article"
@@ -954,7 +954,7 @@ func (cc *Chaincode) confirmationReachAgreement(stub shim.ChaincodeStubInterface
     payloadAsBytes, err:= json.Marshal(EVENT{Mno1: org_name, RAID: raid, RAStatus: status, Timestamp: timestamp})
     if err != nil {
         log.Errorf("[%s][%s] Error parsing: %v", CHANNEL_ENV, ERRORParsing, err.Error())
-        return errors.New(ERRORParsingRA + err.Error())
+        return nil
     }
     eventErr := stub.SetEvent(event_name, payloadAsBytes)
     if eventErr != nil {
