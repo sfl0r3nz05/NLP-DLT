@@ -52,6 +52,10 @@ const AddArticle = () => {
     console.log(e.target.value);
   }
 
+  const handleStdClausesChange = (i, e, v) => {
+    console.log(e.target.value);
+  }
+
   const [selectedArticleVar, setSelectedArticleVar] = useState([]);
   const [selectedArticleSub, setSelectedArticleSub] = useState([]);
   const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState([]);
@@ -216,21 +220,20 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="STANDARD CLAUSES DEFINED">
-                      {getByArticleType('stdClause').map(item => (
-                        <Row >
-                          <Col span={24}>
-                            <TextArea
-                              size="large"
-                              name="key"
-                              rows={4}
-                              style={{ width: '90%' }}
-                              placeholder={"Key"}
-                              value={item.content}
-                              disabled
-                            />
-                          </Col>
-                        </Row>
-                      ))}
+                      <Row >
+                        <Col span={24}>
+                          <TextArea
+                            size="large"
+                            name="key"
+                            rows={12}
+                            style={{ width: '90%' }}
+                            placeholder={"Standard Clauses"}
+                            value={getByArticleType('stdClause').map(item => (item.content))}
+                            disabled
+                            onChange={e => handleStdClausesChange(e)}
+                          />
+                        </Col>
+                      </Row>
                     </Form.Item>
 
                     <Form.Item label="SELECT VARIABLES">
@@ -266,7 +269,7 @@ const AddArticle = () => {
                         <Row>
                           <Col span={24}>
                             <div style={{ background: '#ECECEC', width: '90%', padding: '20px' }}>
-                              <Checkbox style={{ width: '90%' }} onChange={onChange}>
+                              <Checkbox style={{ width: '90%' }} checked onChange={e => handleVariationsChange(e)}>
                                 {item.content}
                               </Checkbox>
                             </div>
