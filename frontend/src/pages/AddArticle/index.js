@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {
   Row,
+  Card,
+  Checkbox,
   Col,
   Form,
   Input,
@@ -24,6 +26,8 @@ const AddArticle = () => {
     raname: "",
     articleNo: "",
     articleName: "",
+    articleVariables: [],
+    articleSubArticles: []
   };
   const [addArticle, setAddArticle] = useState(initialFormState);
 
@@ -48,10 +52,11 @@ const AddArticle = () => {
     console.log(e.target.value);
   }
 
-  const [selectedArticleVar, setSelectedArticleVar] = useState({ variables: [] });
-  const [selectedArticleSub, setSelectedArticleSub] = useState({ subarticles: [] });
-  const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState({ subarticles: [] });
-  const [selectedArticlesVariation, setSelectedArticlesVariation] = useState({ subarticles: [] });
+  const [selectedArticleVar, setSelectedArticleVar] = useState([]);
+  const [selectedArticleSub, setSelectedArticleSub] = useState([]);
+  const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState([]);
+  const [selectedArticlesVariation, setSelectedArticlesVariation] = useState([]);
+
   const onChange = (value) => {
     setAddArticle({ ...addArticle, articleName: value })
     addArticle.articleName = value;
@@ -59,16 +64,14 @@ const AddArticle = () => {
       item.articles.map(data => {
         if (data.article === value) {
           setAddArticle({ ...addArticle, articleNo: data.id })
+          console.log(data);
           addArticle.articleNo = data.id;
-          setSelectedArticleVar(data)
-          setSelectedArticleSub(data)
-          if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax === 'stdClause')) {
-            console.log("here");
-            setSelectedArticlesStdClause(data)
-          } else if ((selectedArticleSub.subarticles.map(data => data.type)).find(datax => datax === 'variation')) {
-            console.log("here2");
-            setSelectedArticlesVariation(data)
-          }
+          addArticle.articleVariables = data.variables
+          addArticle.articleSubArticles = data.subarticles
+
+          setSelectedArticleVar(data.variables)
+          setSelectedArticleSub(data.subarticles)
+          console.log(addArticle);
         }
       })
     })
@@ -98,6 +101,8 @@ const AddArticle = () => {
       description: description,
     });
   };
+
+  const getByArticleType = (filter) => addArticle.articleSubArticles.filter(({ type }) => type === filter);
 
   const [loading, setLoading] = useState(false);
   let userDetails = JSON.parse(localStorage.getItem('user'));
@@ -211,16 +216,16 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="STANDARD CLAUSES DEFINED">
-                      {selectedArticlesStdClause.subarticles.map((item, index) => (
+                      {getByArticleType('stdClause').map(item => (
                         <Row >
                           <Col span={24}>
                             <TextArea
                               size="large"
                               name="key"
                               rows={4}
-                              style={{ width: '100%' }}
+                              style={{ width: '90%' }}
                               placeholder={"Key"}
-                              defaultValue={item.content}
+                              value={item.content}
                               disabled
                             />
                           </Col>
@@ -229,7 +234,7 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="SELECT VARIABLES">
-                      {selectedArticleVar.variables.map((item, index) => (
+                      {addArticle.articleVariables.map((item, index) => (
                         <Row >
                           <Col span={4}>
                             <Input
@@ -257,40 +262,40 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="SELECT VARIATIONS">
-                      {selectedArticlesVariation.subarticles.map((item, index) => (
-                        <Row >
+                      {getByArticleType('variation').map(item => (
+                        <Row>
                           <Col span={24}>
-                            <Input
-                              size="large"
-                              type='checkbox'
-                              name="key"
-                              style={{ width: '100%' }}
-                              value={item.content}
-                              checked
-                              onChange={e => handleVariationsChange(index, e)}
-                            />
+                            <div style={{ background: '#ECECEC', width: '90%', padding: '20px' }}>
+                              <Checkbox style={{ width: '90%' }} onChange={onChange}>
+                                {item.content}
+                              </Checkbox>
+                            </div>
                           </Col>
                         </Row>
                       ))}
                     </Form.Item>
 
                     <Form.Item label="ENABLE CUSTOM TEXTS">
-                      <Col span={24}>
-                        <Switch
-                          size="large"
-                          onChange={e => handleInput(e)}
-                        />
-                        <TextArea
-                          placeholder={"Name of the Roaming Agreement"}
-                          name="customText"
-                          size="large"
-                          rows={4}
-                          style={{ width: '100%' }}
-                          disabled={input.value}
-                          type="text"
-                          onChange={handleChangeRA}
-                        />
-                      </Col>
+                      <Row>
+                        <Col span={24}>
+                          <Switch
+                            size="large"
+                            onChange={e => handleInput(e)}
+                          />
+                        </Col>
+                        <Col span={24}>
+                          <TextArea
+                            placeholder={"Custom Text"}
+                            name="customText"
+                            size="large"
+                            rows={4}
+                            style={{ width: '90%' }}
+                            disabled={input.value}
+                            type="text"
+                            onChange={handleChangeRA}
+                          />
+                        </Col>
+                      </Row>
                     </Form.Item>
 
                     <Form.Item>
