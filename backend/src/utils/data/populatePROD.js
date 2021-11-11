@@ -20,6 +20,7 @@ module.exports = async function populatePROD(valueToUpdate) {
                 "ra_id": value.raid,
                 "ra_status": value.rastatus,
                 "timestamp": value.timestamp,
+                "acceptRAproposedBy": "",
                 "articles": []
             })
             var json = JSON.stringify(obj)

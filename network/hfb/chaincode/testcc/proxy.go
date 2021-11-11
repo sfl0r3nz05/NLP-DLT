@@ -250,7 +250,7 @@ func (cc *Chaincode) Invoke(stub shim.ChaincodeStubInterface) sc.Response {
         if identity_exist {
             err := cc.confirmationReachAgreement(stub, org_id, raid_parsed)
             if err != nil {
-                return nil
+                return shim.Error(ERRORAcceptAgreement)
             }
         }
     } else if function == "queryMNO" {

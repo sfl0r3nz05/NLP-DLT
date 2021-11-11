@@ -8,27 +8,22 @@ const acceptAgreementInitiation = async (req, res) => {
         let data = req.body; // params from POST
         let userDetails = data.userDetails;
         let mno1 = await recoverMNO(userDetails.username)
-        let mno2 = data.mno1;
+        let mno2 = data.list[(data.list).length - 1].mno2;
+        if (mno1 === mno2) { mno2 = data.list[(data.list).length - 1].mno1 }
         if (!mno2) {
             res.sendStatus(201);
             res.end("201");
             return
-        } else if (mno1 == mno2) {
-            res.sendStatus(202);
-            res.end("202");
-            return
         }
+
+        console.log(mno1);
+        console.log(mno2);
+
         const selectEnv = 1;
         const objs = await readBuffer(selectEnv);
-        var output = objs.filter(function (obj) { return obj.mno1 == mno1 && obj.mno2 == mno2 })
-        if (output[0]) {
-            res.sendStatus(202);
-            res.end("202");
-            return
-        }
         var output = objs.filter(function (obj) { return ((obj.mno1 == mno1 && obj.mno2 == mno2) || (obj.mno1 == mno2 && obj.mno2 == mno1)); })
         var articles = output[0].articles
-        console.log(articles[0]);
+        //console.log(output[0]);
 
         if (articles.length === 0) {
             let arg1 = output[0].ra_id
@@ -66,7 +61,10 @@ const acceptAgreementInitiation = async (req, res) => {
                 return
             }
             await updatePROD(eventHf[1])
-        } else if ((articles.length > 0) && (output[0].ra_status === "accepted_ra") && (articles[0].proposedBy != mno1)) {
+            res.sendStatus(204);
+            res.end("204");
+            return
+        } else if ((articles.length > 0) && (output[0].ra_status === "accepted_ra") && (output[0].acceptRAproposedBy != mno1)) {
             let arg1 = output[0].ra_id
             let arg2 = "";
             let arg3 = "";
@@ -85,6 +83,9 @@ const acceptAgreementInitiation = async (req, res) => {
                 return
             }
             await updatePROD(eventHf[1])
+            res.sendStatus(205);
+            res.end("205");
+            return
         } else {
             res.sendStatus(203);
             res.end("203");

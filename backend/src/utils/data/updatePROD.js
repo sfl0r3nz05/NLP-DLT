@@ -56,6 +56,7 @@ module.exports = async function updatePROD(valueToUpdate) {
 
             if (value.rastatus == "accepted_ra") {
                 output[0].ra_status = value.rastatus
+                output[0].acceptRAproposedBy = value.mno1
                 articles[0].proposedBy = value.mno1
             }
 

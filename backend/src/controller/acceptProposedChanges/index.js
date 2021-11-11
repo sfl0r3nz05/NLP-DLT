@@ -16,7 +16,9 @@ const acceptProposedChanges = async (req, res) => {
         let mno = await recoverMNO(user.username)
         const selectEnv = 1;
         const objs = await readBuffer(selectEnv);
-        var output = objs.filter(function (obj) { return obj.ra_id == data.list[0].ra_id })
+        var output = objs.filter(function (obj) {
+            return obj.ra_id == data.list[(data.list).length - 1].ra_id
+        })
         var articles = output[0].articles
         var article = (articles).filter(function (article) { return article.articleId == data.selectedRow.articleId })
         if (mno == article[0].proposedBy) {

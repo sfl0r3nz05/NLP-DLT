@@ -93,7 +93,7 @@ const RenderList = () => {
     const jwtToken = localStorage.getItem("token");
     //Set POST request
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptAgreementInitiation`, { mno1, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptAgreementInitiation`, { list, mno1, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -117,6 +117,18 @@ const RenderList = () => {
           openNotificationWithIcon(
             "error",
             "THIS MNO CANNOT ACCEPT THE CHANGES PROPOSED BY ITSELF"
+          );
+        }
+        if (res.status === 204) {
+          openNotificationWithIcon(
+            "success",
+            "SENT PROPOSAL TO REACH AGREEMENT"
+          );
+        }
+        if (res.status === 205) {
+          openNotificationWithIcon(
+            "success",
+            "CONGRATULATIONS: AGREEMENT REACHED !!!"
           );
         }
       })
