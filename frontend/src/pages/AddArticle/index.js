@@ -111,7 +111,7 @@ const AddArticle = () => {
         if (res.status === 200) {
           openNotificationWithIcon(
             "success",
-            "SUCCESSFULLY REGISTERED AGREEMENT"
+            "ARTICLE SUCCESSFULLY REGISTERED"
           );
         }
         if (res.status === 201) {

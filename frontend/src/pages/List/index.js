@@ -59,10 +59,6 @@ const RenderList = () => {
     });
   };
 
-  const clicRow = (e) => {
-    setSelectedRow(e)
-  }
-
   const [selectedRow, setSelectedRow] = useState({ variables: [], customtexts: [] });
   const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = (v) => {
@@ -115,6 +111,12 @@ const RenderList = () => {
           openNotificationWithIcon(
             "error",
             "ROAMING AGREEMENT MUST BE CREATED BETWEEN TWO MNOs"
+          );
+        }
+        if (res.status === 203) {
+          openNotificationWithIcon(
+            "error",
+            "THIS MNO CANNOT ACCEPT THE CHANGES PROPOSED BY ITSELF"
           );
         }
       })
@@ -254,6 +256,11 @@ const RenderList = () => {
   function handleCustomText(e) {
     formCustomText[0] = { value: e.target.value }
     setFormCustomText(formCustomText)
+  }
+
+  const clicRow = (e) => {
+    console.log(e);
+    setSelectedRow(e)
   }
 
   const columns = [
@@ -407,7 +414,7 @@ const RenderList = () => {
             }
           },
           {
-            title: 'Article in details', align: 'center', render(articles) {
+            title: 'Article in details', align: 'center', render() {
               return {
                 children: <>
                   <Button type="primary" onClick={() => showModal(selectedRow)}>
@@ -455,7 +462,7 @@ const RenderList = () => {
                 <Input
                   name="value"
                   size="large"
-                  placeholder={"Value"}
+                  placeholder={"value"}
                   style={{ width: '100%' }}
                   defaultValue={data.value}
                   onChange={e => handleVariablesChange(index, e, data.key)}

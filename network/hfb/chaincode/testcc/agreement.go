@@ -82,7 +82,7 @@ func (cc *Chaincode) verifyArticleStatus(stub shim.ChaincodeStubInterface, artic
     }
 
     for _, s := range jsonRAgreement.ARTICLES {
-        if(trimQuote(s.ID) == article_num){
+        if (trimQuote(s.ID) == article_num){
             for _, v := range valid_status {
                 if (s.STATUS == v){
                     value = true
@@ -115,20 +115,25 @@ func (cc *Chaincode) verifyArticlesStatus(stub shim.ChaincodeStubInterface, arti
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
-    if(jsonRAgreement.STATUS != articles_status[0] && jsonRAgreement.STATUS != articles_status[1]){
-        log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init status", CHANNEL_ENV, ERRORDeterminingStatus)
-        return errors.New(ERRORDeterminingStatus + err.Error())
+    if (len(articles_status) == 1){
+        if (jsonRAgreement.STATUS != articles_status[0]){
+            log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the transient status", CHANNEL_ENV, ERRORDeterminingStatus)
+            return nil
+        }
+    } else if (len(articles_status) == 2){
+        if (jsonRAgreement.STATUS != articles_status[0] && jsonRAgreement.STATUS != articles_status[1]){
+            log.Errorf("[%s][%s][verifyArticlesStatus] Error determining the init and article drating status", CHANNEL_ENV, ERRORDeterminingStatus)
+            return errors.New(ERRORDeterminingStatus + err.Error())
+        }
     }
-
+    
     return nil
 }
-
 
 func (cc *Chaincode) setArticle(stub shim.ChaincodeStubInterface, articlesid string, article_num string, article_status string, variables []VARIABLE, variations []VARIATION, customTexts []CUSTOMTEXT, stdClauses []STDCLAUSE, articles_status string) (error){
 
     CHANNEL_ENV := stub.GetChannelID()
-    var jsonRAgreement ListOfArticles
-    var jsonRAgreementNEW ListOfArticles
+    var jsonRAgreement *ListOfArticles
 
     bytes_jsonRA, err := stub.GetState(articlesid)
     if err != nil {
@@ -150,9 +155,8 @@ func (cc *Chaincode) setArticle(stub shim.ChaincodeStubInterface, articlesid str
     ARTICLE_TEMP[0] = NEW_ARTICLE
     jsonRAgreement.ARTICLES = append(jsonRAgreement.ARTICLES, ARTICLE_TEMP...)
     jsonRAgreement.STATUS = articles_status
-    jsonRAgreementNEW = jsonRAgreement
 
-    idBytes, err := json.Marshal(jsonRAgreementNEW)
+    idBytes, err := json.Marshal(jsonRAgreement)
     if err != nil {
         log.Errorf("[%s][%s][setArticle] Error parsing: %v", CHANNEL_ENV, ERRORParsingRA, err.Error())
         return errors.New(ERRORParsingRA + err.Error())
@@ -167,9 +171,9 @@ func (cc *Chaincode) setArticle(stub shim.ChaincodeStubInterface, articlesid str
     return nil
 }
 
-func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, articlesid string, articles_status string) (error){
+func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, articlesid string, articles_status string, all_article_status string) (error){
 
-    var jsonRAgreement ListOfArticles 
+    var jsonRAgreement *ListOfArticles
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(articlesid)
@@ -184,10 +188,15 @@ func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, article
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
-    jsonRAgreement.STATUS = articles_status
+    for i, _ := range jsonRAgreement.ARTICLES {
+        if (jsonRAgreement.ARTICLES[i].STATUS == all_article_status){
+            jsonRAgreement.STATUS = articles_status
+        }
+    }
+
     idBytes, err := json.Marshal(jsonRAgreement)
     if err != nil {
-        log.Errorf("[%s][%s][setArticlesStatus] Error parsing: %v", CHANNEL_ENV, ERRORParsingRA, err.Error())
+        log.Errorf("[%s][%s][setArticle] Error parsing: %v", CHANNEL_ENV, ERRORParsingRA, err.Error())
         return errors.New(ERRORParsingRA + err.Error())
     }
 
@@ -196,6 +205,7 @@ func (cc *Chaincode) setArticlesStatus(stub shim.ChaincodeStubInterface, article
         log.Errorf("[%s][%s][setArticlesStatus] Error storing: %v", CHANNEL_ENV, ERRORStoringRA, err.Error())
         return errors.New(ERRORStoringRA + err.Error())
     }
+
     return nil
 }
 
@@ -220,9 +230,7 @@ func (cc *Chaincode) updateArticleRA(stub shim.ChaincodeStubInterface, articlesI
     }
 
     for i, s := range jsonRAgreement.ARTICLES {
-        if(trimQuote(s.ID) == trimQuote(article_num)){
-            log.Info(i)
-            log.Info(s.ID)
+        if (trimQuote(s.ID) == trimQuote(article_num)){
             jsonRAgreement.ARTICLES[i].STATUS = article_status
             jsonRAgreement.ARTICLES[i].VARIABLES = variables
             jsonRAgreement.ARTICLES[i].VARIATIONS = variations
@@ -230,8 +238,6 @@ func (cc *Chaincode) updateArticleRA(stub shim.ChaincodeStubInterface, articlesI
             jsonRAgreement.ARTICLES[i].STDCLAUSES = stdClauses
         }
     }
-
-    log.Info(jsonRAgreement)
 
     RaAsBytes, _ := json.Marshal(jsonRAgreement)
     err = stub.PutState(articlesId, RaAsBytes) // PuState of Client (Organization) Identity and Organtization struct
@@ -245,7 +251,7 @@ func (cc *Chaincode) updateArticleRA(stub shim.ChaincodeStubInterface, articlesI
 
 func (cc *Chaincode) deleteArticleRA(stub shim.ChaincodeStubInterface, articlesid string, article_num string, status string) (error){
         
-    var jsonRAgreement ListOfArticles
+    var jsonRAgreement *ListOfArticles
     CHANNEL_ENV := stub.GetChannelID()
 
     bytes_jsonRA, err := stub.GetState(articlesid)
@@ -264,7 +270,7 @@ func (cc *Chaincode) deleteArticleRA(stub shim.ChaincodeStubInterface, articlesi
     }
 
     for _, s := range jsonRAgreement.ARTICLES {
-        if(trimQuote(s.ID) == article_num){
+        if (trimQuote(s.ID) == article_num){
             s.STATUS = ""
             s.VARIABLES = nil
             s.VARIATIONS = nil
@@ -303,9 +309,9 @@ func (cc *Chaincode) updateArticleStatus(stub shim.ChaincodeStubInterface, artic
         return errors.New(ERRORRecoveringJsonRA + err.Error())
     }
 
-    for _, s := range jsonRAgreement.ARTICLES {
-        if(s.ID == article_num){
-            s.STATUS = status
+    for i, s := range jsonRAgreement.ARTICLES {
+        if (trimQuote(s.ID) == trimQuote(article_num)){
+            jsonRAgreement.ARTICLES[i].STATUS = status
         }
     }
 
@@ -340,7 +346,7 @@ func (cc *Chaincode) recoverArticleRA(stub shim.ChaincodeStubInterface, articles
     }
 
     for _, s := range jsonRAgreement.ARTICLES {
-        if(s.ID == article_num){
+        if (s.ID == article_num){
             jsonRA_article = s
         }
     }
@@ -380,7 +386,7 @@ func (cc *Chaincode) recoverJsonRA(stub shim.ChaincodeStubInterface, articlesid 
 //AGREEMENT STATUS      #########################################################################################
 
 func (cc *Chaincode) updateAgreementStatus(stub shim.ChaincodeStubInterface, raid string, status string) (error){
-    var RA RoamingAgreement
+    var RA *RoamingAgreement
     
     CHANNEL_ENV := stub.GetChannelID()
     bytes_RA, err := stub.GetState(raid)

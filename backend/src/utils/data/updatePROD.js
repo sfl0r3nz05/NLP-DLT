@@ -4,6 +4,7 @@ const readBuffer = require("../buffer/readBuffer");
 module.exports = async function updatePROD(valueToUpdate) {
     try {
         value = JSON.parse(valueToUpdate);
+        console.log(value);
 
         fs.readFile(__dirname + "/../../data/listOfMNOs.json", function (err, data) {
             var objs = JSON.parse(data)
@@ -12,8 +13,6 @@ module.exports = async function updatePROD(valueToUpdate) {
             output[0].timestamp = value.timestamp
             var articles = output[0].articles
             var article = (articles).filter(function (article) { return article.articleId == value.articleno })
-            //console.log(article.length);
-            console.log(article);
 
             if (value.articlestatus == "added_article") {
                 var variablesParsed = (Buffer.from(value.variables, 'base64')).toString('utf-8')
@@ -53,6 +52,15 @@ module.exports = async function updatePROD(valueToUpdate) {
                 article[0].variations = ""
                 article[0].stdclauses = ""
                 article[0].customtexts = JSON.parse(customtextsParsed)
+            }
+
+            if (value.rastatus == "accepted_ra") {
+                output[0].ra_status = value.rastatus
+                articles[0].proposedBy = value.mno1
+            }
+
+            if (value.rastatus == "confirmation_accepted_ra") {
+                output[0].ra_status = value.rastatus
             }
 
             var json = JSON.stringify(objs)
