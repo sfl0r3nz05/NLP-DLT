@@ -26,8 +26,8 @@ module.exports = async function updatePROD(valueToUpdate) {
                     "proposedBy": value.mno1,
                     "articleStatus": value.articlestatus,
                     "variables": JSON.parse(variablesParsed),
-                    "variations": "",
-                    "stdclauses": "",
+                    "variations": JSON.parse(variationsParsed),
+                    "stdclauses": JSON.parse(stdclausesParsed),
                     "customtexts": JSON.parse(customtextsParsed),
                 }
                 output[0].articles.push(base)

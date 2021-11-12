@@ -59,7 +59,7 @@ const RenderList = () => {
     });
   };
 
-  const [selectedRow, setSelectedRow] = useState({ variables: [], customtexts: [] });
+  const [selectedRow, setSelectedRow] = useState({ variables: [], variations: [], stdclauses: [], customtexts: [] });
   const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = (v) => {
     setSelectedRow(v)
@@ -77,6 +77,7 @@ const RenderList = () => {
       })
       .then(res => {
         setList(res.data);
+        console.log(res.data);
         if (res.ok) {
           return res.json();
         }
@@ -485,8 +486,33 @@ const RenderList = () => {
           )}
         </Form.Item>
         <Form.Item label="Standard Clauses">
+
+          < Row >
+            <TextArea
+              size="large"
+              name="value"
+              style={{ width: '100%' }}
+              defaultValue={selectedRow && selectedRow.stdclauses.map(data => data.value)}
+              rows={12}
+              disabled
+            //onChange={e => handleStdClauses(e)}
+            />
+          </Row>
+
         </Form.Item>
         <Form.Item label="Variations">
+          {selectedRow && selectedRow.variations.map(data =>
+            < Row >
+              <TextArea
+                size="large"
+                name="value"
+                style={{ width: '100%' }}
+                defaultValue={data.value}
+                rows={3}
+              //onChange={e => handleVariations(e)}
+              />
+            </Row>
+          )}
         </Form.Item>
         <Form.Item label="Custom Texts" >
           {selectedRow && selectedRow.customtexts.map(data =>

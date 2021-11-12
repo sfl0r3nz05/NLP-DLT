@@ -27,7 +27,9 @@ const AddArticle = () => {
     articleNo: "",
     articleName: "",
     articleVariables: [],
-    articleSubArticles: []
+    articleSubArticles: [],
+    articleVariations: [],
+    articleStdClauses: []
   };
   const [addArticle, setAddArticle] = useState(initialFormState);
 
@@ -41,7 +43,7 @@ const AddArticle = () => {
     setselectedArticles(new_e)
   }
 
-  const [formVariables, setFormVariables] = useState([{ key: "", value: "" }])
+  const [formVariables, setFormVariables] = useState([])
   const handleVariablesChange = (i, e, v) => {
     let newFormVariables = [...formVariables];
     newFormVariables[i] = { key: v, value: e.target.value }
@@ -49,17 +51,8 @@ const AddArticle = () => {
   }
 
   const handleVariationsChange = (i, e, v) => {
-    console.log(e.target.value);
+    addArticle.articleVariations[i] = { value: v }
   }
-
-  const handleStdClausesChange = (i, e, v) => {
-    console.log(e.target.value);
-  }
-
-  const [selectedArticleVar, setSelectedArticleVar] = useState([]);
-  const [selectedArticleSub, setSelectedArticleSub] = useState([]);
-  const [selectedArticlesStdClause, setSelectedArticlesStdClause] = useState([]);
-  const [selectedArticlesVariation, setSelectedArticlesVariation] = useState([]);
 
   const onChange = (value) => {
     setAddArticle({ ...addArticle, articleName: value })
@@ -68,20 +61,15 @@ const AddArticle = () => {
       item.articles.map(data => {
         if (data.article === value) {
           setAddArticle({ ...addArticle, articleNo: data.id })
-          console.log(data);
           addArticle.articleNo = data.id;
           addArticle.articleVariables = data.variables
           addArticle.articleSubArticles = data.subarticles
-
-          setSelectedArticleVar(data.variables)
-          setSelectedArticleSub(data.subarticles)
-          console.log(addArticle);
         }
       })
     })
   };
 
-  const [formCustomText, setFormCustomText] = useState([{ value: "" }])
+  const [formCustomText, setFormCustomText] = useState([])
   function handleChangeRA(e) {
     const value = e.target.value;
     setAddArticle({
@@ -115,7 +103,7 @@ const AddArticle = () => {
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
     axios
-      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, selectedArticlesStdClause, formVariables, selectedArticlesVariation, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
+      .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
         if (res.status === 200) {
           openNotificationWithIcon(
@@ -149,6 +137,15 @@ const AddArticle = () => {
         )
       )
       .finally(() => setLoading(false));
+
+    formVariables.key = ""
+    formVariables.value = ""
+    setFormVariables([])
+    setFormCustomText([])
+    setInput({ value: true })
+    addArticle.articleVariables = []
+    addArticle.articleStdClauses = []
+    addArticle.articleVariations = []
   };
 
   return (
@@ -199,7 +196,7 @@ const AddArticle = () => {
                           >
                             {selectedArticles.articles.map((item) => (
                               <Option
-                                key={item.id}
+                                key={"articleId"}
                                 value={item.article}
                               >
                                 {item.article}
@@ -225,12 +222,14 @@ const AddArticle = () => {
                           <TextArea
                             size="large"
                             name="key"
-                            rows={12}
+                            rows={14}
                             style={{ width: '90%' }}
                             placeholder={"Standard Clauses"}
-                            value={getByArticleType('stdClause').map(item => (item.content))}
+                            value={getByArticleType('stdClause').map((item, i) => {
+                              addArticle.articleStdClauses[i] = { value: item.content }
+                              return item.content
+                            })}
                             disabled
-                            onChange={e => handleStdClausesChange(e)}
                           />
                         </Col>
                       </Row>
@@ -265,11 +264,11 @@ const AddArticle = () => {
                     </Form.Item>
 
                     <Form.Item label="SELECT VARIATIONS">
-                      {getByArticleType('variation').map(item => (
+                      {getByArticleType('variation').map((item, index) => (
                         <Row>
                           <Col span={24}>
                             <div style={{ background: '#ECECEC', width: '90%', padding: '20px' }}>
-                              <Checkbox style={{ width: '90%' }} checked onChange={e => handleVariationsChange(e)}>
+                              <Checkbox style={{ width: '90%' }} onChange={e => handleVariationsChange(index, e, item.content)}>
                                 {item.content}
                               </Checkbox>
                             </div>
