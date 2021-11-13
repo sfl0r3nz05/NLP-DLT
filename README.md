@@ -1,6 +1,6 @@
 # [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements)
 
-# Project documentation 📕📗📘
+# Project documentation
 
 *This part is under development ...*
 
@@ -14,8 +14,6 @@ Table of Content for the project documentation:
 5. [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify)
 
 # Publications that support the project
-
-*This part is under development ...*
 The project is supported by two types of publications [Medium Articles](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#medium-articles-that-support-the-project) and [Scientific Contributions](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#scientific-contributions-that-support-the-project).
 
 ### Medium Articles that support the project
@@ -27,7 +25,7 @@ The project has been documented through the following Medium articles:
 
 ### Scientific Contributions that support the project
 1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]()
- - Sent to Conference: [International Libyan Conference for Information and Communications Technologies (ILCICT 2021)](https://lit.ly/en/ilcict/)
+    - Sent to Conference: [ILCICT 2021](https://lit.ly/en/ilcict/)
 
 # Repository overview
 
