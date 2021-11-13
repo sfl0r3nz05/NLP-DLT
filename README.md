@@ -24,17 +24,20 @@ The project has been documented through the following Medium articles:
     - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/)
 
 # Repository overview
-
-*This section is under development ...*
-
-### NLP-engine Folder
+### Backend Folder
 *This sub-section is under development ...*
 ### Chaincode Folder
 *This sub-section is under development ...*
-
-# How to use the repository
-
-*This part is under development ...*
+### Frontend Folder
+*This sub-section is under development ...*
+### Documentation Folder
+*This sub-section is under development ...*
+### Mnoitoring Folder
+*This sub-section is under development ...*
+### Network Folder
+*This sub-section is under development ...*
+### NLP-Engine Folder
+*This sub-section is under development ...*
 
 ### How to use from a centralized point 🦾🦿
 
