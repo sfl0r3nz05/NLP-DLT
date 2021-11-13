@@ -18,8 +18,8 @@ The project has been documented through the following Medium articles:
 4. [Chaincode implementation for managing the drafting of roaming agreements](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645)
 
 ### Scientific Contributions that support the project
-1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]()
-    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/)
+1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]() 
+    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) [Current status](): Under review
 
 # Repository overview
 ### Backend Folder
