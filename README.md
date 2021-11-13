@@ -32,7 +32,7 @@ The project has been documented through the following Medium articles:
 *This sub-section is under development ...*
 ### Documentation Folder
 *This sub-section is under development ...*
-### Mnoitoring Folder
+### Monitoring Folder
 *This sub-section is under development ...*
 ### Network Folder
 *This sub-section is under development ...*
@@ -40,7 +40,6 @@ The project has been documented through the following Medium articles:
 *This sub-section is under development ...*
 
 # How to use the repository
-
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
 
 1. To get started with the project, clone the git repository in the go folder:
