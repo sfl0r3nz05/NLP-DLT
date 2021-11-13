@@ -19,7 +19,7 @@ The project has been documented through the following Medium articles:
 
 ### Scientific Contributions that support the project
 1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]() 
-    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) [Current status](): Under review
+    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) ([Current status](): Under review)
 
 
 # Repository overview
