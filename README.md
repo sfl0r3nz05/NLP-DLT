@@ -6,12 +6,12 @@
 
 Table of Content for the project documentation:
 
-1. [Publications that support the project](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#publications-that-support-the-project)
-2. [Repository overview](https://github.com/sfl0r3nz05/nlp-dlt/tree/main#repository-overview)
-2. [How to use the repository](https://github.com/sfl0r3nz05/nlp-dlt/tree/main#how-to-use-the-repository)
-3. [Design criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#designs-criteria)
-4. [Implementations criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#implementations-criteria)
-5. [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#how-to-modify)
+1. [Publications that support the project](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#publications-that-support-the-project)
+2. [Repository overview](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl#repository-overview)
+2. [How to use the repository](https://github.com/sfl0r3nz05/nlp-dlt/tree/sentencelvl#how-to-use-the-repository)
+3. [Design criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#designs-criteria)
+4. [Implementations criteria](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#implementations-criteria)
+5. [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify)
 
 # Publications that support the project
 
@@ -24,7 +24,6 @@ The project has been documented through the following Medium articles:
 2. [NLP Engine to detect variables, standard clauses, variations, and customized texts](https://medium.com/@sfl0r3nz05/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5)
 3. [Chaincode design for managing the drafting of roaming agreements](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645)
 4. [Chaincode implementation for managing the drafting of roaming agreements](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645)
-5. <a href="https://en.wikipedia.org/wiki/Hobbit#Lifestyle" title="Hobbit lifestyles">hobbit-hole</a>
 
 ### Scientific Contributions that support the project
 
