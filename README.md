@@ -99,8 +99,13 @@ The project has been documented through the following Medium articles:
 ### Swagger (Backend Documentation)
 - To modify `swagger` documentation following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/swagger_modification.md).
 
-Color palette:
+
+<h2 Color palette>
+
+```diff
 - red
 + green
 ! orange
 # gray
+```
+</h2>
