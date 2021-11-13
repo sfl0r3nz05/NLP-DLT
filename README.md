@@ -14,8 +14,6 @@ Table of Content for the project documentation:
 5. [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#how-to-modify)
 
 # Publications that support the project
-
-*This part is under development ...*
 The project is supported by two types of publications [Medium Articles](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#medium-articles-that-support-the-project) and [Scientific Contributions](https://github.com/sfl0r3nz05/NLP-DLT/tree/sentencelvl#scientific-contributions-that-support-the-project).
 
 ### Medium Articles that support the project
