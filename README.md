@@ -39,22 +39,7 @@ The project has been documented through the following Medium articles:
 ### NLP-Engine Folder
 *This sub-section is under development ...*
 
-### How to use from a centralized point 🦾🦿
-
-*This part is under development ...*
-
-0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
-
-1. To get started with the project, clone the git repository in the go folder:
-
-    ```
-    $ export GOPATH=$HOME/go
-    $ mkdir $GOPATH/src/github.com -p
-    $ cd $GOPATH/src/github.com  
-    $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
-    ```
-
-### How to use each tool separately ⛏
+# How to use the repository
 
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
 
