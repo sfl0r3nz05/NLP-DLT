@@ -137,15 +137,6 @@ const AddArticle = () => {
         )
       )
       .finally(() => setLoading(false));
-
-    formVariables.key = ""
-    formVariables.value = ""
-    setFormVariables([])
-    setFormCustomText([])
-    setInput({ value: true })
-    addArticle.articleVariables = []
-    addArticle.articleStdClauses = []
-    addArticle.articleVariations = []
   };
 
   return (
