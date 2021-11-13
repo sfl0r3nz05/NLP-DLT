@@ -19,7 +19,7 @@ The project has been documented through the following Medium articles:
 
 ### Scientific Contributions that support the project
 1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]() 
-    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) -! Warning !-
+    - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) [Current status](): Under review
 
 
 # Repository overview
@@ -98,14 +98,3 @@ The project has been documented through the following Medium articles:
 
 ### Swagger (Backend Documentation)
 - To modify `swagger` documentation following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/swagger_modification.md).
-
-
-<h2 Color palette>
-
-```diff
-- red
-+ green
-! orange
-# gray
-```
-</h2>
