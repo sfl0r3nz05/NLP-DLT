@@ -1,0 +1,69 @@
+.wrapper {
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.UsersAndComments {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 20px;
+}
+
+.UsersWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.CommentsWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-items: center;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.app {
+  height: 100vh;
+}
+
+.ant-layout-header .logo-login {
+  width: 80px;
+  height: 54px;
+  margin: 5px 24px 5px 0;
+  float: left;
+}
+
+.ant-layout-header .logo-hyperledger {
+  height: 54px;
+  margin: 5px 0px 5px 0;
+  float: right;
+}
+
+.logo-login,
+.logo-hyperledger {
+  padding: 5px 15px;
+  display: grid;
+}
+
+.logo {
+  /*width: 120px;*/
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 24px;
+}
+
+.ant-layout-content {
+  min-height: auto !important;
+}

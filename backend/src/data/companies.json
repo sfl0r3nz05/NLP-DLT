@@ -1,0 +1,72 @@
+{
+    "companies": [
+        {
+            "id": 1,
+            "name": "User1",
+            "address": "Donosti C/Miramón 1",
+            "cif": "A62147236",
+            "email": "packaging@company.com",
+            "web": "user1.com",
+            "phone": "946123912",
+            "description": ".",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7772987731628,
+                    43.26172153627205
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "name": "User2",
+            "address": "Donosti C/Miramón 1",
+            "cif": "A62147236",
+            "email": "packaging@company.com",
+            "web": "user2.com",
+            "phone": "946123912",
+            "description": ".",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7772987731628,
+                    43.26172153627205
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "name": "User3",
+            "address": "Donosti C/Miramón 1",
+            "cif": "A62147236",
+            "email": "packaging@company.com",
+            "web": "user3.com",
+            "phone": "946123912",
+            "description": ".",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7772987731628,
+                    43.26172153627205
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "name": "User4",
+            "address": "Donosti C/Miramón 1",
+            "cif": "A62147236",
+            "email": "packaging@company.com",
+            "web": "user4.com",
+            "phone": "946123912",
+            "description": ".",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7772987731628,
+                    43.26172153627205
+                ]
+            }
+        }
+    ]
+}

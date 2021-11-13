@@ -1,0 +1,81 @@
+@import "~antd/dist/antd.less"; // import official less entry file
+@import "./theme.less"; // override variables here
+
+.wrapper {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 36px;
+  min-height: 100vh;
+}
+
+.UsersAndComments {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 20px;
+}
+
+.UsersWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.CommentsWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-items: center;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.app {
+  height: 100vh;
+}
+
+.header-login {
+  background-color: @primary-color;
+}
+
+.ant-layout-header .logo-login {
+  width: 80px;
+  height: 54px;
+  margin: 5px 24px 5px 0;
+  float: left;
+}
+
+.ant-layout-header .logo-hyperledger {
+  height: 54px;
+  margin: 5px 0px 5px 0;
+  float: right;
+}
+
+.logo-login,
+.logo-hyperledger {
+  padding: 5px 15px;
+  display: grid;
+}
+
+.logo {
+  height: 42px;
+  margin: 12px 16px 12px 16px;
+  background-size: contain;
+  background-image: url("./assets/img/LinuxFoundation.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ant-layout-content {
+  min-height: auto !important;
+}
+
+.role-selected {
+  background-color: fade(@primary-color, 30%);
+}

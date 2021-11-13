@@ -22,8 +22,8 @@ func (cc *Chaincode) verifyOrg(stub shim.ChaincodeStubInterface, id string)(bool
 	return false, err
 }
 
-func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGREEMNT, id string)(bool) {
-	store := make(map[string]ROAMINGAGREEMNT)  //mapping string to Organtization data type
+func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA RoamingAgreement, id string)(bool) {
+	store := make(map[string]RoamingAgreement)  //mapping string to Organtization data type
     store["org1_id"] = RA
 	store["org2_id"] = RA
 
@@ -34,23 +34,23 @@ func (cc *Chaincode) verifyOrgRA(stub shim.ChaincodeStubInterface, RA ROAMINGAGR
 	return false
 }
 
-func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, organization Organization, org_id string)(error) {
+func (cc *Chaincode) recordOrg(stub shim.ChaincodeStubInterface, org Organization, id string)(error) {
 	CHANNEL_ENV := stub.GetChannelID()
-	idBytes, err := json.Marshal(organization)
+	idBytes, err := json.Marshal(org)
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error parsing: %v", CHANNEL_ENV, ERRORParsingOrg, err.Error())
 		return errors.New(ERRORParsingID + err.Error())
 	}
 
-	err = stub.PutState(org_id, idBytes) // PuState of Client (Organization) Identity and Organtization struct
+	err = stub.PutState(id, idBytes) // PuState of Client (Organization) Identity and Organtization struct
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
 		return errors.New(ERRORStoringIdentity + err.Error())
 	}
 
 	store := make(map[string]Organization)
-	store["org"] = organization
-	err = stub.PutState(store["org"].mno_name, []byte(org_id)) // PuState of Client (Organization) Name and Organtization Identity
+	store["org"] = org
+	err = stub.PutState(store["org"].mno_name, []byte(id)) // PuState of Client (Organization) Name and Organtization Identity
 	if err != nil {
 		log.Errorf("[%s][%s][recordOrg] Error storing: %v", CHANNEL_ENV, ERRORStoringOrg, err.Error())
 		return errors.New(ERRORStoringIdentity + err.Error())

@@ -31,16 +31,17 @@ type UUIDRAID struct {
 }
 
 // Struct used to return
-type ROAMINGAGREEMNT struct {
+type RoamingAgreement struct {
 	UUID string 						`json:"uuid,omitempty"`
 	ORG1_ID string 						`json:"org1_id,omitempty"`
 	ORG2_ID string 						`json:"org2_id,omitempty"`
 	STATUS string						`json:"status,omitempty"`
 }
 
-type JSONROAMINGAGREEMENT struct {
-	uuid	string						`json:"uuid"` // name for the uuid
-	document_name	string					`json:"document_name"` // name for the document_name
+type ListOfArticles struct {
+	UUID	string						`json:"uuid"` // name for the uuid
+	DOCUMENT_NAME	string					`json:"document_name"` // name for the document_name
+	STATUS string						`json:"status,omitempty"`
 	articles	[]ARTICLE				`json:"articles"` // name for the articles
 }
 
@@ -48,9 +49,9 @@ type ARTICLE struct {
 	id	string						`json:"id"` // name for the id
 	status string						`json:"status,omitempty"`
 	variables	[]VARIABLE				`json:"variables"` // name for the variables
-	variations	[]VARIATIONS				`json:"variations"` // name for the variations
-	customText	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
-	stdClause	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
+	variations	[]VARIATION				`json:"variations"` // name for the variations
+	customTexts	[]CUSTOMTEXT				`json:"customText"` // name for the Custom Text
+	stdClauses	[]STDCLAUSE				`json:"stdClause"` // name for the Standard Clauses
 }
 
 type VARIABLE struct {
@@ -115,6 +116,7 @@ const (
 	ERRORBase64           					= `Error decoding into base64`
 	ERRORVerifying        					= `Error verifying signature`
 	ERRORFindingArticle   					= `Error finding article`
+	ERRORrecoveringArticlesList					= `Error recovering articles list`	
 	ERRORAcceptingProposedChanges				= `Error accepting proposed changes`
 	ERRORRecoveringOrg	  				= `Error recovering organization`
 	ERRORRecoveringJsonRA	  				= `Error recovering Json Roaming Agreement`
@@ -142,6 +144,7 @@ const (
 	ERRORDenyDeleteArticle					= `Error denying delete article`
 	ERRORReachAgreement					= `Error: Agreement not reached`
 	ERRORAcceptAgreement					= `Error: Agreement not accepted`
+	ERRORDeterminingStatus					= `Error Determining Status`
 	ERRORQuerySingleArticle 				= `Error recovering single article`
 	ERRORQueryAllArticles					= `Error recovering all articles`
 	ERROREventName						= `Error missing Event Name`

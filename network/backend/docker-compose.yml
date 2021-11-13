@@ -1,0 +1,40 @@
+version: "3.2"
+
+networks:
+  el-network:
+
+services:
+  backend:
+    container_name: backend
+    hostname: backend
+    image: node:13-alpine
+    working_dir: /app/src
+    volumes:
+      - ../../backend:/app
+      - ../hfb:/app/network/hfb
+      - ../../frontend/src/data/LER.json:/app/src/data/LER.json
+    command: sh -c "npm i && npm start"
+    environment:
+      HOST: "${HOST_BACKEND}"
+      PORT: "${PORT_BACKEND}"
+      PATH_TO_BUFFER_USERS: "${PATH_TO_BUFFER_USERS}"
+      PATH_TO_BUFFER_COUNTRY: "${PATH_TO_BUFFER_COUNTRY}"
+      PATH_TO_BUFFER_PRODUCTS: "${PATH_TO_BUFFER_PRODUCTS}"
+      PATH_TO_BUFFER_COMPANIES: "${PATH_TO_BUFFER_COMPANIES}"
+    ports:
+      - "80:3005"
+    networks:
+      - el-network
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ../../documentation/swagger/openapi.json:/openapi.json
+    environment:
+      SWAGGER_JSON: /openapi.json
+      BASE_URL: /documentation
+    networks:
+      - el-network
