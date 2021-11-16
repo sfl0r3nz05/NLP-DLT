@@ -18,6 +18,7 @@ destroy:
 	sudo rm -rf connectionProfile.json
 	sudo rm -rf docker-compose.yaml
 	sudo rm -rf ../../dashboards
+	sudo rm -rf ../dashboards
 
 rmchaincode:
 	docker images | grep test | awk '{print $1}' | xargs docker rmi
