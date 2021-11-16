@@ -6,7 +6,6 @@ const invokeEvents = require("../../utils/invoke/invokeEvents");
 const proposeUpdateArticle = async (req, res) => {
     try {
         let data = req.body; // params from POST
-        console.log(data);
 
         let user = data.userDetails;
         if (!user) {
@@ -37,12 +36,10 @@ const proposeUpdateArticle = async (req, res) => {
             let value4 = JSON.stringify(data.formVariables)
             console.log(value4);
             let arg4 = Buffer.from(value4).toString('base64');
-            let value5 = JSON.stringify(data.selectedArticlesVariation);
-            //let arg5 = Buffer.from(value5).toString('base64');
-            arg5 = ""
-            let value6 = JSON.stringify(data.selectedArticlesStdClause)
-            //let arg6 = Buffer.from(value6).toString('base64');
-            arg6 = ""
+            let value5 = JSON.stringify(data.selectedRow.variations);
+            let arg5 = Buffer.from(value5).toString('base64');
+            let value6 = JSON.stringify(data.selectedRow.stdclauses)
+            let arg6 = Buffer.from(value6).toString('base64');
             let value7 = JSON.stringify(data.formCustomText)
             console.log(value7);
             let arg7 = Buffer.from(value7).toString('base64');

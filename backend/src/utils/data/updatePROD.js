@@ -49,8 +49,8 @@ module.exports = async function updatePROD(valueToUpdate) {
                 article[0].proposedBy = value.mno1
                 article[0].articleStatus = value.articlestatus
                 article[0].variables = JSON.parse(variablesParsed)
-                article[0].variations = ""
-                article[0].stdclauses = ""
+                article[0].variations = JSON.parse(variationsParsed)
+                article[0].stdclauses = JSON.parse(stdclausesParsed)
                 article[0].customtexts = JSON.parse(customtextsParsed)
             }
 
