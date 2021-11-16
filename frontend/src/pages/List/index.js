@@ -3,7 +3,7 @@ import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment from "moment";
 import axios from "axios";
-import { Input, Button, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
+import { Input, Button, Checkbox, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -87,12 +87,11 @@ const RenderList = () => {
         setList(resJson);
       })
       .catch(error => { });
-  }, []); // Execut some element of the array changue
+  }, []);
 
   const handleSubmit = (e, mno1) => {
     e.preventDefault();
     const jwtToken = localStorage.getItem("token");
-    //Set POST request
     axios
       .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/acceptAgreementInitiation`, { list, mno1, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
@@ -495,22 +494,20 @@ const RenderList = () => {
               defaultValue={selectedRow && selectedRow.stdclauses.map(data => data.value)}
               rows={12}
               disabled
-            //onChange={e => handleStdClauses(e)}
             />
           </Row>
 
         </Form.Item>
         <Form.Item label="Variations">
           {selectedRow && selectedRow.variations.map(data =>
-            < Row >
-              <TextArea
-                size="large"
-                name="value"
-                style={{ width: '100%' }}
-                defaultValue={data.value}
-                rows={3}
-              //onChange={e => handleVariations(e)}
-              />
+            <Row>
+              <Col span={24}>
+                <div style={{ background: '#ECECEC', width: '90%', padding: '20px' }}>
+                  <Checkbox style={{ width: '90%' }}>
+                    {data.value}
+                  </Checkbox>
+                </div>
+              </Col>
             </Row>
           )}
         </Form.Item>

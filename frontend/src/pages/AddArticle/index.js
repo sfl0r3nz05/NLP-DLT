@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Row,
-  Card,
   Checkbox,
   Col,
   Form,
@@ -51,7 +50,9 @@ const AddArticle = () => {
   }
 
   const handleVariationsChange = (i, e, v) => {
-    addArticle.articleVariations[i] = { value: v }
+    addArticle.articleVariations[i] = { checked: true, value: v }
+    //getByArticleType('variation').map((item, index) => { index != i ? addArticle.articleVariations[i] = { checked: false, value: item.content } : addArticle.articleVariations[i] = { checked: true, value: v } })
+    //console.log(addArticle.articleVariations);
   }
 
   const onChange = (value) => {
@@ -102,6 +103,7 @@ const AddArticle = () => {
     e.preventDefault();
     setLoading(true)
     const jwtToken = localStorage.getItem("token");
+    //addArticle.articleVariations === [] ? getByArticleType('variation').map((item, index) => { addArticle.articleVariations[index] = { check: false, value: item.content } }) : addArticle.articleVariations = addArticle.articleVariations;
     axios
       .post(`http://${process.env.REACT_APP_GATEWAY_HOST}:${process.env.REACT_APP_GATEWAY_PORT}/proposeAddArticle`, { addArticle, formVariables, formCustomText, userDetails }, { headers: { "Authorization": `Bearer ${jwtToken}` } })
       .then((res) => {
