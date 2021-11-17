@@ -27,9 +27,17 @@ The project has been documented through the following Medium articles:
   * The APIs integrated into the backend.
   * The Postman queries to register the admin and user of a MNO.
   * `Dockerfile` to build the backend image.
+
 ### Chaincode Folder
 * Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
 * Incluides the `Design folder` that contain relevant information about the chaincode design.
+
+### Documentation Folder
+The Documentation folder contains:
+* Incluides the `images folder` that contain the set of images included as part of the documentation.
+* Incluides the `readme folder` that contain the set of readme files included as part of the documentation.
+* Incluides the `swagger folder` that contain a json file with the APIs documentation.
+  
 ### Frontend Folder
 *This sub-section is under development ...*
 ### Documentation Folder
