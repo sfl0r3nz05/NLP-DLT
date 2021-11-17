@@ -22,6 +22,7 @@ The project has been documented through the following Medium articles:
     - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) (**Current status**): Under review
 
 # Repository overview
+
 ### Backend Folder
 The folder contains: 
 * The APIs integrated into the `backend`.
@@ -54,6 +55,9 @@ The `network` folder contains:
 * Sub-folder `elk` includes the mechanism to deploy the `elasticsearch` cluster and `kibana`.
 * Sub-folder `elk-agent` includes the mechanism to deploy the `filebeat` container agents.
 * Sub-folder `frontend` includes the mechanism to deploy the `fronted` container.
+* Sub-folder `hfb` includes the mechanism to deploy the `hfb` network.
+* Sub-folder `monitoring` includes the mechanism to deploy `Grafana` and `Kibana` containers.
+* Sub-folder `nlp-engine` includes the mechanism to deploy the `nlp-engine`.
 
 ### NLP-Engine Folder
 The `nlp-engine` folder contains:
