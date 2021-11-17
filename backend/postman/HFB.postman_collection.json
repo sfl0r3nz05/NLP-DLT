@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "bbca6b78-8466-4589-9ea8-cf000ddda799",
+		"name": "HFB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "enrollAdmins",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{aws_ip}}/api/enrollAdmins",
+					"protocol": "http",
+					"host": [
+						"{{aws_ip}}"
+					],
+					"path": [
+						"api",
+						"enrollAdmins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerUsers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://{{aws_ip}}/api/registerUsers",
+					"protocol": "http",
+					"host": [
+						"{{aws_ip}}"
+					],
+					"path": [
+						"api",
+						"registerUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"disabled": true
+		}
+	]
+}

@@ -21,13 +21,15 @@ The project has been documented through the following Medium articles:
 1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]() 
     - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) (**Current status**): Under review
 
-
 # Repository overview
 ### Backend Folder
-* The folder contains the APIs integrated into the backend.
+* The folder contains: 
+  * The APIs integrated into the backend.
+  * The Postman queries to register the admin and user of a MNO.
+  * `Dockerfile` to build the backend image.
 ### Chaincode Folder
-* The chaincode folder contains the chaincode of the project. 
-* When the HFB network is deployed this chaincode is copied into the folder: `$GOPATH/src/github.com/nlp-dlt`.
+* Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
+* Incluides the `Design folder` that contain relevant information about the chaincode design.
 ### Frontend Folder
 *This sub-section is under development ...*
 ### Documentation Folder
