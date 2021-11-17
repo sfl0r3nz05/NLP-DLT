@@ -23,9 +23,10 @@ The project has been documented through the following Medium articles:
 
 # Repository overview
 ### Backend Folder
-*This sub-section is under development ...*
+* The folder contains the APIs integrated into the backend.
 ### Chaincode Folder
-*This sub-section is under development ...*
+* The chaincode folder contains the chaincode of the project. 
+* When the HFB network is deployed this chaincode is copied into the folder: `$GOPATH/src/github.com/nlp-dlt`.
 ### Frontend Folder
 *This sub-section is under development ...*
 ### Documentation Folder
