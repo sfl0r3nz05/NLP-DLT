@@ -22,11 +22,12 @@ The project has been documented through the following Medium articles:
     - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) (**Current status**): Under review
 
 # Repository overview
+
 ### Backend Folder
-* The `Backend` folder contains: 
-  * The APIs integrated into the backend.
-  * The Postman queries to register the admin and user of a MNO.
-  * `Dockerfile` to build the backend image.
+The folder contains: 
+* The APIs integrated into the `backend`.
+* The Postman queries to register the admin and user of a MNO.
+* `Dockerfile` to build the backend image.
 
 ### Chaincode Folder
 * Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
@@ -37,15 +38,31 @@ The Documentation folder contains:
 * Incluides the `images folder` that contain the set of images included as part of the documentation.
 * Incluides the `readme folder` that contain the set of readme files included as part of the documentation.
 * Incluides the `swagger folder` that contain a json file with the APIs documentation.
-
+  
 ### Frontend Folder
-*This sub-section is under development ...*
+The frontend folder contains:
+* Source code for the `frontend` created in ReactJS.
+* `Dockerfile` to build the frontend image.
+
 ### Monitoring Folder
-*This sub-section is under development ...*
+The `monitoring` folder contains:
+* Configuration files for `Grafana`.
+* Configuration files for `Prometheus`.
+
 ### Network Folder
-*This sub-section is under development ...*
+The `network` folder contains:
+* Sub-folder `backend` includes the mechanism to deploy the `backend` and `Swagger` containers.
+* Sub-folder `elk` includes the mechanism to deploy the `elasticsearch` cluster and `kibana`.
+* Sub-folder `elk-agent` includes the mechanism to deploy the `filebeat` container agents.
+* Sub-folder `frontend` includes the mechanism to deploy the `fronted` container.
+* Sub-folder `hfb` includes the mechanism to deploy the `hfb` network.
+* Sub-folder `monitoring` includes the mechanism to deploy `Grafana` and `Kibana` containers.
+* Sub-folder `nlp-engine` includes the mechanism to deploy the `nlp-engine`.
+
 ### NLP-Engine Folder
-*This sub-section is under development ...*
+The `nlp-engine` folder contains:
+* Source code for the `nlp-engine` created in `Python`.
+* `Dockerfile` to build the nlp-engine image.
 
 # How to use the repository
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/readme/prerequisites.md).
