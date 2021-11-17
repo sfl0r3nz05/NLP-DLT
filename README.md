@@ -29,10 +29,10 @@ The project has been documented through the following Medium articles:
   * `Dockerfile` to build the backend image.
 ### Chaincode Folder
 * Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
-* Incluides the `Design folder` that contain relevant information about the chaincode design
-### Frontend Folder
-*This sub-section is under development ...*
+* Incluides the `Design folder` that contain relevant information about the chaincode design.
 ### Documentation Folder
+*This sub-section is under development ...*
+### Frontend Folder
 *This sub-section is under development ...*
 ### Monitoring Folder
 *This sub-section is under development ...*
