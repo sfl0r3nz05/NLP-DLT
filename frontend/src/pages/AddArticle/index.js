@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Row,
   Card,
@@ -31,6 +31,7 @@ const AddArticle = () => {
     articleVariations: [],
     articleStdClauses: []
   };
+
   const [addArticle, setAddArticle] = useState(initialFormState);
 
   const [selectedArticles, setselectedArticles] = useState({ articles: [] });
@@ -51,7 +52,9 @@ const AddArticle = () => {
   }
 
   const handleVariationsChange = (i, e, v) => {
-    addArticle.articleVariations[i] = { value: v }
+    addArticle.articleVariations[i] = { checked: true, value: v }
+    //console.log(getByVariationsValue(v));
+    //console.log(addArticle.articleVariations.findIndex(getByVariationsValue(v)[0]))
   }
 
   const onChange = (value) => {
@@ -64,6 +67,11 @@ const AddArticle = () => {
           addArticle.articleNo = data.id;
           addArticle.articleVariables = data.variables
           addArticle.articleSubArticles = data.subarticles
+          //let variationCom = []
+          //getByArticleType('variation').map((item, index) => {
+          //  variationCom.push({ checked: false, value: item.content })
+          //})
+          //addArticle.articleVariations = variationCom
         }
       })
     })
@@ -95,6 +103,7 @@ const AddArticle = () => {
   };
 
   const getByArticleType = (filter) => addArticle.articleSubArticles.filter(({ type }) => type === filter);
+  //const getByVariationsValue = (filter) => addArticle.articleVariations.filter(({ value }) => value === filter);
 
   const [loading, setLoading] = useState(false);
   let userDetails = JSON.parse(localStorage.getItem('user'));

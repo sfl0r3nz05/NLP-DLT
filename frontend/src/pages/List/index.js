@@ -3,7 +3,7 @@ import ReactCountryFlag from "react-country-flag"
 import { useGlobal } from "reactn";
 import moment from "moment";
 import axios from "axios";
-import { Input, Button, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
+import { Input, Button, Checkbox, Col, Form, Icon, notification, Modal, Row, Table, Tag, Tooltip } from "antd";
 import Search from "../../components/table/search";
 import SearchDates from "../../components/table/searchDates";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -502,15 +502,14 @@ const RenderList = () => {
         </Form.Item>
         <Form.Item label="Variations">
           {selectedRow && selectedRow.variations.map(data =>
-            < Row >
-              <TextArea
-                size="large"
-                name="value"
-                style={{ width: '100%' }}
-                defaultValue={data.value}
-                rows={3}
-              //onChange={e => handleVariations(e)}
-              />
+            <Row>
+              <Col span={24}>
+                <div style={{ background: '#ECECEC', width: '90%', padding: '20px' }}>
+                  <Checkbox style={{ width: '90%' }}>
+                    {data.value}
+                  </Checkbox>
+                </div>
+              </Col>
             </Row>
           )}
         </Form.Item>
