@@ -34,10 +34,10 @@ The folder contains:
 * Includes the `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
 
 ### Documentation Folder
-The Documentation folder contains:
-* Includes the `images folder` that contain the set of images included as part of the documentation.
-* Includes the `readme folder` that contain the set of readme files included as part of the documentation.
-* Includes the `swagger folder` that contain a json file with the APIs documentation.
+The Documentation folder includes:
+* `images folder` with a set of images included as part of the documentation.
+* `readme folder` with a set of readme files included as part of the documentation.
+* `swagger folder` with a json file for APIs documentation.
   
 ### Frontend Folder
 The frontend folder contains:
