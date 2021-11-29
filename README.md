@@ -80,7 +80,6 @@ The `network` a set of subfolders to deploy each of the created services:
     $ cd $GOPATH/src/github.com  
     $ git clone https://github.com/sfl0r3nz05/NLP-DLT.git
     ```
-
 2. To use the **NLP-Engine** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/nlp-engine-use.md)
 
 3. To deploy the **HFB-Network** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/hfb-network-use.md)
