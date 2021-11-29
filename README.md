@@ -30,14 +30,14 @@ The folder contains:
 * `Dockerfile` to build the backend image.
 
 ### Chaincode Folder
-* Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
-* Incluides the `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
+* Includes the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
+* Includes the `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
 
 ### Documentation Folder
 The Documentation folder contains:
-* Incluides the `images folder` that contain the set of images included as part of the documentation.
-* Incluides the `readme folder` that contain the set of readme files included as part of the documentation.
-* Incluides the `swagger folder` that contain a json file with the APIs documentation.
+* Includes the `images folder` that contain the set of images included as part of the documentation.
+* Includes the `readme folder` that contain the set of readme files included as part of the documentation.
+* Includes the `swagger folder` that contain a json file with the APIs documentation.
   
 ### Frontend Folder
 The frontend folder contains:
