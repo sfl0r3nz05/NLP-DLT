@@ -21,6 +21,9 @@ The project has been documented through the following Medium articles:
 1. [A Natural Language Processing Approach for the Digitalization of Roaming Agreements]() 
     - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) (**Current status**): Under review
 
+### Solution Design Document
+1. [Blockchain-based Digitalization of the Roaming Agreement Drafting Process](https://docs.google.com/document/d/1K6XpLavP2ctCzSMjKNgWtzObtYVoJnRg6lTNTMHA4AA/edit#heading=h.hitzwsvzfpaj)
+
 # Repository overview
 
 ### Backend Folder
