@@ -96,8 +96,9 @@ The `network` a set of subfolders to deploy each of the created services:
     - To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/monitoring.md).
     - The **Backend** has been documented through **Swagger**, which is deployed along with the **Backend**. Details of how to modify **Swagger** are provided in [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#swagger-backend-documentation) section,
 
-| Full demo |- | 
-| <a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/images/Kibana.png" alt="Watch the video" width="420" height="210"/></a> |
+| Demo NLP Part | Demo rest of project  |
+| ------------- | --------------------- |
+| <a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Kibana.png" alt="Watch the video" width="420" height="210"/></a> | <a      href="https://youtu.be/xk5uwrzAaJw" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/documentation/images/Postman.png" alt="Watch the video" width="440" height="240"/></a> |
 
 # Designs criteria
 *This part is under development ...*
