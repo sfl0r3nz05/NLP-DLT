@@ -92,19 +92,12 @@ The `network` a set of subfolders to deploy each of the created services:
     ⭐**Note** The **Filebeat-Agent** is based on the Linux Foundation Project: [Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions](https://github.com/hyperledger-labs/blockchain-analyzer)⭐
 
 6. The Backend of the project is:
-    - To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/backend-use.md)
-    - To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/monitoring.md)
-    - The **Backend** has been documented through **Swagger**, which is deployed along with the **Backend**. Details of how to modify **Swagger** are provided in [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#swagger-backend-documentation) section
-                
-| Swagger demonstration                                                                                                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://youtu.be/8MdspJhR1zA" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/images/Swagger.png" alt="Watch the video" width="420" height="320"><a> |
+    - To deploy the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/backend-use.md).
+    - To monitor the **Backend** following this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/monitoring.md).
+    - The **Backend** has been documented through **Swagger**, which is deployed along with the **Backend**. Details of how to modify **Swagger** are provided in [How to modify](https://github.com/sfl0r3nz05/NLP-DLT/tree/main#swagger-backend-documentation) section,
 
-7. There are two ways to test the **Chaincode**:
-
-| Test via CLI container to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/chaincode-test-cli.md)                                                       | Test via POSTMAN tool to follow this [instructions](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/chaincode-test-postman.md)                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/images/Kibana.png" alt="Watch the video" width="420" height="210"/></a> | <a      href="https://youtu.be/xk5uwrzAaJw" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/images/Postman.png" alt="Watch the video" width="440" height="240"/></a> |
+| Full demo |- | 
+| <a href="https://youtu.be/KnRWKfw3oQM" target="_blank"><img src="https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/images/Kibana.png" alt="Watch the video" width="420" height="210"/></a> |
 
 # Designs criteria
 *This part is under development ...*
