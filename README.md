@@ -31,7 +31,7 @@ The folder contains:
 
 ### Chaincode Folder
 * Incluides the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
-* Incluides the `Design folder` that contain relevant information about the chaincode design.
+* Incluides the `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
 
 ### Documentation Folder
 The Documentation folder contains:
