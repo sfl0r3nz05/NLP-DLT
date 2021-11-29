@@ -36,12 +36,6 @@ The backend folder contains:
 The chaincode folder contains: 
 * `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
 * `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
-
-### Documentation
-The Documentation folder includes:
-* `images folder` with a set of images included as part of the documentation.
-* `readme folder` with a set of readme files included as part of the documentation.
-* `swagger folder` with a json file for APIs documentation.
   
 ### Frontend
 The frontend folder contains:
@@ -53,20 +47,26 @@ The `monitoring` folder contains:
 * Configuration files for `Grafana`.
 * Configuration files for `Prometheus`.
 
-### Network
-The `network` folder contains:
-* Sub-folder `backend` includes the mechanism to deploy the `backend` and `Swagger` containers.
-* Sub-folder `elk` includes the mechanism to deploy the `elasticsearch` cluster and `kibana`.
-* Sub-folder `elk-agent` includes the mechanism to deploy the `filebeat` container agents.
-* Sub-folder `frontend` includes the mechanism to deploy the `fronted` container.
-* Sub-folder `hfb` includes the mechanism to deploy the `hfb` network.
-* Sub-folder `monitoring` includes the mechanism to deploy `Grafana` and `Kibana` containers.
-* Sub-folder `nlp-engine` includes the mechanism to deploy the `nlp-engine`.
-
 ### NLP-Engine
 The `nlp-engine` folder contains:
 * Source code for the `nlp-engine` created in `Python`.
 * `Dockerfile` to build the nlp-engine image.
+
+### Documentation
+The Documentation folder includes:
+* `images folder` with a set of images included as part of the documentation.
+* `readme folder` with a set of readme files included as part of the documentation.
+* `swagger folder` with a json file for APIs documentation.
+
+### Network
+The `network` a set of subfolders to deploy each of the created services:
+* Sub-folder `backend` includes the resources to deploy the `backend` and `Swagger` containers.
+* Sub-folder `elk` includes the resources to deploy the `elasticsearch` cluster and `kibana`.
+* Sub-folder `elk-agent` includes the resources to deploy the `filebeat` container agents.
+* Sub-folder `frontend` includes the resources to deploy the `frontend` container.
+* Sub-folder `hfb` includes the resources to deploy the `hfb` network.
+* Sub-folder `monitoring` includes the resources to deploy `Grafana` and `Kibana` containers.
+* Sub-folder `nlp-engine` includes the resources to deploy the `nlp-engine`.
 
 # How to use the repository
 0. Please make sure that you have set up the environment for the project. Follow the steps listed in [prerequisites](https://github.com/sfl0r3nz05/NLP-DLT/blob/main/documentation/readme/prerequisites.md).
