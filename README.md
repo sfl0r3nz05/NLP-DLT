@@ -26,33 +26,34 @@ The project has been documented through the following Medium articles:
 
 # Repository overview
 
-### Backend Folder
-The folder contains: 
+### Backend
+The backend folder contains: 
 * The APIs integrated into the `backend`.
 * The Postman queries to register the admin and user of a MNO.
 * `Dockerfile` to build the backend image.
 
-### Chaincode Folder
-* Includes the `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
-* Includes the `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
+### Chaincode
+The chaincode folder contains: 
+* `Implementation folder` that contain the Smart Contract created to manage the Roaming Agreement Drafting.
+* `Design folder` that contain the chaincode design created with the application tool [App Diagrams Tool](https://app.diagrams.net/).
 
-### Documentation Folder
+### Documentation
 The Documentation folder includes:
 * `images folder` with a set of images included as part of the documentation.
 * `readme folder` with a set of readme files included as part of the documentation.
 * `swagger folder` with a json file for APIs documentation.
   
-### Frontend Folder
+### Frontend
 The frontend folder contains:
 * Source code for the `frontend` created in ReactJS.
 * `Dockerfile` to build the frontend image.
 
-### Monitoring Folder
+### Monitoring
 The `monitoring` folder contains:
 * Configuration files for `Grafana`.
 * Configuration files for `Prometheus`.
 
-### Network Folder
+### Network
 The `network` folder contains:
 * Sub-folder `backend` includes the mechanism to deploy the `backend` and `Swagger` containers.
 * Sub-folder `elk` includes the mechanism to deploy the `elasticsearch` cluster and `kibana`.
@@ -62,7 +63,7 @@ The `network` folder contains:
 * Sub-folder `monitoring` includes the mechanism to deploy `Grafana` and `Kibana` containers.
 * Sub-folder `nlp-engine` includes the mechanism to deploy the `nlp-engine`.
 
-### NLP-Engine Folder
+### NLP-Engine
 The `nlp-engine` folder contains:
 * Source code for the `nlp-engine` created in `Python`.
 * `Dockerfile` to build the nlp-engine image.
